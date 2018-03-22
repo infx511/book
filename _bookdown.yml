@@ -1,0 +1,37 @@
+book_filename: "intro-to-programming-for-data-science-visualization"
+output_dir: build
+language:
+  ui:
+    chapter_name: ["Chapter "]
+edit: https://github.com/infx511/book/edit/master/%s
+rmd_files:
+  - index.Rmd
+
+  # environment setup
+  - setup.Rmd
+  - command-line.Rmd
+  - markdown.Rmd
+  - git-basics.Rmd
+
+  # python basics
+  - python-intro.Rmd
+  - functions.Rmd
+  - logic.Rmd
+  - iteration.Rmd
+  - lists.Rmd
+  - dictionaries.Rmd
+
+  # refined programming
+  - searching.Rmd
+  - functional-programming.Rmd
+  - apis.Rmd
+  - git-branches.Rmd
+  - git-collaboration.Rmd
+  - oop.Rmd
+  - pandas.Rmd
+  
+  # javascript & d3
+  - javascript.Rmd
+  - web-programming.Rmd
+  - d3.Rmd
+  

@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html  lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Introduction to Programming</title>
+  <meta name="description" content="The course reader for INFX 511: Introduction to Programming for Data Science and Visualization.">
+  <meta name="generator" content="bookdown 0.5 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Introduction to Programming" />
+  <meta property="og:type" content="book" />
+  <meta property="og:url" content="https://infx511.github.io/" />
+  
+  <meta property="og:description" content="The course reader for INFX 511: Introduction to Programming for Data Science and Visualization." />
+  <meta name="github-repo" content="infx511/book" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Introduction to Programming" />
+  
+  <meta name="twitter:description" content="The course reader for INFX 511: Introduction to Programming for Data Science and Visualization." />
+  
+
+<meta name="author" content="Joel Ross">
+
+
+<meta name="date" content="2018-03-21">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  <link rel="shortcut icon" href="img/ischool-gold.png" type="image/x-icon">
+<link rel="prev" href="dictionaries.html">
+<link rel="next" href="functional-programming.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+<link rel="stylesheet" href="css/prism.min.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./" class="title">Introduction to Programming</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About this Book</a></li>
+<li class="chapter" data-level="1" data-path="setup-machine.html"><a href="setup-machine.html"><i class="fa fa-check"></i><b>1</b> Setting Up Your Machine</a><ul>
+<li class="chapter" data-level="1.1" data-path="setup-machine.html"><a href="setup-machine.html#git"><i class="fa fa-check"></i><b>1.1</b> Git</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="setup-machine.html"><a href="setup-machine.html#github"><i class="fa fa-check"></i><b>1.1.1</b> GitHub</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="setup-machine.html"><a href="setup-machine.html#command-line-tools-bash"><i class="fa fa-check"></i><b>1.2</b> Command-line Tools (Bash)</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="setup-machine.html"><a href="setup-machine.html#command-line-on-a-mac"><i class="fa fa-check"></i><b>1.2.1</b> Command-line on a Mac</a></li>
+<li class="chapter" data-level="1.2.2" data-path="setup-machine.html"><a href="setup-machine.html#command-line-on-windows"><i class="fa fa-check"></i><b>1.2.2</b> Command-line on Windows</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="setup-machine.html"><a href="setup-machine.html#text-editors"><i class="fa fa-check"></i><b>1.3</b> Text Editors</a><ul>
+<li class="chapter" data-level="1.3.1" data-path="setup-machine.html"><a href="setup-machine.html#visual-studio-code"><i class="fa fa-check"></i><b>1.3.1</b> Visual Studio Code</a></li>
+<li class="chapter" data-level="1.3.2" data-path="setup-machine.html"><a href="setup-machine.html#atom"><i class="fa fa-check"></i><b>1.3.2</b> Atom</a></li>
+<li class="chapter" data-level="1.3.3" data-path="setup-machine.html"><a href="setup-machine.html#sublime-text"><i class="fa fa-check"></i><b>1.3.3</b> Sublime Text</a></li>
+<li class="chapter" data-level="1.3.4" data-path="setup-machine.html"><a href="setup-machine.html#pycharm"><i class="fa fa-check"></i><b>1.3.4</b> PyCharm</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="setup-machine.html"><a href="setup-machine.html#python"><i class="fa fa-check"></i><b>1.4</b> Python</a><ul>
+<li class="chapter" data-level="1.4.1" data-path="setup-machine.html"><a href="setup-machine.html#anaconda"><i class="fa fa-check"></i><b>1.4.1</b> Anaconda</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="setup-machine.html"><a href="setup-machine.html#resources"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="command-line.html"><a href="command-line.html"><i class="fa fa-check"></i><b>2</b> The Command Line</a><ul>
+<li class="chapter" data-level="2.1" data-path="command-line.html"><a href="command-line.html#accessing-the-command-line"><i class="fa fa-check"></i><b>2.1</b> Accessing the Command line</a></li>
+<li class="chapter" data-level="2.2" data-path="command-line.html"><a href="command-line.html#navigating-the-command-line"><i class="fa fa-check"></i><b>2.2</b> Navigating the Command Line</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="command-line.html"><a href="command-line.html#changing-directories"><i class="fa fa-check"></i><b>2.2.1</b> Changing Directories</a></li>
+<li class="chapter" data-level="2.2.2" data-path="command-line.html"><a href="command-line.html#listing-files"><i class="fa fa-check"></i><b>2.2.2</b> Listing Files</a></li>
+<li class="chapter" data-level="2.2.3" data-path="command-line.html"><a href="command-line.html#paths"><i class="fa fa-check"></i><b>2.2.3</b> Paths</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="command-line.html"><a href="command-line.html#file-commands"><i class="fa fa-check"></i><b>2.3</b> File Commands</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="command-line.html"><a href="command-line.html#learning-new-commands"><i class="fa fa-check"></i><b>2.3.1</b> Learning New Commands</a></li>
+<li class="chapter" data-level="2.3.2" data-path="command-line.html"><a href="command-line.html#wildcards"><i class="fa fa-check"></i><b>2.3.2</b> Wildcards</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="command-line.html"><a href="command-line.html#dealing-with-errors"><i class="fa fa-check"></i><b>2.4</b> Dealing With Errors</a></li>
+<li class="chapter" data-level="2.5" data-path="command-line.html"><a href="command-line.html#directing-output"><i class="fa fa-check"></i><b>2.5</b> Directing Output</a></li>
+<li class="chapter" data-level="2.6" data-path="command-line.html"><a href="command-line.html#shell-scripts"><i class="fa fa-check"></i><b>2.6</b> Shell Scripts</a></li>
+<li class="chapter" data-level="" data-path="command-line.html"><a href="command-line.html#resources-1"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="markdown.html"><a href="markdown.html"><i class="fa fa-check"></i><b>3</b> Markdown</a><ul>
+<li class="chapter" data-level="3.1" data-path="markdown.html"><a href="markdown.html#writing-markdown"><i class="fa fa-check"></i><b>3.1</b> Writing Markdown</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="markdown.html"><a href="markdown.html#text-formatting"><i class="fa fa-check"></i><b>3.1.1</b> Text Formatting</a></li>
+<li class="chapter" data-level="3.1.2" data-path="markdown.html"><a href="markdown.html#text-blocks"><i class="fa fa-check"></i><b>3.1.2</b> Text Blocks</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="markdown.html"><a href="markdown.html#rendering-markdown"><i class="fa fa-check"></i><b>3.2</b> Rendering Markdown</a></li>
+<li class="chapter" data-level="" data-path="markdown.html"><a href="markdown.html#resources-2"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="git-basics.html"><a href="git-basics.html"><i class="fa fa-check"></i><b>4</b> Git and GitHub</a><ul>
+<li class="chapter" data-level="4.1" data-path="git-basics.html"><a href="git-basics.html#what-is-this-git-thing-anyway"><i class="fa fa-check"></i><b>4.1</b> What is this <em>git</em> thing anyway?</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="git-basics.html"><a href="git-basics.html#git-core-concepts"><i class="fa fa-check"></i><b>4.1.1</b> Git Core Concepts</a></li>
+<li class="chapter" data-level="4.1.2" data-path="git-basics.html"><a href="git-basics.html#wait-but-what-is-github-then"><i class="fa fa-check"></i><b>4.1.2</b> Wait, but what is GitHub then?</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="git-basics.html"><a href="git-basics.html#installation-setup"><i class="fa fa-check"></i><b>4.2</b> Installation &amp; Setup</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="git-basics.html"><a href="git-basics.html#creating-a-repo"><i class="fa fa-check"></i><b>4.2.1</b> Creating a Repo</a></li>
+<li class="chapter" data-level="4.2.2" data-path="git-basics.html"><a href="git-basics.html#checking-status"><i class="fa fa-check"></i><b>4.2.2</b> Checking Status</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="git-basics.html"><a href="git-basics.html#making-changes"><i class="fa fa-check"></i><b>4.3</b> Making Changes</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="git-basics.html"><a href="git-basics.html#adding-files"><i class="fa fa-check"></i><b>4.3.1</b> Adding Files</a></li>
+<li class="chapter" data-level="4.3.2" data-path="git-basics.html"><a href="git-basics.html#committing"><i class="fa fa-check"></i><b>4.3.2</b> Committing</a></li>
+<li class="chapter" data-level="4.3.3" data-path="git-basics.html"><a href="git-basics.html#commit-history"><i class="fa fa-check"></i><b>4.3.3</b> Commit History</a></li>
+<li class="chapter" data-level="4.3.4" data-path="git-basics.html"><a href="git-basics.html#reviewing-the-process"><i class="fa fa-check"></i><b>4.3.4</b> Reviewing the Process</a></li>
+<li class="chapter" data-level="4.3.5" data-path="git-basics.html"><a href="git-basics.html#the-.gitignore-file"><i class="fa fa-check"></i><b>4.3.5</b> The <code>.gitignore</code> File</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="git-basics.html"><a href="git-basics.html#github-and-remotes"><i class="fa fa-check"></i><b>4.4</b> GitHub and Remotes</a><ul>
+<li class="chapter" data-level="4.4.1" data-path="git-basics.html"><a href="git-basics.html#forking-and-cloning"><i class="fa fa-check"></i><b>4.4.1</b> Forking and Cloning</a></li>
+<li class="chapter" data-level="4.4.2" data-path="git-basics.html"><a href="git-basics.html#pushing-and-pulling"><i class="fa fa-check"></i><b>4.4.2</b> Pushing and Pulling</a></li>
+<li class="chapter" data-level="4.4.3" data-path="git-basics.html"><a href="git-basics.html#reviewing-the-process-1"><i class="fa fa-check"></i><b>4.4.3</b> Reviewing The Process</a></li>
+<li class="chapter" data-level="4.4.4" data-path="git-basics.html"><a href="git-basics.html#course-assignments-on-github"><i class="fa fa-check"></i><b>4.4.4</b> Course Assignments on GitHub</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="git-basics.html"><a href="git-basics.html#command-summary"><i class="fa fa-check"></i><b>4.5</b> Command Summary</a></li>
+<li class="chapter" data-level="" data-path="git-basics.html"><a href="git-basics.html#resources-3"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="introduction-to-python.html"><a href="introduction-to-python.html"><i class="fa fa-check"></i><b>5</b> Introduction to Python</a><ul>
+<li class="chapter" data-level="5.1" data-path="introduction-to-python.html"><a href="introduction-to-python.html#programming-with-python"><i class="fa fa-check"></i><b>5.1</b> Programming with Python</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="introduction-to-python.html"><a href="introduction-to-python.html#versions"><i class="fa fa-check"></i><b>5.1.1</b> Versions</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="introduction-to-python.html"><a href="introduction-to-python.html#running-python-scripts"><i class="fa fa-check"></i><b>5.2</b> Running Python Scripts</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="introduction-to-python.html"><a href="introduction-to-python.html#on-the-command-line"><i class="fa fa-check"></i><b>5.2.1</b> On the Command Line</a></li>
+<li class="chapter" data-level="5.2.2" data-path="introduction-to-python.html"><a href="introduction-to-python.html#jupyter-notebooks"><i class="fa fa-check"></i><b>5.2.2</b> Jupyter Notebooks</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="introduction-to-python.html"><a href="introduction-to-python.html#comments"><i class="fa fa-check"></i><b>5.3</b> Comments</a></li>
+<li class="chapter" data-level="5.4" data-path="introduction-to-python.html"><a href="introduction-to-python.html#variables"><i class="fa fa-check"></i><b>5.4</b> Variables</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="introduction-to-python.html"><a href="introduction-to-python.html#data-types"><i class="fa fa-check"></i><b>5.4.1</b> Data Types</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="introduction-to-python.html"><a href="introduction-to-python.html#getting-help"><i class="fa fa-check"></i><b>5.5</b> Getting Help</a></li>
+<li class="chapter" data-level="" data-path="introduction-to-python.html"><a href="introduction-to-python.html#resources-4"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="functions.html"><a href="functions.html"><i class="fa fa-check"></i><b>6</b> Functions</a><ul>
+<li class="chapter" data-level="6.1" data-path="functions.html"><a href="functions.html#what-are-functions"><i class="fa fa-check"></i><b>6.1</b> What are Functions?</a></li>
+<li class="chapter" data-level="6.2" data-path="functions.html"><a href="functions.html#python-function-syntax"><i class="fa fa-check"></i><b>6.2</b> Python Function Syntax</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="functions.html"><a href="functions.html#object-methods"><i class="fa fa-check"></i><b>6.2.1</b> Object Methods</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="functions.html"><a href="functions.html#built-in-python-functions"><i class="fa fa-check"></i><b>6.3</b> Built-in Python Functions</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="functions.html"><a href="functions.html#modules-and-libraries"><i class="fa fa-check"></i><b>6.3.1</b> Modules and Libraries</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="functions.html"><a href="functions.html#writing-functions"><i class="fa fa-check"></i><b>6.4</b> Writing Functions</a><ul>
+<li class="chapter" data-level="6.4.1" data-path="functions.html"><a href="functions.html#doc-strings"><i class="fa fa-check"></i><b>6.4.1</b> Doc Strings</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="functions.html"><a href="functions.html#resources-5"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="logic.html"><a href="logic.html"><i class="fa fa-check"></i><b>7</b> Logic and Conditionals</a><ul>
+<li class="chapter" data-level="7.1" data-path="logic.html"><a href="logic.html#booleans"><i class="fa fa-check"></i><b>7.1</b> Booleans</a><ul>
+<li class="chapter" data-level="7.1.1" data-path="logic.html"><a href="logic.html#boolean-operators"><i class="fa fa-check"></i><b>7.1.1</b> Boolean Operators</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="logic.html"><a href="logic.html#conditional-statements"><i class="fa fa-check"></i><b>7.2</b> Conditional Statements</a><ul>
+<li class="chapter" data-level="7.2.1" data-path="logic.html"><a href="logic.html#designing-conditions"><i class="fa fa-check"></i><b>7.2.1</b> Designing Conditions</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="logic.html"><a href="logic.html#determining-module-or-script"><i class="fa fa-check"></i><b>7.3</b> Determining Module or Script</a></li>
+<li class="chapter" data-level="" data-path="logic.html"><a href="logic.html#resources-6"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html"><i class="fa fa-check"></i><b>8</b> Iteration and Loops</a><ul>
+<li class="chapter" data-level="8.1" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html#while-loops"><i class="fa fa-check"></i><b>8.1</b> While Loops</a><ul>
+<li class="chapter" data-level="8.1.1" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html#counting-and-loops"><i class="fa fa-check"></i><b>8.1.1</b> Counting and Loops</a></li>
+<li class="chapter" data-level="8.1.2" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html#nested-conditionals-and-sentinels"><i class="fa fa-check"></i><b>8.1.2</b> Nested Conditionals and Sentinels</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html#for-loops"><i class="fa fa-check"></i><b>8.2</b> For Loops</a><ul>
+<li class="chapter" data-level="8.2.1" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html#difference-from-while-loops"><i class="fa fa-check"></i><b>8.2.1</b> Difference from While Loops</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html#iterating-over-files"><i class="fa fa-check"></i><b>8.3</b> Iterating over Files</a><ul>
+<li class="chapter" data-level="8.3.1" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html#tryexcept"><i class="fa fa-check"></i><b>8.3.1</b> Try/Except</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html#resources-7"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="lists-and-sequences.html"><a href="lists-and-sequences.html"><i class="fa fa-check"></i><b>9</b> Lists and Sequences</a><ul>
+<li class="chapter" data-level="9.1" data-path="lists-and-sequences.html"><a href="lists-and-sequences.html#what-is-a-list"><i class="fa fa-check"></i><b>9.1</b> What is a List?</a></li>
+<li class="chapter" data-level="9.2" data-path="lists-and-sequences.html"><a href="lists-and-sequences.html#list-indices"><i class="fa fa-check"></i><b>9.2</b> List Indices</a></li>
+<li class="chapter" data-level="9.3" data-path="lists-and-sequences.html"><a href="lists-and-sequences.html#list-operations-and-methods"><i class="fa fa-check"></i><b>9.3</b> List Operations and Methods</a></li>
+<li class="chapter" data-level="9.4" data-path="lists-and-sequences.html"><a href="lists-and-sequences.html#lists-and-loops"><i class="fa fa-check"></i><b>9.4</b> Lists and Loops</a></li>
+<li class="chapter" data-level="9.5" data-path="lists-and-sequences.html"><a href="lists-and-sequences.html#nested-lists"><i class="fa fa-check"></i><b>9.5</b> Nested Lists</a></li>
+<li class="chapter" data-level="9.6" data-path="lists-and-sequences.html"><a href="lists-and-sequences.html#tuples"><i class="fa fa-check"></i><b>9.6</b> Tuples</a></li>
+<li class="chapter" data-level="" data-path="lists-and-sequences.html"><a href="lists-and-sequences.html#resources-8"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="dictionaries.html"><a href="dictionaries.html"><i class="fa fa-check"></i><b>10</b> Dictionaries</a><ul>
+<li class="chapter" data-level="10.1" data-path="dictionaries.html"><a href="dictionaries.html#what-is-a-dictionary"><i class="fa fa-check"></i><b>10.1</b> What is a Dictionary?</a></li>
+<li class="chapter" data-level="10.2" data-path="dictionaries.html"><a href="dictionaries.html#accessing-a-dictionary"><i class="fa fa-check"></i><b>10.2</b> Accessing a Dictionary</a></li>
+<li class="chapter" data-level="10.3" data-path="dictionaries.html"><a href="dictionaries.html#dictionary-methods"><i class="fa fa-check"></i><b>10.3</b> Dictionary Methods</a></li>
+<li class="chapter" data-level="10.4" data-path="dictionaries.html"><a href="dictionaries.html#dictionaries-and-loops"><i class="fa fa-check"></i><b>10.4</b> Dictionaries and Loops</a></li>
+<li class="chapter" data-level="10.5" data-path="dictionaries.html"><a href="dictionaries.html#nesting-dictionaries"><i class="fa fa-check"></i><b>10.5</b> Nesting Dictionaries</a></li>
+<li class="chapter" data-level="10.6" data-path="dictionaries.html"><a href="dictionaries.html#which-data-structure-do-i-use"><i class="fa fa-check"></i><b>10.6</b> Which Data Structure Do I Use?</a></li>
+<li class="chapter" data-level="" data-path="dictionaries.html"><a href="dictionaries.html#resources-9"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="searching.html"><a href="searching.html"><i class="fa fa-check"></i><b>11</b> Searching and Efficiency</a><ul>
+<li class="chapter" data-level="11.1" data-path="searching.html"><a href="searching.html#linear-search"><i class="fa fa-check"></i><b>11.1</b> Linear Search</a><ul>
+<li class="chapter" data-level="11.1.1" data-path="searching.html"><a href="searching.html#maximal-search"><i class="fa fa-check"></i><b>11.1.1</b> Maximal Search</a></li>
+<li class="chapter" data-level="11.1.2" data-path="searching.html"><a href="searching.html#falsification-search"><i class="fa fa-check"></i><b>11.1.2</b> Falsification Search</a></li>
+</ul></li>
+<li class="chapter" data-level="11.2" data-path="searching.html"><a href="searching.html#linear-search-speed"><i class="fa fa-check"></i><b>11.2</b> Linear Search Speed</a></li>
+<li class="chapter" data-level="11.3" data-path="searching.html"><a href="searching.html#binary-search"><i class="fa fa-check"></i><b>11.3</b> Binary Search</a><ul>
+<li class="chapter" data-level="11.3.1" data-path="searching.html"><a href="searching.html#binary-search-speed"><i class="fa fa-check"></i><b>11.3.1</b> Binary Search Speed</a></li>
+</ul></li>
+<li class="chapter" data-level="11.4" data-path="searching.html"><a href="searching.html#sorting"><i class="fa fa-check"></i><b>11.4</b> Sorting</a></li>
+<li class="chapter" data-level="" data-path="searching.html"><a href="searching.html#resources-10"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="functional-programming.html"><a href="functional-programming.html"><i class="fa fa-check"></i><b>12</b> Functional Programming</a><ul>
+<li class="chapter" data-level="12.1" data-path="functional-programming.html"><a href="functional-programming.html#functions-are-variables"><i class="fa fa-check"></i><b>12.1</b> Functions ARE Variables</a><ul>
+<li class="chapter" data-level="12.1.1" data-path="functional-programming.html"><a href="functional-programming.html#lambdas-anonymous-functions"><i class="fa fa-check"></i><b>12.1.1</b> lambdas: Anonymous Functions</a></li>
+</ul></li>
+<li class="chapter" data-level="12.2" data-path="functional-programming.html"><a href="functional-programming.html#functional-looping"><i class="fa fa-check"></i><b>12.2</b> Functional Looping</a><ul>
+<li class="chapter" data-level="12.2.1" data-path="functional-programming.html"><a href="functional-programming.html#map"><i class="fa fa-check"></i><b>12.2.1</b> Map</a></li>
+<li class="chapter" data-level="12.2.2" data-path="functional-programming.html"><a href="functional-programming.html#filter"><i class="fa fa-check"></i><b>12.2.2</b> Filter</a></li>
+<li class="chapter" data-level="12.2.3" data-path="functional-programming.html"><a href="functional-programming.html#reduce"><i class="fa fa-check"></i><b>12.2.3</b> Reduce</a></li>
+</ul></li>
+<li class="chapter" data-level="12.3" data-path="functional-programming.html"><a href="functional-programming.html#list-comprehensions"><i class="fa fa-check"></i><b>12.3</b> List Comprehensions</a></li>
+<li class="chapter" data-level="" data-path="functional-programming.html"><a href="functional-programming.html#resources-11"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="accessing-web-apis.html"><a href="accessing-web-apis.html"><i class="fa fa-check"></i><b>13</b> Accessing Web APIs</a><ul>
+<li class="chapter" data-level="13.1" data-path="accessing-web-apis.html"><a href="accessing-web-apis.html#web-apis"><i class="fa fa-check"></i><b>13.1</b> Web APIs</a></li>
+<li class="chapter" data-level="13.2" data-path="accessing-web-apis.html"><a href="accessing-web-apis.html#restful-requests"><i class="fa fa-check"></i><b>13.2</b> RESTful Requests</a><ul>
+<li class="chapter" data-level="13.2.1" data-path="accessing-web-apis.html"><a href="accessing-web-apis.html#uris"><i class="fa fa-check"></i><b>13.2.1</b> URIs</a></li>
+<li class="chapter" data-level="13.2.2" data-path="accessing-web-apis.html"><a href="accessing-web-apis.html#http-verbs"><i class="fa fa-check"></i><b>13.2.2</b> HTTP Verbs</a></li>
+</ul></li>
+<li class="chapter" data-level="13.3" data-path="accessing-web-apis.html"><a href="accessing-web-apis.html#accessing-web-apis-1"><i class="fa fa-check"></i><b>13.3</b> Accessing Web APIs</a></li>
+<li class="chapter" data-level="13.4" data-path="accessing-web-apis.html"><a href="accessing-web-apis.html#json-data"><i class="fa fa-check"></i><b>13.4</b> JSON Data</a></li>
+<li class="chapter" data-level="" data-path="accessing-web-apis.html"><a href="accessing-web-apis.html#resources-12"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="git-branches.html"><a href="git-branches.html"><i class="fa fa-check"></i><b>14</b> Git Branches</a><ul>
+<li class="chapter" data-level="14.1" data-path="git-branches.html"><a href="git-branches.html#git-branches"><i class="fa fa-check"></i><b>14.1</b> Git Branches</a></li>
+<li class="chapter" data-level="14.2" data-path="git-branches.html"><a href="git-branches.html#merging"><i class="fa fa-check"></i><b>14.2</b> Merging</a><ul>
+<li class="chapter" data-level="14.2.1" data-path="git-branches.html"><a href="git-branches.html#merge-conflicts"><i class="fa fa-check"></i><b>14.2.1</b> Merge Conflicts</a></li>
+</ul></li>
+<li class="chapter" data-level="14.3" data-path="git-branches.html"><a href="git-branches.html#undoing-changes"><i class="fa fa-check"></i><b>14.3</b> Undoing Changes</a></li>
+<li class="chapter" data-level="14.4" data-path="git-branches.html"><a href="git-branches.html#github-and-branches"><i class="fa fa-check"></i><b>14.4</b> GitHub and Branches</a><ul>
+<li class="chapter" data-level="14.4.1" data-path="git-branches.html"><a href="git-branches.html#github-pages"><i class="fa fa-check"></i><b>14.4.1</b> GitHub Pages</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="git-branches.html"><a href="git-branches.html#resources-13"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="git-collaboration.html"><a href="git-collaboration.html"><i class="fa fa-check"></i><b>15</b> Git Collaboration</a><ul>
+<li class="chapter" data-level="15.1" data-path="git-collaboration.html"><a href="git-collaboration.html#centralized-workflow"><i class="fa fa-check"></i><b>15.1</b> Centralized Workflow</a></li>
+<li class="chapter" data-level="15.2" data-path="git-collaboration.html"><a href="git-collaboration.html#feature-branch-workflow"><i class="fa fa-check"></i><b>15.2</b> Feature Branch Workflow</a></li>
+<li class="chapter" data-level="15.3" data-path="git-collaboration.html"><a href="git-collaboration.html#forking-workflow"><i class="fa fa-check"></i><b>15.3</b> Forking Workflow</a><ul>
+<li class="chapter" data-level="15.3.1" data-path="git-collaboration.html"><a href="git-collaboration.html#pull-requests"><i class="fa fa-check"></i><b>15.3.1</b> Pull Requests</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="git-collaboration.html"><a href="git-collaboration.html#resources-14"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="object-oriented-programming.html"><a href="object-oriented-programming.html"><i class="fa fa-check"></i><b>16</b> Object-Oriented Programming</a><ul>
+<li class="chapter" data-level="" data-path="object-oriented-programming.html"><a href="object-oriented-programming.html#resources-15"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="pandas.html"><a href="pandas.html"><i class="fa fa-check"></i><b>17</b> The <code>pandas</code> Library</a><ul>
+<li class="chapter" data-level="17.1" data-path="pandas.html"><a href="pandas.html#setting-up-pandas"><i class="fa fa-check"></i><b>17.1</b> Setting up <code>pandas</code></a></li>
+<li class="chapter" data-level="17.2" data-path="pandas.html"><a href="pandas.html#series"><i class="fa fa-check"></i><b>17.2</b> Series</a><ul>
+<li class="chapter" data-level="17.2.1" data-path="pandas.html"><a href="pandas.html#series-operations-and-methods"><i class="fa fa-check"></i><b>17.2.1</b> Series Operations and Methods</a></li>
+<li class="chapter" data-level="17.2.2" data-path="pandas.html"><a href="pandas.html#accessing-series"><i class="fa fa-check"></i><b>17.2.2</b> Accessing Series</a></li>
+</ul></li>
+<li class="chapter" data-level="17.3" data-path="pandas.html"><a href="pandas.html#dataframes"><i class="fa fa-check"></i><b>17.3</b> DataFrames</a><ul>
+<li class="chapter" data-level="17.3.1" data-path="pandas.html"><a href="pandas.html#dataframe-operations-and-methods"><i class="fa fa-check"></i><b>17.3.1</b> DataFrame Operations and Methods</a></li>
+<li class="chapter" data-level="17.3.2" data-path="pandas.html"><a href="pandas.html#accessing-dataframes"><i class="fa fa-check"></i><b>17.3.2</b> Accessing DataFrames</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="pandas.html"><a href="pandas.html#resources-16"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="18" data-path="javascript.html"><a href="javascript.html"><i class="fa fa-check"></i><b>18</b> JavaScript</a><ul>
+<li class="chapter" data-level="18.1" data-path="javascript.html"><a href="javascript.html#programming-with-javascript"><i class="fa fa-check"></i><b>18.1</b> Programming with JavaScript</a><ul>
+<li class="chapter" data-level="18.1.1" data-path="javascript.html"><a href="javascript.html#history-and-versions"><i class="fa fa-check"></i><b>18.1.1</b> History and Versions</a></li>
+<li class="chapter" data-level="18.1.2" data-path="javascript.html"><a href="javascript.html#running-javascript"><i class="fa fa-check"></i><b>18.1.2</b> Running JavaScript</a></li>
+</ul></li>
+<li class="chapter" data-level="18.2" data-path="javascript.html"><a href="javascript.html#javascript-basics"><i class="fa fa-check"></i><b>18.2</b> JavaScript Basics</a><ul>
+<li class="chapter" data-level="18.2.1" data-path="javascript.html"><a href="javascript.html#strict-mode"><i class="fa fa-check"></i><b>18.2.1</b> Strict Mode</a></li>
+</ul></li>
+<li class="chapter" data-level="18.3" data-path="javascript.html"><a href="javascript.html#variables-1"><i class="fa fa-check"></i><b>18.3</b> Variables</a><ul>
+<li class="chapter" data-level="18.3.1" data-path="javascript.html"><a href="javascript.html#basic-data-types"><i class="fa fa-check"></i><b>18.3.1</b> Basic Data Types</a></li>
+<li class="chapter" data-level="18.3.2" data-path="javascript.html"><a href="javascript.html#type-coercion"><i class="fa fa-check"></i><b>18.3.2</b> Type Coercion</a></li>
+<li class="chapter" data-level="18.3.3" data-path="javascript.html"><a href="javascript.html#arrays"><i class="fa fa-check"></i><b>18.3.3</b> Arrays</a></li>
+<li class="chapter" data-level="18.3.4" data-path="javascript.html"><a href="javascript.html#objects"><i class="fa fa-check"></i><b>18.3.4</b> Objects</a></li>
+</ul></li>
+<li class="chapter" data-level="18.4" data-path="javascript.html"><a href="javascript.html#control-structures"><i class="fa fa-check"></i><b>18.4</b> Control Structures</a><ul>
+<li class="chapter" data-level="18.4.1" data-path="javascript.html"><a href="javascript.html#conditionals"><i class="fa fa-check"></i><b>18.4.1</b> Conditionals</a></li>
+<li class="chapter" data-level="18.4.2" data-path="javascript.html"><a href="javascript.html#loops"><i class="fa fa-check"></i><b>18.4.2</b> Loops</a></li>
+</ul></li>
+<li class="chapter" data-level="18.5" data-path="javascript.html"><a href="javascript.html#functions-1"><i class="fa fa-check"></i><b>18.5</b> Functions</a><ul>
+<li class="chapter" data-level="18.5.1" data-path="javascript.html"><a href="javascript.html#functional-programming-1"><i class="fa fa-check"></i><b>18.5.1</b> Functional Programming</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="javascript.html"><a href="javascript.html#resources-17"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="19" data-path="web-programming.html"><a href="web-programming.html"><i class="fa fa-check"></i><b>19</b> Web Programming</a><ul>
+<li class="chapter" data-level="19.1" data-path="web-programming.html"><a href="web-programming.html#web-pages-and-html"><i class="fa fa-check"></i><b>19.1</b> Web Pages and HTML</a><ul>
+<li class="chapter" data-level="19.1.1" data-path="web-programming.html"><a href="web-programming.html#elements-are-nested"><i class="fa fa-check"></i><b>19.1.1</b> Elements are Nested</a></li>
+<li class="chapter" data-level="19.1.2" data-path="web-programming.html"><a href="web-programming.html#scalable-vector-graphics-svg"><i class="fa fa-check"></i><b>19.1.2</b> Scalable Vector Graphics (SVG)</a></li>
+</ul></li>
+<li class="chapter" data-level="19.2" data-path="web-programming.html"><a href="web-programming.html#dom-manipulation-with-d3"><i class="fa fa-check"></i><b>19.2</b> DOM Manipulation with D3</a><ul>
+<li class="chapter" data-level="19.2.1" data-path="web-programming.html"><a href="web-programming.html#selecting-elements"><i class="fa fa-check"></i><b>19.2.1</b> Selecting Elements</a></li>
+<li class="chapter" data-level="19.2.2" data-path="web-programming.html"><a href="web-programming.html#changing-elements"><i class="fa fa-check"></i><b>19.2.2</b> Changing Elements</a></li>
+<li class="chapter" data-level="19.2.3" data-path="web-programming.html"><a href="web-programming.html#adding-elements"><i class="fa fa-check"></i><b>19.2.3</b> Adding Elements</a></li>
+</ul></li>
+<li class="chapter" data-level="19.3" data-path="web-programming.html"><a href="web-programming.html#user-events"><i class="fa fa-check"></i><b>19.3</b> User Events</a></li>
+<li class="chapter" data-level="19.4" data-path="web-programming.html"><a href="web-programming.html#ajax"><i class="fa fa-check"></i><b>19.4</b> AJAX</a></li>
+<li class="chapter" data-level="" data-path="web-programming.html"><a href="web-programming.html#resources-18"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="20" data-path="d3.html"><a href="d3.html"><i class="fa fa-check"></i><b>20</b> D3 Visualizations</a><ul>
+<li class="chapter" data-level="20.1" data-path="d3.html"><a href="d3.html#the-data-join"><i class="fa fa-check"></i><b>20.1</b> The Data Join</a><ul>
+<li class="chapter" data-level="20.1.1" data-path="d3.html"><a href="d3.html#entering-and-exiting-elements"><i class="fa fa-check"></i><b>20.1.1</b> Entering and Exiting Elements</a></li>
+</ul></li>
+<li class="chapter" data-level="20.2" data-path="d3.html"><a href="d3.html#animation"><i class="fa fa-check"></i><b>20.2</b> Animation</a></li>
+<li class="chapter" data-level="20.3" data-path="d3.html"><a href="d3.html#margins-and-positioning"><i class="fa fa-check"></i><b>20.3</b> Margins and Positioning</a></li>
+<li class="chapter" data-level="20.4" data-path="d3.html"><a href="d3.html#scales"><i class="fa fa-check"></i><b>20.4</b> Scales</a><ul>
+<li class="chapter" data-level="20.4.1" data-path="d3.html"><a href="d3.html#axes"><i class="fa fa-check"></i><b>20.4.1</b> Axes</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="d3.html"><a href="d3.html#resources-19"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Introduction to Programming</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="searching" class="section level1">
+<h1><span class="header-section-number">Chapter 11</span> Searching and Efficiency</h1>
+<p>One of the most common and important uses of computer programs is to <strong>search</strong> a large set of data for a specific record or observation—indeed, a significant portion of what computers <em>do</em> is search through data. This chapter covers a number of common <em>patterns</em> and <em>algorithms</em> used when searching through lists of data in order to answer questions about that data. Note that this chapter introduces no new syntax, but instead provides a deeper look at using <em>loops</em> and <em>lists</em>. The first section illustrates common interactions with lists, while the remaining consider at a high level the efficiency of algorithms.</p>
+<div id="linear-search" class="section level2">
+<h2><span class="header-section-number">11.1</span> Linear Search</h2>
+<p>Fundamentally, search algorithms are used to “find” a particular item in list: given a very large list of elements, the goal of the search is to determine <em>whether</em> the list contains the “target” item, and if so <em>where</em> in the list that element is. Thus basic search algorithms are used to answer the questions <strong><em>is an item in a list?</em></strong> or <em><strong>which element in the list is the item?</strong></em>.</p>
+<div class="alert alert-info">
+<p>Python does contain built-in operators and list methods (e.g., <code>in</code>, <code>index()</code>, <code>max()</code> etc.) that can answer simple versions of these questions. However, more complex programs may require you to create your own “custom” searches following the patterns described here.</p>
+</div>
+<p>The most basic algorithm you can use to answer these questions is called a <strong>linear search</strong>. Intuitively, this search takes all of the elements in a list, and then goes down the “line” of elements one after another, <em>checking</em> if each element in turn is the target item. (Think: “Are you who I’m looking for?” “No” “Are you who I’m looking for?” “No”, “Are you who I’m looking for?” “Yes!”). If you get through the entire line of items <em>without</em> finding the target (without anyone answering “yes”), then you know that the target is not in the list (because you checked everyone)!</p>
+<p>This kind of search involves just a simple <code>for</code> loop (to consider every element) and <code>if</code> statement (to check if the item is the target):</p>
+<pre class="language-python"><code><span class="token keyword">def</span> <span class="token function">linear_in</span><span class="token punctuation">(</span>a_list<span class="token punctuation">,</span> target<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""Searches the given list for the given target value.
+       Returns whether or not the target is in the list"""</span>
+
+    <span class="token keyword">for</span> element <span class="token keyword">in</span> a_list<span class="token punctuation">:</span>     <span class="token comment"># go through each element</span>
+        <span class="token keyword">if</span> element <span class="token operator">==</span> target<span class="token punctuation">:</span>  <span class="token comment"># check that element</span>
+            <span class="token keyword">return</span> <span class="token boolean">True</span>        <span class="token comment"># if found, report so!</span>
+
+    <span class="token keyword">return</span> <span class="token boolean">False</span>  <span class="token comment"># looked at everyone but didn't find, report back</span>
+
+<span class="token comment"># Example:</span>
+numbers <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">17</span><span class="token punctuation">,</span> <span class="token number">18</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">,</span> <span class="token number">16</span><span class="token punctuation">,</span> <span class="token number">13</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span>  <span class="token comment"># the list to search</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span> linear_in<span class="token punctuation">(</span>numbers<span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">)</span> <span class="token punctuation">)</span>  <span class="token comment"># True, 11 in list</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span> linear_in<span class="token punctuation">(</span>numbers<span class="token punctuation">,</span> <span class="token number">12</span><span class="token punctuation">)</span> <span class="token punctuation">)</span>  <span class="token comment"># False, 12 not in list</span></code></pre>
+<p>Pay careful attention to the position of the <code>return</code> statements! First, you return <code>True</code> if (when) the target is found—this “exits” the function so you do not keep searching once you’ve found your target. The second <code>return</code> statement occurs <em>after the loop has entirely finished</em>. You need to check <em>every</em> item in the list before you can conclusively say that the item isn’t there (otherwise you may have just missed it).</p>
+<p>A common error is include an <code>else</code> clause that returns or stores that the item was not found. However, returning <code>False</code> makes the statement “<strong>none</strong> of the elements in the list is the target” which is dependent on the entire list: looking at a single item won’t let you make that claim! Contrast this with returning <code>True</code>, which makes the statement “<strong>one</strong> of the elements in the list is the target”, which can be proved by considering just one item (e.g., the <em>one</em>).</p>
+<p>While a useful organizing tool, a linear search does not need to be implemented as its own function if you instead use a variable to track whether the item is found or not:</p>
+<pre class="language-python"><code>found <span class="token operator">=</span> <span class="token boolean">False</span>  <span class="token comment"># has not been found when we start looking</span>
+<span class="token keyword">for</span> element <span class="token keyword">in</span> a_list<span class="token punctuation">:</span>   <span class="token comment"># go through each element</span>
+  <span class="token keyword">if</span> element <span class="token operator">==</span> target<span class="token punctuation">:</span>  <span class="token comment"># check that element</span>
+      found <span class="token operator">=</span> <span class="token boolean">True</span>       <span class="token comment"># mark as found!</span></code></pre>
+<p>To determine <strong>which</strong> element in the list is the target, you use the same structure but consider the <em>index</em> of each element, returning that index when the item is found. By convention, if the target is <em>not</em> in the list, you return <code>-1</code> (which will be an out-of-bounds index for any list):</p>
+<pre class="language-python"><code><span class="token keyword">def</span> <span class="token function">linear_search</span><span class="token punctuation">(</span>a_list<span class="token punctuation">,</span> target<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""Searches the given list for the given target value.
+       Returns the index of the target, or -1 if target not in the list"""</span>
+
+    <span class="token keyword">for</span> index <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>a_list<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>  <span class="token comment"># go through each element</span>
+        <span class="token keyword">if</span> a_list<span class="token punctuation">[</span>index<span class="token punctuation">]</span> <span class="token operator">==</span> target<span class="token punctuation">:</span>  <span class="token comment"># check that element</span>
+            <span class="token keyword">return</span> index  <span class="token comment"># if found, report the index</span>
+
+    <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span>  <span class="token comment"># looked at everyone but didn't find, report back</span>
+
+<span class="token comment"># Example:</span>
+numbers <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">17</span><span class="token punctuation">,</span> <span class="token number">18</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">,</span> <span class="token number">16</span><span class="token punctuation">,</span> <span class="token number">13</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span> <span class="token comment"># the list to search</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span> linear_search<span class="token punctuation">(</span>numbers<span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">)</span> <span class="token punctuation">)</span>  <span class="token comment"># 4</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span> linear_search<span class="token punctuation">(</span>numbers<span class="token punctuation">,</span> <span class="token number">12</span><span class="token punctuation">)</span> <span class="token punctuation">)</span>  <span class="token comment"># -1</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span> linear_search<span class="token punctuation">(</span>numbers<span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">)</span> <span class="token operator">>=</span> <span class="token number">0</span> <span class="token punctuation">)</span>  <span class="token comment"># True, 11 in list</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span> linear_search<span class="token punctuation">(</span>numbers<span class="token punctuation">,</span> <span class="token number">12</span><span class="token punctuation">)</span> <span class="token operator">>=</span> <span class="token number">0</span> <span class="token punctuation">)</span>  <span class="token comment"># False, 12 not in list</span></code></pre>
+<div id="maximal-search" class="section level3">
+<h3><span class="header-section-number">11.1.1</span> Maximal Search</h3>
+<p>Another common item to search for is the “biggest” (or “smallest”) element in the list. This may be the biggest number, the longest word, the slowest turtle, the highest-scoring sports game… any element that has a “greater” ordinal value (e.g., it comes “first” in some ordered listing, whether that ordering is <em>ascending</em> or <em>descending</em>). Whenever you are searching for the “-est” item in a list, you can use the same variant on a linear search.</p>
+<p>I refer to this variant as a “king-of-the-hill” search, named after the <a href="https://en.wikipedia.org/wiki/King_of_the_Hill_(game)">children’s game</a>. In this algorithm, start be declaring an initial element (often the first in the list) as the “king”—the “greatest” value in the list. The algorithm then goes down the “line” of elements, having each one in turn “challenge” the king. If the challenging value is greater, then that value becomes the new king, and the process continues. Whichever item is the king in the end must be the “greatest” item that was being searched for.</p>
+<p>This algorithm is implemented with a similar structure to the basic linear search, except instead of comparing to the target, you compare to the current “king”:</p>
+<pre class="language-python"><code><span class="token keyword">def</span> <span class="token function">maximum</span><span class="token punctuation">(</span>a_list<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""Returns the element with the maximum value in the list."""</span>
+
+    maximum <span class="token operator">=</span> a_list<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>  <span class="token comment"># first person starts as the "king"</span>
+    <span class="token keyword">for</span> element <span class="token keyword">in</span> a_list<span class="token punctuation">:</span>  <span class="token comment"># go through each element</span>
+        <span class="token keyword">if</span> element <span class="token operator">></span> maximum<span class="token punctuation">:</span>  <span class="token comment"># challenge the king</span>
+            maximum <span class="token operator">=</span> element  <span class="token comment"># if won, become the new king</span>
+
+    <span class="token keyword">return</span> maximum  <span class="token comment"># in the end, return who is left standing</span>
+
+<span class="token comment"># Example:</span>
+numbers <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">17</span><span class="token punctuation">,</span> <span class="token number">18</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">,</span> <span class="token number">16</span><span class="token punctuation">,</span> <span class="token number">13</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span> <span class="token comment"># the list to search</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span> maximum<span class="token punctuation">(</span>numbers<span class="token punctuation">)</span> <span class="token punctuation">)</span>  <span class="token comment"># 18</span></code></pre>
+<div class="alert alert-warning">
+<p>The most common error with this algorithm is not comparing to the <em>previous maximum</em>, instead trying to compare to e.g, the previous element in the list.</p>
+</div>
+<div class="alert alert-info">
+<p>Note that it is also possible to do this same search by using the built-in <code>max()</code> function and specifying an <em>ordering function</em> as an argument, which converts any element into a value with the proper ordering. Using functions as arguments is discussed in the next chapter.</p>
+</div>
+<p>To reiterate, this function can be used to find any extreme value simply by changing the “challenge” comparison. For example use <code>&lt;</code> instead of <code>&gt;</code> to find the “minimum” item, or use a more complex boolean expression to compare dictionary “rows” in a data table.</p>
+</div>
+<div id="falsification-search" class="section level3">
+<h3><span class="header-section-number">11.1.2</span> Falsification Search</h3>
+<p>Many searches are interested in determining if <em>all</em> elements in a list meet a certain criteria. For example, determining if all the numbers are greater than 10, if all of the words are less than 3 syllables, if all of the turtles are running at speed, or if the home team won all of their games.</p>
+<p>But loops are only able to consider one element at a time, not “all” the elements at once. So in order to answer these questions, you need to <strong>invert</strong> the question: saying “<em>all</em> numbers are <em>greater</em> than 10” is logically equivalent to saying “<em>no</em> number is <em>less</em> than (or equal to) 10”.</p>
+<p class="alert alert-info">
+(Somewhat counter-intuitively, the logical negation of an <em>“all are”</em> predicate is not <em>“none are”</em> but <em>“<strong>one</strong> is not”</em>). That is, the opposite of “all days are sunny” is not “no days are sunny” but “(at least) one day was not sunny”.
+</p>
+<p>By inverting the question into a search for a <strong>counter-example</strong>, you can utilize the previous linear search pattern:</p>
+<pre class="language-python"><code><span class="token keyword">def</span> <span class="token function">all_larger</span><span class="token punctuation">(</span>a_list<span class="token punctuation">,</span> minimum<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""Returns whether all of the elements in the list are larger than the
+       given minimum value."""</span>
+
+    all_large <span class="token operator">=</span> <span class="token boolean">True</span>  <span class="token comment"># every number we've looked at is large</span>
+    <span class="token keyword">for</span> element <span class="token keyword">in</span> a_list<span class="token punctuation">:</span>
+       <span class="token keyword">if</span> <span class="token operator">not</span> <span class="token punctuation">(</span>element <span class="token operator">></span> minimum<span class="token punctuation">)</span><span class="token punctuation">:</span>  <span class="token comment"># written as counter-example</span>
+                                    <span class="token comment"># equivalent to `element &lt;= minimum`</span>
+           all_large <span class="token operator">=</span> <span class="token boolean">False</span>  <span class="token comment"># counterexample found! Statement no longer valid</span>
+           <span class="token keyword">break</span>  <span class="token comment"># "exits" from the loop, since don't need to search more</span>
+
+    <span class="token keyword">return</span> all_large  <span class="token comment"># report back</span>
+
+<span class="token comment"># Example:</span>
+numbers <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">17</span><span class="token punctuation">,</span> <span class="token number">18</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">,</span> <span class="token number">16</span><span class="token punctuation">,</span> <span class="token number">13</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span> <span class="token comment"># the list to search</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span> all_larger<span class="token punctuation">(</span>numbers<span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span> <span class="token punctuation">)</span>  <span class="token comment"># False, some numbers are smaller than 10</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span> all_larger<span class="token punctuation">(</span>numbers<span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token punctuation">)</span>  <span class="token comment"># True, all numbers are greater than 2</span></code></pre>
+<p class="alert alert-success">
+Careful variable naming (e.g., <code>all_large</code>) for keeping track of boolean claims is vital to being able to read and write these algorithms!
+</p>
+<p>Overall, a linear search is a simple and versatile algorithm, but can be tricky to apply depending on the question being asked.</p>
+</div>
+</div>
+<div id="linear-search-speed" class="section level2">
+<h2><span class="header-section-number">11.2</span> Linear Search Speed</h2>
+<p>Searching is something that you do a lot (and on bigger and bigger data sets!), so it’s worth considering: how fast is this process? How <em>efficient</em> is the algorithm? Is there possibly a more efficient way of searching?</p>
+<p class="alert alert-danger">
+<strong>Warning: <em>AVOID PRE-MATURE OPTIMIZATION</em>!!</strong> While this section and chapter discuss the “speed” of computer programs, you should avoid spending too much (or any!) time trying to make your program “as fast as possible”. The first step in any computer program is to make it function at all. Once you have it working, <em>then</em> you can worry about increasing the efficiency—and only if it is currently too slow for your purposes. Pre-mature optimization (trying to make it work fast before you make it work at all) is a major source of bugs and other problems.
+</p>
+<p>One way of measuring the speed of an algorithm would be to <em>time it</em>, such as by using a stopwatch. Python includes <a href="https://docs.python.org/3/library/time.html">modules</a> that can be used to record the time, allowing you to get the “start” and “stop” time of the algorithm, and then calculate the elapsed duration. However, this <strong>wall-clock efficiency</strong> is highly dependent on the exact list being searched and on the computer that is executing the algorithm—if you’re also streaming videos while searching, the algorithm may run slower!</p>
+<p>Instead, computer scientists measure the efficiency of a program by counting the number of <em>operations</em> that the algorithm does. This number will be independent of the data and machine, and so makes it easier to compare approaches. Specifically, to measure the efficiency of a search, you would consider the number of <strong>comparisons</strong> that need to be made between elements (e.g., how many elements you check before you find what you’re looking for), under the assumption that this is the most time-consuming part of the computer’s search algorithm.</p>
+<p>Linear search involves looking at each item in the list one at a time, so the number of “checks” that need to be made is <em>dependent on the size of the list</em>. And because the item you’re looking for may be either be at the beginning of the list (meaning you don’t search for very long) or at the end, you can consider both the “average” case (when it’s in the middle), as well as the “worst” case (when it’s at the end or not in the list at all!):</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">len(list)</th>
+<th align="left"># comparisons (avg)</th>
+<th align="left"># comparisons (worst)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">10</td>
+<td align="left">5</td>
+<td align="left">10</td>
+</tr>
+<tr class="even">
+<td align="left">20</td>
+<td align="left">10</td>
+<td align="left">20</td>
+</tr>
+<tr class="odd">
+<td align="left">50</td>
+<td align="left">25</td>
+<td align="left">50</td>
+</tr>
+<tr class="even">
+<td align="left">100</td>
+<td align="left">50</td>
+<td align="left">100</td>
+</tr>
+<tr class="odd">
+<td align="left">1000</td>
+<td align="left">500</td>
+<td align="left">1000</td>
+</tr>
+<tr class="even">
+<td align="left"><strong><code>N</code></strong></td>
+<td align="left"><strong><code>N/2</code></strong></td>
+<td align="left"><strong><code>N</code></strong></td>
+</tr>
+</tbody>
+</table>
+<p>These numbers should be somewhat intuitive: because you’re looking at each element in a line, in the average case you need to look at half of the elements, and in the worst case you need to look at all of them! As such, the number of comparisons you need to make (and thus the efficiency of the algorithm) is a <strong>linear function</strong> of the size of the list:</p>
+<div class="figure">
+<img src="img/searching/linear-time.png" alt="Linear time complexity. Image by Nick Salloum." />
+<p class="caption">Linear time complexity. Image by Nick Salloum.</p>
+</div>
+<p>This is in fact why it is called a <strong><em>linear</em></strong> search!</p>
+<p>In general, we measure algorithm efficiency (or more properly, <strong>algorithmic complexity</strong>) in terms of the <em>rate of change</em> in the speed: that is, if you double the size of the input list, by what ratio does the work you need to do increase? With a linear search, doubling the size of the list will double the amount of work to do.</p>
+<p>Note that looking up an element by its index or key is a <strong>constant function</strong>—it takes the same amount of time no matter how big the list or dictionary is. This is part of why dictionaries are so useful as look-up tables: you don’t need to spend time searching for the value if it you have its key!</p>
+</div>
+<div id="binary-search" class="section level2">
+<h2><span class="header-section-number">11.3</span> Binary Search</h2>
+<p>There are alternate, faster algorithms for searching through lists that can be useful as the data set gets large.</p>
+<p>As an example, consider how you might search for a name in a phone book (or a word in an encyclopedia): rather than starting from “A” and going one by one though the book, you flip it open to the middle. If the name you’re after comes later in the alphabet than the page you opened to, then you take the “back half” of the book and flip to the middle of that (otherwise, you flip to the middle of the “front half”). You repeat this process, narrowing the number of pages you need to consider more and more until you’ve found the name you are looking for!</p>
+<p>What makes this work is the fact that names in the phone book are <strong>ordered</strong>: after doing a comparison (checking the name against the page), you know whether to go forward or backwards to find the target.</p>
+<p>This algorithm is known as a <strong>binary search</strong>, and it lets you search an <em>ordered</em> list by comparing to the middle, and reducing the list to only the top or bottom half, and repeating:</p>
+<pre class="language-python"><code><span class="token keyword">def</span> <span class="token function">binary_search</span><span class="token punctuation">(</span>a_list<span class="token punctuation">,</span> target<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""Searches the given SORTED list for the given target value.
+       Returns the index of the target, or -1 if target not in the list"""</span>
+
+    start_index <span class="token operator">=</span> <span class="token number">0</span> <span class="token comment"># initial goalposts</span>
+    end_index <span class="token operator">=</span> <span class="token builtin">len</span><span class="token punctuation">(</span>a_list<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span>
+
+    <span class="token keyword">while</span> start_index <span class="token operator">&lt;=</span> end_index<span class="token punctuation">:</span>  <span class="token comment"># at least one thing to look at</span>
+        middle_index <span class="token operator">=</span> <span class="token punctuation">(</span>start_index <span class="token operator">+</span> end_index<span class="token punctuation">)</span> <span class="token operator">//</span> <span class="token number">2</span>  <span class="token comment"># middle (integer) index</span>
+
+        <span class="token keyword">if</span><span class="token punctuation">(</span>a_list<span class="token punctuation">[</span>middle_index<span class="token punctuation">]</span> <span class="token operator">==</span> target<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> middle_index  <span class="token comment"># found the item!</span>
+        <span class="token keyword">elif</span> target <span class="token operator">></span> a_list<span class="token punctuation">[</span>middle_index<span class="token punctuation">]</span><span class="token punctuation">:</span>
+            start_index <span class="token operator">=</span> middle_index<span class="token operator">+</span><span class="token number">1</span>  <span class="token comment"># move goalpost</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            end_index <span class="token operator">=</span> middle_index<span class="token number">-1</span>  <span class="token comment"># move goalpost</span>
+
+    <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span>  <span class="token comment"># did not find the item</span></code></pre>
+<p>This algorithm starts by considering the entire list (with the “goalposts” at either end. It then looks at the middle element. If that isn’t the target, then it moves the appropriate goalpost to that middle spot, thereby throwing away the half of the list and narrowing the search field. This continues until the target is found or the goalposts have moved “past” one another, at which point the search ends. See <a href="http://www.cs.armstrong.edu/liang/animation/web/BinarySearch.html">this animation</a> for an example of how it works.</p>
+<p>(Note that this is an example of <em>indefinite iteration</em>: you don’t know how many times you’ll need to cut the list in half before searching, so you use a <code>while</code> loop!)</p>
+<div id="binary-search-speed" class="section level3">
+<h3><span class="header-section-number">11.3.1</span> Binary Search Speed</h3>
+<p>Using a timer will demonstrate that <em>binary search</em> is much faster than <em>linear search</em> (as the list gets large), but how much faster?</p>
+<p>The intuition behind the speed of a binary search is as follows: Each time through the loop (each “comparison”) effectively lets you reduce the size of the list by <em>half</em>. So if there are <strong><code>N</code></strong> items in the list, the first time through the loop reduces the list to <strong><code>N*(1/2)</code></strong> items, the second time through reduces is to <strong><code>N*(1/2)*(1/2)</code></strong>, etc. In the worst case, you will need to cut the list in half until you have reduced the list to exactly one item, or:</p>
+<p>  <img src="img/searching/binary-search-eq1.png" title="Binary complexity equation" /></p>
+<p>We can solve this equation for the number of <code>loops</code>:</p>
+<p>  <img src="img/searching/binary-search-eq2.png" title="Binary complexity equation" /></p>
+<p>Thus binary search’s speed is a <strong>logarithmic function</strong> of the size of the list: that is, if you double the size of the list, the number of comparisons you need to do (the number of times through the loop) <em>increases by just 1</em>.</p>
+<div class="figure">
+<img src="img/searching/logarithmic-time.png" alt="Logarithmic time complexity. Image by Nick Salloum." />
+<p class="caption">Logarithmic time complexity. Image by Nick Salloum.</p>
+</div>
+<p>This is <em>drastically</em> faster than a linear search…. however, it requires a list be sorted for it to work!</p>
+</div>
+</div>
+<div id="sorting" class="section level2">
+<h2><span class="header-section-number">11.4</span> Sorting</h2>
+<p>There are <a href="https://en.wikipedia.org/wiki/Sorting_algorithm">many, <em>many</em></a> different algorithms for sorting numbers, many of which have amusing names given to them by computer scientists (Python’s built-in <code>sorted()</code> method uses one called <a href="https://en.wikipedia.org/wiki/Timsort">Timsort</a>, named after the man who invented it). This chapter will discuss just one straightforward example for illustration purposes.</p>
+<p>One such algorithm (<strong>Selection Sort</strong>) utilizes the “king-of-the-hill” search described above. This algorithm works as follows: search for (“select”) the smallest item in the list. Because it is the smallest, it must be the first item in the sorted list, and can be placed there. Next, select the second-smallest item in the list (the smallest of the “unsorted” items), and place that second in the “sorted” list. Continue with this process until the entire list is sorted!</p>
+<pre class="language-python"><code><span class="token keyword">def</span> <span class="token function">selection_sort</span><span class="token punctuation">(</span>a_list<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""Sorts the list (in place)"""</span>
+
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>a_list<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>  <span class="token comment"># go through each spot in the list</span>
+        <span class="token comment"># Do a "king-of-the-hill" search of the remaining items</span>
+        selected_index <span class="token operator">=</span> i
+        <span class="token keyword">for</span> j <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span> <span class="token builtin">len</span><span class="token punctuation">(</span>a_list<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>a_list<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">&lt;</span> a_list<span class="token punctuation">[</span>selected_index<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                selected_index <span class="token operator">=</span> j
+
+        <span class="token comment"># swap smallest into place (multi-assignment!)</span>
+        a_list<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> a_list<span class="token punctuation">[</span>selected_index<span class="token punctuation">]</span> <span class="token operator">=</span> a_list<span class="token punctuation">[</span>selected_index<span class="token punctuation">]</span><span class="token punctuation">,</span> a_list<span class="token punctuation">[</span>i<span class="token punctuation">]</span></code></pre>
+<p>To determine the speed of the <em>selection sort</em> algorithm, notice that the first time through the loop requires considering <strong><code>N</code></strong> different items (the whole loop). The second time requires checking <strong><code>N-1</code></strong> items, the third time <strong><code>N-2</code></strong> items, and so forth until the last time through the loop you only need to compare <code>2</code> then <code>1</code> items. These checks can then be summed into a series:</p>
+<p>  <img src="img/searching/selection_sort_eq.png" title="Selection sort complexity equation" /></p>
+<p>Selection sort’s speed is a <strong>quadratic function</strong> of the size of the list: that is, if you double the size of the list, the number of comparisons you need to do <em>quadruples!</em>.</p>
+<p class="alert alert-info">
+Faster sorting algorithms (like Python’s Timsort) get this speed down to “fast” <code>N*log2(N)</code> (“loglinear”), which is much better than <em>quadratic</em> algorithms but still notably slower than <em>linear</em> algorithms.
+</p>
+<p>For large lists, sorting a list is slower than just using a linear search on it… but once that list is sorted, you can use the ultra-fast binary search! This is a <strong>tradeoff</strong> that needs to be considered when trying to improve the efficiency of programs that work on large data sets: sometimes you need to spend some extra time up front to prepare (sort) the data, in order to be able to utilize (search) it more effectively.</p>
+</div>
+<div id="resources-10" class="section level2 unnumbered">
+<h2>Resources</h2>
+<div class="list-condensed">
+<ul>
+<li><a href="http://openbookproject.net/thinkcs/python/english3e/list_algorithms.html">List Algorithms (Downey)</a>, Sections 14.1 - 14.7</li>
+<li><a href="http://interactivepython.org/runestone/static/pythonds/AlgorithmAnalysis/WhatIsAlgorithmAnalysis.html">What is Algorithm Analysis?</a> and <a href="http://interactivepython.org/runestone/static/pythonds/AlgorithmAnalysis/WhatIsAlgorithmAnalysis.html">Big-O Notation</a></li>
+</ul>
+</div>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="dictionaries.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="functional-programming.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": false,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["github", "facebook", "twitter", "google"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/infx511/book/edit/master/searching.Rmd",
+"text": "Edit"
+},
+"download": ["intro-to-programming-for-data-science-visualization.pdf", "intro-to-programming-for-data-science-visualization.epub"],
+"toc": {
+"collapse": "section",
+"scroll_highlight": true
+}
+});
+});
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,17 @@
+# Object-Oriented Programming
+
+So far, this book has discussed using a **procedural programming** style to write computer programs. Procedural programming focuses on defining functions (_procedures_) as sequences of instructions to execute. While you've used _control structures_ (e.g., conditionals and loops) to redirect the program flow, and _data structures_ (e.g., lists and dictionaries) to organize data, you have designed programs primarily based on which lines of code execute in what order.
+
+**Object-oriented programming** is a programming paradigm (style) in which you don't design programs around the sequence of statements executed, but around the specification of **objects** which are combinations of _data_ (variables) and _behaviors_ (functions). Objects are used to represent elements in the program's real-world problem domain, and provide a useful _abstraction_ when designing programs: instead of needing to think about code statements executing in order, you can think about telling "things" to perform "actions".
+
+This chapter will discuss the fundamentals of object-oriented programming and how to specify **classes** (custom data types) that are used to define and create **objects**.
+
+<p class="alert alert-default">This chapter is under development. More details coming soon...</p>
+
+
+## Resources {-}
+<div class="list-condensed">
+- [Classes and Objects - The Basics (Downey)](http://openbookproject.net/thinkcs/python/english3e/classes_and_objects_I.html)
+- [Classes and Objects - Digging a little deeper (Downey)](http://openbookproject.net/thinkcs/python/english3e/classes_and_objects_II.html)
+- [Even more OOP (Downey)](http://openbookproject.net/thinkcs/python/english3e/even_more_oop.html)
+</div>

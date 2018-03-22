@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html  lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Introduction to Programming</title>
+  <meta name="description" content="The course reader for INFX 511: Introduction to Programming for Data Science and Visualization.">
+  <meta name="generator" content="bookdown 0.5 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Introduction to Programming" />
+  <meta property="og:type" content="book" />
+  <meta property="og:url" content="https://infx511.github.io/" />
+  
+  <meta property="og:description" content="The course reader for INFX 511: Introduction to Programming for Data Science and Visualization." />
+  <meta name="github-repo" content="infx511/book" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Introduction to Programming" />
+  
+  <meta name="twitter:description" content="The course reader for INFX 511: Introduction to Programming for Data Science and Visualization." />
+  
+
+<meta name="author" content="Joel Ross">
+
+
+<meta name="date" content="2018-03-21">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  <link rel="shortcut icon" href="img/ischool-gold.png" type="image/x-icon">
+<link rel="prev" href="lists-and-sequences.html">
+<link rel="next" href="searching.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+<link rel="stylesheet" href="css/prism.min.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./" class="title">Introduction to Programming</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About this Book</a></li>
+<li class="chapter" data-level="1" data-path="setup-machine.html"><a href="setup-machine.html"><i class="fa fa-check"></i><b>1</b> Setting Up Your Machine</a><ul>
+<li class="chapter" data-level="1.1" data-path="setup-machine.html"><a href="setup-machine.html#git"><i class="fa fa-check"></i><b>1.1</b> Git</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="setup-machine.html"><a href="setup-machine.html#github"><i class="fa fa-check"></i><b>1.1.1</b> GitHub</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="setup-machine.html"><a href="setup-machine.html#command-line-tools-bash"><i class="fa fa-check"></i><b>1.2</b> Command-line Tools (Bash)</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="setup-machine.html"><a href="setup-machine.html#command-line-on-a-mac"><i class="fa fa-check"></i><b>1.2.1</b> Command-line on a Mac</a></li>
+<li class="chapter" data-level="1.2.2" data-path="setup-machine.html"><a href="setup-machine.html#command-line-on-windows"><i class="fa fa-check"></i><b>1.2.2</b> Command-line on Windows</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="setup-machine.html"><a href="setup-machine.html#text-editors"><i class="fa fa-check"></i><b>1.3</b> Text Editors</a><ul>
+<li class="chapter" data-level="1.3.1" data-path="setup-machine.html"><a href="setup-machine.html#visual-studio-code"><i class="fa fa-check"></i><b>1.3.1</b> Visual Studio Code</a></li>
+<li class="chapter" data-level="1.3.2" data-path="setup-machine.html"><a href="setup-machine.html#atom"><i class="fa fa-check"></i><b>1.3.2</b> Atom</a></li>
+<li class="chapter" data-level="1.3.3" data-path="setup-machine.html"><a href="setup-machine.html#sublime-text"><i class="fa fa-check"></i><b>1.3.3</b> Sublime Text</a></li>
+<li class="chapter" data-level="1.3.4" data-path="setup-machine.html"><a href="setup-machine.html#pycharm"><i class="fa fa-check"></i><b>1.3.4</b> PyCharm</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="setup-machine.html"><a href="setup-machine.html#python"><i class="fa fa-check"></i><b>1.4</b> Python</a><ul>
+<li class="chapter" data-level="1.4.1" data-path="setup-machine.html"><a href="setup-machine.html#anaconda"><i class="fa fa-check"></i><b>1.4.1</b> Anaconda</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="setup-machine.html"><a href="setup-machine.html#resources"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="command-line.html"><a href="command-line.html"><i class="fa fa-check"></i><b>2</b> The Command Line</a><ul>
+<li class="chapter" data-level="2.1" data-path="command-line.html"><a href="command-line.html#accessing-the-command-line"><i class="fa fa-check"></i><b>2.1</b> Accessing the Command line</a></li>
+<li class="chapter" data-level="2.2" data-path="command-line.html"><a href="command-line.html#navigating-the-command-line"><i class="fa fa-check"></i><b>2.2</b> Navigating the Command Line</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="command-line.html"><a href="command-line.html#changing-directories"><i class="fa fa-check"></i><b>2.2.1</b> Changing Directories</a></li>
+<li class="chapter" data-level="2.2.2" data-path="command-line.html"><a href="command-line.html#listing-files"><i class="fa fa-check"></i><b>2.2.2</b> Listing Files</a></li>
+<li class="chapter" data-level="2.2.3" data-path="command-line.html"><a href="command-line.html#paths"><i class="fa fa-check"></i><b>2.2.3</b> Paths</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="command-line.html"><a href="command-line.html#file-commands"><i class="fa fa-check"></i><b>2.3</b> File Commands</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="command-line.html"><a href="command-line.html#learning-new-commands"><i class="fa fa-check"></i><b>2.3.1</b> Learning New Commands</a></li>
+<li class="chapter" data-level="2.3.2" data-path="command-line.html"><a href="command-line.html#wildcards"><i class="fa fa-check"></i><b>2.3.2</b> Wildcards</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="command-line.html"><a href="command-line.html#dealing-with-errors"><i class="fa fa-check"></i><b>2.4</b> Dealing With Errors</a></li>
+<li class="chapter" data-level="2.5" data-path="command-line.html"><a href="command-line.html#directing-output"><i class="fa fa-check"></i><b>2.5</b> Directing Output</a></li>
+<li class="chapter" data-level="2.6" data-path="command-line.html"><a href="command-line.html#shell-scripts"><i class="fa fa-check"></i><b>2.6</b> Shell Scripts</a></li>
+<li class="chapter" data-level="" data-path="command-line.html"><a href="command-line.html#resources-1"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="markdown.html"><a href="markdown.html"><i class="fa fa-check"></i><b>3</b> Markdown</a><ul>
+<li class="chapter" data-level="3.1" data-path="markdown.html"><a href="markdown.html#writing-markdown"><i class="fa fa-check"></i><b>3.1</b> Writing Markdown</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="markdown.html"><a href="markdown.html#text-formatting"><i class="fa fa-check"></i><b>3.1.1</b> Text Formatting</a></li>
+<li class="chapter" data-level="3.1.2" data-path="markdown.html"><a href="markdown.html#text-blocks"><i class="fa fa-check"></i><b>3.1.2</b> Text Blocks</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="markdown.html"><a href="markdown.html#rendering-markdown"><i class="fa fa-check"></i><b>3.2</b> Rendering Markdown</a></li>
+<li class="chapter" data-level="" data-path="markdown.html"><a href="markdown.html#resources-2"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="git-basics.html"><a href="git-basics.html"><i class="fa fa-check"></i><b>4</b> Git and GitHub</a><ul>
+<li class="chapter" data-level="4.1" data-path="git-basics.html"><a href="git-basics.html#what-is-this-git-thing-anyway"><i class="fa fa-check"></i><b>4.1</b> What is this <em>git</em> thing anyway?</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="git-basics.html"><a href="git-basics.html#git-core-concepts"><i class="fa fa-check"></i><b>4.1.1</b> Git Core Concepts</a></li>
+<li class="chapter" data-level="4.1.2" data-path="git-basics.html"><a href="git-basics.html#wait-but-what-is-github-then"><i class="fa fa-check"></i><b>4.1.2</b> Wait, but what is GitHub then?</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="git-basics.html"><a href="git-basics.html#installation-setup"><i class="fa fa-check"></i><b>4.2</b> Installation &amp; Setup</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="git-basics.html"><a href="git-basics.html#creating-a-repo"><i class="fa fa-check"></i><b>4.2.1</b> Creating a Repo</a></li>
+<li class="chapter" data-level="4.2.2" data-path="git-basics.html"><a href="git-basics.html#checking-status"><i class="fa fa-check"></i><b>4.2.2</b> Checking Status</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="git-basics.html"><a href="git-basics.html#making-changes"><i class="fa fa-check"></i><b>4.3</b> Making Changes</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="git-basics.html"><a href="git-basics.html#adding-files"><i class="fa fa-check"></i><b>4.3.1</b> Adding Files</a></li>
+<li class="chapter" data-level="4.3.2" data-path="git-basics.html"><a href="git-basics.html#committing"><i class="fa fa-check"></i><b>4.3.2</b> Committing</a></li>
+<li class="chapter" data-level="4.3.3" data-path="git-basics.html"><a href="git-basics.html#commit-history"><i class="fa fa-check"></i><b>4.3.3</b> Commit History</a></li>
+<li class="chapter" data-level="4.3.4" data-path="git-basics.html"><a href="git-basics.html#reviewing-the-process"><i class="fa fa-check"></i><b>4.3.4</b> Reviewing the Process</a></li>
+<li class="chapter" data-level="4.3.5" data-path="git-basics.html"><a href="git-basics.html#the-.gitignore-file"><i class="fa fa-check"></i><b>4.3.5</b> The <code>.gitignore</code> File</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="git-basics.html"><a href="git-basics.html#github-and-remotes"><i class="fa fa-check"></i><b>4.4</b> GitHub and Remotes</a><ul>
+<li class="chapter" data-level="4.4.1" data-path="git-basics.html"><a href="git-basics.html#forking-and-cloning"><i class="fa fa-check"></i><b>4.4.1</b> Forking and Cloning</a></li>
+<li class="chapter" data-level="4.4.2" data-path="git-basics.html"><a href="git-basics.html#pushing-and-pulling"><i class="fa fa-check"></i><b>4.4.2</b> Pushing and Pulling</a></li>
+<li class="chapter" data-level="4.4.3" data-path="git-basics.html"><a href="git-basics.html#reviewing-the-process-1"><i class="fa fa-check"></i><b>4.4.3</b> Reviewing The Process</a></li>
+<li class="chapter" data-level="4.4.4" data-path="git-basics.html"><a href="git-basics.html#course-assignments-on-github"><i class="fa fa-check"></i><b>4.4.4</b> Course Assignments on GitHub</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="git-basics.html"><a href="git-basics.html#command-summary"><i class="fa fa-check"></i><b>4.5</b> Command Summary</a></li>
+<li class="chapter" data-level="" data-path="git-basics.html"><a href="git-basics.html#resources-3"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="introduction-to-python.html"><a href="introduction-to-python.html"><i class="fa fa-check"></i><b>5</b> Introduction to Python</a><ul>
+<li class="chapter" data-level="5.1" data-path="introduction-to-python.html"><a href="introduction-to-python.html#programming-with-python"><i class="fa fa-check"></i><b>5.1</b> Programming with Python</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="introduction-to-python.html"><a href="introduction-to-python.html#versions"><i class="fa fa-check"></i><b>5.1.1</b> Versions</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="introduction-to-python.html"><a href="introduction-to-python.html#running-python-scripts"><i class="fa fa-check"></i><b>5.2</b> Running Python Scripts</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="introduction-to-python.html"><a href="introduction-to-python.html#on-the-command-line"><i class="fa fa-check"></i><b>5.2.1</b> On the Command Line</a></li>
+<li class="chapter" data-level="5.2.2" data-path="introduction-to-python.html"><a href="introduction-to-python.html#jupyter-notebooks"><i class="fa fa-check"></i><b>5.2.2</b> Jupyter Notebooks</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="introduction-to-python.html"><a href="introduction-to-python.html#comments"><i class="fa fa-check"></i><b>5.3</b> Comments</a></li>
+<li class="chapter" data-level="5.4" data-path="introduction-to-python.html"><a href="introduction-to-python.html#variables"><i class="fa fa-check"></i><b>5.4</b> Variables</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="introduction-to-python.html"><a href="introduction-to-python.html#data-types"><i class="fa fa-check"></i><b>5.4.1</b> Data Types</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="introduction-to-python.html"><a href="introduction-to-python.html#getting-help"><i class="fa fa-check"></i><b>5.5</b> Getting Help</a></li>
+<li class="chapter" data-level="" data-path="introduction-to-python.html"><a href="introduction-to-python.html#resources-4"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="functions.html"><a href="functions.html"><i class="fa fa-check"></i><b>6</b> Functions</a><ul>
+<li class="chapter" data-level="6.1" data-path="functions.html"><a href="functions.html#what-are-functions"><i class="fa fa-check"></i><b>6.1</b> What are Functions?</a></li>
+<li class="chapter" data-level="6.2" data-path="functions.html"><a href="functions.html#python-function-syntax"><i class="fa fa-check"></i><b>6.2</b> Python Function Syntax</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="functions.html"><a href="functions.html#object-methods"><i class="fa fa-check"></i><b>6.2.1</b> Object Methods</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="functions.html"><a href="functions.html#built-in-python-functions"><i class="fa fa-check"></i><b>6.3</b> Built-in Python Functions</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="functions.html"><a href="functions.html#modules-and-libraries"><i class="fa fa-check"></i><b>6.3.1</b> Modules and Libraries</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="functions.html"><a href="functions.html#writing-functions"><i class="fa fa-check"></i><b>6.4</b> Writing Functions</a><ul>
+<li class="chapter" data-level="6.4.1" data-path="functions.html"><a href="functions.html#doc-strings"><i class="fa fa-check"></i><b>6.4.1</b> Doc Strings</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="functions.html"><a href="functions.html#resources-5"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="logic.html"><a href="logic.html"><i class="fa fa-check"></i><b>7</b> Logic and Conditionals</a><ul>
+<li class="chapter" data-level="7.1" data-path="logic.html"><a href="logic.html#booleans"><i class="fa fa-check"></i><b>7.1</b> Booleans</a><ul>
+<li class="chapter" data-level="7.1.1" data-path="logic.html"><a href="logic.html#boolean-operators"><i class="fa fa-check"></i><b>7.1.1</b> Boolean Operators</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="logic.html"><a href="logic.html#conditional-statements"><i class="fa fa-check"></i><b>7.2</b> Conditional Statements</a><ul>
+<li class="chapter" data-level="7.2.1" data-path="logic.html"><a href="logic.html#designing-conditions"><i class="fa fa-check"></i><b>7.2.1</b> Designing Conditions</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="logic.html"><a href="logic.html#determining-module-or-script"><i class="fa fa-check"></i><b>7.3</b> Determining Module or Script</a></li>
+<li class="chapter" data-level="" data-path="logic.html"><a href="logic.html#resources-6"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html"><i class="fa fa-check"></i><b>8</b> Iteration and Loops</a><ul>
+<li class="chapter" data-level="8.1" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html#while-loops"><i class="fa fa-check"></i><b>8.1</b> While Loops</a><ul>
+<li class="chapter" data-level="8.1.1" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html#counting-and-loops"><i class="fa fa-check"></i><b>8.1.1</b> Counting and Loops</a></li>
+<li class="chapter" data-level="8.1.2" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html#nested-conditionals-and-sentinels"><i class="fa fa-check"></i><b>8.1.2</b> Nested Conditionals and Sentinels</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html#for-loops"><i class="fa fa-check"></i><b>8.2</b> For Loops</a><ul>
+<li class="chapter" data-level="8.2.1" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html#difference-from-while-loops"><i class="fa fa-check"></i><b>8.2.1</b> Difference from While Loops</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html#iterating-over-files"><i class="fa fa-check"></i><b>8.3</b> Iterating over Files</a><ul>
+<li class="chapter" data-level="8.3.1" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html#tryexcept"><i class="fa fa-check"></i><b>8.3.1</b> Try/Except</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html#resources-7"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="lists-and-sequences.html"><a href="lists-and-sequences.html"><i class="fa fa-check"></i><b>9</b> Lists and Sequences</a><ul>
+<li class="chapter" data-level="9.1" data-path="lists-and-sequences.html"><a href="lists-and-sequences.html#what-is-a-list"><i class="fa fa-check"></i><b>9.1</b> What is a List?</a></li>
+<li class="chapter" data-level="9.2" data-path="lists-and-sequences.html"><a href="lists-and-sequences.html#list-indices"><i class="fa fa-check"></i><b>9.2</b> List Indices</a></li>
+<li class="chapter" data-level="9.3" data-path="lists-and-sequences.html"><a href="lists-and-sequences.html#list-operations-and-methods"><i class="fa fa-check"></i><b>9.3</b> List Operations and Methods</a></li>
+<li class="chapter" data-level="9.4" data-path="lists-and-sequences.html"><a href="lists-and-sequences.html#lists-and-loops"><i class="fa fa-check"></i><b>9.4</b> Lists and Loops</a></li>
+<li class="chapter" data-level="9.5" data-path="lists-and-sequences.html"><a href="lists-and-sequences.html#nested-lists"><i class="fa fa-check"></i><b>9.5</b> Nested Lists</a></li>
+<li class="chapter" data-level="9.6" data-path="lists-and-sequences.html"><a href="lists-and-sequences.html#tuples"><i class="fa fa-check"></i><b>9.6</b> Tuples</a></li>
+<li class="chapter" data-level="" data-path="lists-and-sequences.html"><a href="lists-and-sequences.html#resources-8"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="dictionaries.html"><a href="dictionaries.html"><i class="fa fa-check"></i><b>10</b> Dictionaries</a><ul>
+<li class="chapter" data-level="10.1" data-path="dictionaries.html"><a href="dictionaries.html#what-is-a-dictionary"><i class="fa fa-check"></i><b>10.1</b> What is a Dictionary?</a></li>
+<li class="chapter" data-level="10.2" data-path="dictionaries.html"><a href="dictionaries.html#accessing-a-dictionary"><i class="fa fa-check"></i><b>10.2</b> Accessing a Dictionary</a></li>
+<li class="chapter" data-level="10.3" data-path="dictionaries.html"><a href="dictionaries.html#dictionary-methods"><i class="fa fa-check"></i><b>10.3</b> Dictionary Methods</a></li>
+<li class="chapter" data-level="10.4" data-path="dictionaries.html"><a href="dictionaries.html#dictionaries-and-loops"><i class="fa fa-check"></i><b>10.4</b> Dictionaries and Loops</a></li>
+<li class="chapter" data-level="10.5" data-path="dictionaries.html"><a href="dictionaries.html#nesting-dictionaries"><i class="fa fa-check"></i><b>10.5</b> Nesting Dictionaries</a></li>
+<li class="chapter" data-level="10.6" data-path="dictionaries.html"><a href="dictionaries.html#which-data-structure-do-i-use"><i class="fa fa-check"></i><b>10.6</b> Which Data Structure Do I Use?</a></li>
+<li class="chapter" data-level="" data-path="dictionaries.html"><a href="dictionaries.html#resources-9"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="searching.html"><a href="searching.html"><i class="fa fa-check"></i><b>11</b> Searching and Efficiency</a><ul>
+<li class="chapter" data-level="11.1" data-path="searching.html"><a href="searching.html#linear-search"><i class="fa fa-check"></i><b>11.1</b> Linear Search</a><ul>
+<li class="chapter" data-level="11.1.1" data-path="searching.html"><a href="searching.html#maximal-search"><i class="fa fa-check"></i><b>11.1.1</b> Maximal Search</a></li>
+<li class="chapter" data-level="11.1.2" data-path="searching.html"><a href="searching.html#falsification-search"><i class="fa fa-check"></i><b>11.1.2</b> Falsification Search</a></li>
+</ul></li>
+<li class="chapter" data-level="11.2" data-path="searching.html"><a href="searching.html#linear-search-speed"><i class="fa fa-check"></i><b>11.2</b> Linear Search Speed</a></li>
+<li class="chapter" data-level="11.3" data-path="searching.html"><a href="searching.html#binary-search"><i class="fa fa-check"></i><b>11.3</b> Binary Search</a><ul>
+<li class="chapter" data-level="11.3.1" data-path="searching.html"><a href="searching.html#binary-search-speed"><i class="fa fa-check"></i><b>11.3.1</b> Binary Search Speed</a></li>
+</ul></li>
+<li class="chapter" data-level="11.4" data-path="searching.html"><a href="searching.html#sorting"><i class="fa fa-check"></i><b>11.4</b> Sorting</a></li>
+<li class="chapter" data-level="" data-path="searching.html"><a href="searching.html#resources-10"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="functional-programming.html"><a href="functional-programming.html"><i class="fa fa-check"></i><b>12</b> Functional Programming</a><ul>
+<li class="chapter" data-level="12.1" data-path="functional-programming.html"><a href="functional-programming.html#functions-are-variables"><i class="fa fa-check"></i><b>12.1</b> Functions ARE Variables</a><ul>
+<li class="chapter" data-level="12.1.1" data-path="functional-programming.html"><a href="functional-programming.html#lambdas-anonymous-functions"><i class="fa fa-check"></i><b>12.1.1</b> lambdas: Anonymous Functions</a></li>
+</ul></li>
+<li class="chapter" data-level="12.2" data-path="functional-programming.html"><a href="functional-programming.html#functional-looping"><i class="fa fa-check"></i><b>12.2</b> Functional Looping</a><ul>
+<li class="chapter" data-level="12.2.1" data-path="functional-programming.html"><a href="functional-programming.html#map"><i class="fa fa-check"></i><b>12.2.1</b> Map</a></li>
+<li class="chapter" data-level="12.2.2" data-path="functional-programming.html"><a href="functional-programming.html#filter"><i class="fa fa-check"></i><b>12.2.2</b> Filter</a></li>
+<li class="chapter" data-level="12.2.3" data-path="functional-programming.html"><a href="functional-programming.html#reduce"><i class="fa fa-check"></i><b>12.2.3</b> Reduce</a></li>
+</ul></li>
+<li class="chapter" data-level="12.3" data-path="functional-programming.html"><a href="functional-programming.html#list-comprehensions"><i class="fa fa-check"></i><b>12.3</b> List Comprehensions</a></li>
+<li class="chapter" data-level="" data-path="functional-programming.html"><a href="functional-programming.html#resources-11"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="accessing-web-apis.html"><a href="accessing-web-apis.html"><i class="fa fa-check"></i><b>13</b> Accessing Web APIs</a><ul>
+<li class="chapter" data-level="13.1" data-path="accessing-web-apis.html"><a href="accessing-web-apis.html#web-apis"><i class="fa fa-check"></i><b>13.1</b> Web APIs</a></li>
+<li class="chapter" data-level="13.2" data-path="accessing-web-apis.html"><a href="accessing-web-apis.html#restful-requests"><i class="fa fa-check"></i><b>13.2</b> RESTful Requests</a><ul>
+<li class="chapter" data-level="13.2.1" data-path="accessing-web-apis.html"><a href="accessing-web-apis.html#uris"><i class="fa fa-check"></i><b>13.2.1</b> URIs</a></li>
+<li class="chapter" data-level="13.2.2" data-path="accessing-web-apis.html"><a href="accessing-web-apis.html#http-verbs"><i class="fa fa-check"></i><b>13.2.2</b> HTTP Verbs</a></li>
+</ul></li>
+<li class="chapter" data-level="13.3" data-path="accessing-web-apis.html"><a href="accessing-web-apis.html#accessing-web-apis-1"><i class="fa fa-check"></i><b>13.3</b> Accessing Web APIs</a></li>
+<li class="chapter" data-level="13.4" data-path="accessing-web-apis.html"><a href="accessing-web-apis.html#json-data"><i class="fa fa-check"></i><b>13.4</b> JSON Data</a></li>
+<li class="chapter" data-level="" data-path="accessing-web-apis.html"><a href="accessing-web-apis.html#resources-12"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="git-branches.html"><a href="git-branches.html"><i class="fa fa-check"></i><b>14</b> Git Branches</a><ul>
+<li class="chapter" data-level="14.1" data-path="git-branches.html"><a href="git-branches.html#git-branches"><i class="fa fa-check"></i><b>14.1</b> Git Branches</a></li>
+<li class="chapter" data-level="14.2" data-path="git-branches.html"><a href="git-branches.html#merging"><i class="fa fa-check"></i><b>14.2</b> Merging</a><ul>
+<li class="chapter" data-level="14.2.1" data-path="git-branches.html"><a href="git-branches.html#merge-conflicts"><i class="fa fa-check"></i><b>14.2.1</b> Merge Conflicts</a></li>
+</ul></li>
+<li class="chapter" data-level="14.3" data-path="git-branches.html"><a href="git-branches.html#undoing-changes"><i class="fa fa-check"></i><b>14.3</b> Undoing Changes</a></li>
+<li class="chapter" data-level="14.4" data-path="git-branches.html"><a href="git-branches.html#github-and-branches"><i class="fa fa-check"></i><b>14.4</b> GitHub and Branches</a><ul>
+<li class="chapter" data-level="14.4.1" data-path="git-branches.html"><a href="git-branches.html#github-pages"><i class="fa fa-check"></i><b>14.4.1</b> GitHub Pages</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="git-branches.html"><a href="git-branches.html#resources-13"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="git-collaboration.html"><a href="git-collaboration.html"><i class="fa fa-check"></i><b>15</b> Git Collaboration</a><ul>
+<li class="chapter" data-level="15.1" data-path="git-collaboration.html"><a href="git-collaboration.html#centralized-workflow"><i class="fa fa-check"></i><b>15.1</b> Centralized Workflow</a></li>
+<li class="chapter" data-level="15.2" data-path="git-collaboration.html"><a href="git-collaboration.html#feature-branch-workflow"><i class="fa fa-check"></i><b>15.2</b> Feature Branch Workflow</a></li>
+<li class="chapter" data-level="15.3" data-path="git-collaboration.html"><a href="git-collaboration.html#forking-workflow"><i class="fa fa-check"></i><b>15.3</b> Forking Workflow</a><ul>
+<li class="chapter" data-level="15.3.1" data-path="git-collaboration.html"><a href="git-collaboration.html#pull-requests"><i class="fa fa-check"></i><b>15.3.1</b> Pull Requests</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="git-collaboration.html"><a href="git-collaboration.html#resources-14"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="object-oriented-programming.html"><a href="object-oriented-programming.html"><i class="fa fa-check"></i><b>16</b> Object-Oriented Programming</a><ul>
+<li class="chapter" data-level="" data-path="object-oriented-programming.html"><a href="object-oriented-programming.html#resources-15"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="pandas.html"><a href="pandas.html"><i class="fa fa-check"></i><b>17</b> The <code>pandas</code> Library</a><ul>
+<li class="chapter" data-level="17.1" data-path="pandas.html"><a href="pandas.html#setting-up-pandas"><i class="fa fa-check"></i><b>17.1</b> Setting up <code>pandas</code></a></li>
+<li class="chapter" data-level="17.2" data-path="pandas.html"><a href="pandas.html#series"><i class="fa fa-check"></i><b>17.2</b> Series</a><ul>
+<li class="chapter" data-level="17.2.1" data-path="pandas.html"><a href="pandas.html#series-operations-and-methods"><i class="fa fa-check"></i><b>17.2.1</b> Series Operations and Methods</a></li>
+<li class="chapter" data-level="17.2.2" data-path="pandas.html"><a href="pandas.html#accessing-series"><i class="fa fa-check"></i><b>17.2.2</b> Accessing Series</a></li>
+</ul></li>
+<li class="chapter" data-level="17.3" data-path="pandas.html"><a href="pandas.html#dataframes"><i class="fa fa-check"></i><b>17.3</b> DataFrames</a><ul>
+<li class="chapter" data-level="17.3.1" data-path="pandas.html"><a href="pandas.html#dataframe-operations-and-methods"><i class="fa fa-check"></i><b>17.3.1</b> DataFrame Operations and Methods</a></li>
+<li class="chapter" data-level="17.3.2" data-path="pandas.html"><a href="pandas.html#accessing-dataframes"><i class="fa fa-check"></i><b>17.3.2</b> Accessing DataFrames</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="pandas.html"><a href="pandas.html#resources-16"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="18" data-path="javascript.html"><a href="javascript.html"><i class="fa fa-check"></i><b>18</b> JavaScript</a><ul>
+<li class="chapter" data-level="18.1" data-path="javascript.html"><a href="javascript.html#programming-with-javascript"><i class="fa fa-check"></i><b>18.1</b> Programming with JavaScript</a><ul>
+<li class="chapter" data-level="18.1.1" data-path="javascript.html"><a href="javascript.html#history-and-versions"><i class="fa fa-check"></i><b>18.1.1</b> History and Versions</a></li>
+<li class="chapter" data-level="18.1.2" data-path="javascript.html"><a href="javascript.html#running-javascript"><i class="fa fa-check"></i><b>18.1.2</b> Running JavaScript</a></li>
+</ul></li>
+<li class="chapter" data-level="18.2" data-path="javascript.html"><a href="javascript.html#javascript-basics"><i class="fa fa-check"></i><b>18.2</b> JavaScript Basics</a><ul>
+<li class="chapter" data-level="18.2.1" data-path="javascript.html"><a href="javascript.html#strict-mode"><i class="fa fa-check"></i><b>18.2.1</b> Strict Mode</a></li>
+</ul></li>
+<li class="chapter" data-level="18.3" data-path="javascript.html"><a href="javascript.html#variables-1"><i class="fa fa-check"></i><b>18.3</b> Variables</a><ul>
+<li class="chapter" data-level="18.3.1" data-path="javascript.html"><a href="javascript.html#basic-data-types"><i class="fa fa-check"></i><b>18.3.1</b> Basic Data Types</a></li>
+<li class="chapter" data-level="18.3.2" data-path="javascript.html"><a href="javascript.html#type-coercion"><i class="fa fa-check"></i><b>18.3.2</b> Type Coercion</a></li>
+<li class="chapter" data-level="18.3.3" data-path="javascript.html"><a href="javascript.html#arrays"><i class="fa fa-check"></i><b>18.3.3</b> Arrays</a></li>
+<li class="chapter" data-level="18.3.4" data-path="javascript.html"><a href="javascript.html#objects"><i class="fa fa-check"></i><b>18.3.4</b> Objects</a></li>
+</ul></li>
+<li class="chapter" data-level="18.4" data-path="javascript.html"><a href="javascript.html#control-structures"><i class="fa fa-check"></i><b>18.4</b> Control Structures</a><ul>
+<li class="chapter" data-level="18.4.1" data-path="javascript.html"><a href="javascript.html#conditionals"><i class="fa fa-check"></i><b>18.4.1</b> Conditionals</a></li>
+<li class="chapter" data-level="18.4.2" data-path="javascript.html"><a href="javascript.html#loops"><i class="fa fa-check"></i><b>18.4.2</b> Loops</a></li>
+</ul></li>
+<li class="chapter" data-level="18.5" data-path="javascript.html"><a href="javascript.html#functions-1"><i class="fa fa-check"></i><b>18.5</b> Functions</a><ul>
+<li class="chapter" data-level="18.5.1" data-path="javascript.html"><a href="javascript.html#functional-programming-1"><i class="fa fa-check"></i><b>18.5.1</b> Functional Programming</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="javascript.html"><a href="javascript.html#resources-17"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="19" data-path="web-programming.html"><a href="web-programming.html"><i class="fa fa-check"></i><b>19</b> Web Programming</a><ul>
+<li class="chapter" data-level="19.1" data-path="web-programming.html"><a href="web-programming.html#web-pages-and-html"><i class="fa fa-check"></i><b>19.1</b> Web Pages and HTML</a><ul>
+<li class="chapter" data-level="19.1.1" data-path="web-programming.html"><a href="web-programming.html#elements-are-nested"><i class="fa fa-check"></i><b>19.1.1</b> Elements are Nested</a></li>
+<li class="chapter" data-level="19.1.2" data-path="web-programming.html"><a href="web-programming.html#scalable-vector-graphics-svg"><i class="fa fa-check"></i><b>19.1.2</b> Scalable Vector Graphics (SVG)</a></li>
+</ul></li>
+<li class="chapter" data-level="19.2" data-path="web-programming.html"><a href="web-programming.html#dom-manipulation-with-d3"><i class="fa fa-check"></i><b>19.2</b> DOM Manipulation with D3</a><ul>
+<li class="chapter" data-level="19.2.1" data-path="web-programming.html"><a href="web-programming.html#selecting-elements"><i class="fa fa-check"></i><b>19.2.1</b> Selecting Elements</a></li>
+<li class="chapter" data-level="19.2.2" data-path="web-programming.html"><a href="web-programming.html#changing-elements"><i class="fa fa-check"></i><b>19.2.2</b> Changing Elements</a></li>
+<li class="chapter" data-level="19.2.3" data-path="web-programming.html"><a href="web-programming.html#adding-elements"><i class="fa fa-check"></i><b>19.2.3</b> Adding Elements</a></li>
+</ul></li>
+<li class="chapter" data-level="19.3" data-path="web-programming.html"><a href="web-programming.html#user-events"><i class="fa fa-check"></i><b>19.3</b> User Events</a></li>
+<li class="chapter" data-level="19.4" data-path="web-programming.html"><a href="web-programming.html#ajax"><i class="fa fa-check"></i><b>19.4</b> AJAX</a></li>
+<li class="chapter" data-level="" data-path="web-programming.html"><a href="web-programming.html#resources-18"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="20" data-path="d3.html"><a href="d3.html"><i class="fa fa-check"></i><b>20</b> D3 Visualizations</a><ul>
+<li class="chapter" data-level="20.1" data-path="d3.html"><a href="d3.html#the-data-join"><i class="fa fa-check"></i><b>20.1</b> The Data Join</a><ul>
+<li class="chapter" data-level="20.1.1" data-path="d3.html"><a href="d3.html#entering-and-exiting-elements"><i class="fa fa-check"></i><b>20.1.1</b> Entering and Exiting Elements</a></li>
+</ul></li>
+<li class="chapter" data-level="20.2" data-path="d3.html"><a href="d3.html#animation"><i class="fa fa-check"></i><b>20.2</b> Animation</a></li>
+<li class="chapter" data-level="20.3" data-path="d3.html"><a href="d3.html#margins-and-positioning"><i class="fa fa-check"></i><b>20.3</b> Margins and Positioning</a></li>
+<li class="chapter" data-level="20.4" data-path="d3.html"><a href="d3.html#scales"><i class="fa fa-check"></i><b>20.4</b> Scales</a><ul>
+<li class="chapter" data-level="20.4.1" data-path="d3.html"><a href="d3.html#axes"><i class="fa fa-check"></i><b>20.4.1</b> Axes</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="d3.html"><a href="d3.html#resources-19"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Introduction to Programming</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="dictionaries" class="section level1">
+<h1><span class="header-section-number">Chapter 10</span> Dictionaries</h1>
+<p>This chapter covers the second fundamental data structure in Python: <strong>dictionaries</strong>, which represent a collection of <em>key-value pairs</em>. They are similar to lists, except that each element in the dictionary is also given a distinct “name” to refer to it by (instead of an index number). Dictionaries are Python’s primary version of <strong>maps</strong>, which is a common and extremely useful way of organizing data in a computer program—indeed, I would argue that maps are the <em>most useful</em> data structure in programming. This chapter will describe how to create, access, and utilize dictionaries to organize and structure data.</p>
+<div id="what-is-a-dictionary" class="section level2">
+<h2><span class="header-section-number">10.1</span> What is a Dictionary?</h2>
+<p>A <strong>dictionary</strong> is a lot like a <em>list</em>, in that it is a (one-dimensional) sequence of values that are all stored in a single variable. However, rather than using <em>integers</em> as the indexes for each of the elements, a dictionary allows you to use a wide variety of different data types (including <em>strings</em> and <em>tuples</em>) as the “index”. These “indices” are called <strong>keys</strong>, and each is used to refer to a specific <strong>value</strong> in the collection. Thus a dictionary is an sequence of <strong>key-value pairs</strong>: each element has a “key” that is used to <em>look up</em> (reference) the “value”.</p>
+<p>This is a lot like a real-world dictionary or encyclopedia, in which the words (keys) are used to look up the definitions (values). A phone book works the same way (the names are the keys, the phone numbers are the values),</p>
+<div class="alert alert-default">
+<p>Dictionaries provide a <strong>mapping</strong> of keys to values: they specify a set of data (the keys), and how that data “transforms” into another set of data (the values).</p>
+</div>
+<p>Dictionaries are written as literals inside <em>curly braces</em> (<strong><code>{}</code></strong>). Key-value pairs are written with a <em>colon</em> (<strong><code>:</code></strong>) between the key and the value, and each element (pair) in the dictionary is separated by a <em>comma</em> (<strong><code>,</code></strong>):</p>
+<pre class="language-python"><code><span class="token comment"># A dictionary of ages</span>
+ages <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'sarah'</span><span class="token punctuation">:</span> <span class="token number">42</span><span class="token punctuation">,</span> <span class="token string">'amit'</span><span class="token punctuation">:</span> <span class="token number">35</span><span class="token punctuation">,</span> <span class="token string">'zhang'</span><span class="token punctuation">:</span> <span class="token number">13</span><span class="token punctuation">}</span>
+
+<span class="token comment"># A dictionary of English words and their Spanish translation</span>
+english_to_spanish <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'one'</span><span class="token punctuation">:</span><span class="token string">'uno'</span><span class="token punctuation">,</span> <span class="token string">'two'</span><span class="token punctuation">:</span><span class="token string">'dos'</span><span class="token punctuation">}</span>
+
+<span class="token comment"># A dictionary of integers and their word representations</span>
+num_words <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">:</span> <span class="token string">'one'</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">:</span> <span class="token string">'two'</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">:</span> <span class="token string">'three'</span><span class="token punctuation">}</span>
+
+<span class="token comment"># Like lists, dictionary values can be of different types</span>
+<span class="token comment"># including lists and other dictionaries!</span>
+type_examples <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'integer'</span><span class="token punctuation">:</span> <span class="token number">12</span><span class="token punctuation">,</span> <span class="token string">'string'</span><span class="token punctuation">:</span> <span class="token string">'dog'</span><span class="token punctuation">,</span> <span class="token string">'list'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">}</span>
+
+<span class="token comment"># Each dictionary KEY can also be a different type</span>
+type_names <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">511</span><span class="token punctuation">:</span> <span class="token string">'an int key'</span><span class="token punctuation">,</span> <span class="token string">'hello'</span><span class="token punctuation">:</span> <span class="token string">'a string key'</span><span class="token punctuation">,</span>  <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token string">'a tuple key!'</span><span class="token punctuation">}</span>
+
+<span class="token comment"># Dictionaries can be empty (with no elements)</span>
+empty <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span></code></pre>
+<div class="alert alert-warning">
+<p><strong>Style Requirement</strong>: Dictionary variables are often named as plurals, but can also be named after the mapping they performed (e.g., <code>english_to_spanish</code>).</p>
+<p>Be careful not to name a dictionary <code>dict</code>, which is a reserved keyword (it’s a function used to create dictionaries).</p>
+</div>
+<p>Dictionary <em>keys</em> can be of any <a href="https://en.wikipedia.org/wiki/Hash_function">hashable</a> type (meaning the computer can consistently convert it into a number). In practice, this means that that keys are most commonly <em>strings</em>, <em>numbers</em>, or <em>tuples</em>. Dictionary <em>values</em>, on the other hand, can be of any type that you want!</p>
+<p>Dictionary <em>keys</em> must be unique: because they are used to “look up” values, there has to be a single value associated with each key (this is called a <a href="https://en.wikipedia.org/wiki/Injective_function">one-to-one mapping</a> in mathematics). But dictionary <em>values</em> can be duplicated: just like how two words may have the same definition in a real-world dictionary!</p>
+<pre class="language-python"><code>double_key <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'a'</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'b'</span><span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">'b'</span><span class="token punctuation">:</span> <span class="token number">3</span><span class="token punctuation">}</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>double_key<span class="token punctuation">)</span>  <span class="token comment"># {'a': 1, 'b': 3}</span>
+
+double_val <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'a'</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'b'</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'c'</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">}</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>double_val<span class="token punctuation">)</span>  <span class="token comment"># {'a': 1, 'b': 1, 'c': 1}</span></code></pre>
+<p>It is important to note that dictionaries are an <strong>unordered</strong> collection of key-value pairs! Because you reference a value by its <em>key</em> and not by its position (as you do in a list), the exact ordering of those elements doesn’t matter—the interpreter just goes immediately to the value associated with the key. This also means that when you print out a dictionary, the order in which the elements are printed may not match the order in which you specified them in the literal (and in fact, may differ between script executions or across computers!)</p>
+<pre class="language-python"><code>dict_a <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'a'</span><span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'b;'</span><span class="token punctuation">:</span><span class="token number">2</span><span class="token punctuation">}</span>
+dict_b <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'b'</span><span class="token punctuation">:</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">'a:'</span><span class="token number">1</span><span class="token punctuation">}</span>
+dict_a <span class="token operator">==</span> dict_b  <span class="token comment"># True, order doesn't matter</span></code></pre>
+<p>The above examples mostly use dictionaries as “lookup tables”: they provide a way of “translating” from some set of keys to some set of values. However, dictionaries are also extremely useful for grouping together related data—for example, information about a specific person:</p>
+<pre class="language-python"><code>person <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'first_name'</span><span class="token punctuation">:</span> <span class="token string">"Ada"</span><span class="token punctuation">,</span> <span class="token string">'job'</span><span class="token punctuation">:</span> <span class="token string">"Programmer"</span><span class="token punctuation">,</span> <span class="token string">'salary'</span><span class="token punctuation">:</span> <span class="token number">78000</span><span class="token punctuation">,</span> <span class="token string">'in_union'</span><span class="token punctuation">:</span> <span class="token boolean">True</span><span class="token punctuation">}</span></code></pre>
+<p>Using a dictionary allows you to track the different values with named keys, rather than needing to remember whether the person’s name or title was the first element!</p>
+<p>Dictionaries can also be created from <em>lists</em> of keys and values. To do this, you first use the built-in <code>zip()</code> function to create a non-list collection of tuples (each a key-value pair), and then use the built-in <code>dict()</code> function to create a dictionary out of that collection. Alternatively, the built-in <code>enumerate()</code> function will create an collection with the index of each list element as its key.</p>
+<pre class="language-python"><code>keys <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'key0'</span><span class="token punctuation">,</span> <span class="token string">'key1'</span><span class="token punctuation">,</span> <span class="token string">'key2'</span><span class="token punctuation">]</span>
+values <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'val0'</span><span class="token punctuation">,</span> <span class="token string">'val1'</span><span class="token punctuation">,</span> <span class="token string">'val2'</span><span class="token punctuation">]</span>
+<span class="token builtin">dict</span><span class="token punctuation">(</span><span class="token builtin">zip</span><span class="token punctuation">(</span>keys<span class="token punctuation">,</span> values<span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment"># {'key0': 'val0', 'key1': 'val1', 'key2': 'val2'}</span>
+<span class="token builtin">dict</span><span class="token punctuation">(</span><span class="token builtin">enumerate</span><span class="token punctuation">(</span>values<span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment"># {0: 'val0', 1: 'val1', 2: 'val2'}</span></code></pre>
+</div>
+<div id="accessing-a-dictionary" class="section level2">
+<h2><span class="header-section-number">10.2</span> Accessing a Dictionary</h2>
+<p>Just as with lists, you retrieve a <strong><em>value</em></strong> from a dictionary using <strong>bracket notation</strong>, but you put the <strong><em>key</em></strong> inside the brackets instead of the positional index (since dictionaries are unordered!).</p>
+<pre class="language-python"><code><span class="token comment"># A dictionary of ages</span>
+ages <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'sarah'</span><span class="token punctuation">:</span> <span class="token number">42</span><span class="token punctuation">,</span> <span class="token string">'amit'</span><span class="token punctuation">:</span> <span class="token number">35</span><span class="token punctuation">,</span> <span class="token string">'zhang'</span><span class="token punctuation">:</span> <span class="token number">13</span><span class="token punctuation">}</span>
+
+<span class="token comment"># Get the value for the 'amit' key</span>
+amit_age <span class="token operator">=</span> ages<span class="token punctuation">[</span><span class="token string">'amit'</span><span class="token punctuation">]</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>amit_age<span class="token punctuation">)</span>  <span class="token comment"># 35</span>
+
+<span class="token comment"># Get the value for the 'zhang' key</span>
+zhang_age <span class="token operator">=</span> ages<span class="token punctuation">[</span><span class="token string">'zhang'</span><span class="token punctuation">]</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>zhang_age<span class="token punctuation">)</span>  <span class="token comment"># 13</span>
+
+<span class="token comment"># Accessing a key not in the dictionary will give an error</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>ages<span class="token punctuation">[</span><span class="token string">'anonymous'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>  <span class="token comment"># KeyError!</span>
+
+<span class="token comment"># Trying to look up by a VALUE will give an error (since it's not a key)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>ages<span class="token punctuation">[</span><span class="token number">42</span><span class="token punctuation">]</span><span class="token punctuation">)</span>  <span class="token comment"># KeyError!</span></code></pre>
+<p>To reiterate: you put the <em>key</em> inside the brackets in order to access the <em>value</em>. You cannot directly put in a value in order to determine its key (because it may have more than one!)</p>
+<p class="alert alert-info">
+It is worth noting that “looking up” a value by its key is a very “fast” operation (it doesn’t take the interpreter a lot of time or effort). But looking up the key for a value takes time: you need to check each and every key in the dictionary to see if it has the value you’re interested in! This concept is discussed in more detail in <a href="searching.html#searching">Chapter 11</a>.
+</p>
+<p>As with lists, you can put any <em>expression</em> (including variables) inside the brackets as long as it resolves to a valid key (whether that key is a string, integer, or tuple).</p>
+<p>As with lists, you can <strong>mutate</strong> (change) the dictionary by assigning values to the bracket-notation variable. This changes the <em>key-value pair</em> to have a different value, but the same key:</p>
+<pre class="language-python"><code>person <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'name'</span><span class="token punctuation">:</span> <span class="token string">"Ada"</span><span class="token punctuation">,</span> <span class="token string">'job'</span><span class="token punctuation">:</span> <span class="token string">"Programmer"</span><span class="token punctuation">,</span> <span class="token string">'salary'</span><span class="token punctuation">:</span> <span class="token number">78000</span><span class="token punctuation">}</span>
+
+<span class="token comment"># Assign a new value to the 'job' key</span>
+person<span class="token punctuation">[</span><span class="token string">'job'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'Sr Programmer'</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>person<span class="token punctuation">[</span><span class="token string">'job'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>  <span class="token comment"># Sr Programmer</span>
+
+<span class="token comment"># Assign value to itself</span>
+person<span class="token punctuation">[</span><span class="token string">'salary'</span><span class="token punctuation">]</span> <span class="token operator">=</span> person<span class="token punctuation">[</span><span class="token string">'salary'</span><span class="token punctuation">]</span> <span class="token operator">*</span> <span class="token number">1.15</span>  <span class="token comment"># a 15% raise!</span>
+
+<span class="token comment"># Add a new key-value pair by assigning a value to a key that is not yet </span>
+<span class="token comment"># in the dictionary</span>
+person<span class="token punctuation">[</span><span class="token string">'age'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">37</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>person<span class="token punctuation">)</span>  <span class="token comment"># {'name': 'Ada', 'job': 'Sr Programmer', 'salary': 89700.0, 'age': 37}</span></code></pre>
+<p>Note that adding new elements (key-value pairs) works differently than lists: with a list, you cannot assign a value to an index that is out of bounds: you need to use the <code>append()</code> method instead. With a dictionary, you <em>can</em> assign a value to a non-existent key. This <em>creates</em> the key, assigning it the given value.</p>
+</div>
+<div id="dictionary-methods" class="section level2">
+<h2><span class="header-section-number">10.3</span> Dictionary Methods</h2>
+<p>Dictionaries support a few different <a href="https://docs.python.org/3/library/stdtypes.html#mapping-types-dict">operations and methods</a>, though not as many as lists. These include:</p>
+<pre class="language-python"><code><span class="token comment"># A sample dictionary to demonstrate with</span>
+sample_dict <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'a'</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'b'</span><span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">'c'</span><span class="token punctuation">:</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token string">'d'</span><span class="token punctuation">:</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token string">'e'</span><span class="token punctuation">:</span> <span class="token number">5</span><span class="token punctuation">}</span>
+
+<span class="token comment"># The standard `in` operator checks for operands in the keys, not the values!</span>
+<span class="token string">'b'</span> <span class="token keyword">in</span> sample_dict  <span class="token comment"># True, dict contains a key `'b'`</span>
+<span class="token number">2</span> <span class="token keyword">in</span> sample_dict  <span class="token comment"># False, dict does not contain a key `2`</span>
+
+<span class="token comment"># The get() method returns the value for the key, or a "default" value</span>
+<span class="token comment"># if the key is not in the dictionary</span>
+default <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">511</span>  <span class="token comment"># a default value</span>
+sample_dict<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">'c'</span><span class="token punctuation">,</span> default<span class="token punctuation">)</span>  <span class="token comment"># 3, key is in dict</span>
+sample_dict<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">'f'</span><span class="token punctuation">,</span> default<span class="token punctuation">)</span>  <span class="token comment"># -511, key not in dict, so return default</span>
+
+<span class="token comment"># Remove a key-value pair</span>
+sample_dict<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token string">'d'</span><span class="token punctuation">)</span>  <span class="token comment"># removes and returns the `d` key and its value</span>
+
+<span class="token comment"># Replace values from one dictionary with those from another</span>
+other_dict <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'a'</span><span class="token punctuation">:</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token string">'c'</span><span class="token punctuation">:</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token string">'n'</span><span class="token punctuation">:</span><span class="token number">10</span><span class="token punctuation">}</span>
+sample_dict<span class="token punctuation">.</span>update<span class="token punctuation">(</span>other_dict<span class="token punctuation">)</span>  <span class="token comment"># assign values from other to sample</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>sample_dict<span class="token punctuation">)</span>  <span class="token comment"># {'a': 10, 'b': 2, 'c': 10, 'e': 5, 'n': 10}</span>
+
+sample_dict<span class="token punctuation">.</span>update<span class="token punctuation">(</span>a<span class="token operator">=</span><span class="token number">100</span><span class="token punctuation">,</span> c<span class="token operator">=</span><span class="token number">100</span><span class="token punctuation">)</span>  <span class="token comment"># update also supports named arguments</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>sample_dict<span class="token punctuation">)</span>  <span class="token comment"># {'a': 100, 'b': 2, 'c': 100, 'e': 5, 'n': 10}</span>
+
+<span class="token comment"># Remove all the elements</span>
+sample_dict<span class="token punctuation">.</span>clear<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+<p>Dictionaries also include three methods that return list-like <em>sequences</em> of the dictionary’s elements:</p>
+<pre class="language-python"><code>sample_dict <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'a'</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'b'</span><span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">'c'</span><span class="token punctuation">:</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token string">'d'</span><span class="token punctuation">:</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token string">'e'</span><span class="token punctuation">:</span> <span class="token number">5</span><span class="token punctuation">}</span>
+
+<span class="token comment"># Get a "list" of the keys</span>
+sample_keys <span class="token operator">=</span> sample_dict<span class="token punctuation">.</span>keys<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">list</span><span class="token punctuation">(</span>sample_keys<span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment"># ['a', 'b', 'c', 'd', 'e']</span>
+
+<span class="token comment"># Get a "list" of the values</span>
+sample_vals <span class="token operator">=</span> sample_dict<span class="token punctuation">.</span>values<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">list</span><span class="token punctuation">(</span>sample_vals<span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment"># [1, 2, 3, 4, 5]</span>
+
+<span class="token comment"># Get a "list" of the key-value pairs</span>
+sample_items <span class="token operator">=</span> sample_dict<span class="token punctuation">.</span>items<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">list</span><span class="token punctuation">(</span>sample_items<span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment"># [('a', 1), ('b', 2), ('c', 3), ('d', 4), ('e', 5)]</span></code></pre>
+<p>The <code>keys()</code>, <code>values()</code>, and <code>items()</code> sequences are not quite lists (they don’t have all of the list operations and methods), but they do support the <code>in</code> operator and iteration with <code>for</code> loops (see below). And as demonstrated above, they can easily be converted <em>into</em> lists if needed. Note that the <code>items()</code> method produces a sequence of <em>tuples</em>—each key-value pair is represented as a tuple whose first element is the key and second is the value!</p>
+</div>
+<div id="dictionaries-and-loops" class="section level2">
+<h2><span class="header-section-number">10.4</span> Dictionaries and Loops</h2>
+<p>Dictionaries are iterable collections (like lists, ranges, strings, files, etc), and so you can loop through them with a <strong>for loop</strong>. Note that the basic <code>for ... in ...</code> syntax iterates through the dictionary’s <em>keys</em> (not its values)! Thus it is much more common to iterate through one of the <code>keys()</code>, <code>values()</code>, or <code>items()</code> sequences.</p>
+<pre class="language-python"><code>sample_dict <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'a'</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'b'</span><span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">'c'</span><span class="token punctuation">:</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token string">'d'</span><span class="token punctuation">:</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token string">'e'</span><span class="token punctuation">:</span> <span class="token number">5</span><span class="token punctuation">}</span>
+
+<span class="token comment"># Loop through the keys (implicitly)</span>
+<span class="token keyword">for</span> key <span class="token keyword">in</span> sample_dict<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span> <span class="token string">"maps to"</span><span class="token punctuation">,</span> sample_dict<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">)</span>  <span class="token comment"># e.g., "'a' maps to 1"</span>
+
+<span class="token comment"># Loop through the keys (explicitly)</span>
+<span class="token keyword">for</span> key <span class="token keyword">in</span> sample_dict<span class="token punctuation">.</span>keys<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span> <span class="token string">"maps to"</span><span class="token punctuation">,</span> sample_dict<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">)</span>  <span class="token comment"># e.g., "'a' maps to 1"</span>
+
+<span class="token comment"># Loop through the values. Cannot directly get the key from this</span>
+<span class="token keyword">for</span> value <span class="token keyword">in</span> sample_dict<span class="token punctuation">.</span>values<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"someone maps to"</span><span class="token punctuation">,</span> value<span class="token punctuation">)</span>  <span class="token comment"># e.g., "someone maps to 1"</span>
+
+<span class="token comment"># Loop through the items (each is a tuple)</span>
+<span class="token keyword">for</span> item <span class="token keyword">in</span> sample_dict<span class="token punctuation">.</span>items<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>item<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">"maps to"</span><span class="token punctuation">,</span> item<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>  <span class="token comment"># e.g., "'a' maps to 1"</span></code></pre>
+<p>It is <em>much</em> more common to use <strong>multiple assignment</strong> to give the <code>items()</code> tuple elements local variable names, allowing you to refer to those elements by name rather than by index:</p>
+<pre class="language-python"><code><span class="token comment"># Use this format instead!</span>
+<span class="token keyword">for</span> key<span class="token punctuation">,</span> value <span class="token keyword">in</span> sample_dict<span class="token punctuation">.</span>items<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>  <span class="token comment"># implicit  `key, value = item`</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span> <span class="token string">"maps to"</span><span class="token punctuation">,</span> value<span class="token punctuation">)</span>  <span class="token comment"># e.g., "'a' maps to 1</span>
+
+<span class="token comment"># Better yet, name the local variables after their semantic meaning!</span>
+<span class="token keyword">for</span> letter<span class="token punctuation">,</span> number <span class="token keyword">in</span> sample_dict<span class="token punctuation">.</span>items<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>letter<span class="token punctuation">,</span> <span class="token string">"maps to"</span><span class="token punctuation">,</span> number<span class="token punctuation">)</span>  <span class="token comment"># e.g., "'a' maps to 1</span></code></pre>
+<p>Finally, remember that dictionaries are <em>unordered</em>. This means that there is no consistency as to which element will be processed in what order: you might get <code>a</code> then <code>b</code> then <code>c</code>, but you might get <code>c</code> then <code>a</code> then <code>b</code>! If the order is important for looping, a common strategy is to iterate through a <em>sorted list of the keys</em> (produced with the built-in <a href="https://docs.python.org/3/library/functions.html#sorted"><code>sorted()</code></a> function):</p>
+<pre class="language-python"><code><span class="token comment"># Sort the keys</span>
+sorted_keys <span class="token operator">=</span> <span class="token builtin">sorted</span><span class="token punctuation">(</span>sample_dict<span class="token punctuation">.</span>keys<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Iterate through the sorted keys</span>
+<span class="token keyword">for</span> key <span class="token keyword">in</span> sorted_keys<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span> <span class="token string">"maps to"</span><span class="token punctuation">,</span> sample_dict<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Or all in one line!</span>
+<span class="token keyword">for</span> key <span class="token keyword">in</span> <span class="token builtin">sorted</span><span class="token punctuation">(</span>sample_dict<span class="token punctuation">.</span>keys<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span> <span class="token string">"maps to"</span><span class="token punctuation">,</span> sample_dict<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">)</span></code></pre>
+</div>
+<div id="nesting-dictionaries" class="section level2">
+<h2><span class="header-section-number">10.5</span> Nesting Dictionaries</h2>
+<p>Although dictionary <em>keys</em> are limited to hashable types (e.g., strings, numbers, tuples), dictionary <em>values</em> can be of any type—and this includes lists and other dictionaries!</p>
+<p>Nested dictionaries are conceptually similar to nested lists, and are used in a similar manner:</p>
+<pre class="language-python"><code><span class="token comment"># a dictionary representing a person (spacing is for readability)</span>
+person <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token string">'first_name'</span><span class="token punctuation">:</span> <span class="token string">'Alice'</span><span class="token punctuation">,</span>
+  <span class="token string">'last_name'</span><span class="token punctuation">:</span> <span class="token string">'Smith'</span><span class="token punctuation">,</span>
+  <span class="token string">'age'</span><span class="token punctuation">:</span> <span class="token number">40</span><span class="token punctuation">,</span>
+  <span class="token string">'pets'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'rover'</span><span class="token punctuation">,</span> <span class="token string">'fluffy'</span><span class="token punctuation">,</span> <span class="token string">'mittens'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>  <span class="token comment"># value is an array</span>
+  <span class="token string">'favorites'</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>  <span class="token comment"># value is another dictionary</span>
+    <span class="token string">'music'</span><span class="token punctuation">:</span> <span class="token string">'jazz'</span><span class="token punctuation">,</span>
+    <span class="token string">'food'</span><span class="token punctuation">:</span> <span class="token string">'pizza'</span><span class="token punctuation">,</span>
+    <span class="token string">'numbers'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token number">12</span><span class="token punctuation">,</span> <span class="token number">42</span><span class="token punctuation">]</span>  <span class="token comment"># value is an array</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment"># Can assign lists or dicts to a new key</span>
+person<span class="token punctuation">[</span><span class="token string">'luggage_combo'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span>
+
+<span class="token comment"># person['favorite'] is an (anonymous) dictionary, so can get that dict's 'food'</span>
+favorite_food <span class="token operator">=</span> person<span class="token punctuation">[</span><span class="token string">'favorites'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'food'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token comment"># Get to the (anonymous) 'favorites' dictionary in person, and from that get</span>
+<span class="token comment"># the (anonymous) 'numbers' list, and from that get the 0th element</span>
+first_fav_number <span class="token operator">=</span> person<span class="token punctuation">[</span><span class="token string">'favorite'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'numbers'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>  <span class="token comment"># 12</span>
+
+<span class="token comment"># Since person['favorite']['numbers'] is a list, we can add to it</span>
+person<span class="token punctuation">[</span><span class="token string">'favorite'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'numbers'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token number">7</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment"># add 7 to end of the list</span></code></pre>
+<p>The ability to nest dictionaries inside of dictionaries is incredibly powerful, and allows you to define arbitrarily complex information structurings (schemas). Indeed, most data in computer programs—as well as public information available on the web—is structured as a set of nested maps like this (though possibly with some level of abstraction).</p>
+<p>The other common format used with nested lists and dictionaries is to define a <strong>list of dictionaries</strong> where each dictionary has <em>the same keys</em> (but different values). For example:</p>
+<pre class="language-python"><code><span class="token comment"># Arbitrary list of people's names, heights, and weights</span>
+people <span class="token operator">=</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span><span class="token string">'name'</span><span class="token punctuation">:</span> <span class="token string">'Ada'</span><span class="token punctuation">,</span> <span class="token string">'height'</span><span class="token punctuation">:</span> <span class="token number">64</span><span class="token punctuation">,</span> <span class="token string">'weight'</span><span class="token punctuation">:</span> <span class="token number">135</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span><span class="token string">'name'</span><span class="token punctuation">:</span> <span class="token string">'Bob'</span><span class="token punctuation">,</span> <span class="token string">'height'</span><span class="token punctuation">:</span> <span class="token number">74</span><span class="token punctuation">,</span> <span class="token string">'weight'</span><span class="token punctuation">:</span> <span class="token number">156</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span><span class="token string">'name'</span><span class="token punctuation">:</span> <span class="token string">'Chris'</span><span class="token punctuation">,</span> <span class="token string">'height'</span><span class="token punctuation">:</span> <span class="token number">69</span><span class="token punctuation">,</span> <span class="token string">'weight'</span><span class="token punctuation">:</span> <span class="token number">139</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span><span class="token string">'name'</span><span class="token punctuation">:</span> <span class="token string">'Diya'</span><span class="token punctuation">,</span> <span class="token string">'height'</span><span class="token punctuation">:</span> <span class="token number">69</span><span class="token punctuation">,</span> <span class="token string">'weight'</span><span class="token punctuation">:</span> <span class="token number">144</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span><span class="token string">'name'</span><span class="token punctuation">:</span> <span class="token string">'Emma'</span><span class="token punctuation">,</span> <span class="token string">'height'</span><span class="token punctuation">:</span> <span class="token number">71</span><span class="token punctuation">,</span> <span class="token string">'weight'</span><span class="token punctuation">:</span> <span class="token number">152</span><span class="token punctuation">}</span>
+<span class="token punctuation">]</span></code></pre>
+<p>This structure can be seen as a list of <strong>records</strong> (the dictionaries), each of which have a number of different <strong>features</strong> (the key-value pairs). This list of feature records is in fact a common way of understanding a <strong>data table</strong> like you would create as an Excel spreadsheet:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">name</th>
+<th align="left">height</th>
+<th align="left">weight</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Ada</td>
+<td align="left">64</td>
+<td align="left">135</td>
+</tr>
+<tr class="even">
+<td align="left">Bob</td>
+<td align="left">74</td>
+<td align="left">156</td>
+</tr>
+<tr class="odd">
+<td align="left">Chris</td>
+<td align="left">69</td>
+<td align="left">139</td>
+</tr>
+<tr class="even">
+<td align="left">Diya</td>
+<td align="left">69</td>
+<td align="left">144</td>
+</tr>
+<tr class="odd">
+<td align="left">Emma</td>
+<td align="left">71</td>
+<td align="left">152</td>
+</tr>
+</tbody>
+</table>
+<p>Each dictionary (record) acts as a “row” in the table, and each key (feature) acts as a “column”. As long as all of the dictionaries share the same keys, this list of dictionaries <em>is</em> a table!</p>
+<p class="alert alert-success">
+When working with large amounts of tabular data, like you might read from a <code>.csv</code> file, this is a good structure to use.
+</p>
+<p>In order to analyze this kind of data table, you most often will loop through the elements in the list (the rows in the table), doing some calculations based on <em>each</em> dictionary:</p>
+<pre class="language-python"><code><span class="token comment"># How many people are taller than 70 inches?</span>
+taller_than_70 <span class="token operator">=</span> <span class="token number">0</span>
+<span class="token keyword">for</span> person <span class="token keyword">in</span> people<span class="token punctuation">:</span>  <span class="token comment"># iterate through the list</span>
+    <span class="token comment"># person is a dictionary</span>
+    <span class="token keyword">if</span> person<span class="token punctuation">[</span><span class="token string">'height'</span><span class="token punctuation">]</span> <span class="token operator">>=</span> <span class="token number">70</span><span class="token punctuation">:</span>  <span class="token comment"># each dictionary has a 'height' key</span>
+        taller_than_70 <span class="token operator">+=</span> <span class="token number">1</span>  <span class="token comment"># increment the count</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>taller_than_70<span class="token punctuation">)</span>  <span class="token comment"># 2</span></code></pre>
+<p>This is effective, but not particularly efficient (or simple). We will discuss more robust and powerful ways of working with this style of data table more in a later chapter.</p>
+</div>
+<div id="which-data-structure-do-i-use" class="section level2">
+<h2><span class="header-section-number">10.6</span> Which Data Structure Do I Use?</h2>
+<p>The last two chapters have introduced multiple different <strong>data structures</strong> built into Python: <em>lists</em>, <em>tuples</em>, and <em>dictionaries</em>. They all represent collections of elements, though in somewhat different ways. So when do you each each type?</p>
+<ul>
+<li><p>Use <strong>lists</strong> for any <em>ordered</em> sequence of data (e.g., if you care about what comes first), or if you are collecting elements of the same general “type” (e.g., a lot of numbers, a lot of strings, etc.). If you’re not sure what else to use, a <em>list</em> is a great default data structure.</p></li>
+<li><p>Use <strong>tuples</strong> when you need to ensure that a list is <em>immutable</em> (cannot be changed), such as if you want it to be a key to a dictionary or a parameter to a function. Tuples are also nice if you just want to store a <em>small</em> set of data (only a few items) that is not going to change. Finally, tuples may potentially provide an “easier” syntax than lists in certain situations, such as when using multiple assignment.</p></li>
+<li><p>Use <strong>dictionaries</strong> whenever you need to represent a <em>mapping</em> of data and want to link some set of keys to some set of values. If you want to be able to “name” each value in your collection, you can use a dictionary. If you want to work with key-value pairs, you need to use a dictionary (or some other <a href="https://docs.python.org/3/library/collections.html#namedtuple-factory-function-for-tuples-with-named-fields">dictionary-like data structure</a>).</p></li>
+</ul>
+</div>
+<div id="resources-9" class="section level2 unnumbered">
+<h2>Resources</h2>
+<div class="list-condensed">
+<ul>
+<li><a href="https://automatetheboringstuff.com/chapter5/">Dictionaries and Data Structures (Sweigart)</a></li>
+<li><a href="https://books.trinket.io/pfe/09-dictionaries.html">Dictionaries (Downey)</a></li>
+</ul>
+</div>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="lists-and-sequences.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="searching.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": false,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["github", "facebook", "twitter", "google"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/infx511/book/edit/master/dictionaries.Rmd",
+"text": "Edit"
+},
+"download": ["intro-to-programming-for-data-science-visualization.pdf", "intro-to-programming-for-data-science-visualization.epub"],
+"toc": {
+"collapse": "section",
+"scroll_highlight": true
+}
+});
+});
+</script>
+
+</body>
+
+</html>

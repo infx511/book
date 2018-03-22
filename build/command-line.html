@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html  lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Introduction to Programming</title>
+  <meta name="description" content="The course reader for INFX 511: Introduction to Programming for Data Science and Visualization.">
+  <meta name="generator" content="bookdown 0.5 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Introduction to Programming" />
+  <meta property="og:type" content="book" />
+  <meta property="og:url" content="https://infx511.github.io/" />
+  
+  <meta property="og:description" content="The course reader for INFX 511: Introduction to Programming for Data Science and Visualization." />
+  <meta name="github-repo" content="infx511/book" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Introduction to Programming" />
+  
+  <meta name="twitter:description" content="The course reader for INFX 511: Introduction to Programming for Data Science and Visualization." />
+  
+
+<meta name="author" content="Joel Ross">
+
+
+<meta name="date" content="2018-03-21">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  <link rel="shortcut icon" href="img/ischool-gold.png" type="image/x-icon">
+<link rel="prev" href="setup-machine.html">
+<link rel="next" href="markdown.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+<link rel="stylesheet" href="css/prism.min.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./" class="title">Introduction to Programming</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About this Book</a></li>
+<li class="chapter" data-level="1" data-path="setup-machine.html"><a href="setup-machine.html"><i class="fa fa-check"></i><b>1</b> Setting Up Your Machine</a><ul>
+<li class="chapter" data-level="1.1" data-path="setup-machine.html"><a href="setup-machine.html#git"><i class="fa fa-check"></i><b>1.1</b> Git</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="setup-machine.html"><a href="setup-machine.html#github"><i class="fa fa-check"></i><b>1.1.1</b> GitHub</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="setup-machine.html"><a href="setup-machine.html#command-line-tools-bash"><i class="fa fa-check"></i><b>1.2</b> Command-line Tools (Bash)</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="setup-machine.html"><a href="setup-machine.html#command-line-on-a-mac"><i class="fa fa-check"></i><b>1.2.1</b> Command-line on a Mac</a></li>
+<li class="chapter" data-level="1.2.2" data-path="setup-machine.html"><a href="setup-machine.html#command-line-on-windows"><i class="fa fa-check"></i><b>1.2.2</b> Command-line on Windows</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="setup-machine.html"><a href="setup-machine.html#text-editors"><i class="fa fa-check"></i><b>1.3</b> Text Editors</a><ul>
+<li class="chapter" data-level="1.3.1" data-path="setup-machine.html"><a href="setup-machine.html#visual-studio-code"><i class="fa fa-check"></i><b>1.3.1</b> Visual Studio Code</a></li>
+<li class="chapter" data-level="1.3.2" data-path="setup-machine.html"><a href="setup-machine.html#atom"><i class="fa fa-check"></i><b>1.3.2</b> Atom</a></li>
+<li class="chapter" data-level="1.3.3" data-path="setup-machine.html"><a href="setup-machine.html#sublime-text"><i class="fa fa-check"></i><b>1.3.3</b> Sublime Text</a></li>
+<li class="chapter" data-level="1.3.4" data-path="setup-machine.html"><a href="setup-machine.html#pycharm"><i class="fa fa-check"></i><b>1.3.4</b> PyCharm</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="setup-machine.html"><a href="setup-machine.html#python"><i class="fa fa-check"></i><b>1.4</b> Python</a><ul>
+<li class="chapter" data-level="1.4.1" data-path="setup-machine.html"><a href="setup-machine.html#anaconda"><i class="fa fa-check"></i><b>1.4.1</b> Anaconda</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="setup-machine.html"><a href="setup-machine.html#resources"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="command-line.html"><a href="command-line.html"><i class="fa fa-check"></i><b>2</b> The Command Line</a><ul>
+<li class="chapter" data-level="2.1" data-path="command-line.html"><a href="command-line.html#accessing-the-command-line"><i class="fa fa-check"></i><b>2.1</b> Accessing the Command line</a></li>
+<li class="chapter" data-level="2.2" data-path="command-line.html"><a href="command-line.html#navigating-the-command-line"><i class="fa fa-check"></i><b>2.2</b> Navigating the Command Line</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="command-line.html"><a href="command-line.html#changing-directories"><i class="fa fa-check"></i><b>2.2.1</b> Changing Directories</a></li>
+<li class="chapter" data-level="2.2.2" data-path="command-line.html"><a href="command-line.html#listing-files"><i class="fa fa-check"></i><b>2.2.2</b> Listing Files</a></li>
+<li class="chapter" data-level="2.2.3" data-path="command-line.html"><a href="command-line.html#paths"><i class="fa fa-check"></i><b>2.2.3</b> Paths</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="command-line.html"><a href="command-line.html#file-commands"><i class="fa fa-check"></i><b>2.3</b> File Commands</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="command-line.html"><a href="command-line.html#learning-new-commands"><i class="fa fa-check"></i><b>2.3.1</b> Learning New Commands</a></li>
+<li class="chapter" data-level="2.3.2" data-path="command-line.html"><a href="command-line.html#wildcards"><i class="fa fa-check"></i><b>2.3.2</b> Wildcards</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="command-line.html"><a href="command-line.html#dealing-with-errors"><i class="fa fa-check"></i><b>2.4</b> Dealing With Errors</a></li>
+<li class="chapter" data-level="2.5" data-path="command-line.html"><a href="command-line.html#directing-output"><i class="fa fa-check"></i><b>2.5</b> Directing Output</a></li>
+<li class="chapter" data-level="2.6" data-path="command-line.html"><a href="command-line.html#shell-scripts"><i class="fa fa-check"></i><b>2.6</b> Shell Scripts</a></li>
+<li class="chapter" data-level="" data-path="command-line.html"><a href="command-line.html#resources-1"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="markdown.html"><a href="markdown.html"><i class="fa fa-check"></i><b>3</b> Markdown</a><ul>
+<li class="chapter" data-level="3.1" data-path="markdown.html"><a href="markdown.html#writing-markdown"><i class="fa fa-check"></i><b>3.1</b> Writing Markdown</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="markdown.html"><a href="markdown.html#text-formatting"><i class="fa fa-check"></i><b>3.1.1</b> Text Formatting</a></li>
+<li class="chapter" data-level="3.1.2" data-path="markdown.html"><a href="markdown.html#text-blocks"><i class="fa fa-check"></i><b>3.1.2</b> Text Blocks</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="markdown.html"><a href="markdown.html#rendering-markdown"><i class="fa fa-check"></i><b>3.2</b> Rendering Markdown</a></li>
+<li class="chapter" data-level="" data-path="markdown.html"><a href="markdown.html#resources-2"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="git-basics.html"><a href="git-basics.html"><i class="fa fa-check"></i><b>4</b> Git and GitHub</a><ul>
+<li class="chapter" data-level="4.1" data-path="git-basics.html"><a href="git-basics.html#what-is-this-git-thing-anyway"><i class="fa fa-check"></i><b>4.1</b> What is this <em>git</em> thing anyway?</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="git-basics.html"><a href="git-basics.html#git-core-concepts"><i class="fa fa-check"></i><b>4.1.1</b> Git Core Concepts</a></li>
+<li class="chapter" data-level="4.1.2" data-path="git-basics.html"><a href="git-basics.html#wait-but-what-is-github-then"><i class="fa fa-check"></i><b>4.1.2</b> Wait, but what is GitHub then?</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="git-basics.html"><a href="git-basics.html#installation-setup"><i class="fa fa-check"></i><b>4.2</b> Installation &amp; Setup</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="git-basics.html"><a href="git-basics.html#creating-a-repo"><i class="fa fa-check"></i><b>4.2.1</b> Creating a Repo</a></li>
+<li class="chapter" data-level="4.2.2" data-path="git-basics.html"><a href="git-basics.html#checking-status"><i class="fa fa-check"></i><b>4.2.2</b> Checking Status</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="git-basics.html"><a href="git-basics.html#making-changes"><i class="fa fa-check"></i><b>4.3</b> Making Changes</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="git-basics.html"><a href="git-basics.html#adding-files"><i class="fa fa-check"></i><b>4.3.1</b> Adding Files</a></li>
+<li class="chapter" data-level="4.3.2" data-path="git-basics.html"><a href="git-basics.html#committing"><i class="fa fa-check"></i><b>4.3.2</b> Committing</a></li>
+<li class="chapter" data-level="4.3.3" data-path="git-basics.html"><a href="git-basics.html#commit-history"><i class="fa fa-check"></i><b>4.3.3</b> Commit History</a></li>
+<li class="chapter" data-level="4.3.4" data-path="git-basics.html"><a href="git-basics.html#reviewing-the-process"><i class="fa fa-check"></i><b>4.3.4</b> Reviewing the Process</a></li>
+<li class="chapter" data-level="4.3.5" data-path="git-basics.html"><a href="git-basics.html#the-.gitignore-file"><i class="fa fa-check"></i><b>4.3.5</b> The <code>.gitignore</code> File</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="git-basics.html"><a href="git-basics.html#github-and-remotes"><i class="fa fa-check"></i><b>4.4</b> GitHub and Remotes</a><ul>
+<li class="chapter" data-level="4.4.1" data-path="git-basics.html"><a href="git-basics.html#forking-and-cloning"><i class="fa fa-check"></i><b>4.4.1</b> Forking and Cloning</a></li>
+<li class="chapter" data-level="4.4.2" data-path="git-basics.html"><a href="git-basics.html#pushing-and-pulling"><i class="fa fa-check"></i><b>4.4.2</b> Pushing and Pulling</a></li>
+<li class="chapter" data-level="4.4.3" data-path="git-basics.html"><a href="git-basics.html#reviewing-the-process-1"><i class="fa fa-check"></i><b>4.4.3</b> Reviewing The Process</a></li>
+<li class="chapter" data-level="4.4.4" data-path="git-basics.html"><a href="git-basics.html#course-assignments-on-github"><i class="fa fa-check"></i><b>4.4.4</b> Course Assignments on GitHub</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="git-basics.html"><a href="git-basics.html#command-summary"><i class="fa fa-check"></i><b>4.5</b> Command Summary</a></li>
+<li class="chapter" data-level="" data-path="git-basics.html"><a href="git-basics.html#resources-3"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="introduction-to-python.html"><a href="introduction-to-python.html"><i class="fa fa-check"></i><b>5</b> Introduction to Python</a><ul>
+<li class="chapter" data-level="5.1" data-path="introduction-to-python.html"><a href="introduction-to-python.html#programming-with-python"><i class="fa fa-check"></i><b>5.1</b> Programming with Python</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="introduction-to-python.html"><a href="introduction-to-python.html#versions"><i class="fa fa-check"></i><b>5.1.1</b> Versions</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="introduction-to-python.html"><a href="introduction-to-python.html#running-python-scripts"><i class="fa fa-check"></i><b>5.2</b> Running Python Scripts</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="introduction-to-python.html"><a href="introduction-to-python.html#on-the-command-line"><i class="fa fa-check"></i><b>5.2.1</b> On the Command Line</a></li>
+<li class="chapter" data-level="5.2.2" data-path="introduction-to-python.html"><a href="introduction-to-python.html#jupyter-notebooks"><i class="fa fa-check"></i><b>5.2.2</b> Jupyter Notebooks</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="introduction-to-python.html"><a href="introduction-to-python.html#comments"><i class="fa fa-check"></i><b>5.3</b> Comments</a></li>
+<li class="chapter" data-level="5.4" data-path="introduction-to-python.html"><a href="introduction-to-python.html#variables"><i class="fa fa-check"></i><b>5.4</b> Variables</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="introduction-to-python.html"><a href="introduction-to-python.html#data-types"><i class="fa fa-check"></i><b>5.4.1</b> Data Types</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="introduction-to-python.html"><a href="introduction-to-python.html#getting-help"><i class="fa fa-check"></i><b>5.5</b> Getting Help</a></li>
+<li class="chapter" data-level="" data-path="introduction-to-python.html"><a href="introduction-to-python.html#resources-4"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="functions.html"><a href="functions.html"><i class="fa fa-check"></i><b>6</b> Functions</a><ul>
+<li class="chapter" data-level="6.1" data-path="functions.html"><a href="functions.html#what-are-functions"><i class="fa fa-check"></i><b>6.1</b> What are Functions?</a></li>
+<li class="chapter" data-level="6.2" data-path="functions.html"><a href="functions.html#python-function-syntax"><i class="fa fa-check"></i><b>6.2</b> Python Function Syntax</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="functions.html"><a href="functions.html#object-methods"><i class="fa fa-check"></i><b>6.2.1</b> Object Methods</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="functions.html"><a href="functions.html#built-in-python-functions"><i class="fa fa-check"></i><b>6.3</b> Built-in Python Functions</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="functions.html"><a href="functions.html#modules-and-libraries"><i class="fa fa-check"></i><b>6.3.1</b> Modules and Libraries</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="functions.html"><a href="functions.html#writing-functions"><i class="fa fa-check"></i><b>6.4</b> Writing Functions</a><ul>
+<li class="chapter" data-level="6.4.1" data-path="functions.html"><a href="functions.html#doc-strings"><i class="fa fa-check"></i><b>6.4.1</b> Doc Strings</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="functions.html"><a href="functions.html#resources-5"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="logic.html"><a href="logic.html"><i class="fa fa-check"></i><b>7</b> Logic and Conditionals</a><ul>
+<li class="chapter" data-level="7.1" data-path="logic.html"><a href="logic.html#booleans"><i class="fa fa-check"></i><b>7.1</b> Booleans</a><ul>
+<li class="chapter" data-level="7.1.1" data-path="logic.html"><a href="logic.html#boolean-operators"><i class="fa fa-check"></i><b>7.1.1</b> Boolean Operators</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="logic.html"><a href="logic.html#conditional-statements"><i class="fa fa-check"></i><b>7.2</b> Conditional Statements</a><ul>
+<li class="chapter" data-level="7.2.1" data-path="logic.html"><a href="logic.html#designing-conditions"><i class="fa fa-check"></i><b>7.2.1</b> Designing Conditions</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="logic.html"><a href="logic.html#determining-module-or-script"><i class="fa fa-check"></i><b>7.3</b> Determining Module or Script</a></li>
+<li class="chapter" data-level="" data-path="logic.html"><a href="logic.html#resources-6"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html"><i class="fa fa-check"></i><b>8</b> Iteration and Loops</a><ul>
+<li class="chapter" data-level="8.1" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html#while-loops"><i class="fa fa-check"></i><b>8.1</b> While Loops</a><ul>
+<li class="chapter" data-level="8.1.1" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html#counting-and-loops"><i class="fa fa-check"></i><b>8.1.1</b> Counting and Loops</a></li>
+<li class="chapter" data-level="8.1.2" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html#nested-conditionals-and-sentinels"><i class="fa fa-check"></i><b>8.1.2</b> Nested Conditionals and Sentinels</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html#for-loops"><i class="fa fa-check"></i><b>8.2</b> For Loops</a><ul>
+<li class="chapter" data-level="8.2.1" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html#difference-from-while-loops"><i class="fa fa-check"></i><b>8.2.1</b> Difference from While Loops</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html#iterating-over-files"><i class="fa fa-check"></i><b>8.3</b> Iterating over Files</a><ul>
+<li class="chapter" data-level="8.3.1" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html#tryexcept"><i class="fa fa-check"></i><b>8.3.1</b> Try/Except</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html#resources-7"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="lists-and-sequences.html"><a href="lists-and-sequences.html"><i class="fa fa-check"></i><b>9</b> Lists and Sequences</a><ul>
+<li class="chapter" data-level="9.1" data-path="lists-and-sequences.html"><a href="lists-and-sequences.html#what-is-a-list"><i class="fa fa-check"></i><b>9.1</b> What is a List?</a></li>
+<li class="chapter" data-level="9.2" data-path="lists-and-sequences.html"><a href="lists-and-sequences.html#list-indices"><i class="fa fa-check"></i><b>9.2</b> List Indices</a></li>
+<li class="chapter" data-level="9.3" data-path="lists-and-sequences.html"><a href="lists-and-sequences.html#list-operations-and-methods"><i class="fa fa-check"></i><b>9.3</b> List Operations and Methods</a></li>
+<li class="chapter" data-level="9.4" data-path="lists-and-sequences.html"><a href="lists-and-sequences.html#lists-and-loops"><i class="fa fa-check"></i><b>9.4</b> Lists and Loops</a></li>
+<li class="chapter" data-level="9.5" data-path="lists-and-sequences.html"><a href="lists-and-sequences.html#nested-lists"><i class="fa fa-check"></i><b>9.5</b> Nested Lists</a></li>
+<li class="chapter" data-level="9.6" data-path="lists-and-sequences.html"><a href="lists-and-sequences.html#tuples"><i class="fa fa-check"></i><b>9.6</b> Tuples</a></li>
+<li class="chapter" data-level="" data-path="lists-and-sequences.html"><a href="lists-and-sequences.html#resources-8"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="dictionaries.html"><a href="dictionaries.html"><i class="fa fa-check"></i><b>10</b> Dictionaries</a><ul>
+<li class="chapter" data-level="10.1" data-path="dictionaries.html"><a href="dictionaries.html#what-is-a-dictionary"><i class="fa fa-check"></i><b>10.1</b> What is a Dictionary?</a></li>
+<li class="chapter" data-level="10.2" data-path="dictionaries.html"><a href="dictionaries.html#accessing-a-dictionary"><i class="fa fa-check"></i><b>10.2</b> Accessing a Dictionary</a></li>
+<li class="chapter" data-level="10.3" data-path="dictionaries.html"><a href="dictionaries.html#dictionary-methods"><i class="fa fa-check"></i><b>10.3</b> Dictionary Methods</a></li>
+<li class="chapter" data-level="10.4" data-path="dictionaries.html"><a href="dictionaries.html#dictionaries-and-loops"><i class="fa fa-check"></i><b>10.4</b> Dictionaries and Loops</a></li>
+<li class="chapter" data-level="10.5" data-path="dictionaries.html"><a href="dictionaries.html#nesting-dictionaries"><i class="fa fa-check"></i><b>10.5</b> Nesting Dictionaries</a></li>
+<li class="chapter" data-level="10.6" data-path="dictionaries.html"><a href="dictionaries.html#which-data-structure-do-i-use"><i class="fa fa-check"></i><b>10.6</b> Which Data Structure Do I Use?</a></li>
+<li class="chapter" data-level="" data-path="dictionaries.html"><a href="dictionaries.html#resources-9"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="searching.html"><a href="searching.html"><i class="fa fa-check"></i><b>11</b> Searching and Efficiency</a><ul>
+<li class="chapter" data-level="11.1" data-path="searching.html"><a href="searching.html#linear-search"><i class="fa fa-check"></i><b>11.1</b> Linear Search</a><ul>
+<li class="chapter" data-level="11.1.1" data-path="searching.html"><a href="searching.html#maximal-search"><i class="fa fa-check"></i><b>11.1.1</b> Maximal Search</a></li>
+<li class="chapter" data-level="11.1.2" data-path="searching.html"><a href="searching.html#falsification-search"><i class="fa fa-check"></i><b>11.1.2</b> Falsification Search</a></li>
+</ul></li>
+<li class="chapter" data-level="11.2" data-path="searching.html"><a href="searching.html#linear-search-speed"><i class="fa fa-check"></i><b>11.2</b> Linear Search Speed</a></li>
+<li class="chapter" data-level="11.3" data-path="searching.html"><a href="searching.html#binary-search"><i class="fa fa-check"></i><b>11.3</b> Binary Search</a><ul>
+<li class="chapter" data-level="11.3.1" data-path="searching.html"><a href="searching.html#binary-search-speed"><i class="fa fa-check"></i><b>11.3.1</b> Binary Search Speed</a></li>
+</ul></li>
+<li class="chapter" data-level="11.4" data-path="searching.html"><a href="searching.html#sorting"><i class="fa fa-check"></i><b>11.4</b> Sorting</a></li>
+<li class="chapter" data-level="" data-path="searching.html"><a href="searching.html#resources-10"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="functional-programming.html"><a href="functional-programming.html"><i class="fa fa-check"></i><b>12</b> Functional Programming</a><ul>
+<li class="chapter" data-level="12.1" data-path="functional-programming.html"><a href="functional-programming.html#functions-are-variables"><i class="fa fa-check"></i><b>12.1</b> Functions ARE Variables</a><ul>
+<li class="chapter" data-level="12.1.1" data-path="functional-programming.html"><a href="functional-programming.html#lambdas-anonymous-functions"><i class="fa fa-check"></i><b>12.1.1</b> lambdas: Anonymous Functions</a></li>
+</ul></li>
+<li class="chapter" data-level="12.2" data-path="functional-programming.html"><a href="functional-programming.html#functional-looping"><i class="fa fa-check"></i><b>12.2</b> Functional Looping</a><ul>
+<li class="chapter" data-level="12.2.1" data-path="functional-programming.html"><a href="functional-programming.html#map"><i class="fa fa-check"></i><b>12.2.1</b> Map</a></li>
+<li class="chapter" data-level="12.2.2" data-path="functional-programming.html"><a href="functional-programming.html#filter"><i class="fa fa-check"></i><b>12.2.2</b> Filter</a></li>
+<li class="chapter" data-level="12.2.3" data-path="functional-programming.html"><a href="functional-programming.html#reduce"><i class="fa fa-check"></i><b>12.2.3</b> Reduce</a></li>
+</ul></li>
+<li class="chapter" data-level="12.3" data-path="functional-programming.html"><a href="functional-programming.html#list-comprehensions"><i class="fa fa-check"></i><b>12.3</b> List Comprehensions</a></li>
+<li class="chapter" data-level="" data-path="functional-programming.html"><a href="functional-programming.html#resources-11"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="accessing-web-apis.html"><a href="accessing-web-apis.html"><i class="fa fa-check"></i><b>13</b> Accessing Web APIs</a><ul>
+<li class="chapter" data-level="13.1" data-path="accessing-web-apis.html"><a href="accessing-web-apis.html#web-apis"><i class="fa fa-check"></i><b>13.1</b> Web APIs</a></li>
+<li class="chapter" data-level="13.2" data-path="accessing-web-apis.html"><a href="accessing-web-apis.html#restful-requests"><i class="fa fa-check"></i><b>13.2</b> RESTful Requests</a><ul>
+<li class="chapter" data-level="13.2.1" data-path="accessing-web-apis.html"><a href="accessing-web-apis.html#uris"><i class="fa fa-check"></i><b>13.2.1</b> URIs</a></li>
+<li class="chapter" data-level="13.2.2" data-path="accessing-web-apis.html"><a href="accessing-web-apis.html#http-verbs"><i class="fa fa-check"></i><b>13.2.2</b> HTTP Verbs</a></li>
+</ul></li>
+<li class="chapter" data-level="13.3" data-path="accessing-web-apis.html"><a href="accessing-web-apis.html#accessing-web-apis-1"><i class="fa fa-check"></i><b>13.3</b> Accessing Web APIs</a></li>
+<li class="chapter" data-level="13.4" data-path="accessing-web-apis.html"><a href="accessing-web-apis.html#json-data"><i class="fa fa-check"></i><b>13.4</b> JSON Data</a></li>
+<li class="chapter" data-level="" data-path="accessing-web-apis.html"><a href="accessing-web-apis.html#resources-12"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="git-branches.html"><a href="git-branches.html"><i class="fa fa-check"></i><b>14</b> Git Branches</a><ul>
+<li class="chapter" data-level="14.1" data-path="git-branches.html"><a href="git-branches.html#git-branches"><i class="fa fa-check"></i><b>14.1</b> Git Branches</a></li>
+<li class="chapter" data-level="14.2" data-path="git-branches.html"><a href="git-branches.html#merging"><i class="fa fa-check"></i><b>14.2</b> Merging</a><ul>
+<li class="chapter" data-level="14.2.1" data-path="git-branches.html"><a href="git-branches.html#merge-conflicts"><i class="fa fa-check"></i><b>14.2.1</b> Merge Conflicts</a></li>
+</ul></li>
+<li class="chapter" data-level="14.3" data-path="git-branches.html"><a href="git-branches.html#undoing-changes"><i class="fa fa-check"></i><b>14.3</b> Undoing Changes</a></li>
+<li class="chapter" data-level="14.4" data-path="git-branches.html"><a href="git-branches.html#github-and-branches"><i class="fa fa-check"></i><b>14.4</b> GitHub and Branches</a><ul>
+<li class="chapter" data-level="14.4.1" data-path="git-branches.html"><a href="git-branches.html#github-pages"><i class="fa fa-check"></i><b>14.4.1</b> GitHub Pages</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="git-branches.html"><a href="git-branches.html#resources-13"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="git-collaboration.html"><a href="git-collaboration.html"><i class="fa fa-check"></i><b>15</b> Git Collaboration</a><ul>
+<li class="chapter" data-level="15.1" data-path="git-collaboration.html"><a href="git-collaboration.html#centralized-workflow"><i class="fa fa-check"></i><b>15.1</b> Centralized Workflow</a></li>
+<li class="chapter" data-level="15.2" data-path="git-collaboration.html"><a href="git-collaboration.html#feature-branch-workflow"><i class="fa fa-check"></i><b>15.2</b> Feature Branch Workflow</a></li>
+<li class="chapter" data-level="15.3" data-path="git-collaboration.html"><a href="git-collaboration.html#forking-workflow"><i class="fa fa-check"></i><b>15.3</b> Forking Workflow</a><ul>
+<li class="chapter" data-level="15.3.1" data-path="git-collaboration.html"><a href="git-collaboration.html#pull-requests"><i class="fa fa-check"></i><b>15.3.1</b> Pull Requests</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="git-collaboration.html"><a href="git-collaboration.html#resources-14"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="object-oriented-programming.html"><a href="object-oriented-programming.html"><i class="fa fa-check"></i><b>16</b> Object-Oriented Programming</a><ul>
+<li class="chapter" data-level="" data-path="object-oriented-programming.html"><a href="object-oriented-programming.html#resources-15"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="pandas.html"><a href="pandas.html"><i class="fa fa-check"></i><b>17</b> The <code>pandas</code> Library</a><ul>
+<li class="chapter" data-level="17.1" data-path="pandas.html"><a href="pandas.html#setting-up-pandas"><i class="fa fa-check"></i><b>17.1</b> Setting up <code>pandas</code></a></li>
+<li class="chapter" data-level="17.2" data-path="pandas.html"><a href="pandas.html#series"><i class="fa fa-check"></i><b>17.2</b> Series</a><ul>
+<li class="chapter" data-level="17.2.1" data-path="pandas.html"><a href="pandas.html#series-operations-and-methods"><i class="fa fa-check"></i><b>17.2.1</b> Series Operations and Methods</a></li>
+<li class="chapter" data-level="17.2.2" data-path="pandas.html"><a href="pandas.html#accessing-series"><i class="fa fa-check"></i><b>17.2.2</b> Accessing Series</a></li>
+</ul></li>
+<li class="chapter" data-level="17.3" data-path="pandas.html"><a href="pandas.html#dataframes"><i class="fa fa-check"></i><b>17.3</b> DataFrames</a><ul>
+<li class="chapter" data-level="17.3.1" data-path="pandas.html"><a href="pandas.html#dataframe-operations-and-methods"><i class="fa fa-check"></i><b>17.3.1</b> DataFrame Operations and Methods</a></li>
+<li class="chapter" data-level="17.3.2" data-path="pandas.html"><a href="pandas.html#accessing-dataframes"><i class="fa fa-check"></i><b>17.3.2</b> Accessing DataFrames</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="pandas.html"><a href="pandas.html#resources-16"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="18" data-path="javascript.html"><a href="javascript.html"><i class="fa fa-check"></i><b>18</b> JavaScript</a><ul>
+<li class="chapter" data-level="18.1" data-path="javascript.html"><a href="javascript.html#programming-with-javascript"><i class="fa fa-check"></i><b>18.1</b> Programming with JavaScript</a><ul>
+<li class="chapter" data-level="18.1.1" data-path="javascript.html"><a href="javascript.html#history-and-versions"><i class="fa fa-check"></i><b>18.1.1</b> History and Versions</a></li>
+<li class="chapter" data-level="18.1.2" data-path="javascript.html"><a href="javascript.html#running-javascript"><i class="fa fa-check"></i><b>18.1.2</b> Running JavaScript</a></li>
+</ul></li>
+<li class="chapter" data-level="18.2" data-path="javascript.html"><a href="javascript.html#javascript-basics"><i class="fa fa-check"></i><b>18.2</b> JavaScript Basics</a><ul>
+<li class="chapter" data-level="18.2.1" data-path="javascript.html"><a href="javascript.html#strict-mode"><i class="fa fa-check"></i><b>18.2.1</b> Strict Mode</a></li>
+</ul></li>
+<li class="chapter" data-level="18.3" data-path="javascript.html"><a href="javascript.html#variables-1"><i class="fa fa-check"></i><b>18.3</b> Variables</a><ul>
+<li class="chapter" data-level="18.3.1" data-path="javascript.html"><a href="javascript.html#basic-data-types"><i class="fa fa-check"></i><b>18.3.1</b> Basic Data Types</a></li>
+<li class="chapter" data-level="18.3.2" data-path="javascript.html"><a href="javascript.html#type-coercion"><i class="fa fa-check"></i><b>18.3.2</b> Type Coercion</a></li>
+<li class="chapter" data-level="18.3.3" data-path="javascript.html"><a href="javascript.html#arrays"><i class="fa fa-check"></i><b>18.3.3</b> Arrays</a></li>
+<li class="chapter" data-level="18.3.4" data-path="javascript.html"><a href="javascript.html#objects"><i class="fa fa-check"></i><b>18.3.4</b> Objects</a></li>
+</ul></li>
+<li class="chapter" data-level="18.4" data-path="javascript.html"><a href="javascript.html#control-structures"><i class="fa fa-check"></i><b>18.4</b> Control Structures</a><ul>
+<li class="chapter" data-level="18.4.1" data-path="javascript.html"><a href="javascript.html#conditionals"><i class="fa fa-check"></i><b>18.4.1</b> Conditionals</a></li>
+<li class="chapter" data-level="18.4.2" data-path="javascript.html"><a href="javascript.html#loops"><i class="fa fa-check"></i><b>18.4.2</b> Loops</a></li>
+</ul></li>
+<li class="chapter" data-level="18.5" data-path="javascript.html"><a href="javascript.html#functions-1"><i class="fa fa-check"></i><b>18.5</b> Functions</a><ul>
+<li class="chapter" data-level="18.5.1" data-path="javascript.html"><a href="javascript.html#functional-programming-1"><i class="fa fa-check"></i><b>18.5.1</b> Functional Programming</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="javascript.html"><a href="javascript.html#resources-17"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="19" data-path="web-programming.html"><a href="web-programming.html"><i class="fa fa-check"></i><b>19</b> Web Programming</a><ul>
+<li class="chapter" data-level="19.1" data-path="web-programming.html"><a href="web-programming.html#web-pages-and-html"><i class="fa fa-check"></i><b>19.1</b> Web Pages and HTML</a><ul>
+<li class="chapter" data-level="19.1.1" data-path="web-programming.html"><a href="web-programming.html#elements-are-nested"><i class="fa fa-check"></i><b>19.1.1</b> Elements are Nested</a></li>
+<li class="chapter" data-level="19.1.2" data-path="web-programming.html"><a href="web-programming.html#scalable-vector-graphics-svg"><i class="fa fa-check"></i><b>19.1.2</b> Scalable Vector Graphics (SVG)</a></li>
+</ul></li>
+<li class="chapter" data-level="19.2" data-path="web-programming.html"><a href="web-programming.html#dom-manipulation-with-d3"><i class="fa fa-check"></i><b>19.2</b> DOM Manipulation with D3</a><ul>
+<li class="chapter" data-level="19.2.1" data-path="web-programming.html"><a href="web-programming.html#selecting-elements"><i class="fa fa-check"></i><b>19.2.1</b> Selecting Elements</a></li>
+<li class="chapter" data-level="19.2.2" data-path="web-programming.html"><a href="web-programming.html#changing-elements"><i class="fa fa-check"></i><b>19.2.2</b> Changing Elements</a></li>
+<li class="chapter" data-level="19.2.3" data-path="web-programming.html"><a href="web-programming.html#adding-elements"><i class="fa fa-check"></i><b>19.2.3</b> Adding Elements</a></li>
+</ul></li>
+<li class="chapter" data-level="19.3" data-path="web-programming.html"><a href="web-programming.html#user-events"><i class="fa fa-check"></i><b>19.3</b> User Events</a></li>
+<li class="chapter" data-level="19.4" data-path="web-programming.html"><a href="web-programming.html#ajax"><i class="fa fa-check"></i><b>19.4</b> AJAX</a></li>
+<li class="chapter" data-level="" data-path="web-programming.html"><a href="web-programming.html#resources-18"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="20" data-path="d3.html"><a href="d3.html"><i class="fa fa-check"></i><b>20</b> D3 Visualizations</a><ul>
+<li class="chapter" data-level="20.1" data-path="d3.html"><a href="d3.html#the-data-join"><i class="fa fa-check"></i><b>20.1</b> The Data Join</a><ul>
+<li class="chapter" data-level="20.1.1" data-path="d3.html"><a href="d3.html#entering-and-exiting-elements"><i class="fa fa-check"></i><b>20.1.1</b> Entering and Exiting Elements</a></li>
+</ul></li>
+<li class="chapter" data-level="20.2" data-path="d3.html"><a href="d3.html#animation"><i class="fa fa-check"></i><b>20.2</b> Animation</a></li>
+<li class="chapter" data-level="20.3" data-path="d3.html"><a href="d3.html#margins-and-positioning"><i class="fa fa-check"></i><b>20.3</b> Margins and Positioning</a></li>
+<li class="chapter" data-level="20.4" data-path="d3.html"><a href="d3.html#scales"><i class="fa fa-check"></i><b>20.4</b> Scales</a><ul>
+<li class="chapter" data-level="20.4.1" data-path="d3.html"><a href="d3.html#axes"><i class="fa fa-check"></i><b>20.4.1</b> Axes</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="d3.html"><a href="d3.html#resources-19"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Introduction to Programming</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="command-line" class="section level1">
+<h1><span class="header-section-number">Chapter 2</span> The Command Line</h1>
+<p>The <strong>command line</strong> is an <em>interface</em> to a computer—a way for you (the human) to communicate with the machine. But unlike common graphical interfaces that use <a href="https://en.wikipedia.org/wiki/WIMP_(computing)">windows, icons, menus, and pointers</a>, the command line is <em>text-based</em>: you type commands instead of clicking on icons. The command line lets you do everything you’d normally do by clicking with a mouse, but by typing in a manner similar to programming!</p>
+<div class="figure">
+<img src="img/command-line/cli-wikipedia.png" title="example command line" alt="An example of the command line in action (from Wikipedia)." />
+<p class="caption">An example of the command line in action (from Wikipedia).</p>
+</div>
+<p>The command line is not as friendly or intuitive as a graphical interface: it’s much harder to learn and figure out. However, it has the advantage of being both more powerful and more efficient in the hands of expert users. (It’s faster to type than to move a mouse, and you can do <em>lots</em> of “clicks” with a single command). The command line is also used when working on remote servers or other computers that for some reason do not have a graphical interface enabled. Thus, command line is an essential tool for all professional developers, particularly when working with large amounts of data or files.</p>
+<p>This chapter will give you a brief introduction to basic tasks using the command line: enough to get you comfortable navigating the interface and able to interpret commands.</p>
+<div id="accessing-the-command-line" class="section level2">
+<h2><span class="header-section-number">2.1</span> Accessing the Command line</h2>
+<p>In order to use the command line, you will need to open a <strong>command shell</strong> (a.k.a. a <em>command prompt</em>). This is a program that provides the interface to type commands into. You should have installed a command shell (hereafter “the terminal”) as part of <a href="setup-machine.html#setup-machine">setting up your machine</a>.</p>
+<p>Once you open up the shell (Terminal or Git Bash), you should see something like this (red notes are added):</p>
+<div class="figure">
+<img src="img/command-line/cli-blank.png" title="A newly opened command line" alt="A newly opened command line." />
+<p class="caption">A newly opened command line.</p>
+</div>
+<p>This is the textual equivalent of having opened up Finder or File Explorer and having it show you the user’s “Home” folder. The text shown lets you know:</p>
+<ul>
+<li>What <strong>machine</strong> you’re currently interfacing with (you can use the command line to control different computers across a network or the internet).</li>
+<li>What <strong>directory</strong> (folder) you are currently looking at (<code>~</code> is a shorthand for the “home directory”).</li>
+<li>What <strong>user</strong> you are logged in as.</li>
+</ul>
+<p>After that you’ll see the <strong>prompt</strong> (typically denoted as the <code>$</code> symbol), which is where you will type in your commands.</p>
+</div>
+<div id="navigating-the-command-line" class="section level2">
+<h2><span class="header-section-number">2.2</span> Navigating the Command Line</h2>
+<p>Although the command-prompt gives you the name of the folder you’re in, you might like more detail about where that folder is. Time to send your first command! At the prompt, type:</p>
+<pre class="language-bash"><code><span class="token function">pwd</span></code></pre>
+<p>This stands for <strong>p</strong>rint <strong>w</strong>orking <strong>d</strong>irectory (shell commands are highly abbreviated to make them faster to type), and will tell the computer to print the folder you are currently “in”.</p>
+<p class="alert alert-info">
+<em>Fun fact:</em> technically, this command usually starts a tiny program (app) that does exactly one thing: prints the working directory. When you run a command, you’re actually executing a tiny program! And when you run programs (tiny or large) on the command line, it looks like you’re typing in commands.
+</p>
+<p>Folders on computers are stored in a hierarchy: each folder has more folders inside it, which have more folders inside them. This produces a <a href="https://en.wikipedia.org/wiki/Tree_(data_structure)">tree</a> structure which on a Mac may look like:</p>
+<div class="figure">
+<img src="img/command-line/dir-tree.png" title="directory tree" alt="A Directory Tree, from Bradnam and Korf." />
+<p class="caption">A Directory Tree, from Bradnam and Korf.</p>
+</div>
+<p>You describe what folder you are in putting a slash <code>/</code> between each folder in the tree: thus <code>/Users/iguest</code> means “the <code>iguest</code> folder, which is inside the <code>Users</code> folder”.</p>
+<p>At the very top (or bottom, depending on your point of view) is the <strong>root</strong> <code>/</code> directory‐which has no name, and so is just indicated with that single slash. So <code>/Users/iguest</code> really means “the <code>iguest</code> folder, which is inside the <code>Users</code> folder, which is inside the <em>root</em> folder”.</p>
+<div id="changing-directories" class="section level3">
+<h3><span class="header-section-number">2.2.1</span> Changing Directories</h3>
+<p>What if you want to change folders? In a graphical system like Finder, you would just double-click on the folder to open it. But there’s no clicking on the command line.</p>
+<p class="alert alert-warning">
+This includes clicking to move the cursor to an earlier part of the command you typed. You’ll need to use the left and right arrow keys to move the cursor instead!
+</p>
+<p class="alert alert-info">
+<strong>Protip:</strong> The up and down arrow keys will let you cycle though your previous commands so you don’t need to re-type them!
+</p>
+<p>Since you can’t click on a folder, you’ll need to use another command:</p>
+<pre class="language-bash"><code><span class="token function">cd</span> folder_name</code></pre>
+<p>The first word is the <strong>command</strong>, or what you want the computer to do. In this case, you’re issuing the command that means <strong>c</strong>hange <strong>d</strong>irectory.</p>
+<p>The second word is an example of an <strong>argument</strong>, which is a programming term that means “more details about what to do”. In this case, you’re providing a <em>required</em> argument of what folder you want to change to! (You’ll of course need to replace <code>folder_name</code> with the name of the folder).</p>
+<ul>
+<li><p>Try changing to the <code>Desktop</code> folder, which should be inside the home folder you started in—you could see it in Finder or File Explorer!</p></li>
+<li><p>After you change folders, try printing your current location. Can you see that it has changed?</p></li>
+</ul>
+</div>
+<div id="listing-files" class="section level3">
+<h3><span class="header-section-number">2.2.2</span> Listing Files</h3>
+<p>In a graphical system, once you’ve double-clicked on a folder, Finder will show you the contents of that folder. The command line doesn’t do this automatically; instead you need another command:</p>
+<pre class="language-bash"><code><span class="token function">ls</span> <span class="token punctuation">[</span>folder_name<span class="token punctuation">]</span></code></pre>
+<p>This command says to <strong>l</strong>i<strong>s</strong>t the folder contents. Note that the <em>argument</em> here is written in brackets (<code>[]</code>) to indicate that it is <em>optional</em>. If you just issue the <strong><code>ls</code></strong> command without an argument, it will list the contents of the current folder. If you include the optional argument (leaving off the brackets), you can “peek” at the contents of a folder you are not currently in.</p>
+<div class="alert alert-danger">
+<p>
+<strong>Warning</strong>: The command line can be not great about giving <strong>feedback</strong> for your actions. For example, if there are no files in the folder, then <code>ls</code> will simply show nothing, potentially looking like it “didn’t work”. Or when typing a <strong>password</strong>, the letters you type won’t show (not even as <code>*</code>) as a security measure.
+</p>
+<p>
+Just because you don’t see any results from your command/typing, doesn’t mean it didn’t work! Trust in yourself, and use basic commands like <code>ls</code> and <code>pwd</code> to confirm any changes if you’re unsure. Take it slow, one step at a time.
+</p>
+</div>
+</div>
+<div id="paths" class="section level3">
+<h3><span class="header-section-number">2.2.3</span> Paths</h3>
+<p>Note that both the <strong><code>cd</code></strong> and <strong><code>ls</code></strong> commands work even for folders that are not “immediately inside” the current directory! You can refer to <em>any</em> file or folder on the computer by specifying its <strong>path</strong>. A file’s path is “how you get to that file”: the list of folders you’d need to click through to get to the file, with each folder separated by a <code>/</code>:</p>
+<pre><code>cd /Users/iguest/Desktop/</code></pre>
+<p>This says to start at the root directory (that initial <code>/</code>), then go to <code>Users</code>, then go to <code>iguest</code>, then to <code>Desktop</code>.</p>
+<p>Because this path starts with a specific directory (the root directory), it is referred to as an <strong>absolute path</strong>. No matter what folder you currently happen to be in, that path will refer to the correct file because it always starts on its journey from the root.</p>
+<p>Contrast that with:</p>
+<pre><code>cd iguest/Desktop/</code></pre>
+<p>Because this path doesn’t have the leading slash, it just says to “go to the <code>iguest/Desktop</code> folder <em>from the current location</em>”. It is known as a <strong>relative path</strong>: it gives you directions to a file <em>relative to the current folder</em>. As such, the relative path <code>iguest/Desktop/</code> path will only refer to the correct location if you happen to be in the <code>/Users</code> folder; if you start somewhere else, who knows where you’ll end up!</p>
+<p class="alert alert-warning">
+You should <strong>always</strong> use relative paths, particularly when programming! Because you’ll almost always be managing multiples files in a project, you should refer to the files <em>relatively</em> within your project. That way, you program can easily work across computers. For example, if your code refers to <code>/Users/your-user-name/project-name/data</code>, it can only run on the <code>your-user-name</code> account. However, if you use a <em>relative path</em> within your code (i.e., <code>project-name/data</code>), the program will run on multiple computers (crucial for collaborative projects).
+</p>
+<p>You can refer to the “current folder” by using a single dot <strong><code>.</code></strong>. So the command</p>
+<pre class="language-bash"><code><span class="token function">ls</span> <span class="token keyword">.</span></code></pre>
+<p>means “list the contents of the current folder” (the same thing you get if you leave off the argument).</p>
+<p>If you want to go <em>up</em> a directory, you use <em>two</em> dots: <strong><code>..</code></strong> to refer to the <strong>parent</strong> folder (that is, the one that contains this one). So the command</p>
+<pre class="language-bash"><code><span class="token function">ls</span> <span class="token punctuation">..</span></code></pre>
+<p>means “list the contents of the folder that contains the current folder”.</p>
+<p>Note that <strong><code>.</code></strong> and <strong><code>..</code></strong> act just like folder names, so you can include them anywhere in paths: <code>../../my_folder</code> says to go up two directories, and then into <code>my_folder</code>.</p>
+<p class="alert alert-info">
+<strong>Protip:</strong> Most command shells like Terminal and Git Bash support <strong>tab-completion</strong>. If you type out just the first few letters of a file or folder name and then hit the <code>tab</code> key, it will automatically fill in the rest of the name! If the name is ambiguous (e.g., you type <code>Do</code> and there is both a <code>Documents</code> and a <code>Downloads</code> folder), you can hit <code>tab</code> <em>twice</em> to see the list of matching folders. Then add enough letters to distinguish them and tab to complete! This will make your life better.
+</p>
+<p>Additionally, you can use a tilde <strong><code>~</code></strong> as shorthand for the home directory of the current user. Just like <code>.</code> refers to “current folder”, <code>~</code> refers to the user’s home directory (usually <code>/Users/USERNAME</code>). And of course, you can use the tilde as part of a path as well (e.g., <code>~/Desktop</code> is an <em>absolute path</em> to the desktop for the current user).</p>
+</div>
+</div>
+<div id="file-commands" class="section level2">
+<h2><span class="header-section-number">2.3</span> File Commands</h2>
+<div class="figure">
+<img src="img/command-line/matrix-cli.jpg" title="Matrix command line meme" />
+
+</div>
+<p>Once you’re comfortable navigating folders in the command line, you can start to use it to do all the same things you would do with Finder or File Explorer, simply by using the correct command. Here is an short list of commands to get you started using the command prompt, though there are <a href="http://www.lagmonster.org/docs/unix/intro-137.html">many more</a>:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Command</th>
+<th align="left">Behavior</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><strong><code>mkdir</code></strong></td>
+<td align="left"><strong>m</strong>a<strong>k</strong>e a <strong>dir</strong>ectory</td>
+</tr>
+<tr class="even">
+<td align="left"><strong><code>rm</code></strong></td>
+<td align="left"><strong>r</strong>e<strong>m</strong>ove a file or folder</td>
+</tr>
+<tr class="odd">
+<td align="left"><strong><code>cp</code></strong></td>
+<td align="left"><strong>c</strong>o<strong>p</strong>y a file from one location to another</td>
+</tr>
+<tr class="even">
+<td align="left"><strong><code>open</code></strong></td>
+<td align="left">opens a file or folder (Mac only)</td>
+</tr>
+<tr class="odd">
+<td align="left"><strong><code>start</code></strong></td>
+<td align="left">opens a file or folder (Windows only)</td>
+</tr>
+<tr class="even">
+<td align="left"><strong><code>cat</code></strong></td>
+<td align="left">con<strong>cat</strong>enate (combine) file contents and display the results</td>
+</tr>
+<tr class="odd">
+<td align="left"><strong><code>history</code></strong></td>
+<td align="left">show previous commands executed</td>
+</tr>
+</tbody>
+</table>
+<div class="alert alert-danger">
+<p>
+<strong>Warning</strong>: The command line makes it <strong>dangerously easy</strong> to <em>permanently delete</em> multiple files or folders and <em>will not</em> ask you to confirm that you want to delete them (or move them to the “recycling bin”). Be very careful when using the terminal to manage your files, as it is very powerful.
+</p>
+</div>
+<p>Be aware that many of these commands <strong>won’t print anything</strong> when you run them. This often means that they worked; they just did so quietly. If it <em>doesn’t</em> work, you’ll know because you’ll see a message telling you so (and why, if you read the message). So just because you didn’t get any output doesn’t mean you did something wrong—you can use another command (such as <strong><code>ls</code></strong>) to confirm that the files or folders changed the way you wanted!</p>
+<div id="learning-new-commands" class="section level3">
+<h3><span class="header-section-number">2.3.1</span> Learning New Commands</h3>
+<p>How can you figure out what kind of arguments these commands take? You can look it up! This information is available online, but many command shells (though <em>not</em> Git Bash, unfortunately) also include their own manual you can use to look up commands!</p>
+<pre class="language-bash"><code><span class="token function">man</span> <span class="token function">mkdir</span></code></pre>
+<p>Will show the <strong>man</strong>ual for the <strong><code>mkdir</code></strong> program/command.</p>
+<p class="alert alert-info">
+Because manuals are often long, they are opened up in a command line viewer called <a href="https://en.wikipedia.org/wiki/Less_(Unix)"><code>less</code></a>. You can “scroll” up and down by using the arrow keys. Hit the <code>q</code> key to <strong>q</strong>uit and return to the command-prompt.
+</p>
+<div class="figure">
+<img src="img/command-line/mkdir.png" title="man mkdir" alt="The mkdir man page." />
+<p class="caption">The <code>mkdir</code> man page.</p>
+</div>
+<p>If you look under “Synopsis” you can see a summary of all the different arguments this command understands. A few notes about reading this syntax:</p>
+<ul>
+<li><p>Recall that anything in brackets <code>[]</code> is optional. Arguments that are not in brackets (e.g., <code>directory_name</code>) are required.</p></li>
+<li><p><strong>“Options”</strong> (or “flags”) for command line programs are often marked with a leading dash <strong><code>-</code></strong> to make them distinct from file or folder names. Options may change the way a command line program behaves—like how you might set “easy” or “hard” mode in a game. You can either write out each option individually, or combine them: <strong><code>mkdir -p -v</code></strong> and <strong><code>mkdir -pv</code></strong> are equivalent.</p>
+<ul>
+<li>Some options may require an additional argument beyond just indicating a particular operation style. In this case, you can see that the <code>-m</code> option requires you to specify an additional <code>mode</code> parameter; see the details below for what this looks like.</li>
+</ul></li>
+<li><p>Underlined arguments are ones you choose: you don’t actually type the word <code>directory_name</code>, but instead your own directory name! Contrast this with the options: if you want to use the <code>-p</code> option, you need to type <code>-p</code> exactly.</p></li>
+</ul>
+<p>Command line manuals (“man pages”) are often very difficult to read and understand: start by looking at just the required arguments (which are usually straightforward), and then search for and use a particular option if you’re looking to change a command’s behavior.</p>
+<p>For practice, try to read the man page for <code>rm</code> and figure out how to delete a folder and not just a single file. Note that you’ll want to be careful, as this is a good way to <a href="http://www.pcworld.com/article/3057235/data-center-cloud/that-man-who-deleted-his-entire-company-with-a-line-of-code-it-was-a-hoax.html">break things</a>.</p>
+</div>
+<div id="wildcards" class="section level3">
+<h3><span class="header-section-number">2.3.2</span> Wildcards</h3>
+<p>One last note about working with files. Since you’ll often work with multiple files, command shells offer some shortcuts to talking about files with the same name. In particular, you can use an asterisk <strong><code>*</code></strong> as a <strong>wildcard</strong> when naming files. This symbol acts like a “wild” or “blank” tile in Scrabble–it can be “replaced” by any character (or any set of characters) when determining what file(s) you’re talking about.</p>
+<ul>
+<li><p><code>*.txt</code> refers to all files that have <code>.txt</code> at the end. <strong><code>cat *.txt</code></strong> would output the contents of every <code>.txt</code> file in the folder.</p></li>
+<li><p><code>hello*</code> refers to all files whose names start with <code>hello</code>.</p></li>
+<li><p><code>hello*.txt</code> refer to all files that start with <code>hello</code> and end with <code>.txt</code>, no matter how many characters are in the middle (including none!)</p></li>
+<li><p><code>*.*</code> refers to all files that have an extension.</p></li>
+</ul>
+</div>
+</div>
+<div id="dealing-with-errors" class="section level2">
+<h2><span class="header-section-number">2.4</span> Dealing With Errors</h2>
+<p>Note that the syntax of these commands (how you write them out) is very important. Computers aren’t good at figuring out what you meant if you aren’t really specific; forgetting a space may result in an entirely different action.</p>
+<p>Try another command: <strong><code>echo</code></strong> lets you “echo” (print out) some text. Try echoing <code>&quot;Hello World&quot;</code> (which is the traditional first computer program):</p>
+<pre class="language-bash"><code><span class="token keyword">echo</span> <span class="token string">"Hello world"</span></code></pre>
+<p>What happens if you forget the closing quote? You keep hitting “enter” but you just get that <code>&gt;</code> over and over again! What’s going on?</p>
+<ul>
+<li>Because you didn’t “close” the quote, the shell thinks you are still typing the message you want to echo! When you hit “enter” it adds a <em>line break</em> instead of ending the command, and the <code>&gt;</code> marks that you’re still going. If you finally close the quote, you’ll see your multi-line message printed!</li>
+</ul>
+<div class="alert alert-info">
+<p>
+<strong>IMPORTANT TIP</strong> If you ever get stuck in the command line, hit <strong><code>ctrl-c</code></strong> (The <code>control</code> and <code>c</code> keys together). This almost always means “cancel”, and will “stop” whatever program or command is currently running in the shell so that you can try again. Just remember: “<strong><code>ctrl-c</code></strong> to flee”.
+</p>
+<p>
+(If that doesn’t work, try hitting the <code>esc</code> key, or typing <code>exit</code>, <code>q</code>, or <code>quit</code>. Those commands will cover <em>most</em> command line programs).
+</p>
+</div>
+<p>Throughout this book, we’ll discuss a variety of approaches to handling errors in computer programs. While it’s tempting to disregard dense error messages, many programs do provide <strong>error messages</strong> that explain what went wrong. If you enter an unrecognized command, the terminal will inform you of your mistake:</p>
+<pre class="language-bash"><code>lx
+<span class="token operator">></span> -bash: lx: <span class="token function">command</span> not found</code></pre>
+<p>However, forgetting arguments yields different results. In some cases, there will be a default behavior (see what happens if you enter <code>cd</code> without any arguments). If more information is <em>required</em> to run a command, your terminal will provide you with a brief summary of the command’s usage:</p>
+<pre class="language-bash"><code><span class="token function">mkdir</span>
+<span class="token operator">></span> usage: <span class="token function">mkdir</span> <span class="token punctuation">[</span>-pv<span class="token punctuation">]</span> <span class="token punctuation">[</span>-m mode<span class="token punctuation">]</span> directory <span class="token punctuation">..</span>.</code></pre>
+<p>Take the time to read the error message and think about what the problem might be before you try again.</p>
+</div>
+<div id="directing-output" class="section level2">
+<h2><span class="header-section-number">2.5</span> Directing Output</h2>
+<p>So far all these commands have either modified the file system or printed some output to the terminal. But you can specify that you want the output to go somewhere else (e.g., to save it to a file for later). These are called <strong>redirects</strong>. Redirect commands are usually single punctuation marks, because the commands want to be as quick to type (but hard to read!) as possible.</p>
+<ul>
+<li><p><strong><code>&gt;</code></strong> says “take output of command and put it in this file”. For example <code>echo &quot;Hello World&quot; &gt; hello.txt</code> will put the outputted text “Hello World” into a file called <code>hello.txt</code>. Note that this will replace any previous content in the file, or create the file if it doesn’t exist. This is a great way to save the output of your command line work!</p></li>
+<li><p><strong><code>&gt;&gt;</code></strong> says “take output of command and <em>append</em> it to the end of this file”. This will keep you from overwriting previous content.</p></li>
+<li><p><strong><code>&lt;</code></strong> says “take input from this file”. This is a much less common redirect.</p></li>
+<li><p><strong><code>|</code></strong> says “take the output of this command and send it to the next command”. For example, <code>cat hello.txt | less</code> would take the output of the <code>hello.txt</code> file and send it to the <code>less</code> program, which gives that arrow-based “scrolling” interface that man pages use.</p></li>
+</ul>
+<p>Redirects are a more “advanced” usage of the command line, but now you know what those random symbols mean if you see them!</p>
+</div>
+<div id="shell-scripts" class="section level2">
+<h2><span class="header-section-number">2.6</span> Shell Scripts</h2>
+<p>Shell commands are a way to tell the computer what to do—in effect, program it!</p>
+<p>But often the instructions you want a computer to perform are more complex than a single command (even with redirects), or are something you want to be able to save and repeat later (beyond just looking it up in the <code>history</code>). It is useful if you can write down all the instructions in a single place, and then order the computer to <em>execute</em> all of those instructions at once. This list of instructions is called a <strong>script</strong>, with a list of shell commands called a <strong>shell scripts</strong>. Executing or “running” a script will cause each instruction (line of code) to be run <em>in order, one after the other</em>, just as if you had typed them in one by one. Writing scripts allows you to save, share, and re-use your work—by saving instructions in a file, you can easily check, change, and re-execute the list of instructions (assuming you haven’t caused any irreversible side effects).</p>
+<p>Bash shell scripts (also known as “Bash scripts”) are generally written in files that end in the <strong><code>.sh</code></strong> extension (for <strong>sh</strong>ell). Once you’ve written a shell script, you can execute it on the command line simply by typing the file name as the command:</p>
+<pre class="language-bash"><code>./my-script.sh</code></pre>
+<p>(The <code>./</code> indicates that we want to execute the file in the current folder, instead of looking for a program elsewhere on the computer as normally happens with commands).</p>
+<ul>
+<li><p><strong>Important</strong> On OS X or Linux you will need to give the file permission to be executed to run it. Use the <code>chmod</code> (<strong>ch</strong>ange <strong>mod</strong>e) command to add (<code>+</code>) e<strong>x</strong>ecution permissions to the file:</p>
+<pre class="language-bash"><code><span class="token function">chmod</span> +x my-script.sh</code></pre></li>
+</ul>
+<p>For <em>portability</em> (e.g., to work well across computers), the first line of any Bash shell script should be a a <a href="https://en.wikipedia.org/wiki/Shebang_(Unix)">shebang</a> that indicates which shell should be used:</p>
+<pre class="language-bash"><code><span class="token comment">#!/usr/bin/env bash</span></code></pre>
+<p>After that, you can begin listing the command your script will run, one after another (each on a new line):</p>
+<pre class="language-bash"><code><span class="token comment">#!/usr/bin/env bash</span>
+
+<span class="token comment"># anything after a '#' is a comment, and will not be executed</span>
+<span class="token keyword">echo</span> <span class="token string">"Hello world"</span>
+<span class="token keyword">echo</span> <span class="token string">"This is a second command"</span></code></pre>
+<ul>
+<li>You can include blank lines between your command for readability, and add <em>comments</em> (notes to yourself that are not executed by the computer) by starting a line with <code>#</code>.</li>
+</ul>
+<p>Shell scripts are an easy way to make “macros” or shortcuts for commands you want to run, and are common ways of sharing computer instructions with others.</p>
+</div>
+<div id="resources-1" class="section level2 unnumbered">
+<h2>Resources</h2>
+<div class="list-condensed">
+<ul>
+<li><a href="https://www.learnenough.com/command-line-tutorial#sec-basics">Learn Enough Command Line to be Dangerous</a></li>
+<li><a href="https://www.youtube.com/watch?v=sqYUYHn-HKg&amp;list=PLCAF7D691FFA25555">Video series: Bash commands</a></li>
+<li><a href="http://www.lagmonster.org/docs/unix/intro-137.html">List of Common Commands</a> (also <a href="http://www.math.utah.edu/lab/unix/unix-commands.html">here</a>)</li>
+</ul>
+</div>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="setup-machine.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="markdown.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": false,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["github", "facebook", "twitter", "google"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/infx511/book/edit/master/command-line.Rmd",
+"text": "Edit"
+},
+"download": ["intro-to-programming-for-data-science-visualization.pdf", "intro-to-programming-for-data-science-visualization.epub"],
+"toc": {
+"collapse": "section",
+"scroll_highlight": true
+}
+});
+});
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html  lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Introduction to Programming</title>
+  <meta name="description" content="The course reader for INFX 511: Introduction to Programming for Data Science and Visualization.">
+  <meta name="generator" content="bookdown 0.5 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Introduction to Programming" />
+  <meta property="og:type" content="book" />
+  <meta property="og:url" content="https://infx511.github.io/" />
+  
+  <meta property="og:description" content="The course reader for INFX 511: Introduction to Programming for Data Science and Visualization." />
+  <meta name="github-repo" content="infx511/book" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Introduction to Programming" />
+  
+  <meta name="twitter:description" content="The course reader for INFX 511: Introduction to Programming for Data Science and Visualization." />
+  
+
+<meta name="author" content="Joel Ross">
+
+
+<meta name="date" content="2018-03-21">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  <link rel="shortcut icon" href="img/ischool-gold.png" type="image/x-icon">
+<link rel="prev" href="functional-programming.html">
+<link rel="next" href="git-branches.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+<link rel="stylesheet" href="css/prism.min.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./" class="title">Introduction to Programming</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About this Book</a></li>
+<li class="chapter" data-level="1" data-path="setup-machine.html"><a href="setup-machine.html"><i class="fa fa-check"></i><b>1</b> Setting Up Your Machine</a><ul>
+<li class="chapter" data-level="1.1" data-path="setup-machine.html"><a href="setup-machine.html#git"><i class="fa fa-check"></i><b>1.1</b> Git</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="setup-machine.html"><a href="setup-machine.html#github"><i class="fa fa-check"></i><b>1.1.1</b> GitHub</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="setup-machine.html"><a href="setup-machine.html#command-line-tools-bash"><i class="fa fa-check"></i><b>1.2</b> Command-line Tools (Bash)</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="setup-machine.html"><a href="setup-machine.html#command-line-on-a-mac"><i class="fa fa-check"></i><b>1.2.1</b> Command-line on a Mac</a></li>
+<li class="chapter" data-level="1.2.2" data-path="setup-machine.html"><a href="setup-machine.html#command-line-on-windows"><i class="fa fa-check"></i><b>1.2.2</b> Command-line on Windows</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="setup-machine.html"><a href="setup-machine.html#text-editors"><i class="fa fa-check"></i><b>1.3</b> Text Editors</a><ul>
+<li class="chapter" data-level="1.3.1" data-path="setup-machine.html"><a href="setup-machine.html#visual-studio-code"><i class="fa fa-check"></i><b>1.3.1</b> Visual Studio Code</a></li>
+<li class="chapter" data-level="1.3.2" data-path="setup-machine.html"><a href="setup-machine.html#atom"><i class="fa fa-check"></i><b>1.3.2</b> Atom</a></li>
+<li class="chapter" data-level="1.3.3" data-path="setup-machine.html"><a href="setup-machine.html#sublime-text"><i class="fa fa-check"></i><b>1.3.3</b> Sublime Text</a></li>
+<li class="chapter" data-level="1.3.4" data-path="setup-machine.html"><a href="setup-machine.html#pycharm"><i class="fa fa-check"></i><b>1.3.4</b> PyCharm</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="setup-machine.html"><a href="setup-machine.html#python"><i class="fa fa-check"></i><b>1.4</b> Python</a><ul>
+<li class="chapter" data-level="1.4.1" data-path="setup-machine.html"><a href="setup-machine.html#anaconda"><i class="fa fa-check"></i><b>1.4.1</b> Anaconda</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="setup-machine.html"><a href="setup-machine.html#resources"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="command-line.html"><a href="command-line.html"><i class="fa fa-check"></i><b>2</b> The Command Line</a><ul>
+<li class="chapter" data-level="2.1" data-path="command-line.html"><a href="command-line.html#accessing-the-command-line"><i class="fa fa-check"></i><b>2.1</b> Accessing the Command line</a></li>
+<li class="chapter" data-level="2.2" data-path="command-line.html"><a href="command-line.html#navigating-the-command-line"><i class="fa fa-check"></i><b>2.2</b> Navigating the Command Line</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="command-line.html"><a href="command-line.html#changing-directories"><i class="fa fa-check"></i><b>2.2.1</b> Changing Directories</a></li>
+<li class="chapter" data-level="2.2.2" data-path="command-line.html"><a href="command-line.html#listing-files"><i class="fa fa-check"></i><b>2.2.2</b> Listing Files</a></li>
+<li class="chapter" data-level="2.2.3" data-path="command-line.html"><a href="command-line.html#paths"><i class="fa fa-check"></i><b>2.2.3</b> Paths</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="command-line.html"><a href="command-line.html#file-commands"><i class="fa fa-check"></i><b>2.3</b> File Commands</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="command-line.html"><a href="command-line.html#learning-new-commands"><i class="fa fa-check"></i><b>2.3.1</b> Learning New Commands</a></li>
+<li class="chapter" data-level="2.3.2" data-path="command-line.html"><a href="command-line.html#wildcards"><i class="fa fa-check"></i><b>2.3.2</b> Wildcards</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="command-line.html"><a href="command-line.html#dealing-with-errors"><i class="fa fa-check"></i><b>2.4</b> Dealing With Errors</a></li>
+<li class="chapter" data-level="2.5" data-path="command-line.html"><a href="command-line.html#directing-output"><i class="fa fa-check"></i><b>2.5</b> Directing Output</a></li>
+<li class="chapter" data-level="2.6" data-path="command-line.html"><a href="command-line.html#shell-scripts"><i class="fa fa-check"></i><b>2.6</b> Shell Scripts</a></li>
+<li class="chapter" data-level="" data-path="command-line.html"><a href="command-line.html#resources-1"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="markdown.html"><a href="markdown.html"><i class="fa fa-check"></i><b>3</b> Markdown</a><ul>
+<li class="chapter" data-level="3.1" data-path="markdown.html"><a href="markdown.html#writing-markdown"><i class="fa fa-check"></i><b>3.1</b> Writing Markdown</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="markdown.html"><a href="markdown.html#text-formatting"><i class="fa fa-check"></i><b>3.1.1</b> Text Formatting</a></li>
+<li class="chapter" data-level="3.1.2" data-path="markdown.html"><a href="markdown.html#text-blocks"><i class="fa fa-check"></i><b>3.1.2</b> Text Blocks</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="markdown.html"><a href="markdown.html#rendering-markdown"><i class="fa fa-check"></i><b>3.2</b> Rendering Markdown</a></li>
+<li class="chapter" data-level="" data-path="markdown.html"><a href="markdown.html#resources-2"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="git-basics.html"><a href="git-basics.html"><i class="fa fa-check"></i><b>4</b> Git and GitHub</a><ul>
+<li class="chapter" data-level="4.1" data-path="git-basics.html"><a href="git-basics.html#what-is-this-git-thing-anyway"><i class="fa fa-check"></i><b>4.1</b> What is this <em>git</em> thing anyway?</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="git-basics.html"><a href="git-basics.html#git-core-concepts"><i class="fa fa-check"></i><b>4.1.1</b> Git Core Concepts</a></li>
+<li class="chapter" data-level="4.1.2" data-path="git-basics.html"><a href="git-basics.html#wait-but-what-is-github-then"><i class="fa fa-check"></i><b>4.1.2</b> Wait, but what is GitHub then?</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="git-basics.html"><a href="git-basics.html#installation-setup"><i class="fa fa-check"></i><b>4.2</b> Installation &amp; Setup</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="git-basics.html"><a href="git-basics.html#creating-a-repo"><i class="fa fa-check"></i><b>4.2.1</b> Creating a Repo</a></li>
+<li class="chapter" data-level="4.2.2" data-path="git-basics.html"><a href="git-basics.html#checking-status"><i class="fa fa-check"></i><b>4.2.2</b> Checking Status</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="git-basics.html"><a href="git-basics.html#making-changes"><i class="fa fa-check"></i><b>4.3</b> Making Changes</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="git-basics.html"><a href="git-basics.html#adding-files"><i class="fa fa-check"></i><b>4.3.1</b> Adding Files</a></li>
+<li class="chapter" data-level="4.3.2" data-path="git-basics.html"><a href="git-basics.html#committing"><i class="fa fa-check"></i><b>4.3.2</b> Committing</a></li>
+<li class="chapter" data-level="4.3.3" data-path="git-basics.html"><a href="git-basics.html#commit-history"><i class="fa fa-check"></i><b>4.3.3</b> Commit History</a></li>
+<li class="chapter" data-level="4.3.4" data-path="git-basics.html"><a href="git-basics.html#reviewing-the-process"><i class="fa fa-check"></i><b>4.3.4</b> Reviewing the Process</a></li>
+<li class="chapter" data-level="4.3.5" data-path="git-basics.html"><a href="git-basics.html#the-.gitignore-file"><i class="fa fa-check"></i><b>4.3.5</b> The <code>.gitignore</code> File</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="git-basics.html"><a href="git-basics.html#github-and-remotes"><i class="fa fa-check"></i><b>4.4</b> GitHub and Remotes</a><ul>
+<li class="chapter" data-level="4.4.1" data-path="git-basics.html"><a href="git-basics.html#forking-and-cloning"><i class="fa fa-check"></i><b>4.4.1</b> Forking and Cloning</a></li>
+<li class="chapter" data-level="4.4.2" data-path="git-basics.html"><a href="git-basics.html#pushing-and-pulling"><i class="fa fa-check"></i><b>4.4.2</b> Pushing and Pulling</a></li>
+<li class="chapter" data-level="4.4.3" data-path="git-basics.html"><a href="git-basics.html#reviewing-the-process-1"><i class="fa fa-check"></i><b>4.4.3</b> Reviewing The Process</a></li>
+<li class="chapter" data-level="4.4.4" data-path="git-basics.html"><a href="git-basics.html#course-assignments-on-github"><i class="fa fa-check"></i><b>4.4.4</b> Course Assignments on GitHub</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="git-basics.html"><a href="git-basics.html#command-summary"><i class="fa fa-check"></i><b>4.5</b> Command Summary</a></li>
+<li class="chapter" data-level="" data-path="git-basics.html"><a href="git-basics.html#resources-3"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="introduction-to-python.html"><a href="introduction-to-python.html"><i class="fa fa-check"></i><b>5</b> Introduction to Python</a><ul>
+<li class="chapter" data-level="5.1" data-path="introduction-to-python.html"><a href="introduction-to-python.html#programming-with-python"><i class="fa fa-check"></i><b>5.1</b> Programming with Python</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="introduction-to-python.html"><a href="introduction-to-python.html#versions"><i class="fa fa-check"></i><b>5.1.1</b> Versions</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="introduction-to-python.html"><a href="introduction-to-python.html#running-python-scripts"><i class="fa fa-check"></i><b>5.2</b> Running Python Scripts</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="introduction-to-python.html"><a href="introduction-to-python.html#on-the-command-line"><i class="fa fa-check"></i><b>5.2.1</b> On the Command Line</a></li>
+<li class="chapter" data-level="5.2.2" data-path="introduction-to-python.html"><a href="introduction-to-python.html#jupyter-notebooks"><i class="fa fa-check"></i><b>5.2.2</b> Jupyter Notebooks</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="introduction-to-python.html"><a href="introduction-to-python.html#comments"><i class="fa fa-check"></i><b>5.3</b> Comments</a></li>
+<li class="chapter" data-level="5.4" data-path="introduction-to-python.html"><a href="introduction-to-python.html#variables"><i class="fa fa-check"></i><b>5.4</b> Variables</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="introduction-to-python.html"><a href="introduction-to-python.html#data-types"><i class="fa fa-check"></i><b>5.4.1</b> Data Types</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="introduction-to-python.html"><a href="introduction-to-python.html#getting-help"><i class="fa fa-check"></i><b>5.5</b> Getting Help</a></li>
+<li class="chapter" data-level="" data-path="introduction-to-python.html"><a href="introduction-to-python.html#resources-4"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="functions.html"><a href="functions.html"><i class="fa fa-check"></i><b>6</b> Functions</a><ul>
+<li class="chapter" data-level="6.1" data-path="functions.html"><a href="functions.html#what-are-functions"><i class="fa fa-check"></i><b>6.1</b> What are Functions?</a></li>
+<li class="chapter" data-level="6.2" data-path="functions.html"><a href="functions.html#python-function-syntax"><i class="fa fa-check"></i><b>6.2</b> Python Function Syntax</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="functions.html"><a href="functions.html#object-methods"><i class="fa fa-check"></i><b>6.2.1</b> Object Methods</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="functions.html"><a href="functions.html#built-in-python-functions"><i class="fa fa-check"></i><b>6.3</b> Built-in Python Functions</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="functions.html"><a href="functions.html#modules-and-libraries"><i class="fa fa-check"></i><b>6.3.1</b> Modules and Libraries</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="functions.html"><a href="functions.html#writing-functions"><i class="fa fa-check"></i><b>6.4</b> Writing Functions</a><ul>
+<li class="chapter" data-level="6.4.1" data-path="functions.html"><a href="functions.html#doc-strings"><i class="fa fa-check"></i><b>6.4.1</b> Doc Strings</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="functions.html"><a href="functions.html#resources-5"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="logic.html"><a href="logic.html"><i class="fa fa-check"></i><b>7</b> Logic and Conditionals</a><ul>
+<li class="chapter" data-level="7.1" data-path="logic.html"><a href="logic.html#booleans"><i class="fa fa-check"></i><b>7.1</b> Booleans</a><ul>
+<li class="chapter" data-level="7.1.1" data-path="logic.html"><a href="logic.html#boolean-operators"><i class="fa fa-check"></i><b>7.1.1</b> Boolean Operators</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="logic.html"><a href="logic.html#conditional-statements"><i class="fa fa-check"></i><b>7.2</b> Conditional Statements</a><ul>
+<li class="chapter" data-level="7.2.1" data-path="logic.html"><a href="logic.html#designing-conditions"><i class="fa fa-check"></i><b>7.2.1</b> Designing Conditions</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="logic.html"><a href="logic.html#determining-module-or-script"><i class="fa fa-check"></i><b>7.3</b> Determining Module or Script</a></li>
+<li class="chapter" data-level="" data-path="logic.html"><a href="logic.html#resources-6"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html"><i class="fa fa-check"></i><b>8</b> Iteration and Loops</a><ul>
+<li class="chapter" data-level="8.1" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html#while-loops"><i class="fa fa-check"></i><b>8.1</b> While Loops</a><ul>
+<li class="chapter" data-level="8.1.1" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html#counting-and-loops"><i class="fa fa-check"></i><b>8.1.1</b> Counting and Loops</a></li>
+<li class="chapter" data-level="8.1.2" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html#nested-conditionals-and-sentinels"><i class="fa fa-check"></i><b>8.1.2</b> Nested Conditionals and Sentinels</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html#for-loops"><i class="fa fa-check"></i><b>8.2</b> For Loops</a><ul>
+<li class="chapter" data-level="8.2.1" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html#difference-from-while-loops"><i class="fa fa-check"></i><b>8.2.1</b> Difference from While Loops</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html#iterating-over-files"><i class="fa fa-check"></i><b>8.3</b> Iterating over Files</a><ul>
+<li class="chapter" data-level="8.3.1" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html#tryexcept"><i class="fa fa-check"></i><b>8.3.1</b> Try/Except</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html#resources-7"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="lists-and-sequences.html"><a href="lists-and-sequences.html"><i class="fa fa-check"></i><b>9</b> Lists and Sequences</a><ul>
+<li class="chapter" data-level="9.1" data-path="lists-and-sequences.html"><a href="lists-and-sequences.html#what-is-a-list"><i class="fa fa-check"></i><b>9.1</b> What is a List?</a></li>
+<li class="chapter" data-level="9.2" data-path="lists-and-sequences.html"><a href="lists-and-sequences.html#list-indices"><i class="fa fa-check"></i><b>9.2</b> List Indices</a></li>
+<li class="chapter" data-level="9.3" data-path="lists-and-sequences.html"><a href="lists-and-sequences.html#list-operations-and-methods"><i class="fa fa-check"></i><b>9.3</b> List Operations and Methods</a></li>
+<li class="chapter" data-level="9.4" data-path="lists-and-sequences.html"><a href="lists-and-sequences.html#lists-and-loops"><i class="fa fa-check"></i><b>9.4</b> Lists and Loops</a></li>
+<li class="chapter" data-level="9.5" data-path="lists-and-sequences.html"><a href="lists-and-sequences.html#nested-lists"><i class="fa fa-check"></i><b>9.5</b> Nested Lists</a></li>
+<li class="chapter" data-level="9.6" data-path="lists-and-sequences.html"><a href="lists-and-sequences.html#tuples"><i class="fa fa-check"></i><b>9.6</b> Tuples</a></li>
+<li class="chapter" data-level="" data-path="lists-and-sequences.html"><a href="lists-and-sequences.html#resources-8"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="dictionaries.html"><a href="dictionaries.html"><i class="fa fa-check"></i><b>10</b> Dictionaries</a><ul>
+<li class="chapter" data-level="10.1" data-path="dictionaries.html"><a href="dictionaries.html#what-is-a-dictionary"><i class="fa fa-check"></i><b>10.1</b> What is a Dictionary?</a></li>
+<li class="chapter" data-level="10.2" data-path="dictionaries.html"><a href="dictionaries.html#accessing-a-dictionary"><i class="fa fa-check"></i><b>10.2</b> Accessing a Dictionary</a></li>
+<li class="chapter" data-level="10.3" data-path="dictionaries.html"><a href="dictionaries.html#dictionary-methods"><i class="fa fa-check"></i><b>10.3</b> Dictionary Methods</a></li>
+<li class="chapter" data-level="10.4" data-path="dictionaries.html"><a href="dictionaries.html#dictionaries-and-loops"><i class="fa fa-check"></i><b>10.4</b> Dictionaries and Loops</a></li>
+<li class="chapter" data-level="10.5" data-path="dictionaries.html"><a href="dictionaries.html#nesting-dictionaries"><i class="fa fa-check"></i><b>10.5</b> Nesting Dictionaries</a></li>
+<li class="chapter" data-level="10.6" data-path="dictionaries.html"><a href="dictionaries.html#which-data-structure-do-i-use"><i class="fa fa-check"></i><b>10.6</b> Which Data Structure Do I Use?</a></li>
+<li class="chapter" data-level="" data-path="dictionaries.html"><a href="dictionaries.html#resources-9"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="searching.html"><a href="searching.html"><i class="fa fa-check"></i><b>11</b> Searching and Efficiency</a><ul>
+<li class="chapter" data-level="11.1" data-path="searching.html"><a href="searching.html#linear-search"><i class="fa fa-check"></i><b>11.1</b> Linear Search</a><ul>
+<li class="chapter" data-level="11.1.1" data-path="searching.html"><a href="searching.html#maximal-search"><i class="fa fa-check"></i><b>11.1.1</b> Maximal Search</a></li>
+<li class="chapter" data-level="11.1.2" data-path="searching.html"><a href="searching.html#falsification-search"><i class="fa fa-check"></i><b>11.1.2</b> Falsification Search</a></li>
+</ul></li>
+<li class="chapter" data-level="11.2" data-path="searching.html"><a href="searching.html#linear-search-speed"><i class="fa fa-check"></i><b>11.2</b> Linear Search Speed</a></li>
+<li class="chapter" data-level="11.3" data-path="searching.html"><a href="searching.html#binary-search"><i class="fa fa-check"></i><b>11.3</b> Binary Search</a><ul>
+<li class="chapter" data-level="11.3.1" data-path="searching.html"><a href="searching.html#binary-search-speed"><i class="fa fa-check"></i><b>11.3.1</b> Binary Search Speed</a></li>
+</ul></li>
+<li class="chapter" data-level="11.4" data-path="searching.html"><a href="searching.html#sorting"><i class="fa fa-check"></i><b>11.4</b> Sorting</a></li>
+<li class="chapter" data-level="" data-path="searching.html"><a href="searching.html#resources-10"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="functional-programming.html"><a href="functional-programming.html"><i class="fa fa-check"></i><b>12</b> Functional Programming</a><ul>
+<li class="chapter" data-level="12.1" data-path="functional-programming.html"><a href="functional-programming.html#functions-are-variables"><i class="fa fa-check"></i><b>12.1</b> Functions ARE Variables</a><ul>
+<li class="chapter" data-level="12.1.1" data-path="functional-programming.html"><a href="functional-programming.html#lambdas-anonymous-functions"><i class="fa fa-check"></i><b>12.1.1</b> lambdas: Anonymous Functions</a></li>
+</ul></li>
+<li class="chapter" data-level="12.2" data-path="functional-programming.html"><a href="functional-programming.html#functional-looping"><i class="fa fa-check"></i><b>12.2</b> Functional Looping</a><ul>
+<li class="chapter" data-level="12.2.1" data-path="functional-programming.html"><a href="functional-programming.html#map"><i class="fa fa-check"></i><b>12.2.1</b> Map</a></li>
+<li class="chapter" data-level="12.2.2" data-path="functional-programming.html"><a href="functional-programming.html#filter"><i class="fa fa-check"></i><b>12.2.2</b> Filter</a></li>
+<li class="chapter" data-level="12.2.3" data-path="functional-programming.html"><a href="functional-programming.html#reduce"><i class="fa fa-check"></i><b>12.2.3</b> Reduce</a></li>
+</ul></li>
+<li class="chapter" data-level="12.3" data-path="functional-programming.html"><a href="functional-programming.html#list-comprehensions"><i class="fa fa-check"></i><b>12.3</b> List Comprehensions</a></li>
+<li class="chapter" data-level="" data-path="functional-programming.html"><a href="functional-programming.html#resources-11"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="accessing-web-apis.html"><a href="accessing-web-apis.html"><i class="fa fa-check"></i><b>13</b> Accessing Web APIs</a><ul>
+<li class="chapter" data-level="13.1" data-path="accessing-web-apis.html"><a href="accessing-web-apis.html#web-apis"><i class="fa fa-check"></i><b>13.1</b> Web APIs</a></li>
+<li class="chapter" data-level="13.2" data-path="accessing-web-apis.html"><a href="accessing-web-apis.html#restful-requests"><i class="fa fa-check"></i><b>13.2</b> RESTful Requests</a><ul>
+<li class="chapter" data-level="13.2.1" data-path="accessing-web-apis.html"><a href="accessing-web-apis.html#uris"><i class="fa fa-check"></i><b>13.2.1</b> URIs</a></li>
+<li class="chapter" data-level="13.2.2" data-path="accessing-web-apis.html"><a href="accessing-web-apis.html#http-verbs"><i class="fa fa-check"></i><b>13.2.2</b> HTTP Verbs</a></li>
+</ul></li>
+<li class="chapter" data-level="13.3" data-path="accessing-web-apis.html"><a href="accessing-web-apis.html#accessing-web-apis-1"><i class="fa fa-check"></i><b>13.3</b> Accessing Web APIs</a></li>
+<li class="chapter" data-level="13.4" data-path="accessing-web-apis.html"><a href="accessing-web-apis.html#json-data"><i class="fa fa-check"></i><b>13.4</b> JSON Data</a></li>
+<li class="chapter" data-level="" data-path="accessing-web-apis.html"><a href="accessing-web-apis.html#resources-12"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="git-branches.html"><a href="git-branches.html"><i class="fa fa-check"></i><b>14</b> Git Branches</a><ul>
+<li class="chapter" data-level="14.1" data-path="git-branches.html"><a href="git-branches.html#git-branches"><i class="fa fa-check"></i><b>14.1</b> Git Branches</a></li>
+<li class="chapter" data-level="14.2" data-path="git-branches.html"><a href="git-branches.html#merging"><i class="fa fa-check"></i><b>14.2</b> Merging</a><ul>
+<li class="chapter" data-level="14.2.1" data-path="git-branches.html"><a href="git-branches.html#merge-conflicts"><i class="fa fa-check"></i><b>14.2.1</b> Merge Conflicts</a></li>
+</ul></li>
+<li class="chapter" data-level="14.3" data-path="git-branches.html"><a href="git-branches.html#undoing-changes"><i class="fa fa-check"></i><b>14.3</b> Undoing Changes</a></li>
+<li class="chapter" data-level="14.4" data-path="git-branches.html"><a href="git-branches.html#github-and-branches"><i class="fa fa-check"></i><b>14.4</b> GitHub and Branches</a><ul>
+<li class="chapter" data-level="14.4.1" data-path="git-branches.html"><a href="git-branches.html#github-pages"><i class="fa fa-check"></i><b>14.4.1</b> GitHub Pages</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="git-branches.html"><a href="git-branches.html#resources-13"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="git-collaboration.html"><a href="git-collaboration.html"><i class="fa fa-check"></i><b>15</b> Git Collaboration</a><ul>
+<li class="chapter" data-level="15.1" data-path="git-collaboration.html"><a href="git-collaboration.html#centralized-workflow"><i class="fa fa-check"></i><b>15.1</b> Centralized Workflow</a></li>
+<li class="chapter" data-level="15.2" data-path="git-collaboration.html"><a href="git-collaboration.html#feature-branch-workflow"><i class="fa fa-check"></i><b>15.2</b> Feature Branch Workflow</a></li>
+<li class="chapter" data-level="15.3" data-path="git-collaboration.html"><a href="git-collaboration.html#forking-workflow"><i class="fa fa-check"></i><b>15.3</b> Forking Workflow</a><ul>
+<li class="chapter" data-level="15.3.1" data-path="git-collaboration.html"><a href="git-collaboration.html#pull-requests"><i class="fa fa-check"></i><b>15.3.1</b> Pull Requests</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="git-collaboration.html"><a href="git-collaboration.html#resources-14"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="object-oriented-programming.html"><a href="object-oriented-programming.html"><i class="fa fa-check"></i><b>16</b> Object-Oriented Programming</a><ul>
+<li class="chapter" data-level="" data-path="object-oriented-programming.html"><a href="object-oriented-programming.html#resources-15"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="pandas.html"><a href="pandas.html"><i class="fa fa-check"></i><b>17</b> The <code>pandas</code> Library</a><ul>
+<li class="chapter" data-level="17.1" data-path="pandas.html"><a href="pandas.html#setting-up-pandas"><i class="fa fa-check"></i><b>17.1</b> Setting up <code>pandas</code></a></li>
+<li class="chapter" data-level="17.2" data-path="pandas.html"><a href="pandas.html#series"><i class="fa fa-check"></i><b>17.2</b> Series</a><ul>
+<li class="chapter" data-level="17.2.1" data-path="pandas.html"><a href="pandas.html#series-operations-and-methods"><i class="fa fa-check"></i><b>17.2.1</b> Series Operations and Methods</a></li>
+<li class="chapter" data-level="17.2.2" data-path="pandas.html"><a href="pandas.html#accessing-series"><i class="fa fa-check"></i><b>17.2.2</b> Accessing Series</a></li>
+</ul></li>
+<li class="chapter" data-level="17.3" data-path="pandas.html"><a href="pandas.html#dataframes"><i class="fa fa-check"></i><b>17.3</b> DataFrames</a><ul>
+<li class="chapter" data-level="17.3.1" data-path="pandas.html"><a href="pandas.html#dataframe-operations-and-methods"><i class="fa fa-check"></i><b>17.3.1</b> DataFrame Operations and Methods</a></li>
+<li class="chapter" data-level="17.3.2" data-path="pandas.html"><a href="pandas.html#accessing-dataframes"><i class="fa fa-check"></i><b>17.3.2</b> Accessing DataFrames</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="pandas.html"><a href="pandas.html#resources-16"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="18" data-path="javascript.html"><a href="javascript.html"><i class="fa fa-check"></i><b>18</b> JavaScript</a><ul>
+<li class="chapter" data-level="18.1" data-path="javascript.html"><a href="javascript.html#programming-with-javascript"><i class="fa fa-check"></i><b>18.1</b> Programming with JavaScript</a><ul>
+<li class="chapter" data-level="18.1.1" data-path="javascript.html"><a href="javascript.html#history-and-versions"><i class="fa fa-check"></i><b>18.1.1</b> History and Versions</a></li>
+<li class="chapter" data-level="18.1.2" data-path="javascript.html"><a href="javascript.html#running-javascript"><i class="fa fa-check"></i><b>18.1.2</b> Running JavaScript</a></li>
+</ul></li>
+<li class="chapter" data-level="18.2" data-path="javascript.html"><a href="javascript.html#javascript-basics"><i class="fa fa-check"></i><b>18.2</b> JavaScript Basics</a><ul>
+<li class="chapter" data-level="18.2.1" data-path="javascript.html"><a href="javascript.html#strict-mode"><i class="fa fa-check"></i><b>18.2.1</b> Strict Mode</a></li>
+</ul></li>
+<li class="chapter" data-level="18.3" data-path="javascript.html"><a href="javascript.html#variables-1"><i class="fa fa-check"></i><b>18.3</b> Variables</a><ul>
+<li class="chapter" data-level="18.3.1" data-path="javascript.html"><a href="javascript.html#basic-data-types"><i class="fa fa-check"></i><b>18.3.1</b> Basic Data Types</a></li>
+<li class="chapter" data-level="18.3.2" data-path="javascript.html"><a href="javascript.html#type-coercion"><i class="fa fa-check"></i><b>18.3.2</b> Type Coercion</a></li>
+<li class="chapter" data-level="18.3.3" data-path="javascript.html"><a href="javascript.html#arrays"><i class="fa fa-check"></i><b>18.3.3</b> Arrays</a></li>
+<li class="chapter" data-level="18.3.4" data-path="javascript.html"><a href="javascript.html#objects"><i class="fa fa-check"></i><b>18.3.4</b> Objects</a></li>
+</ul></li>
+<li class="chapter" data-level="18.4" data-path="javascript.html"><a href="javascript.html#control-structures"><i class="fa fa-check"></i><b>18.4</b> Control Structures</a><ul>
+<li class="chapter" data-level="18.4.1" data-path="javascript.html"><a href="javascript.html#conditionals"><i class="fa fa-check"></i><b>18.4.1</b> Conditionals</a></li>
+<li class="chapter" data-level="18.4.2" data-path="javascript.html"><a href="javascript.html#loops"><i class="fa fa-check"></i><b>18.4.2</b> Loops</a></li>
+</ul></li>
+<li class="chapter" data-level="18.5" data-path="javascript.html"><a href="javascript.html#functions-1"><i class="fa fa-check"></i><b>18.5</b> Functions</a><ul>
+<li class="chapter" data-level="18.5.1" data-path="javascript.html"><a href="javascript.html#functional-programming-1"><i class="fa fa-check"></i><b>18.5.1</b> Functional Programming</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="javascript.html"><a href="javascript.html#resources-17"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="19" data-path="web-programming.html"><a href="web-programming.html"><i class="fa fa-check"></i><b>19</b> Web Programming</a><ul>
+<li class="chapter" data-level="19.1" data-path="web-programming.html"><a href="web-programming.html#web-pages-and-html"><i class="fa fa-check"></i><b>19.1</b> Web Pages and HTML</a><ul>
+<li class="chapter" data-level="19.1.1" data-path="web-programming.html"><a href="web-programming.html#elements-are-nested"><i class="fa fa-check"></i><b>19.1.1</b> Elements are Nested</a></li>
+<li class="chapter" data-level="19.1.2" data-path="web-programming.html"><a href="web-programming.html#scalable-vector-graphics-svg"><i class="fa fa-check"></i><b>19.1.2</b> Scalable Vector Graphics (SVG)</a></li>
+</ul></li>
+<li class="chapter" data-level="19.2" data-path="web-programming.html"><a href="web-programming.html#dom-manipulation-with-d3"><i class="fa fa-check"></i><b>19.2</b> DOM Manipulation with D3</a><ul>
+<li class="chapter" data-level="19.2.1" data-path="web-programming.html"><a href="web-programming.html#selecting-elements"><i class="fa fa-check"></i><b>19.2.1</b> Selecting Elements</a></li>
+<li class="chapter" data-level="19.2.2" data-path="web-programming.html"><a href="web-programming.html#changing-elements"><i class="fa fa-check"></i><b>19.2.2</b> Changing Elements</a></li>
+<li class="chapter" data-level="19.2.3" data-path="web-programming.html"><a href="web-programming.html#adding-elements"><i class="fa fa-check"></i><b>19.2.3</b> Adding Elements</a></li>
+</ul></li>
+<li class="chapter" data-level="19.3" data-path="web-programming.html"><a href="web-programming.html#user-events"><i class="fa fa-check"></i><b>19.3</b> User Events</a></li>
+<li class="chapter" data-level="19.4" data-path="web-programming.html"><a href="web-programming.html#ajax"><i class="fa fa-check"></i><b>19.4</b> AJAX</a></li>
+<li class="chapter" data-level="" data-path="web-programming.html"><a href="web-programming.html#resources-18"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="20" data-path="d3.html"><a href="d3.html"><i class="fa fa-check"></i><b>20</b> D3 Visualizations</a><ul>
+<li class="chapter" data-level="20.1" data-path="d3.html"><a href="d3.html#the-data-join"><i class="fa fa-check"></i><b>20.1</b> The Data Join</a><ul>
+<li class="chapter" data-level="20.1.1" data-path="d3.html"><a href="d3.html#entering-and-exiting-elements"><i class="fa fa-check"></i><b>20.1.1</b> Entering and Exiting Elements</a></li>
+</ul></li>
+<li class="chapter" data-level="20.2" data-path="d3.html"><a href="d3.html#animation"><i class="fa fa-check"></i><b>20.2</b> Animation</a></li>
+<li class="chapter" data-level="20.3" data-path="d3.html"><a href="d3.html#margins-and-positioning"><i class="fa fa-check"></i><b>20.3</b> Margins and Positioning</a></li>
+<li class="chapter" data-level="20.4" data-path="d3.html"><a href="d3.html#scales"><i class="fa fa-check"></i><b>20.4</b> Scales</a><ul>
+<li class="chapter" data-level="20.4.1" data-path="d3.html"><a href="d3.html#axes"><i class="fa fa-check"></i><b>20.4.1</b> Axes</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="d3.html"><a href="d3.html#resources-19"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Introduction to Programming</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="accessing-web-apis" class="section level1">
+<h1><span class="header-section-number">Chapter 13</span> Accessing Web APIs</h1>
+<p>You’ve used Python to load data from external files (either text files or locally-saved <code>.csv</code> files), but it is also possible to programmatically download data directly from web sites on the internet. This allows scripts to always work with the latest data available, performing analysis on data that may be changing rapidly (such as from social networks or other live events). Web services may make their data easily accessible to computer programs like Python scripts by offering an <strong>Application Programming Interface (API)</strong>. A web service’s API specifies <em>where</em> and <em>how</em> particular data may be accessed, and many web services follow a particular style known as <em>Representational State Transfer (REST)</em>. This chapter will cover how to access and work with data from these <em>RESTful APIs</em>.</p>
+<div id="web-apis" class="section level2">
+<h2><span class="header-section-number">13.1</span> Web APIs</h2>
+<p>An <strong>interface</strong> is the point at which two different systems meet and <em>communicate</em>: exchanging informations and instructions. An <strong>Application Programming Interface (API)</strong> thus represents a way of communicating with a computer application by writing a computer program (a set of formal instructions understandable by a machine). APIs commonly take the form of <strong>functions</strong> that can be called to give instructions to programs—the set of functions provided by a module like <code>math</code> or <code>turtle</code> make up the API for that module. While most APIs provide an interface for utilizing <em>functionality</em>, other APIs provide an interface for accessing <em>data</em>. One of the most common sources of these data apis are <strong>web services</strong>: websites that offer an interface for accessing their data.</p>
+<ul>
+<li>(Technically the interface is just the function <strong>signature</strong> which says how you <em>use</em> the function: what name it has, what arguments it takes, and what value it returns. The actual module is an <em>implementation</em> of this interface).</li>
+</ul>
+<p>With web services, the interface (the set of “functions” you can call to access the data) takes the form of <strong>HTTP Requests</strong>—that is, a <em>request</em> for data sent following the <em><strong>H</strong>yper<strong>T</strong>ext <strong>T</strong>ransfer <strong>P</strong>rotocol</em>. This is the same protocol (way of communicating) used by your browser to view a web page! An HTTP Request represents a message that your computer sends to a web server (another computer on the internet which “serves”, or provides, information). That server, upon receiving the request, will determine what data to include in the <strong>response</strong> it sends <em>back</em> to the requesting computer. With a web browser the response data takes the form of HTML files that the browser can <em>render</em> as web pages; with data APIs the response data will be structured data that you can convert into structures such as lists or dictionaries.</p>
+<p>In short, loading data from a Web API involves sending an <strong>HTTP Request</strong> to a server for a particular piece of data, and then receiving and parsing the <strong>response</strong> to that request.</p>
+</div>
+<div id="restful-requests" class="section level2">
+<h2><span class="header-section-number">13.2</span> RESTful Requests</h2>
+<p>There are two parts to a request sent to an API: the name of the <strong>resource</strong> (data) that you wish to access, and a <strong>verb</strong> indicating what you want to do with that resource. In many ways, the <em>verb</em> is the function you want to call on the API, and the <em>resource</em> is an argument to that function.</p>
+<div id="uris" class="section level3">
+<h3><span class="header-section-number">13.2.1</span> URIs</h3>
+<p>Which <strong>resource</strong> you want to access is specified with a <strong>Uniform Resource Identifier (URI)</strong>. A URI is a generalization of a URL (Uniform Resource Locator)—what you commonly think of as “web addresses”. URIs act a lot like the <em>address</em> on a postal letter sent within a large organization such as a university: you indicate the business address as well as the department and the person, and will get a different response (and different data) from Alice in Accounting than from Sally in Sales.</p>
+<ul>
+<li>Note that the URI is the <strong>identifier</strong> (think: variable name) for the resource, while the <strong>resource</strong> is the actual <em>data</em> value that you want to access.</li>
+</ul>
+<p>Like postal letter addresses, URIs have a very specific format used to direct the request to the right resource.</p>
+<div class="figure">
+<img src="img/apis/uri-schema.png" title="URI schema" alt="The format (schema) of a URI." />
+<p class="caption">The format (schema) of a URI.</p>
+</div>
+<p>Not all parts of the format are required—for example, you don’t need a <code>port</code>, <code>query</code>, or <code>fragment</code>. Important parts of the format include:</p>
+<ul>
+<li><code>scheme</code> (<code>protocol</code>): the “language” that the computer will use to communicate the request to this resource. With web services this is normally <code>https</code> (<strong>s</strong>ecure HTTP)</li>
+<li><code>domain</code>: the address of the web server to request information from</li>
+<li><code>path</code>: which resource on that web server you wish to access. This may be the name of a file with an extension if you’re trying to access a particular file, but with web services it often just looks like a folder path!</li>
+<li><code>query</code>: extra <strong>parameters</strong> (arguments) about what resource to access.</li>
+</ul>
+<p>The <code>domain</code> and <code>path</code> usually specify the resource. For example, <code>www.domain.com/users</code> might be an <em>identifier</em> for a resource which is a list of users. Note that web services can also have “subresources” by adding extra pieces to the path: <code>www.domain.com/users/joel</code> might refer to the specific “joel” user in that list.</p>
+<p>With an API, the domain and path are often viewed as being broken up into two parts:</p>
+<ul>
+<li><p>The <strong>Base URI</strong> is the domain and part of the path that is included on <em>all</em> resources. It acts as the “root” for any particular resource. For example, the <a href="https://developer.github.com/v3/">GitHub API</a> has a base URI of <code>https://api.github.com/</code>.</p></li>
+<li><p>An <strong>Endpoint</strong>, or which resource on that domain you want to access. Each API will have <em>many</em> different endpoints.</p>
+<p>Note that most resources include multiple subresource endpoints. For example, you can access information about a specific user at the endpoint <code>/users/:username</code>—the colon <strong><code>:</code></strong> indicates that the subresource name is a <em>variable</em>—you can replace that word in the endpoint with whatever string you want. Thus if you were interested in the GitHub user <code>joelwross</code>, you would access the <code>/users/joelwross</code> endpoint.</p>
+<p>Subresources may have further subresources (which may or may not have variable names). The endpoint <code>/orgs/:org/repos</code> refers to the list of repositories belonging to an organization.</p>
+<div class="alert alert-default">
+<p>Variable names in resources can also be written inside of curly braces <code>{}</code>; for example, <code>/orgs/{org}/repos</code>. Neither the colon nor the braces is programming language syntax, just common conventions used to communicate endpoints.</p>
+</div></li>
+</ul>
+<p>The <strong>endpoint</strong> is appended to the end of the <strong>base URI</strong>, so you could access a GitHub user by combining the <strong>base URI</strong> (<code>https://api.github.com</code>) and <strong>endpoint</strong> (<code>/users/joelwross</code>) into a single string: <code>https://api.github.com/users/joelwross</code>. That URL will return a data structure of information about the GitHub user, which you can request from a Python program or simply view in your web-browser. Thus you can equivalently talk about accessing a particular <strong>resource</strong> and sending a request to a particular <strong>endpoint</strong>.</p>
+<div id="query-parameters" class="section level4">
+<h4><span class="header-section-number">13.2.1.1</span> Query Parameters</h4>
+<p>Often in order to access only partial sets of data from a resource (e.g., to only get some users) you also include a set of <strong>query parameters</strong>. These are like extra arguments that are given to the request function. Query parameters are listed after a question mark <strong><code>?</code></strong> in the URI, and are formed as key-value pairs similar to how you named items in <em>lists</em>. The <strong>key</strong> (<em>parameter name</em>) is listed first, followed by an equal sign <strong><code>=</code></strong>, followed by the <strong>value</strong> (<em>parameter value</em>); note that you can’t include any spaces in URIs! You can include multiple query parameters by putting an ampersand <strong><code>&amp;</code></strong> between each key-value pair:</p>
+<pre><code>?firstParam=firstValue&amp;secondParam=secondValue&amp;thirdParam=thirdValue</code></pre>
+<p>Exactly what parameter names you need to include (and what are legal values to assign to that name) depends on the particular web service. Common examples include having parameters named <code>q</code> or <code>query</code> for searching, with a value being whatever term you want to search for: in <a href="https://www.google.com/search?q=informatics"><code>https://www.google.com/search?q=informatics</code></a>, the <strong>resource</strong> at the <code>/search</code> <strong>endpoint</strong> takes a query parameter <code>q</code> with the term you want to search for!</p>
+</div>
+<div id="access-tokens-and-api-keys" class="section level4">
+<h4><span class="header-section-number">13.2.1.2</span> Access Tokens and API Keys</h4>
+<p>Many web services require you to register with them in order to send them requests. This allows them to limit access to the data, as well as to keep track of who is asking for what data (usually so that if someone starts “spamming” the service, they can be blocked).</p>
+<p>To facilitate this tracking, many services provide <strong>Access Tokens</strong> (also called <strong>API Keys</strong>). These are unique strings of letters and numbers that identify a particular developer (like a secret password that only works for you). Web services will require you to include your <em>access token</em> as a query parameter in the request; the exact name of the parameter varies, but it often looks like <code>access_token</code> or <code>api_key</code>. When exploring a web service, keep an eye out for whether they require such tokens.</p>
+<p><em>Access tokens</em> act a lot like passwords; you will want to keep them secret and not share them with others. This means that you <strong>should not include them in your committed files</strong>, so that the passwords don’t get pushed to GitHub and shared with the world. The best way to do this in Python is to create a separate script file in your repo (e.g., <code>apikeys.py</code>) which includes exactly one line: assigning the key to a variable:</p>
+<pre class="language-python"><code><span class="token comment">## in `apikeys.py`</span>
+my_api_key <span class="token operator">=</span> <span class="token string">"123456789abcdefg"</span></code></pre>
+<p>You can then include this file<em>name</em> in a <strong><code>.gitignore</code></strong> file in your repo; that will keep it from even possibly being committed with your code!</p>
+<p>In order to access this variable in your “main” script, you can <strong><code>import</code></strong> this file as a module. The module is the name of the file, and you can access specific variables from it to include them in the “global” scope. Note that importing a file as a module will execute each line of code in that module (that isn’t in a “main” block):</p>
+<pre class="language-python"><code><span class="token comment">## in `my_script.py`</span>
+<span class="token keyword">from</span> apikeys <span class="token keyword">import</span> my_api_key
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>my_api_key<span class="token punctuation">)</span>  <span class="token comment"># key is now available!</span></code></pre>
+<p>Note that this assumes the <code>apikeys.py</code> file is inside the same folder as the script being run. See <a href="https://docs.python.org/3/tutorial/modules.html#the-module-search-path">the documentation</a> for details on how to handle other options.</p>
+<p>Anyone else who runs the script will simply need to provide a <code>my_api_key</code> variable to access the API using their key, keeping everyone’s accounts separate and private!</p>
+<p class="alert alert-warning">
+Watch out for APIs that mention using <a href="https://en.wikipedia.org/wiki/OAuth">OAuth</a> when explaining API keys. OAuth is a system for performing <strong>authentification</strong>—that is, letting you or a user log into a website from your application (like what a “Log in with Facebook” button does). OAuth systems require more than one access key, and these keys <strong><em>must</em></strong> be kept secret and usually require you to run a web server to utilize them correctly (which requires lots of extra setup, see <a href="https://github.com/requests/requests-oauthlib"><code>requests_oauthlib</code></a> library for details). So for this book, we encourage you to avoid anything that needs OAuth
+</p>
+</div>
+</div>
+<div id="http-verbs" class="section level3">
+<h3><span class="header-section-number">13.2.2</span> HTTP Verbs</h3>
+<p>When you send a request to a particular resource, you need to indicate what you want to <em>do</em> with that resource. When you load web content, you are typically sending a request to retrieve information (logically, this is a <code>GET</code> request). However, there are other actions you can perform to modify the data structure on the server. This is done by specifying an <strong>HTTP Verb</strong> in the request. The HTTP protocol supports the following verbs:</p>
+<ul>
+<li><code>GET</code> Return a representation of the current state of the resource</li>
+<li><code>POST</code> Add a new subresource (e.g., insert a record)</li>
+<li><code>PUT</code> Update the resource to have a new state</li>
+<li><code>PATCH</code> Update a portion of the resource’s state</li>
+<li><code>DELETE</code> Remove the resource</li>
+<li><code>OPTIONS</code> Return the set of methods that can be performed on the resource</li>
+</ul>
+<p>By far the most common verb is <code>GET</code>, which is used to “get” (download) data from a web service. Depending on how you connect to your API (i.e., which programming language you are using), you’ll specify the verb of interest to indicate what we want to do to a particular resource.</p>
+<p>Overall, this structure of treating each datum on the web as a <strong>resource</strong> which we can interact with via <strong>HTTP Requests</strong> is referred to as the <strong>REST Architecture</strong> (REST stands for <em>REpresentational State Transfer</em>). This is a standard way of structuring computer applications that allows them to be interacted with in the same way as everyday websites. Thus a web service that enabled data access through named resources and responds to HTTP requests is known as a <strong>RESTful</strong> service, with a <em>RESTful API</em>.</p>
+</div>
+</div>
+<div id="accessing-web-apis-1" class="section level2">
+<h2><span class="header-section-number">13.3</span> Accessing Web APIs</h2>
+<p>To access a Web API, you just need to send an HTTP Request to a particular URI! You can easily do this with the browser: simple navigate to a particular address (base URI + endpoint), and that will cause the browser to send a GET request and display the resulting data in the browser. For example, you can send a request to search GitHub for repositories named <code>d3</code> by visiting:</p>
+<pre><code>https://api.github.com/search/repositories?q=d3&amp;sort=stars</code></pre>
+<p>This query accesses the <code>/search/repositories/</code> endpoint, and also specifies 2 query parameters:</p>
+<ul>
+<li><code>q</code>: The term(s) you are searching for, and</li>
+<li><code>sort</code>: The attribute of each repository that you would like to use to sort the results</li>
+</ul>
+<p>(Note that the data you’ll get back is structured in JSON format. See <a href="#json">below</a> for details).</p>
+<p>In Python you can most easily send GET requests using the <a href="http://docs.python-requests.org/en/master/"><code>requests</code></a> module. This is a <strong>third-party</strong> library (not built into Python!), but is installed by default with Anaconda and so can just be imported:</p>
+<pre class="language-python"><code><span class="token keyword">import</span> requests</code></pre>
+<p>This library provides a number of functions that reflect HTTP verbs. For example, the <strong><code>get()</code></strong> function will send an HTTP <code>GET</code> Request to the specified URI:</p>
+<pre class="language-python"><code>response <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">"https://api.github.com/search/repositories?q=d3&amp;sort=stars"</span><span class="token punctuation">)</span></code></pre>
+<p>While it is possible to include <em>query parameters</em> in the URI, <code>requests</code> also allows you to include them as a <em>dictionary</em>, making it easy to set and change variables (instead of needing to do complex String concatenation):</p>
+<pre class="language-python"><code>resource_uri <span class="token operator">=</span> <span class="token string">"https://api.github.com/search/repositories"</span>
+query_params <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'q'</span><span class="token punctuation">:</span> <span class="token string">'d3'</span><span class="token punctuation">,</span> <span class="token string">'sort'</span><span class="token punctuation">:</span> <span class="token string">'stars'</span><span class="token punctuation">}</span>
+response <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span>resource_uri<span class="token punctuation">,</span> params <span class="token operator">=</span> query_params<span class="token punctuation">)</span></code></pre>
+<div class="alert alert-success">
+<p><strong>Pro tip</strong>: You can access the <code>response.url</code> property to see the URI where a request was sent to. This is useful for debugging: print out the URI that you constructed to paste it into your browser!</p>
+</div>
+<p>If you try printing out the <code>response</code> variable, you’ll just see a simple output: <code>&lt;Response [200]&gt;</code>. The <code>200</code> is a an <a href="https://en.wikipedia.org/wiki/List_of_HTTP_status_codes">HTTP Status Code</a>: an integer giving details about how the request went (<code>200</code> means “OK” the request was answered successfully. Other common codes are <code>404</code> “Not Found” if the resource isn’t there, or <code>403</code> “Forbidden” if you don’t have permission to access the resource, such as if your API key isn’t specified correctly).</p>
+<p>HTTP Status Codes are part of the <strong>response header</strong>. Each <strong>response</strong> has two parts: the <strong>header</strong>, and the <strong>body</strong>. You can think of the response as a envelope: the <em>header</em> contains meta-data like the address and postage date, while the <em>body</em> contains the actual contents of the letter (the data).</p>
+<ul>
+<li>You can view all of the headers in the <code>response.headers</code> property.</li>
+</ul>
+<p>Since you’re almost always interested in working with the <em>body</em>, you will need to extract that data from the response (e.g., open up the envelope and pull out the letter). You can get this content as the <code>text</code> property:</p>
+<pre class="language-python"><code><span class="token comment"># extract content from response, as a text string</span>
+body <span class="token operator">=</span> response<span class="token punctuation">.</span>text</code></pre>
+</div>
+<div id="json-data" class="section level2">
+<h2><span class="header-section-number">13.4</span> JSON Data</h2>
+<p>If you print out this text, you’ll see what looks like an oddly-formatted dictionary. This is because most APIs will return data in <strong>JavaScript Object Notation (JSON)</strong> format. Like CSV, this is a format for writing down structured data—but while <code>.csv</code> files organize data into rows and columns, JSON allows you to organize elements into <em>sequences</em> and <em>key-value pairs</em>—similar to Python lists and dictionaries!</p>
+<p>JSON format looks a lot like the literal format for Python <em>lists</em> and <em>dictionaries</em>. For example, consider the below JSON notation for Programmer Ada:</p>
+<pre class="language-json"><code><span class="token punctuation">{</span>
+  <span class="token property">"first_name"</span><span class="token operator">:</span> <span class="token string">"Ada"</span><span class="token punctuation">,</span>
+  <span class="token property">"job"</span><span class="token operator">:</span> <span class="token string">"Programmer"</span><span class="token punctuation">,</span>
+  <span class="token property">"salary"</span><span class="token operator">:</span> <span class="token number">78000</span><span class="token punctuation">,</span>
+  <span class="token property">"in_union"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token property">"pets"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"rover"</span><span class="token punctuation">,</span> <span class="token string">"fluffy"</span><span class="token punctuation">,</span> <span class="token string">"mittens"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">"favorites"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"music"</span><span class="token operator">:</span> <span class="token string">"jazz"</span><span class="token punctuation">,</span>
+    <span class="token property">"food"</span><span class="token operator">:</span> <span class="token string">"pizza"</span><span class="token punctuation">,</span>
+    <span class="token property">"numbers"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token number">12</span><span class="token punctuation">,</span> <span class="token number">42</span><span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>JSON uses curly braces <strong><code>{}</code></strong> to define sets of key-value pairs (called <em>objects</em>, not “dictionaries”), and square brackets <strong><code>[]</code></strong> to define ordered sequences (called <em>arrays</em>, not “lists”). Like in Python, keys and values are separated with colons (<strong><code>:</code></strong>), and elements are separated by commas (<strong><code>,</code></strong>). As in Python, key-value pairs are often written on separate lines for readability, but this isn’t required.</p>
+<p>Note that unlike in Python dictionaries, keys <em>must</em> be strings (so in quotes), while values can either be strings, numbers, booleans (written in all lower-case as <code>true</code> and <code>false</code>), arrays (list), or other objects (dictionaries). Thus JSON can be seen as a way of writing normal Python dictionaries (or lists of dictionaries), just with a few restrictions on key and value type.</p>
+<p class="alert alert-info">
+<em>Pro-tip</em>: JSON data can be quite messy when viewed in your web-browser. Installing a browser extension such as <a href="https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc" target="_blank">JSONView</a> will format JSON responses in a more readable way, and even enable you to interactively explore the data structure.
+</p>
+<p>JSON response data provided by the <code>requests</code> library can automatically be converted into the Python lists and dictionaries you are used to by using the <strong><code>.json()</code></strong> function:</p>
+<pre class="language-python"><code>resource_uri <span class="token operator">=</span> <span class="token string">"https://api.github.com/search/repositories"</span>
+query_params <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'q'</span><span class="token punctuation">:</span> <span class="token string">'d3'</span><span class="token punctuation">,</span> <span class="token string">'sort'</span><span class="token punctuation">:</span> <span class="token string">'stars'</span><span class="token punctuation">}</span>
+response <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span>resource_uri<span class="token punctuation">,</span> params <span class="token operator">=</span> query_params<span class="token punctuation">)</span>
+data <span class="token operator">=</span> response<span class="token punctuation">.</span>json<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token builtin">type</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span>  <span class="token comment"># &lt;class 'dict'></span>
+            <span class="token comment"># may also be &lt;class 'list'> for some resources</span></code></pre>
+<p>Note that it is also possible to use Python to convert from (and to!) a “JSON String” into standard data types like <em>list</em> or <em>dictionaries</em> using the <strong><code>json</code></strong> module:</p>
+<pre class="language-python"><code><span class="token keyword">import</span> json
+
+<span class="token comment"># Convert to dictionary or list</span>
+data <span class="token operator">=</span> json<span class="token punctuation">.</span>loads<span class="token punctuation">(</span>json_string<span class="token punctuation">)</span>
+
+<span class="token comment"># Convert to json</span>
+my_data <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'a'</span><span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'b'</span><span class="token punctuation">:</span><span class="token number">2</span><span class="token punctuation">}</span>
+my_json <span class="token operator">=</span> json<span class="token punctuation">.</span>dumps<span class="token punctuation">(</span>my_data<span class="token punctuation">)</span></code></pre>
+<p>Note that these method names end in <strong><code>s</code></strong>: they are the “load <strong>s</strong>tring” and “dump <strong>s</strong>tring” methods (<code>load</code> and <code>dump</code> are for files!)</p>
+<p>In practice, web APIs often return highly nested JSON objects (lots of dictionaries in dictionaries); you may need to go a “few levels deep” in order to access the data you really care about. Use the <code>keys()</code> dictionary method (or your web browser!) to inspect the returned data structure and find the values you are interested in. Note that it can be useful to “flatten” the data into a simpler structure for further access.</p>
+<p>For example:</p>
+<pre class="language-python"><code>resource_uri <span class="token operator">=</span> <span class="token string">"https://api.github.com/search/repositories"</span>
+query_params <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'q'</span><span class="token punctuation">:</span> <span class="token string">'d3'</span><span class="token punctuation">,</span> <span class="token string">'sort'</span><span class="token punctuation">:</span> <span class="token string">'stars'</span><span class="token punctuation">}</span>
+response <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span>resource_uri<span class="token punctuation">,</span> params <span class="token operator">=</span> query_params<span class="token punctuation">)</span>
+data <span class="token operator">=</span> response<span class="token punctuation">.</span>json<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>data<span class="token punctuation">.</span>keys<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment"># dict_keys(['total_count', 'incomplete_results', 'items'])</span>
+    <span class="token comment"># looking at the JSON data itself (e.g., in the browser), `items` is the key</span>
+    <span class="token comment"># that contains the value you want</span>
+
+result_items <span class="token operator">=</span> data<span class="token punctuation">[</span><span class="token string">'items'</span><span class="token punctuation">]</span>  <span class="token comment"># "flatten" into new variable</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>result_items<span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment"># 30, number of results returned</span></code></pre>
+</div>
+<div id="resources-12" class="section level2 unnumbered">
+<h2>Resources</h2>
+<div class="list-condensed">
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier">URIs (Wikipedia)</a></li>
+<li><a href="https://code.tutsplus.com/tutorials/http-the-protocol-every-web-developer-must-know-part-1--net-31177">HTTP Protocol Tutorial</a></li>
+<li><a href="http://www.programmableweb.com/">Programmable Web</a> (list of web APIs; may be out of date)</li>
+<li><a href="https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm">RESTful Architecture</a> (original specification; not for beginners)</li>
+<li><a href="https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc?hl=en">JSON View Extension</a></li>
+<li><a href="https://books.trinket.io/pfe/12-network.html">Networked Programs (Downey)</a>; <a href="https://books.trinket.io/pfe/13-web.html">Using Web Services (Downey)</a></li>
+<li><a href="http://docs.python-requests.org/en/master/"><code>requests</code> documentation</a> (<a href="http://docs.python-requests.org/en/master/user/quickstart/">quickstart</a>)</li>
+</ul>
+</div>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="functional-programming.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="git-branches.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": false,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["github", "facebook", "twitter", "google"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/infx511/book/edit/master/apis.Rmd",
+"text": "Edit"
+},
+"download": ["intro-to-programming-for-data-science-visualization.pdf", "intro-to-programming-for-data-science-visualization.epub"],
+"toc": {
+"collapse": "section",
+"scroll_highlight": true
+}
+});
+});
+</script>
+
+</body>
+
+</html>

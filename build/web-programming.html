@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html  lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Introduction to Programming</title>
+  <meta name="description" content="The course reader for INFX 511: Introduction to Programming for Data Science and Visualization.">
+  <meta name="generator" content="bookdown 0.5 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Introduction to Programming" />
+  <meta property="og:type" content="book" />
+  <meta property="og:url" content="https://infx511.github.io/" />
+  
+  <meta property="og:description" content="The course reader for INFX 511: Introduction to Programming for Data Science and Visualization." />
+  <meta name="github-repo" content="infx511/book" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Introduction to Programming" />
+  
+  <meta name="twitter:description" content="The course reader for INFX 511: Introduction to Programming for Data Science and Visualization." />
+  
+
+<meta name="author" content="Joel Ross">
+
+
+<meta name="date" content="2018-03-21">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  <link rel="shortcut icon" href="img/ischool-gold.png" type="image/x-icon">
+<link rel="prev" href="javascript.html">
+<link rel="next" href="d3.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+<link rel="stylesheet" href="css/prism.min.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./" class="title">Introduction to Programming</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About this Book</a></li>
+<li class="chapter" data-level="1" data-path="setup-machine.html"><a href="setup-machine.html"><i class="fa fa-check"></i><b>1</b> Setting Up Your Machine</a><ul>
+<li class="chapter" data-level="1.1" data-path="setup-machine.html"><a href="setup-machine.html#git"><i class="fa fa-check"></i><b>1.1</b> Git</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="setup-machine.html"><a href="setup-machine.html#github"><i class="fa fa-check"></i><b>1.1.1</b> GitHub</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="setup-machine.html"><a href="setup-machine.html#command-line-tools-bash"><i class="fa fa-check"></i><b>1.2</b> Command-line Tools (Bash)</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="setup-machine.html"><a href="setup-machine.html#command-line-on-a-mac"><i class="fa fa-check"></i><b>1.2.1</b> Command-line on a Mac</a></li>
+<li class="chapter" data-level="1.2.2" data-path="setup-machine.html"><a href="setup-machine.html#command-line-on-windows"><i class="fa fa-check"></i><b>1.2.2</b> Command-line on Windows</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="setup-machine.html"><a href="setup-machine.html#text-editors"><i class="fa fa-check"></i><b>1.3</b> Text Editors</a><ul>
+<li class="chapter" data-level="1.3.1" data-path="setup-machine.html"><a href="setup-machine.html#visual-studio-code"><i class="fa fa-check"></i><b>1.3.1</b> Visual Studio Code</a></li>
+<li class="chapter" data-level="1.3.2" data-path="setup-machine.html"><a href="setup-machine.html#atom"><i class="fa fa-check"></i><b>1.3.2</b> Atom</a></li>
+<li class="chapter" data-level="1.3.3" data-path="setup-machine.html"><a href="setup-machine.html#sublime-text"><i class="fa fa-check"></i><b>1.3.3</b> Sublime Text</a></li>
+<li class="chapter" data-level="1.3.4" data-path="setup-machine.html"><a href="setup-machine.html#pycharm"><i class="fa fa-check"></i><b>1.3.4</b> PyCharm</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="setup-machine.html"><a href="setup-machine.html#python"><i class="fa fa-check"></i><b>1.4</b> Python</a><ul>
+<li class="chapter" data-level="1.4.1" data-path="setup-machine.html"><a href="setup-machine.html#anaconda"><i class="fa fa-check"></i><b>1.4.1</b> Anaconda</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="setup-machine.html"><a href="setup-machine.html#resources"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="command-line.html"><a href="command-line.html"><i class="fa fa-check"></i><b>2</b> The Command Line</a><ul>
+<li class="chapter" data-level="2.1" data-path="command-line.html"><a href="command-line.html#accessing-the-command-line"><i class="fa fa-check"></i><b>2.1</b> Accessing the Command line</a></li>
+<li class="chapter" data-level="2.2" data-path="command-line.html"><a href="command-line.html#navigating-the-command-line"><i class="fa fa-check"></i><b>2.2</b> Navigating the Command Line</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="command-line.html"><a href="command-line.html#changing-directories"><i class="fa fa-check"></i><b>2.2.1</b> Changing Directories</a></li>
+<li class="chapter" data-level="2.2.2" data-path="command-line.html"><a href="command-line.html#listing-files"><i class="fa fa-check"></i><b>2.2.2</b> Listing Files</a></li>
+<li class="chapter" data-level="2.2.3" data-path="command-line.html"><a href="command-line.html#paths"><i class="fa fa-check"></i><b>2.2.3</b> Paths</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="command-line.html"><a href="command-line.html#file-commands"><i class="fa fa-check"></i><b>2.3</b> File Commands</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="command-line.html"><a href="command-line.html#learning-new-commands"><i class="fa fa-check"></i><b>2.3.1</b> Learning New Commands</a></li>
+<li class="chapter" data-level="2.3.2" data-path="command-line.html"><a href="command-line.html#wildcards"><i class="fa fa-check"></i><b>2.3.2</b> Wildcards</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="command-line.html"><a href="command-line.html#dealing-with-errors"><i class="fa fa-check"></i><b>2.4</b> Dealing With Errors</a></li>
+<li class="chapter" data-level="2.5" data-path="command-line.html"><a href="command-line.html#directing-output"><i class="fa fa-check"></i><b>2.5</b> Directing Output</a></li>
+<li class="chapter" data-level="2.6" data-path="command-line.html"><a href="command-line.html#shell-scripts"><i class="fa fa-check"></i><b>2.6</b> Shell Scripts</a></li>
+<li class="chapter" data-level="" data-path="command-line.html"><a href="command-line.html#resources-1"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="markdown.html"><a href="markdown.html"><i class="fa fa-check"></i><b>3</b> Markdown</a><ul>
+<li class="chapter" data-level="3.1" data-path="markdown.html"><a href="markdown.html#writing-markdown"><i class="fa fa-check"></i><b>3.1</b> Writing Markdown</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="markdown.html"><a href="markdown.html#text-formatting"><i class="fa fa-check"></i><b>3.1.1</b> Text Formatting</a></li>
+<li class="chapter" data-level="3.1.2" data-path="markdown.html"><a href="markdown.html#text-blocks"><i class="fa fa-check"></i><b>3.1.2</b> Text Blocks</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="markdown.html"><a href="markdown.html#rendering-markdown"><i class="fa fa-check"></i><b>3.2</b> Rendering Markdown</a></li>
+<li class="chapter" data-level="" data-path="markdown.html"><a href="markdown.html#resources-2"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="git-basics.html"><a href="git-basics.html"><i class="fa fa-check"></i><b>4</b> Git and GitHub</a><ul>
+<li class="chapter" data-level="4.1" data-path="git-basics.html"><a href="git-basics.html#what-is-this-git-thing-anyway"><i class="fa fa-check"></i><b>4.1</b> What is this <em>git</em> thing anyway?</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="git-basics.html"><a href="git-basics.html#git-core-concepts"><i class="fa fa-check"></i><b>4.1.1</b> Git Core Concepts</a></li>
+<li class="chapter" data-level="4.1.2" data-path="git-basics.html"><a href="git-basics.html#wait-but-what-is-github-then"><i class="fa fa-check"></i><b>4.1.2</b> Wait, but what is GitHub then?</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="git-basics.html"><a href="git-basics.html#installation-setup"><i class="fa fa-check"></i><b>4.2</b> Installation &amp; Setup</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="git-basics.html"><a href="git-basics.html#creating-a-repo"><i class="fa fa-check"></i><b>4.2.1</b> Creating a Repo</a></li>
+<li class="chapter" data-level="4.2.2" data-path="git-basics.html"><a href="git-basics.html#checking-status"><i class="fa fa-check"></i><b>4.2.2</b> Checking Status</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="git-basics.html"><a href="git-basics.html#making-changes"><i class="fa fa-check"></i><b>4.3</b> Making Changes</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="git-basics.html"><a href="git-basics.html#adding-files"><i class="fa fa-check"></i><b>4.3.1</b> Adding Files</a></li>
+<li class="chapter" data-level="4.3.2" data-path="git-basics.html"><a href="git-basics.html#committing"><i class="fa fa-check"></i><b>4.3.2</b> Committing</a></li>
+<li class="chapter" data-level="4.3.3" data-path="git-basics.html"><a href="git-basics.html#commit-history"><i class="fa fa-check"></i><b>4.3.3</b> Commit History</a></li>
+<li class="chapter" data-level="4.3.4" data-path="git-basics.html"><a href="git-basics.html#reviewing-the-process"><i class="fa fa-check"></i><b>4.3.4</b> Reviewing the Process</a></li>
+<li class="chapter" data-level="4.3.5" data-path="git-basics.html"><a href="git-basics.html#the-.gitignore-file"><i class="fa fa-check"></i><b>4.3.5</b> The <code>.gitignore</code> File</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="git-basics.html"><a href="git-basics.html#github-and-remotes"><i class="fa fa-check"></i><b>4.4</b> GitHub and Remotes</a><ul>
+<li class="chapter" data-level="4.4.1" data-path="git-basics.html"><a href="git-basics.html#forking-and-cloning"><i class="fa fa-check"></i><b>4.4.1</b> Forking and Cloning</a></li>
+<li class="chapter" data-level="4.4.2" data-path="git-basics.html"><a href="git-basics.html#pushing-and-pulling"><i class="fa fa-check"></i><b>4.4.2</b> Pushing and Pulling</a></li>
+<li class="chapter" data-level="4.4.3" data-path="git-basics.html"><a href="git-basics.html#reviewing-the-process-1"><i class="fa fa-check"></i><b>4.4.3</b> Reviewing The Process</a></li>
+<li class="chapter" data-level="4.4.4" data-path="git-basics.html"><a href="git-basics.html#course-assignments-on-github"><i class="fa fa-check"></i><b>4.4.4</b> Course Assignments on GitHub</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="git-basics.html"><a href="git-basics.html#command-summary"><i class="fa fa-check"></i><b>4.5</b> Command Summary</a></li>
+<li class="chapter" data-level="" data-path="git-basics.html"><a href="git-basics.html#resources-3"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="introduction-to-python.html"><a href="introduction-to-python.html"><i class="fa fa-check"></i><b>5</b> Introduction to Python</a><ul>
+<li class="chapter" data-level="5.1" data-path="introduction-to-python.html"><a href="introduction-to-python.html#programming-with-python"><i class="fa fa-check"></i><b>5.1</b> Programming with Python</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="introduction-to-python.html"><a href="introduction-to-python.html#versions"><i class="fa fa-check"></i><b>5.1.1</b> Versions</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="introduction-to-python.html"><a href="introduction-to-python.html#running-python-scripts"><i class="fa fa-check"></i><b>5.2</b> Running Python Scripts</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="introduction-to-python.html"><a href="introduction-to-python.html#on-the-command-line"><i class="fa fa-check"></i><b>5.2.1</b> On the Command Line</a></li>
+<li class="chapter" data-level="5.2.2" data-path="introduction-to-python.html"><a href="introduction-to-python.html#jupyter-notebooks"><i class="fa fa-check"></i><b>5.2.2</b> Jupyter Notebooks</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="introduction-to-python.html"><a href="introduction-to-python.html#comments"><i class="fa fa-check"></i><b>5.3</b> Comments</a></li>
+<li class="chapter" data-level="5.4" data-path="introduction-to-python.html"><a href="introduction-to-python.html#variables"><i class="fa fa-check"></i><b>5.4</b> Variables</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="introduction-to-python.html"><a href="introduction-to-python.html#data-types"><i class="fa fa-check"></i><b>5.4.1</b> Data Types</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="introduction-to-python.html"><a href="introduction-to-python.html#getting-help"><i class="fa fa-check"></i><b>5.5</b> Getting Help</a></li>
+<li class="chapter" data-level="" data-path="introduction-to-python.html"><a href="introduction-to-python.html#resources-4"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="functions.html"><a href="functions.html"><i class="fa fa-check"></i><b>6</b> Functions</a><ul>
+<li class="chapter" data-level="6.1" data-path="functions.html"><a href="functions.html#what-are-functions"><i class="fa fa-check"></i><b>6.1</b> What are Functions?</a></li>
+<li class="chapter" data-level="6.2" data-path="functions.html"><a href="functions.html#python-function-syntax"><i class="fa fa-check"></i><b>6.2</b> Python Function Syntax</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="functions.html"><a href="functions.html#object-methods"><i class="fa fa-check"></i><b>6.2.1</b> Object Methods</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="functions.html"><a href="functions.html#built-in-python-functions"><i class="fa fa-check"></i><b>6.3</b> Built-in Python Functions</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="functions.html"><a href="functions.html#modules-and-libraries"><i class="fa fa-check"></i><b>6.3.1</b> Modules and Libraries</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="functions.html"><a href="functions.html#writing-functions"><i class="fa fa-check"></i><b>6.4</b> Writing Functions</a><ul>
+<li class="chapter" data-level="6.4.1" data-path="functions.html"><a href="functions.html#doc-strings"><i class="fa fa-check"></i><b>6.4.1</b> Doc Strings</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="functions.html"><a href="functions.html#resources-5"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="logic.html"><a href="logic.html"><i class="fa fa-check"></i><b>7</b> Logic and Conditionals</a><ul>
+<li class="chapter" data-level="7.1" data-path="logic.html"><a href="logic.html#booleans"><i class="fa fa-check"></i><b>7.1</b> Booleans</a><ul>
+<li class="chapter" data-level="7.1.1" data-path="logic.html"><a href="logic.html#boolean-operators"><i class="fa fa-check"></i><b>7.1.1</b> Boolean Operators</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="logic.html"><a href="logic.html#conditional-statements"><i class="fa fa-check"></i><b>7.2</b> Conditional Statements</a><ul>
+<li class="chapter" data-level="7.2.1" data-path="logic.html"><a href="logic.html#designing-conditions"><i class="fa fa-check"></i><b>7.2.1</b> Designing Conditions</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="logic.html"><a href="logic.html#determining-module-or-script"><i class="fa fa-check"></i><b>7.3</b> Determining Module or Script</a></li>
+<li class="chapter" data-level="" data-path="logic.html"><a href="logic.html#resources-6"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html"><i class="fa fa-check"></i><b>8</b> Iteration and Loops</a><ul>
+<li class="chapter" data-level="8.1" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html#while-loops"><i class="fa fa-check"></i><b>8.1</b> While Loops</a><ul>
+<li class="chapter" data-level="8.1.1" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html#counting-and-loops"><i class="fa fa-check"></i><b>8.1.1</b> Counting and Loops</a></li>
+<li class="chapter" data-level="8.1.2" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html#nested-conditionals-and-sentinels"><i class="fa fa-check"></i><b>8.1.2</b> Nested Conditionals and Sentinels</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html#for-loops"><i class="fa fa-check"></i><b>8.2</b> For Loops</a><ul>
+<li class="chapter" data-level="8.2.1" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html#difference-from-while-loops"><i class="fa fa-check"></i><b>8.2.1</b> Difference from While Loops</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html#iterating-over-files"><i class="fa fa-check"></i><b>8.3</b> Iterating over Files</a><ul>
+<li class="chapter" data-level="8.3.1" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html#tryexcept"><i class="fa fa-check"></i><b>8.3.1</b> Try/Except</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="iteration-and-loops.html"><a href="iteration-and-loops.html#resources-7"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="lists-and-sequences.html"><a href="lists-and-sequences.html"><i class="fa fa-check"></i><b>9</b> Lists and Sequences</a><ul>
+<li class="chapter" data-level="9.1" data-path="lists-and-sequences.html"><a href="lists-and-sequences.html#what-is-a-list"><i class="fa fa-check"></i><b>9.1</b> What is a List?</a></li>
+<li class="chapter" data-level="9.2" data-path="lists-and-sequences.html"><a href="lists-and-sequences.html#list-indices"><i class="fa fa-check"></i><b>9.2</b> List Indices</a></li>
+<li class="chapter" data-level="9.3" data-path="lists-and-sequences.html"><a href="lists-and-sequences.html#list-operations-and-methods"><i class="fa fa-check"></i><b>9.3</b> List Operations and Methods</a></li>
+<li class="chapter" data-level="9.4" data-path="lists-and-sequences.html"><a href="lists-and-sequences.html#lists-and-loops"><i class="fa fa-check"></i><b>9.4</b> Lists and Loops</a></li>
+<li class="chapter" data-level="9.5" data-path="lists-and-sequences.html"><a href="lists-and-sequences.html#nested-lists"><i class="fa fa-check"></i><b>9.5</b> Nested Lists</a></li>
+<li class="chapter" data-level="9.6" data-path="lists-and-sequences.html"><a href="lists-and-sequences.html#tuples"><i class="fa fa-check"></i><b>9.6</b> Tuples</a></li>
+<li class="chapter" data-level="" data-path="lists-and-sequences.html"><a href="lists-and-sequences.html#resources-8"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="dictionaries.html"><a href="dictionaries.html"><i class="fa fa-check"></i><b>10</b> Dictionaries</a><ul>
+<li class="chapter" data-level="10.1" data-path="dictionaries.html"><a href="dictionaries.html#what-is-a-dictionary"><i class="fa fa-check"></i><b>10.1</b> What is a Dictionary?</a></li>
+<li class="chapter" data-level="10.2" data-path="dictionaries.html"><a href="dictionaries.html#accessing-a-dictionary"><i class="fa fa-check"></i><b>10.2</b> Accessing a Dictionary</a></li>
+<li class="chapter" data-level="10.3" data-path="dictionaries.html"><a href="dictionaries.html#dictionary-methods"><i class="fa fa-check"></i><b>10.3</b> Dictionary Methods</a></li>
+<li class="chapter" data-level="10.4" data-path="dictionaries.html"><a href="dictionaries.html#dictionaries-and-loops"><i class="fa fa-check"></i><b>10.4</b> Dictionaries and Loops</a></li>
+<li class="chapter" data-level="10.5" data-path="dictionaries.html"><a href="dictionaries.html#nesting-dictionaries"><i class="fa fa-check"></i><b>10.5</b> Nesting Dictionaries</a></li>
+<li class="chapter" data-level="10.6" data-path="dictionaries.html"><a href="dictionaries.html#which-data-structure-do-i-use"><i class="fa fa-check"></i><b>10.6</b> Which Data Structure Do I Use?</a></li>
+<li class="chapter" data-level="" data-path="dictionaries.html"><a href="dictionaries.html#resources-9"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="searching.html"><a href="searching.html"><i class="fa fa-check"></i><b>11</b> Searching and Efficiency</a><ul>
+<li class="chapter" data-level="11.1" data-path="searching.html"><a href="searching.html#linear-search"><i class="fa fa-check"></i><b>11.1</b> Linear Search</a><ul>
+<li class="chapter" data-level="11.1.1" data-path="searching.html"><a href="searching.html#maximal-search"><i class="fa fa-check"></i><b>11.1.1</b> Maximal Search</a></li>
+<li class="chapter" data-level="11.1.2" data-path="searching.html"><a href="searching.html#falsification-search"><i class="fa fa-check"></i><b>11.1.2</b> Falsification Search</a></li>
+</ul></li>
+<li class="chapter" data-level="11.2" data-path="searching.html"><a href="searching.html#linear-search-speed"><i class="fa fa-check"></i><b>11.2</b> Linear Search Speed</a></li>
+<li class="chapter" data-level="11.3" data-path="searching.html"><a href="searching.html#binary-search"><i class="fa fa-check"></i><b>11.3</b> Binary Search</a><ul>
+<li class="chapter" data-level="11.3.1" data-path="searching.html"><a href="searching.html#binary-search-speed"><i class="fa fa-check"></i><b>11.3.1</b> Binary Search Speed</a></li>
+</ul></li>
+<li class="chapter" data-level="11.4" data-path="searching.html"><a href="searching.html#sorting"><i class="fa fa-check"></i><b>11.4</b> Sorting</a></li>
+<li class="chapter" data-level="" data-path="searching.html"><a href="searching.html#resources-10"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="functional-programming.html"><a href="functional-programming.html"><i class="fa fa-check"></i><b>12</b> Functional Programming</a><ul>
+<li class="chapter" data-level="12.1" data-path="functional-programming.html"><a href="functional-programming.html#functions-are-variables"><i class="fa fa-check"></i><b>12.1</b> Functions ARE Variables</a><ul>
+<li class="chapter" data-level="12.1.1" data-path="functional-programming.html"><a href="functional-programming.html#lambdas-anonymous-functions"><i class="fa fa-check"></i><b>12.1.1</b> lambdas: Anonymous Functions</a></li>
+</ul></li>
+<li class="chapter" data-level="12.2" data-path="functional-programming.html"><a href="functional-programming.html#functional-looping"><i class="fa fa-check"></i><b>12.2</b> Functional Looping</a><ul>
+<li class="chapter" data-level="12.2.1" data-path="functional-programming.html"><a href="functional-programming.html#map"><i class="fa fa-check"></i><b>12.2.1</b> Map</a></li>
+<li class="chapter" data-level="12.2.2" data-path="functional-programming.html"><a href="functional-programming.html#filter"><i class="fa fa-check"></i><b>12.2.2</b> Filter</a></li>
+<li class="chapter" data-level="12.2.3" data-path="functional-programming.html"><a href="functional-programming.html#reduce"><i class="fa fa-check"></i><b>12.2.3</b> Reduce</a></li>
+</ul></li>
+<li class="chapter" data-level="12.3" data-path="functional-programming.html"><a href="functional-programming.html#list-comprehensions"><i class="fa fa-check"></i><b>12.3</b> List Comprehensions</a></li>
+<li class="chapter" data-level="" data-path="functional-programming.html"><a href="functional-programming.html#resources-11"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="accessing-web-apis.html"><a href="accessing-web-apis.html"><i class="fa fa-check"></i><b>13</b> Accessing Web APIs</a><ul>
+<li class="chapter" data-level="13.1" data-path="accessing-web-apis.html"><a href="accessing-web-apis.html#web-apis"><i class="fa fa-check"></i><b>13.1</b> Web APIs</a></li>
+<li class="chapter" data-level="13.2" data-path="accessing-web-apis.html"><a href="accessing-web-apis.html#restful-requests"><i class="fa fa-check"></i><b>13.2</b> RESTful Requests</a><ul>
+<li class="chapter" data-level="13.2.1" data-path="accessing-web-apis.html"><a href="accessing-web-apis.html#uris"><i class="fa fa-check"></i><b>13.2.1</b> URIs</a></li>
+<li class="chapter" data-level="13.2.2" data-path="accessing-web-apis.html"><a href="accessing-web-apis.html#http-verbs"><i class="fa fa-check"></i><b>13.2.2</b> HTTP Verbs</a></li>
+</ul></li>
+<li class="chapter" data-level="13.3" data-path="accessing-web-apis.html"><a href="accessing-web-apis.html#accessing-web-apis-1"><i class="fa fa-check"></i><b>13.3</b> Accessing Web APIs</a></li>
+<li class="chapter" data-level="13.4" data-path="accessing-web-apis.html"><a href="accessing-web-apis.html#json-data"><i class="fa fa-check"></i><b>13.4</b> JSON Data</a></li>
+<li class="chapter" data-level="" data-path="accessing-web-apis.html"><a href="accessing-web-apis.html#resources-12"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="git-branches.html"><a href="git-branches.html"><i class="fa fa-check"></i><b>14</b> Git Branches</a><ul>
+<li class="chapter" data-level="14.1" data-path="git-branches.html"><a href="git-branches.html#git-branches"><i class="fa fa-check"></i><b>14.1</b> Git Branches</a></li>
+<li class="chapter" data-level="14.2" data-path="git-branches.html"><a href="git-branches.html#merging"><i class="fa fa-check"></i><b>14.2</b> Merging</a><ul>
+<li class="chapter" data-level="14.2.1" data-path="git-branches.html"><a href="git-branches.html#merge-conflicts"><i class="fa fa-check"></i><b>14.2.1</b> Merge Conflicts</a></li>
+</ul></li>
+<li class="chapter" data-level="14.3" data-path="git-branches.html"><a href="git-branches.html#undoing-changes"><i class="fa fa-check"></i><b>14.3</b> Undoing Changes</a></li>
+<li class="chapter" data-level="14.4" data-path="git-branches.html"><a href="git-branches.html#github-and-branches"><i class="fa fa-check"></i><b>14.4</b> GitHub and Branches</a><ul>
+<li class="chapter" data-level="14.4.1" data-path="git-branches.html"><a href="git-branches.html#github-pages"><i class="fa fa-check"></i><b>14.4.1</b> GitHub Pages</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="git-branches.html"><a href="git-branches.html#resources-13"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="git-collaboration.html"><a href="git-collaboration.html"><i class="fa fa-check"></i><b>15</b> Git Collaboration</a><ul>
+<li class="chapter" data-level="15.1" data-path="git-collaboration.html"><a href="git-collaboration.html#centralized-workflow"><i class="fa fa-check"></i><b>15.1</b> Centralized Workflow</a></li>
+<li class="chapter" data-level="15.2" data-path="git-collaboration.html"><a href="git-collaboration.html#feature-branch-workflow"><i class="fa fa-check"></i><b>15.2</b> Feature Branch Workflow</a></li>
+<li class="chapter" data-level="15.3" data-path="git-collaboration.html"><a href="git-collaboration.html#forking-workflow"><i class="fa fa-check"></i><b>15.3</b> Forking Workflow</a><ul>
+<li class="chapter" data-level="15.3.1" data-path="git-collaboration.html"><a href="git-collaboration.html#pull-requests"><i class="fa fa-check"></i><b>15.3.1</b> Pull Requests</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="git-collaboration.html"><a href="git-collaboration.html#resources-14"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="object-oriented-programming.html"><a href="object-oriented-programming.html"><i class="fa fa-check"></i><b>16</b> Object-Oriented Programming</a><ul>
+<li class="chapter" data-level="" data-path="object-oriented-programming.html"><a href="object-oriented-programming.html#resources-15"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="pandas.html"><a href="pandas.html"><i class="fa fa-check"></i><b>17</b> The <code>pandas</code> Library</a><ul>
+<li class="chapter" data-level="17.1" data-path="pandas.html"><a href="pandas.html#setting-up-pandas"><i class="fa fa-check"></i><b>17.1</b> Setting up <code>pandas</code></a></li>
+<li class="chapter" data-level="17.2" data-path="pandas.html"><a href="pandas.html#series"><i class="fa fa-check"></i><b>17.2</b> Series</a><ul>
+<li class="chapter" data-level="17.2.1" data-path="pandas.html"><a href="pandas.html#series-operations-and-methods"><i class="fa fa-check"></i><b>17.2.1</b> Series Operations and Methods</a></li>
+<li class="chapter" data-level="17.2.2" data-path="pandas.html"><a href="pandas.html#accessing-series"><i class="fa fa-check"></i><b>17.2.2</b> Accessing Series</a></li>
+</ul></li>
+<li class="chapter" data-level="17.3" data-path="pandas.html"><a href="pandas.html#dataframes"><i class="fa fa-check"></i><b>17.3</b> DataFrames</a><ul>
+<li class="chapter" data-level="17.3.1" data-path="pandas.html"><a href="pandas.html#dataframe-operations-and-methods"><i class="fa fa-check"></i><b>17.3.1</b> DataFrame Operations and Methods</a></li>
+<li class="chapter" data-level="17.3.2" data-path="pandas.html"><a href="pandas.html#accessing-dataframes"><i class="fa fa-check"></i><b>17.3.2</b> Accessing DataFrames</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="pandas.html"><a href="pandas.html#resources-16"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="18" data-path="javascript.html"><a href="javascript.html"><i class="fa fa-check"></i><b>18</b> JavaScript</a><ul>
+<li class="chapter" data-level="18.1" data-path="javascript.html"><a href="javascript.html#programming-with-javascript"><i class="fa fa-check"></i><b>18.1</b> Programming with JavaScript</a><ul>
+<li class="chapter" data-level="18.1.1" data-path="javascript.html"><a href="javascript.html#history-and-versions"><i class="fa fa-check"></i><b>18.1.1</b> History and Versions</a></li>
+<li class="chapter" data-level="18.1.2" data-path="javascript.html"><a href="javascript.html#running-javascript"><i class="fa fa-check"></i><b>18.1.2</b> Running JavaScript</a></li>
+</ul></li>
+<li class="chapter" data-level="18.2" data-path="javascript.html"><a href="javascript.html#javascript-basics"><i class="fa fa-check"></i><b>18.2</b> JavaScript Basics</a><ul>
+<li class="chapter" data-level="18.2.1" data-path="javascript.html"><a href="javascript.html#strict-mode"><i class="fa fa-check"></i><b>18.2.1</b> Strict Mode</a></li>
+</ul></li>
+<li class="chapter" data-level="18.3" data-path="javascript.html"><a href="javascript.html#variables-1"><i class="fa fa-check"></i><b>18.3</b> Variables</a><ul>
+<li class="chapter" data-level="18.3.1" data-path="javascript.html"><a href="javascript.html#basic-data-types"><i class="fa fa-check"></i><b>18.3.1</b> Basic Data Types</a></li>
+<li class="chapter" data-level="18.3.2" data-path="javascript.html"><a href="javascript.html#type-coercion"><i class="fa fa-check"></i><b>18.3.2</b> Type Coercion</a></li>
+<li class="chapter" data-level="18.3.3" data-path="javascript.html"><a href="javascript.html#arrays"><i class="fa fa-check"></i><b>18.3.3</b> Arrays</a></li>
+<li class="chapter" data-level="18.3.4" data-path="javascript.html"><a href="javascript.html#objects"><i class="fa fa-check"></i><b>18.3.4</b> Objects</a></li>
+</ul></li>
+<li class="chapter" data-level="18.4" data-path="javascript.html"><a href="javascript.html#control-structures"><i class="fa fa-check"></i><b>18.4</b> Control Structures</a><ul>
+<li class="chapter" data-level="18.4.1" data-path="javascript.html"><a href="javascript.html#conditionals"><i class="fa fa-check"></i><b>18.4.1</b> Conditionals</a></li>
+<li class="chapter" data-level="18.4.2" data-path="javascript.html"><a href="javascript.html#loops"><i class="fa fa-check"></i><b>18.4.2</b> Loops</a></li>
+</ul></li>
+<li class="chapter" data-level="18.5" data-path="javascript.html"><a href="javascript.html#functions-1"><i class="fa fa-check"></i><b>18.5</b> Functions</a><ul>
+<li class="chapter" data-level="18.5.1" data-path="javascript.html"><a href="javascript.html#functional-programming-1"><i class="fa fa-check"></i><b>18.5.1</b> Functional Programming</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="javascript.html"><a href="javascript.html#resources-17"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="19" data-path="web-programming.html"><a href="web-programming.html"><i class="fa fa-check"></i><b>19</b> Web Programming</a><ul>
+<li class="chapter" data-level="19.1" data-path="web-programming.html"><a href="web-programming.html#web-pages-and-html"><i class="fa fa-check"></i><b>19.1</b> Web Pages and HTML</a><ul>
+<li class="chapter" data-level="19.1.1" data-path="web-programming.html"><a href="web-programming.html#elements-are-nested"><i class="fa fa-check"></i><b>19.1.1</b> Elements are Nested</a></li>
+<li class="chapter" data-level="19.1.2" data-path="web-programming.html"><a href="web-programming.html#scalable-vector-graphics-svg"><i class="fa fa-check"></i><b>19.1.2</b> Scalable Vector Graphics (SVG)</a></li>
+</ul></li>
+<li class="chapter" data-level="19.2" data-path="web-programming.html"><a href="web-programming.html#dom-manipulation-with-d3"><i class="fa fa-check"></i><b>19.2</b> DOM Manipulation with D3</a><ul>
+<li class="chapter" data-level="19.2.1" data-path="web-programming.html"><a href="web-programming.html#selecting-elements"><i class="fa fa-check"></i><b>19.2.1</b> Selecting Elements</a></li>
+<li class="chapter" data-level="19.2.2" data-path="web-programming.html"><a href="web-programming.html#changing-elements"><i class="fa fa-check"></i><b>19.2.2</b> Changing Elements</a></li>
+<li class="chapter" data-level="19.2.3" data-path="web-programming.html"><a href="web-programming.html#adding-elements"><i class="fa fa-check"></i><b>19.2.3</b> Adding Elements</a></li>
+</ul></li>
+<li class="chapter" data-level="19.3" data-path="web-programming.html"><a href="web-programming.html#user-events"><i class="fa fa-check"></i><b>19.3</b> User Events</a></li>
+<li class="chapter" data-level="19.4" data-path="web-programming.html"><a href="web-programming.html#ajax"><i class="fa fa-check"></i><b>19.4</b> AJAX</a></li>
+<li class="chapter" data-level="" data-path="web-programming.html"><a href="web-programming.html#resources-18"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="20" data-path="d3.html"><a href="d3.html"><i class="fa fa-check"></i><b>20</b> D3 Visualizations</a><ul>
+<li class="chapter" data-level="20.1" data-path="d3.html"><a href="d3.html#the-data-join"><i class="fa fa-check"></i><b>20.1</b> The Data Join</a><ul>
+<li class="chapter" data-level="20.1.1" data-path="d3.html"><a href="d3.html#entering-and-exiting-elements"><i class="fa fa-check"></i><b>20.1.1</b> Entering and Exiting Elements</a></li>
+</ul></li>
+<li class="chapter" data-level="20.2" data-path="d3.html"><a href="d3.html#animation"><i class="fa fa-check"></i><b>20.2</b> Animation</a></li>
+<li class="chapter" data-level="20.3" data-path="d3.html"><a href="d3.html#margins-and-positioning"><i class="fa fa-check"></i><b>20.3</b> Margins and Positioning</a></li>
+<li class="chapter" data-level="20.4" data-path="d3.html"><a href="d3.html#scales"><i class="fa fa-check"></i><b>20.4</b> Scales</a><ul>
+<li class="chapter" data-level="20.4.1" data-path="d3.html"><a href="d3.html#axes"><i class="fa fa-check"></i><b>20.4.1</b> Axes</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="d3.html"><a href="d3.html#resources-19"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Introduction to Programming</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="web-programming" class="section level1">
+<h1><span class="header-section-number">Chapter 19</span> Web Programming</h1>
+<p>The most common use of programming in JavaScript is to create <strong>dynamic, interactive web pages</strong>: websites where the content changes over time or in response to user input <em>without the page reloading</em>. Almost any interaction that isn’t following a hyperlink to a new web page is produce through JavaScript. This chapter provide an overview of using JavaScript to produce interactive web pages: using HTML syntax to define content, programmatically manipulating that content (using the D3 library), responding to user input, and dynamically downloading data.</p>
+<div id="web-pages-and-html" class="section level2">
+<h2><span class="header-section-number">19.1</span> Web Pages and HTML</h2>
+<p>A webpage is simply a set of files that the browser <em>renders</em> (shows) in a particular way, allowing you to interact with it. Webpage content (words, images, etc.) is formatted and structured using <strong>HTML</strong> (<strong>H</strong>yper<strong>T</strong>ext <strong>M</strong>arkup <strong>L</strong>anguage). This is code that functions similarly to <a href="markdown.html#markdown">Markdown</a> by allowing you to <em>annotate</em> plain text (e.g., “this content is a heading”, “this content is a hyperlink”), except it is much more flexible and powerful.</p>
+<p>HTML annotates content by <em>surrounding</em> it with <strong>tags</strong>:</p>
+<div class="figure">
+<img src="img/web-programming/element-diagram.png" alt="Element diagram" />
+<p class="caption">Element diagram</p>
+</div>
+<p>The <strong>opening/start tag</strong> comes before the content and tell the computer “I’m about to give you content with some meaning”, while the <strong>closing/end tag</strong> comes after the content to tell the computer “I’m done giving content with that meaning.” For example, the <code>&lt;h1&gt;</code> tag represents a <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements">top-level heading</a> (equivalent to one <code>#</code> in Markdown), and so the open tag says “here’s the start of the heading” and the closing tag says “that’s the end of the heading”. Taken together, the tags and the content they <em>contain</em> are called an <strong>HTML Element</strong>. A website is made of a bunch of these elements.</p>
+<p>Tags are written with a less-than symbol <strong><code>&lt;</code></strong>, then the name of the tag (often a single letter), then a greater-than symbol <strong><code>&gt;</code></strong>. An <em>end tag</em> is written just like a <em>start tag</em>, but includes a forward slash <code>/</code> immediately after the less-than symbol—this indicates that the tag is closing the annotation. Line breaks and white space around tags (including indentation) is ignored.</p>
+<ul>
+<li>HTML tag names are not case sensitive, but you should always write them in all lowercase.</li>
+<li>Line breaks and white space around tags (including indentation) is ignored. Tags may thus be written on their own line, or inline with the content.</li>
+</ul>
+<p>The <em>start tag</em> of an element may also contain one or more <strong>attributes</strong>. These are similar to attributes in object-oriented programming: they specify <em>properties</em>, options, or otherwise add additional meaning to an element. Like named keyword parameters in Python or HTTP query parameters, attributes are written in the format <code>attributeName=value</code> (no spaces are allowed around the <code>=</code>); values of attributes are almost always strings, and so are written in quotes. Multiple attributes are separated by spaces:</p>
+<pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tag</span> <span class="token attr-name">attributeA</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>value<span class="token punctuation">"</span></span> <span class="token attr-name">attributeB</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>value<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+   content
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tag</span><span class="token punctuation">></span></span></code></pre>
+<p>For example, a hyperlink anchor (<code>&lt;a&gt;</code>) uses a <code>href</code> (“<strong>h</strong>ypertext <strong>ref</strong>erence”) attribute to specify where the content should link to:</p>
+<pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>https://ischool.uw.edu<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>iSchool homepage<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span></code></pre>
+<ul>
+<li><p>In a hyperlink, the <em>content</em> of the tag is the displayed text, and the <em>attribute</em> specifies the link’s URL. Contrast this to the same link in Markdown:</p>
+<pre class="language-markdown"><code><span class="token url">[iSchool homepage](https://ischool.uw.edu)</span></code></pre></li>
+</ul>
+<p>Every HTML element can include an <strong><code>id</code></strong> attribute, which is used to give them a unique identifier so that we can refer to them later (e.g., from JavaScript). <code>id</code> attributes are named like variable names, and must be <strong>unique</strong> on the page.</p>
+<pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>title<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>My Web Page<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span></code></pre>
+<p>Other common attributes include <code>style</code> for specifying appearance style rules, or <code>class</code> for giving a (space-separated) list of <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS">Cascading Style Sheet</a> classifications.</p>
+<p>Some HTML elements don’t require a closing tag because they <em>can’t</em> contain any content. These tags are often used for inserting media into a web page, such as with the <code>&lt;img&gt;</code> tag. With an <code>&lt;img&gt;</code> tag, you can specify the path to the image file in the <code>src</code> attribute, but the image element itself can’t contain additional text or other content. Since it can’t contain any content, we leave off the end tag entirely. However, we can optionally include the “end” slash <strong><code>/</code></strong> just before the greater-than symbol to indicate that the element is complete and to expect no further content:</p>
+<pre class="language-html"><code><span class="token comment">&lt;!-- images have no text content! --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>picture.png<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>description of image for screen readers and indexers<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span></code></pre>
+<div id="elements-are-nested" class="section level3">
+<h3><span class="header-section-number">19.1.1</span> Elements are Nested</h3>
+<p>HTML elements can be <strong>nested</strong>: that is, the content of an HTML element can contain <em>other</em> HTML tags (and thus other HTML elements):</p>
+<div class="figure">
+<img src="img/web-programming/nesting.png" alt="An example of element nesting: the &lt;em&gt; element is nested in the &lt;h1&gt; element’s content." />
+<p class="caption">An example of element nesting: the <code>&lt;em&gt;</code> element is nested in the <code>&lt;h1&gt;</code> element’s content.</p>
+</div>
+<p>The semantic meaning indicated by an elements applies to <em>all</em> its content: thus all the text in the above example is a top-level heading, and the content “(with emphasis)” is emphasized as well.</p>
+<p>Because elements can contain elements which can <em>themselves</em> contain elements, an HTML document ends up being structured as a <a href="https://en.wikipedia.org/wiki/Tree_(data_structure)"><strong>“tree”</strong></a> of elements:</p>
+<div class="figure">
+<img src="img/web-programming/dom-tree.jpg" alt="An example DOM tree (a tree of HTML elements)." />
+<p class="caption">An example DOM tree (a tree of HTML elements).</p>
+</div>
+<p>In an HTML document, the <code>&lt;html&gt;</code> element is the “root” element of the tree. Inside this we put a <code>&lt;head&gt;</code> element to represent “header” information (meta-data that is <strong>not</strong>shown on the page itself), and a <code>&lt;body&gt;</code> element to contain the document’s “body” (the shown content):</p>
+<pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>The title that appears in the browser tab<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">></span></span>Hello world!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>This is <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>em</span><span class="token punctuation">></span></span>conteeeeent<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>em</span><span class="token punctuation">></span></span>!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span></code></pre>
+<p>This model of HTML as a tree of “nodes”—along with an API (programming interface) for manipulating them— is known as the <a href="https://en.wikipedia.org/wiki/Document_Object_Model"><strong>Document Object Model (DOM)</strong></a>.</p>
+</div>
+<div id="scalable-vector-graphics-svg" class="section level3">
+<h3><span class="header-section-number">19.1.2</span> Scalable Vector Graphics (SVG)</h3>
+<p><a href="https://en.wikipedia.org/wiki/Scalable_Vector_Graphics"><strong>Scalable Vector Graphics (SVG)</strong></a> is a syntax for representing (“coding”) simple graphical images. For example, you can use SVG to define “a 100x200 pixel green rectangle at the top of the screen”, or a squiggly line that follows a path a la Turtle Graphics! SVG images can be very complex and made up of lots of different shapes: most logos, icons, and other “non-photograph” images on the internet are defined using SVG.</p>
+<p>SVG is used to represent <a href="https://en.wikipedia.org/wiki/Vector_graphics">vector graphics</a>—that is, pictures defined in terms of the connection between points (lines and other shapes), rather than in terms of the pixels being displayed. In order to be shown on a screen, these lines are converted (<em>rastered</em>) into grids of pixels based on the size and resolution of the display. This allows SVG images to “scale” or “zoom” independent of the size of the display or the image—you never need to worry about things getting blurry as you make them larger!</p>
+<p>SVG images are written in a <a href="https://en.wikipedia.org/wiki/XML">XML</a> (E<strong>x</strong>tensible <strong>M</strong>arkup <strong>L</strong>anguage) syntax that is identical to that used by HTML (just with different “tags”). And in HTML5 (supported by all modern browsers), SVG elements can be included <em>directly</em> in the HTML, allowing you to include—and more importantly, manipulate—these elements as if they were any other HTML element.</p>
+<p>An SVG image is specified with an <strong><code>&lt;svg&gt;</code></strong> tag, inside of which is <em>nested</em> the individual shapes and components that should be shown. <code>&lt;svg&gt;</code> tags are usually given <code>width</code> and <code>height</code> attributes specifying their size (in screen pixels). Inside the <code>&lt;svg&gt;</code> tag are nested further elements, each representing a different shape:</p>
+<pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>svg</span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation">=</span>400</span> <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation">=</span>400</span><span class="token punctuation">></span></span> <span class="token comment">&lt;!-- the image --></span>
+   <span class="token comment">&lt;!-- a rectangle --></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>rect</span> <span class="token attr-name">x</span><span class="token attr-value"><span class="token punctuation">=</span>20</span> <span class="token attr-name">y</span><span class="token attr-value"><span class="token punctuation">=</span>130</span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation">=</span>50</span> <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation">=</span>80</span> <span class="token punctuation">/></span></span>
+
+   <span class="token comment">&lt;!-- a circle --></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>circle</span> <span class="token attr-name">cx</span><span class="token attr-value"><span class="token punctuation">=</span>150</span> <span class="token attr-name">cy</span><span class="token attr-value"><span class="token punctuation">=</span>150</span> <span class="token attr-name">r</span><span class="token attr-value"><span class="token punctuation">=</span>35</span> <span class="token punctuation">/></span></span>
+
+   <span class="token comment">&lt;!-- some text --></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>text</span> <span class="token attr-name">x</span><span class="token attr-value"><span class="token punctuation">=</span>100</span> <span class="token attr-name">y</span><span class="token attr-value"><span class="token punctuation">=</span>100</span><span class="token punctuation">></span></span>SVG!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>text</span><span class="token punctuation">></span></span>
+
+   <span class="token comment">&lt;!-- a turtle-style "path" of a triangle --></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>path</span> <span class="token attr-name">d</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>M150 0 L75 200 L225 200 Z<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>svg</span><span class="token punctuation">></span></span></code></pre>
+<p>Notice that each “shape” uses different attributes to define its appearance:</p>
+<ul>
+<li>A <code>&lt;rect&gt;</code> has an (x,y) position, as well as a width and height.</li>
+<li>A <code>&lt;circle&gt;</code> has a “<strong>c</strong>enter-x” and “<strong>c</strong>enter-y” position, as well as a <strong>r</strong>adius.</li>
+<li>A <code>&lt;text&gt;</code> includes the text to show as the element’s content.</li>
+<li><p>A <code>&lt;path&gt;</code> defines a turtle-style path as a string of instructions. For example, <code>M</code> means “<strong>m</strong>ove to” the following (absolute) coordinates, <code>L</code> means “draw a <strong>l</strong>ine to” the following (absolute) coordinates, and the <code>Z</code> means to “close/end” the path by drawing a line back to the start. See <a href="https://www.w3.org/TR/SVG/paths.html#PathData">the SVG specification</a> for complete details.</p>
+<p>Note that SVG paths can be quite complex. The below path represents the UW logo!</p>
+<pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>path</span> <span class="token attr-name">d</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>M 111.003,0 L 111.003,18.344 L 123.896,18.344 L 109.501,71.915 C 109.501,71.915 91.887,0.998 91.636,0 L 73.006,0 C 72.743,0.975 53.684,71.919 53.684,71.919 L 40.427,18.344 L 53.851,18.344 L 53.851,0 L 0,0 L 0,18.344 L 11.932,18.344 C 11.932,18.344 32.523,100.706 32.772,101.706 L 61.678,101.706 C 61.934,100.729 75.476,49.251 75.476,49.251 C 75.476,49.251 88.343,100.716 88.591,101.706 L 117.495,101.706 C 117.755,100.723 139.422,18.344 139.422,18.344 L 151.256,18.344 L 151.256,0 L 111.003,0 z<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span> <span class="token comment">&lt;!-- from wikicommons --></span></code></pre></li>
+</ul>
+<p>Additionally, all SVG shape elements support attributes that indicate the <em>appearance</em> of that shape. These include (among other options):</p>
+<ul>
+<li><strong><code>fill</code></strong> indicates the color that the shape should be “filled in”. This can be a <a href="https://www.w3schools.com/colors/colors_names.asp">named colors</a> or <a href="https://www.smashingmagazine.com/2012/10/the-code-side-of-color/">RGB hex codes</a>.</li>
+<li><strong><code>stroke</code></strong> indicates the color of the shape’s <em>outline</em>. This can be different than the <code>fill</code> color.</li>
+<li><strong><code>stroke-width</code></strong> can be used to specify the width of the shape’s outline (in pixels).</li>
+<li><p><strong><code>style</code></strong> allows you to specify CSS style properties (in a format <code>property:value;</code>), and is can be used for some appearance aspects that are not supported by specific attributes. For example, this can be used to make a shape transparent using the <code>opacity</code> property:</p>
+<pre class="language-html"><code><span class="token comment">&lt;!-- a circle that is 50% transparent --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>circle</span> <span class="token attr-name">cx</span><span class="token attr-value"><span class="token punctuation">=</span>100</span> <span class="token attr-name">cy</span><span class="token attr-value"><span class="token punctuation">=</span>100</span> <span class="token attr-name">r</span><span class="token attr-value"><span class="token punctuation">=</span>50</span> <span class="token attr-name">fill</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>red<span class="token punctuation">"</span></span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value"><span class="token property">opacity</span><span class="token punctuation">:</span>0.5<span class="token punctuation">;</span></span><span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span></code></pre></li>
+</ul>
+</div>
+</div>
+<div id="dom-manipulation-with-d3" class="section level2">
+<h2><span class="header-section-number">19.2</span> DOM Manipulation with D3</h2>
+<p>You can use JavaScript to make a web page’s content <strong>dynamic</strong> (change over time) and <strong>interactive</strong> (responding to user input) by writing a script that will <em>modify</em> the HTML elements that are shown on the page: whether by changing their content, attributes, or even creating new elements!</p>
+<p>Web browsers render HTML into a <strong>DOM</strong> tree that provides an <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model">API</a> for performing these operations (e.g., by calling methods on the provided <code>document</code> global module). While this is a perfectly reasonable and effective way of making interactive web pages, this chapter will focus on how to use the <a href="https://d3js.org/">D3</a> library to interact with the DOM. The D3 library provides more powerful and (slightly) easier-to-use functions for manipulating the HTML. Moreover, learning these functions now will make it easier to later use D3 for its primary purpose: creating interactive visualizations (described in the next chapter).</p>
+<p>D3 is a third-party library, so as with Python modules you will need to “download” it and “import” it into your script. You do this by including a <code>&lt;script&gt;</code> tag with a <em>link</em> to the online version of the library <strong>before</strong> the <code>&lt;script&gt;</code> tag for your script:</p>
+<pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>https://d3js.org/d3.v4.min.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span></code></pre>
+<p>Note that this means you will need to be connected to the internet to utilize this library. If you need to write your program offline, you can instead download the library (the <code>d3.zip</code>) and load the included <code>d3.min.js</code> script by specifying a relative path to it.</p>
+<div id="selecting-elements" class="section level3">
+<h3><span class="header-section-number">19.2.1</span> Selecting Elements</h3>
+<p>In order to modify the web page’s HTML elements from a JavaScript script, the first thing you will need to do is get a <strong>reference</strong> to the particular element you wish to modify: that is, create a <em>variable</em> whose value is an object corresponding to that element.</p>
+<p>In D3, you can get this object by using the <strong><code>d3.select()</code></strong> function. This function takes as an argument a <strong>string</strong> specifying <em>which</em> element in the DOM should be selected. This string can take a few different formats:</p>
+<ul>
+<li><p>Specifying the element’s <strong>tag name</strong> will select the <em>first</em> element on the page (from the top) with that tag:</p>
+<pre class="language-js"><code><span class="token keyword">var</span> header <span class="token operator">=</span> d3<span class="token punctuation">.</span><span class="token function">select</span><span class="token punctuation">(</span><span class="token string">'h1'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//select the FRIST &lt;h1> element</span></code></pre>
+<p>Note that the angle brackets <code>&lt;&gt;</code> are <em>not</em> included in the selector string—just the tag name itself.</p>
+<p>This format works great if you know there is only one element of a type on the page (e.g., if there is only one <code>&lt;svg&gt;</code> image on the page).</p></li>
+<li><p>You can select a particular element by its <strong><code>id</code></strong> attribute by using that <code>id</code> with a <strong><code>#</code></strong> immediately front of it:</p>
+<pre class="language-js"><code><span class="token keyword">var</span> element <span class="token operator">=</span> d3<span class="token punctuation">.</span><span class="token function">select</span><span class="token punctuation">(</span><span class="token string">'#myElem'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//select element with attribute `id="myElem"`</span></code></pre>
+<p>The <code>#</code> symbol can be read as “thing with id of”. This format works great to select a particular element from many (as long as that element has an <code>id</code> attribute of course!)</p></li>
+<li><p>You can also use most any other standard <a href="https://www.w3schools.com/cssref/css_selectors.asp">CSS selector</a> to be more precise about which element you wish to reference. In any case, the <code>d3.select()</code> function will return the <strong>first</strong> matching element.</p></li>
+</ul>
+<p>The <code>d3.select()</code> function returns an object that is an instance of a <strong><code>d3.selection</code></strong> class. You can think of these as being “D3-specific” versions of that HTML DOM element. This object will provide a variety of methods that you can use to manipulate that element on the web page, as described below.</p>
+<p>It is possible to select more than one element by using the <code>d3.selectAll()</code> function. This function also takes a selector string as an argument, but instead returns a <code>d3.selection</code> object that refers to <strong>all</strong> elements that “match” the selector. For example, <code>d3.selectAll('p')</code> will return an object representing all of the <code>&lt;p&gt;</code> (paragraph) elements on the page. This will allow you to easily manipulate large numbers of similar elements (e.g., all of the <code>&lt;circle&gt;</code> elements in a scatter plot).</p>
+<ul>
+<li>All the <code>d3.selection</code> object methods are <strong>vectorized</strong> (like with a <code>pandas</code> Series), meaning that they will apply to <em>each</em> selected DOM element. Thus calling a method to change the result of a <code>d3.selectAll()</code> function will change <em>all</em> of those elements in the same way. See below for examples.</li>
+</ul>
+<p>It is also possible to call the <code>select()</code> and <code>selectAll()</code> methods on a <code>d3.selection</code> object. In this case, D3 will return the matching <strong>child</strong> element(s) from the DOM tree. For example, consider the HTML:</p>
+<pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>firstGroup<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>First paragraph<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>secondGroup<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>Second paragraph<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>Third paragraph<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<p>In order to get a reference to the “Second paragraph”, you could use the following:</p>
+<pre class="language-js"><code><span class="token keyword">var</span> secondGroup <span class="token operator">=</span> d3<span class="token punctuation">.</span><span class="token function">select</span><span class="token punctuation">(</span><span class="token string">'#secondGroup'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">//select second &lt;div> by `id`</span>
+<span class="token keyword">var</span> paragraph <span class="token operator">=</span> secondGroup<span class="token punctuation">.</span><span class="token function">select</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`p`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">//select first &lt;p> inside that element</span></code></pre>
+<p>This allows you to interact with only particular “branches” of the DOM tree by first selecting the “root” of that branch, and then selecting the element(s) from that branch that you care about.</p>
+</div>
+<div id="changing-elements" class="section level3">
+<h3><span class="header-section-number">19.2.2</span> Changing Elements</h3>
+<p>Once you have a <em>reference</em> to an element, you can call methods on that object in order to modify its state in the DOM—which will in turn modify how it <em>currently</em> is displayed on the page. Thus by calling these methods, you are dynamically changing the web page’s content!</p>
+<div class="alert alert-warning">
+<p><strong>Important</strong>: these methods <em>do not change the <code>.html</code> source code file!</em> Instead, they just change the <em>rendered DOM elements</em> (think: the content stored in the computer’s memory rather than in a file). If you refresh the page, the content will go back to how the <code>.html</code> source code file specifies it should appear—with any loaded <code>.js</code> scripts being applied. With such dynamic content, what is shown on the page is the HTML with the JavaScript modifications added in, which may be a far cry from the <code>.html</code> content itself!</p>
+</div>
+<div id="changing-content" class="section level4">
+<h4><span class="header-section-number">19.2.2.1</span> Changing Content</h4>
+<p>You can change a selected element’s <strong>content</strong> (e.g., the stuff between the start and close tags) by using the <strong><code>.text()</code></strong> method. This method takes as an argument the new content for the element (which will replace any old content):</p>
+<pre class="language-js"><code><span class="token keyword">var</span> paragraph <span class="token operator">=</span> d3<span class="token punctuation">.</span><span class="token function">select</span><span class="token punctuation">(</span><span class="token string">'p'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+paragraph<span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span><span class="token string">'This is new content!'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">//change the paragraph's content.</span></code></pre>
+<p>Remember that an element’s contents can include <em>other HTML elements</em>. However, any HTML included in the argument string will be <em>escaped</em> and shown as text content (e.g., showing the <code>&lt;&gt;</code>). For example:</p>
+<pre class="language-js"><code><span class="token keyword">var</span> paragraph <span class="token operator">=</span> d3<span class="token punctuation">.</span><span class="token function">select</span><span class="token punctuation">(</span><span class="token string">'p'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+paragraph<span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span><span class="token string">'This is &lt;em>new&lt;/em> content!'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>will change the paragraph to display: “This is &lt;em&gt;new&lt;/em&gt; content!”</p>
+<p>If you want to include HTML elements inside the new content, you should instead use the <code>.html()</code> method:</p>
+<pre class="language-js"><code><span class="token keyword">var</span> paragraph <span class="token operator">=</span> d3<span class="token punctuation">.</span><span class="token function">select</span><span class="token punctuation">(</span><span class="token string">'p'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+paragraph<span class="token punctuation">.</span><span class="token function">html</span><span class="token punctuation">(</span><span class="token string">'This is &lt;em>new&lt;/em> content!'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>will change the paragraph to display: “This is <em>new</em> content!”</p>
+<ul>
+<li>Be careful using <code>.html()</code> to display any user-provided data, since the content they give could include malicious <code>&lt;script&gt;</code> tags!</li>
+<li>The <code>.html()</code> method is primarily used for “inline” formatting tags like <code>&lt;em&gt;</code> (emphasis, italics) or <code>&lt;strong&gt;</code> (bold).</li>
+<li>The <code>.html()</code> method does not work with SVG elements; see below for other options.</li>
+</ul>
+<p>Both the <code>.text()</code> and <code>.html()</code> methods can also be called without <em>any</em> arguments. In this situation, the methods <em>return</em> a string of the element’s content without changing anything (<code>.text()</code> returns a string with all of the HTML tags removed). This lets you “get” the current contents of an element, such if if you want to do any string processing on it.</p>
+<p>Calling either method on a selection with multiple elements (e.g., from <code>d3.selectAll()</code>) will cause the change to be made to <em>all</em> of the elements in the selection.</p>
+</div>
+<div id="changing-attributes" class="section level4">
+<h4><span class="header-section-number">19.2.2.2</span> Changing Attributes</h4>
+<p>You can change a selected element’s <strong>attributes</strong> by calling the <strong><code>.attr()</code></strong> method on that selection. This method takes two arguments: the name of the attribute to change, and the new value to give to that attribute:</p>
+<pre class="language-js"><code><span class="token keyword">var</span> circle <span class="token operator">=</span> d3<span class="token punctuation">.</span><span class="token function">select</span><span class="token punctuation">(</span><span class="token string">'circle'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">//select a circle</span>
+circle<span class="token punctuation">.</span><span class="token function">attr</span><span class="token punctuation">(</span><span class="token string">'fill'</span><span class="token punctuation">,</span> <span class="token string">'green'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">//make the circle green</span></code></pre>
+<p>The <code>.attr()</code> method <em>returns</em> a reference to the object that it modified. You can then use that returned value as the <em>anonymous subject</em> of additional method calls. This is called <strong>chaining methods</strong>:</p>
+<pre class="language-js"><code><span class="token keyword">var</span> circle <span class="token operator">=</span> d3<span class="token punctuation">.</span><span class="token function">select</span><span class="token punctuation">(</span><span class="token string">'circle'</span><span class="token punctuation">)</span>  <span class="token comment">//no semicolon!</span>
+    <span class="token punctuation">.</span><span class="token function">attr</span><span class="token punctuation">(</span><span class="token string">'fill'</span><span class="token punctuation">,</span> <span class="token string">'green'</span><span class="token punctuation">)</span>        <span class="token comment">//call `.attr()` on (anonymous) result</span>
+    <span class="token punctuation">.</span><span class="token function">attr</span><span class="token punctuation">(</span><span class="token string">'stroke'</span><span class="token punctuation">,</span> <span class="token string">'yellow'</span><span class="token punctuation">)</span>     <span class="token comment">//call `.attr() on (anonymous) result</span>
+    <span class="token punctuation">.</span><span class="token function">attr</span><span class="token punctuation">(</span><span class="token string">'stroke-width'</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token comment">//semi-colon when all done</span></code></pre>
+<p>The first <code>d3.select()</code> call returns a selection for a <code>&lt;circle&gt;</code> element, which we then call <code>.attr()</code> on to change its fill color. That method returns <em>the same</em> circle element, which we then call <code>.attr()</code> to change its stroke color. <em>That</em> method then returns the same circle element again, which call <code>.attr()</code> on a third time to change its stroke width. The third <code>.attr()</code> returns the same circle yet again, which is the ultimate result of this expression and so is assigned to the <code>circle</code> variable.</p>
+<ul>
+<li>Method chaining is very common when working with D3 and in JavaScript in general, such as when you want to do lots of things in sequence to the same set of objects.</li>
+</ul>
+<p>The <code>.attr()</code> method can also be called without the second argument (the new value), in which case it returns the <em>current</em> value of the specified attribute.</p>
+<p>Calling this method on a selection with multiple elements (e.g., from <code>d3.selectAll()</code>) will cause the change to be made to <em>all</em> of the elements in the selection.</p>
+<p>In addition to changing the attributes, you can also change components of the CSS <code>style</code> attribute directly using the <code>.style()</code> method. This takes similar arguments, and can be used for easily adjusting the style.</p>
+</div>
+</div>
+<div id="adding-elements" class="section level3">
+<h3><span class="header-section-number">19.2.3</span> Adding Elements</h3>
+<p>You can use JavaScript to add new elements as <em>children</em> of a selection (e.g., inside that element) by using the <strong><code>append()</code></strong> method. This method takes as an argument the <em>name of the tag</em> to create and add (without the <code>&lt;&gt;</code>). The <code>.append()</code> method <em>returns</em> a reference to the newly created element, allowing you to call further methods (e.g., <code>.text()</code>, <code>.attr()</code>) to specify the content or attributes of this new element.</p>
+<p>For example, if you have HTML:</p>
+<pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>content<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<p>then you could add a new <code>&lt;p&gt;</code> <em>inside</em> that <code>&lt;div&gt;</code>, along with some content:</p>
+<pre class="language-js"><code><span class="token keyword">var</span> div <span class="token operator">=</span> d3<span class="token punctuation">.</span><span class="token function">select</span><span class="token punctuation">(</span><span class="token string">'#content'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">//get reference to the &lt;div></span>
+<span class="token keyword">var</span> newP <span class="token operator">=</span> div<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token string">'p'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">//add a new &lt;p></span>
+newP<span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span><span class="token string">'Hello world!'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">//set the content</span></code></pre>
+<p>which will produce:</p>
+<pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>content<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>Hello world!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<p>You can of course use <em>method chaining</em> here as well, including to add and create multiple new elements at once!</p>
+<p>Note that <code>append()</code> adds an element as the “last” child of the parent. If you wish to insert an element <em>before</em> a sibling, using the <code>insert()</code> method with a second argument of a selector string for which element you want to the new one to precede. You can also remove a selected element by calling the <code>remove()</code> method on it.</p>
+<p>Calling any of these methods on a selection with multiple elements (e.g., from <code>d3.selectAll()</code>) will cause the change to be made to <em>all</em> of the elements in the selection—each element will have a new child added, or each element will be removed.</p>
+</div>
+</div>
+<div id="user-events" class="section level2">
+<h2><span class="header-section-number">19.3</span> User Events</h2>
+<p>In order to make your page <strong>interactive</strong> (that is, able to change in response to user actions), you need to be able to respond to <em>user events</em>. Whenever a user interacts with a computer, the operating system announces that interaction as an <strong>event</strong>—the <em>event</em> of a button being clicked, the <em>event</em> of the mouse being moved, the <em>event</em> of a keyboard key being pressed, etc. These events are <strong>broadcast</strong> to the entire system, allowing any application (including the browser) to “respond” the occurrence of the event, such as by executing a particular JavaScript function.</p>
+<p>Thus in order to respond to user actions (and the <em>events</em> those actions generate), you need to define a function that will be executed <strong>when the event occurs</strong>. You will define a function as normal, but the function will not get called by you as a particular step or statement in your script. Instead, the function you specify will be executed <em>by the system</em> when an event occurs, which will be at some indeterminate time in the future. This process is known as <a href="https://en.wikipedia.org/wiki/Event-driven_programming">event-driven programming</a>. It is also an example of <a href="https://en.wikipedia.org/wiki/Asynchrony_(computer_programming)"><strong>asynchronous programming</strong></a>: in which statements are not executed in a single order one after another (“synchronously”), but may occur “out of order” or even at the same time!</p>
+<p>In order for your script to respond to user events, you need to <em>register an event listener</em>. This is a bit like following someone on social media: you specify that you want to “listen” for updates from that person, and what you want to do when you “hear” some news from that person.</p>
+<p>You can register event listeners using D3 by calling the <strong><code>on()</code></strong> method on an selected element (indicating that you want to do something <em>on</em> hearing an event). This method takes two arguments: a string representing what kind of event you want to listen for, and a <em>callback function</em> to execute when you hear that event:</p>
+<pre class="language-js"><code><span class="token comment">//a (named) callback function</span>
+<span class="token keyword">function</span> <span class="token function">onClickCallback</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"You clicked me!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">var</span> button <span class="token operator">=</span> d3<span class="token punctuation">.</span><span class="token function">select</span><span class="token punctuation">(</span><span class="token string">'button'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//reference the element you want to "listen" to</span>
+button<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span> onClickCallback<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">//register a listener for 'click' events</span></code></pre>
+<p>When the button is clicked by the user, it will “shout” out a <code>'click'</code> event (“I was clicked! I was clicked!”). Because you have set up a “listener” (an alert/notification) for such an occurrence, your script will be able to do something—and that something that it will do is run the specified callback function.</p>
+<ul>
+<li><p>It’s like you handed someone a recipe and told them “when I call you, follow this recipe to bake a cake!”</p></li>
+<li><p>Note that this listener <em>only</em> applies to that button—if you wanted to respond to a different button, you’d need to register a separate listener!</p></li>
+</ul>
+<p>There are numerous different events you can listen for, including <code>'dblclick'</code> (double-click), <code>'keydown'</code> (keyboard key is pressed), <code>'hover'</code> (mouse “hovers” over the element), etc. See <a href="https://developer.mozilla.org/en-US/docs/Web/Events" class="uri">https://developer.mozilla.org/en-US/docs/Web/Events</a> for a complete list of browser-supported events.</p>
+<p>Note that it is <em>much</em> more common to use an <em>anonymous function</em> as the event callback:</p>
+<pre class="language-js"><code><span class="token keyword">var</span> button <span class="token operator">=</span> d3<span class="token punctuation">.</span><span class="token function">select</span><span class="token punctuation">(</span><span class="token string">'button'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+button<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">//do something here</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"You clicked me!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>If you want to know more details about the event (e.g., <em>where</em> the user clicked with the mouse, <em>which</em> button was clicked), you can access the <a href="https://github.com/d3/d3-selection#event"><code>d3.event</code></a> variable from inside the callback, which is an object with properties about the <em>current</em> event.</p>
+<p>Note that these event callback functions can occur repeatedly, over and over again (e.g., every time the user clicks the button). This makes them potentially act a bit like the body of a <code>while</code> loop. However, because these callbacks are <em>functions</em> any variables defined within them are <strong>scoped</strong> to that function, and will not be available on subsequent executions. Thus if you want to keep track of some additional information (e.g., how many times the button was clicked), you will need to use a <strong>global</strong> variable declared outside of the function. Such variables can be used to represent the <strong>state</strong> (situation) of the program, which can then be used to determine what behavior to perform when an event occurs, following the below pattern:</p>
+<pre><code>WHEN an event occurs {
+   check the STATE of the program;
+   DECIDE what to do based on that state;
+   UPDATE the state as necessary for the next event;
+}</code></pre>
+<p>For example:</p>
+<pre class="language-js"><code><span class="token keyword">var</span> clickCount <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>  <span class="token comment">//keep track of the "state"</span>
+d3<span class="token punctuation">.</span><span class="token function">select</span><span class="token punctuation">(</span><span class="token string">'button'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>clickCount <span class="token operator">></span> <span class="token number">10</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>  <span class="token comment">//decide what to do</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"I think you've had enough"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        clickCount<span class="token operator">++</span><span class="token punctuation">;</span>  <span class="token comment">//change state (+1)</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'You clicked me!'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>“State” variables are often objects, with individual values stored as the properties. This provides a name-spacing feature, and helps to keep the code from being cluttered with too many variables.</p>
+</div>
+<div id="ajax" class="section level2">
+<h2><span class="header-section-number">19.4</span> AJAX</h2>
+<p>While normally HTTP requests for data are sent through the browser (by entering a URL in the address bar), it is also possible to use D3 to programmatically send HTTP requests, similar to what you did in Python.</p>
+<p>Having JavaScript code send an HTTP request is known as sending an <a href="https://webdesign.tutsplus.com/tutorials/an-introduction-to-ajax-for-front-end-designers--cms-25099"><strong>AJAX</strong></a> request. <em>AJAX</em> is an acronym for <strong>A</strong>sychronous <strong>J</strong>avaScript <strong>A</strong>and <strong>X</strong>ML, and refers collectively to the techniques used to send these requests.</p>
+<div class="alert alert-info">
+<p><em>Fun fact:</em> AJAX was developed by Microsoft in the late 1990s, and originally was used to send requests for XML data. However, in modern web programming most AJAX requests sent to web services are used to download JSON data instead. Nevertheless, the AJAX name has stuck (instead of being renamed “AJAJ”).</p>
+</div>
+<p>The other important part of using AJAX requests is that they are <strong>asynchronous</strong>. Downloading data from the internet can take a while (depending on the speed of the web server, the strength of the internet connection, etc). Rather than having the program “pause” and wait for this download to finish (as with <em>synchronous</em> programming, like you did in Python), AJAX requests will occur <em>at the same time</em> that the rest of the code is being executed. Thus the download and the remaining script will not be synchronized; they will be “asynchronous”.</p>
+<ul>
+<li><p>You call a function to send the AJAX request, but then your script <em>keeps going</em>—executing the next line of code while the request is processed by the server and the data downloads “in the background”.</p></li>
+<li><p>In order to deal with the response whenever it arrives, you specify a <em>callback function</em>. This callback will be executed once the data has finished downloading (conceptually similar to “when the ‘response received’ event occurs”). This callback function will be <em>passed</em> the response’s data for you to use.</p></li>
+</ul>
+<p>In order to send AJAX requests (for JSON data) using D3, you can use the <code>d3.json()</code> function. This function takes two parameters: the URI to query, and a callback to be executed once the response is received:</p>
+<pre class="language-js"><code><span class="token keyword">var</span> uri <span class="token operator">=</span> <span class="token string">'https://api.github.com/search/repositories?q=d3&amp;sort=stars'</span><span class="token punctuation">;</span>
+
+<span class="token comment">//send query to uri, specify callback function</span>
+d3<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span>uri<span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"Data recieved!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'request sent'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">//this statement will execute before data is received!</span></code></pre>
+<p>The callback function should take a single argument: the response’s content in JSON format (that is, as a JavaScript object). Note that this content is extracted from the response “envelope” for us automatically.</p>
+<ul>
+<li>Remember that the <code>d3.json()</code> function is <em>asynchronous</em>: the script will keep running (executing the next line) while the data downloads; the callback will be execute at an unspecified point in the future</li>
+</ul>
+<div class="alert alert-warning">
+<p class="alert alert-warning">
+In some browsers, you will not be able to send an AJAX request when the web page is loading via the <code>file://</code> protocol (e.g., by double-clicking on the <code>.html</code> file). This is a security feature to keep you from accidentally running an HTML file that contains malicious JavaScript that will download a virus onto your computer. Instead, you should run a local web server for testing AJAX requests, as described in the previous chapter.
+</div>
+<p>D3 also provides methods for sending AJAX requests that handle different data formats automatically. For example, <code>d3.csv()</code> will fetch an array of objects where each object’s “keys” are based on the first (header) row in the CSV file. See the <a href="https://github.com/d3/d3-request">d3.requests</a> module for details.</p>
+</div>
+<div id="resources-18" class="section level2 unnumbered">
+<h2>Resources</h2>
+<div class="list-condensed">
+<ul>
+<li><a href="https://info343.github.io/">Client-Side Web Development (Joel Ross)</a>. An more extensive treatment of web programming; see <a href="https://info343.github.io/html-fundamentals.html">HTML Fundamentals</a> for HTML specifics. You may also be interested in the materials from <a href="https://infx-web-win17.github.io/tutorials/">INFX598 Web Development</a>.</li>
+<li><a href="https://css-tricks.com/dom/">What is the DOM?</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial">SVG Tutorial (MDN)</a>; also the tutorial from <a href="https://www.w3schools.com/graphics/svg_intro.asp">w3schools</a>.</li>
+<li><a href="https://github.com/d3/d3-selection">D3 Selections</a></li>
+<li><a href="https://webdesign.tutsplus.com/tutorials/an-introduction-to-ajax-for-front-end-designers--cms-25099">An Introduction to AJAX</a></li>
+</ul>
+</div>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="javascript.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="d3.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": false,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["github", "facebook", "twitter", "google"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/infx511/book/edit/master/web-programming.Rmd",
+"text": "Edit"
+},
+"download": ["intro-to-programming-for-data-science-visualization.pdf", "intro-to-programming-for-data-science-visualization.epub"],
+"toc": {
+"collapse": "section",
+"scroll_highlight": true
+}
+});
+});
+</script>
+
+</body>
+
+</html>

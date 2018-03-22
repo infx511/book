@@ -1,0 +1,251 @@
+# Functions
+
+This chapter will explore how to use and create **functions** in Python. Functions are the primary form of _behavior abstraction_ in computer programming, and are used to structure and generalize code instructions. After considering a function in an abstract sense, it will look at how to use built-in Python functions, how to access additional functions by importing Python modules, and finally how to write your own functions.
+
+## What are Functions?
+In a broad sense, a **function** is a named sequence of instructions (lines of code) that you may want to perform one or more times throughout a program. They provide a way of _encapsulating_ multiple instructions into a single "unit" that can be used in a variety of different contexts. So rather than needing to repeatedly write down all the individual instructions for "make a sandwich" every time you're hungry, you can define a `make_sandwich()` function once and then just **call** (execute) that function when you want to perform those steps.
+
+In addition to grouping instructions, functions in programming languages like Python also follow the mathematical definition of functions, which is a set of operations (instructions!) that are performed on some **inputs** and lead to some **outputs**. Functions inputs are called **arguments** or **parameters**, and we say that these arguments are **passed** to a function (like a football). We say that a function then **returns** an ouput for us to use.
+
+
+## Python Function Syntax
+Python functions are referred to by name (technically they are values like any other variable). As in many programming languages, we **call** a function by writing the name of the function followed immediately (no space) by parentheses `()`. Inside the parentheses, we put the **arguments** (inputs) to the function separated by commas. Thus computer functions look just like mathematical functions, but with names longer than `f()`.
+
+```python
+# call the print() function, pass it "Hello world" value as an argument
+print("Hello world")  # "Hello world"
+
+# call the str() function, pass it 598 as an argument
+str(598)  # "598"
+
+# call the len() function, pass it "python" as an argument
+len("python")  # 6 (the word is 6 letters long)
+
+# call the round() function, pass it 3.1415 as the first arg and 2 as the second
+# this is an example of a function that takes multiple (ordered) args
+round(3.1415, 2)  # 3.14, (3.1415 rounded to 2 decimal places)
+
+# call the min() function, pass it 1, 6/8, AND 4/3 as arguments
+# this is another example of a function that takes multiple args
+min(1, 6/8, 4/3)  # 0.75, (6/8 is the smallest value)
+```
+
+- _Note:_ To keep functions and variables distinct, we try to always include empty parentheses `()` when referring to a function name. This does _not_ mean that the function takes no arguments; it is just a useful shorthand for indicating that something is a function rather than a variable.
+
+Some functions (such as `min()` or `print()`) can be passed as many arguments as you wish: `min()` will find the minimum of _all_ the arguments, and `print()` will print _all_ the arguments (in order), separated by spaces:
+
+```python
+# print() with 3 arguments instead of 1
+print("I", "love", "programming")  # "I love programming"
+```
+
+Besides ordered **positional arguments**, functions may also take **keyword arguments**, which are arguments for specific function inputs. These are written like variable assignments (using the `=`, though without spaces around it), but within the function parameter list:
+
+```python
+# Use the `sep` keyword argument to specify the separator is '+++'
+print("Hello", "World", sep='+++')  # "Hello+++World"
+```
+
+Keyword arguments are always optional (they have "default" values, like how the separator for `print()` defaults to a single space `' '`). The default values are specified in the function documentation (e.g., for [`print()`](https://docs.python.org/3/library/functions.html#print)).
+
+If you call any of these functions interactively (e.g., in an interactive shell or a Jupyter notebook), Python will display the **returned value**. However, the computer is not able to "read" what is written to the console or an output cell&mdash;that's for humans to view! If we want the computer to be able to _use_ a returned value, we will need to give that value a name so that the computer can refer to it. That is, we need to store the returned value in a variable:
+
+```python
+# store min value in smallest_number variable
+smallest_number = min(1, 6/8, 4/3, 5+9)
+
+# we can then use the variable as normal, such as mathematical operations
+twice_min = smallest_number * 2  # 1.5
+
+# we can use functions directly in expressions (the returned value is anonymous)
+number = .5 * round(9.8)  # 5.0
+
+# we can even pass the result of a function as an argument to another!
+# watch out for where the parentheses close!
+print(min(2.0, round(1.4)))  # prints 1
+```
+
+### Object Methods
+In Python, all data values are **objects**, which are groups of data (called _attributes_) and behaviors&mdash;that is, information about the values and the _functions_ that can be applied to that data. For example, a Person object may have a name (e.g., `"Ada"`) and some behavior it can do to that data (e.g., `say_name()`). Functions that are applied to an object's data are also known as **methods**. We say that a method is _called on_ that object.
+
+While we'll discuss objects in more much detail later, for now you just need to understand that some functions are called _on_ particular values. This is done using **dot notation**: you write the name of the variable you wish to call the method on (i.e., apply the function to), followed by a period (dot) **`.`**, followed by the method name and arguments:
+
+```python
+message = "Hello World"
+
+# call the lower() method on the message to make a lowercase version
+# Note that the original string does not change (strings are immutable)
+lower_message = message.lower()  # "hello world"
+
+# call the replace() method on the message
+western_message = message.replace("Hello", "Howdy")  # "Howdy World"
+```
+
+This is a common way of utilizing built-in Python functions.
+
+- Note that dot notation is also used to access the **attributes** or **properties** of an object. So if a `Person` object has a `name` attribute, you would refer to that as `the_person.name`. In this sense, you can think of the _dot operator_ as being like the possessive `'s` in English: `the_person.name` refers so "_`the_person`**'s** name_", and `the_person.say_name()` would refer to "_`the_person`**'s** `say_name()` action_".
+
+## Built-in Python Functions
+As you may have noticed, Python comes with a large number of functions that are built into the language. In the above examples, we used the `print()` function to print a value to the console, the `min()` function to find the smallest number among the arguments, and the `round()` function to round to whole numbers. Similarly, each data type in the language comes with their own set of methods: such as the `lower()` and `replace()` methods on strings.
+
+These functions are all described in the [official documentation](https://docs.python.org/3/index.html). For example, you can find a [list of built-in functions](https://docs.python.org/3/library/functions.html) (though most of them will not be useful for us), as well as a [list of string methods](https://docs.python.org/3/library/stdtypes.html#string-methods). To learn more about any individual function as well as what functions are available, look it up in the documentation. You can also use the `help()` function to look up the details of other functions: `help(print)` will look up information on the `print()` function.
+
+<p class="alert alert-warning">
+**Important**: "Knowing" how to program in a language is to some extent simply "knowing" what provided functions are available in that language. Thus you should look around and become familiar with these functions... but _do not_ feel that you need to memorize them! It's enough to simply be aware "oh yeah, there was a function that rounded numbers", and then be able to look up the name and arguments for that function.
+</p>
+
+
+### Modules and Libraries
+While Python has lots of built-in functions, many of them are not immediately available for use. Instead, these functions are organized into **modules**, which are collections of related functions and variables. You must specifically load a module into your program in order to access it's functions; this helps to reduce the amount of memory that the Python interpreter needs to use in order to keep track of all of the functions available.
+
+You load a module (make it available to your program) by using the **`import`** keyword, followed by the name of the module. This only needs to be done once per script execution, and so is normally done at the "top" of the script (in a Jupyter notebook, you can include an "importing" code cell, or import the module at the top of the cell in which you first need it):
+
+```python
+# load the math module, which contains mathematical functions
+import math
+
+# call the math module's sqrt() function to calculate square root
+math.sqrt(25)  # 5.0, (square root of 25)
+
+# print out the math modules `pi` variable
+print(math.pi)  # 3.141592653589793
+```
+
+Notice that we again use **dot notation** to call functions of a particular module. Again, think of the `.` as a possessive `'s` ("_the `math` module**'s** `sqrt` function_").
+
+It is also possible to import only select functions or variables from a module by using the syntax `from MODULE import FUNCTION`. This will load the specific functions or variables into the _global scope_, allowing you to call them without specifying the module:
+
+```python
+# import the sqrt() function from the math module
+from math import sqrt
+
+# call the imported sqrt() function
+sqrt(25)  # 5.0
+
+# import multiple values by separating them with commas
+from math import sin, cos, pi
+
+sin(pi/2)  # 1.0
+cos(pi/2)  # 6.123233995736766e-17; 0 but with precision errors
+
+# import everything from math
+# this is useful for module with long or confusing names
+from math import *
+```
+
+The collection of built-in modules such as `math` make up what is called the _standard library_ of Python functions. However, it's also possible to download and import additional modules written and published by the Python community&mdash;what are known as **libraries** or **packages**. Because many Python users encounter the same challenges, programmers are able to benefit from the work of other and _reuse_ solutions. This is the amazing thing about the open-source community: people solve problems and then make those solutions available to others.
+
+A large number of additional libraries are included with [Anaconda](https://www.continuum.io/). Anaconda also comes with a command-line utility [`conda`](https://conda.io/docs/) that can be used to easily download and install new libraries. For example if you needed to install Jupyter, you could use the command `conda install jupyter` from the command line.
+
+<p class="alert alert-info">
+Python also comes with a command line utility called [`pip`](https://pip.pypa.io/en/stable/) for ("pip installs packages") that can similarly be used to easily download and install packages. Note that you may need to set up a [virtual environment](http://python-guide-pt-br.readthedocs.io/en/latest/dev/virtualenvs/) to effectively use `pip`; thus I recommend you rely on `conda` instead&mdash;though the Anaconda package has everything you will need for this course.
+</p>
+
+## Writing Functions
+Even more common than loading other peoples' functions is writing your own. Functions are the primary way that we _abstract_ program instructions, acting sort of like "mini programs" inside your larger script. As Downey says:
+
+> Their primary purpose is to help us organize programs into chunks that match how we think about the problem.
+
+Any time you want to organize your thinking&mdash;or if you have a task that you want to repeat through the script&mdash;it's good practice to write a function to perform that task. This will make your program easier to understand and build, as well as limit repetition and reduce the likelihood of error.
+
+The best way to understand the syntax for defining a function is to look at an example:
+
+```python
+# A function named `MakeFullName` that takes two arguments
+# and returns the "full name" made from them
+def make_full_name(first_name, last_name):
+    # Function body: perform tasks in here
+    full_name = first_name + " " + last_name
+
+    # Return: what you want the function to output
+    return full_name
+
+# Call the make_ful_name function with the values "Alice" and "Kim"
+my_name = make_full_name("Alice", "Kim")  # "Alice Kim"
+```
+
+Functions have a couple of pieces to them:
+
+- **`def`**: Functions are defined by using the `def` keyword, which indicates that you are defining a function rather than a regular variable. This is followed by the **name** of the function, then a set of parentheses containing the arguments (Note that the `function_name(arguments)` syntax mirrors how functions are called).
+
+    The line ends with a colon **`:`** which starts the function body (see below).
+
+- **Arguments**: The values put between the parentheses in the function definition line are variables that _will contain_ the values passed in as **arguments**. For example, when we call `make_full_name("Alice","Kim")`, the value of the first argument (`"Alice"`) will be assigned to the first variable (`first_name`), and the value of the second argument (`"Kim"`) will be assigned to the second variable (`last_name`).
+
+    Importantly, we could have made the argument names anything we wanted (`name_first`, `given_name`, etc.), just as long as we then use _that variable name_ to refer to the argument while inside the function. Moreover, these argument variable names _only apply_ while inside the function (they are **scoped** to the function). You can think of them like function-specific "nicknames" for the values. The variables `first_name`, `last_name`, and `full_name` only exist within this particular function.
+
+    Note that a function may have no arguments, causing the parentheses to be empty:
+
+    ```python
+    def say_hello():
+      print("Hello world!")
+    ```
+
+    You can give a function _keyword arguments_ by assigning a default value to the argument in the function definition:
+
+    ```python
+    # includes a single keyword argument
+    def greet(greeting = "Hello"):
+      print(greeting + " world")
+
+    # call by assigning to the arg
+    greet(greeting="Hi")  # "Hi world"
+
+    # call without assigning an argument, using the default value
+    greet()  # "Hello world"
+    ```
+
+- **Body**: The body of the function is a **block** of code. The function definition ends with a colon **`:`** to indicate that it is followed by a _block_, which is a list of Python statements (lines of code). Which statements are part of the block are indicated by _indentation_: statements are indented by 4 spaces to make them part of that particular block. A block can contain as many lines of code as you want&mdash;you'll usually want more than 1 to make a function worthwhile, but if you have more than 20 you might want to break your code up into separate functions. You can use the argument variables in here, create new variables, call other functions... basically any code that you would write outside of a function can be written inside of one as well!
+
+- **Return value**: You can specify what output a function produces by using the **`return`** keyword, followed by the value that you wish _your function_ to return (output). A `return` statement will end the current function and _return_ the flow of code execution to where ever this function was called from. Note that even though we returned a variable called `full_name`, that variable was _local_ to the function and so doesn't exist outside of it; thus we have to take the returned value and assign it to a new variable (as with `my_name = make_full_name("Alice", "Kim")`).
+
+  Because the `return` statement exits the function, it is almost always the last line of code in the function; any statements after a `return` statement will not be run!
+
+  - A function does not need to return a value (as in the `say_hello()` example above). In this case, omit the `return` statement.
+
+We can call (execute) a function we defined the same way we called built-in functions. When we do so, Python will take the **arguments** we passed in (e.g., `"Alice"` and `"Kim"`) and assign them to the _argument variables_. Then the interpreter executes each line of code in the **function body** one at a time. When it gets to the `return` statement, it will end the function and return the given value, which can then be assigned to a different variable (outside of the function).
+
+### Doc Strings
+We create new functions as ways of _abstracting_ behavior, in order to make programs easier to read and understand. Thus it is important to be clear about the purpose and use of any functions you create. This can partially done through effective function and argument names: `def calc_rectangle_area(width, height)` is pretty self-explanatory, whereas `def my_func(a, b, c)` isn't).
+
+<p class="alert alert-success">
+_Style requirement:_ Name functions as phrases starting with _verbs_ (because function do things), and variables as nouns.
+</p>
+
+Nevertheless, in order to make sure that functions are as clear as possible, you should include **documentation** in the form of a _comment_ that describes in plain English what a function does: its inputs (arguments) once, output (return value), and overall behavior. In Python we document functions by providing a **doc string**. This is a string literal (written in multi-line triple quotes `"""`) placed immediately below the function declaration:
+
+```python
+def to_celsius(degrees_fahrenheit):
+    """Converts the given degrees (in Fahrenheit) to degrees in Celsius, and
+       returns the result.
+    """
+    celsius = (degrees_fahrenheit - 32)*(5/9)
+    return celsius
+```
+
+- Note that this string isn't assigned to a variable; it is treated as a valid statement because it is immediately below the function declaration.
+
+- You can view the doc string by calling the `help()` function with your function's name as the parameter! In fact, when you call `help()` on any built-in function, what you are viewing is that function's doc string.
+
+Doc strings should include the following information:
+
+1. What the function does _from the perspective of someone who would call the function_. This should be a short (1-2 sentence) summary; don't describe the individual instructions that are executed, but an _abstraction_ of the code's purpose.
+
+    - If you mention variables, operations, functions, or control structures, your comment isn't at a high enough level of abstraction!
+
+2. Descriptions of the expected arguments. Clarify any ambiguities in type (e.g., a number or a string) and units.
+
+3. Description of the returned value (if any). Explain the meaning, type (e.g., number or string), etc.
+
+It's good to think of doc strings as defining a "contract": you are specifying that "if you give the function this set of inputs, it will perform this behavior and give you this output.".
+
+For simple methods you can build this information into a single sentence as in the above example. But for more complex functions, you may need to use a more complex format for your doc string. See the [Google Style Guide](http://google.github.io/styleguide/pyguide.html?showone=Comments#Comments) for an example.
+
+
+## Resources {-}
+<div class="list-condensed">
+- [Functions (Sweigart)](https://automatetheboringstuff.com/chapter3/)
+- [Functions (Severance)](https://books.trinket.io/pfe/04-functions.html)
+- [Fruitful Functions (Downey)](http://openbookproject.net/thinkcs/python/english3e/fruitful_functions.html)
+<!-- - [Python Built-in Functions](https://docs.python.org/3/library/functions.html) -->
+</div>

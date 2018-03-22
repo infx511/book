@@ -1,0 +1,555 @@
+# JavaScript {#javascript}
+
+> JavaScript for Snake People
+
+**JavaScript** is a popular, high-level, general-purpose programming language primarily used for implementing interactive web applications and other information systems. JavaScript shares many structural (and even some syntactical) similarities with Python; the places where it differs often draws from other major major languages like Java and C (and thus are good styles to be familiar with). Overall, this makes JavaScript a useful second language to learn: programs will utilize similar structures, but demonstrate how code syntax can be abstracted in more general programming practices.
+
+This chapter introduces the basic syntax of the JavaScript language, including variables, control structures, and functions. **Note** that this introduction assumes familiarity with Python, and introduces concepts in contrast to that languages. For more general purpose introductions, see the below resources.
+
+## Programming with JavaScript
+Like Python, JavaScript is a **high-level, general-purpose, interpreted programming language**. The biggest difference is where it is most commonly used: while the Python interpreter is installed on a computer and is usually accessed through the command line (or through the Jupyter program), JavaScript interpreters are most commonly built into web browsers (such as Chrome or Firefox). Browsers are able to download scripts written in JavaScript, executing them line-by-line and use those instructions to manipulate what content is displayed.
+
+<p class="alert alert-info">
+It is also possible to execute JavaScript code via the command-line by using [Node.js](https://nodejs.org/en/), allowing JavaScript to be a fully general language. However, JavaScript is still most commonly used inside the browser, which is how it will be discussed in this book.
+</p>
+
+### History and Versions
+The JavaScript language was developed by [Brendan Eich](https://en.wikipedia.org/wiki/Brendan_Eich) (the co-founder of Mozilla) in 1995 while he was working for Netscape. The original prototype of the language was created in 10 days... a fact which may help explain some of the quirks in the language.
+
+Despite the names, _JavaScript_ and the _Java_ language have nothing to do with one another (and are in fact totally separate programming languages used in drastically different contexts). JavaScript was named after Java as a marketing ploy to cash in on the popularity of the latter.
+
+Like Python, JavaScript continues to be developed through multiple versions, though _unlike_ Python these versions are all backwards compatible. Each new version of JavaScript includes additional syntax shortcuts, specialized keywords, and additional core functions. The main limitation on utilizing new JavaScript features is whether the _interpreters_ found in web browsers are able to support them. This module will use syntax and styles based on `ES5` (JavaScript 5), which was introduced in 2011 and is supported by all modern browsers (i.e., IE 10 or later).
+
+- `ES6` was introduced in 2015 and provides features that work on [many browsers](http://kangax.github.io/compat-table/es6/), while `ES7` was finalized in 2016 but is not [reliably supported](http://kangax.github.io/compat-table/esnext/)
+
+- Technically, JavaScript is an _implementation_ of the the [ECMAScript](https://en.wikipedia.org/wiki/ECMAScript) specification (which defines the structure and behaviors of multiple programming languages). Hence the `ES` in the version names.
+
+### Running JavaScript
+JavaScript scripts are executed in a web browser as part of the browser rendering a web page. Since browsers render HTML content (in `.html` files), JavaScript scripts are specified within that HTML by using a `<script>` tag and specifying the _relative_ path to the script file (usually a **`.js`** file) to execute. When the HTML being rendered (reading top to bottom) gets to that tag, the browser will download and execute the specified script file using the JavaScript interpreter:
+
+```html
+<script src="path/to/my/script.js"></script>
+```
+
+- The `<script>` tag can be included anywhere in an HTML page. Most commonly it is either placed in the `<head>` in order for the script to be executed _before_ the page content loads, or at the very end of the `<body>` in order for the script to be executed _after_ the page content loads (and so can interact with that content).
+
+- **IMPORTANT:** note that if you edit the `.js` script file, you will need to **reload** the page so that the browser can execute the script again (starting from the beginning, as if the page were viewed for the first time).
+
+A webpage can include multiple `<script>` tags, each specifying their own script file. These scripts will be executed by the interpreter whenever they are encountered, top to bottom. And since variables and functions are usually defined _globally_, this means that any variables or functions created in one script will be available for use in the next (just like how variables created in one Jupyter cell are available in the next).
+
+Thus additional JavaScript modules can be "imported" by including their script file as a `<script>` tag _before_ the script that needs to use them (no explicit `import` statement is necessary). These scripts will then make additional **global variables** available for use by later scripts.
+
+- Moreover, rather than downloading third-party modules as part of a package like Anaconda, the path to third-party JavaScript modules are specified as an internet URI so that the module is downloaded along with the rest of the web page. For example:
+
+    ```html
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    ```
+
+    will "import" (download and include) the [D3](https://d3js.org/) library and provide a global `d3` variable for later scripts to use&mdash;similar to `import d3` in Python.
+
+While JavaScript most commonly is used to manipulate the web page content and is thus pretty obvious to the user, it _also_ can produce "terminal-like" output&mdash;including printed text and **error messages**. This output can be viewed through the **JavaScript Console** included as a _developer tool_ in the Chrome browser (other browsers include similar tools):
+
+![Accessing the developer console in Chrome.](img/javascript/chrome-dev-console.png)
+
+<p class="alert alert-warning">
+**Important:** You should ___always___ have the JavaScript Console open when developing JavaScript code, since this is where any error messages will appear!
+</p>
+
+Finally, while a web browser is able to open any local `.html` file and run its included `.js` scripts, certain interactions (e.g., downloading data from the internet via an HTTP request) may require a web page to be provided from a _web server_ via the `http://` protocol, rather than the `file://` protocol. Luckily Python 3 provides a simple web server through the `http.server` module which you can use to "serve" the files to yourself:
+
+```bash
+# on the command-line:
+cd path/to/project
+python -m http.server
+```
+
+The served webpage will be available at <http://localhost:8000/> ("localhost" means "this machine").
+
+- Be sure to `cd` to the directory that contains the `index.html` file&mdash;otherwise you will be serving from a different folder so will need to adjust the URL's path.
+- The `-m` option mean to run the built-in module as script, instead of just importing it.
+- I highly recommend you run a local web server whenever you are doing web development!
+
+## JavaScript Basics
+JavaScript scripts (`.js` files) have a similar overall structure to Python scripts: these files contain lines of code, each of which is a **statement** (instruction). The JavaScript interpreter executes each statement one at a time, top to bottom (responding to control structures and function calls of course).
+
+Like Python, JavaScript code can include **comments**, which is text that is _ignored_ by the interpreter. JavaScript includes two kinds of comments:
+
+- Anything written after two slashes  (`//`) until the end of the line is treated as an _inline comment_ and ignored.
+- Anything written between `/*` and `*/` is treated as a _block comment_ and ignored. Block comments can span multiple lines.
+
+```js
+/* This is a block comment
+   It can span multiple lines */
+console.log('Hello world!');  //this is an inline comment (like # in Python)
+```
+
+The above example code demonstrates the **`console.log()`** function, which is JavaScript's equivalent to `print()`&mdash;the output will be shown in the JavaScript console (in the Developer Tools). Thus we talk about "logging out" values in JavaScript, instead of "printing" values in Python.
+
+- The `console.log()` function is technically a `log()` method belonging being called on a global `console` object.
+
+Also notice that the example statement ends in a semicolon (**`;`**). All JavaScript statements end in semicolons, marking that statement as being finished (like a period in an English sentence). Unlike in Python, statements that do not end in semicolons can be allowed to continue onto the next line.
+
+- Note that JavaScript tries to helpful and will often assume that statements end at the end of a line if the next line "looks like" a new statement. However, it occasionally screws up&mdash;and so best practice as a developer is to **always include the semicolons**.
+
+
+### Strict Mode
+ES5 includes the ability for JavaScript to be interpreted in [**strict mode**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode). Strict mode is more "strict" about how the interpreter understands the syntax: it is less likely to assume that certain programmer mistakes were intentional (and so try to run the code anyway). For example, in _strict mode_ the interpreter will produce an _Error_ if you try and use a variable that has not yet been defined, while without strict mode the code will just use an `undefined` value. Thus working in strict mode can help catch a lot of silly mistakes.
+
+You declare that a script or function should be executed in strict mode by putting an interpreter declaration at the top of the file:
+
+```js
+'use strict';
+```
+
+This is not a String, but rather a _declaration_ to the interpreter about how it should be behave.
+
+<p class="alert alert-warning">
+**ALWAYS USE STRICT MODE!** It will help avoid typo-based bugs, as well as enable your code to run more efficiently.
+</p>
+
+
+## Variables
+JavaScript variables are **declared** using the `var` keyword. This is like creating the "nametag"; once it has been declared, new values can be assigned to that variable without further declaration. Declared variables have a default value of `undefined`&mdash;a value representing that the variable has no value (similar to `None` in Python).
+
+```js
+var x = 4;  //declare and assign value
+var y = x;  //declare and assign value
+x = 5;      //assign value to existing variable
+
+console.log(x+', '+y);  //5, 4
+
+var z;  //declare variable (not assigned)
+console.log(z);  //undefined
+```
+
+JavaScript variables are conventionally named using [camelCase](https://en.wikipedia.org/wiki/Camel_case): each word in the variable name is put together (without a separating `_`), with the first letter in subsequent words capitalized:
+
+```js
+var myVariable = 598;
+var numberOfDaysInAYear = 365.25;
+```
+
+<div class="alert alert-info">
+`ES6` introduces the keyword **`let`** for declaring variables (to use instead of `var`). This works in a similar fashion, except that variables declared using `let` are **"block scoped"**, meaning that they are only available within the block in which they are defined, not the entire function. This is different than how Python works, but similar to how Java and C work. The `let` keyword is available in all modern browsers, and is increasingly common in JavaScript examples and tutorials. For this purposes of this book, you can view it as an interchangeable option with `var`.
+</div>
+
+### Basic Data Types
+JavaScript supports the similar basic data types as Python:
+
+- [**Numbers**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number) are used to represent numeric data (JavaScript does not distinguish between integers and floats). Numbers support most of the same _mathematical_ and operators as Python (you can't use `**` to raise to an exponent, and `//` is a comment not integer division). Common mathematical functions can be accessed through in the built-in [`Math`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math) global.
+
+    ```js
+    var x = 5;
+    typeof x;  //'number'
+    var y = x/4;
+    typeof y;  //'number'
+
+    //Numbers use floating point division
+    console.log(x/4);  //1.25
+
+    //Use the Math.floor() function to do integer division
+    console.log( Math.floor(x/4) );  //1
+
+    //Other common Math functions are available as well
+    console.log(Math.sqrt(x));  //2.23606797749979
+    ```
+
+- [**Strings**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) can be written in either single quotes (**`'`**) or double quotes (**`"`**), but most [style guidelines](https://google.github.io/styleguide/jsguide.html) recommend single quotes. Strings can be concatenated (but not multiplied!)
+
+    ```js
+    var name = 'Joel';
+    var greeting = 'Hello, my name is '+name; //concatenation
+    ```
+
+    Strings also support many [methods](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) for working with them. Note that like Python, JavaScript strings are _immutable_, so most string methods return a new, altered string.
+
+- **Booleans** in JavaScript are written in lowercase letters: `true` and `false`. Booleans can be produced using the same _relational operators_ as in Python. However, the _logical operators_ used on booleans are written using symbols rather than words: two _ampersands_ (**`&&`**) mean "and", two _pipes_ (**`||`**) mean "or", and an exclamation point (**`!`**) means "not":
+
+    ```js
+    //conjunction
+    boolOne && boolTwo //and (two ampersands)
+
+    //disjunction
+    boolOne || boolTwo //or (two pipes)
+
+    //negation
+    !boolOne //not (exclamation point)
+
+    //combining
+    P || !Q       //P or not Q
+    !P && Q       //not P and also Q
+    !(P && Q)     //not (P and Q both)
+    (!P) || (!Q)  //not P or not Q
+
+    3 < x && x < 5  //not as cool as Python
+    ```
+
+### Type Coercion
+Unlike Python, JavaScript will not throw errors if you try to apply operators (such as `+` or `<`) to different types. Instead, the interpreter will try to be "helpful" and **coerce** (convert) a value from one data type into another. While this means you don't have to explicitly use `str()` in order to print numbers, JavaScript's type coercion can produce a few quirks:
+
+```js
+var x = '40' + 2;
+console.log(x);  //=> '402'; the 2 is coerced to a String
+var y = '40' - 4;
+console.log(y);  //=> 36; can't subtract strings so '40' is coerced to a Number!
+```
+
+JavaScript will also attempt to coerce values when checking for equality with `==`:
+
+```js
+var num = 10
+var str = '10'
+
+console.log(num == str) //true, the values can be coerced into one another
+```
+
+In this case, the interpreter will coerce the Number `10` into the String `'10'` (since numbers can always be made into Strings), and since those Strings are the same, determines that the variables are equal.
+
+In general this type of automatic coercion can lead to subtle bugs. Thus you should instead always use the **`===`** operator (and it's partner `!==`), which checks both value _and_ type for equality:
+
+```js
+var num = 10
+var str = '10'
+
+console.log(num === str) //false, the values have different types
+```
+
+JavaScript will do its best to coerce any value when compared. Often this means converting values to Strings, but it will also commonly convert values into _booleans_ to compare them. So for example:
+
+```js
+//compare an empty String to the number 0
+console.log( '' == 0 ); //true; both can be coerced to a `false` value
+```
+
+This is because both the empty string `''` and `0` are considered [**"falsey"**](https://developer.mozilla.org/en-US/docs/Glossary/Falsy) values (values that can be coerced to `false`). Other falsy values include `undefined`, `null`, and `NaN` (not a number). All other values will be coerced to `true`.
+
+### Arrays
+**Arrays** are _ordered, one-dimensional sequences of values_&mdash;very similar to Python lists. They are written as literals inside square brackets **`[]`**. Individual elements can be accessed by (0-based) _index_ using **bracket notation**.
+
+```js
+var names = ['John', 'Paul', 'George', 'Ringo'];
+var letters = ['a', 'b', 'c'];
+var numbers = [1, 2, 3];
+var things = ['raindrops', 2.5, true, [5, 9, 8]];
+var empty = [];
+
+console.log( names[1] );  // "Paul"
+console.log( things[3][2] );  // 8
+
+letters[0] = 'z';
+console.log( letters );  // ['z', 'b', 'c']
+```
+
+Note that it is possible to assign a value to _any_ index in the array, even if that index is "out of bounds". This will _grow_ the array (increase its length) to include that index&mdash;intermediate indices will be given values of `undefined`. The _length_ of the array (accessed via the `.length` attribute) will always be the index of the "last" element + 1, even if there are fewer defined values within the array.
+
+```js
+var letters = ['a', 'b', 'c'];
+console.log(letters.length);  // 3
+letters[5] = 'f';  //grows the array
+console.log(letters);  // [ 'a', 'b', 'c', , , 'f' ]
+                       //blank spaces are undefined
+console.log(letters.length);  // 6
+```
+
+Arrays also support a variety of [methods](https://www.w3schools.com/jsref/jsref_obj_array.asp) that can be used to easily modify their elements. Common _functional programming_-style methods are described below.
+
+### Objects
+**Objects** are _unordered, one-dimensional sequences of **key-value pairs**_&mdash;very similar to Python dictionaries. They are written as literals inside curly braces **`{}`**, with keys and values separated by colons **`:`**. Note that in JavaScript, string keys do _not_ need to be written in quotes (the quotes are implied&mdash;the keys are in fact strings).
+
+```js
+//an object of ages (explicit Strings for keys)
+//The `ages` object has a `sarah` property (with a value of 42)
+var ages = {'sarah':42, 'amit':35, 'zhang':13};
+
+//different properties can have the same values
+//property names with non-letter characters must be in quotes
+var meals = {breakfast:'coffee', lunch: 'coffee', 'afternoon tea': 'coffee'}
+
+//values can be of different types (including arrays or other objects!)
+var typeExamples = {number:12, string:'dog', array:[1,2,3]};
+
+//objects can be empty (contains no properties)
+var empty = {}
+```
+
+Object elements are also known as **properties**. For example, we say that the `ages` object has a `sarah` property (with a value of `42`).
+
+Object values can be access via **bracket** notation, specifying the _key_ as the index. If a key does not have an explicit value associated with it, accessing that key produces `undefined` (the key's value is `undefined`).
+
+```js
+var favorites = {music: 'jazz', food: 'pizza', numbers: [12, 42]};
+
+//access variable
+console.log( favorites['music'] ); //'jazz'
+
+//assign variable
+favorites['food'] = 'cake';
+console.log( favorites['food'] ); //'cake'
+
+//access undefined key
+console.log( favorites['language'] ); //undefined
+favorites['language'] = 'javascript'; //assign new key and value
+
+//access nested values
+console.log( favorites['numbers'][0] ); //12
+```
+
+_Additionally_, object values can also be accessed via **dot notation**, as if the properties were _attributes_ of a class. This is often simpler to write and to read: remember to read the **`.`** as an `'s`!
+
+```js
+var favorites = {music: 'jazz', food: 'pizza', numbers: [12, 42]};
+
+//access variable
+console.log( favorites.music ); //'jazz'
+
+//assign variable
+favorites.food = 'cake';
+console.log( favorites.food ); //'cake'
+
+//access undefined key
+console.log( favorites.language ); //undefined
+favorites.language = 'javascript'; //assign new key and value
+
+//access nested values
+console.log( favorites.numbers[0] ); //12
+```
+
+- The one advantage to using _bracket notation_ is that you can specify property names as variables or the results of an expression. Thus the recommendation is to use _dot notation_ unless the property you wish to access is dynamically determined.
+
+It is possible to get _arrays_ of the object's keys calling the `Object.keys()` method and passing in the object you wish to get the keys of. Note that an equivalent function for values is not supported by most browsers.
+
+```js
+var ages = {sarah:42, amit:35, zhang:13};
+var keys = Object.keys(ages); // [ 'sarah', 'amit', 'zhang' ]
+```
+
+## Control Structures
+JavaScript supports **control structures** (conditional `if` statements, `while` and `for` loops) in the same way that Python does, just with a slightly different syntax.
+
+### Conditionals
+A JavaScript **`if` statement** is written using the following syntax:
+
+```js
+if(condition){
+  //statements
+}
+else if(alternativeCondition) {
+  //statements
+}
+else {
+  //statements
+}
+```
+
+In JavaScript, a **block** of statements (e.g., to conditionally execute) is written inside curly braces **`{}`**. JavaScript doesn't use indentation to designate blocks, though you should still indent blocks for readability.
+- As in Python, the `else if` and `else` clauses are optional.
+
+Similar to Python, the **`condition`** can be any expression that evaluates to a Boolean value, and is placed inside parentheses. But since any value can be _coerced_ into Booleans, you can put any value you want inside the `if` condition. This is actually really useful&mdash;since `undefined` is a falsy value, you can use this coercion to check if a variable has been assigned or not:
+
+```js
+//check if a `person` variable has a `name` property
+if(person.name){
+    console.log('Person does have a name!');
+}
+```
+
+In the above example, the condition will only coerce to `true` if `person.name` is defined (_not_ `undefined`) and is not empty. If somehow the variable has not been assigned (e.g., the user didn't fill out the form completely), then the condition will not be true.
+
+Overall, while the syntax may be different, the control flow impacts are the same as in Python: conditional statements can be nested, and subsequent `if` statements are not necessarily mutually exclusive!
+
+
+### Loops
+JavaScript supports **`while` loops** just like Python, with the syntactic change that conditions are listed in parentheses and blocks are written in curly braces:
+
+```js
+var count = 5;
+while(count > 0){
+   console.log(count);
+   count = count - 1;
+}
+console.log("Blastoff!");
+```
+
+JavaScript also provides a **`for` loop** used for _definite iteration_, such as when you know how many times you want to continue through the loop. To understand the JavaScript `for` loop, consider the below loop for iterating through an array:
+
+```js
+var i = 0;
+while(i < array.length){
+   console.log(array[i]);
+   i++; //shortcut for i = i+1
+}
+```
+
+This loop has somewhat generic parts:
+
+1. It initializes the _loop control variable_ (`var i=0`)
+2. It checks the condition each time through the loop (`i < array.length`)
+3. It _increments_ the loop control variable at the end of the block (`i++`). The `++` is a short cut for "add 1 and reassign" (since statements such as `i=i+1` are so common)
+
+The JavaScript `for` loop combines these three steps into a single statement:
+
+```js
+for(var i=0; i<array.length; i++){
+  console.log(array[i]);
+}
+```
+
+Thus JavaScript makes it easy to keep track of a loop control variable (a counter), though you need to write out the initialization, condition, and update yourself.
+
+- This is equivalent to the Python `for i in range(len(array)):`
+
+<div class="alert alert-info">
+**Warning** JavaScript _does_ have a `for ... in` syntax. However, it doesn't work as you would expect for arrays (it iterates over "enumerable properties" rather than the specific indices), and so should **not** be used with arrays. Instead, `ES6` introduces a `for ... of` syntax for iterating over arrays, though it is not supported by all browsers. Thus the current best practice is to use the above `for` loop, or better yet the `forEach()` method described below.
+
+If you need to iterate over the keys of an object, use the `Object.keys()` method to get an array to loop through!
+</div>
+
+## Functions
+And of course, JavaScript includes **functions** (named sequences of statements used to _abstract_ code) just like Python. JavaScript functions are written using the following syntax:
+
+```js
+//A function named `makeFullName` that takes two arguments
+//and returns the "full name" made from them
+function makeFullName(firstName, lastName) {
+  //Function body: perform tasks in here
+  var fullName = firsName + " " + lastName;
+
+  // Return: what you want the function to output
+  return fullName;
+}
+
+// Call the makeFullName function with the values "Alice" and "Kim"
+myName = makeFullName("Alice", "Kim")  // "Alice Kim"
+```
+
+Things to note about this syntax:
+
+- Functions are defined by using the **`function`** keyword (placed before the name of the function). This acts similar to `def`.
+
+- As with control structures, the **block** that is the function's _body_ is written in curly braces **`{}`**.
+
+Like Python, JavaScript variables are _scoped_ to functions: any variables declared within a function will not be available outside of it. Functions are able to access, modify, and assign variables that are at a _higher_ scope (e.g., global variables). This includes the arguments, which are implicitly declared _local_ variables!
+
+JavaScript does not support named keyword arguments (before `ES6` anyway). However, in JavaScript **all arguments are optional**. Any argument that is _not_ (positionally) passed a specific value will be `undefined`. Any passed in value that does not have a variable defined for its position will not be assigned to a variable.
+
+```js
+function sayHello(name) {
+    return "Hello, "+name;
+}
+
+//expected: argument is assigned a value
+sayHello("Joel");  //"Hello, Joel"
+
+//argument not assigned value (left undefined)
+sayHello();  //"Hello, undefined"
+
+//extra arguments (values) are not assigned to variables, so are ignored
+sayHello("Joel","y'all");  //"Hello, Joel"
+```
+
+- If a function has an argument, that doesn't mean it got a value. If a function lacks an argument, that doesn't mean it wasn't given a value.
+
+### Functional Programming
+**JavaScript functions ARE values**. This means that, as in Python, each function you define is in fact an object that can be assigned to other variables or passed around to other functions.
+
+```js
+function sayHello(name){
+  console.log("Hello, "+name);
+}
+
+//what kind of thing is `sayHello` ?
+typeof sayHello;  //'function'
+
+//assign the `sayHello` value to a new variable `greet`
+var greet = sayHello;
+
+//call the function assigned to the `greet` variable
+greet("world");  //prints "Hello world"
+```
+
+Just like arrays and objects can be written as literals which can be _anonymously_ passed into functions, JavaScript supports **anonymous functions** (similar to Python's anonymous lambdas):
+
+```js
+//Example: an anonymous function (no name!)
+//(We can't reference this without a name, so writing an anonymous function is
+//not a valid statement)
+function(person) {
+   console.log("Hello, "+person);
+}
+
+//Anonymous function (value) assigned to variable
+//equivalent to the version in the previous example
+var sayHello = function(person) {
+   console.log("Hello, "+person);
+}
+```
+
+You can think of this structure as equivalent to declaring and assigning an array `var myVar = [1,2,3]`... just in this case instead of taking the anonymous array (right-hand side) and giving it a name, you're taking an _anonymous function_ and giving it a name!
+
+Using **anonymous callback functions** are incredibly important in JavaScript programming. Many common built-in functions use callback functions to specify some type of behavior, and these callbacks are normally specified as anonymous functions (rather than clutter the namespace).
+
+#### Array Loops
+As a common example, **arrays** support a variety of methods for performing _functional looping_&mdash;in fact, this is the recommended way to loop through an array!
+
+We loop through an array by calling the [`forEach(https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach)`] function on that array. This function takes in a _callback function_ specifying what block of code to execute "for each" element:
+
+```js
+var array = ['a','b','c'];  //an array
+var printItem = function(item) {  //something to do to an array item
+   console.log(item);
+}
+
+array.forEach(printItem);  //do the "printItem" thing to EACH array item
+
+//it is much more common to use anonymous function
+array.forEach(function(item) {
+   console.log(item);
+});
+```
+
+- This is the (admittedly verbose) equivalent to Python's `for ... in` syntax.
+
+- In the last line, we basically take the anonymous function assigned to `printItem` and "copy-paste" that literal definition as the argument to `forEach()`, instead of referring to the value by its name. This statement can be read as "take the `array` and `forEach` thing run this `function` on the `item`".
+
+- Be careful about the closing braces and parentheses at the end of the anonymous function version: the brace is ending the anonymous function's block (and so ending that value), and the parenthesis is closing the argument list of `forEach()`!
+
+- Fun fact: ES6 provides a syntactical shortcut for specifying anonymous functions that is less verbose called [arrow functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions).
+
+Arrays also provide `map()`, `filter()` and `reduce()` functions (similar to those in Python) that can be used to do functional-style programming and mirror the functionality provided by Python list comprehensions:
+
+```js
+var array = [3,1,4,2,5];
+
+//map: return a new array of transformed items
+array.map(function(item) {
+   return item*2;   //transform each item into its double
+});  // [6, 2, 8, 4, 10]
+
+//filter: return a new array of items that meet the criteria
+array.filter(function(item){
+   return item >= 3;  //keep if large
+});  // [3, 4, 5]
+
+//reduce: aggregate array elements into a single value
+//reduce() also takes a second argument which is the starting value
+array.reduce(function(runningTotal, item){
+  var newTotal = runningTotal + item;
+  return newTotal;
+}, 0);
+```
+
+This type of functional programming is incredibly important when developing JavaScript programs (and especially using it for interactive applications)!
+
+## Resources {-}
+As the language used for web programming, JavaScript may have more freely available online learning resources than any other programming language! Some of my favorites include:
+
+<div class="list-condensed">
+- [A Re-Introduction to JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript) a focused tutorial on the primariy language features
+- [You Don't Know JS](https://github.com/getify/You-Dont-Know-JS) a free textbook covering all aspects of the JavaScript language. Very readable and thorough, with lots of good examples.
+- [JavaScript for Cats](http://jsforcats.com/) a gentler introduction for "Scaredy-Cats"
+- [w3Schools JavaScript Reference](https://www.w3schools.com/js/) a super-friendly reference for the language
+- [MDN JavaScript Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript) a complete documentation of JavaScript, including tutorials
+- [Client Side Web Development](https://info343.github.io/) a more extensive treatment of JavaScript; see Chapters 10-15.
+<!-- - [Google's JavaScript Style Guide](https://google.github.io/styleguide/jsguide.html) -->
+</div>
+
