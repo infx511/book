@@ -10,7 +10,6 @@ rmd_files:
   # environment setup
   - setup.Rmd
   - command-line.Rmd
-  - markdown.Rmd
   - git-basics.Rmd
 
   # python basics
@@ -35,3 +34,6 @@ rmd_files:
   - web-programming.Rmd
   - d3.Rmd
   
+  # appendix
+  - appendix.Rmd
+  - markdown.Rmd
