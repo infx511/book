@@ -1,4 +1,4 @@
-# Introduction to Python
+# Introduction to Python {#python-intro}
 
 Python is an extremely powerful open-source _programming language_. It is considered a "high-level", "general purpose" language in that offers strong abstractions on computer instructions (and in fact often reads like badly-punctuated English), and can be used effectively for a wide variety of purposes.
 Python is one of the most popular programming languages in the world, and very approachable for beginners and experts alike. Python will be the primary programming language for this course.

@@ -91,6 +91,10 @@ There are a number of ways to get Python installed on your machine: in fact, you
 
 To install Anaconda (and Python along with it), simply download the **Python 3.6** installer, run the executable, and follow the instructions. This should install Python and all the required packages.
 
+- On Windows, make sure that you select the option to "Add Anaconda to my PATH environment variable". This will add a link to to Python that can be found by the command line (it will be on the "path" to applications), and will ensure that you can run Python code from within Git Bash.
+
+    ![Select to add Anaconda to the PATH variable.](img/setup/anaconda-path.png)
+
 - You can confirm that everything is set up correctly by opening the _Command Shell_ you installed above and typing `python --version`. You should see text that looks something like:
 
     ```

@@ -32,8 +32,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   <link rel="shortcut icon" href="img/ischool-gold.png" type="image/x-icon">
-<link rel="prev" href="setup-machine.html">
-<link rel="next" href="git-basics.html">
+<link rel="prev" href="git-basics.html">
+<link rel="next" href="functions.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -342,256 +342,219 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="command-line" class="section level1">
-<h1><span class="header-section-number">Chapter 2</span> The Command Line</h1>
-<p>The <strong>command line</strong> is an <em>interface</em> to a computer—a way for you (the human) to communicate with the machine. But unlike common graphical interfaces that use <a href="https://en.wikipedia.org/wiki/WIMP_(computing)">windows, icons, menus, and pointers</a>, the command line is <em>text-based</em>: you type commands instead of clicking on icons. The command line lets you do everything you’d normally do by clicking with a mouse, but by typing in a manner similar to programming!</p>
-<div class="figure">
-<img src="img/command-line/cli-wikipedia.png" title="example command line" alt="An example of the command line in action (from Wikipedia)." />
-<p class="caption">An example of the command line in action (from Wikipedia).</p>
-</div>
-<p>The command line is not as friendly or intuitive as a graphical interface: it’s much harder to learn and figure out. However, it has the advantage of being both more powerful and more efficient in the hands of expert users. (It’s faster to type than to move a mouse, and you can do <em>lots</em> of “clicks” with a single command). The command line is also used when working on remote servers or other computers that for some reason do not have a graphical interface enabled. Thus, command line is an essential tool for all professional developers, particularly when working with large amounts of data or files.</p>
-<p>This chapter will give you a brief introduction to basic tasks using the command line: enough to get you comfortable navigating the interface and able to interpret commands.</p>
-<div id="accessing-the-command-line" class="section level2">
-<h2><span class="header-section-number">2.1</span> Accessing the Command line</h2>
-<p>In order to use the command line, you will need to open a <strong>command shell</strong> (a.k.a. a <em>command prompt</em>). This is a program that provides the interface to type commands into. You should have installed a command shell (hereafter “the terminal”) as part of <a href="setup-machine.html#setup-machine">setting up your machine</a>.</p>
-<p>Once you open up the shell (Terminal or Git Bash), you should see something like this (red notes are added):</p>
-<div class="figure">
-<img src="img/command-line/cli-blank.png" title="A newly opened command line" alt="A newly opened command line." />
-<p class="caption">A newly opened command line.</p>
-</div>
-<p>This is the textual equivalent of having opened up Finder or File Explorer and having it show you the user’s “Home” folder. The text shown lets you know:</p>
+<div id="python-intro" class="section level1">
+<h1><span class="header-section-number">Chapter 4</span> Introduction to Python</h1>
+<p>Python is an extremely powerful open-source <em>programming language</em>. It is considered a “high-level”, “general purpose” language in that offers strong abstractions on computer instructions (and in fact often reads like badly-punctuated English), and can be used effectively for a wide variety of purposes. Python is one of the most popular programming languages in the world, and very approachable for beginners and experts alike. Python will be the primary programming language for this course.</p>
+<div id="programming-with-python" class="section level2">
+<h2><span class="header-section-number">4.1</span> Programming with Python</h2>
+<p>Python is a <strong>high-level, general-purpose programming language</strong> that can be used to declare complex instructions for computers (e.g., for working with information and data). It is an <strong>open-source</strong> programming language, which means that it is free and continually improved upon by the Python community.</p>
 <ul>
-<li>What <strong>machine</strong> you’re currently interfacing with (you can use the command line to control different computers across a network or the internet).</li>
-<li>What <strong>directory</strong> (folder) you are currently looking at (<code>~</code> is a shorthand for the “home directory”).</li>
-<li>What <strong>user</strong> you are logged in as.</li>
+<li><em>Fun Fact:</em> Python is named after British comedy troupe “Monty Python”, because it seemed like a good idea at the time.</li>
 </ul>
-<p>After that you’ll see the <strong>prompt</strong> (typically denoted as the <code>$</code> symbol), which is where you will type in your commands.</p>
-</div>
-<div id="navigating-the-command-line" class="section level2">
-<h2><span class="header-section-number">2.2</span> Navigating the Command Line</h2>
-<p>Although the command-prompt gives you the name of the folder you’re in, you might like more detail about where that folder is. Time to send your first command! At the prompt, type:</p>
-<pre class="language-bash"><code><span class="token function">pwd</span></code></pre>
-<p>This stands for <strong>p</strong>rint <strong>w</strong>orking <strong>d</strong>irectory (shell commands are highly abbreviated to make them faster to type), and will tell the computer to print the folder you are currently “in”.</p>
-<p class="alert alert-info">
-<em>Fun fact:</em> technically, this command usually starts a tiny program (app) that does exactly one thing: prints the working directory. When you run a command, you’re actually executing a tiny program! And when you run programs (tiny or large) on the command line, it looks like you’re typing in commands.
-</p>
-<p>Folders on computers are stored in a hierarchy: each folder has more folders inside it, which have more folders inside them. This produces a <a href="https://en.wikipedia.org/wiki/Tree_(data_structure)">tree</a> structure which on a Mac may look like:</p>
-<div class="figure">
-<img src="img/command-line/dir-tree.png" title="directory tree" alt="A Directory Tree, from Bradnam and Korf." />
-<p class="caption">A Directory Tree, from Bradnam and Korf.</p>
-</div>
-<p>You describe what folder you are in putting a slash <code>/</code> between each folder in the tree: thus <code>/Users/iguest</code> means “the <code>iguest</code> folder, which is inside the <code>Users</code> folder”.</p>
-<p>At the very top (or bottom, depending on your point of view) is the <strong>root</strong> <code>/</code> directory‐which has no name, and so is just indicated with that single slash. So <code>/Users/iguest</code> really means “the <code>iguest</code> folder, which is inside the <code>Users</code> folder, which is inside the <em>root</em> folder”.</p>
-<div id="changing-directories" class="section level3">
-<h3><span class="header-section-number">2.2.1</span> Changing Directories</h3>
-<p>What if you want to change folders? In a graphical system like Finder, you would just double-click on the folder to open it. But there’s no clicking on the command line.</p>
-<p class="alert alert-warning">
-This includes clicking to move the cursor to an earlier part of the command you typed. You’ll need to use the left and right arrow keys to move the cursor instead!
-</p>
-<p class="alert alert-info">
-<strong>Protip:</strong> The up and down arrow keys will let you cycle though your previous commands so you don’t need to re-type them!
-</p>
-<p>Since you can’t click on a folder, you’ll need to use another command:</p>
-<pre class="language-bash"><code><span class="token function">cd</span> folder_name</code></pre>
-<p>The first word is the <strong>command</strong>, or what you want the computer to do. In this case, you’re issuing the command that means <strong>c</strong>hange <strong>d</strong>irectory.</p>
-<p>The second word is an example of an <strong>argument</strong>, which is a programming term that means “more details about what to do”. In this case, you’re providing a <em>required</em> argument of what folder you want to change to! (You’ll of course need to replace <code>folder_name</code> with the name of the folder).</p>
+<p>So far you’ve leveraged formal language to give instructions to your computers, such as by writing syntactically-precise instructions at the command line. Programming in Python will work in a similar manner: you will write instructions using Python’s special language and syntax, which the computer will <strong>interpret</strong> as instructions for how to work with data.</p>
+<p>Indeed, Python is an <strong>interpreted language</strong>, in that the computer (specifically the <em>Python Interpreter</em>) translates the high-level language into machine language <em>on the fly at the time you run it (“at runtime”)</em>. The interpreter will read and execute one line of code at a time, executing that line before it even begins to consider the next. This is in contrast with <em>compiled languages</em> (like C or Java) that has the computer do the translation in one pass, and then only execute the program after the whole thing is converted to machine language.</p>
 <ul>
-<li><p>Try changing to the <code>Desktop</code> folder, which should be inside the home folder you started in—you could see it in Finder or File Explorer!</p></li>
-<li><p>After you change folders, try printing your current location. Can you see that it has changed?</p></li>
+<li>This means that Python is technically a little slower to execute commands than C or Java because it needs to both translate and execute at once, but not enough that we’ll notice.</li>
+</ul>
+<p>While it’s possible to execute Python instructions one at a time, it’s much more common to write down all of the instruction in a single <strong>script</strong> so that the computer can execute them all at once. Python scripts are saved as files with the <strong><code>.py</code></strong> extension, You can author Python scripts in any text editor (such as VS Code), but we’ll also write and run Python code in an interactive web application called Jupyter.</p>
+<div id="versions" class="section level3">
+<h3><span class="header-section-number">4.1.1</span> Versions</h3>
+<p>Python was first published by Dutch programmer <a href="https://en.wikipedia.org/wiki/Guido_van_Rossum">Guido Van Rossum</a> in 1991. Although the language is open-source (and so can be <a href="https://vimeo.com/1093745">contributed to</a> by anyone), Van Rossum still retains a lot of influence over where the language goes, and is known as Python’s “Benevolent Dictator for Life”.</p>
+<p>Version 2.0 of Python was released in 2000, and version 3.0 was released in 2008. However, unlike with many other programming languages that release new versions, Python 2 and Python 3 are <strong>not</strong> compatible with one another: Python 2 code usually won’t execute with Python 3 interpreter, and Python 3 code usually won’t execute with a Python 2 interpreter.</p>
+<p>Python 3 involved a major restructuring which included a number of “breaking” changes to core parts of the language. The most noticeable of these are that all text strings support <a href="https://en.wikipedia.org/wiki/Unicode">Unicode</a> (non-English characters), <code>print</code> is a function not a statement, and integers don’t use floor devision (these concepts are discussed in more detail below).</p>
+<p>In short, Python 3 is considered the “current” version, and Python 2 is considered the “legacy” version (and will not be supported beyond). However some external libraries refused or failed to update to Python 3. Thus in practice there are two incompatible versions of Python that are used in the world. See <a href="https://wiki.python.org/moin/Python2orPython3">Python2orPython3</a> for more details.</p>
+<ul>
+<li>In this book, we will be using <strong>Python 3</strong>, particularly as it fixes some issues that often trip up beginners, is supported by all major libraries in a more effective way, and will still be supported in the near future!</li>
 </ul>
 </div>
-<div id="listing-files" class="section level3">
-<h3><span class="header-section-number">2.2.2</span> Listing Files</h3>
-<p>In a graphical system, once you’ve double-clicked on a folder, Finder will show you the contents of that folder. The command line doesn’t do this automatically; instead you need another command:</p>
-<pre class="language-bash"><code><span class="token function">ls</span> <span class="token punctuation">[</span>folder_name<span class="token punctuation">]</span></code></pre>
-<p>This command says to <strong>l</strong>i<strong>s</strong>t the folder contents. Note that the <em>argument</em> here is written in brackets (<code>[]</code>) to indicate that it is <em>optional</em>. If you just issue the <strong><code>ls</code></strong> command without an argument, it will list the contents of the current folder. If you include the optional argument (leaving off the brackets), you can “peek” at the contents of a folder you are not currently in.</p>
-<div class="alert alert-danger">
-<p>
-<strong>Warning</strong>: The command line can be not great about giving <strong>feedback</strong> for your actions. For example, if there are no files in the folder, then <code>ls</code> will simply show nothing, potentially looking like it “didn’t work”. Or when typing a <strong>password</strong>, the letters you type won’t show (not even as <code>*</code>) as a security measure.
-</p>
-<p>
-Just because you don’t see any results from your command/typing, doesn’t mean it didn’t work! Trust in yourself, and use basic commands like <code>ls</code> and <code>pwd</code> to confirm any changes if you’re unsure. Take it slow, one step at a time.
-</p>
 </div>
+<div id="running-python-scripts" class="section level2">
+<h2><span class="header-section-number">4.2</span> Running Python Scripts</h2>
+<p>Python scripts (programs) are just a sequence of instructions, and there are a couple of different ways in which we can tell the computer to execute these instructions.</p>
+<div id="on-the-command-line" class="section level3">
+<h3><span class="header-section-number">4.2.1</span> On the Command Line</h3>
+<p>It is possible to issue Python instructions (run lines of code; called <strong>statements</strong>) one-by-one at the command-line by starting an <strong>interactive Python session</strong> within your terminal. This will allow you to type Python code directly into the terminal, and your computer will interpret and execute each line of code (if you just typed Python syntax directly into the terminal, your computer wouldn’t understand it).</p>
+<p>With Python installed, you can start an interactive Python session on a by running the <strong><code>python</code></strong> program (simply type the <code>python</code> command if you’ve installed it on the <code>PATH</code> via Anaconda).</p>
+<ul>
+<li>On Windows using the Git Bash shell, you may need to utilize <a href="https://github.com/rprichard/winpty">winpty</a> to connect the Bash shell to the Python output: see <a href="http://stackoverflow.com/questions/32597209/python-not-working-in-the-command-line-of-git-bash">here</a> for an example). On my machine, using <code>winpty python</code> works well.</li>
+</ul>
+<div class="alert alert-warning">
+<p>Note that if you haven’t installed Python via Anaconda, or have multiple versions installed, you may need to use the <code>python3</code> command to run a Python 3 session.</p>
+<p>On the iSchool lab machines, you can switch from Python 2 to Python 3 using the command:</p>
+<pre class="language-bash"><code><span class="token function">source</span> activate python3</code></pre>
+Which will “activate” the Python 3 environment installed by Anaconda.
 </div>
-<div id="paths" class="section level3">
-<h3><span class="header-section-number">2.2.3</span> Paths</h3>
-<p>Note that both the <strong><code>cd</code></strong> and <strong><code>ls</code></strong> commands work even for folders that are not “immediately inside” the current directory! You can refer to <em>any</em> file or folder on the computer by specifying its <strong>path</strong>. A file’s path is “how you get to that file”: the list of folders you’d need to click through to get to the file, with each folder separated by a <code>/</code>:</p>
-<pre><code>cd /Users/iguest/Desktop/</code></pre>
-<p>This says to start at the root directory (that initial <code>/</code>), then go to <code>Users</code>, then go to <code>iguest</code>, then to <code>Desktop</code>.</p>
-<p>Because this path starts with a specific directory (the root directory), it is referred to as an <strong>absolute path</strong>. No matter what folder you currently happen to be in, that path will refer to the correct file because it always starts on its journey from the root.</p>
-<p>Contrast that with:</p>
-<pre><code>cd iguest/Desktop/</code></pre>
-<p>Because this path doesn’t have the leading slash, it just says to “go to the <code>iguest/Desktop</code> folder <em>from the current location</em>”. It is known as a <strong>relative path</strong>: it gives you directions to a file <em>relative to the current folder</em>. As such, the relative path <code>iguest/Desktop/</code> path will only refer to the correct location if you happen to be in the <code>/Users</code> folder; if you start somewhere else, who knows where you’ll end up!</p>
-<p class="alert alert-warning">
-You should <strong>always</strong> use relative paths, particularly when programming! Because you’ll almost always be managing multiples files in a project, you should refer to the files <em>relatively</em> within your project. That way, you program can easily work across computers. For example, if your code refers to <code>/Users/your-user-name/project-name/data</code>, it can only run on the <code>your-user-name</code> account. However, if you use a <em>relative path</em> within your code (i.e., <code>project-name/data</code>), the program will run on multiple computers (crucial for collaborative projects).
-</p>
-<p>You can refer to the “current folder” by using a single dot <strong><code>.</code></strong>. So the command</p>
-<pre class="language-bash"><code><span class="token function">ls</span> <span class="token keyword">.</span></code></pre>
-<p>means “list the contents of the current folder” (the same thing you get if you leave off the argument).</p>
-<p>If you want to go <em>up</em> a directory, you use <em>two</em> dots: <strong><code>..</code></strong> to refer to the <strong>parent</strong> folder (that is, the one that contains this one). So the command</p>
-<pre class="language-bash"><code><span class="token function">ls</span> <span class="token punctuation">..</span></code></pre>
-<p>means “list the contents of the folder that contains the current folder”.</p>
-<p>Note that <strong><code>.</code></strong> and <strong><code>..</code></strong> act just like folder names, so you can include them anywhere in paths: <code>../../my_folder</code> says to go up two directories, and then into <code>my_folder</code>.</p>
-<p class="alert alert-info">
-<strong>Protip:</strong> Most command shells like Terminal and Git Bash support <strong>tab-completion</strong>. If you type out just the first few letters of a file or folder name and then hit the <code>tab</code> key, it will automatically fill in the rest of the name! If the name is ambiguous (e.g., you type <code>Do</code> and there is both a <code>Documents</code> and a <code>Downloads</code> folder), you can hit <code>tab</code> <em>twice</em> to see the list of matching folders. Then add enough letters to distinguish them and tab to complete! This will make your life better.
-</p>
-<p>Additionally, you can use a tilde <strong><code>~</code></strong> as shorthand for the home directory of the current user. Just like <code>.</code> refers to “current folder”, <code>~</code> refers to the user’s home directory (usually <code>/Users/USERNAME</code>). And of course, you can use the tilde as part of a path as well (e.g., <code>~/Desktop</code> is an <em>absolute path</em> to the desktop for the current user).</p>
-</div>
-</div>
-<div id="file-commands" class="section level2">
-<h2><span class="header-section-number">2.3</span> File Commands</h2>
+<p>The <code>python</code> command will start the interactive session, providing some information about the version of Python being run:</p>
 <div class="figure">
-<img src="img/command-line/matrix-cli.jpg" title="Matrix command line meme" />
+<img src="img/python-intro/python-interactive-session.png" alt="Interactive Python session" />
+<p class="caption">Interactive Python session</p>
+</div>
+<p>Once you’ve started running an interactive Python session, you can begin entering one line of code at a time at the prompt (<code>&gt;&gt;&gt;</code>). This is a nice way to experiment with the Python language or to quickly run and test some code.</p>
+<ul>
+<li>You can exit this session by typing the <code>quit()</code> command, or hitting <code>ctrl-z</code> (followed by Enter on Windows).</li>
+</ul>
+<p>It is more common though to run entire scripts (<code>.py</code> files) from the command-line by using the <code>python</code> command and specifying the script file you wish to execute:</p>
+<div class="figure">
+<img src="img/python-intro/python-terminal.png" alt="Run Python script from the command line" />
+<p class="caption">Run Python script from the command line</p>
+</div>
+<p>This will cause each line in the script to be run one at a time. This is the “normal” way of running Python programs: you write Python scripts using an editor such as VS Code, and then execute those scripts on the command-line to see them in action.</p>
+</div>
+<div id="jupyter-notebooks" class="section level3">
+<h3><span class="header-section-number">4.2.2</span> Jupyter Notebooks</h3>
+<p>Another popular and effective way of writing and running Python code is to utilize a <a href="http://jupyter.org/">Jupyter Notebook</a>. A Jupyter Notebook is a <strong>web appplications</strong> (that runs in your web browser) and provides an interactive platform for running Python code: you are able to write and execute Python code write in the browser, similar to an interactive session (but with the ability to write multiple lines of code).</p>
+<ul>
+<li>Jupter is a portmanteau of “Julia”, “Python” and “R”, which are the programming languages the application was designed to support. Each notebook runs on an individual <strong>kernel</strong> or language interpreter; you’ll want to be sure you’re running a Python 3 kernel for this course.</li>
+</ul>
+<p>Code is authored in individual “notebooks”, which are collections of <em>cells</em> (blocks of code or text). Cells can also include Markdown content, allowing notebooks to act as interactive documents with embedded, runnable code.</p>
+<p>The Jupyter program is part of the Anaconda package, and so should be installed along with Python. You can start Jupyter from the command line with:</p>
+<pre class="language-bash"><code>jupyter notebook</code></pre>
+<p>This will open up your web browser with an interface to create or open a notebook relative to the folder you started Jupyter from:</p>
+<div class="figure">
+<img src="http://jupyter-notebook.readthedocs.io/en/latest/_images/new-notebook.gif" alt="Opening notebook animation, from the official documentation" />
+<p class="caption">Opening notebook animation, from the official documentation</p>
+</div>
+<p>You can also open a particular notebook (which are saved as files with the <code>.ipynb</code> extension) by passing the notebook name as an argument:</p>
+<pre class="language-bash"><code>jupyter notebook my-notebook.ipynb</code></pre>
+<ul>
+<li>To stop running the Jupyter notebook server, hit <code>ctrl-c</code> in the terminal and follow the prompts.</li>
+</ul>
+<p>Jupyter notebooks are made up of a series of <em>cells</em>, each representing a set of code or text. Cells by default are used for Python code, but can also be set to use Markdown by selecting from the dropdown menu.</p>
+<p>You can type code directly into the cells, just as if you were typing into a text editor. In order to execute the code in a cell, press <strong><code>shift-enter</code></strong> or select <code>Cell &gt; Run Cell</code> from the menu. Any output from the cell will appear immediately below it. You can add new cells by hitting the “plus” button on the toolbar.</p>
+<ul>
+<li><strong>Pro-tip</strong>: There are lots of keyboard shortcuts available for working with cells. Click the keyboard icon on the toolbar to see a list of shortcuts.</li>
+</ul>
+</div>
+</div>
+<div id="comments" class="section level2">
+<h2><span class="header-section-number">4.3</span> Comments</h2>
+<p>Before discussing how to program with Python, we need to talk about a piece of syntax that lets you comment your code. In programming, <strong>comments</strong> are bits of text that are <em>not interpreted as computer instructions</em>—they aren’t code, they’re just notes about the code! Since computer code can be opaque and difficult to understand, we use comments to help write down the meaning and <em>purpose</em> of our code. While a computer is able to understand the code, comments are there to help <em>people</em> understand. This is particularly imporant when someone else will be looking at your work—whether that person is a collaborator, or is simply a future version of you (e.g., when you need to come back and fix something and so need to remember what you were even thinking). Comments should be clear, concise, and helpful—they should provide information that is not “obvious” from the code itself.</p>
+<p>In Python, we mark text as a comment by putting it after the pound/hashtag symbol (<strong><code>#</code></strong>). Everything from the <code>#</code> until the end of the line is a comment. We put descriptive comments <em>immediately above</em> the code it describes, but you can also put very short notes at the end of the line of code (preferably following two spaces):</p>
+<pre class="language-python"><code><span class="token comment"># Set how many bottles of beer are on the wall</span>
+bottles <span class="token operator">=</span> <span class="token number">99</span> <span class="token operator">-</span> <span class="token number">1</span>  <span class="token comment"># 98</span></code></pre>
+<p>(You may recognize this <code>#</code> syntax and commenting behavior from the command-line and git modules. That’s because the same syntax is used in a Bash shell!)</p>
+</div>
+<div id="variables" class="section level2">
+<h2><span class="header-section-number">4.4</span> Variables</h2>
+<p>Since computer programs involve working with lots of <em>information</em>, we need a way to store and refer to this information. We do this with <strong>variables</strong>. Variables are labels for information; in Python, you can think of them as “nametags” for data. After giving data a variable nametag, you can then refer to that data by its name.</p>
+<p>Variable names can contain any combination of letters, numbers, or underscores (<code>_</code>). Variables names must begin with a letter. Note that like everything in programming, variable names are case sensitive. It is best practice to make variable names descriptive and information about what data they contain. <code>a</code> is not a good variable name. <code>cups_of_coffee</code> is a good variable name. To comply with <a href="https://google.github.io/styleguide/pyguide.html#Naming">Google’s Style Guidelines</a> variables should be in “snake_case”: <strong>all lower-case letters, separated by underscores (<code>_</code>)</strong>.</p>
+<p>We call putting information in a variable <strong>assigning</strong> that value to the variable. We do this using the <em>assignment operator</em> <strong><code>=</code></strong>. For example:</p>
+<pre class="language-python"><code><span class="token comment"># Stores the number 7 into a variable called shoe.size</span>
+shoe_size <span class="token operator">=</span> <span class="token number">7</span></code></pre>
+<ul>
+<li><em>Notice:</em> the variable name goes on the left, the value goes on the right!</li>
+<li>It is good style to put white spaces around the <code>=</code> operator to keep it easy to read.</li>
+</ul>
+<p>You can see what value (data) is inside a variable by either typing that variable name as a line of code, or by using Python’s built-in <code>print()</code> function (more on functions later):</p>
+<pre class="language-python"><code><span class="token keyword">print</span><span class="token punctuation">(</span>shoe_size<span class="token punctuation">)</span>
+<span class="token comment">## 7</span></code></pre>
+<p>You can also use <strong>mathematical operators</strong> (e.g., <code>+</code>, <code>-</code>, <code>/</code>, <code>*</code>) when assigning values to variables. For example, you could create a variable that is the sum of two numbers as follows:</p>
+<pre class="language-python"><code>x <span class="token operator">=</span> <span class="token number">3</span> <span class="token operator">+</span> <span class="token number">4</span></code></pre>
+<ul>
+<li>A combination of variables, values, operators, or functions that the interpreter needs to <em>evaluate</em> is called an <strong>expression</strong>.</li>
+</ul>
+<p>Once a value (like a number) is assigned a variable—it is <em>in</em> a variable—you can use that variable in place of any other value. So all of the following are valid:</p>
+<pre class="language-python"><code>x <span class="token operator">=</span> <span class="token number">2</span>  <span class="token comment"># store 2 in x</span>
+y <span class="token operator">=</span> <span class="token number">9</span>  <span class="token comment"># store 9 in y</span>
+z <span class="token operator">=</span> x <span class="token operator">+</span> y  <span class="token comment"># store sum of x and y in z</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>z<span class="token punctuation">)</span>  <span class="token comment"># 11</span>
+z <span class="token operator">=</span> z <span class="token operator">+</span> <span class="token number">1</span>  <span class="token comment"># take z, add 1, and store result back in z</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>z<span class="token punctuation">)</span>  <span class="token comment"># 12</span></code></pre>
+<p><strong>Important</strong> despite using an equal sign (<code>=</code>), variable assignments <em>do not</em> specify equalities! Assigning one variable to another does not cause them to be “linked”; changing one variable will leave the other unchanged:</p>
+<pre class="language-python"><code>x <span class="token operator">=</span> <span class="token number">3</span>
+y <span class="token operator">=</span> <span class="token number">4</span>
+x <span class="token operator">=</span> y  <span class="token comment"># assign the value of y (4) to x</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span>  <span class="token comment"># 4</span>
+y <span class="token operator">=</span> <span class="token number">5</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span>  <span class="token comment"># 4;</span></code></pre>
+<p>Changing the value named <code>y</code> does not change the value named <code>y</code>, even if the value from <code>y</code> was put into the <code>x</code> variable at some point.</p>
+<ul>
+<li><em>Tip</em>: when reading or writing code, try to think “x is assigned 3” or “x gets the value 3”, rather than “x equals 3”.</li>
+</ul>
+<div id="data-types" class="section level3">
+<h3><span class="header-section-number">4.4.1</span> Data Types</h3>
+<p>In the example above, we stored <strong>numeric</strong> values in variables. Python is a <strong>dynamically typed language</strong>, which means that we <em>do not</em> need to explicitly state what type of information will be stored in each variable we create. The Python interpreter is intelligent enough to understand that if we have code <code>x = 7</code>, then <code>x</code> will contain a numeric value (and so we can do math upon it!)</p>
+<p>You can “look up” the type of a particular value by using the <code>type()</code> function:</p>
+<pre class="language-python"><code><span class="token builtin">type</span><span class="token punctuation">(</span><span class="token number">7</span><span class="token punctuation">)</span>  <span class="token comment"># integer</span>
+<span class="token comment">## &lt;class 'int'></span>
 
-</div>
-<p>Once you’re comfortable navigating folders in the command line, you can start to use it to do all the same things you would do with Finder or File Explorer, simply by using the correct command. Here is an short list of commands to get you started using the command prompt, though there are <a href="http://www.lagmonster.org/docs/unix/intro-137.html">many more</a>:</p>
-<table>
-<thead>
-<tr class="header">
-<th align="left">Command</th>
-<th align="left">Behavior</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left"><strong><code>mkdir</code></strong></td>
-<td align="left"><strong>m</strong>a<strong>k</strong>e a <strong>dir</strong>ectory</td>
-</tr>
-<tr class="even">
-<td align="left"><strong><code>rm</code></strong></td>
-<td align="left"><strong>r</strong>e<strong>m</strong>ove a file or folder</td>
-</tr>
-<tr class="odd">
-<td align="left"><strong><code>cp</code></strong></td>
-<td align="left"><strong>c</strong>o<strong>p</strong>y a file from one location to another</td>
-</tr>
-<tr class="even">
-<td align="left"><strong><code>open</code></strong></td>
-<td align="left">opens a file or folder (Mac only)</td>
-</tr>
-<tr class="odd">
-<td align="left"><strong><code>start</code></strong></td>
-<td align="left">opens a file or folder (Windows only)</td>
-</tr>
-<tr class="even">
-<td align="left"><strong><code>cat</code></strong></td>
-<td align="left">con<strong>cat</strong>enate (combine) file contents and display the results</td>
-</tr>
-<tr class="odd">
-<td align="left"><strong><code>history</code></strong></td>
-<td align="left">show previous commands executed</td>
-</tr>
-</tbody>
-</table>
-<div class="alert alert-danger">
-<p>
-<strong>Warning</strong>: The command line makes it <strong>dangerously easy</strong> to <em>permanently delete</em> multiple files or folders and <em>will not</em> ask you to confirm that you want to delete them (or move them to the “recycling bin”). Be very careful when using the terminal to manage your files, as it is very powerful.
-</p>
-</div>
-<p>Be aware that many of these commands <strong>won’t print anything</strong> when you run them. This often means that they worked; they just did so quietly. If it <em>doesn’t</em> work, you’ll know because you’ll see a message telling you so (and why, if you read the message). So just because you didn’t get any output doesn’t mean you did something wrong—you can use another command (such as <strong><code>ls</code></strong>) to confirm that the files or folders changed the way you wanted!</p>
-<div id="learning-new-commands" class="section level3">
-<h3><span class="header-section-number">2.3.1</span> Learning New Commands</h3>
-<p>How can you figure out what kind of arguments these commands take? You can look it up! This information is available online, but many command shells (though <em>not</em> Git Bash, unfortunately) also include their own manual you can use to look up commands!</p>
-<pre class="language-bash"><code><span class="token function">man</span> <span class="token function">mkdir</span></code></pre>
-<p>Will show the <strong>man</strong>ual for the <strong><code>mkdir</code></strong> program/command.</p>
-<p class="alert alert-info">
-Because manuals are often long, they are opened up in a command line viewer called <a href="https://en.wikipedia.org/wiki/Less_(Unix)"><code>less</code></a>. You can “scroll” up and down by using the arrow keys. Hit the <code>q</code> key to <strong>q</strong>uit and return to the command-prompt.
-</p>
-<div class="figure">
-<img src="img/command-line/mkdir.png" title="man mkdir" alt="The mkdir man page." />
-<p class="caption">The <code>mkdir</code> man page.</p>
-</div>
-<p>If you look under “Synopsis” you can see a summary of all the different arguments this command understands. A few notes about reading this syntax:</p>
+<span class="token builtin">type</span><span class="token punctuation">(</span><span class="token string">"Hello"</span><span class="token punctuation">)</span>  <span class="token comment"># string</span>
+<span class="token comment">## &lt;class 'str'></span></code></pre>
 <ul>
-<li><p>Recall that anything in brackets <code>[]</code> is optional. Arguments that are not in brackets (e.g., <code>directory_name</code>) are required.</p></li>
-<li><p><strong>“Options”</strong> (or “flags”) for command line programs are often marked with a leading dash <strong><code>-</code></strong> to make them distinct from file or folder names. Options may change the way a command line program behaves—like how you might set “easy” or “hard” mode in a game. You can either write out each option individually, or combine them: <strong><code>mkdir -p -v</code></strong> and <strong><code>mkdir -pv</code></strong> are equivalent.</p>
+<li>Type is also referred to as <code>class</code> (i.e., “classification”). <strong>Classes</strong> are ways of structuring information and behavior in computer programs; we will discuss them in more detail later.</li>
+</ul>
+<p>There are a number of “basic types” for data in Python. The two most common are:</p>
 <ul>
-<li>Some options may require an additional argument beyond just indicating a particular operation style. In this case, you can see that the <code>-m</code> option requires you to specify an additional <code>mode</code> parameter; see the details below for what this looks like.</li>
+<li><p><a href="https://docs.python.org/3/library/stdtypes.html#typesnumeric"><strong>Numeric Types</strong></a>: Python has two data types used to represent numbers: <code>int</code> (integer) for <em>whole numbers</em> like <code>7</code> and <code>float</code> for decimals like <code>3.14</code> (because the decimal is “floating” in the middle).</p>
+<p>We can use <strong>mathematical operators</strong> on numeric data (such as <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, etc.). There are also numerous functions that work on numeric data (such as for calculating sums or averages). You can mix and match ints and floats in mathematical expressions; the result will be a float if either of the operands are floats. Division (<code>/</code>) always produces a float; use the “integer division operator” <code>//</code> to force the result to be a whole number (rounded down).</p></li>
+<li><p><a href="https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str"><strong>Strings</strong></a>: Python uses the <code>str</code> (string) type to store textual data. <code>str</code> values contain <em>strings</em> of characters, which are the things you type with a keyboard (including digits, spaces, punctuation, and even line breaks). You specify that some characters are a string by surrounding them in either single quotes (<strong><code>'</code></strong>) or double quotes (<strong><code>&quot;</code></strong>).</p>
+<pre class="language-python"><code><span class="token comment"># Create a string variable `famous_poet` with the value "Bill Shakespeare"</span>
+famous_poet <span class="token operator">=</span> <span class="token string">"Bill Shakespeare"</span></code></pre>
+<p>Note that string literals (the text in quotes) are <em>values</em> just like numeric literals (numbers), so can be assigned to variables!</p>
+<ul>
+<li><p>Using “triple-quotes” will allow you to specify a multi-line string:</p>
+<pre class="language-python"><code>message <span class="token operator">=</span> <span class="token triple-quoted-string string">"""Dear Professor,
+             My dog ate my homework.
+             Thank you,
+                A. Student
+          """</span></code></pre></li>
+</ul>
+<p>Strings support the <strong><code>+</code></strong> operator, which performs <strong>concatenation</strong> (combining two strings together). For example:</p>
+<pre class="language-python"><code><span class="token comment"># concatenate 3 strings. The middle string is a space character</span>
+full_name <span class="token operator">=</span> <span class="token string">"Bill"</span> <span class="token operator">+</span> <span class="token string">" "</span> <span class="token operator">+</span> <span class="token string">"Shakespeare"</span></code></pre>
+<p>The operands must both be strings. Also notice that concatenating strings doesn’t add any additional characters such as spaces between words; you need to handle such punctuation yourself!</p>
+<p>There are many built-in functions for working with strings, and in fact strings support a <a href="https://docs.python.org/3/library/stdtypes.html#string-methods">variety of functions</a> you can call <em>on</em> them. See <a href="functions.html#functions">Chapter 6</a> for details.</p></li>
+</ul>
+<p>There are many other data types as well; more will be introduced throughout the remaining modules.</p>
+<p>_Helpful <a href="tip:_" class="uri">tip:_</a> because variables can any type of data, it is often useful to name variables based on their data type. This helps keep the purpose of code clear in your mind, and makes it easier to read and understand what is happening:</p>
+<pre class="language-python"><code>password_num <span class="token operator">=</span> <span class="token number">12345</span>  <span class="token comment"># variable name indicates a number, so can do math on it</span>
+password_str <span class="token operator">=</span> <span class="token string">"12345"</span>  <span class="token comment"># variable name indicates a string, so can print it</span></code></pre>
+<p>It is possible to convert from one type to another by using a <strong>type converter function</strong>, which is usually named after the type you wish to convert <em>to</em>:</p>
+<pre class="language-python"><code><span class="token builtin">int</span><span class="token punctuation">(</span><span class="token number">3.14</span><span class="token punctuation">)</span>   <span class="token comment"># 3</span>
+<span class="token builtin">int</span><span class="token punctuation">(</span><span class="token number">5.98</span><span class="token punctuation">)</span>   <span class="token comment"># 5 (takes the floor value)</span>
+<span class="token builtin">float</span><span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">)</span>    <span class="token comment"># 6.0</span>
+<span class="token builtin">str</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span>      <span class="token comment"># "2"</span>
+<span class="token builtin">int</span><span class="token punctuation">(</span><span class="token string">"2"</span><span class="token punctuation">)</span>    <span class="token comment"># 2</span>
+<span class="token builtin">int</span><span class="token punctuation">(</span><span class="token string">"two"</span><span class="token punctuation">)</span>  <span class="token comment"># ValueError!</span></code></pre>
+<p>This is particularly useful when you wish to include a number in a string:</p>
+<pre class="language-python"><code>favorite_number <span class="token operator">=</span> <span class="token number">12</span>
+message <span class="token operator">=</span> <span class="token string">"My favorite number is "</span><span class="token operator">+</span><span class="token builtin">str</span><span class="token punctuation">(</span>favorite_number<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>message<span class="token punctuation">)</span>  <span class="token comment"># My favorite number is 12</span></code></pre>
+</div>
+</div>
+<div id="getting-help" class="section level2">
+<h2><span class="header-section-number">4.5</span> Getting Help</h2>
+<p>As with any programming language, when working in Python you will inevitably run into problems, confusing situations, or just general questions. Here are a few ways to start getting help.</p>
+<ol style="list-style-type: decimal">
+<li><p><strong>Read the error messages</strong>: If there is an issue with the way you have written or executed your code, Python will often print out an error message. Do you best to decipher the message (read it carefully, and think about what is meant by each word in the message), or you can put it directly into Google to get more information. You’ll soon get the hang of interpreting these messages (and how to resolve common ones) if you don’t panic when one appears. <em>Remember: making mistakes is normal!</em></p></li>
+<li><p><strong>Google</strong>: When you’re trying to figure out how to do something, it should be no surprise that Google is often the best resource. Try searching for queries like <code>&quot;how to &lt;DO THING&gt; in Python&quot;</code>. More frequently than not, your question will lead you to a Q/A forum called StackOverflow (see below), which is a great place to find potential answers.</p></li>
+<li><p><strong>StackOverflow</strong>: StackOverflow is an amazing Q/A forum for asking/answering programming questions. Most basic questions have already been asked/answered here. However, don’t hesitate to post your own questions to StackOverflow. Be sure to hone in on the specific question you’re trying to answer, and provide error messages and sample code as appropriate. I often find that, by the time I can articulate the question enough to post it, I’ve figured out my problem anyway.</p>
+<ul>
+<li>There is a classical method of debugging called <a href="https://en.wikipedia.org/wiki/Rubber_duck_debugging">rubber duck debugging</a>, which involves simply trying to explain your code/problem to an inanimate object (talking to pets works too). You’ll usually be able to fix the problem if you just step back and think about how you would explain it to someone else!</li>
 </ul></li>
-<li><p>Underlined arguments are ones you choose: you don’t actually type the word <code>directory_name</code>, but instead your own directory name! Contrast this with the options: if you want to use the <code>-p</code> option, you need to type <code>-p</code> exactly.</p></li>
-</ul>
-<p>Command line manuals (“man pages”) are often very difficult to read and understand: start by looking at just the required arguments (which are usually straightforward), and then search for and use a particular option if you’re looking to change a command’s behavior.</p>
-<p>For practice, try to read the man page for <code>rm</code> and figure out how to delete a folder and not just a single file. Note that you’ll want to be careful, as this is a good way to <a href="http://www.pcworld.com/article/3057235/data-center-cloud/that-man-who-deleted-his-entire-company-with-a-line-of-code-it-was-a-hoax.html">break things</a>.</p>
+<li><p><strong>Documentation</strong>: Python’s <a href="https://docs.python.org/3/">documentation</a> is pretty good: very thorough and usually contains helpful examples. The only problem is that it can occasionally be too detailed for beginners, and can sometimes be hard to navigate (where to find information is not immediately obvious in some situations). <em>Searching</em> the documentation (potentially through Google) is a good way to narrow down what you’re looking for.</p></li>
+</ol>
 </div>
-<div id="wildcards" class="section level3">
-<h3><span class="header-section-number">2.3.2</span> Wildcards</h3>
-<p>One last note about working with files. Since you’ll often work with multiple files, command shells offer some shortcuts to talking about files with the same name. In particular, you can use an asterisk <strong><code>*</code></strong> as a <strong>wildcard</strong> when naming files. This symbol acts like a “wild” or “blank” tile in Scrabble–it can be “replaced” by any character (or any set of characters) when determining what file(s) you’re talking about.</p>
-<ul>
-<li><p><code>*.txt</code> refers to all files that have <code>.txt</code> at the end. <strong><code>cat *.txt</code></strong> would output the contents of every <code>.txt</code> file in the folder.</p></li>
-<li><p><code>hello*</code> refers to all files whose names start with <code>hello</code>.</p></li>
-<li><p><code>hello*.txt</code> refer to all files that start with <code>hello</code> and end with <code>.txt</code>, no matter how many characters are in the middle (including none!)</p></li>
-<li><p><code>*.*</code> refers to all files that have an extension.</p></li>
-</ul>
-</div>
-</div>
-<div id="dealing-with-errors" class="section level2">
-<h2><span class="header-section-number">2.4</span> Dealing With Errors</h2>
-<p>Note that the syntax of these commands (how you write them out) is very important. Computers aren’t good at figuring out what you meant if you aren’t really specific; forgetting a space may result in an entirely different action.</p>
-<p>Try another command: <strong><code>echo</code></strong> lets you “echo” (print out) some text. Try echoing <code>&quot;Hello World&quot;</code> (which is the traditional first computer program):</p>
-<pre class="language-bash"><code><span class="token keyword">echo</span> <span class="token string">"Hello world"</span></code></pre>
-<p>What happens if you forget the closing quote? You keep hitting “enter” but you just get that <code>&gt;</code> over and over again! What’s going on?</p>
-<ul>
-<li>Because you didn’t “close” the quote, the shell thinks you are still typing the message you want to echo! When you hit “enter” it adds a <em>line break</em> instead of ending the command, and the <code>&gt;</code> marks that you’re still going. If you finally close the quote, you’ll see your multi-line message printed!</li>
-</ul>
-<div class="alert alert-info">
-<p>
-<strong>IMPORTANT TIP</strong> If you ever get stuck in the command line, hit <strong><code>ctrl-c</code></strong> (The <code>control</code> and <code>c</code> keys together). This almost always means “cancel”, and will “stop” whatever program or command is currently running in the shell so that you can try again. Just remember: “<strong><code>ctrl-c</code></strong> to flee”.
-</p>
-<p>
-(If that doesn’t work, try hitting the <code>esc</code> key, or typing <code>exit</code>, <code>q</code>, or <code>quit</code>. Those commands will cover <em>most</em> command line programs).
-</p>
-</div>
-<p>Throughout this book, we’ll discuss a variety of approaches to handling errors in computer programs. While it’s tempting to disregard dense error messages, many programs do provide <strong>error messages</strong> that explain what went wrong. If you enter an unrecognized command, the terminal will inform you of your mistake:</p>
-<pre class="language-bash"><code>lx
-<span class="token operator">></span> -bash: lx: <span class="token function">command</span> not found</code></pre>
-<p>However, forgetting arguments yields different results. In some cases, there will be a default behavior (see what happens if you enter <code>cd</code> without any arguments). If more information is <em>required</em> to run a command, your terminal will provide you with a brief summary of the command’s usage:</p>
-<pre class="language-bash"><code><span class="token function">mkdir</span>
-<span class="token operator">></span> usage: <span class="token function">mkdir</span> <span class="token punctuation">[</span>-pv<span class="token punctuation">]</span> <span class="token punctuation">[</span>-m mode<span class="token punctuation">]</span> directory <span class="token punctuation">..</span>.</code></pre>
-<p>Take the time to read the error message and think about what the problem might be before you try again.</p>
-</div>
-<div id="directing-output" class="section level2">
-<h2><span class="header-section-number">2.5</span> Directing Output</h2>
-<p>So far all these commands have either modified the file system or printed some output to the terminal. But you can specify that you want the output to go somewhere else (e.g., to save it to a file for later). These are called <strong>redirects</strong>. Redirect commands are usually single punctuation marks, because the commands want to be as quick to type (but hard to read!) as possible.</p>
-<ul>
-<li><p><strong><code>&gt;</code></strong> says “take output of command and put it in this file”. For example <code>echo &quot;Hello World&quot; &gt; hello.txt</code> will put the outputted text “Hello World” into a file called <code>hello.txt</code>. Note that this will replace any previous content in the file, or create the file if it doesn’t exist. This is a great way to save the output of your command line work!</p></li>
-<li><p><strong><code>&gt;&gt;</code></strong> says “take output of command and <em>append</em> it to the end of this file”. This will keep you from overwriting previous content.</p></li>
-<li><p><strong><code>&lt;</code></strong> says “take input from this file”. This is a much less common redirect.</p></li>
-<li><p><strong><code>|</code></strong> says “take the output of this command and send it to the next command”. For example, <code>cat hello.txt | less</code> would take the output of the <code>hello.txt</code> file and send it to the <code>less</code> program, which gives that arrow-based “scrolling” interface that man pages use.</p></li>
-</ul>
-<p>Redirects are a more “advanced” usage of the command line, but now you know what those random symbols mean if you see them!</p>
-</div>
-<div id="shell-scripts" class="section level2">
-<h2><span class="header-section-number">2.6</span> Shell Scripts</h2>
-<p>Shell commands are a way to tell the computer what to do—in effect, program it!</p>
-<p>But often the instructions you want a computer to perform are more complex than a single command (even with redirects), or are something you want to be able to save and repeat later (beyond just looking it up in the <code>history</code>). It is useful if you can write down all the instructions in a single place, and then order the computer to <em>execute</em> all of those instructions at once. This list of instructions is called a <strong>script</strong>, with a list of shell commands called a <strong>shell scripts</strong>. Executing or “running” a script will cause each instruction (line of code) to be run <em>in order, one after the other</em>, just as if you had typed them in one by one. Writing scripts allows you to save, share, and re-use your work—by saving instructions in a file, you can easily check, change, and re-execute the list of instructions (assuming you haven’t caused any irreversible side effects).</p>
-<p>Bash shell scripts (also known as “Bash scripts”) are generally written in files that end in the <strong><code>.sh</code></strong> extension (for <strong>sh</strong>ell). Once you’ve written a shell script, you can execute it on the command line simply by typing the file name as the command:</p>
-<pre class="language-bash"><code>./my-script.sh</code></pre>
-<p>(The <code>./</code> indicates that we want to execute the file in the current folder, instead of looking for a program elsewhere on the computer as normally happens with commands).</p>
-<ul>
-<li><p><strong>Important</strong> On OS X or Linux you will need to give the file permission to be executed to run it. Use the <code>chmod</code> (<strong>ch</strong>ange <strong>mod</strong>e) command to add (<code>+</code>) e<strong>x</strong>ecution permissions to the file:</p>
-<pre class="language-bash"><code><span class="token function">chmod</span> +x my-script.sh</code></pre></li>
-</ul>
-<p>For <em>portability</em> (e.g., to work well across computers), the first line of any Bash shell script should be a a <a href="https://en.wikipedia.org/wiki/Shebang_(Unix)">shebang</a> that indicates which shell should be used:</p>
-<pre class="language-bash"><code><span class="token comment">#!/usr/bin/env bash</span></code></pre>
-<p>After that, you can begin listing the command your script will run, one after another (each on a new line):</p>
-<pre class="language-bash"><code><span class="token comment">#!/usr/bin/env bash</span>
-
-<span class="token comment"># anything after a '#' is a comment, and will not be executed</span>
-<span class="token keyword">echo</span> <span class="token string">"Hello world"</span>
-<span class="token keyword">echo</span> <span class="token string">"This is a second command"</span></code></pre>
-<ul>
-<li>You can include blank lines between your command for readability, and add <em>comments</em> (notes to yourself that are not executed by the computer) by starting a line with <code>#</code>.</li>
-</ul>
-<p>Shell scripts are an easy way to make “macros” or shortcuts for commands you want to run, and are common ways of sharing computer instructions with others.</p>
-</div>
-<div id="resources-1" class="section level2 unnumbered">
+<div id="resources-3" class="section level2 unnumbered">
 <h2>Resources</h2>
+<p>Python is an incredibly popular programming language and is especially accessible to new programmers. As such, there are <strong>a lot</strong> of resources available for learning how to program in Python. While this book will cover most of the details you need, below are a number of other effective resources below in case you need further help. <em>Note that you’ll need to reference Python 3 materials</em>.</p>
 <div class="list-condensed">
 <ul>
-<li><a href="https://www.learnenough.com/command-line-tutorial#sec-basics">Learn Enough Command Line to be Dangerous</a></li>
-<li><a href="https://www.youtube.com/watch?v=sqYUYHn-HKg&amp;list=PLCAF7D691FFA25555">Video series: Bash commands</a></li>
-<li><a href="http://www.lagmonster.org/docs/unix/intro-137.html">List of Common Commands</a> (also <a href="http://www.math.utah.edu/lab/unix/unix-commands.html">here</a>)</li>
+<li><a href="http://greenteapress.com/wp/think-python-2e/">Think Python (Downey)</a>: a free, friendly introductory textbook for learning Python. You should definitely read <a href="http://greenteapress.com/thinkpython2/html/thinkpython2002.html"><strong>Chapter 1</strong></a>, which is a great overview of programming in general.</li>
+<li><a href="http://www.pythonlearn.com/book.php">Python for Everybody (Severance)</a>: a remixed version of the above book, with a focus on Information Sciences. See in particular the <a href="https://books.trinket.io/pfe/index.html">interactive version</a>. Chapter 1 of this book is also a very good read.</li>
+<li><a href="https://automatetheboringstuff.com/">Automate the Boring Stuff with Python (Sweigart)</a>: another good free textbook</li>
+<li><a href="https://wiki.python.org/moin/BeginnersGuide/NonProgrammers">Python for Non-Programmers Index</a>: an extensive list of resources and materials for learning to program with Python. The textbooks and interactive courses are all good options.</li>
+<li><a href="https://docs.python.org/3/">Official Python Documentation</a></li>
+<li><a href="https://google.github.io/styleguide/pyguide.html">Google’s Python Style Guide</a></li>
+</ul>
+</div>
+<p>Specific resources for the material in this module:</p>
+<div class="list-condensed">
+<ul>
+<li><a href="https://automatetheboringstuff.com/chapter1/">Python Basics (Sweigart)</a></li>
+<li><a href="http://openbookproject.net/thinkcs/python/english3e/variables_expressions_statements.html">Variables, expressions, statements (Downey)</a></li>
+<li><a href="http://jupyter-notebook.readthedocs.io/en/latest/notebook.html">Jupyter Notebook Documentation</a></li>
+<li><a href="https://www.datacamp.com/community/tutorials/tutorial-jupyter-notebook#gs.MFPIJdI">Jupyter Notebook Tutorial (Data Camp)</a></li>
 </ul>
 </div>
 
@@ -602,8 +565,8 @@ Because manuals are often long, they are opened up in a command line viewer call
           </div>
         </div>
       </div>
-<a href="setup-machine.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="git-basics.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="git-basics.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="functions.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -632,7 +595,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/infx511/book/edit/master/command-line.Rmd",
+"link": "https://github.com/infx511/book/edit/master/python-intro.Rmd",
 "text": "Edit"
 },
 "download": ["intro-to-programming-for-data-science-visualization.pdf", "intro-to-programming-for-data-science-visualization.epub"],
