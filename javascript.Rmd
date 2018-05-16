@@ -42,7 +42,7 @@ Thus additional JavaScript modules can be "imported" by including their script f
 - Moreover, rather than downloading third-party modules as part of a package like Anaconda, the path to third-party JavaScript modules are specified as an internet URI so that the module is downloaded along with the rest of the web page. For example:
 
     ```html
-    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
     ```
 
     will "import" (download and include) the [D3](https://d3js.org/) library and provide a global `d3` variable for later scripts to use&mdash;similar to `import d3` in Python.
