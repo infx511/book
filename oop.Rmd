@@ -1,12 +1,63 @@
-# Object-Oriented Programming
+# Object-Oriented Programming {#oop}
+
+<p class="alert">This chapter is under development. More details coming soon…</p>
 
 So far, this book has discussed using a **procedural programming** style to write computer programs. Procedural programming focuses on defining functions (_procedures_) as sequences of instructions to execute. While you've used _control structures_ (e.g., conditionals and loops) to redirect the program flow, and _data structures_ (e.g., lists and dictionaries) to organize data, you have designed programs primarily based on which lines of code execute in what order.
 
 **Object-oriented programming** is a programming paradigm (style) in which you don't design programs around the sequence of statements executed, but around the specification of **objects** which are combinations of _data_ (variables) and _behaviors_ (functions). Objects are used to represent elements in the program's real-world problem domain, and provide a useful _abstraction_ when designing programs: instead of needing to think about code statements executing in order, you can think about telling "things" to perform "actions".
 
+- Using the [turtle graphics](https://docs.python.org/3.3/library/turtle.html?highlight=turtle) module is an example of object-oriented programming.
+
 This chapter will discuss the fundamentals of object-oriented programming and how to specify **classes** (custom data types) that are used to define and create **objects**.
 
-<p class="alert alert-default">This chapter is under development. More details coming soon...</p>
+
+## Why Objects?
+The whole point of using object-oriented programming is to perform **abstraction**: we want to be able to _encapsulate_ ("group") together parts of our code so we can talk about it at a higher level. So rather than needing to think about the program purely in terms of `integers`, `strings`, and `lists`, we can think about it in terms of `Dogs`, `Cats` or `Persons`.
+
+As an example, consider how you might represent information about a _rectangle_ (e.g., in a drawing program). You could use individual variables to keep track of the rectangle's size an position:
+
+```python
+rect_x = 10
+rect_y = 20
+rect_width = 50
+rect_height = 60
+```
+
+Of course, that's a lot of variables to remember (and chances to make typos in the names). So you might instead think about encapsulating that data into a tuple or dictionary:
+
+```python
+rect = (10, 20, 50, 60)  # as a tuple
+rect = {x:10, y:20, width:50, height:60}  # as a dictionary (literal)
+rect = dict(x=10, y=20, width=50, height=60)  # as a dictionary (using function)
+```
+
+This works well, until you want to have some way of associating _functionality_ with that data&mdash;that is, you want to be able to tell the `rect` variable to do something (e.g., "calculate your area!" "draw yourself!")
+
+
+A **Class** (*class*ification) acts as
+_template/recipe/blueprint_ for individual objects. It defines what data (attributes) and behaviors (methods) they have. An object is an "instance of" (example of) a class: we **instantiate** an object from a class. This lets you easily create multiple objects, each of which can track and modify its own data. 
+
+In particular, classes _encapsulate_ two things:
+
+1. The _data_ (variables) that describe the thing. These are known as **attributes**, **fields** or **instance variables** (variables that below to a particular _instance_, or example, of the class). For example, we might talk about a `Person` object's `name` (a String), `age` (a Number), and Halloween haul (an array of candy).
+
+2. The _behaviors_ (functions) that operate on, utilize, or change that data. These are known as _methods_ (technically _instance methods_, since they operate on a particular instance of the class). For example, a `Person` may be able to `sayHello()`, `trickOrTreat()`, or `eatCandy()`.
+
+
+## Defining Classes
+<!-- `class` keyword -->
+
+### Attributes
+
+
+### Methods
+
+
+### Constructors
+
+
+### String Representations
+
 
 
 ## Resources {-}

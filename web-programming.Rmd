@@ -136,10 +136,12 @@ Web browsers render HTML into a **DOM** tree that provides an [API](https://deve
 D3 is a third-party library, so as with Python modules you will need to "download" it and "import" it into your script. You do this by including a `<script>` tag with a _link_ to the online version of the library **before** the `<script>` tag for your script:
 
 ```html
-<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="https://d3js.org/d3.v5.min.js"></script>
 ```
 
 Note that this means you will need to be connected to the internet to utilize this library. If you need to write your program offline, you can instead download the library (the `d3.zip`) and load the included `d3.min.js` script by specifying a relative path to it.
+
+<p class="alert alert-warning">D3 has gone through a number of versions over the years. This book assumes Version 5 (v5), which as released in March 2018. v5 is [mostly similar](https://github.com/d3/d3/blob/master/CHANGES.md) to v4, but v4 and v3 have some significant differences in their APIs (which are more relevant in the next chapter). Be careful about referencing older examples and tutorials that may not use an up-to-date version of the library.</p>
 
 ### Selecting Elements
 In order to modify the web page's HTML elements from a JavaScript script, the first thing you will need to do is get a **reference** to the particular element you wish to modify: that is, create a _variable_ whose value is an object corresponding to that element.
@@ -372,33 +374,45 @@ _Fun fact:_ AJAX was developed by Microsoft in the late 1990s, and originally wa
 The other important part of using AJAX requests is that they are **asynchronous**. Downloading data from the internet can take a while (depending on the speed of the web server, the strength of the internet connection, etc). Rather than having the program "pause" and wait for this download to finish (as with _synchronous_ programming, like you did in Python), AJAX requests will 
 occur _at the same time_ that the rest of the code is being executed. Thus the download and the remaining script will not be synchronized; they will be “asynchronous”.
 
-- You call a function to send the AJAX request, but then your script _keeps going_&mdash;executing the next line of code while the request is processed by the server and the data downloads "in the background".
+- By default, you call a function to send the AJAX request, but then your script _keeps going_&mdash;executing the next line of code while the request is processed by the server and the data downloads "in the background".
 
-- In order to deal with the response whenever it arrives, you specify a _callback function_. This callback will be executed once the data has finished downloading (conceptually similar to "when the 'response received' event occurs"). This callback function will be _passed_ the response's data for you to use.
+    However, recent browsers (anything current that is _not_ Internet Explorer) support code that will let you treat asynchronous functions almost synchronously&mdash;telling the script to "wait" until the data downloads. That technique is covered below:
 
-In order to send AJAX requests (for JSON data) using D3, you can use the `d3.json()` function. This function takes two parameters: the URI to query, and a callback to be executed once the response is received:
+
+In order to send AJAX requests (for JSON data) using D3, you can use the `d3.json()` function. This function takes as a parameter the URI to query:
 
 ```js
 var uri = 'https://api.github.com/search/repositories?q=d3&sort=stars';
 
 //send query to uri, specify callback function
-d3.json(uri, function(data) {
-    console.log("Data recieved!");
-    console.log(data);
-});
+d3.json(uri);
 
 console.log('request sent');  //this statement will execute before data is received!
 ```
 
-The callback function should take a single argument: the response's content in JSON format (that is, as a JavaScript object). Note that this content is extracted from the response "envelope" for us automatically.
+Because the `d3.json()` function is _asynchronous_, the script will keep running (executing the next line) while the data downloads. Indeed, the `d3.json()` function doesn't even return the data download, but instead returns what is called a [Promise](https://developer.mozilla.org/en-US/docs/Mozilla/JavaScript_code_modules/Promise.jsm/Promise), which is a value that acts like a "placeholder" for data to eventually arrive (think: an I.O.U.).
 
-- Remember that the `d3.json()` function is _asynchronous_: the script will keep running (executing the next line) while the data downloads; the callback will be execute at an unspecified point in the future
+The easiest way to "wait" for the Promise to be fulfilled (i.e., for the data to be downloaded) before proceeding is to include the keyword **`await`** _before_ the function call. However, this keyword can only be used if the asynchronous function is called from inside another function that is also marked as being asynchronous&mdash;designated by putting the **`async`** keyword before the function declaration:
 
-<div class="alert alert-warning">
+```js
+// define async "wrapper" function
+async function downloadData(){
+    var uri = 'https://api.github.com/search/repositories?q=d3&sort=stars';
+    data = await d3.json(uri);  //wait for the asynchronous download to finish
+                                //will now return the data downloaded instead of the Promise
+    console.log(data);
+}
+
+downloadData(); //call the downloading function
+```
+
+Specifying that you want to `await` for a function to finish will cause cause that function to return the resulting data rather than the Promise placeholder&mdash;thus you can fetch the data from a URI and save it to a variable to work with later. As long as you wrap your downloading in what is called `async/await`, you will be able to download data somewhat "synchronously" like you do using the Python `requests` library.
+
+
 <p class="alert alert-warning">In some browsers, you will not be able to send an AJAX request when the web page is loading via the `file://` protocol (e.g., by double-clicking on the `.html` file). This is a security feature to keep you from accidentally running an HTML file that contains malicious JavaScript that will download a virus onto your computer. Instead, you should run a local web server for testing AJAX requests, as described in the previous chapter.
-</div>
+</p>
 
-D3 also provides methods for sending AJAX requests that handle different data formats automatically. For example, `d3.csv()` will fetch an array of objects where each object's "keys" are based on the first (header) row in the CSV file. See the [d3.requests](https://github.com/d3/d3-request) module for details.
+Note that D3 also provides methods for sending AJAX requests that handle different data formats automatically. For example, `d3.csv()` will fetch an array of objects where each object's "keys" are based on the first (header) row in the CSV file. See the [d3.requests](https://github.com/d3/d3-request) module for details.
 
 
 ## Resources {-}

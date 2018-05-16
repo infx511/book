@@ -75,7 +75,7 @@ For more information about using VS Code, see [the documentation](https://code.v
 [**Sublime Text**](https://www.sublimetext.com/3) is a very popular text editor with excellent defaults and a variety of available extensions (though you'll need to manage and install extensions to achieve the functionality offered by other editors out of the box). While the software can be used for free, every 20 or so saves it will prompt you to purchase the full version.
 
 ### PyCharm
-[**PyCharm(())](https://www.jetbrains.com/pycharm/) is a full-featured Python IDE (integrated development environment) developed by JetBrains. It has more features than you can shake a stick at, including a large number of features that won't be relevant for this book. It is more powerful, but also somewhat "heavier" (read: slower). You would be interested in the _Community Edition_ of the software.
+[**PyCharm**](https://www.jetbrains.com/pycharm/) is a full-featured Python IDE (integrated development environment) developed by JetBrains. It has more features than you can shake a stick at, including a large number of features that won't be relevant for this book. It is more powerful, but also somewhat "heavier" (read: slower). You would be interested in the _Community Edition_ of the software.
 
 ## Python
 The primary programming language you will use throughout the book is called **Python**. It's a very powerful, general-purpose programming language that is "friendly" enough that it is often used for information and data sciences. See [Chapter 5](#python-intro) for a more in-depth introduction to the language,
@@ -87,7 +87,7 @@ In this book you will be working with **Python 3**. Thus you will want to make s
 In order to program with Python, you will need to install the ___Python Interpreter___ on your machine. This is a piece of software that is able to "read" code written in Python and use that code to control your computer, thereby "programming" it.
 
 ### Anaconda
-There are a number of ways to get Python installed on your machine: in fact, you may have a version (probably Python 2) installed on your computer already! However, the recommended approach for programming for data science is to install [**Anaconda**](https://www.continuum.io/downloads). Anaconda is a pre-packaged bundle of common Python tools and packages that are commonly used in data science&mdash;many of which we will be utilizing (including [Jupytr](http://jupyter.org/) for running interactive "notebooks", and [pandas](http://pandas.pydata.org/) for large-scale data work). And the best part: Anaconda makes it easy to get all the pieces installed and ready to use!
+There are a number of ways to get Python installed on your machine: in fact, you may have a version (probably Python 2) installed on your computer already! However, the recommended approach for programming for data science is to install [**Anaconda**](https://www.continuum.io/downloads). Anaconda is a pre-packaged bundle of common Python tools and packages that are commonly used in data science&mdash;many of which we will be utilizing (including [Jupyter](http://jupyter.org/) for running interactive "notebooks", and [pandas](http://pandas.pydata.org/) for large-scale data work). And the best part: Anaconda makes it easy to get all the pieces installed and ready to use!
 
 To install Anaconda (and Python along with it), simply download the **Python 3.6** installer, run the executable, and follow the instructions. This should install Python and all the required packages.
 
