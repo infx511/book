@@ -32,8 +32,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   <link rel="shortcut icon" href="img/ischool-gold.png" type="image/x-icon">
-<link rel="prev" href="git-basics.html">
-<link rel="next" href="functions.html">
+<link rel="prev" href="git-collaboration.html">
+<link rel="next" href="pandas.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -349,219 +349,60 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="python-intro" class="section level1">
-<h1><span class="header-section-number">Chapter 4</span> Introduction to Python</h1>
-<p>Python is an extremely powerful open-source <em>programming language</em>. It is considered a “high-level”, “general purpose” language in that offers strong abstractions on computer instructions (and in fact often reads like badly-punctuated English), and can be used effectively for a wide variety of purposes. Python is one of the most popular programming languages in the world, and very approachable for beginners and experts alike. Python will be the primary programming language for this course.</p>
-<div id="programming-with-python" class="section level2">
-<h2><span class="header-section-number">4.1</span> Programming with Python</h2>
-<p>Python is a <strong>high-level, general-purpose programming language</strong> that can be used to declare complex instructions for computers (e.g., for working with information and data). It is an <strong>open-source</strong> programming language, which means that it is free and continually improved upon by the Python community.</p>
+<div id="oop" class="section level1">
+<h1><span class="header-section-number">Chapter 15</span> Object-Oriented Programming</h1>
+<p class="alert">
+This chapter is under development. More details coming soon…
+</p>
+<p>So far, this book has discussed using a <strong>procedural programming</strong> style to write computer programs. Procedural programming focuses on defining functions (<em>procedures</em>) as sequences of instructions to execute. While you’ve used <em>control structures</em> (e.g., conditionals and loops) to redirect the program flow, and <em>data structures</em> (e.g., lists and dictionaries) to organize data, you have designed programs primarily based on which lines of code execute in what order.</p>
+<p><strong>Object-oriented programming</strong> is a programming paradigm (style) in which you don’t design programs around the sequence of statements executed, but around the specification of <strong>objects</strong> which are combinations of <em>data</em> (variables) and <em>behaviors</em> (functions). Objects are used to represent elements in the program’s real-world problem domain, and provide a useful <em>abstraction</em> when designing programs: instead of needing to think about code statements executing in order, you can think about telling “things” to perform “actions”.</p>
 <ul>
-<li><em>Fun Fact:</em> Python is named after British comedy troupe “Monty Python”, because it seemed like a good idea at the time.</li>
+<li>Using the <a href="https://docs.python.org/3.3/library/turtle.html?highlight=turtle">turtle graphics</a> module is an example of object-oriented programming.</li>
 </ul>
-<p>So far you’ve leveraged formal language to give instructions to your computers, such as by writing syntactically-precise instructions at the command line. Programming in Python will work in a similar manner: you will write instructions using Python’s special language and syntax, which the computer will <strong>interpret</strong> as instructions for how to work with data.</p>
-<p>Indeed, Python is an <strong>interpreted language</strong>, in that the computer (specifically the <em>Python Interpreter</em>) translates the high-level language into machine language <em>on the fly at the time you run it (“at runtime”)</em>. The interpreter will read and execute one line of code at a time, executing that line before it even begins to consider the next. This is in contrast with <em>compiled languages</em> (like C or Java) that has the computer do the translation in one pass, and then only execute the program after the whole thing is converted to machine language.</p>
-<ul>
-<li>This means that Python is technically a little slower to execute commands than C or Java because it needs to both translate and execute at once, but not enough that we’ll notice.</li>
-</ul>
-<p>While it’s possible to execute Python instructions one at a time, it’s much more common to write down all of the instruction in a single <strong>script</strong> so that the computer can execute them all at once. Python scripts are saved as files with the <strong><code>.py</code></strong> extension, You can author Python scripts in any text editor (such as VS Code), but we’ll also write and run Python code in an interactive web application called Jupyter.</p>
-<div id="versions" class="section level3">
-<h3><span class="header-section-number">4.1.1</span> Versions</h3>
-<p>Python was first published by Dutch programmer <a href="https://en.wikipedia.org/wiki/Guido_van_Rossum">Guido Van Rossum</a> in 1991. Although the language is open-source (and so can be <a href="https://vimeo.com/1093745">contributed to</a> by anyone), Van Rossum still retains a lot of influence over where the language goes, and is known as Python’s “Benevolent Dictator for Life”.</p>
-<p>Version 2.0 of Python was released in 2000, and version 3.0 was released in 2008. However, unlike with many other programming languages that release new versions, Python 2 and Python 3 are <strong>not</strong> compatible with one another: Python 2 code usually won’t execute with Python 3 interpreter, and Python 3 code usually won’t execute with a Python 2 interpreter.</p>
-<p>Python 3 involved a major restructuring which included a number of “breaking” changes to core parts of the language. The most noticeable of these are that all text strings support <a href="https://en.wikipedia.org/wiki/Unicode">Unicode</a> (non-English characters), <code>print</code> is a function not a statement, and integers don’t use floor devision (these concepts are discussed in more detail below).</p>
-<p>In short, Python 3 is considered the “current” version, and Python 2 is considered the “legacy” version (and will not be supported beyond). However some external libraries refused or failed to update to Python 3. Thus in practice there are two incompatible versions of Python that are used in the world. See <a href="https://wiki.python.org/moin/Python2orPython3">Python2orPython3</a> for more details.</p>
-<ul>
-<li>In this book, we will be using <strong>Python 3</strong>, particularly as it fixes some issues that often trip up beginners, is supported by all major libraries in a more effective way, and will still be supported in the near future!</li>
-</ul>
-</div>
-</div>
-<div id="running-python-scripts" class="section level2">
-<h2><span class="header-section-number">4.2</span> Running Python Scripts</h2>
-<p>Python scripts (programs) are just a sequence of instructions, and there are a couple of different ways in which we can tell the computer to execute these instructions.</p>
-<div id="on-the-command-line" class="section level3">
-<h3><span class="header-section-number">4.2.1</span> On the Command Line</h3>
-<p>It is possible to issue Python instructions (run lines of code; called <strong>statements</strong>) one-by-one at the command-line by starting an <strong>interactive Python session</strong> within your terminal. This will allow you to type Python code directly into the terminal, and your computer will interpret and execute each line of code (if you just typed Python syntax directly into the terminal, your computer wouldn’t understand it).</p>
-<p>With Python installed, you can start an interactive Python session on a by running the <strong><code>python</code></strong> program (simply type the <code>python</code> command if you’ve installed it on the <code>PATH</code> via Anaconda).</p>
-<ul>
-<li>On Windows using the Git Bash shell, you may need to utilize <a href="https://github.com/rprichard/winpty">winpty</a> to connect the Bash shell to the Python output: see <a href="http://stackoverflow.com/questions/32597209/python-not-working-in-the-command-line-of-git-bash">here</a> for an example). On my machine, using <code>winpty python</code> works well.</li>
-</ul>
-<div class="alert alert-warning">
-<p>Note that if you haven’t installed Python via Anaconda, or have multiple versions installed, you may need to use the <code>python3</code> command to run a Python 3 session.</p>
-<p>On the iSchool lab machines, you can switch from Python 2 to Python 3 using the command:</p>
-<pre class="language-bash"><code><span class="token function">source</span> activate python3</code></pre>
-Which will “activate” the Python 3 environment installed by Anaconda.
-</div>
-<p>The <code>python</code> command will start the interactive session, providing some information about the version of Python being run:</p>
-<div class="figure">
-<img src="img/python-intro/python-interactive-session.png" alt="Interactive Python session" />
-<p class="caption">Interactive Python session</p>
-</div>
-<p>Once you’ve started running an interactive Python session, you can begin entering one line of code at a time at the prompt (<code>&gt;&gt;&gt;</code>). This is a nice way to experiment with the Python language or to quickly run and test some code.</p>
-<ul>
-<li>You can exit this session by typing the <code>quit()</code> command, or hitting <code>ctrl-z</code> (followed by Enter on Windows).</li>
-</ul>
-<p>It is more common though to run entire scripts (<code>.py</code> files) from the command-line by using the <code>python</code> command and specifying the script file you wish to execute:</p>
-<div class="figure">
-<img src="img/python-intro/python-terminal.png" alt="Run Python script from the command line" />
-<p class="caption">Run Python script from the command line</p>
-</div>
-<p>This will cause each line in the script to be run one at a time. This is the “normal” way of running Python programs: you write Python scripts using an editor such as VS Code, and then execute those scripts on the command-line to see them in action.</p>
-</div>
-<div id="jupyter-notebooks" class="section level3">
-<h3><span class="header-section-number">4.2.2</span> Jupyter Notebooks</h3>
-<p>Another popular and effective way of writing and running Python code is to utilize a <a href="http://jupyter.org/">Jupyter Notebook</a>. A Jupyter Notebook is a <strong>web appplications</strong> (that runs in your web browser) and provides an interactive platform for running Python code: you are able to write and execute Python code write in the browser, similar to an interactive session (but with the ability to write multiple lines of code).</p>
-<ul>
-<li>Jupter is a portmanteau of “Julia”, “Python” and “R”, which are the programming languages the application was designed to support. Each notebook runs on an individual <strong>kernel</strong> or language interpreter; you’ll want to be sure you’re running a Python 3 kernel for this course.</li>
-</ul>
-<p>Code is authored in individual “notebooks”, which are collections of <em>cells</em> (blocks of code or text). Cells can also include Markdown content, allowing notebooks to act as interactive documents with embedded, runnable code.</p>
-<p>The Jupyter program is part of the Anaconda package, and so should be installed along with Python. You can start Jupyter from the command line with:</p>
-<pre class="language-bash"><code>jupyter notebook</code></pre>
-<p>This will open up your web browser with an interface to create or open a notebook relative to the folder you started Jupyter from:</p>
-<div class="figure">
-<img src="http://jupyter-notebook.readthedocs.io/en/latest/_images/new-notebook.gif" alt="Opening notebook animation, from the official documentation" />
-<p class="caption">Opening notebook animation, from the official documentation</p>
-</div>
-<p>You can also open a particular notebook (which are saved as files with the <code>.ipynb</code> extension) by passing the notebook name as an argument:</p>
-<pre class="language-bash"><code>jupyter notebook my-notebook.ipynb</code></pre>
-<ul>
-<li>To stop running the Jupyter notebook server, hit <code>ctrl-c</code> in the terminal and follow the prompts.</li>
-</ul>
-<p>Jupyter notebooks are made up of a series of <em>cells</em>, each representing a set of code or text. Cells by default are used for Python code, but can also be set to use Markdown by selecting from the dropdown menu.</p>
-<p>You can type code directly into the cells, just as if you were typing into a text editor. In order to execute the code in a cell, press <strong><code>shift-enter</code></strong> or select <code>Cell &gt; Run Cell</code> from the menu. Any output from the cell will appear immediately below it. You can add new cells by hitting the “plus” button on the toolbar.</p>
-<ul>
-<li><strong>Pro-tip</strong>: There are lots of keyboard shortcuts available for working with cells. Click the keyboard icon on the toolbar to see a list of shortcuts.</li>
-</ul>
-</div>
-</div>
-<div id="comments" class="section level2">
-<h2><span class="header-section-number">4.3</span> Comments</h2>
-<p>Before discussing how to program with Python, we need to talk about a piece of syntax that lets you comment your code. In programming, <strong>comments</strong> are bits of text that are <em>not interpreted as computer instructions</em>—they aren’t code, they’re just notes about the code! Since computer code can be opaque and difficult to understand, we use comments to help write down the meaning and <em>purpose</em> of our code. While a computer is able to understand the code, comments are there to help <em>people</em> understand. This is particularly imporant when someone else will be looking at your work—whether that person is a collaborator, or is simply a future version of you (e.g., when you need to come back and fix something and so need to remember what you were even thinking). Comments should be clear, concise, and helpful—they should provide information that is not “obvious” from the code itself.</p>
-<p>In Python, we mark text as a comment by putting it after the pound/hashtag symbol (<strong><code>#</code></strong>). Everything from the <code>#</code> until the end of the line is a comment. We put descriptive comments <em>immediately above</em> the code it describes, but you can also put very short notes at the end of the line of code (preferably following two spaces):</p>
-<pre class="language-python"><code><span class="token comment"># Set how many bottles of beer are on the wall</span>
-bottles <span class="token operator">=</span> <span class="token number">99</span> <span class="token operator">-</span> <span class="token number">1</span>  <span class="token comment"># 98</span></code></pre>
-<p>(You may recognize this <code>#</code> syntax and commenting behavior from the command-line and git modules. That’s because the same syntax is used in a Bash shell!)</p>
-</div>
-<div id="variables" class="section level2">
-<h2><span class="header-section-number">4.4</span> Variables</h2>
-<p>Since computer programs involve working with lots of <em>information</em>, we need a way to store and refer to this information. We do this with <strong>variables</strong>. Variables are labels for information; in Python, you can think of them as “nametags” for data. After giving data a variable nametag, you can then refer to that data by its name.</p>
-<p>Variable names can contain any combination of letters, numbers, or underscores (<code>_</code>). Variables names must begin with a letter. Note that like everything in programming, variable names are case sensitive. It is best practice to make variable names descriptive and information about what data they contain. <code>a</code> is not a good variable name. <code>cups_of_coffee</code> is a good variable name. To comply with <a href="https://google.github.io/styleguide/pyguide.html#Naming">Google’s Style Guidelines</a> variables should be in “snake_case”: <strong>all lower-case letters, separated by underscores (<code>_</code>)</strong>.</p>
-<p>We call putting information in a variable <strong>assigning</strong> that value to the variable. We do this using the <em>assignment operator</em> <strong><code>=</code></strong>. For example:</p>
-<pre class="language-python"><code><span class="token comment"># Stores the number 7 into a variable called shoe.size</span>
-shoe_size <span class="token operator">=</span> <span class="token number">7</span></code></pre>
-<ul>
-<li><em>Notice:</em> the variable name goes on the left, the value goes on the right!</li>
-<li>It is good style to put white spaces around the <code>=</code> operator to keep it easy to read.</li>
-</ul>
-<p>You can see what value (data) is inside a variable by either typing that variable name as a line of code, or by using Python’s built-in <code>print()</code> function (more on functions later):</p>
-<pre class="language-python"><code><span class="token keyword">print</span><span class="token punctuation">(</span>shoe_size<span class="token punctuation">)</span>
-<span class="token comment">## 7</span></code></pre>
-<p>You can also use <strong>mathematical operators</strong> (e.g., <code>+</code>, <code>-</code>, <code>/</code>, <code>*</code>) when assigning values to variables. For example, you could create a variable that is the sum of two numbers as follows:</p>
-<pre class="language-python"><code>x <span class="token operator">=</span> <span class="token number">3</span> <span class="token operator">+</span> <span class="token number">4</span></code></pre>
-<ul>
-<li>A combination of variables, values, operators, or functions that the interpreter needs to <em>evaluate</em> is called an <strong>expression</strong>.</li>
-</ul>
-<p>Once a value (like a number) is assigned a variable—it is <em>in</em> a variable—you can use that variable in place of any other value. So all of the following are valid:</p>
-<pre class="language-python"><code>x <span class="token operator">=</span> <span class="token number">2</span>  <span class="token comment"># store 2 in x</span>
-y <span class="token operator">=</span> <span class="token number">9</span>  <span class="token comment"># store 9 in y</span>
-z <span class="token operator">=</span> x <span class="token operator">+</span> y  <span class="token comment"># store sum of x and y in z</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>z<span class="token punctuation">)</span>  <span class="token comment"># 11</span>
-z <span class="token operator">=</span> z <span class="token operator">+</span> <span class="token number">1</span>  <span class="token comment"># take z, add 1, and store result back in z</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>z<span class="token punctuation">)</span>  <span class="token comment"># 12</span></code></pre>
-<p><strong>Important</strong> despite using an equal sign (<code>=</code>), variable assignments <em>do not</em> specify equalities! Assigning one variable to another does not cause them to be “linked”; changing one variable will leave the other unchanged:</p>
-<pre class="language-python"><code>x <span class="token operator">=</span> <span class="token number">3</span>
-y <span class="token operator">=</span> <span class="token number">4</span>
-x <span class="token operator">=</span> y  <span class="token comment"># assign the value of y (4) to x</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span>  <span class="token comment"># 4</span>
-y <span class="token operator">=</span> <span class="token number">5</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span>  <span class="token comment"># 4;</span></code></pre>
-<p>Changing the value named <code>y</code> does not change the value named <code>y</code>, even if the value from <code>y</code> was put into the <code>x</code> variable at some point.</p>
-<ul>
-<li><em>Tip</em>: when reading or writing code, try to think “x is assigned 3” or “x gets the value 3”, rather than “x equals 3”.</li>
-</ul>
-<div id="data-types" class="section level3">
-<h3><span class="header-section-number">4.4.1</span> Data Types</h3>
-<p>In the example above, we stored <strong>numeric</strong> values in variables. Python is a <strong>dynamically typed language</strong>, which means that we <em>do not</em> need to explicitly state what type of information will be stored in each variable we create. The Python interpreter is intelligent enough to understand that if we have code <code>x = 7</code>, then <code>x</code> will contain a numeric value (and so we can do math upon it!)</p>
-<p>You can “look up” the type of a particular value by using the <code>type()</code> function:</p>
-<pre class="language-python"><code><span class="token builtin">type</span><span class="token punctuation">(</span><span class="token number">7</span><span class="token punctuation">)</span>  <span class="token comment"># integer</span>
-<span class="token comment">## &lt;class 'int'></span>
-
-<span class="token builtin">type</span><span class="token punctuation">(</span><span class="token string">"Hello"</span><span class="token punctuation">)</span>  <span class="token comment"># string</span>
-<span class="token comment">## &lt;class 'str'></span></code></pre>
-<ul>
-<li>Type is also referred to as <code>class</code> (i.e., “classification”). <strong>Classes</strong> are ways of structuring information and behavior in computer programs; we will discuss them in more detail later.</li>
-</ul>
-<p>There are a number of “basic types” for data in Python. The two most common are:</p>
-<ul>
-<li><p><a href="https://docs.python.org/3/library/stdtypes.html#typesnumeric"><strong>Numeric Types</strong></a>: Python has two data types used to represent numbers: <code>int</code> (integer) for <em>whole numbers</em> like <code>7</code> and <code>float</code> for decimals like <code>3.14</code> (because the decimal is “floating” in the middle).</p>
-<p>We can use <strong>mathematical operators</strong> on numeric data (such as <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, etc.). There are also numerous functions that work on numeric data (such as for calculating sums or averages). You can mix and match ints and floats in mathematical expressions; the result will be a float if either of the operands are floats. Division (<code>/</code>) always produces a float; use the “integer division operator” <code>//</code> to force the result to be a whole number (rounded down).</p></li>
-<li><p><a href="https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str"><strong>Strings</strong></a>: Python uses the <code>str</code> (string) type to store textual data. <code>str</code> values contain <em>strings</em> of characters, which are the things you type with a keyboard (including digits, spaces, punctuation, and even line breaks). You specify that some characters are a string by surrounding them in either single quotes (<strong><code>'</code></strong>) or double quotes (<strong><code>&quot;</code></strong>).</p>
-<pre class="language-python"><code><span class="token comment"># Create a string variable `famous_poet` with the value "Bill Shakespeare"</span>
-famous_poet <span class="token operator">=</span> <span class="token string">"Bill Shakespeare"</span></code></pre>
-<p>Note that string literals (the text in quotes) are <em>values</em> just like numeric literals (numbers), so can be assigned to variables!</p>
-<ul>
-<li><p>Using “triple-quotes” will allow you to specify a multi-line string:</p>
-<pre class="language-python"><code>message <span class="token operator">=</span> <span class="token triple-quoted-string string">"""Dear Professor,
-             My dog ate my homework.
-             Thank you,
-                A. Student
-          """</span></code></pre></li>
-</ul>
-<p>Strings support the <strong><code>+</code></strong> operator, which performs <strong>concatenation</strong> (combining two strings together). For example:</p>
-<pre class="language-python"><code><span class="token comment"># concatenate 3 strings. The middle string is a space character</span>
-full_name <span class="token operator">=</span> <span class="token string">"Bill"</span> <span class="token operator">+</span> <span class="token string">" "</span> <span class="token operator">+</span> <span class="token string">"Shakespeare"</span></code></pre>
-<p>The operands must both be strings. Also notice that concatenating strings doesn’t add any additional characters such as spaces between words; you need to handle such punctuation yourself!</p>
-<p>There are many built-in functions for working with strings, and in fact strings support a <a href="https://docs.python.org/3/library/stdtypes.html#string-methods">variety of functions</a> you can call <em>on</em> them. See <a href="functions.html#functions">Chapter 6</a> for details.</p></li>
-</ul>
-<p>There are many other data types as well; more will be introduced throughout the remaining modules.</p>
-<p>_Helpful <a href="tip:_" class="uri">tip:_</a> because variables can any type of data, it is often useful to name variables based on their data type. This helps keep the purpose of code clear in your mind, and makes it easier to read and understand what is happening:</p>
-<pre class="language-python"><code>password_num <span class="token operator">=</span> <span class="token number">12345</span>  <span class="token comment"># variable name indicates a number, so can do math on it</span>
-password_str <span class="token operator">=</span> <span class="token string">"12345"</span>  <span class="token comment"># variable name indicates a string, so can print it</span></code></pre>
-<p>It is possible to convert from one type to another by using a <strong>type converter function</strong>, which is usually named after the type you wish to convert <em>to</em>:</p>
-<pre class="language-python"><code><span class="token builtin">int</span><span class="token punctuation">(</span><span class="token number">3.14</span><span class="token punctuation">)</span>   <span class="token comment"># 3</span>
-<span class="token builtin">int</span><span class="token punctuation">(</span><span class="token number">5.98</span><span class="token punctuation">)</span>   <span class="token comment"># 5 (takes the floor value)</span>
-<span class="token builtin">float</span><span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">)</span>    <span class="token comment"># 6.0</span>
-<span class="token builtin">str</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span>      <span class="token comment"># "2"</span>
-<span class="token builtin">int</span><span class="token punctuation">(</span><span class="token string">"2"</span><span class="token punctuation">)</span>    <span class="token comment"># 2</span>
-<span class="token builtin">int</span><span class="token punctuation">(</span><span class="token string">"two"</span><span class="token punctuation">)</span>  <span class="token comment"># ValueError!</span></code></pre>
-<p>This is particularly useful when you wish to include a number in a string:</p>
-<pre class="language-python"><code>favorite_number <span class="token operator">=</span> <span class="token number">12</span>
-message <span class="token operator">=</span> <span class="token string">"My favorite number is "</span><span class="token operator">+</span><span class="token builtin">str</span><span class="token punctuation">(</span>favorite_number<span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>message<span class="token punctuation">)</span>  <span class="token comment"># My favorite number is 12</span></code></pre>
-</div>
-</div>
-<div id="getting-help" class="section level2">
-<h2><span class="header-section-number">4.5</span> Getting Help</h2>
-<p>As with any programming language, when working in Python you will inevitably run into problems, confusing situations, or just general questions. Here are a few ways to start getting help.</p>
+<p>This chapter will discuss the fundamentals of object-oriented programming and how to specify <strong>classes</strong> (custom data types) that are used to define and create <strong>objects</strong>.</p>
+<div id="why-objects" class="section level2">
+<h2><span class="header-section-number">15.1</span> Why Objects?</h2>
+<p>The whole point of using object-oriented programming is to perform <strong>abstraction</strong>: we want to be able to <em>encapsulate</em> (“group”) together parts of our code so we can talk about it at a higher level. So rather than needing to think about the program purely in terms of <code>integers</code>, <code>strings</code>, and <code>lists</code>, we can think about it in terms of <code>Dogs</code>, <code>Cats</code> or <code>Persons</code>.</p>
+<p>As an example, consider how you might represent information about a <em>rectangle</em> (e.g., in a drawing program). You could use individual variables to keep track of the rectangle’s size an position:</p>
+<pre class="language-python"><code>rect_x <span class="token operator">=</span> <span class="token number">10</span>
+rect_y <span class="token operator">=</span> <span class="token number">20</span>
+rect_width <span class="token operator">=</span> <span class="token number">50</span>
+rect_height <span class="token operator">=</span> <span class="token number">60</span></code></pre>
+<p>Of course, that’s a lot of variables to remember (and chances to make typos in the names). So you might instead think about encapsulating that data into a tuple or dictionary:</p>
+<pre class="language-python"><code>rect <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">50</span><span class="token punctuation">,</span> <span class="token number">60</span><span class="token punctuation">)</span>  <span class="token comment"># as a tuple</span>
+rect <span class="token operator">=</span> <span class="token punctuation">{</span>x<span class="token punctuation">:</span><span class="token number">10</span><span class="token punctuation">,</span> y<span class="token punctuation">:</span><span class="token number">20</span><span class="token punctuation">,</span> width<span class="token punctuation">:</span><span class="token number">50</span><span class="token punctuation">,</span> height<span class="token punctuation">:</span><span class="token number">60</span><span class="token punctuation">}</span>  <span class="token comment"># as a dictionary (literal)</span>
+rect <span class="token operator">=</span> <span class="token builtin">dict</span><span class="token punctuation">(</span>x<span class="token operator">=</span><span class="token number">10</span><span class="token punctuation">,</span> y<span class="token operator">=</span><span class="token number">20</span><span class="token punctuation">,</span> width<span class="token operator">=</span><span class="token number">50</span><span class="token punctuation">,</span> height<span class="token operator">=</span><span class="token number">60</span><span class="token punctuation">)</span>  <span class="token comment"># as a dictionary (using function)</span></code></pre>
+<p>This works well, until you want to have some way of associating <em>functionality</em> with that data—that is, you want to be able to tell the <code>rect</code> variable to do something (e.g., “calculate your area!” “draw yourself!”)</p>
+<p>A <strong>Class</strong> (<em>class</em>ification) acts as <em>template/recipe/blueprint</em> for individual objects. It defines what data (attributes) and behaviors (methods) they have. An object is an “instance of” (example of) a class: we <strong>instantiate</strong> an object from a class. This lets you easily create multiple objects, each of which can track and modify its own data.</p>
+<p>In particular, classes <em>encapsulate</em> two things:</p>
 <ol style="list-style-type: decimal">
-<li><p><strong>Read the error messages</strong>: If there is an issue with the way you have written or executed your code, Python will often print out an error message. Do you best to decipher the message (read it carefully, and think about what is meant by each word in the message), or you can put it directly into Google to get more information. You’ll soon get the hang of interpreting these messages (and how to resolve common ones) if you don’t panic when one appears. <em>Remember: making mistakes is normal!</em></p></li>
-<li><p><strong>Google</strong>: When you’re trying to figure out how to do something, it should be no surprise that Google is often the best resource. Try searching for queries like <code>&quot;how to &lt;DO THING&gt; in Python&quot;</code>. More frequently than not, your question will lead you to a Q/A forum called StackOverflow (see below), which is a great place to find potential answers.</p></li>
-<li><p><strong>StackOverflow</strong>: StackOverflow is an amazing Q/A forum for asking/answering programming questions. Most basic questions have already been asked/answered here. However, don’t hesitate to post your own questions to StackOverflow. Be sure to hone in on the specific question you’re trying to answer, and provide error messages and sample code as appropriate. I often find that, by the time I can articulate the question enough to post it, I’ve figured out my problem anyway.</p>
-<ul>
-<li>There is a classical method of debugging called <a href="https://en.wikipedia.org/wiki/Rubber_duck_debugging">rubber duck debugging</a>, which involves simply trying to explain your code/problem to an inanimate object (talking to pets works too). You’ll usually be able to fix the problem if you just step back and think about how you would explain it to someone else!</li>
-</ul></li>
-<li><p><strong>Documentation</strong>: Python’s <a href="https://docs.python.org/3/">documentation</a> is pretty good: very thorough and usually contains helpful examples. The only problem is that it can occasionally be too detailed for beginners, and can sometimes be hard to navigate (where to find information is not immediately obvious in some situations). <em>Searching</em> the documentation (potentially through Google) is a good way to narrow down what you’re looking for.</p></li>
+<li><p>The <em>data</em> (variables) that describe the thing. These are known as <strong>attributes</strong>, <strong>fields</strong> or <strong>instance variables</strong> (variables that below to a particular <em>instance</em>, or example, of the class). For example, we might talk about a <code>Person</code> object’s <code>name</code> (a String), <code>age</code> (a Number), and Halloween haul (an array of candy).</p></li>
+<li><p>The <em>behaviors</em> (functions) that operate on, utilize, or change that data. These are known as <em>methods</em> (technically <em>instance methods</em>, since they operate on a particular instance of the class). For example, a <code>Person</code> may be able to <code>sayHello()</code>, <code>trickOrTreat()</code>, or <code>eatCandy()</code>.</p></li>
 </ol>
 </div>
-<div id="resources-3" class="section level2 unnumbered">
-<h2>Resources</h2>
-<p>Python is an incredibly popular programming language and is especially accessible to new programmers. As such, there are <strong>a lot</strong> of resources available for learning how to program in Python. While this book will cover most of the details you need, below are a number of other effective resources below in case you need further help. <em>Note that you’ll need to reference Python 3 materials</em>.</p>
-<div class="list-condensed">
-<ul>
-<li><a href="http://greenteapress.com/wp/think-python-2e/">Think Python (Downey)</a>: a free, friendly introductory textbook for learning Python. You should definitely read <a href="http://greenteapress.com/thinkpython2/html/thinkpython2002.html"><strong>Chapter 1</strong></a>, which is a great overview of programming in general.</li>
-<li><a href="http://www.pythonlearn.com/book.php">Python for Everybody (Severance)</a>: a remixed version of the above book, with a focus on Information Sciences. See in particular the <a href="https://books.trinket.io/pfe/index.html">interactive version</a>. Chapter 1 of this book is also a very good read.</li>
-<li><a href="https://automatetheboringstuff.com/">Automate the Boring Stuff with Python (Sweigart)</a>: another good free textbook</li>
-<li><a href="https://wiki.python.org/moin/BeginnersGuide/NonProgrammers">Python for Non-Programmers Index</a>: an extensive list of resources and materials for learning to program with Python. The textbooks and interactive courses are all good options.</li>
-<li><a href="https://docs.python.org/3/">Official Python Documentation</a></li>
-<li><a href="https://google.github.io/styleguide/pyguide.html">Google’s Python Style Guide</a></li>
-</ul>
+<div id="defining-classes" class="section level2">
+<h2><span class="header-section-number">15.2</span> Defining Classes</h2>
+<!-- `class` keyword -->
+<div id="attributes" class="section level3">
+<h3><span class="header-section-number">15.2.1</span> Attributes</h3>
 </div>
-<p>Specific resources for the material in this module:</p>
+<div id="methods" class="section level3">
+<h3><span class="header-section-number">15.2.2</span> Methods</h3>
+</div>
+<div id="constructors" class="section level3">
+<h3><span class="header-section-number">15.2.3</span> Constructors</h3>
+</div>
+<div id="string-representations" class="section level3">
+<h3><span class="header-section-number">15.2.4</span> String Representations</h3>
+</div>
+</div>
+<div id="resources-14" class="section level2 unnumbered">
+<h2>Resources</h2>
 <div class="list-condensed">
 <ul>
-<li><a href="https://automatetheboringstuff.com/chapter1/">Python Basics (Sweigart)</a></li>
-<li><a href="http://openbookproject.net/thinkcs/python/english3e/variables_expressions_statements.html">Variables, expressions, statements (Downey)</a></li>
-<li><a href="http://jupyter-notebook.readthedocs.io/en/latest/notebook.html">Jupyter Notebook Documentation</a></li>
-<li><a href="https://www.datacamp.com/community/tutorials/tutorial-jupyter-notebook#gs.MFPIJdI">Jupyter Notebook Tutorial (Data Camp)</a></li>
+<li><a href="http://openbookproject.net/thinkcs/python/english3e/classes_and_objects_I.html">Classes and Objects - The Basics (Downey)</a></li>
+<li><a href="http://openbookproject.net/thinkcs/python/english3e/classes_and_objects_II.html">Classes and Objects - Digging a little deeper (Downey)</a></li>
+<li><a href="http://openbookproject.net/thinkcs/python/english3e/even_more_oop.html">Even more OOP (Downey)</a></li>
 </ul>
 </div>
 
@@ -572,8 +413,8 @@ message <span class="token operator">=</span> <span class="token string">"My fav
           </div>
         </div>
       </div>
-<a href="git-basics.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="functions.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="git-collaboration.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="pandas.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -603,7 +444,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/infx511/book/edit/master/python-intro.Rmd",
+"link": "https://github.com/infx511/book/edit/master/oop.Rmd",
 "text": "Edit"
 },
 "download": ["intro-to-programming-for-data-science-visualization.pdf", "intro-to-programming-for-data-science-visualization.epub"],
