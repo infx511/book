@@ -6,6 +6,9 @@ And that is why they should be using **git**.
 
 This chapter will introduce you to `git` command-line program and the GitHub cloud storage service, two wonderful tools that track changes to your code (`git`) and facilitate collaboration (GitHub). Git and GitHub are the industry standards for the family of tasks known as **version control**. Being able to manage changes to your code and share it with others is one of the most important technical skills a programmer can learn, and is the focus of this (lengthy) chapter.
 
+<p class="alert alert-success">For an updated and expanded version of this content, see Chapter 3 of [_Programming Skills for Data Science_](https://programming-for-data-science.github.io/). The text is available online through [Safari Online](https://www.safaribooksonline.com/library/view/-/9780135159071/?ar), free for students with a UW NetID.</p>
+
+
 ## What is this _git_ thing anyway?
 [![xkcd comic 1597](img/git-basics/xkcd1597.png "xkcd comic 1597")](https://xkcd.com/1597/)
 

@@ -6,6 +6,10 @@ This chapter will cover how to work with **branches** with git and GitHub, inclu
 <!-- It will also discuss how to use branches to support different _collaborative workflows_, allowing multiple people to work on code in the same repository. -->
 
 
+<p class="alert alert-success">For an updated and expanded version of this content, see Chapter 20 of [_Programming Skills for Data Science_](https://programming-for-data-science.github.io/). The text is available online through [Safari Online](https://www.safaribooksonline.com/library/view/-/9780135159071/?ar), free for students with a UW NetID.</p>
+
+
+
 ## Git Branches
 So far, you've been using git to create a _linear sequence_ of commits: they are all in a line, one after another).
 

@@ -2,6 +2,8 @@
 
 Being able to merge between branches allows you to work **collaboratively**, with multiple people making changes to the same repo and sharing those changes through GitHub. There are a variety of approaches (or **workflows**) that can be used to facilitate collaboration and make sure that people are effectively able to share code. This section describes a variety of different workflows; however we suggest the branch-based workflow called the [**Feature Branch Workflow**](https://www.atlassian.com/git/tutorials/comparing-workflows#feature-branch-workflow) for this course.
 
+<p class="alert alert-success">For an updated and expanded version of this content, see Chapter 20 of [_Programming Skills for Data Science_](https://programming-for-data-science.github.io/). The text is available online through [Safari Online](https://www.safaribooksonline.com/library/view/-/9780135159071/?ar), free for students with a UW NetID.</p>
+
 ## Centralized Workflow
 In order to understand the Feature Branch Workflow, it's important to first understand how to collaborate on a centralized repository. The Feature Branch Workflow uses a **centralized repository** stored on GitHub&mdash;that is, every single member of the team will `push` and `pull` to a single GitHub repo. However, since each repository needs to be created under a particular account, this means that a ___single member___ of the team will need to create the repo (such as by accepting a GitHub Classroom assignment, or by clicking the _"New"_ button on their "Repositories" tab on the GitHub web portal).
 

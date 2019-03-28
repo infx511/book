@@ -8,6 +8,8 @@ The command line is not as friendly or intuitive as a graphical interface: it's 
 
 This chapter will give you a brief introduction to basic tasks using the command line: enough to get you comfortable navigating the interface and able to interpret commands.
 
+<p class="alert alert-success">For an updated and expanded version of this content, see Chapter 2 of [_Programming Skills for Data Science_](https://programming-for-data-science.github.io/). The text is available online through [Safari Online](https://www.safaribooksonline.com/library/view/-/9780135159071/?ar), free for students with a UW NetID.</p>
+
 
 ## Accessing the Command line
 In order to use the command line, you will need to open a **command shell** (a.k.a. a _command prompt_). This is a program that provides the interface to type commands into. You should have installed a command shell (hereafter "the terminal") as part of [setting up your machine](#setup-machine).
