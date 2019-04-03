@@ -5,11 +5,11 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Introduction to Programming</title>
+  <title>Chapter 1 Setting Up Your Machine | Introduction to Programming</title>
   <meta name="description" content="The course reader for INFX 511: Introduction to Programming for Data Science and Visualization.">
-  <meta name="generator" content="bookdown 0.5 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
-  <meta property="og:title" content="Introduction to Programming" />
+  <meta property="og:title" content="Chapter 1 Setting Up Your Machine | Introduction to Programming" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="https://infx511.github.io/" />
   
@@ -17,7 +17,7 @@
   <meta name="github-repo" content="infx511/book" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Introduction to Programming" />
+  <meta name="twitter:title" content="Chapter 1 Setting Up Your Machine | Introduction to Programming" />
   
   <meta name="twitter:description" content="The course reader for INFX 511: Introduction to Programming for Data Science and Visualization." />
   
@@ -25,7 +25,7 @@
 <meta name="author" content="Joel Ross">
 
 
-<meta name="date" content="2019-03-28">
+<meta name="date" content="2019-04-03">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -36,6 +36,7 @@
 <link rel="next" href="command-line.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
@@ -232,7 +233,7 @@
 <li class="chapter" data-level="" data-path="accessing-web-apis.html"><a href="accessing-web-apis.html#resources-11"><i class="fa fa-check"></i>Resources</a></li>
 </ul></li>
 <li class="chapter" data-level="13" data-path="git-branches.html"><a href="git-branches.html"><i class="fa fa-check"></i><b>13</b> Git Branches</a><ul>
-<li class="chapter" data-level="13.1" data-path="git-branches.html"><a href="git-branches.html#git-branches"><i class="fa fa-check"></i><b>13.1</b> Git Branches</a></li>
+<li class="chapter" data-level="13.1" data-path="git-branches.html"><a href="git-branches.html#git-branches-1"><i class="fa fa-check"></i><b>13.1</b> Git Branches</a></li>
 <li class="chapter" data-level="13.2" data-path="git-branches.html"><a href="git-branches.html#merging"><i class="fa fa-check"></i><b>13.2</b> Merging</a><ul>
 <li class="chapter" data-level="13.2.1" data-path="git-branches.html"><a href="git-branches.html#merge-conflicts"><i class="fa fa-check"></i><b>13.2.1</b> Merge Conflicts</a></li>
 </ul></li>
@@ -439,7 +440,7 @@ Programming involves working with many different file types, each detailed by th
 <p>In order to program with Python, you will need to install the <strong><em>Python Interpreter</em></strong> on your machine. This is a piece of software that is able to “read” code written in Python and use that code to control your computer, thereby “programming” it.</p>
 <div id="anaconda" class="section level3">
 <h3><span class="header-section-number">1.4.1</span> Anaconda</h3>
-<p>There are a number of ways to get Python installed on your machine: in fact, you may have a version (probably Python 2) installed on your computer already! However, the recommended approach for programming for data science is to install <a href="https://www.continuum.io/downloads"><strong>Anaconda</strong></a>. Anaconda is a pre-packaged bundle of common Python tools and packages that are commonly used in data science—many of which we will be utilizing (including <a href="http://jupyter.org/">Jupyter</a> for running interactive “notebooks”, and <a href="http://pandas.pydata.org/">pandas</a> for large-scale data work). And the best part: Anaconda makes it easy to get all the pieces installed and ready to use!</p>
+<p>There are a number of ways to get Python installed on your machine: in fact, you may have a version (probably Python 2) installed on your computer already! However, the recommended approach for programming for data science is to install <a href="https://www.anaconda.com/distribution/"><strong>Anaconda</strong></a>. Anaconda is a pre-packaged bundle of common Python tools and packages that are commonly used in data science—many of which we will be utilizing (including <a href="http://jupyter.org/">Jupyter</a> for running interactive “notebooks”, and <a href="http://pandas.pydata.org/">pandas</a> for large-scale data work). And the best part: Anaconda makes it easy to get all the pieces installed and ready to use!</p>
 <p>To install Anaconda (and Python along with it), simply download the <strong>Python 3.6</strong> installer, run the executable, and follow the instructions. This should install Python and all the required packages.</p>
 <ul>
 <li><p>On Windows, make sure that you select the option to “Add Anaconda to my PATH environment variable”. This will add a link to to Python that can be found by the command line (it will be on the “path” to applications), and will ensure that you can run Python code from within Git Bash.</p>
@@ -448,7 +449,7 @@ Programming involves working with many different file types, each detailed by th
 <p class="caption">Select to add Anaconda to the PATH variable.</p>
 </div></li>
 <li><p>You can confirm that everything is set up correctly by opening the <em>Command Shell</em> you installed above and typing <code>python --version</code>. You should see text that looks something like:</p>
-<pre><code>Python 3.6.1 :: Anaconda 4.3.1 (x86_64)</code></pre>
+<pre><code>Python 3.7.0 :: Anaconda 4.3.1 (x86_64)</code></pre>
 <p>confirming that Python is installed and available.</p></li>
 </ul>
 </div>
@@ -464,7 +465,7 @@ Programming involves working with many different file types, each detailed by th
 <li>optional: <a href="https://msdn.microsoft.com/en-us/commandline/wsl/install_guide">Bash on Windows</a></li>
 </ul></li>
 <li><a href="https://code.visualstudio.com/">Visual Studio Code</a></li>
-<li><a href="https://www.continuum.io/downloads">Python (Anaconda)</a></li>
+<li><a href="https://www.anaconda.com/distribution/">Python (Anaconda)</a></li>
 </ul>
 </div>
 
@@ -494,8 +495,9 @@ gitbook.start({
 "facebook": false,
 "twitter": false,
 "google": false,
+"linkedin": false,
 "weibo": false,
-"instapper": false,
+"instapaper": false,
 "vk": false,
 "all": ["github", "facebook", "twitter", "google"]
 },
@@ -507,6 +509,10 @@ gitbook.start({
 "edit": {
 "link": "https://github.com/infx511/book/edit/master/setup.Rmd",
 "text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
 },
 "download": ["intro-to-programming-for-data-science-visualization.pdf", "intro-to-programming-for-data-science-visualization.epub"],
 "toc": {

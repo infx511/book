@@ -5,11 +5,11 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Introduction to Programming</title>
+  <title>A Markdown | Introduction to Programming</title>
   <meta name="description" content="The course reader for INFX 511: Introduction to Programming for Data Science and Visualization.">
-  <meta name="generator" content="bookdown 0.5 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
-  <meta property="og:title" content="Introduction to Programming" />
+  <meta property="og:title" content="A Markdown | Introduction to Programming" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="https://infx511.github.io/" />
   
@@ -17,7 +17,7 @@
   <meta name="github-repo" content="infx511/book" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Introduction to Programming" />
+  <meta name="twitter:title" content="A Markdown | Introduction to Programming" />
   
   <meta name="twitter:description" content="The course reader for INFX 511: Introduction to Programming for Data Science and Visualization." />
   
@@ -25,7 +25,7 @@
 <meta name="author" content="Joel Ross">
 
 
-<meta name="date" content="2019-03-28">
+<meta name="date" content="2019-04-03">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -36,6 +36,7 @@
 
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
@@ -232,7 +233,7 @@
 <li class="chapter" data-level="" data-path="accessing-web-apis.html"><a href="accessing-web-apis.html#resources-11"><i class="fa fa-check"></i>Resources</a></li>
 </ul></li>
 <li class="chapter" data-level="13" data-path="git-branches.html"><a href="git-branches.html"><i class="fa fa-check"></i><b>13</b> Git Branches</a><ul>
-<li class="chapter" data-level="13.1" data-path="git-branches.html"><a href="git-branches.html#git-branches"><i class="fa fa-check"></i><b>13.1</b> Git Branches</a></li>
+<li class="chapter" data-level="13.1" data-path="git-branches.html"><a href="git-branches.html#git-branches-1"><i class="fa fa-check"></i><b>13.1</b> Git Branches</a></li>
 <li class="chapter" data-level="13.2" data-path="git-branches.html"><a href="git-branches.html#merging"><i class="fa fa-check"></i><b>13.2</b> Merging</a><ul>
 <li class="chapter" data-level="13.2.1" data-path="git-branches.html"><a href="git-branches.html#merge-conflicts"><i class="fa fa-check"></i><b>13.2.1</b> Merge Conflicts</a></li>
 </ul></li>
@@ -367,6 +368,10 @@ For an updated and expanded version of this content, see Chapter 4 of <a href="h
 </div>
 <p>There are a few different ways you can format text:</p>
 <table>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th align="left">Syntax</th>
@@ -384,11 +389,7 @@ For an updated and expanded version of this content, see Chapter 4 of <a href="h
 </tr>
 <tr class="odd">
 <td align="left"><code>`text`</code></td>
-<td align="left">inline <code>code</code> with backticks (<code>`</code>)</td>
-</tr>
-<tr class="even">
-<td align="left"><code>~~text~~</code></td>
-<td align="left"><del>strike-through</del> using tildes (<code>~</code>)</td>
+<td align="left">inline <code>code</code> with backticks (<code></code> <code>) | |</code><del>text</del><code>| ~~strike-through~~ using tildes (</code>~`)</td>
 </tr>
 </tbody>
 </table>
@@ -488,8 +489,9 @@ gitbook.start({
 "facebook": false,
 "twitter": false,
 "google": false,
+"linkedin": false,
 "weibo": false,
-"instapper": false,
+"instapaper": false,
 "vk": false,
 "all": ["github", "facebook", "twitter", "google"]
 },
@@ -501,6 +503,10 @@ gitbook.start({
 "edit": {
 "link": "https://github.com/infx511/book/edit/master/markdown.Rmd",
 "text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
 },
 "download": ["intro-to-programming-for-data-science-visualization.pdf", "intro-to-programming-for-data-science-visualization.epub"],
 "toc": {

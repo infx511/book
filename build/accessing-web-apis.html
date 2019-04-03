@@ -5,11 +5,11 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Introduction to Programming</title>
+  <title>Chapter 12 Accessing Web APIs | Introduction to Programming</title>
   <meta name="description" content="The course reader for INFX 511: Introduction to Programming for Data Science and Visualization.">
-  <meta name="generator" content="bookdown 0.5 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
-  <meta property="og:title" content="Introduction to Programming" />
+  <meta property="og:title" content="Chapter 12 Accessing Web APIs | Introduction to Programming" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="https://infx511.github.io/" />
   
@@ -17,7 +17,7 @@
   <meta name="github-repo" content="infx511/book" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Introduction to Programming" />
+  <meta name="twitter:title" content="Chapter 12 Accessing Web APIs | Introduction to Programming" />
   
   <meta name="twitter:description" content="The course reader for INFX 511: Introduction to Programming for Data Science and Visualization." />
   
@@ -25,7 +25,7 @@
 <meta name="author" content="Joel Ross">
 
 
-<meta name="date" content="2019-03-28">
+<meta name="date" content="2019-04-03">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -36,6 +36,7 @@
 <link rel="next" href="git-branches.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
@@ -232,7 +233,7 @@
 <li class="chapter" data-level="" data-path="accessing-web-apis.html"><a href="accessing-web-apis.html#resources-11"><i class="fa fa-check"></i>Resources</a></li>
 </ul></li>
 <li class="chapter" data-level="13" data-path="git-branches.html"><a href="git-branches.html"><i class="fa fa-check"></i><b>13</b> Git Branches</a><ul>
-<li class="chapter" data-level="13.1" data-path="git-branches.html"><a href="git-branches.html#git-branches"><i class="fa fa-check"></i><b>13.1</b> Git Branches</a></li>
+<li class="chapter" data-level="13.1" data-path="git-branches.html"><a href="git-branches.html#git-branches-1"><i class="fa fa-check"></i><b>13.1</b> Git Branches</a></li>
 <li class="chapter" data-level="13.2" data-path="git-branches.html"><a href="git-branches.html#merging"><i class="fa fa-check"></i><b>13.2</b> Merging</a><ul>
 <li class="chapter" data-level="13.2.1" data-path="git-branches.html"><a href="git-branches.html#merge-conflicts"><i class="fa fa-check"></i><b>13.2.1</b> Merge Conflicts</a></li>
 </ul></li>
@@ -354,7 +355,8 @@
 <p>You’ve used Python to load data from external files (either text files or locally-saved <code>.csv</code> files), but it is also possible to programmatically download data directly from web sites on the internet. This allows scripts to always work with the latest data available, performing analysis on data that may be changing rapidly (such as from social networks or other live events). Web services may make their data easily accessible to computer programs like Python scripts by offering an <strong>Application Programming Interface (API)</strong>. A web service’s API specifies <em>where</em> and <em>how</em> particular data may be accessed, and many web services follow a particular style known as <em>Representational State Transfer (REST)</em>. This chapter will cover how to access and work with data from these <em>RESTful APIs</em>.</p>
 <div id="web-apis" class="section level2">
 <h2><span class="header-section-number">12.1</span> Web APIs</h2>
-<p>An <strong>interface</strong> is the point at which two different systems meet and <em>communicate</em>: exchanging informations and instructions. An <strong>Application Programming Interface (API)</strong> thus represents a way of communicating with a computer application by writing a computer program (a set of formal instructions understandable by a machine). APIs commonly take the form of <strong>functions</strong> that can be called to give instructions to programs—the set of functions provided by a module like <code>math</code> or <code>turtle</code> make up the API for that module. While most APIs provide an interface for utilizing <em>functionality</em>, other APIs provide an interface for accessing <em>data</em>. One of the most common sources of these data apis are <strong>web services</strong>: websites that offer an interface for accessing their data.</p>
+<p>An <strong>interface</strong> is the point at which two different systems meet and <em>communicate</em>: exchanging informations and instructions. An <strong>Application Programming Interface (API)</strong> thus represents a way of communicating with a computer application by writing a computer program (a set of formal instructions understandable by a machine). APIs commonly take the form of <strong>functions</strong> that can be called to give instructions to programs—the set of functions provided by a module like <code>math</code> or <code>turtle</code> make up the API for that module.
+While most APIs provide an interface for utilizing <em>functionality</em>, other APIs provide an interface for accessing <em>data</em>. One of the most common sources of these data apis are <strong>web services</strong>: websites that offer an interface for accessing their data.</p>
 <ul>
 <li>(Technically the interface is just the function <strong>signature</strong> which says how you <em>use</em> the function: what name it has, what arguments it takes, and what value it returns. The actual module is an <em>implementation</em> of this interface).</li>
 </ul>
@@ -390,7 +392,8 @@
 <p>Note that most resources include multiple subresource endpoints. For example, you can access information about a specific user at the endpoint <code>/users/:username</code>—the colon <strong><code>:</code></strong> indicates that the subresource name is a <em>variable</em>—you can replace that word in the endpoint with whatever string you want. Thus if you were interested in the GitHub user <code>joelwross</code>, you would access the <code>/users/joelwross</code> endpoint.</p>
 <p>Subresources may have further subresources (which may or may not have variable names). The endpoint <code>/orgs/:org/repos</code> refers to the list of repositories belonging to an organization.</p>
 <div class="alert alert-default">
-<p>Variable names in resources can also be written inside of curly braces <code>{}</code>; for example, <code>/orgs/{org}/repos</code>. Neither the colon nor the braces is programming language syntax, just common conventions used to communicate endpoints.</p>
+Variable names in resources can also be written inside of curly braces <code>{}</code>; for example, <code>/orgs/{org}/repos</code>. Neither the colon nor the braces is programming language syntax, just common conventions used to communicate endpoints.<br />
+
 </div></li>
 </ul>
 <p>The <strong>endpoint</strong> is appended to the end of the <strong>base URI</strong>, so you could access a GitHub user by combining the <strong>base URI</strong> (<code>https://api.github.com</code>) and <strong>endpoint</strong> (<code>/users/joelwross</code>) into a single string: <code>https://api.github.com/users/joelwross</code>. That URL will return a data structure of information about the GitHub user, which you can request from a Python program or simply view in your web-browser. Thus you can equivalently talk about accessing a particular <strong>resource</strong> and sending a request to a particular <strong>endpoint</strong>.</p>
@@ -404,7 +407,8 @@
 <h4><span class="header-section-number">12.2.1.2</span> Access Tokens and API Keys</h4>
 <p>Many web services require you to register with them in order to send them requests. This allows them to limit access to the data, as well as to keep track of who is asking for what data (usually so that if someone starts “spamming” the service, they can be blocked).</p>
 <p>To facilitate this tracking, many services provide <strong>Access Tokens</strong> (also called <strong>API Keys</strong>). These are unique strings of letters and numbers that identify a particular developer (like a secret password that only works for you). Web services will require you to include your <em>access token</em> as a query parameter in the request; the exact name of the parameter varies, but it often looks like <code>access_token</code> or <code>api_key</code>. When exploring a web service, keep an eye out for whether they require such tokens.</p>
-<p><em>Access tokens</em> act a lot like passwords; you will want to keep them secret and not share them with others. This means that you <strong>should not include them in your committed files</strong>, so that the passwords don’t get pushed to GitHub and shared with the world. The best way to do this in Python is to create a separate script file in your repo (e.g., <code>apikeys.py</code>) which includes exactly one line: assigning the key to a variable:</p>
+<p><em>Access tokens</em> act a lot like passwords; you will want to keep them secret and not share them with others. This means that you <strong>should not include them in your committed files</strong>, so that the passwords don’t get pushed to GitHub and shared with the world.
+The best way to do this in Python is to create a separate script file in your repo (e.g., <code>apikeys.py</code>) which includes exactly one line: assigning the key to a variable:</p>
 <pre class="language-python"><code><span class="token comment">## in `apikeys.py`</span>
 my_api_key <span class="token operator">=</span> <span class="token string">"123456789abcdefg"</span></code></pre>
 <p>You can then include this file<em>name</em> in a <strong><code>.gitignore</code></strong> file in your repo; that will keep it from even possibly being committed with your code!</p>
@@ -484,7 +488,8 @@ body <span class="token operator">=</span> response<span class="token punctuatio
 <p>JSON uses curly braces <strong><code>{}</code></strong> to define sets of key-value pairs (called <em>objects</em>, not “dictionaries”), and square brackets <strong><code>[]</code></strong> to define ordered sequences (called <em>arrays</em>, not “lists”). Like in Python, keys and values are separated with colons (<strong><code>:</code></strong>), and elements are separated by commas (<strong><code>,</code></strong>). As in Python, key-value pairs are often written on separate lines for readability, but this isn’t required.</p>
 <p>Note that unlike in Python dictionaries, keys <em>must</em> be strings (so in quotes), while values can either be strings, numbers, booleans (written in all lower-case as <code>true</code> and <code>false</code>), arrays (list), or other objects (dictionaries). Thus JSON can be seen as a way of writing normal Python dictionaries (or lists of dictionaries), just with a few restrictions on key and value type.</p>
 <p class="alert alert-info">
-<em>Pro-tip</em>: JSON data can be quite messy when viewed in your web-browser. Installing a browser extension such as <a href="https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc" target="_blank">JSONView</a> will format JSON responses in a more readable way, and even enable you to interactively explore the data structure.
+<em>Pro-tip</em>: JSON data can be quite messy when viewed in your web-browser. Installing a browser extension such as
+<a href="https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc" target="_blank">JSONView</a> will format JSON responses in a more readable way, and even enable you to interactively explore the data structure.
 </p>
 <p>JSON response data provided by the <code>requests</code> library can automatically be converted into the Python lists and dictionaries you are used to by using the <strong><code>.json()</code></strong> function:</p>
 <pre class="language-python"><code>resource_uri <span class="token operator">=</span> <span class="token string">"https://api.github.com/search/repositories"</span>
@@ -556,8 +561,9 @@ gitbook.start({
 "facebook": false,
 "twitter": false,
 "google": false,
+"linkedin": false,
 "weibo": false,
-"instapper": false,
+"instapaper": false,
 "vk": false,
 "all": ["github", "facebook", "twitter", "google"]
 },
@@ -569,6 +575,10 @@ gitbook.start({
 "edit": {
 "link": "https://github.com/infx511/book/edit/master/apis.Rmd",
 "text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
 },
 "download": ["intro-to-programming-for-data-science-visualization.pdf", "intro-to-programming-for-data-science-visualization.epub"],
 "toc": {

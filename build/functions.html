@@ -5,11 +5,11 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Introduction to Programming</title>
+  <title>Chapter 5 Functions | Introduction to Programming</title>
   <meta name="description" content="The course reader for INFX 511: Introduction to Programming for Data Science and Visualization.">
-  <meta name="generator" content="bookdown 0.5 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
-  <meta property="og:title" content="Introduction to Programming" />
+  <meta property="og:title" content="Chapter 5 Functions | Introduction to Programming" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="https://infx511.github.io/" />
   
@@ -17,7 +17,7 @@
   <meta name="github-repo" content="infx511/book" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Introduction to Programming" />
+  <meta name="twitter:title" content="Chapter 5 Functions | Introduction to Programming" />
   
   <meta name="twitter:description" content="The course reader for INFX 511: Introduction to Programming for Data Science and Visualization." />
   
@@ -25,7 +25,7 @@
 <meta name="author" content="Joel Ross">
 
 
-<meta name="date" content="2019-03-28">
+<meta name="date" content="2019-04-03">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -36,6 +36,7 @@
 <link rel="next" href="logic.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
@@ -232,7 +233,7 @@
 <li class="chapter" data-level="" data-path="accessing-web-apis.html"><a href="accessing-web-apis.html#resources-11"><i class="fa fa-check"></i>Resources</a></li>
 </ul></li>
 <li class="chapter" data-level="13" data-path="git-branches.html"><a href="git-branches.html"><i class="fa fa-check"></i><b>13</b> Git Branches</a><ul>
-<li class="chapter" data-level="13.1" data-path="git-branches.html"><a href="git-branches.html#git-branches"><i class="fa fa-check"></i><b>13.1</b> Git Branches</a></li>
+<li class="chapter" data-level="13.1" data-path="git-branches.html"><a href="git-branches.html#git-branches-1"><i class="fa fa-check"></i><b>13.1</b> Git Branches</a></li>
 <li class="chapter" data-level="13.2" data-path="git-branches.html"><a href="git-branches.html#merging"><i class="fa fa-check"></i><b>13.2</b> Merging</a><ul>
 <li class="chapter" data-level="13.2.1" data-path="git-branches.html"><a href="git-branches.html#merge-conflicts"><i class="fa fa-check"></i><b>13.2.1</b> Merge Conflicts</a></li>
 </ul></li>
@@ -499,11 +500,11 @@ greet<span class="token punctuation">(</span>greeting<span class="token operator
 <span class="token comment"># call without assigning an argument, using the default value</span>
 greet<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment"># "Hello world"</span></code></pre></li>
 <li><p><strong>Body</strong>: The body of the function is a <strong>block</strong> of code. The function definition ends with a colon <strong><code>:</code></strong> to indicate that it is followed by a <em>block</em>, which is a list of Python statements (lines of code). Which statements are part of the block are indicated by <em>indentation</em>: statements are indented by 4 spaces to make them part of that particular block. A block can contain as many lines of code as you want—you’ll usually want more than 1 to make a function worthwhile, but if you have more than 20 you might want to break your code up into separate functions. You can use the argument variables in here, create new variables, call other functions… basically any code that you would write outside of a function can be written inside of one as well!</p></li>
-<li><p><strong>Return value</strong>: You can specify what output a function produces by using the <strong><code>return</code></strong> keyword, followed by the value that you wish <em>your function</em> to return (output). A <code>return</code> statement will end the current function and <em>return</em> the flow of code execution to where ever this function was called from. Note that even though we returned a variable called <code>full_name</code>, that variable was <em>local</em> to the function and so doesn’t exist outside of it; thus we have to take the returned value and assign it to a new variable (as with <code>my_name = make_full_name(&quot;Alice&quot;, &quot;Kim&quot;)</code>).</p></li>
-</ul>
+<li><p><strong>Return value</strong>: You can specify what output a function produces by using the <strong><code>return</code></strong> keyword, followed by the value that you wish <em>your function</em> to return (output). A <code>return</code> statement will end the current function and <em>return</em> the flow of code execution to where ever this function was called from. Note that even though we returned a variable called <code>full_name</code>, that variable was <em>local</em> to the function and so doesn’t exist outside of it; thus we have to take the returned value and assign it to a new variable (as with <code>my_name = make_full_name(&quot;Alice&quot;, &quot;Kim&quot;)</code>).</p>
 <p>Because the <code>return</code> statement exits the function, it is almost always the last line of code in the function; any statements after a <code>return</code> statement will not be run!</p>
 <ul>
 <li>A function does not need to return a value (as in the <code>say_hello()</code> example above). In this case, omit the <code>return</code> statement.</li>
+</ul></li>
 </ul>
 <p>We can call (execute) a function we defined the same way we called built-in functions. When we do so, Python will take the <strong>arguments</strong> we passed in (e.g., <code>&quot;Alice&quot;</code> and <code>&quot;Kim&quot;</code>) and assign them to the <em>argument variables</em>. Then the interpreter executes each line of code in the <strong>function body</strong> one at a time. When it gets to the <code>return</code> statement, it will end the function and return the given value, which can then be assigned to a different variable (outside of the function).</p>
 <div id="doc-strings" class="section level3">
@@ -542,7 +543,8 @@ greet<span class="token punctuation">(</span><span class="token punctuation">)</
 <ul>
 <li><a href="https://automatetheboringstuff.com/chapter3/">Functions (Sweigart)</a></li>
 <li><a href="https://books.trinket.io/pfe/04-functions.html">Functions (Severance)</a></li>
-<li><a href="http://openbookproject.net/thinkcs/python/english3e/fruitful_functions.html">Fruitful Functions (Downey)</a> <!-- - [Python Built-in Functions](https://docs.python.org/3/library/functions.html) --></li>
+<li><a href="http://openbookproject.net/thinkcs/python/english3e/fruitful_functions.html">Fruitful Functions (Downey)</a>
+<!-- - [Python Built-in Functions](https://docs.python.org/3/library/functions.html) --></li>
 </ul>
 </div>
 
@@ -572,8 +574,9 @@ gitbook.start({
 "facebook": false,
 "twitter": false,
 "google": false,
+"linkedin": false,
 "weibo": false,
-"instapper": false,
+"instapaper": false,
 "vk": false,
 "all": ["github", "facebook", "twitter", "google"]
 },
@@ -585,6 +588,10 @@ gitbook.start({
 "edit": {
 "link": "https://github.com/infx511/book/edit/master/functions.Rmd",
 "text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
 },
 "download": ["intro-to-programming-for-data-science-visualization.pdf", "intro-to-programming-for-data-science-visualization.epub"],
 "toc": {

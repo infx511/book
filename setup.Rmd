@@ -87,7 +87,7 @@ In this book you will be working with **Python 3**. Thus you will want to make s
 In order to program with Python, you will need to install the ___Python Interpreter___ on your machine. This is a piece of software that is able to "read" code written in Python and use that code to control your computer, thereby "programming" it.
 
 ### Anaconda
-There are a number of ways to get Python installed on your machine: in fact, you may have a version (probably Python 2) installed on your computer already! However, the recommended approach for programming for data science is to install [**Anaconda**](https://www.continuum.io/downloads). Anaconda is a pre-packaged bundle of common Python tools and packages that are commonly used in data science&mdash;many of which we will be utilizing (including [Jupyter](http://jupyter.org/) for running interactive "notebooks", and [pandas](http://pandas.pydata.org/) for large-scale data work). And the best part: Anaconda makes it easy to get all the pieces installed and ready to use!
+There are a number of ways to get Python installed on your machine: in fact, you may have a version (probably Python 2) installed on your computer already! However, the recommended approach for programming for data science is to install [**Anaconda**](https://www.anaconda.com/distribution/). Anaconda is a pre-packaged bundle of common Python tools and packages that are commonly used in data science&mdash;many of which we will be utilizing (including [Jupyter](http://jupyter.org/) for running interactive "notebooks", and [pandas](http://pandas.pydata.org/) for large-scale data work). And the best part: Anaconda makes it easy to get all the pieces installed and ready to use!
 
 To install Anaconda (and Python along with it), simply download the **Python 3.6** installer, run the executable, and follow the instructions. This should install Python and all the required packages.
 
@@ -98,7 +98,7 @@ To install Anaconda (and Python along with it), simply download the **Python 3.6
 - You can confirm that everything is set up correctly by opening the _Command Shell_ you installed above and typing `python --version`. You should see text that looks something like:
 
     ```
-    Python 3.6.1 :: Anaconda 4.3.1 (x86_64)
+    Python 3.7.0 :: Anaconda 4.3.1 (x86_64)
     ```
 
     confirming that Python is installed and available.
@@ -112,5 +112,5 @@ Links to the recommended software are collected here for easy access:
     - [GitHub](https://github.com/join) (sign up)
     - optional: [Bash on Windows](https://msdn.microsoft.com/en-us/commandline/wsl/install_guide)
 - [Visual Studio Code](https://code.visualstudio.com/)
-- [Python (Anaconda)](https://www.continuum.io/downloads)
+- [Python (Anaconda)](https://www.anaconda.com/distribution/)
 </div>
