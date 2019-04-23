@@ -39,7 +39,7 @@ You can refer to individual elements in a list by their **index**, which is the 
 vowels = ['a', 'e', 'i', 'o', 'u']
 ```
 
-The `'a'` (the first element) is at _index_ 0, `'e'` (the second element) is at index 2, and so on. This also means that the last element can be found at the index `length_of_list - 1`. This pattern is why values like `range(5)` _include_ `0` but _exclude_ the last `5`.
+The `'a'` (the first element) is at _index_ 0, `'e'` (the second element) is at index 1, and so on. This also means that the last element can be found at the index `length_of_list - 1`. This pattern is why values like `range(5)` _include_ `0` but _exclude_ the last `5`.
 
 You can retrieve an element from a list using **bracket notation**: you refer to the element at a particular index of a list by writing the name of the list, followed by square brackets (**`[]`**) that contain the index of interest:
 
