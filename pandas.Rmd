@@ -457,5 +457,4 @@ This is a basic summary of how to create and access DataFrames; for more [detail
 - [Intro to Data Structure (pandas docs)](http://pandas.pydata.org/pandas-docs/stable/dsintro.html)
 - [Essential Basic Functionality (pandas docs)](http://pandas.pydata.org/pandas-docs/stable/basics.html) not really basic, but a complete set of examples
 - [Pandas. Data Processing (Data Analysis in Python)](http://dataanalysispython.readthedocs.io/en/latest/pandas.html)
-- [pandas Foundations (DataCamp)](https://www.datacamp.com/courses/pandas-foundations/)
 </div>

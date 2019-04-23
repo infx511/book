@@ -275,5 +275,4 @@ Specific resources for the material in this module:
 - [Python Basics (Sweigart)](https://automatetheboringstuff.com/chapter1/)
 - [Variables, expressions, statements (Downey)](http://openbookproject.net/thinkcs/python/english3e/variables_expressions_statements.html)
 - [Jupyter Notebook Documentation](http://jupyter-notebook.readthedocs.io/en/latest/notebook.html)
-- [Jupyter Notebook Tutorial (Data Camp)](https://www.datacamp.com/community/tutorials/tutorial-jupyter-notebook#gs.MFPIJdI)
 </div>
