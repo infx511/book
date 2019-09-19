@@ -25,7 +25,7 @@
 <meta name="author" content="Joel Ross">
 
 
-<meta name="date" content="2019-04-23">
+<meta name="date" content="2019-09-19">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -70,12 +70,12 @@
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About this Book</a></li>
 <li class="chapter" data-level="1" data-path="setup-machine.html"><a href="setup-machine.html"><i class="fa fa-check"></i><b>1</b> Setting Up Your Machine</a><ul>
-<li class="chapter" data-level="1.1" data-path="setup-machine.html"><a href="setup-machine.html#git"><i class="fa fa-check"></i><b>1.1</b> Git</a><ul>
-<li class="chapter" data-level="1.1.1" data-path="setup-machine.html"><a href="setup-machine.html#github"><i class="fa fa-check"></i><b>1.1.1</b> GitHub</a></li>
+<li class="chapter" data-level="1.1" data-path="setup-machine.html"><a href="setup-machine.html#command-line-tools-bash"><i class="fa fa-check"></i><b>1.1</b> Command Line Tools (Bash)</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="setup-machine.html"><a href="setup-machine.html#command-line-on-a-mac"><i class="fa fa-check"></i><b>1.1.1</b> Command Line on a Mac</a></li>
+<li class="chapter" data-level="1.1.2" data-path="setup-machine.html"><a href="setup-machine.html#command-line-on-windows"><i class="fa fa-check"></i><b>1.1.2</b> Command Line on Windows</a></li>
 </ul></li>
-<li class="chapter" data-level="1.2" data-path="setup-machine.html"><a href="setup-machine.html#command-line-tools-bash"><i class="fa fa-check"></i><b>1.2</b> Command-line Tools (Bash)</a><ul>
-<li class="chapter" data-level="1.2.1" data-path="setup-machine.html"><a href="setup-machine.html#command-line-on-a-mac"><i class="fa fa-check"></i><b>1.2.1</b> Command-line on a Mac</a></li>
-<li class="chapter" data-level="1.2.2" data-path="setup-machine.html"><a href="setup-machine.html#command-line-on-windows"><i class="fa fa-check"></i><b>1.2.2</b> Command-line on Windows</a></li>
+<li class="chapter" data-level="1.2" data-path="setup-machine.html"><a href="setup-machine.html#git"><i class="fa fa-check"></i><b>1.2</b> Git</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="setup-machine.html"><a href="setup-machine.html#github"><i class="fa fa-check"></i><b>1.2.1</b> GitHub</a></li>
 </ul></li>
 <li class="chapter" data-level="1.3" data-path="setup-machine.html"><a href="setup-machine.html#text-editors"><i class="fa fa-check"></i><b>1.3</b> Text Editors</a><ul>
 <li class="chapter" data-level="1.3.1" data-path="setup-machine.html"><a href="setup-machine.html#visual-studio-code"><i class="fa fa-check"></i><b>1.3.1</b> Visual Studio Code</a></li>
@@ -408,7 +408,7 @@ For an updated and expanded version of this content, see Chapter 20 of <a href="
 <pre class="language-bash"><code><span class="token function">git</span> merge <span class="token punctuation">[</span>other_branch<span class="token punctuation">]</span></code></pre>
 <p>This command will merge <code>other_branch</code> <strong>into the current branch</strong>. So if you want to end up with the “combined” version of your commits on a particular branch, you’ll need to switch to (<code>checkout</code>) that branch before you run the merge.</p>
 <div class="alert alert-danger">
-<p><strong>IMPORTANT</strong> If something goes wrong, don’t panic and try to close your command-line! Come back to this book and look up how to fix the problem you’ve encountered (e.g., how to exit <em>vim</em>). And if you’re unsure why something isn’t working with git, use <strong><code>git status</code></strong> to check the current status and for what steps to do next.</p>
+<p><strong>IMPORTANT</strong> If something goes wrong, don’t panic and try to close your command line! Come back to this book and look up how to fix the problem you’ve encountered (e.g., how to exit <em>vim</em>). And if you’re unsure why something isn’t working with git, use <strong><code>git status</code></strong> to check the current status and for what steps to do next.</p>
 </div>
 <div class="alert alert-info">
 <p>Note that the <code>rebase</code> command will perform a similar operation, but without creating a new “merge” commit—it simply takes the commits from one branch and attaches them to the end of the other. This effectively <strong>changes history</strong>, since it is no longer clear where the branching occurred. From an archival and academic view, you never want to “destroy history” and lose a record of changes that were made. History is important: don’t screw with it! Thus we recommend you <em>avoid</em> rebasing and stick with merging.</p>
@@ -424,10 +424,10 @@ For an updated and expanded version of this content, see Chapter 20 of <a href="
 <li>On the <code>master</code> branch, you change to line 12 of the code to be “I like puppies”. You then commit this change (with message “Change line 12 of master”).</li>
 <li>You use <code>git merge danger</code> to merge the <code>danger</code> branch <strong>into</strong> the <code>master</code> branch.</li>
 </ol>
-<p>In this situation, you are trying to <em>merge two different changes to the same line of code</em>, and thus should be shown an error on the command-line:</p>
+<p>In this situation, you are trying to <em>merge two different changes to the same line of code</em>, and thus should be shown an error on the command line:</p>
 <div class="figure">
-<img src="img/git-branches/merge-conflict-error-py.png" title="merge conflict error" alt="A merge conflict reported on the command-line" />
-<p class="caption">A merge conflict reported on the command-line</p>
+<img src="img/git-branches/merge-conflict-error-py.png" title="merge conflict error" alt="A merge conflict reported on the command line" />
+<p class="caption">A merge conflict reported on the command line</p>
 </div>
 <p>This is called a <strong>merge conflict</strong>. A merge conflict occurs when two commits from different branches include different changes to the same code (they conflict). Git is just a simple computer program, and has no way of knowing which version to keep (“Are kitties better than puppies? How should I know?!”).</p>
 <p>Since git can’t determine which version of the code to keep, it <strong><em>stops the merge in the middle</em></strong> and forces you to choose what code is correct <strong>manually</strong>.</p>

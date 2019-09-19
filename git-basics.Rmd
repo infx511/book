@@ -4,7 +4,7 @@ A frightening number of people still email their code to each other, have dozens
 
 And that is why they should be using **git**.
 
-This chapter will introduce you to `git` command-line program and the GitHub cloud storage service, two wonderful tools that track changes to your code (`git`) and facilitate collaboration (GitHub). Git and GitHub are the industry standards for the family of tasks known as **version control**. Being able to manage changes to your code and share it with others is one of the most important technical skills a programmer can learn, and is the focus of this (lengthy) chapter.
+This chapter will introduce you to `git` command line program and the GitHub cloud storage service, two wonderful tools that track changes to your code (`git`) and facilitate collaboration (GitHub). Git and GitHub are the industry standards for the family of tasks known as **version control**. Being able to manage changes to your code and share it with others is one of the most important technical skills a programmer can learn, and is the focus of this (lengthy) chapter.
 
 <p class="alert alert-success">For an updated and expanded version of this content, see Chapter 3 of [_Programming Skills for Data Science_](https://programming-for-data-science.github.io/). The text is available online through [Safari Online](https://www.safaribooksonline.com/library/view/-/9780135159071/?ar), free for students with a UW NetID.</p>
 
@@ -72,9 +72,9 @@ Setting up an [SSH key](https://help.github.com/articles/generating-a-new-ssh-ke
 ### Creating a Repo
 The first thing you'll need in order to work with git is to create a **repository**. A repository acts as a "database" of changes that you make to files in a directory.
 
-In order to have a repository, you'll need to have a directory of files. Create a new folder `git_practice` on your computer's Desktop. Since you'll be using the command-line for this course, you might as well practice creating a new directory programmatically:
+In order to have a repository, you'll need to have a directory of files. Create a new folder `git_practice` on your computer's Desktop. Since you'll be using the command line for this course, you might as well practice creating a new directory programmatically:
 
-![Making a folder with the command-line.](img/git-basics/git-mkdir.png "mkdir example")
+![Making a folder with the command line.](img/git-basics/git-mkdir.png "mkdir example")
 
 You can turn this directory _into_ a repository by telling the `git` program to run the `init` action:
 
@@ -113,7 +113,7 @@ The `git status` command will give you information about the current "state" of 
 - That currently there are no changes to files that you need to commit (save) to the database
 - _What to do next!_
 
-That last point is important. Git status messages are verbose and somewhat awkward to read (this is the command-line after all), but if you look at them carefully they will almost always tell you what command to use next.
+That last point is important. Git status messages are verbose and somewhat awkward to read (this is the command line after all), but if you look at them carefully they will almost always tell you what command to use next.
 
 <p class="alert alert-warning">**If you are ever stuck, use `git status` to figure out what to do next!**</p>
 
@@ -155,7 +155,7 @@ git commit -m "your message here"
 
 The `"your message here"` should be replaced with a short message saying what changes that commit makes to the repo (see below for details).
 
-<p class="alert alert-danger">**WARNING**: If you forget the `-m` option, git will put you into a command-line _text editor_ so that you can compose a message (then save and exit to finish the commit). If you haven't done any other configuration, you might be dropped into the ___vim___ editor. Type **`:q`** (**colon** then **q**) and hit enter to flee from this horrid place and try again, remembering the `-m` option! Don't panic: getting stuck in _vim_ [happens to everyone](https://stackoverflow.blog/2017/05/23/stack-overflow-helping-one-million-developers-exit-vim/).</p>
+<p class="alert alert-danger">**WARNING**: If you forget the `-m` option, git will put you into a command line _text editor_ so that you can compose a message (then save and exit to finish the commit). If you haven't done any other configuration, you might be dropped into the ___vim___ editor. Type **`:q`** (**colon** then **q**) and hit enter to flee from this horrid place and try again, remembering the `-m` option! Don't panic: getting stuck in _vim_ [happens to everyone](https://stackoverflow.blog/2017/05/23/stack-overflow-helping-one-million-developers-exit-vim/).</p>
 
 #### Commit Message Etiquette
 Your commit messages should [be informative](https://xkcd.com/1296/) about what changes the commit is making to the repo. `"stuff"` is not a good commit message. `"Fix critical authorization error"` is a good commit message.

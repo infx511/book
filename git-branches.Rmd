@@ -88,7 +88,7 @@ git merge [other_branch]
 This command will merge `other_branch` **into the current branch**. So if you want to end up with the "combined" version of your commits on a particular branch, you'll need to switch to (`checkout`) that branch before you run the merge.
 
 <div class="alert alert-danger">
-**IMPORTANT** If something goes wrong, don't panic and try to close your command-line! Come back to this book and look up how to fix the problem you've encountered (e.g., how to exit  _vim_). And if you're unsure why something isn't working with git, use **`git status`** to check the current status and for what steps to do next.
+**IMPORTANT** If something goes wrong, don't panic and try to close your command line! Come back to this book and look up how to fix the problem you've encountered (e.g., how to exit  _vim_). And if you're unsure why something isn't working with git, use **`git status`** to check the current status and for what steps to do next.
 </div>
 
 <div class="alert alert-info">
@@ -106,9 +106,9 @@ Merging is a regular occurrence when working with branches. But consider the fol
 5. On the `master` branch, you change to line 12 of the code to be "I like puppies". You then commit this change (with message "Change line 12 of master").
 6. You use `git merge danger` to merge the `danger` branch **into** the `master` branch.
 
-In this situation, you are trying to _merge two different changes to the same line of code_, and thus should be shown an error on the command-line:
+In this situation, you are trying to _merge two different changes to the same line of code_, and thus should be shown an error on the command line:
 
-![A merge conflict reported on the command-line](img/git-branches/merge-conflict-error-py.png "merge conflict error")
+![A merge conflict reported on the command line](img/git-branches/merge-conflict-error-py.png "merge conflict error")
 
 This is called a **merge conflict**. A merge conflict occurs when two commits from different branches include different changes to the same code (they conflict). Git is just a simple computer program, and has no way of knowing which version to keep ("Are kitties better than puppies? How should I know?!").
 

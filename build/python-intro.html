@@ -25,7 +25,7 @@
 <meta name="author" content="Joel Ross">
 
 
-<meta name="date" content="2019-04-23">
+<meta name="date" content="2019-09-19">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -70,12 +70,12 @@
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About this Book</a></li>
 <li class="chapter" data-level="1" data-path="setup-machine.html"><a href="setup-machine.html"><i class="fa fa-check"></i><b>1</b> Setting Up Your Machine</a><ul>
-<li class="chapter" data-level="1.1" data-path="setup-machine.html"><a href="setup-machine.html#git"><i class="fa fa-check"></i><b>1.1</b> Git</a><ul>
-<li class="chapter" data-level="1.1.1" data-path="setup-machine.html"><a href="setup-machine.html#github"><i class="fa fa-check"></i><b>1.1.1</b> GitHub</a></li>
+<li class="chapter" data-level="1.1" data-path="setup-machine.html"><a href="setup-machine.html#command-line-tools-bash"><i class="fa fa-check"></i><b>1.1</b> Command Line Tools (Bash)</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="setup-machine.html"><a href="setup-machine.html#command-line-on-a-mac"><i class="fa fa-check"></i><b>1.1.1</b> Command Line on a Mac</a></li>
+<li class="chapter" data-level="1.1.2" data-path="setup-machine.html"><a href="setup-machine.html#command-line-on-windows"><i class="fa fa-check"></i><b>1.1.2</b> Command Line on Windows</a></li>
 </ul></li>
-<li class="chapter" data-level="1.2" data-path="setup-machine.html"><a href="setup-machine.html#command-line-tools-bash"><i class="fa fa-check"></i><b>1.2</b> Command-line Tools (Bash)</a><ul>
-<li class="chapter" data-level="1.2.1" data-path="setup-machine.html"><a href="setup-machine.html#command-line-on-a-mac"><i class="fa fa-check"></i><b>1.2.1</b> Command-line on a Mac</a></li>
-<li class="chapter" data-level="1.2.2" data-path="setup-machine.html"><a href="setup-machine.html#command-line-on-windows"><i class="fa fa-check"></i><b>1.2.2</b> Command-line on Windows</a></li>
+<li class="chapter" data-level="1.2" data-path="setup-machine.html"><a href="setup-machine.html#git"><i class="fa fa-check"></i><b>1.2</b> Git</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="setup-machine.html"><a href="setup-machine.html#github"><i class="fa fa-check"></i><b>1.2.1</b> GitHub</a></li>
 </ul></li>
 <li class="chapter" data-level="1.3" data-path="setup-machine.html"><a href="setup-machine.html#text-editors"><i class="fa fa-check"></i><b>1.3</b> Text Editors</a><ul>
 <li class="chapter" data-level="1.3.1" data-path="setup-machine.html"><a href="setup-machine.html#visual-studio-code"><i class="fa fa-check"></i><b>1.3.1</b> Visual Studio Code</a></li>
@@ -382,7 +382,7 @@ Python is one of the most popular programming languages in the world, and very a
 <p>Python scripts (programs) are just a sequence of instructions, and there are a couple of different ways in which we can tell the computer to execute these instructions.</p>
 <div id="on-the-command-line" class="section level3">
 <h3><span class="header-section-number">4.2.1</span> On the Command Line</h3>
-<p>It is possible to issue Python instructions (run lines of code; called <strong>statements</strong>) one-by-one at the command-line by starting an <strong>interactive Python session</strong> within your terminal. This will allow you to type Python code directly into the terminal, and your computer will interpret and execute each line of code (if you just typed Python syntax directly into the terminal, your computer wouldn’t understand it).</p>
+<p>It is possible to issue Python instructions (run lines of code; called <strong>statements</strong>) one-by-one at the command line by starting an <strong>interactive Python session</strong> within your terminal. This will allow you to type Python code directly into the terminal, and your computer will interpret and execute each line of code (if you just typed Python syntax directly into the terminal, your computer wouldn’t understand it).</p>
 <p>With Python installed, you can start an interactive Python session on a by running the <strong><code>python</code></strong> program (simply type the <code>python</code> command if you’ve installed it on the <code>PATH</code> via Anaconda).</p>
 <ul>
 <li>On Windows using the Git Bash shell, you may need to utilize <a href="https://github.com/rprichard/winpty">winpty</a> to connect the Bash shell to the Python output: see <a href="http://stackoverflow.com/questions/32597209/python-not-working-in-the-command-line-of-git-bash">here</a> for an example). On my machine, using <code>winpty python</code> works well.</li>
@@ -402,12 +402,12 @@ Which will “activate” the Python 3 environment installed by Anaconda.
 <ul>
 <li>You can exit this session by typing the <code>quit()</code> command, or hitting <code>ctrl-z</code> (followed by Enter on Windows).</li>
 </ul>
-<p>It is more common though to run entire scripts (<code>.py</code> files) from the command-line by using the <code>python</code> command and specifying the script file you wish to execute:</p>
+<p>It is more common though to run entire scripts (<code>.py</code> files) from the command line by using the <code>python</code> command and specifying the script file you wish to execute:</p>
 <div class="figure">
 <img src="img/python-intro/python-terminal.png" alt="Run Python script from the command line" />
 <p class="caption">Run Python script from the command line</p>
 </div>
-<p>This will cause each line in the script to be run one at a time. This is the “normal” way of running Python programs: you write Python scripts using an editor such as VS Code, and then execute those scripts on the command-line to see them in action.</p>
+<p>This will cause each line in the script to be run one at a time. This is the “normal” way of running Python programs: you write Python scripts using an editor such as VS Code, and then execute those scripts on the command line to see them in action.</p>
 </div>
 <div id="jupyter-notebooks" class="section level3">
 <h3><span class="header-section-number">4.2.2</span> Jupyter Notebooks</h3>
@@ -441,7 +441,7 @@ Which will “activate” the Python 3 environment installed by Anaconda.
 <p>In Python, we mark text as a comment by putting it after the pound/hashtag symbol (<strong><code>#</code></strong>). Everything from the <code>#</code> until the end of the line is a comment. We put descriptive comments <em>immediately above</em> the code it describes, but you can also put very short notes at the end of the line of code (preferably following two spaces):</p>
 <pre class="language-python"><code><span class="token comment"># Set how many bottles of beer are on the wall</span>
 bottles <span class="token operator">=</span> <span class="token number">99</span> <span class="token operator">-</span> <span class="token number">1</span>  <span class="token comment"># 98</span></code></pre>
-<p>(You may recognize this <code>#</code> syntax and commenting behavior from the command-line and git modules. That’s because the same syntax is used in a Bash shell!)</p>
+<p>(You may recognize this <code>#</code> syntax and commenting behavior from the command line and git modules. That’s because the same syntax is used in a Bash shell!)</p>
 </div>
 <div id="variables" class="section level2">
 <h2><span class="header-section-number">4.4</span> Variables</h2>

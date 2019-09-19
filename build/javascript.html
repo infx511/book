@@ -25,7 +25,7 @@
 <meta name="author" content="Joel Ross">
 
 
-<meta name="date" content="2019-04-23">
+<meta name="date" content="2019-09-19">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -70,12 +70,12 @@
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About this Book</a></li>
 <li class="chapter" data-level="1" data-path="setup-machine.html"><a href="setup-machine.html"><i class="fa fa-check"></i><b>1</b> Setting Up Your Machine</a><ul>
-<li class="chapter" data-level="1.1" data-path="setup-machine.html"><a href="setup-machine.html#git"><i class="fa fa-check"></i><b>1.1</b> Git</a><ul>
-<li class="chapter" data-level="1.1.1" data-path="setup-machine.html"><a href="setup-machine.html#github"><i class="fa fa-check"></i><b>1.1.1</b> GitHub</a></li>
+<li class="chapter" data-level="1.1" data-path="setup-machine.html"><a href="setup-machine.html#command-line-tools-bash"><i class="fa fa-check"></i><b>1.1</b> Command Line Tools (Bash)</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="setup-machine.html"><a href="setup-machine.html#command-line-on-a-mac"><i class="fa fa-check"></i><b>1.1.1</b> Command Line on a Mac</a></li>
+<li class="chapter" data-level="1.1.2" data-path="setup-machine.html"><a href="setup-machine.html#command-line-on-windows"><i class="fa fa-check"></i><b>1.1.2</b> Command Line on Windows</a></li>
 </ul></li>
-<li class="chapter" data-level="1.2" data-path="setup-machine.html"><a href="setup-machine.html#command-line-tools-bash"><i class="fa fa-check"></i><b>1.2</b> Command-line Tools (Bash)</a><ul>
-<li class="chapter" data-level="1.2.1" data-path="setup-machine.html"><a href="setup-machine.html#command-line-on-a-mac"><i class="fa fa-check"></i><b>1.2.1</b> Command-line on a Mac</a></li>
-<li class="chapter" data-level="1.2.2" data-path="setup-machine.html"><a href="setup-machine.html#command-line-on-windows"><i class="fa fa-check"></i><b>1.2.2</b> Command-line on Windows</a></li>
+<li class="chapter" data-level="1.2" data-path="setup-machine.html"><a href="setup-machine.html#git"><i class="fa fa-check"></i><b>1.2</b> Git</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="setup-machine.html"><a href="setup-machine.html#github"><i class="fa fa-check"></i><b>1.2.1</b> GitHub</a></li>
 </ul></li>
 <li class="chapter" data-level="1.3" data-path="setup-machine.html"><a href="setup-machine.html#text-editors"><i class="fa fa-check"></i><b>1.3</b> Text Editors</a><ul>
 <li class="chapter" data-level="1.3.1" data-path="setup-machine.html"><a href="setup-machine.html#visual-studio-code"><i class="fa fa-check"></i><b>1.3.1</b> Visual Studio Code</a></li>
@@ -361,7 +361,7 @@
 <h2><span class="header-section-number">17.1</span> Programming with JavaScript</h2>
 <p>Like Python, JavaScript is a <strong>high-level, general-purpose, interpreted programming language</strong>. The biggest difference is where it is most commonly used: while the Python interpreter is installed on a computer and is usually accessed through the command line (or through the Jupyter program), JavaScript interpreters are most commonly built into web browsers (such as Chrome or Firefox). Browsers are able to download scripts written in JavaScript, executing them line-by-line and use those instructions to manipulate what content is displayed.</p>
 <p class="alert alert-info">
-It is also possible to execute JavaScript code via the command-line by using <a href="https://nodejs.org/en/">Node.js</a>, allowing JavaScript to be a fully general language. However, JavaScript is still most commonly used inside the browser, which is how it will be discussed in this book.
+It is also possible to execute JavaScript code via the command line by using <a href="https://nodejs.org/en/">Node.js</a>, allowing JavaScript to be a fully general language. However, JavaScript is still most commonly used inside the browser, which is how it will be discussed in this book.
 </p>
 <div id="history-and-versions" class="section level3">
 <h3><span class="header-section-number">17.1.1</span> History and Versions</h3>
@@ -397,7 +397,7 @@ It is also possible to execute JavaScript code via the command-line by using <a 
 <strong>Important:</strong> You should <strong><em>always</em></strong> have the JavaScript Console open when developing JavaScript code, since this is where any error messages will appear!
 </p>
 <p>Finally, while a web browser is able to open any local <code>.html</code> file and run its included <code>.js</code> scripts, certain interactions (e.g., downloading data from the internet via an HTTP request) may require a web page to be provided from a <em>web server</em> via the <code>http://</code> protocol, rather than the <code>file://</code> protocol. Luckily Python 3 provides a simple web server through the <code>http.server</code> module which you can use to “serve” the files to yourself:</p>
-<pre class="language-bash"><code><span class="token comment"># on the command-line:</span>
+<pre class="language-bash"><code><span class="token comment"># on the command line:</span>
 <span class="token function">cd</span> path/to/project
 python -m http.server</code></pre>
 <p>The served webpage will be available at <a href="http://localhost:8000/" class="uri">http://localhost:8000/</a> (“localhost” means “this machine”).</p>

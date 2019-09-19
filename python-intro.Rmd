@@ -32,7 +32,7 @@ In short, Python 3 is considered the "current" version, and Python 2 is consider
 Python scripts (programs) are just a sequence of instructions, and there are a couple of different ways in which we can tell the computer to execute these instructions.
 
 ### On the Command Line
-It is possible to issue Python instructions (run lines of code; called **statements**) one-by-one at the command-line by starting an **interactive Python session** within your terminal. This will allow you to type Python code directly into the terminal, and your computer will interpret and execute each line of code (if you just typed Python syntax directly into the terminal, your computer wouldn't understand it).
+It is possible to issue Python instructions (run lines of code; called **statements**) one-by-one at the command line by starting an **interactive Python session** within your terminal. This will allow you to type Python code directly into the terminal, and your computer will interpret and execute each line of code (if you just typed Python syntax directly into the terminal, your computer wouldn't understand it).
 
 With Python installed, you can start an interactive Python session on a by running the **`python`** program (simply type the `python` command if you've installed it on the `PATH` via Anaconda).
 
@@ -55,11 +55,11 @@ Once you've started running an interactive Python session, you can begin enterin
 
 - You can exit this session by typing the `quit()` command, or hitting `ctrl-z` (followed by Enter on Windows).
 
-It is more common though to run entire scripts (`.py` files) from the command-line by using the `python` command and specifying the script file you wish to execute:
+It is more common though to run entire scripts (`.py` files) from the command line by using the `python` command and specifying the script file you wish to execute:
 
 ![Run Python script from the command line](img/python-intro/python-terminal.png)
 
-This will cause each line in the script to be run one at a time. This is the "normal" way of running Python programs: you write Python scripts using an editor such as VS Code, and then execute those scripts on the command-line to see them in action.
+This will cause each line in the script to be run one at a time. This is the "normal" way of running Python programs: you write Python scripts using an editor such as VS Code, and then execute those scripts on the command line to see them in action.
 
 
 ### Jupyter Notebooks
@@ -106,7 +106,7 @@ In Python, we mark text as a comment by putting it after the pound/hashtag symbo
 bottles = 99 - 1  # 98
 ```
 
-(You may recognize this `#` syntax and commenting behavior from the command-line and git modules. That's because the same syntax is used in a Bash shell!)
+(You may recognize this `#` syntax and commenting behavior from the command line and git modules. That's because the same syntax is used in a Bash shell!)
 
 ## Variables
 Since computer programs involve working with lots of _information_, we need a way to store and refer to this information. We do this with **variables**. Variables are labels for information; in Python, you can think of them as "nametags" for data. After giving data a variable nametag, you can then refer to that data by its name.

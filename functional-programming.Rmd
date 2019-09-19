@@ -254,15 +254,15 @@ from functools import reduce
 To understand how a _reduce_ operation works, consider the following basic loop:
 
 ```python
-def multiply(x, y): # a function that multiplies two numbers
-    return x*y
+def add_twice(initial, new_amount): # a function that adds a second number twice
+    return initial + new_amount + new_amount
 
 numbers = [1,2,3,4,5]  # an initial list
 
-running_total = 1  # an accumulated aggregate
+running_total = 0  # an accumulated aggregate
 for number in numbers:
-    running_total = multiply(running_total, number)
-print(running_total)  # 120  (1*2*3*4*5)
+    running_total = add_twice(running_total, number)
+print(running_total)  # 30  (0+2*1+2*2+2*3+2*4+2*5)
 ```
 
 This loop **reduces** the list into an "accumulated" product (factorial) of all the numbers in the list. Inside the loop, the `multiply()` function is called and passed the "current total" and the "new value" to be combined into the aggregate (_in that order_). The resulting total is then reassigned as the "current total" for the next iteration.
@@ -270,13 +270,13 @@ This loop **reduces** the list into an "accumulated" product (factorial) of all 
 The **`reduce()`** function does exactly this work: it takes as arguments a _callback_ function used to combine the current running total with the new value, and a list of values to combine. Whereas the `map()` and `filter()` callback functions each took 1 argument, the `reduce()` callback function requires **2** arguments: the first will be the "running total", and the second will be the "new value" to mix into the aggregate. (While this ordering doesn't influence the factorial example, it is relevant for other operations):
 
 ```python
-def multiply(x, y): # a function that multiplies two numbers
-    return x * y
+def add_twice(initial, new_amount): # a function that adds a second number twice
+    return initial + new_amount + new_amount
 
 numbers = [1,2,3,4,5]  # an initial list
 
-product = reduce(multiply, numbers)
-print(product)  # 120
+product = reduce(add_twice, numbers, 0) # start aggregating with 0
+print(running_total)  # 30  (0+2*1+2*2+2*3+2*4+2*5)
 ```
 
 Note that the `reduce()` function aggregates into a single value, so the result doesn't need to be converted from an _iterator_ to a list!

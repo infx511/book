@@ -22,7 +22,7 @@ favicon: img/ischool-gold.png
 <!-- ![](img/cover-img.png) -->
 
 This book covers the fundamentals of computer programming as used for data science. 
-It will introduce programming concepts such as syntax, data referencing, control structures, functions, data structures, abstraction, and debugging, as well as development tools and technologies (such as the command-line and version control). The goal is to develop skills in algorithmic thinking, abstraction, and debugging. It assumes no previous programming background. These materials were developed for the **INFX 511: Introduction to Programming for Data Science and Visualization** course taught at the [University of Washington Information School](https://ischool.uw.edu/); however they have been structured to be an online resource for anyone who wishes to learn programming.
+It will introduce programming concepts such as syntax, data referencing, control structures, functions, data structures, abstraction, and debugging, as well as development tools and technologies (such as the command line and version control). The goal is to develop skills in algorithmic thinking, abstraction, and debugging. It assumes no previous programming background. These materials were developed for the **INFX 511: Introduction to Programming for Data Science and Visualization** course taught at the [University of Washington Information School](https://ischool.uw.edu/); however they have been structured to be an online resource for anyone who wishes to learn programming.
 
 Some chapters of this book have been developed in conjunction with [Technical Foundations of Informatics](https://info201.github.io/), by Freeman and Ross.
 

@@ -10,7 +10,7 @@ This chapter introduces the basic syntax of the JavaScript language, including v
 Like Python, JavaScript is a **high-level, general-purpose, interpreted programming language**. The biggest difference is where it is most commonly used: while the Python interpreter is installed on a computer and is usually accessed through the command line (or through the Jupyter program), JavaScript interpreters are most commonly built into web browsers (such as Chrome or Firefox). Browsers are able to download scripts written in JavaScript, executing them line-by-line and use those instructions to manipulate what content is displayed.
 
 <p class="alert alert-info">
-It is also possible to execute JavaScript code via the command-line by using [Node.js](https://nodejs.org/en/), allowing JavaScript to be a fully general language. However, JavaScript is still most commonly used inside the browser, which is how it will be discussed in this book.
+It is also possible to execute JavaScript code via the command line by using [Node.js](https://nodejs.org/en/), allowing JavaScript to be a fully general language. However, JavaScript is still most commonly used inside the browser, which is how it will be discussed in this book.
 </p>
 
 ### History and Versions
@@ -58,7 +58,7 @@ While JavaScript most commonly is used to manipulate the web page content and is
 Finally, while a web browser is able to open any local `.html` file and run its included `.js` scripts, certain interactions (e.g., downloading data from the internet via an HTTP request) may require a web page to be provided from a _web server_ via the `http://` protocol, rather than the `file://` protocol. Luckily Python 3 provides a simple web server through the `http.server` module which you can use to "serve" the files to yourself:
 
 ```bash
-# on the command-line:
+# on the command line:
 cd path/to/project
 python -m http.server
 ```

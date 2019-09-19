@@ -25,7 +25,7 @@
 <meta name="author" content="Joel Ross">
 
 
-<meta name="date" content="2019-04-23">
+<meta name="date" content="2019-09-19">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -70,12 +70,12 @@
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About this Book</a></li>
 <li class="chapter" data-level="1" data-path="setup-machine.html"><a href="setup-machine.html"><i class="fa fa-check"></i><b>1</b> Setting Up Your Machine</a><ul>
-<li class="chapter" data-level="1.1" data-path="setup-machine.html"><a href="setup-machine.html#git"><i class="fa fa-check"></i><b>1.1</b> Git</a><ul>
-<li class="chapter" data-level="1.1.1" data-path="setup-machine.html"><a href="setup-machine.html#github"><i class="fa fa-check"></i><b>1.1.1</b> GitHub</a></li>
+<li class="chapter" data-level="1.1" data-path="setup-machine.html"><a href="setup-machine.html#command-line-tools-bash"><i class="fa fa-check"></i><b>1.1</b> Command Line Tools (Bash)</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="setup-machine.html"><a href="setup-machine.html#command-line-on-a-mac"><i class="fa fa-check"></i><b>1.1.1</b> Command Line on a Mac</a></li>
+<li class="chapter" data-level="1.1.2" data-path="setup-machine.html"><a href="setup-machine.html#command-line-on-windows"><i class="fa fa-check"></i><b>1.1.2</b> Command Line on Windows</a></li>
 </ul></li>
-<li class="chapter" data-level="1.2" data-path="setup-machine.html"><a href="setup-machine.html#command-line-tools-bash"><i class="fa fa-check"></i><b>1.2</b> Command-line Tools (Bash)</a><ul>
-<li class="chapter" data-level="1.2.1" data-path="setup-machine.html"><a href="setup-machine.html#command-line-on-a-mac"><i class="fa fa-check"></i><b>1.2.1</b> Command-line on a Mac</a></li>
-<li class="chapter" data-level="1.2.2" data-path="setup-machine.html"><a href="setup-machine.html#command-line-on-windows"><i class="fa fa-check"></i><b>1.2.2</b> Command-line on Windows</a></li>
+<li class="chapter" data-level="1.2" data-path="setup-machine.html"><a href="setup-machine.html#git"><i class="fa fa-check"></i><b>1.2</b> Git</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="setup-machine.html"><a href="setup-machine.html#github"><i class="fa fa-check"></i><b>1.2.1</b> GitHub</a></li>
 </ul></li>
 <li class="chapter" data-level="1.3" data-path="setup-machine.html"><a href="setup-machine.html#text-editors"><i class="fa fa-check"></i><b>1.3</b> Text Editors</a><ul>
 <li class="chapter" data-level="1.3.1" data-path="setup-machine.html"><a href="setup-machine.html#visual-studio-code"><i class="fa fa-check"></i><b>1.3.1</b> Visual Studio Code</a></li>
@@ -354,7 +354,7 @@
 <h1><span class="header-section-number">Chapter 3</span> Git and GitHub</h1>
 <p>A frightening number of people still email their code to each other, have dozens of versions of the same file, and lack any structured way of backing up their work for inevitable computer failures. This is both time consuming and error prone.</p>
 <p>And that is why they should be using <strong>git</strong>.</p>
-<p>This chapter will introduce you to <code>git</code> command-line program and the GitHub cloud storage service, two wonderful tools that track changes to your code (<code>git</code>) and facilitate collaboration (GitHub). Git and GitHub are the industry standards for the family of tasks known as <strong>version control</strong>. Being able to manage changes to your code and share it with others is one of the most important technical skills a programmer can learn, and is the focus of this (lengthy) chapter.</p>
+<p>This chapter will introduce you to <code>git</code> command line program and the GitHub cloud storage service, two wonderful tools that track changes to your code (<code>git</code>) and facilitate collaboration (GitHub). Git and GitHub are the industry standards for the family of tasks known as <strong>version control</strong>. Being able to manage changes to your code and share it with others is one of the most important technical skills a programmer can learn, and is the focus of this (lengthy) chapter.</p>
 <p class="alert alert-success">
 For an updated and expanded version of this content, see Chapter 3 of <a href="https://programming-for-data-science.github.io/"><em>Programming Skills for Data Science</em></a>. The text is available online through <a href="https://www.safaribooksonline.com/library/view/-/9780135159071/?ar">Safari Online</a>, free for students with a UW NetID.
 </p>
@@ -408,10 +408,10 @@ Git supports having multiple different versions of your work that all live side 
 <div id="creating-a-repo" class="section level3">
 <h3><span class="header-section-number">3.2.1</span> Creating a Repo</h3>
 <p>The first thing you’ll need in order to work with git is to create a <strong>repository</strong>. A repository acts as a “database” of changes that you make to files in a directory.</p>
-<p>In order to have a repository, you’ll need to have a directory of files. Create a new folder <code>git_practice</code> on your computer’s Desktop. Since you’ll be using the command-line for this course, you might as well practice creating a new directory programmatically:</p>
+<p>In order to have a repository, you’ll need to have a directory of files. Create a new folder <code>git_practice</code> on your computer’s Desktop. Since you’ll be using the command line for this course, you might as well practice creating a new directory programmatically:</p>
 <div class="figure">
-<img src="img/git-basics/git-mkdir.png" title="mkdir example" alt="Making a folder with the command-line." />
-<p class="caption">Making a folder with the command-line.</p>
+<img src="img/git-basics/git-mkdir.png" title="mkdir example" alt="Making a folder with the command line." />
+<p class="caption">Making a folder with the command line.</p>
 </div>
 <p>You can turn this directory <em>into</em> a repository by telling the <code>git</code> program to run the <code>init</code> action:</p>
 <pre class="language-bash"><code><span class="token comment"># run IN the directory of project</span>
@@ -438,7 +438,7 @@ Git supports having multiple different versions of your work that all live side 
 <li>That currently there are no changes to files that you need to commit (save) to the database</li>
 <li><em>What to do next!</em></li>
 </ul>
-<p>That last point is important. Git status messages are verbose and somewhat awkward to read (this is the command-line after all), but if you look at them carefully they will almost always tell you what command to use next.</p>
+<p>That last point is important. Git status messages are verbose and somewhat awkward to read (this is the command line after all), but if you look at them carefully they will almost always tell you what command to use next.</p>
 <p class="alert alert-warning">
 <strong>If you are ever stuck, use <code>git status</code> to figure out what to do next!</strong>
 </p>
@@ -466,7 +466,7 @@ Git supports having multiple different versions of your work that all live side 
 <pre class="language-bash"><code><span class="token function">git</span> commit -m <span class="token string">"your message here"</span></code></pre>
 <p>The <code>&quot;your message here&quot;</code> should be replaced with a short message saying what changes that commit makes to the repo (see below for details).</p>
 <p class="alert alert-danger">
-<strong>WARNING</strong>: If you forget the <code>-m</code> option, git will put you into a command-line <em>text editor</em> so that you can compose a message (then save and exit to finish the commit). If you haven’t done any other configuration, you might be dropped into the <strong><em>vim</em></strong> editor. Type <strong><code>:q</code></strong> (<strong>colon</strong> then <strong>q</strong>) and hit enter to flee from this horrid place and try again, remembering the <code>-m</code> option! Don’t panic: getting stuck in <em>vim</em> <a href="https://stackoverflow.blog/2017/05/23/stack-overflow-helping-one-million-developers-exit-vim/">happens to everyone</a>.
+<strong>WARNING</strong>: If you forget the <code>-m</code> option, git will put you into a command line <em>text editor</em> so that you can compose a message (then save and exit to finish the commit). If you haven’t done any other configuration, you might be dropped into the <strong><em>vim</em></strong> editor. Type <strong><code>:q</code></strong> (<strong>colon</strong> then <strong>q</strong>) and hit enter to flee from this horrid place and try again, remembering the <code>-m</code> option! Don’t panic: getting stuck in <em>vim</em> <a href="https://stackoverflow.blog/2017/05/23/stack-overflow-helping-one-million-developers-exit-vim/">happens to everyone</a>.
 </p>
 <div id="commit-message-etiquette" class="section level4">
 <h4><span class="header-section-number">3.3.2.1</span> Commit Message Etiquette</h4>

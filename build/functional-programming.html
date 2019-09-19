@@ -25,7 +25,7 @@
 <meta name="author" content="Joel Ross">
 
 
-<meta name="date" content="2019-04-23">
+<meta name="date" content="2019-09-19">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -70,12 +70,12 @@
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About this Book</a></li>
 <li class="chapter" data-level="1" data-path="setup-machine.html"><a href="setup-machine.html"><i class="fa fa-check"></i><b>1</b> Setting Up Your Machine</a><ul>
-<li class="chapter" data-level="1.1" data-path="setup-machine.html"><a href="setup-machine.html#git"><i class="fa fa-check"></i><b>1.1</b> Git</a><ul>
-<li class="chapter" data-level="1.1.1" data-path="setup-machine.html"><a href="setup-machine.html#github"><i class="fa fa-check"></i><b>1.1.1</b> GitHub</a></li>
+<li class="chapter" data-level="1.1" data-path="setup-machine.html"><a href="setup-machine.html#command-line-tools-bash"><i class="fa fa-check"></i><b>1.1</b> Command Line Tools (Bash)</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="setup-machine.html"><a href="setup-machine.html#command-line-on-a-mac"><i class="fa fa-check"></i><b>1.1.1</b> Command Line on a Mac</a></li>
+<li class="chapter" data-level="1.1.2" data-path="setup-machine.html"><a href="setup-machine.html#command-line-on-windows"><i class="fa fa-check"></i><b>1.1.2</b> Command Line on Windows</a></li>
 </ul></li>
-<li class="chapter" data-level="1.2" data-path="setup-machine.html"><a href="setup-machine.html#command-line-tools-bash"><i class="fa fa-check"></i><b>1.2</b> Command-line Tools (Bash)</a><ul>
-<li class="chapter" data-level="1.2.1" data-path="setup-machine.html"><a href="setup-machine.html#command-line-on-a-mac"><i class="fa fa-check"></i><b>1.2.1</b> Command-line on a Mac</a></li>
-<li class="chapter" data-level="1.2.2" data-path="setup-machine.html"><a href="setup-machine.html#command-line-on-windows"><i class="fa fa-check"></i><b>1.2.2</b> Command-line on Windows</a></li>
+<li class="chapter" data-level="1.2" data-path="setup-machine.html"><a href="setup-machine.html#git"><i class="fa fa-check"></i><b>1.2</b> Git</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="setup-machine.html"><a href="setup-machine.html#github"><i class="fa fa-check"></i><b>1.2.1</b> GitHub</a></li>
 </ul></li>
 <li class="chapter" data-level="1.3" data-path="setup-machine.html"><a href="setup-machine.html#text-editors"><i class="fa fa-check"></i><b>1.3</b> Text Editors</a><ul>
 <li class="chapter" data-level="1.3.1" data-path="setup-machine.html"><a href="setup-machine.html#visual-studio-code"><i class="fa fa-check"></i><b>1.3.1</b> Visual Studio Code</a></li>
@@ -528,24 +528,24 @@ squares <span class="token operator">=</span> <span class="token builtin">map</s
 <p>Because the <code>reduce()</code> function can be complex to interpret, it was actually <em>removed</em> from the set of “core” built-in functions in Python 3 and relegated to the <code>functools</code> module. Thus you need to import the function in order to use it:</p>
 <pre class="language-python"><code><span class="token keyword">from</span> functools <span class="token keyword">import</span> <span class="token builtin">reduce</span></code></pre>
 <p>To understand how a <em>reduce</em> operation works, consider the following basic loop:</p>
-<pre class="language-python"><code><span class="token keyword">def</span> <span class="token function">multiply</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment"># a function that multiplies two numbers</span>
-    <span class="token keyword">return</span> x<span class="token operator">*</span>y
+<pre class="language-python"><code><span class="token keyword">def</span> <span class="token function">add_twice</span><span class="token punctuation">(</span>initial<span class="token punctuation">,</span> new_amount<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment"># a function that adds a second number twice</span>
+    <span class="token keyword">return</span> initial <span class="token operator">+</span> new_amount <span class="token operator">+</span> new_amount
 
 numbers <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span>  <span class="token comment"># an initial list</span>
 
-running_total <span class="token operator">=</span> <span class="token number">1</span>  <span class="token comment"># an accumulated aggregate</span>
+running_total <span class="token operator">=</span> <span class="token number">0</span>  <span class="token comment"># an accumulated aggregate</span>
 <span class="token keyword">for</span> number <span class="token keyword">in</span> numbers<span class="token punctuation">:</span>
-    running_total <span class="token operator">=</span> multiply<span class="token punctuation">(</span>running_total<span class="token punctuation">,</span> number<span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>running_total<span class="token punctuation">)</span>  <span class="token comment"># 120  (1*2*3*4*5)</span></code></pre>
+    running_total <span class="token operator">=</span> add_twice<span class="token punctuation">(</span>running_total<span class="token punctuation">,</span> number<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>running_total<span class="token punctuation">)</span>  <span class="token comment"># 30  (0+2*1+2*2+2*3+2*4+2*5)</span></code></pre>
 <p>This loop <strong>reduces</strong> the list into an “accumulated” product (factorial) of all the numbers in the list. Inside the loop, the <code>multiply()</code> function is called and passed the “current total” and the “new value” to be combined into the aggregate (<em>in that order</em>). The resulting total is then reassigned as the “current total” for the next iteration.</p>
 <p>The <strong><code>reduce()</code></strong> function does exactly this work: it takes as arguments a <em>callback</em> function used to combine the current running total with the new value, and a list of values to combine. Whereas the <code>map()</code> and <code>filter()</code> callback functions each took 1 argument, the <code>reduce()</code> callback function requires <strong>2</strong> arguments: the first will be the “running total”, and the second will be the “new value” to mix into the aggregate. (While this ordering doesn’t influence the factorial example, it is relevant for other operations):</p>
-<pre class="language-python"><code><span class="token keyword">def</span> <span class="token function">multiply</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment"># a function that multiplies two numbers</span>
-    <span class="token keyword">return</span> x <span class="token operator">*</span> y
+<pre class="language-python"><code><span class="token keyword">def</span> <span class="token function">add_twice</span><span class="token punctuation">(</span>initial<span class="token punctuation">,</span> new_amount<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment"># a function that adds a second number twice</span>
+    <span class="token keyword">return</span> initial <span class="token operator">+</span> new_amount <span class="token operator">+</span> new_amount
 
 numbers <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span>  <span class="token comment"># an initial list</span>
 
-product <span class="token operator">=</span> <span class="token builtin">reduce</span><span class="token punctuation">(</span>multiply<span class="token punctuation">,</span> numbers<span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>product<span class="token punctuation">)</span>  <span class="token comment"># 120</span></code></pre>
+product <span class="token operator">=</span> <span class="token builtin">reduce</span><span class="token punctuation">(</span>add_twice<span class="token punctuation">,</span> numbers<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token comment"># start aggregating with 0</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>running_total<span class="token punctuation">)</span>  <span class="token comment"># 30  (0+2*1+2*2+2*3+2*4+2*5)</span></code></pre>
 <p>Note that the <code>reduce()</code> function aggregates into a single value, so the result doesn’t need to be converted from an <em>iterator</em> to a list!</p>
 <p>To summarize, the <code>map()</code>, <code>filter()</code>, and <code>reduce()</code> operations work as follows:</p>
 <div class="figure">
