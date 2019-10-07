@@ -16,6 +16,19 @@ type(true)    # NameError: name 'true' is not defined
 _Fun fact_: logical values are called "booleans" after mathematician and logician [George Boole](https://en.wikipedia.org/wiki/George_Boole), who invented many of the rules and uses of this construction (called [Boolean algebra](https://en.wikipedia.org/wiki/Boolean_algebra)).
 </p>
 
+Note that boolean variables should be named as _statements of truth_. Use words such as `is` or `has` in the variable name:
+
+```python
+is_early = True
+is_sleeping = False
+has_work = True
+needs_coffee = True
+```
+
+Naming boolean variables like statements will help make it clear that their value is a boolean, and make it easier to read and understand your logic.
+
+
+### Relational Operators
 Boolean values are most commonly the result of applying a **relational operator** (also called a **comparison operator**) to some other data type. Comparison operators are used to compare values and include: `<` (less than), `>` (greater than), `<=` (less-than-or-equal, written as read), `>=` (greater-than-or-equal, written as read), `==` (equal), and `!=` (not-equal).
 
 ```python
@@ -31,19 +44,18 @@ y == math.pi  # returns logical value False
 
 # compare strings (based on alphabetical ordering)
 "cat" > "dog"  # returns False
+
+# Note that when comparing strings, upper-case letters are always considered 
+# "earlier" than lower-case letters
+"Z" < "a"  # returns True
 ```
 
 <p class="alert alert-warning">
-**Important** `==` (two equals signs) is a comparison operator, but `=` (one equals sign) is the assignment operator!
+**IMPORTANT DO NOT SKIP** `==` (two equals signs) is a comparison operator, but `=` (one equals sign) is the assignment operator! This a really common mistake and one of the hardest ones to track down. `=` is assignment; `==` is comparison.
 </p>
 
-Note that boolean variables should be named as _statements of truth_. Use words such as `is` in the variable name:
+<p class="alert alert-info">In computer programming, we default to "strict inequalities" (`<` and `>`) by default. So if someone says "more than", you can assume they mean `>` and not `>=`.</p>
 
-```python
-is_early = True
-is_sleeping = False
-needs_coffee = True
-```
 
 ### Boolean Operators
 In addition, boolean values support their own operators (called **logical operators** or **boolean operators**). These operators are applied to boolean values and produce boolean values, and allow you to make more complex _boolean expressions_:
@@ -75,27 +87,36 @@ not pet == "cat"  # True
 
 # pet is "cat" OR "dog"
 pet == "cat" or pet == "dog"  # True
-
-# This doesn't work (operators are applied left-to-right; check the type
-# at each step!)
-# See "short-circuiting" below, as well as http://stackoverflow.com/a/19213583
-pet == "cat" or "dog"  # "dog"
 ```
+
+In the last example, there is an implicit order of operations being followed: _relational operators_ are evaluated before _boolean operators_. This means that the last line is being interpreted as `(pet == "cat") or (pet == "dog")`.
+
+This also means that you can't use some "plain English" construction of expressions:
+
+```python
+# This does not work!
+pet == "cat" or "dog"  # returns "dog"
+```
+
+In this case, the expression is evaluated as `(pet == "cat") or "dog"`. And since `pet == "cat"` is `False`, then the statement is read as `False == "dog"`, which will return the second operand (see "short-circuiting" below). In short, if you want to check if a variable has one of a set of values, you need to compare each individually (`pet == "cat" or pet == "dog"`).
+
 
 Because boolean expressions produce _more_ booleans, it is possible to combine these into complex logical expressions:
 
 ```python
 # given two booleans P and Q
-P = True
-Q = False
+is_raining = True
+is_sunny = False
 
-P and not Q  # True
-not P and Q  # False
-not (P and Q)  # True
-(not P) or (not Q)  # True
+is_raining and not is_sunny  # True; evaluated as `is_raining and (not is_sunny)`
+not is_raining and is_sunny  # False
+not (is_raining and is_sunny)  # True
+(not is_raining) or (not is_sunny)  # True
 ```
 
-The last two expressions in the above example are equivalent logical statements for _any_ combination of values for `P` and `Q`, what is known as [De Morgan's Laws](https://en.wikipedia.org/wiki/De_Morgan%27s_laws). Indeed, many logical statements can be written in multiple equivalent ways.
+The last two expressions in the above example are equivalent logical statements for any two boolean values, what is known as [De Morgan's Laws](https://en.wikipedia.org/wiki/De_Morgan%27s_laws). Indeed, many logical statements can be written in multiple equivalent ways.
+
+- Use parentheses to explicitly enforce the order of operations. Values inside the parentheses will be evaluates first, and you can work your way out to determine the resulting value.
 
 Finally, note that when using an `and` operator, Python will **short-circuit** the second operand and never evaluate it if the first is found to be `False` (after all, if the first operand isn't `True` there is no way for the entire `and` expression to be!)
 
@@ -103,14 +124,15 @@ Finally, note that when using an `and` operator, Python will **short-circuit** t
 x = 2
 y = 0
 x == 2 and x/y > 1  # ZeroDivisionError: division by zero
-x == 3 and x/y > 1  # no error (short-circuited)
+x == 3 and x/y > 1  # no error (x == 3 is False, 
+                    # so short-circuits without dividing by 0)
 
-# Use a "guardian expression" (make sure y is not 0)
-# to avoid any errors
+# Use a "guardian expression" (make sure y is not 0) to avoid any errors
 y != 0 and x/y > 1  # no error (short-circuited)
 ```
 
-The reason this works is because when the Python interpreter reads the expression `P and Q`, it produces `Q` if `P` is `True`, and `P` otherwise. After all if `P` is `True`, then the overall truth of the expression is dependent entirely on `Q` (and thus that can just be returned). Similarly, if `P` is `False`, then the whole statement is False (which is the value of `P`, so just return that!)
+The reason this works is because when the Python interpreter reads the expression `P and Q`, it produces `Q` if `P` is `True`, and `P` otherwise. After all if `P` is `True`, then the overall truth of the expression is dependent entirely on `Q` (and thus that can just be returned). Similarly, if `P` is `False`, then the whole statement is False (which is the value of `P`, so just return that!). See [here](http://stackoverflow.com/a/19213583) for a more detailed example.
+
 
 ## Conditional Statements
 One of the primary uses of Boolean values (and the _boolean expressions_ that produce them) is to control the flow of execution in a program (e.g., what lines of code get run in what order). While we can use _functions_ are able to organization instructions, we can also have our program decide which set of instructions to execute based on a set of conditions. These decisions are specified using **conditional statements**.
