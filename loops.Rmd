@@ -1,0 +1,431 @@
+# Iterating with Loops
+
+One of the main benefits of using computers to perform tasks is that computers never get tired or bored, and so can do the same thing over and over and over and over and over and over again. This is a process known as **iteration**. Iteration represents another form of _control flow_ (similar to conditionals), and is specified in a program using a set of statements called **loops**. In this chapter, you will learn the basics of writing loops to perform iteration; as well as how to use loops to iterate through sequences such as lists.
+
+## For Loops
+Loops are **control structures** (similar to `if` statements) that allow you to perform iteration. These statements specify that a _block_ of code should be executed repeatedly&mdash;the block is executed statement by statement, and then the flow of control "loops" back to the top to execute the statements again. Programming languages such as Python support a number of different kinds of loops, which differ primarily in how they determine whether or not to repeat the block (though this difference is reflected in the syntax).
+
+In Python, the most common loop used for iteration is known as a **for loop**, which is usually used to repeat a block _once for each_ value in a sequence. A Python for loop has the following structure:
+
+```python
+for LOCAL_VARIABLE in SEQUENCE:
+    # lines of code to run for each element in the sequence
+```
+
+For example, you could have a for loop that iterates over a range of numbers:
+
+```python
+numbers_list = [1,2,3,4,5] # a list of numbers
+for number in numbers_list:
+    print(number)
+```
+
+
+When the Python interpreter encounters a for loop, it begins the following process:
+
+1. It takes the first element of the _sequence_ (e.g., of `numbers_list`&dash;so a `1`) and assigns that to the local variable (e.g., `number`). Thus implicitly the interpreter is executing the code `number = numbers_list[0]`
+2. It then executes the _block_ (the indented code after the colon). In this case, it prints out the `number` variable&mdash;which is currently `1`.
+3. At the end of the block, the interpreter _loops_ back around to the top of the loop. 
+4. It will take the _next_ element of the sequence and assign that to the local variable. So implicitly, the interpreter executes `number = numbers_list[1]`.
+5. It then again executes the block of code, in this case printing out the `number` variable&mdash;which now has a value of `2`!
+6. At the end of the block, the interpreter loops back to the top of the loop.
+7. ... and the cycle continues until it runs out of elements in the sequence.
+
+Thus in the end this loop prints out the values 1 to 5.
+
+A for loop thus performs the block once for each element in the sequence, assigning that element temporarily to a local variable that you provide. So a for loop can be read as _"`for` each item (which I'm calling `local_variable`) that is `in` the `sequence`, do the block"_.
+
+<p class="alert alert-success">Be careful with variable names when using loops! Name your list or sequences using _plurals_ (e.g., `number`**`s`**`_list`) and name your local variable using a singular (e.g., `number`). This will help you to keep track whether you are referring to a lot of values (the list) or just a single value from that.</p>
+
+The block in the for loop (also called the _body_ of the loop) is a block of code just like the ones used in functions or `if` statements. That means that they can include multiple lines of code, including other control statements. As with functions, nested control statements such as `if` are indented an extra step (4 spaces or 1 tab):
+
+```python
+# A list of numbers
+numbers = [3.98, 8, 10.8, 3.27, 5.21]
+
+# A for loop that includes multiple lines of code, including an if statement
+for number in numbers:    
+    if number > 5:
+        print str(number) + " is big"
+    else:
+        print str(number) + " is small"
+```
+
+### Variables and Loops
+When writing loops, you need to remember that the body of the loop will be executed repeatedly&mdash;it's almost like those lines of code are being "copy-and-pasted" over and over again. This means that you need to be careful about assigning variables inside of loops, since subsequent iterations may cause that variable to be "re-assigned".
+
+For example consider the below code that wants to count the number of large numbers in a list:
+
+```python
+# A list of numbers
+numbers = [5.21, 8, 10.8, 3.27, 3.98]
+
+# A loop that tries to "tally" how many big numbers are in the list
+# THIS WILL NOT WORK!
+for number in numbers:    
+    big_number_tally = 0
+    if number > 5:
+        big_number_tally = big_number_tally +1
+    print(big_number_tally)
+```
+
+The first statement of the loop body is to assign a `0` to the `big_number_tally` variable. So the first time through the loop (when the value `5.21` is assigned to `number`), the `number > 5` condition will be true, causing the `big_nubmer_tally` to increase by 1 (from `0` to `1`). However, the second time through the loop (when `8` is assigned to `number`), the `big_number_tally` is _reset_ to `0`&mdash;in effect, the algorithm "forgets" that it had already counted one big number and tries to start over! Moreover, because the `print()` statement is inside the loop, it means that the tally will be printed out _for each_ element in the list: so it will print out the "tally" 5 times!
+
+Instead, if you want a variable to "save" its value across loop executions, you'll need to declare it _outside_ of the loop (before the iteration starts). 
+
+```python
+# A list of numbers
+numbers = [5.21, 8, 10.8, 3.27, 3.98]
+
+# Initialize variables BEFORE (outside) the loop!
+big_number_tally = 0
+
+# A loop that will tally how many big numbers are in the list. This will work!
+for number in numbers:    
+    if number > 5:
+        big_number_tally = big_number_tally +1
+
+# Use result AFTER (outside) the loop!
+print(big_number_tally)
+```
+
+## Lists and Loops
+
+One of the most common places to use a loop is to iterate through a list&mdash;do run some code once _for each_ element of that list. This kind of process can be seen in the previous examples, with more specific algorithms discussed in later chapters. However, there are a few points to note about using loops with lists.
+
+The simplest way to loop through a list is to use the structure noted previously: `for local_element in a_list:`. However, while this structure will let you access each _value_ in the list, it doesn't help you know which _index_ those values are at. In effect, each run through the loop is "independent"&mdash;there is nothing that records which element you're at, what the previous or next elements may be, or how many elements there are total. There is no information about where the value is positioned in the list; you only know what the value is.
+
+If you need to know anything about the value's position in the list, a better structure is to loop through the _indices_ of the list (rather than through it's values).
+
+- To go back to the "hotel" metaphor: you loop through the room numbers, not through the room occupants!
+
+In order to do this, you'll need to get a sequence of indices; the most idiomatic way to do this is to use a _range_:
+
+```python
+list_indices = range(len(my_list))
+```
+
+The `range()` function will produce a sequence of numbers from 0 to the given argument&mdash;and that's exactly what the indices to a list would be! Because the "last" index of a list is one less than the length and the ending value of `range()` is exclusive, using `len(my_list)` as the argument to range will produce a sequence with the right number of values.
+
+Once you have this sequence of indices, you can loop through them, accessing each list value at its room number (think: going to each hotel room number and knocking on the door):
+
+```python
+# A list of numbers
+numbers = [5.21, 8, 10.8, 3.27, 3.98]
+
+# Loop through all of the indices of the list
+for current_index in range(len(numbers)):
+    # prints e.g., "Value at index 0 is 5.21"
+    print("Value at index", current_index, "is", numbers[current_index])
+```
+
+Note that you use `current_index` between the brackets (in `numbers[current_index]`) in order to access the value at that (variable) index.
+
+<p class="alert alert-warning">Be sure to remember the `range()` function! The structure is `for current_index in range(len(my_list))`, not `for current_index in len(my_list)`. The later won't work; you can't iterate through a number (which is what `len(my_list)` produces).</p>
+
+It's common for programmers to use the variable `i` (or sometimes `idx`) as a shorthand for more descriptive `current_index`. This is one of the few places it's acceptable to use a single-letter variable name. By convention, `i` is a variable that refers to the "current index" of a loop:
+
+```python
+# Loop through all of the indices of the list
+for i in range(len(numbers)):
+    print("Value at index", i, "is", numbers[i])
+```
+
+You'll need to loop through the list indices if you want to _modify_ the contents of the list&mdash;without those "room numbers" you won't be able to change who lives in the hotel!
+
+```python
+# A list of numbers
+numbers = [5.21, 8, 10.8, 3.27, 3.98]
+
+# Loop through all of the indices of the list
+for i in range(len(numbers)):
+    rounded_value = round(numbers[i]) # get a round version of that value
+    numbers[i] = rounded_value # put that rounded value back in the list
+
+# Print the (now-rounded) list
+print(numbers)  # [5, 8, 11, 3, 4]
+```
+
+<p class="alert alert-info">Note that this process of applying some change to each element in a list is known as a **mapping** (each value "maps" or goes to some transformed version of itself). We will discuss mapping more in a later chapter.</p>
+
+<p class="alert alert-info">There is another, shortcut syntax for looping through lists (to create other lists) called _list comprehensions_. These are discussed in more detail in a [later chapter](#list-comprehensions).</p>
+
+## Nested Loops
+Remember that loops can contain other control structures&mdash;including other loops! These are referred to as "nested loops":
+
+```python
+for letter in ['a', 'b', 'c']: # "outer" loop through list of letters
+    for number in [1, 2, 3]: # "inner" loop through list of numbers
+        print(letter, number) # prints e.g., "a 1"
+```
+
+This code prints the following:
+
+```
+a 1
+a 2
+a 3
+b 1
+b 2
+b 3
+c 1
+c 2
+c 3
+```
+
+Notice the order in which they are printed. The interpreter does the following:
+
+1. It begins the first loop (called the "outer" loop), assigning `'a'` to `letter`.
+2. It then begins the second loop (called the "inner" loop), assigning `1` to `number`.
+3. It prints out the current letter and number (`a 1`)
+4. It then goes back to the top of the _inner_ loop and assigns `2` to `number`, then prints out the next combo (`a 2`)
+5. The interpreter continues the inner loop until it is finished. Only once that block of code is done does it get to the "end" of the outer loop.
+6. Once it has gotten to the end of the outer loop, it goes back to the top of the outer loop and assigns `b` to `letter`. Then the process continues.
+
+In short: it completes the inner loop before going to the next run of the outer loop (which involves doing the inner loop again).
+
+Just as the most common place to use a loop is with a list, the most common place to use a _nested loop_ is with a _nested list_:
+
+```python
+# A simple table of values
+table = [ ['a1','a2','a3','a4'],
+          ['b1','b2','b3','b4'],
+          ['c1','c2','c3','c4'] ]
+
+for row_index in range(len(table)): # go through each row (with index)
+  for col_index in range(len(table[row_index])) # go through each col of that row (with index)
+      print(table[row_index][col_index]) # access element at specified row and column
+```
+
+Because `table` is a list of rows, you can iterate through that list (the outer loop, using `row_index`). And then _for each_ row, because that row is itself a list, you can iterate through its entries (the inner loop, using `col_index`). And in the end, you can access individual elements of the table using bracket notation.
+
+<p class="alert alert-success">The best way to work about nested loops (or loops in general) is to walk through them step by step, in order to trace what is happening at each iteration. Drawing out a diagram or writing down sample output is a great way of helping you track what is going on!</p>
+
+
+## While Loops
+
+For loops are the most common kind of loop in Python. However, for loops are used for when you have a distinct sequence of values to loop through (or a specific number of times you want to perform the loop that you can define with a range). On the other hand, sometimes you want to loop until a certain set of conditions are met&mdash;the interpreter don't know how many times the loop will repeat until it's already cycling.
+
+You can perform this kind of "indefinite iteration" using a **while loop**. A Python while loop has the following structure:
+
+```python
+while CONDITION:
+    # lines of code to run if the condition is True
+```
+
+The structure looks much like an `if` statement, and is similar in many regards. As with an `if` statement, the _CONDITION_ can be any boolean value (or any expression that evaluates to a boolean value), and it determines whether or not the loop's _block_ will be executed.
+
+Take as an example the following more concrete example:
+
+```python
+# Define a current count -- the "loop control variable"
+count = 5
+
+while count > 0: # loop if the count is positive
+    print(count)
+    count = count - 1 # adjust the loop control variable
+
+print("Blastoff!")
+```
+
+- (This example would actually be more properly written as a for loop, because the loop will always run exactly 5 times. Indeed, all for loops can also be written as while loops).
+
+In this example, when the interpreter reaches the `while` statement, it first checks the condition (`count > 0`, where `count` is 5). Finding that condition to be `True`, the interpreter then executes the block, printing the `count` and then _decrementing_ that variable. Once the block is executed, the interpreter **loops back to the `while` statement** and rechecks the condition. Finding that `count` (4) is still greater than 0, it executes the block _again_ (causing `count` to decrement again). This continues until the interpreter loops to the `while` statement and finds that `count` has reached 0, and thus is no longer greater than 0. Since the condition is now `False`, the interpreter does _not_ re-enter the loop, and proceeds to the following statement ("Blastoff!").
+
+<p class="alert alert-warning">
+**Importantly**, the condition is only checked when the block is _about_ to execute: both at the "start" of the loop, and then at the beginning of each subsequent iteration. Having the condition become `True` in the middle of the block (possibly temporarily) will have no impact on the control flow. It is also possible for the interpreter to "never enter" the loop if the condition is not initially `True`.
+</p>
+
+### Counting with While Loops
+The above example also demonstrates how to use a "counter" to determine whether or not the loop has run a sufficient number of times: this is known as a **loop control variable (LCV)**. The "standard" counting loop looks like:
+
+```python
+count = 0              # 1. initialize the counter
+while count < 100:     # 2. check if the counter has reached its target
+    print(count)       # 3. do some work (this may be multiple statements)
+    count = count + 1  # 4. update the counter
+```
+
+In order for a counted loop to work properly, you need to be careful about steps 2 and 4: the condition and the update.
+
+First, recall that the condition is _whether to run the loop_, not _whether to stop_:
+
+```python
+count = 0
+while count == 100:  # bad condition!
+    print(count)
+    count = count + 1
+```
+
+In this case, the condition is not initially `True`, so the interpreter never enters the loop.
+
+<p class="alert alert-success">
+When writing while loop conditions, think _"do we keep going"_ rather than _"are we there yet?"_. In loops (as in life), the journey is more important than the destination!
+</p>
+
+Second, consider what happens if you forget to update the loop control variable:
+
+```python
+count = 0
+while count < 100
+    print(count)
+    # no counter update
+```
+
+In this case, the interpreter checks that `count` (0) is less than 100, then runs the loop. Then checks that `count` (still 0) is less than 100, then runs the loop. Then checks that `count` (_still_ 0) is less than 100, then runs the loop...
+
+This is known as an **infinite loop**: the loop will run forever, never being able to "break out" and reach the next statement.
+
+<p class="alert alert-warning">
+If you hit an infinite loop in Jupyter Notebook, use `Kernel > Interrupt` to break it and try again. If running a `.py` file on the command line, use `Ctrl-C` to cancel the script.
+</p>
+
+There are lots of ways to accidentally produce an infinite loop, including:
+
+1. Having a condition that is "too exact" can cause the loop control variable to "miss" a particular breaking value:
+
+    ```python
+    count = 0
+    while count != 100:  # if we aren't at 100
+        print(count)
+        count = count + 3  # this will never equal 100
+    ```
+
+    Thus it is always safer to use **inequalities** (e.g., `<` or `>`) when writing loop conditions.
+
+2. Resetting the counter in the body of the loop can cause it to never reach its goal:
+
+    ```python
+    count = 0
+    while count < 100:
+        count = 0  # this resets the count!
+        print(count)
+        count = count + 1
+    ```
+
+The best way to catch these errors is to "play computer": pretend that you are the compiler, and go through each statement one by one, keeping track of the loop control variable (writing its value down on a sheet of paper does wonders). This will help you be able to "trace" what your program is doing and catch any bugs there may be.
+
+### Sentinels
+Consider the following example (which includes a nested `if` statement inside of the while loop):
+
+```python
+# flip a coin until it shows up heads
+still_flipping = True
+while still_flipping:
+    flip = random.randint(0,1) # pick randomly 0 or 1
+    if flip == 0:
+        flip = "Heads"
+    else:
+        flip = "Tails"
+    print(flip)
+    if flip == "Heads":
+        still_flipping = False
+```
+
+In this example, the `still_flipping` boolean variable acts as the _loop control variable_, as it determines whether or not the loop is repeated. Using a boolean as a LCV is known as using a **sentinel variable**. A sentinel (guard) variable is used to control whether or not the program flow gets out of the loop: as long as the sentinel is `True`, the loop continues to run. Thus the loop can be "exited" by assigning the sentinel to be `False`. This is particularly useful when there may be a complex set of conditions that need to be met before the program can carry on.
+
+(It is of course possible to design a sentinel such as `done_flipping`, and then have the `while` condition check that the sentinel is **`not`** `True`. While this may be useful depending on how you've structured the algorithm, I suggest you always use a "positive" boolean for readability).
+
+
+### Difference Between For and While Loops
+The main difference between for loops and while loops is:
+
+> for loops are used for **definite** iteration; while loops are used for **indefinite** iteration.
+
+A for loop is appropriate when the interpreter does know _in advance_ (before the loop starts) how many times the block will be executed&mdash;a definite number of iterations. Note that the number of iterations may be a variable so not determined until runtime; however, the value of that variable will still be known when the `for` statement is executed. On the other hand, while loops are appropriate when the interpreter doesn't know _in advance_ (before the loop starts) how many times the loop block will be executed: the loop does not have a definite number of iterations. 
+
+All iteration can be written with a while loop; but when performing definite iteration, it is easier, faster, and more idiomatic to use a for loop!
+
+
+## Iterating over Files
+For loops can be used to iterate through any sequence (technically any "iterable" type). One of the more useful sequences when working with data are external **files** (e.g., text files). Files can be treated as a sequence of _lines_ (each divided by a `\n` newline character), and thus Python can "read" a text file using a for loop to iterate over the lines of text in the file.
+
+In order to read or write text file data, you use the built-in [`open()`](https://docs.python.org/3/library/functions.html#open) function, passing it the _path_ to the file you wish to access. This function will then return an object representing that particular file (e.g., it's location on the disk), with methods that you can use to read from and write to it.
+
+```python
+my_file = open('myfile.txt')  # open the file
+
+for line in my_file:
+    print(line)  # print each line in the file
+```
+
+<p class="alert alert-warning">
+Remember to **always** use _relative_ paths. Note that when using a Jupyter Notebook, the "current working directory" is the directory in which you ran the `jupyter notebook` command to start the server.
+</p>
+
+Once you have opened a file, you can use a for loop to iterate through its line (as in the example above). You can also use a while loop, calling the [`readline()`](https://docs.python.org/3.3/tutorial/inputoutput.html#methods-of-file-objects) method _on_ the file in order to read a single line at a time. Note that once you've looped through a file, that file has been "read" and will not be able to be looped through again unless you "re-open" it. In general, you should only read through a file once in any program you write!
+
+After a file has been opened, it will remain "open" until it is explicitly closed. The recommended way to do this is by using the `with` keyword, which will make sure that the file is closed either when it is done being read or if some kind of error occurs:
+
+```python
+# Always use this structure when opening files!
+with open('myfile.txt') as my_file:
+    for line in my_file:
+        print(line)
+```
+
+It is also possible to write out content to a file. To do this, you need to open the file with "write" access (allowing the program to write to and modify it) by passing `w` as the second argument to the `open()` function. You can then use the `write()` method to "print" text to the file:
+
+```python
+# "open" the file with "write" access
+with open('myfile.txt', 'w') as my_file:
+    my_file.write("Hello world!\n")
+    my_file.write("It's a mighty fine morning\n")
+```
+
+Note that unlike the `print()` function, `write()` does not include a line break at the end of each method call; you need to add those yourself!
+
+<p class="alert alert-info">For some specialized text files, such as `.csv` files (comma-separated lists&mdash;spreadsheets), there are other specialized modules that can simplify reading the file content. For `csv` files, check out the [`csv` module](https://docs.python.org/3/library/csv.html).</p>
+
+### Try/Except
+File operations rely on a context that is external to the program itself: namely, that the file you wish to open actually exists at the location you specify! But that may not be the case&mdash;particularly if which file to open is specified by the user:
+
+```python
+filename = input("File to open: ")  # ask user which file to open
+
+with open(filename) as my_file:  # "open" the file
+    for line in my_file:
+        print(line)
+```
+
+If the user provides a bad file name, your program will encounter an error _through no fault of your own as a programmer_:
+
+```
+$ python script.py
+File to open: neener neener
+Traceback (most recent call last):
+  File "script.py", line 4, in <module>
+    my_file = open(filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'neener neener'
+```
+
+Since it's possible for the user to make a mistake, we could like the program not to simply fail with an error, but to instead be able to "recover" and keep running (e.g., by asking the user for a different file name). We can perform this kind of [**error handling**](https://docs.python.org/3/tutorial/errors.html) by utilizing a **`try`** statement with an **`except`** clause:
+
+```python
+filename = input("File to open: ")
+
+try: # this might break (not our fault)
+    my_file = open(filename)
+    for line in my_file:
+        print(line)
+except:  # catching FileNotFoundError
+    print("No such file")
+```
+
+A `try` statement acts somewhat similar to an `if` statement; however, the `try` statement checks to see if any errors occur _within its block_. If such an error occurs, rather than the program crashing, the interpreter will _immediately_ jump to the `except` class and execute that block, before continuing on with the rest of the program.
+
+- Note that this is an exception to the general rule that conditions are only checked at the start of a block; a `try` block effectively tells the computer to keep an eye out for any errors ("try this, but it might break"), with the `except` clause specifying what to do if such an error occurs.
+
+- The `with` keyword also acts as a `try/except` that will make sure the file is closed if there is an error.
+
+`try` statements are used when a program may hit an error that is _not caused by programmer's code, but by an external input_ (e.g., from a user or a file). You should not use a `try` statement to fix broken program logic or invalid syntax: instead, you should fix those problems directly!
+
+
+## Resources {-}
+<div class="list-condensed">
+- [Iterations (Downey)](https://books.trinket.io/pfe/05-iterations.html)
+- [Flow Control (Sweigart)](https://automatetheboringstuff.com/chapter2/) (second half)
+- [Iteration (Severance)](http://openbookproject.net/thinkcs/python/english3e/iteration.html)
+- [Files (Downey)](https://books.trinket.io/pfe/07-files.html)
+- [Files and File Paths (Sweigart)](https://automatetheboringstuff.com/chapter8/)
+</div>

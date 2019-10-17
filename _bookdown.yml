@@ -16,8 +16,8 @@ rmd_files:
   - python-intro.Rmd
   - functions.Rmd
   - logic.Rmd
-  - iteration.Rmd
   - lists.Rmd
+  - loops.Rmd
   - dictionaries.Rmd
 
   # refined programming
