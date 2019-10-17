@@ -1,4 +1,4 @@
-# Lists and Sequences
+# Lists and Sequences {#lists}
 
 This chapter will cover using **lists** in Python, which is a data type representing a _sequence_ of data values. A list is a fundamental data type in Python, and key to writing almost all practical programs. Lists are used to store and organize large sets of data (and computer programs usually deal with _lots_ of data). This chapter covers how to create and access lists, as well as a number of related sequence structures. Note in practice, using lists also means using _loops_, which are covered in the chapter [_Iterating with Loops_](#loops).
 

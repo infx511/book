@@ -1,4 +1,4 @@
-# Iterating with Loops
+# Iterating with Loops {#loops}
 
 One of the main benefits of using computers to perform tasks is that computers never get tired or bored, and so can do the same thing over and over and over and over and over and over again. This is a process known as **iteration**. Iteration represents another form of _control flow_ (similar to conditionals), and is specified in a program using a set of statements called **loops**. In this chapter, you will learn the basics of writing loops to perform iteration; as well as how to use loops to iterate through sequences such as lists.
 
