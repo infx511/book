@@ -299,7 +299,7 @@ range(3,10) # produces `3, 4, 5, 6, 7, 8, 9`
 range(0, 10, 3) # produces `0, 3, 6, 9`; every 3rd number from 0 to 9
 ```
 
-The fact that the "ending" argument is non-inclusive is related to how sequences are zero-index. `range(10)` produces a sequence of 10 values; but because it starts at `0`, the sequence ends at `9`. When counting from 0, the 
+The fact that the "ending" argument is non-inclusive is related to how sequences are zero-index. `range(10)` produces a sequence of 10 values; but because it starts at `0`, the sequence ends at `9`. When counting from 0, the 10th number is `9`. This way a single argument refers to "how many numbers you want", rather than "what number you will end on".
 
 You can access individual elements of a range using bracket notation. Note though that ranges are **immutable**, which means you can't assign a different value to a range element.
 

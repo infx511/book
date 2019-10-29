@@ -25,7 +25,7 @@
 <meta name="author" content="Joel Ross">
 
 
-<meta name="date" content="2019-10-17">
+<meta name="date" content="2019-10-29">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -596,7 +596,7 @@ message_str<span class="token punctuation">.</span>find<span class="token punctu
 <span class="token comment"># Three arguments produces a range of numbers from the first argument (inclusive)</span>
 <span class="token comment"># to the second argument (not inclusive), stepping by the third argument</span>
 <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span> <span class="token comment"># produces `0, 3, 6, 9`; every 3rd number from 0 to 9</span></code></pre>
-<p>The fact that the “ending” argument is non-inclusive is related to how sequences are zero-index. <code>range(10)</code> produces a sequence of 10 values; but because it starts at <code>0</code>, the sequence ends at <code>9</code>. When counting from 0, the</p>
+<p>The fact that the “ending” argument is non-inclusive is related to how sequences are zero-index. <code>range(10)</code> produces a sequence of 10 values; but because it starts at <code>0</code>, the sequence ends at <code>9</code>. When counting from 0, the 10th number is <code>9</code>. This way a single argument refers to “how many numbers you want”, rather than “what number you will end on”.</p>
 <p>You can access individual elements of a range using bracket notation. Note though that ranges are <strong>immutable</strong>, which means you can’t assign a different value to a range element.</p>
 <!-- ```python
 one_to_five = range(1,6) # remember that the last number is not included!
