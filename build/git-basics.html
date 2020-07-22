@@ -25,7 +25,7 @@
 <meta name="author" content="Joel Ross">
 
 
-<meta name="date" content="2019-10-29">
+<meta name="date" content="2020-07-22">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -257,15 +257,15 @@
 </ul></li>
 <li class="chapter" data-level="" data-path="git-collaboration.html"><a href="git-collaboration.html#resources-13"><i class="fa fa-check"></i>Resources</a></li>
 </ul></li>
-<li class="chapter" data-level="15" data-path="oop.html"><a href="oop.html"><i class="fa fa-check"></i><b>15</b> Object-Oriented Programming</a><ul>
-<li class="chapter" data-level="15.1" data-path="oop.html"><a href="oop.html#why-objects"><i class="fa fa-check"></i><b>15.1</b> Why Objects?</a></li>
-<li class="chapter" data-level="15.2" data-path="oop.html"><a href="oop.html#defining-classes"><i class="fa fa-check"></i><b>15.2</b> Defining Classes</a><ul>
-<li class="chapter" data-level="15.2.1" data-path="oop.html"><a href="oop.html#attributes"><i class="fa fa-check"></i><b>15.2.1</b> Attributes</a></li>
-<li class="chapter" data-level="15.2.2" data-path="oop.html"><a href="oop.html#methods"><i class="fa fa-check"></i><b>15.2.2</b> Methods</a></li>
-<li class="chapter" data-level="15.2.3" data-path="oop.html"><a href="oop.html#constructors"><i class="fa fa-check"></i><b>15.2.3</b> Constructors</a></li>
-<li class="chapter" data-level="15.2.4" data-path="oop.html"><a href="oop.html#string-representations"><i class="fa fa-check"></i><b>15.2.4</b> String Representations</a></li>
+<li class="chapter" data-level="15" data-path="classes.html"><a href="classes.html"><i class="fa fa-check"></i><b>15</b> Classes and Object-Oriented Programming</a><ul>
+<li class="chapter" data-level="15.1" data-path="classes.html"><a href="classes.html#why-objects"><i class="fa fa-check"></i><b>15.1</b> Why Objects?</a></li>
+<li class="chapter" data-level="15.2" data-path="classes.html"><a href="classes.html#defining-classes"><i class="fa fa-check"></i><b>15.2</b> Defining Classes</a><ul>
+<li class="chapter" data-level="15.2.1" data-path="classes.html"><a href="classes.html#attributes"><i class="fa fa-check"></i><b>15.2.1</b> Attributes</a></li>
+<li class="chapter" data-level="15.2.2" data-path="classes.html"><a href="classes.html#methods"><i class="fa fa-check"></i><b>15.2.2</b> Methods</a></li>
+<li class="chapter" data-level="15.2.3" data-path="classes.html"><a href="classes.html#constructors"><i class="fa fa-check"></i><b>15.2.3</b> Constructors</a></li>
+<li class="chapter" data-level="15.2.4" data-path="classes.html"><a href="classes.html#string-representations"><i class="fa fa-check"></i><b>15.2.4</b> String Representations</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="oop.html"><a href="oop.html#resources-14"><i class="fa fa-check"></i>Resources</a></li>
+<li class="chapter" data-level="" data-path="classes.html"><a href="classes.html#resources-14"><i class="fa fa-check"></i>Resources</a></li>
 </ul></li>
 <li class="chapter" data-level="16" data-path="pandas.html"><a href="pandas.html"><i class="fa fa-check"></i><b>16</b> The <code>pandas</code> Library</a><ul>
 <li class="chapter" data-level="16.1" data-path="pandas.html"><a href="pandas.html#setting-up-pandas"><i class="fa fa-check"></i><b>16.1</b> Setting up <code>pandas</code></a></li>
@@ -277,6 +277,8 @@
 <li class="chapter" data-level="16.3.1" data-path="pandas.html"><a href="pandas.html#dataframe-operations-and-methods"><i class="fa fa-check"></i><b>16.3.1</b> DataFrame Operations and Methods</a></li>
 <li class="chapter" data-level="16.3.2" data-path="pandas.html"><a href="pandas.html#accessing-dataframes"><i class="fa fa-check"></i><b>16.3.2</b> Accessing DataFrames</a></li>
 </ul></li>
+<li class="chapter" data-level="16.4" data-path="pandas.html"><a href="pandas.html#aggregation-and-grouping"><i class="fa fa-check"></i><b>16.4</b> Aggregation and Grouping</a></li>
+<li class="chapter" data-level="16.5" data-path="pandas.html"><a href="pandas.html#joining-dataframes-together"><i class="fa fa-check"></i><b>16.5</b> Joining DataFrames Together</a></li>
 <li class="chapter" data-level="" data-path="pandas.html"><a href="pandas.html#resources-15"><i class="fa fa-check"></i>Resources</a></li>
 </ul></li>
 <li class="chapter" data-level="17" data-path="javascript.html"><a href="javascript.html"><i class="fa fa-check"></i><b>17</b> JavaScript</a><ul>
@@ -416,7 +418,7 @@ Git supports having multiple different versions of your work that all live side 
 <p>The first thing you’ll need in order to work with git is to create a <strong>repository</strong>. A repository acts as a “database” of changes that you make to files in a directory.</p>
 <p>In order to have a repository, you’ll need to have a directory of files. Create a new folder <code>git_practice</code> on your computer’s Desktop. Since you’ll be using the command line for this course, you might as well practice creating a new directory programmatically:</p>
 <div class="figure">
-<img src="img/git-basics/git-mkdir.png" title="mkdir example" alt="Making a folder with the command line." />
+<img src="img/git-basics/git-mkdir.png" title="mkdir example" alt="" />
 <p class="caption">Making a folder with the command line.</p>
 </div>
 <p>You can turn this directory <em>into</em> a repository by telling the <code>git</code> program to run the <code>init</code> action:</p>
@@ -427,7 +429,7 @@ Git supports having multiple different versions of your work that all live side 
 <ul>
 <li><p>Note that because a repo is a single folder, you can have lots of different repos on your machine. Just make sure that they are in separate folders; folders that are <em>inside</em> a repo are considered part of that repo, and trying to treat them as a separate repository causes unpleasantness. <strong>Do not put one repo inside of another!</strong></p>
 <div class="figure">
-<img src="img/git-basics/repo-folders.gif" title="Multiple repositories" alt="Multiple folders, multiple repositories." />
+<img src="img/git-basics/repo-folders.gif" title="Multiple repositories" alt="" />
 <p class="caption">Multiple folders, multiple repositories.</p>
 </div></li>
 </ul>
@@ -470,14 +472,14 @@ Git supports having multiple different versions of your work that all live side 
 <h3><span class="header-section-number">3.3.2</span> Committing</h3>
 <p>When you’re happy with the contents of your staging area (e.g., you’re ready to purchase), it’s time to <strong>commit</strong> those changes, saving that snapshot of the files in the repository database. We do this with the <code>git commit</code> command:</p>
 <pre class="language-bash"><code><span class="token function">git</span> commit -m <span class="token string">"your message here"</span></code></pre>
-<p>The <code>&quot;your message here&quot;</code> should be replaced with a short message saying what changes that commit makes to the repo (see below for details).</p>
+<p>The <code>"your message here"</code> should be replaced with a short message saying what changes that commit makes to the repo (see below for details).</p>
 <p class="alert alert-danger">
 <strong>WARNING</strong>: If you forget the <code>-m</code> option, git will put you into a command line <em>text editor</em> so that you can compose a message (then save and exit to finish the commit). If you haven’t done any other configuration, you might be dropped into the <strong><em>vim</em></strong> editor. Type <strong><code>:q</code></strong> (<strong>colon</strong> then <strong>q</strong>) and hit enter to flee from this horrid place and try again, remembering the <code>-m</code> option! Don’t panic: getting stuck in <em>vim</em> <a href="https://stackoverflow.blog/2017/05/23/stack-overflow-helping-one-million-developers-exit-vim/">happens to everyone</a>.
 </p>
 <div id="commit-message-etiquette" class="section level4">
 <h4><span class="header-section-number">3.3.2.1</span> Commit Message Etiquette</h4>
-<p>Your commit messages should <a href="https://xkcd.com/1296/">be informative</a> about what changes the commit is making to the repo. <code>&quot;stuff&quot;</code> is not a good commit message. <code>&quot;Fix critical authorization error&quot;</code> is a good commit message.</p>
-<p>Commit messages should use the <strong>imperative mood</strong> (<code>&quot;Add feature&quot;</code> not <code>&quot;added feature&quot;</code>). They should complete the sentence:</p>
+<p>Your commit messages should <a href="https://xkcd.com/1296/">be informative</a> about what changes the commit is making to the repo. <code>"stuff"</code> is not a good commit message. <code>"Fix critical authorization error"</code> is a good commit message.</p>
+<p>Commit messages should use the <strong>imperative mood</strong> (<code>"Add feature"</code> not <code>"added feature"</code>). They should complete the sentence:</p>
 <blockquote>
 <p>If applied, this commit will <strong>{your message}</strong></p>
 </blockquote>
@@ -497,7 +499,7 @@ Git supports having multiple different versions of your work that all live side 
 <h3><span class="header-section-number">3.3.4</span> Reviewing the Process</h3>
 <p>This cycle of “edit files”, “add files”, “commit changes” is the standard “development loop” when working with git.</p>
 <div class="figure">
-<img src="img/git-basics/local-process.gif" title="Local git process" alt="The local git process." />
+<img src="img/git-basics/local-process.gif" title="Local git process" alt="" />
 <p class="caption">The local git process.</p>
 </div>
 <p>In general, you’ll make lots of changes to your code (editing lots of files, running and testing your code, etc). Then once you’re at a good “break point”—you’ve got a feature working, you’re stuck and need some coffee, you’re about to embark on some radical changes—you will add and commit your changes to make sure you don’t lose any work and you can always get back to that point.</p>
@@ -554,12 +556,12 @@ movies/my_four_hour_epic.mov</code></pre>
 <ul>
 <li><p>To fork a repo, click the <strong>“Fork”</strong> button in the upper-right of the screen:</p>
 <div class="figure">
-<img src="img/git-basics/fork-button.png" title="fork button" alt="The fork button on GitHub’s web portal." />
+<img src="img/git-basics/fork-button.png" title="fork button" alt="" />
 <p class="caption">The fork button on GitHub’s web portal.</p>
 </div>
 <p>This will copy the repo over to your own account, so that you can upload and download changes to it!</p>
 <p class="alert alert-info">
-Students in the INFX 511 course will be forking repos for class and lab exercises, but <em>not</em> for homework assignments (see below)
+<p>Students in the INFX 511 course will be forking repos for class and lab exercises, but <em>not</em> for homework assignments (see below)</p>
 </p></li>
 </ul>
 <p>Now that you have a copy of the repo under your own account, you need to download it to your machine. We do this by using the <code>clone</code> command:</p>
@@ -569,7 +571,7 @@ Students in the INFX 511 course will be forking repos for class and lab exercise
 <li><p>You can get the URL from the address bar of your browser, or you can click the green “Clone or Download” button to get a popup with the URL. The little icon will copy the URL to your clipboard. <strong>Do not</strong> click “Open in Desktop” or “Download Zip”.</p></li>
 <li><p>Make sure you clone from the <em>forked</em> version (the one under your account!)</p>
 <p class="alert alert-warning">
-<strong>Warning</strong> also be sure to <code>cd</code> out of the <code>git_practice</code> directory; you don’t want to <code>clone</code> into a folder that is already a repo; you’re effectively creating a <em>new</em> repository on your machine here!
+<p><strong>Warning</strong> also be sure to <code>cd</code> out of the <code>git_practice</code> directory; you don’t want to <code>clone</code> into a folder that is already a repo; you’re effectively creating a <em>new</em> repository on your machine here!</p>
 </p></li>
 </ul>
 <p>Note that you’ll only need to <code>clone</code> once per machine; <code>clone</code> is like <code>init</code> for repos that are on GitHub—in fact, the <code>clone</code> command <em>includes</em> the <code>init</code> command (so you do not need to init a cloned repo).</p>
@@ -596,7 +598,7 @@ Students in the INFX 511 course will be forking repos for class and lab exercise
 <h3><span class="header-section-number">3.4.3</span> Reviewing The Process</h3>
 <p>Overall, the process of using git and GitHub together looks as follows:</p>
 <div class="figure">
-<img src="img/git-basics/remote-process.gif" title="Remote git process" alt="The remote git process." />
+<img src="img/git-basics/remote-process.gif" title="Remote git process" alt="" />
 <p class="caption">The remote git process.</p>
 </div>
 </div>
@@ -611,7 +613,7 @@ Students in the INFX 511 course will be forking repos for class and lab exercise
 <ol style="list-style-type: decimal">
 <li>Make changes to your files</li>
 <li><strong>Add</strong> files with changes to the staging area (<code>git add .</code>)</li>
-<li><strong>Commit</strong> these changes to take a repo (<code>git commit -m &quot;commit message&quot;</code>)</li>
+<li><strong>Commit</strong> these changes to take a repo (<code>git commit -m "commit message"</code>)</li>
 <li><strong>Push</strong> changes back to GitHub (<code>git push origin master</code>) to turn in your work.</li>
 </ol>
 <p>Repeat these steps each time you reach a “checkpoint” in your work to save it both locally and in the cloud (in case of computer problems).</p>
@@ -623,7 +625,7 @@ Students in the INFX 511 course will be forking repos for class and lab exercise
 <ul>
 <li><code>git status</code> Check the status of a repo</li>
 <li><code>git add</code> Add file to the staging area</li>
-<li><code>git commit -m &quot;message&quot;</code> Commit changes</li>
+<li><code>git commit -m "message"</code> Commit changes</li>
 <li><code>git clone</code> Copy repo to local machine</li>
 <li><code>git push origin master</code> Upload commits to GitHub</li>
 <li><code>git pull</code> Download commits from GitHub</li>

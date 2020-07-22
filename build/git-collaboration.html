@@ -25,7 +25,7 @@
 <meta name="author" content="Joel Ross">
 
 
-<meta name="date" content="2019-10-29">
+<meta name="date" content="2020-07-22">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -33,7 +33,7 @@
   
   <link rel="shortcut icon" href="img/ischool-gold.png" type="image/x-icon">
 <link rel="prev" href="git-branches.html">
-<link rel="next" href="oop.html">
+<link rel="next" href="classes.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -257,15 +257,15 @@
 </ul></li>
 <li class="chapter" data-level="" data-path="git-collaboration.html"><a href="git-collaboration.html#resources-13"><i class="fa fa-check"></i>Resources</a></li>
 </ul></li>
-<li class="chapter" data-level="15" data-path="oop.html"><a href="oop.html"><i class="fa fa-check"></i><b>15</b> Object-Oriented Programming</a><ul>
-<li class="chapter" data-level="15.1" data-path="oop.html"><a href="oop.html#why-objects"><i class="fa fa-check"></i><b>15.1</b> Why Objects?</a></li>
-<li class="chapter" data-level="15.2" data-path="oop.html"><a href="oop.html#defining-classes"><i class="fa fa-check"></i><b>15.2</b> Defining Classes</a><ul>
-<li class="chapter" data-level="15.2.1" data-path="oop.html"><a href="oop.html#attributes"><i class="fa fa-check"></i><b>15.2.1</b> Attributes</a></li>
-<li class="chapter" data-level="15.2.2" data-path="oop.html"><a href="oop.html#methods"><i class="fa fa-check"></i><b>15.2.2</b> Methods</a></li>
-<li class="chapter" data-level="15.2.3" data-path="oop.html"><a href="oop.html#constructors"><i class="fa fa-check"></i><b>15.2.3</b> Constructors</a></li>
-<li class="chapter" data-level="15.2.4" data-path="oop.html"><a href="oop.html#string-representations"><i class="fa fa-check"></i><b>15.2.4</b> String Representations</a></li>
+<li class="chapter" data-level="15" data-path="classes.html"><a href="classes.html"><i class="fa fa-check"></i><b>15</b> Classes and Object-Oriented Programming</a><ul>
+<li class="chapter" data-level="15.1" data-path="classes.html"><a href="classes.html#why-objects"><i class="fa fa-check"></i><b>15.1</b> Why Objects?</a></li>
+<li class="chapter" data-level="15.2" data-path="classes.html"><a href="classes.html#defining-classes"><i class="fa fa-check"></i><b>15.2</b> Defining Classes</a><ul>
+<li class="chapter" data-level="15.2.1" data-path="classes.html"><a href="classes.html#attributes"><i class="fa fa-check"></i><b>15.2.1</b> Attributes</a></li>
+<li class="chapter" data-level="15.2.2" data-path="classes.html"><a href="classes.html#methods"><i class="fa fa-check"></i><b>15.2.2</b> Methods</a></li>
+<li class="chapter" data-level="15.2.3" data-path="classes.html"><a href="classes.html#constructors"><i class="fa fa-check"></i><b>15.2.3</b> Constructors</a></li>
+<li class="chapter" data-level="15.2.4" data-path="classes.html"><a href="classes.html#string-representations"><i class="fa fa-check"></i><b>15.2.4</b> String Representations</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="oop.html"><a href="oop.html#resources-14"><i class="fa fa-check"></i>Resources</a></li>
+<li class="chapter" data-level="" data-path="classes.html"><a href="classes.html#resources-14"><i class="fa fa-check"></i>Resources</a></li>
 </ul></li>
 <li class="chapter" data-level="16" data-path="pandas.html"><a href="pandas.html"><i class="fa fa-check"></i><b>16</b> The <code>pandas</code> Library</a><ul>
 <li class="chapter" data-level="16.1" data-path="pandas.html"><a href="pandas.html#setting-up-pandas"><i class="fa fa-check"></i><b>16.1</b> Setting up <code>pandas</code></a></li>
@@ -277,6 +277,8 @@
 <li class="chapter" data-level="16.3.1" data-path="pandas.html"><a href="pandas.html#dataframe-operations-and-methods"><i class="fa fa-check"></i><b>16.3.1</b> DataFrame Operations and Methods</a></li>
 <li class="chapter" data-level="16.3.2" data-path="pandas.html"><a href="pandas.html#accessing-dataframes"><i class="fa fa-check"></i><b>16.3.2</b> Accessing DataFrames</a></li>
 </ul></li>
+<li class="chapter" data-level="16.4" data-path="pandas.html"><a href="pandas.html#aggregation-and-grouping"><i class="fa fa-check"></i><b>16.4</b> Aggregation and Grouping</a></li>
+<li class="chapter" data-level="16.5" data-path="pandas.html"><a href="pandas.html#joining-dataframes-together"><i class="fa fa-check"></i><b>16.5</b> Joining DataFrames Together</a></li>
 <li class="chapter" data-level="" data-path="pandas.html"><a href="pandas.html#resources-15"><i class="fa fa-check"></i>Resources</a></li>
 </ul></li>
 <li class="chapter" data-level="17" data-path="javascript.html"><a href="javascript.html"><i class="fa fa-check"></i><b>17</b> JavaScript</a><ul>
@@ -367,7 +369,7 @@ For an updated and expanded version of this content, see Chapter 20 of <a href="
 <p>In order to understand the Feature Branch Workflow, it’s important to first understand how to collaborate on a centralized repository. The Feature Branch Workflow uses a <strong>centralized repository</strong> stored on GitHub—that is, every single member of the team will <code>push</code> and <code>pull</code> to a single GitHub repo. However, since each repository needs to be created under a particular account, this means that a <strong><em>single member</em></strong> of the team will need to create the repo (such as by accepting a GitHub Classroom assignment, or by clicking the <em>“New”</em> button on their “Repositories” tab on the GitHub web portal).</p>
 <p>In order to make sure everyone is able to <code>push</code> to the repository, whoever creates the repo will need to <a href="https://help.github.com/articles/inviting-collaborators-to-a-personal-repository/"><strong>add the other team members as collaborators</strong></a>. You can do this under the <strong>Settings</strong> tab:</p>
 <div class="figure">
-<img src="img/git-branches/add-collaborator.png" title="add collaborator menu" alt="Adding a collaborator to a Github repo (via the web portal)." />
+<img src="img/git-branches/add-collaborator.png" title="add collaborator menu" alt="" />
 <p class="caption">Adding a collaborator to a Github repo (via the web portal).</p>
 </div>
 <p>Once you’ve added everyone to the GitHub repository, <strong>each team member</strong> will need to <strong><code>clone</code></strong> the repository to their local machines to work on the code individually. Collaborators can then <code>push</code> any changes they make to the central repository, and <code>pull</code> and changes made by others. Because multiple members will be contributing to the <em>same repositiory</em>, it’s important to ensure that you are working on the most up-to-date version of the code. This means that you will regularly have to <strong>pull in changes</strong> from GitHub that your team members may have committed. As a result, we suggest that you have a workflow that looks like this:</p>
@@ -465,7 +467,7 @@ It is best practice to <em>never</em> accept your own pull requests! If you don�
         </div>
       </div>
 <a href="git-branches.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="oop.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="classes.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

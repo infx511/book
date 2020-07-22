@@ -25,7 +25,7 @@
 <meta name="author" content="Joel Ross">
 
 
-<meta name="date" content="2019-10-29">
+<meta name="date" content="2020-07-22">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -257,15 +257,15 @@
 </ul></li>
 <li class="chapter" data-level="" data-path="git-collaboration.html"><a href="git-collaboration.html#resources-13"><i class="fa fa-check"></i>Resources</a></li>
 </ul></li>
-<li class="chapter" data-level="15" data-path="oop.html"><a href="oop.html"><i class="fa fa-check"></i><b>15</b> Object-Oriented Programming</a><ul>
-<li class="chapter" data-level="15.1" data-path="oop.html"><a href="oop.html#why-objects"><i class="fa fa-check"></i><b>15.1</b> Why Objects?</a></li>
-<li class="chapter" data-level="15.2" data-path="oop.html"><a href="oop.html#defining-classes"><i class="fa fa-check"></i><b>15.2</b> Defining Classes</a><ul>
-<li class="chapter" data-level="15.2.1" data-path="oop.html"><a href="oop.html#attributes"><i class="fa fa-check"></i><b>15.2.1</b> Attributes</a></li>
-<li class="chapter" data-level="15.2.2" data-path="oop.html"><a href="oop.html#methods"><i class="fa fa-check"></i><b>15.2.2</b> Methods</a></li>
-<li class="chapter" data-level="15.2.3" data-path="oop.html"><a href="oop.html#constructors"><i class="fa fa-check"></i><b>15.2.3</b> Constructors</a></li>
-<li class="chapter" data-level="15.2.4" data-path="oop.html"><a href="oop.html#string-representations"><i class="fa fa-check"></i><b>15.2.4</b> String Representations</a></li>
+<li class="chapter" data-level="15" data-path="classes.html"><a href="classes.html"><i class="fa fa-check"></i><b>15</b> Classes and Object-Oriented Programming</a><ul>
+<li class="chapter" data-level="15.1" data-path="classes.html"><a href="classes.html#why-objects"><i class="fa fa-check"></i><b>15.1</b> Why Objects?</a></li>
+<li class="chapter" data-level="15.2" data-path="classes.html"><a href="classes.html#defining-classes"><i class="fa fa-check"></i><b>15.2</b> Defining Classes</a><ul>
+<li class="chapter" data-level="15.2.1" data-path="classes.html"><a href="classes.html#attributes"><i class="fa fa-check"></i><b>15.2.1</b> Attributes</a></li>
+<li class="chapter" data-level="15.2.2" data-path="classes.html"><a href="classes.html#methods"><i class="fa fa-check"></i><b>15.2.2</b> Methods</a></li>
+<li class="chapter" data-level="15.2.3" data-path="classes.html"><a href="classes.html#constructors"><i class="fa fa-check"></i><b>15.2.3</b> Constructors</a></li>
+<li class="chapter" data-level="15.2.4" data-path="classes.html"><a href="classes.html#string-representations"><i class="fa fa-check"></i><b>15.2.4</b> String Representations</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="oop.html"><a href="oop.html#resources-14"><i class="fa fa-check"></i>Resources</a></li>
+<li class="chapter" data-level="" data-path="classes.html"><a href="classes.html#resources-14"><i class="fa fa-check"></i>Resources</a></li>
 </ul></li>
 <li class="chapter" data-level="16" data-path="pandas.html"><a href="pandas.html"><i class="fa fa-check"></i><b>16</b> The <code>pandas</code> Library</a><ul>
 <li class="chapter" data-level="16.1" data-path="pandas.html"><a href="pandas.html#setting-up-pandas"><i class="fa fa-check"></i><b>16.1</b> Setting up <code>pandas</code></a></li>
@@ -277,6 +277,8 @@
 <li class="chapter" data-level="16.3.1" data-path="pandas.html"><a href="pandas.html#dataframe-operations-and-methods"><i class="fa fa-check"></i><b>16.3.1</b> DataFrame Operations and Methods</a></li>
 <li class="chapter" data-level="16.3.2" data-path="pandas.html"><a href="pandas.html#accessing-dataframes"><i class="fa fa-check"></i><b>16.3.2</b> Accessing DataFrames</a></li>
 </ul></li>
+<li class="chapter" data-level="16.4" data-path="pandas.html"><a href="pandas.html#aggregation-and-grouping"><i class="fa fa-check"></i><b>16.4</b> Aggregation and Grouping</a></li>
+<li class="chapter" data-level="16.5" data-path="pandas.html"><a href="pandas.html#joining-dataframes-together"><i class="fa fa-check"></i><b>16.5</b> Joining DataFrames Together</a></li>
 <li class="chapter" data-level="" data-path="pandas.html"><a href="pandas.html#resources-15"><i class="fa fa-check"></i>Resources</a></li>
 </ul></li>
 <li class="chapter" data-level="17" data-path="javascript.html"><a href="javascript.html"><i class="fa fa-check"></i><b>17</b> JavaScript</a><ul>
@@ -364,7 +366,7 @@
 <p>A webpage is simply a set of files that the browser <em>renders</em> (shows) in a particular way, allowing you to interact with it. Webpage content (words, images, etc.) is formatted and structured using <strong>HTML</strong> (<strong>H</strong>yper<strong>T</strong>ext <strong>M</strong>arkup <strong>L</strong>anguage). This is code that functions similarly to <a href="markdown.html#markdown">Markdown</a> by allowing you to <em>annotate</em> plain text (e.g., “this content is a heading”, “this content is a hyperlink”), except it is much more flexible and powerful.</p>
 <p>HTML annotates content by <em>surrounding</em> it with <strong>tags</strong>:</p>
 <div class="figure">
-<img src="img/web-programming/element-diagram.png" alt="Element diagram" />
+<img src="img/web-programming/element-diagram.png" alt="" />
 <p class="caption">Element diagram</p>
 </div>
 <p>The <strong>opening/start tag</strong> comes before the content and tell the computer “I’m about to give you content with some meaning”, while the <strong>closing/end tag</strong> comes after the content to tell the computer “I’m done giving content with that meaning.” For example, the <code>&lt;h1&gt;</code> tag represents a <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements">top-level heading</a> (equivalent to one <code>#</code> in Markdown), and so the open tag says “here’s the start of the heading” and the closing tag says “that’s the end of the heading”. Taken together, the tags and the content they <em>contain</em> are called an <strong>HTML Element</strong>. A website is made of a bunch of these elements.</p>
@@ -393,13 +395,13 @@
 <h3><span class="header-section-number">18.1.1</span> Elements are Nested</h3>
 <p>HTML elements can be <strong>nested</strong>: that is, the content of an HTML element can contain <em>other</em> HTML tags (and thus other HTML elements):</p>
 <div class="figure">
-<img src="img/web-programming/nesting.png" alt="An example of element nesting: the &lt;em&gt; element is nested in the &lt;h1&gt; element’s content." />
+<img src="img/web-programming/nesting.png" alt="" />
 <p class="caption">An example of element nesting: the <code>&lt;em&gt;</code> element is nested in the <code>&lt;h1&gt;</code> element’s content.</p>
 </div>
 <p>The semantic meaning indicated by an elements applies to <em>all</em> its content: thus all the text in the above example is a top-level heading, and the content “(with emphasis)” is emphasized as well.</p>
 <p>Because elements can contain elements which can <em>themselves</em> contain elements, an HTML document ends up being structured as a <a href="https://en.wikipedia.org/wiki/Tree_(data_structure)"><strong>“tree”</strong></a> of elements:</p>
 <div class="figure">
-<img src="img/web-programming/dom-tree.jpg" alt="An example DOM tree (a tree of HTML elements)." />
+<img src="img/web-programming/dom-tree.jpg" alt="" />
 <p class="caption">An example DOM tree (a tree of HTML elements).</p>
 </div>
 <p>In an HTML document, the <code>&lt;html&gt;</code> element is the “root” element of the tree. Inside this we put a <code>&lt;head&gt;</code> element to represent “header” information (meta-data that is <strong>not</strong>shown on the page itself), and a <code>&lt;body&gt;</code> element to contain the document’s “body” (the shown content):</p>
@@ -435,18 +437,18 @@
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>svg</span><span class="token punctuation">></span></span></code></pre>
 <p>Notice that each “shape” uses different attributes to define its appearance:</p>
 <ul>
-<li>A <code>&lt;rect&gt;</code> has an (x,y) position, as well as a width and height.</li>
-<li>A <code>&lt;circle&gt;</code> has a “<strong>c</strong>enter-x” and “<strong>c</strong>enter-y” position, as well as a <strong>r</strong>adius.</li>
-<li>A <code>&lt;text&gt;</code> includes the text to show as the element’s content.</li>
+<li><p>A <code>&lt;rect&gt;</code> has an (x,y) position, as well as a width and height.</p></li>
+<li><p>A <code>&lt;circle&gt;</code> has a “<strong>c</strong>enter-x” and “<strong>c</strong>enter-y” position, as well as a <strong>r</strong>adius.</p></li>
+<li><p>A <code>&lt;text&gt;</code> includes the text to show as the element’s content.</p></li>
 <li><p>A <code>&lt;path&gt;</code> defines a turtle-style path as a string of instructions. For example, <code>M</code> means “<strong>m</strong>ove to” the following (absolute) coordinates, <code>L</code> means “draw a <strong>l</strong>ine to” the following (absolute) coordinates, and the <code>Z</code> means to “close/end” the path by drawing a line back to the start. See <a href="https://www.w3.org/TR/SVG/paths.html#PathData">the SVG specification</a> for complete details.</p>
 <p>Note that SVG paths can be quite complex. The below path represents the UW logo!</p>
 <pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>path</span> <span class="token attr-name">d</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>M 111.003,0 L 111.003,18.344 L 123.896,18.344 L 109.501,71.915 C 109.501,71.915 91.887,0.998 91.636,0 L 73.006,0 C 72.743,0.975 53.684,71.919 53.684,71.919 L 40.427,18.344 L 53.851,18.344 L 53.851,0 L 0,0 L 0,18.344 L 11.932,18.344 C 11.932,18.344 32.523,100.706 32.772,101.706 L 61.678,101.706 C 61.934,100.729 75.476,49.251 75.476,49.251 C 75.476,49.251 88.343,100.716 88.591,101.706 L 117.495,101.706 C 117.755,100.723 139.422,18.344 139.422,18.344 L 151.256,18.344 L 151.256,0 L 111.003,0 z<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span> <span class="token comment">&lt;!-- from wikicommons --></span></code></pre></li>
 </ul>
 <p>Additionally, all SVG shape elements support attributes that indicate the <em>appearance</em> of that shape. These include (among other options):</p>
 <ul>
-<li><strong><code>fill</code></strong> indicates the color that the shape should be “filled in”. This can be a <a href="https://www.w3schools.com/colors/colors_names.asp">named colors</a> or <a href="https://www.smashingmagazine.com/2012/10/the-code-side-of-color/">RGB hex codes</a>.</li>
-<li><strong><code>stroke</code></strong> indicates the color of the shape’s <em>outline</em>. This can be different than the <code>fill</code> color.</li>
-<li><strong><code>stroke-width</code></strong> can be used to specify the width of the shape’s outline (in pixels).</li>
+<li><p><strong><code>fill</code></strong> indicates the color that the shape should be “filled in”. This can be a <a href="https://www.w3schools.com/colors/colors_names.asp">named colors</a> or <a href="https://www.smashingmagazine.com/2012/10/the-code-side-of-color/">RGB hex codes</a>.</p></li>
+<li><p><strong><code>stroke</code></strong> indicates the color of the shape’s <em>outline</em>. This can be different than the <code>fill</code> color.</p></li>
+<li><p><strong><code>stroke-width</code></strong> can be used to specify the width of the shape’s outline (in pixels).</p></li>
 <li><p><strong><code>style</code></strong> allows you to specify CSS style properties (in a format <code>property:value;</code>), and is can be used for some appearance aspects that are not supported by specific attributes. For example, this can be used to make a shape transparent using the <code>opacity</code> property:</p>
 <pre class="language-html"><code><span class="token comment">&lt;!-- a circle that is 50% transparent --></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>circle</span> <span class="token attr-name">cx</span><span class="token attr-value"><span class="token punctuation">=</span>100</span> <span class="token attr-name">cy</span><span class="token attr-value"><span class="token punctuation">=</span>100</span> <span class="token attr-name">r</span><span class="token attr-value"><span class="token punctuation">=</span>50</span> <span class="token attr-name">fill</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>red<span class="token punctuation">"</span></span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value"><span class="token property">opacity</span><span class="token punctuation">:</span>0.5<span class="token punctuation">;</span></span><span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span></code></pre></li>

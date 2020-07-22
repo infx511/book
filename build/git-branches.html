@@ -25,7 +25,7 @@
 <meta name="author" content="Joel Ross">
 
 
-<meta name="date" content="2019-10-29">
+<meta name="date" content="2020-07-22">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -257,15 +257,15 @@
 </ul></li>
 <li class="chapter" data-level="" data-path="git-collaboration.html"><a href="git-collaboration.html#resources-13"><i class="fa fa-check"></i>Resources</a></li>
 </ul></li>
-<li class="chapter" data-level="15" data-path="oop.html"><a href="oop.html"><i class="fa fa-check"></i><b>15</b> Object-Oriented Programming</a><ul>
-<li class="chapter" data-level="15.1" data-path="oop.html"><a href="oop.html#why-objects"><i class="fa fa-check"></i><b>15.1</b> Why Objects?</a></li>
-<li class="chapter" data-level="15.2" data-path="oop.html"><a href="oop.html#defining-classes"><i class="fa fa-check"></i><b>15.2</b> Defining Classes</a><ul>
-<li class="chapter" data-level="15.2.1" data-path="oop.html"><a href="oop.html#attributes"><i class="fa fa-check"></i><b>15.2.1</b> Attributes</a></li>
-<li class="chapter" data-level="15.2.2" data-path="oop.html"><a href="oop.html#methods"><i class="fa fa-check"></i><b>15.2.2</b> Methods</a></li>
-<li class="chapter" data-level="15.2.3" data-path="oop.html"><a href="oop.html#constructors"><i class="fa fa-check"></i><b>15.2.3</b> Constructors</a></li>
-<li class="chapter" data-level="15.2.4" data-path="oop.html"><a href="oop.html#string-representations"><i class="fa fa-check"></i><b>15.2.4</b> String Representations</a></li>
+<li class="chapter" data-level="15" data-path="classes.html"><a href="classes.html"><i class="fa fa-check"></i><b>15</b> Classes and Object-Oriented Programming</a><ul>
+<li class="chapter" data-level="15.1" data-path="classes.html"><a href="classes.html#why-objects"><i class="fa fa-check"></i><b>15.1</b> Why Objects?</a></li>
+<li class="chapter" data-level="15.2" data-path="classes.html"><a href="classes.html#defining-classes"><i class="fa fa-check"></i><b>15.2</b> Defining Classes</a><ul>
+<li class="chapter" data-level="15.2.1" data-path="classes.html"><a href="classes.html#attributes"><i class="fa fa-check"></i><b>15.2.1</b> Attributes</a></li>
+<li class="chapter" data-level="15.2.2" data-path="classes.html"><a href="classes.html#methods"><i class="fa fa-check"></i><b>15.2.2</b> Methods</a></li>
+<li class="chapter" data-level="15.2.3" data-path="classes.html"><a href="classes.html#constructors"><i class="fa fa-check"></i><b>15.2.3</b> Constructors</a></li>
+<li class="chapter" data-level="15.2.4" data-path="classes.html"><a href="classes.html#string-representations"><i class="fa fa-check"></i><b>15.2.4</b> String Representations</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="oop.html"><a href="oop.html#resources-14"><i class="fa fa-check"></i>Resources</a></li>
+<li class="chapter" data-level="" data-path="classes.html"><a href="classes.html#resources-14"><i class="fa fa-check"></i>Resources</a></li>
 </ul></li>
 <li class="chapter" data-level="16" data-path="pandas.html"><a href="pandas.html"><i class="fa fa-check"></i><b>16</b> The <code>pandas</code> Library</a><ul>
 <li class="chapter" data-level="16.1" data-path="pandas.html"><a href="pandas.html#setting-up-pandas"><i class="fa fa-check"></i><b>16.1</b> Setting up <code>pandas</code></a></li>
@@ -277,6 +277,8 @@
 <li class="chapter" data-level="16.3.1" data-path="pandas.html"><a href="pandas.html#dataframe-operations-and-methods"><i class="fa fa-check"></i><b>16.3.1</b> DataFrame Operations and Methods</a></li>
 <li class="chapter" data-level="16.3.2" data-path="pandas.html"><a href="pandas.html#accessing-dataframes"><i class="fa fa-check"></i><b>16.3.2</b> Accessing DataFrames</a></li>
 </ul></li>
+<li class="chapter" data-level="16.4" data-path="pandas.html"><a href="pandas.html#aggregation-and-grouping"><i class="fa fa-check"></i><b>16.4</b> Aggregation and Grouping</a></li>
+<li class="chapter" data-level="16.5" data-path="pandas.html"><a href="pandas.html#joining-dataframes-together"><i class="fa fa-check"></i><b>16.5</b> Joining DataFrames Together</a></li>
 <li class="chapter" data-level="" data-path="pandas.html"><a href="pandas.html#resources-15"><i class="fa fa-check"></i>Resources</a></li>
 </ul></li>
 <li class="chapter" data-level="17" data-path="javascript.html"><a href="javascript.html"><i class="fa fa-check"></i><b>17</b> JavaScript</a><ul>
@@ -368,14 +370,14 @@ For an updated and expanded version of this content, see Chapter 20 of <a href="
 <h2><span class="header-section-number">13.1</span> Git Branches</h2>
 <p>So far, you’ve been using git to create a <em>linear sequence</em> of commits: they are all in a line, one after another).</p>
 <div class="figure">
-<img src="img/git-branches/commit-sequence.gif" title="a commit sequence" alt="A linear sequence of commits, each with an SHA1 identifier." />
+<img src="img/git-branches/commit-sequence.gif" title="a commit sequence" alt="" />
 <p class="caption">A linear sequence of commits, each with an SHA1 identifier.</p>
 </div>
 <p>Each commit has a message associated with it (that you can see with <code>git log --oneline</code>), as well as a unique <a href="https://en.wikipedia.org/wiki/SHA-1">SHA-1</a> hash (the random numbers and letters), which can be used to identify that commit as an “id number”.</p>
 <p>But you can also save commits in a <em>non-linear</em> sequence. Perhaps you want to try something new and crazy without breaking code that you’ve already written. Or you want to work on two different features simultaneously (having separate commits for each). Or you want multiple people to work on the same code without stepping on each other’s toes.</p>
 <p>To do this, you use a feature of git called <strong>branching</strong> (because you can have commits that “branch off” from a line of development):</p>
 <div class="figure">
-<img src="img/git-branches/branching.gif" title="branching example" alt="An example of branching commits." />
+<img src="img/git-branches/branching.gif" title="branching example" alt="" />
 <p class="caption">An example of branching commits.</p>
 </div>
 <p>In this example, you have a primary branch (called the <code>master</code> branch), and decide you want to try an experiment. You <em>split off</em> a new branch (called for example <code>experiment</code>), which saves some funky changes to your code. But then you decide to make further changes to your main development line, adding more commits to <code>master</code> that ignore the changes stored in the <code>experiment</code> branch. You can develop <code>master</code> and <code>experiment</code> simultaneously, making changes to each version of the code. You can even branch off further versions (e.g., a <code>bugfix</code> to fix a problem) if you wish. And once you decide you’re happy with the code added to both versions, you can <strong>merge</strong> them back together, so that the <code>master</code> branch now contains all the changes that were made on the <code>experiment</code> branch. If you decided that the <code>experiment</code> didn’t work out, you can simply delete those set of changes without ever having messed with your “core” <code>master</code> branch.</p>
@@ -402,7 +404,7 @@ For an updated and expanded version of this content, see Chapter 20 of <a href="
 <li><strong>Important</strong> checking out a branch will “reset” your code to whatever it looked like when you made that commit. Switch back and forth between branches and watch your code change!</li>
 </ul>
 <div class="figure">
-<img src="img/git-branches/checkout-head.gif" title="HEAD switching diagram" alt="Switching between the HEAD of different branches." />
+<img src="img/git-branches/checkout-head.gif" title="HEAD switching diagram" alt="" />
 <p class="caption">Switching between the HEAD of different branches.</p>
 </div>
 <p>Note that you can only check out code if the <em>current working directory</em> has no uncommitted changes. This means you’ll need to <code>commit</code> any changes to the current branch before you <code>checkout</code> another. If you want to “save” your changes but don’t want to commit to them, you can also use git’s ability to temporarily <a href="https://git-scm.com/book/en/v2/Git-Tools-Stashing-and-Cleaning">stash</a> changes.</p>
@@ -432,14 +434,14 @@ For an updated and expanded version of this content, see Chapter 20 of <a href="
 </ol>
 <p>In this situation, you are trying to <em>merge two different changes to the same line of code</em>, and thus should be shown an error on the command line:</p>
 <div class="figure">
-<img src="img/git-branches/merge-conflict-error-py.png" title="merge conflict error" alt="A merge conflict reported on the command line" />
+<img src="img/git-branches/merge-conflict-error-py.png" title="merge conflict error" alt="" />
 <p class="caption">A merge conflict reported on the command line</p>
 </div>
 <p>This is called a <strong>merge conflict</strong>. A merge conflict occurs when two commits from different branches include different changes to the same code (they conflict). Git is just a simple computer program, and has no way of knowing which version to keep (“Are kitties better than puppies? How should I know?!”).</p>
 <p>Since git can’t determine which version of the code to keep, it <strong><em>stops the merge in the middle</em></strong> and forces you to choose what code is correct <strong>manually</strong>.</p>
 <p>In order to <strong>resolve the merge conflict</strong>, you will need to edit the file (code) so that you pick which version to keep. Git adds “code” to the file to indicate where you need to make a decision about which code is better:</p>
 <div class="figure">
-<img src="img/git-branches/merge-conflict.png" title="merge conflict" alt="Code including a merge conflict." />
+<img src="img/git-branches/merge-conflict.png" title="merge conflict" alt="" />
 <p class="caption">Code including a merge conflict.</p>
 </div>
 <p>In order to resolve the conflict:</p>
@@ -480,7 +482,7 @@ For an updated and expanded version of this content, see Chapter 20 of <a href="
 <ul>
 <li><p>This command does create a new commit (the <code>--no-edit</code> option tells git that you don’t want to include a custom commit message). This is great from an archival point of view: you never “destroy history” and lose the record of what changes were made and then reverted. History is important: don’t screw with it!</p>
 <p class="alert alert-danger">
-Conversely, the <code>reset</code> command will destroy history. <strong>Do not use it</strong>, no matter what StackOverflow tells you to do.
+<p>Conversely, the <code>reset</code> command will destroy history. <strong>Do not use it</strong>, no matter what StackOverflow tells you to do.</p>
 </p></li>
 </ul>
 </div>

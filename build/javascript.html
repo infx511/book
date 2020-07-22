@@ -25,7 +25,7 @@
 <meta name="author" content="Joel Ross">
 
 
-<meta name="date" content="2019-10-29">
+<meta name="date" content="2020-07-22">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -257,15 +257,15 @@
 </ul></li>
 <li class="chapter" data-level="" data-path="git-collaboration.html"><a href="git-collaboration.html#resources-13"><i class="fa fa-check"></i>Resources</a></li>
 </ul></li>
-<li class="chapter" data-level="15" data-path="oop.html"><a href="oop.html"><i class="fa fa-check"></i><b>15</b> Object-Oriented Programming</a><ul>
-<li class="chapter" data-level="15.1" data-path="oop.html"><a href="oop.html#why-objects"><i class="fa fa-check"></i><b>15.1</b> Why Objects?</a></li>
-<li class="chapter" data-level="15.2" data-path="oop.html"><a href="oop.html#defining-classes"><i class="fa fa-check"></i><b>15.2</b> Defining Classes</a><ul>
-<li class="chapter" data-level="15.2.1" data-path="oop.html"><a href="oop.html#attributes"><i class="fa fa-check"></i><b>15.2.1</b> Attributes</a></li>
-<li class="chapter" data-level="15.2.2" data-path="oop.html"><a href="oop.html#methods"><i class="fa fa-check"></i><b>15.2.2</b> Methods</a></li>
-<li class="chapter" data-level="15.2.3" data-path="oop.html"><a href="oop.html#constructors"><i class="fa fa-check"></i><b>15.2.3</b> Constructors</a></li>
-<li class="chapter" data-level="15.2.4" data-path="oop.html"><a href="oop.html#string-representations"><i class="fa fa-check"></i><b>15.2.4</b> String Representations</a></li>
+<li class="chapter" data-level="15" data-path="classes.html"><a href="classes.html"><i class="fa fa-check"></i><b>15</b> Classes and Object-Oriented Programming</a><ul>
+<li class="chapter" data-level="15.1" data-path="classes.html"><a href="classes.html#why-objects"><i class="fa fa-check"></i><b>15.1</b> Why Objects?</a></li>
+<li class="chapter" data-level="15.2" data-path="classes.html"><a href="classes.html#defining-classes"><i class="fa fa-check"></i><b>15.2</b> Defining Classes</a><ul>
+<li class="chapter" data-level="15.2.1" data-path="classes.html"><a href="classes.html#attributes"><i class="fa fa-check"></i><b>15.2.1</b> Attributes</a></li>
+<li class="chapter" data-level="15.2.2" data-path="classes.html"><a href="classes.html#methods"><i class="fa fa-check"></i><b>15.2.2</b> Methods</a></li>
+<li class="chapter" data-level="15.2.3" data-path="classes.html"><a href="classes.html#constructors"><i class="fa fa-check"></i><b>15.2.3</b> Constructors</a></li>
+<li class="chapter" data-level="15.2.4" data-path="classes.html"><a href="classes.html#string-representations"><i class="fa fa-check"></i><b>15.2.4</b> String Representations</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="oop.html"><a href="oop.html#resources-14"><i class="fa fa-check"></i>Resources</a></li>
+<li class="chapter" data-level="" data-path="classes.html"><a href="classes.html#resources-14"><i class="fa fa-check"></i>Resources</a></li>
 </ul></li>
 <li class="chapter" data-level="16" data-path="pandas.html"><a href="pandas.html"><i class="fa fa-check"></i><b>16</b> The <code>pandas</code> Library</a><ul>
 <li class="chapter" data-level="16.1" data-path="pandas.html"><a href="pandas.html#setting-up-pandas"><i class="fa fa-check"></i><b>16.1</b> Setting up <code>pandas</code></a></li>
@@ -277,6 +277,8 @@
 <li class="chapter" data-level="16.3.1" data-path="pandas.html"><a href="pandas.html#dataframe-operations-and-methods"><i class="fa fa-check"></i><b>16.3.1</b> DataFrame Operations and Methods</a></li>
 <li class="chapter" data-level="16.3.2" data-path="pandas.html"><a href="pandas.html#accessing-dataframes"><i class="fa fa-check"></i><b>16.3.2</b> Accessing DataFrames</a></li>
 </ul></li>
+<li class="chapter" data-level="16.4" data-path="pandas.html"><a href="pandas.html#aggregation-and-grouping"><i class="fa fa-check"></i><b>16.4</b> Aggregation and Grouping</a></li>
+<li class="chapter" data-level="16.5" data-path="pandas.html"><a href="pandas.html#joining-dataframes-together"><i class="fa fa-check"></i><b>16.5</b> Joining DataFrames Together</a></li>
 <li class="chapter" data-level="" data-path="pandas.html"><a href="pandas.html#resources-15"><i class="fa fa-check"></i>Resources</a></li>
 </ul></li>
 <li class="chapter" data-level="17" data-path="javascript.html"><a href="javascript.html"><i class="fa fa-check"></i><b>17</b> JavaScript</a><ul>
@@ -396,7 +398,7 @@ It is also possible to execute JavaScript code via the command line by using <a 
 </ul>
 <p>While JavaScript most commonly is used to manipulate the web page content and is thus pretty obvious to the user, it <em>also</em> can produce “terminal-like” output—including printed text and <strong>error messages</strong>. This output can be viewed through the <strong>JavaScript Console</strong> included as a <em>developer tool</em> in the Chrome browser (other browsers include similar tools):</p>
 <div class="figure">
-<img src="img/javascript/chrome-dev-console.png" alt="Accessing the developer console in Chrome." />
+<img src="img/javascript/chrome-dev-console.png" alt="" />
 <p class="caption">Accessing the developer console in Chrome.</p>
 </div>
 <p class="alert alert-warning">
@@ -479,7 +481,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 
 <span class="token comment">//Other common Math functions are available as well</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">sqrt</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">//2.23606797749979</span></code></pre></li>
-<li><p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String"><strong>Strings</strong></a> can be written in either single quotes (<strong><code>'</code></strong>) or double quotes (<strong><code>&quot;</code></strong>), but most <a href="https://google.github.io/styleguide/jsguide.html">style guidelines</a> recommend single quotes. Strings can be concatenated (but not multiplied!)</p>
+<li><p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String"><strong>Strings</strong></a> can be written in either single quotes (<strong><code>'</code></strong>) or double quotes (<strong><code>"</code></strong>), but most <a href="https://google.github.io/styleguide/jsguide.html">style guidelines</a> recommend single quotes. Strings can be concatenated (but not multiplied!)</p>
 <pre class="language-js"><code><span class="token keyword">var</span> name <span class="token operator">=</span> <span class="token string">'Joel'</span><span class="token punctuation">;</span>
 <span class="token keyword">var</span> greeting <span class="token operator">=</span> <span class="token string">'Hello, my name is '</span><span class="token operator">+</span>name<span class="token punctuation">;</span> <span class="token comment">//concatenation</span></code></pre>
 <p>Strings also support many <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">methods</a> for working with them. Note that like Python, JavaScript strings are <em>immutable</em>, so most string methods return a new, altered string.</p></li>

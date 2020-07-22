@@ -5,11 +5,11 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Introduction to Programming</title>
+  <title>Chapter 15 Classes and Object-Oriented Programming | Introduction to Programming</title>
   <meta name="description" content="The course reader for INFX 511: Introduction to Programming for Data Science and Visualization.">
   <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
-  <meta property="og:title" content="Introduction to Programming" />
+  <meta property="og:title" content="Chapter 15 Classes and Object-Oriented Programming | Introduction to Programming" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="https://infx511.github.io/" />
   
@@ -17,7 +17,7 @@
   <meta name="github-repo" content="infx511/book" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Introduction to Programming" />
+  <meta name="twitter:title" content="Chapter 15 Classes and Object-Oriented Programming | Introduction to Programming" />
   
   <meta name="twitter:description" content="The course reader for INFX 511: Introduction to Programming for Data Science and Visualization." />
   
@@ -32,8 +32,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   <link rel="shortcut icon" href="img/ischool-gold.png" type="image/x-icon">
-
-<link rel="next" href="setup-machine.html">
+<link rel="prev" href="git-collaboration.html">
+<link rel="next" href="pandas.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -358,33 +358,70 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Introduction to Programming</h1>
-<p class="author"><em><a href="http://faculty.washington.edu/joelross/">Joel Ross</a></em></p>
-<p class="date"><em>July 22, 2020</em></p>
+<div id="classes" class="section level1">
+<h1><span class="header-section-number">Chapter 15</span> Classes and Object-Oriented Programming</h1>
+<p>So far, this book has discussed using a <strong>procedural programming</strong> style to write computer programs. Procedural programming focuses on defining functions (<em>procedures</em>) as sequences of instructions to execute. While you’ve used <em>control structures</em> (e.g., conditionals and loops) to redirect the program flow, and <em>data structures</em> (e.g., lists and dictionaries) to organize data, you have designed programs primarily based on which lines of code execute in what order.</p>
+<p><strong>Object-oriented programming</strong> is a programming paradigm (style) in which you don’t design programs primarily around the sequence of statements executed, but around the specification of <strong>objects</strong> which are combinations of <em>data</em> (variables) and <em>behaviors</em> (functions). Objects are designed to represent elements in the program’s real-world problem domain, and provide a useful <em>abstraction</em> when designing programs: instead of needing to think about code statements executing in order, you can think about telling “things” to perform “actions”.</p>
+<ul>
+<li>Using the <a href="https://docs.python.org/3.3/library/turtle.html">turtle graphics</a> module is an example of object-oriented programming—the “turtle” variable is a virtual version of a real-world robotic turtle, and you call methods on it to tell that virtual version to do things.</li>
+</ul>
+<p>This chapter will discuss the fundamentals of object-oriented programming and how to specify <strong>classes</strong> (custom data types) that are used to define and create <strong>objects</strong>.</p>
+<div id="why-objects" class="section level2">
+<h2><span class="header-section-number">15.1</span> Why Objects?</h2>
+<p>The whole point of using object-oriented programming is to perform <strong>abstraction</strong>: we want to be able to <em>encapsulate</em> (“group”) together parts of our code so we can talk about it at a higher level. So rather than needing to think about the program purely in terms of <code>integers</code>, <code>strings</code>, and <code>lists</code>, we can think about it in terms of <code>Dogs</code>, <code>Cats</code> or <code>Persons</code>.</p>
+<p>As an example, consider how you might represent information about a <em>rectangle</em> (e.g., in a drawing program). You could use individual variables to keep track of the rectangle’s size an position:</p>
+<pre class="language-python"><code>rect_x <span class="token operator">=</span> <span class="token number">10</span>
+rect_y <span class="token operator">=</span> <span class="token number">20</span>
+rect_width <span class="token operator">=</span> <span class="token number">50</span>
+rect_height <span class="token operator">=</span> <span class="token number">60</span></code></pre>
+<p>Of course, that’s a lot of variables to remember (and chances to make typos in the names). So you might instead think about encapsulating that data into a tuple or dictionary:</p>
+<pre class="language-python"><code>rect <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">50</span><span class="token punctuation">,</span> <span class="token number">60</span><span class="token punctuation">)</span>  <span class="token comment"># as a tuple</span>
+rect <span class="token operator">=</span> <span class="token punctuation">{</span>x<span class="token punctuation">:</span><span class="token number">10</span><span class="token punctuation">,</span> y<span class="token punctuation">:</span><span class="token number">20</span><span class="token punctuation">,</span> width<span class="token punctuation">:</span><span class="token number">50</span><span class="token punctuation">,</span> height<span class="token punctuation">:</span><span class="token number">60</span><span class="token punctuation">}</span>  <span class="token comment"># as a dictionary (literal)</span>
+rect <span class="token operator">=</span> <span class="token builtin">dict</span><span class="token punctuation">(</span>x<span class="token operator">=</span><span class="token number">10</span><span class="token punctuation">,</span> y<span class="token operator">=</span><span class="token number">20</span><span class="token punctuation">,</span> width<span class="token operator">=</span><span class="token number">50</span><span class="token punctuation">,</span> height<span class="token operator">=</span><span class="token number">60</span><span class="token punctuation">)</span>  <span class="token comment"># as a dictionary (using function)</span></code></pre>
+<p>This works well, until you want to have some way of associating <em>functionality</em> with that data—that is, you want to be able to tell the <code>rect</code> variable to do something (e.g., “calculate your area!” “draw yourself!”)</p>
+<p>A <strong>Class</strong> (<em>class</em>ification) acts as
+<em>template/recipe/blueprint</em> for individual objects. It defines what data (attributes) and behaviors (methods) they have. An object is an “instance of” (example of) a class: we <strong>instantiate</strong> an object from a class. This lets you easily create multiple objects, each of which can track and modify its own data.</p>
+<p>In particular, classes <em>encapsulate</em> two things:</p>
+<ol style="list-style-type: decimal">
+<li><p>The <em>data</em> (variables) that describe the thing. These are known as <strong>attributes</strong>, <strong>fields</strong> or <strong>instance variables</strong> (variables that below to a particular <em>instance</em>, or example, of the class). For example, we might talk about a <code>Person</code> object’s <code>name</code> (a string), <code>age</code> (a number), and Halloween haul (a list of candy).</p></li>
+<li><p>The <em>behaviors</em> (functions) that operate on, utilize, or change that data. These are known as <em>methods</em> (technically <em>instance methods</em>, since they operate on a particular instance of the class). For example, a <code>Person</code> may be able to <code>sayHello()</code>, <code>trickOrTreat()</code>, or <code>eatCandy()</code>.</p></li>
+</ol>
 </div>
-<div id="about-this-book" class="section level1 unnumbered">
-<h1>About this Book</h1>
-<!-- ![](img/cover-img.png) -->
-<p>This book covers the fundamentals of computer programming as used for data science.
-It will introduce programming concepts such as syntax, data referencing, control structures, functions, data structures, abstraction, and debugging, as well as development tools and technologies (such as the command line and version control). The goal is to develop skills in algorithmic thinking, abstraction, and debugging. It assumes no previous programming background. These materials were developed for the <strong>INFX 511: Introduction to Programming for Data Science and Visualization</strong> course taught at the <a href="https://ischool.uw.edu/">University of Washington Information School</a>; however they have been structured to be an online resource for anyone who wishes to learn programming.</p>
-<p>Some chapters of this book have been developed in conjunction with <a href="https://info201.github.io/">Technical Foundations of Informatics</a>, by Freeman and Ross.</p>
-<!-- TODO: Include previous course offerings? -->
-<!-- TODO: Include author contact info? -->
-<p class="alert alert-warning">
-This book is currently in <strong>alpha</strong> status. Visit us on <a href="https://github.com/infx511/book">GitHub</a> to contribute improvements.
-</p>
-<p><img src="img/index/by-nc-sa.png" alt="Creative Commons License" />
-This book is licensed under a <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.</p>
+<div id="defining-classes" class="section level2">
+<h2><span class="header-section-number">15.2</span> Defining Classes</h2>
+<!-- `class` keyword -->
+<div id="attributes" class="section level3">
+<h3><span class="header-section-number">15.2.1</span> Attributes</h3>
+</div>
+<div id="methods" class="section level3">
+<h3><span class="header-section-number">15.2.2</span> Methods</h3>
+</div>
+<div id="constructors" class="section level3">
+<h3><span class="header-section-number">15.2.3</span> Constructors</h3>
+</div>
+<div id="string-representations" class="section level3">
+<h3><span class="header-section-number">15.2.4</span> String Representations</h3>
+</div>
+</div>
+<div id="resources-14" class="section level2 unnumbered">
+<h2>Resources</h2>
+<div class="list-condensed">
+<ul>
+<li><a href="http://openbookproject.net/thinkcs/python/english3e/classes_and_objects_I.html">Classes and Objects - The Basics (Downey)</a></li>
+<li><a href="http://openbookproject.net/thinkcs/python/english3e/classes_and_objects_II.html">Classes and Objects - Digging a little deeper (Downey)</a></li>
+<li><a href="http://openbookproject.net/thinkcs/python/english3e/even_more_oop.html">Even more OOP (Downey)</a></li>
+</ul>
+</div>
 
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="setup-machine.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="git-collaboration.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="pandas.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -414,7 +451,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/infx511/book/edit/master/index.Rmd",
+"link": "https://github.com/infx511/book/edit/master/oop.Rmd",
 "text": "Edit"
 },
 "history": {

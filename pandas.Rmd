@@ -145,17 +145,17 @@ list(cubed_series)  # [1.0, 8.0, 27.0, 64.0, 125.0]
 Just like lists and dictionaries, elements in a Series can be accessed using **bracket notation**, putting the index label inside the brackets:
 
 ```python
-number_series = pd.Series([1, 2, 2, 3, 5, 8])
+letter_series = pd.Series(['a', 'b', 'c', 'd', 'e', 'f'])
 age_series = pd.Series({'sarah': 42, 'amit': 35, 'zhang': 13})
 
-# Get the 1th element from the number_series
-number_series[1]  # 2
+# Get the 1th element from the letter_series
+letter_series[1]  # 'b'
 
 # Get the 'sarah' element from age_series
 age_series['amit']  # 35
 
 # Get the 0th element from age_series
-# (Series are ordered, so can always be accessed positionally)
+# (Series are ordered, so can always be accessed positionally!)
 age_series[0]  # 42
 ```
 
@@ -183,10 +183,10 @@ This also means that you can use something like a _list comprehension_ (or even 
 
 ```python
 letter_series = pd.Series(['a','b','c','d','e','f'])
-even_numbers = [num for num in range(0,6) if num%2 == 0]  # list of even numbers
+even_numbers = [num for num in range(0,6) if num%2 == 0]  # [0, 2, 4]
 
 # Get letters with even numbered indices
-letter_series[even_numbers]  # []
+letter_series[even_numbers]
     # 0    a
     # 2    c
     # 4    e
@@ -222,9 +222,10 @@ big_shoes = shoe_sizes[shoe_sizes > 6.5]
 
 You can think of the last statement as saying _shoe sizes **where** shoe size is greater than 6.5_.
 
-Note that you can include _logical operators_ ("and" and "or") by using the operators `&` for "and" and `|` for "or". Be sure to wrap each relational expression in `()` to enforce order of operations.
+Note that you can include _logical operators_ ("and" and "or") when defining series by using the operators `&` for "and" and `|` for "or". Be sure to wrap each relational expression in `()` to enforce order of operations.
 
 While it is perfectly possible to do similar filtering with a list comprehension, the boolean indexing expression can be very simple to read and runs quickly. (This is also the normal style of doing filtering in the `R` programming language).
+
 
 ## DataFrames
 The most common data structure used in `pandas` (more common than Series) is a [**DataFrame**](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html). A DataFrame represents a **table**, where data is organized into rows and columns. You can think of a DataFrame as being like a Excel spreadsheet or a SQL table.
@@ -245,15 +246,15 @@ weights = [135, 156, 139, 144, 152]
 
 df = pd.DataFrame({'name': name_series, 'height': heights, 'weight': weights})
 print(df)
-    #    height   name  weight
-    # 0      64    Ada     135
-    # 1      74    Bob     156
-    # 2      69  Chris     139
-    # 3      69   Diya     144
-    # 4      71   Emma     152
+    #     name  height  weight
+    # 0    Ada      64     135
+    # 1    Bob      74     156
+    # 2  Chris      69     139
+    # 3   Diya      69     144
+    # 4   Emma      71     152
 ```
 
-Although DataFrames variables are often named `df` in `pandas` examples, this is ___not___ a good variable name. You should use much more descriptive names for your DataFrames (e.g., `person_size_table`) when used in actual programs.
+Although DataFrames variables are often named `df` in `pandas` examples, this is ___not___ a good variable name. You can and should use much more descriptive names for your DataFrames (e.g., `person_size_table`) when doing actual analysis.
 
 Note that you can specify the order of columns in the table using the `columns` keyword argument, and the order of the rows using the `index` keyword argument.
 
@@ -266,7 +267,7 @@ my_dataframe = pd.read_csv('path/to/my/file.csv')
 See [the IO Tools documentation](http://pandas.pydata.org/pandas-docs/stable/io.html) for details and other file-reading functions.
 
 ### DataFrame Operations and Methods
-Much like Series, DataFrames support a **vectorized** form of mathematical and relational operators: when the other operand is a _scalar_, then the operation is applied member-wise to each value in the DataFrame:
+Much like Series, DataFrames support a **vectorized** form of mathematical and relational operators: when the other operand is a _scalar_ (e.g., a single number or a string), then the operation is applied member-wise to each value in the DataFrame:
 
 ```python
 # data frame of test scores
@@ -295,7 +296,7 @@ print(curved_scores > 90)
     # 5   True    True
 ```
 
-It is possible to have both operands be DataFrames. In this case, the operation is applied **member-wise**, where values are matched if they have the same row _and_ column label. Note that any value that doesn't have a pair will instead produce the value `NaN` (Not a Number). This is not a normal way of working with DataFrames&mdash;it is much more common to access individual rows and columns and work with those (e.g., make a new column that is the sum of two others); see below for details.
+It is possible for both operands be DataFrames. In this case, the operation is applied **member-wise**, where values are matched if they have the same row _and_ column label. Note that any value that doesn't have a pair will instead produce the value `NaN` (Not a Number). This is not a normal way of working with DataFrames&mdash;it is much more common to access individual rows and columns and work with those (e.g., make a new column that is the sum of two others); see below for details.
 
 Also like Series, DataFrames objects support a large number of methods, including:
 
@@ -311,7 +312,7 @@ Also like Series, DataFrames objects support a large number of methods, includin
 | `all()` | returns a Series of whether ALL the elemnts in each **column** are `True` (or "truthy") |
 | `describe()` | returns a DataFrame whose columns are Series of descriptive statistics for each **column** in the original DataFrame |
 
-You may notice that many of these methods (e.g., `head()`, `mean()`, `describe()`, `any()`) also exist for Series. In fact, most every method that Series support are supported by DataFrames as well. These methods are all applied **per column** (not per row)&mdash;that is, calling `mean()` on a DataFrame will calculate the _mean_ of **each column** in that DataFrame:
+You may notice that many of these methods (e.g., `head()`, `mean()`, `describe()`, `any()`) also exist for Series! In fact, most every method that Series support are supported by DataFrames as well. These methods are all applied **per column** (not per row)&mdash;that is, calling `mean()` on a DataFrame will calculate the _mean_ of **each column** in that DataFrame:
 
 ```python
 df = pd.DataFrame({
@@ -350,7 +351,7 @@ Notice that the `height` column is the result of calling `describe()` on the Dat
 As a general rule: if you're expecting one value per column, you'll get a Series of those values; if you're expecting multiple values per column, you'll get a DataFrame of those values.
 
 <p class="alert alert-default">
-This also means that you can sometimes "double-call" methods to reduce them further. For example, `df.any()` returns a Series of whether each column contains a `True` value; `df.all().all()` would check if _that_ Series contains all `True` values (thus checking _all_ columns have all `True` value, i.e., the entire table is all `True` values).
+This also means that you can sometimes "double-call" methods to reduce them further. For example, `df.all()` returns a Series of whether each column contains only `True` values; `df.all().all()` would check if _that_ Series contains all `True` values (thus checking _all_ columns have all `True` value, i.e., the entire table is all `True` values).
 </p>
 
 ### Accessing DataFrames
@@ -365,15 +366,15 @@ df = pd.DataFrame({
     })
 
 print(df)
-    #     height   name   weight
-    # 0      64    Ada      135
-    # 1      74    Bob      156
-    # 2      69  Chris      139
-    # 3      69   Diya      144
-    # 4      71   Emma      152
+    #     name  height  weight
+    # 0    Ada      64     135
+    # 1    Bob      74     156
+    # 2  Chris      69     139
+    # 3   Diya      69     144
+    # 4   Emma      71     152
 ```
 
-Since DataFrames are most commonly viewed as a _dictionary of columns_, it is possible to access them as such using **bracket notation** (using the index label of the column):
+Since DataFrames are most commonly viewed as a _dictionary of columns_, it is possible to access tho as such using **bracket notation** (using the index label of the column):
 
 ```python
 print( df['height'] )  # get height column
@@ -406,22 +407,23 @@ _Watch out though_! Specifying a **slice** (using a colon **`:`**) will actually
 
 ```python
 print( df[0:2] ) # get ROWS 0 through 2 (not inclusive)
-    #    height name   weight
-    # 0      64  Ada      135
-    # 1      74  Bob      156
+    # name  height  weight
+    # 0  Ada      64     135
+    # 1  Bob      74     156
 ```
 
 
 Because DataFrames support multiple indexes, it is possible to use **boolean indexing** (as with Series), allowing you to _filter_ for rows based the values in their columns:
 
 ```python
+# Access rows where the `height` column has a value greater than 70
 print( df[df.height > 70] )
-    #    height  name  weight
-    # 1      74   Bob      156
-    # 4      71  Emma      152
+    # name  height  weight
+    # 1   Bob      74     156
+    # 4  Emma      71     152
 ```
 
-Note that `df.height`is a Series (a column), so `df.height > 70` produces a Series of boolean values (`True` and `False`). This Series is used to determine _which_ rows to return from the DataFrame&mdash;each row that corresponds with a `True` index.
+Note that `df.height` is a Series (a column), so `df.height > 70` produces a Series of boolean values (`True` and `False`). This Series is used to determine _which_ rows to return from the DataFrame&mdash;each row that corresponds with a `True` index.
 
 Finally, DataFrames also provide two _attributes_ (properties) used to "quick access" values: **`loc`**, which provides an "index" (lookup table) based on index labels, and **`iloc`**, which provides an "index" (lookup table) based on row and column positions. Each of these "indexes" can be thought of as a _dictionary_ whose values are the individual elements in the DataFrame, and whose keys can therefore be used to access those values using **bracket notation**. The dictionaries support multiple types of keys (using label-based `loc` as an example):
 
@@ -437,10 +439,10 @@ Finally, DataFrames also provide two _attributes_ (properties) used to "quick ac
 
 - Using a _tuple_ makes it easy to access a particular value in the table, or a range of values (_selecting_ rows and columns ).
 
-- Note that we can also use the boundless slice `:` to refer to "all elements". So for example:
+- You can also use the boundless slice `:` to refer to "all elements". So for example:
 
     ```python
-    df.loc[:, 'height']  # get all rows, 'height' column
+    df.loc[:, 'height']  # get all rows, but just the 'height' column
     ```
 
 This is a basic summary of how to create and access DataFrames; for more [detailed usage](http://pandas.pydata.org/pandas-docs/stable/basics.html#), [additional methods](http://pandas.pydata.org/pandas-docs/stable/dsintro.html#dataframe), and specific ["recipes"](http://pandas.pydata.org/pandas-docs/stable/cookbook.html), see the [official `pandas` documentation](http://pandas.pydata.org/pandas-docs/stable/tutorials.html).
@@ -448,6 +450,38 @@ This is a basic summary of how to create and access DataFrames; for more [detail
 <!-- FOR FUTURE VERSIONS -->
 <!-- //piping -->
 <!-- //merge/join/GROUPING -->
+
+## Aggregation and Grouping
+
+https://jakevdp.github.io/PythonDataScienceHandbook/index.html
+https://jakevdp.github.io/PythonDataScienceHandbook/03.07-merge-and-join.html
+https://jakevdp.github.io/PythonDataScienceHandbook/03.06-concat-and-append.html
+https://www.shanelynn.ie/summarising-aggregation-and-grouping-data-in-python-pandas/
+https://pandas.pydata.org/pandas-docs/stable/user_guide/groupby.html
+
+
+
+//this is about taking lots of different things and _reducing_ them to one thing.
+
+//aggregation functions exist (mean, std, min, max) -- when called on a data frame, applies per row
+
+//groupby explanation
+
+-- lab section example from slides
+
+
+
+## Joining DataFrames Together
+//concat/append are things
+
+//merge(join) explanation
+    - default is "inner"
+    - compare to "left" & "right" [`how`] key
+
+
+
+
+
 
 
 ## Resources {-}
@@ -457,4 +491,5 @@ This is a basic summary of how to create and access DataFrames; for more [detail
 - [Intro to Data Structure (pandas docs)](http://pandas.pydata.org/pandas-docs/stable/dsintro.html)
 - [Essential Basic Functionality (pandas docs)](http://pandas.pydata.org/pandas-docs/stable/basics.html) not really basic, but a complete set of examples
 - [Pandas. Data Processing (Data Analysis in Python)](http://dataanalysispython.readthedocs.io/en/latest/pandas.html)
+- [Python Data Science Handbook](https://jakevdp.github.io/PythonDataScienceHandbook/) a full textbook with extensive details about using Pandas (and related libraries).
 </div>

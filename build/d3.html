@@ -25,7 +25,7 @@
 <meta name="author" content="Joel Ross">
 
 
-<meta name="date" content="2019-10-29">
+<meta name="date" content="2020-07-22">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -257,15 +257,15 @@
 </ul></li>
 <li class="chapter" data-level="" data-path="git-collaboration.html"><a href="git-collaboration.html#resources-13"><i class="fa fa-check"></i>Resources</a></li>
 </ul></li>
-<li class="chapter" data-level="15" data-path="oop.html"><a href="oop.html"><i class="fa fa-check"></i><b>15</b> Object-Oriented Programming</a><ul>
-<li class="chapter" data-level="15.1" data-path="oop.html"><a href="oop.html#why-objects"><i class="fa fa-check"></i><b>15.1</b> Why Objects?</a></li>
-<li class="chapter" data-level="15.2" data-path="oop.html"><a href="oop.html#defining-classes"><i class="fa fa-check"></i><b>15.2</b> Defining Classes</a><ul>
-<li class="chapter" data-level="15.2.1" data-path="oop.html"><a href="oop.html#attributes"><i class="fa fa-check"></i><b>15.2.1</b> Attributes</a></li>
-<li class="chapter" data-level="15.2.2" data-path="oop.html"><a href="oop.html#methods"><i class="fa fa-check"></i><b>15.2.2</b> Methods</a></li>
-<li class="chapter" data-level="15.2.3" data-path="oop.html"><a href="oop.html#constructors"><i class="fa fa-check"></i><b>15.2.3</b> Constructors</a></li>
-<li class="chapter" data-level="15.2.4" data-path="oop.html"><a href="oop.html#string-representations"><i class="fa fa-check"></i><b>15.2.4</b> String Representations</a></li>
+<li class="chapter" data-level="15" data-path="classes.html"><a href="classes.html"><i class="fa fa-check"></i><b>15</b> Classes and Object-Oriented Programming</a><ul>
+<li class="chapter" data-level="15.1" data-path="classes.html"><a href="classes.html#why-objects"><i class="fa fa-check"></i><b>15.1</b> Why Objects?</a></li>
+<li class="chapter" data-level="15.2" data-path="classes.html"><a href="classes.html#defining-classes"><i class="fa fa-check"></i><b>15.2</b> Defining Classes</a><ul>
+<li class="chapter" data-level="15.2.1" data-path="classes.html"><a href="classes.html#attributes"><i class="fa fa-check"></i><b>15.2.1</b> Attributes</a></li>
+<li class="chapter" data-level="15.2.2" data-path="classes.html"><a href="classes.html#methods"><i class="fa fa-check"></i><b>15.2.2</b> Methods</a></li>
+<li class="chapter" data-level="15.2.3" data-path="classes.html"><a href="classes.html#constructors"><i class="fa fa-check"></i><b>15.2.3</b> Constructors</a></li>
+<li class="chapter" data-level="15.2.4" data-path="classes.html"><a href="classes.html#string-representations"><i class="fa fa-check"></i><b>15.2.4</b> String Representations</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="oop.html"><a href="oop.html#resources-14"><i class="fa fa-check"></i>Resources</a></li>
+<li class="chapter" data-level="" data-path="classes.html"><a href="classes.html#resources-14"><i class="fa fa-check"></i>Resources</a></li>
 </ul></li>
 <li class="chapter" data-level="16" data-path="pandas.html"><a href="pandas.html"><i class="fa fa-check"></i><b>16</b> The <code>pandas</code> Library</a><ul>
 <li class="chapter" data-level="16.1" data-path="pandas.html"><a href="pandas.html#setting-up-pandas"><i class="fa fa-check"></i><b>16.1</b> Setting up <code>pandas</code></a></li>
@@ -277,6 +277,8 @@
 <li class="chapter" data-level="16.3.1" data-path="pandas.html"><a href="pandas.html#dataframe-operations-and-methods"><i class="fa fa-check"></i><b>16.3.1</b> DataFrame Operations and Methods</a></li>
 <li class="chapter" data-level="16.3.2" data-path="pandas.html"><a href="pandas.html#accessing-dataframes"><i class="fa fa-check"></i><b>16.3.2</b> Accessing DataFrames</a></li>
 </ul></li>
+<li class="chapter" data-level="16.4" data-path="pandas.html"><a href="pandas.html#aggregation-and-grouping"><i class="fa fa-check"></i><b>16.4</b> Aggregation and Grouping</a></li>
+<li class="chapter" data-level="16.5" data-path="pandas.html"><a href="pandas.html#joining-dataframes-together"><i class="fa fa-check"></i><b>16.5</b> Joining DataFrames Together</a></li>
 <li class="chapter" data-level="" data-path="pandas.html"><a href="pandas.html#resources-15"><i class="fa fa-check"></i>Resources</a></li>
 </ul></li>
 <li class="chapter" data-level="17" data-path="javascript.html"><a href="javascript.html"><i class="fa fa-check"></i><b>17</b> JavaScript</a><ul>
@@ -529,7 +531,7 @@ d3<span class="token punctuation">.</span><span class="token function">selectAll
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>g</span><span class="token punctuation">></span></span></code></pre>
 <p>specifies that a group should be <a href="https://en.wikipedia.org/wiki/Translation_(geometry)"><strong>translated</strong></a> or moved by 20 units (pixels) in the x direction and 50 units in the y direction.</p>
 <ul>
-<li><p>Other transformations include <code>rotate(degrees)</code> to rotate an element <em>counterclockwise</em> by the given degrees. You can both translate and rotate (in that order) using e.g., <code>transform=&quot;translate(20,50) rotate(45)&quot;</code>.</p></li>
+<li><p>Other transformations include <code>rotate(degrees)</code> to rotate an element <em>counterclockwise</em> by the given degrees. You can both translate and rotate (in that order) using e.g., <code>transform="translate(20,50) rotate(45)"</code>.</p></li>
 <li><p>All SVG elements support the <code>transform</code> attribute. In fact, angle can be used as a visual attribute!</p></li>
 </ul>
 <p>In D3, you use <code>&lt;g&gt;</code> groups to do positioning by creating a group with the appropriate transformation (constructing the “transformation function string” using String concatenation), then appending elements to that group:</p>
@@ -548,7 +550,7 @@ group<span class="token punctuation">.</span><span class="token function">select
 <h2><span class="header-section-number">19.4</span> Scales</h2>
 <p>In the <code>peopleTable</code> example, we <em>mapped</em> exam scores to the <code>width</code> attribute directly: each point on an exam corresponded to a single unit (pixel) of width. But what if you were visualizing very small data (e.g., daily interest on a small investment) or very large data (e.g., number of books held by a library)? You would need to <em>scale</em> the values used: that is, $0.001 earnings might be 20 pixels, or 100 books might be a single pixel.</p>
 <div class="figure">
-<img src="img/d3/d3scale1.png" alt="Scaling example" />
+<img src="img/d3/d3scale1.png" alt="" />
 <p class="caption">Scaling example</p>
 </div>
 <p>In D3, a <strong>scale</strong> is a function that <em>maps</em> from the data <strong><em>domain</em></strong> (in data values) to the visualization’s <strong><em>range</em></strong> (in pixel values) in a consistent way. For example, if you wanted to perform the scaling illustrated in the above diagram you would need to have the <em>domain</em> of 20 to 80 (length of 60) map to the <em>range</em> of 0 to 120 (length of 120). You could write a function that does the math to do this for any individual value within the range!</p>

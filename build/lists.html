@@ -25,7 +25,7 @@
 <meta name="author" content="Joel Ross">
 
 
-<meta name="date" content="2019-10-29">
+<meta name="date" content="2020-07-22">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -257,15 +257,15 @@
 </ul></li>
 <li class="chapter" data-level="" data-path="git-collaboration.html"><a href="git-collaboration.html#resources-13"><i class="fa fa-check"></i>Resources</a></li>
 </ul></li>
-<li class="chapter" data-level="15" data-path="oop.html"><a href="oop.html"><i class="fa fa-check"></i><b>15</b> Object-Oriented Programming</a><ul>
-<li class="chapter" data-level="15.1" data-path="oop.html"><a href="oop.html#why-objects"><i class="fa fa-check"></i><b>15.1</b> Why Objects?</a></li>
-<li class="chapter" data-level="15.2" data-path="oop.html"><a href="oop.html#defining-classes"><i class="fa fa-check"></i><b>15.2</b> Defining Classes</a><ul>
-<li class="chapter" data-level="15.2.1" data-path="oop.html"><a href="oop.html#attributes"><i class="fa fa-check"></i><b>15.2.1</b> Attributes</a></li>
-<li class="chapter" data-level="15.2.2" data-path="oop.html"><a href="oop.html#methods"><i class="fa fa-check"></i><b>15.2.2</b> Methods</a></li>
-<li class="chapter" data-level="15.2.3" data-path="oop.html"><a href="oop.html#constructors"><i class="fa fa-check"></i><b>15.2.3</b> Constructors</a></li>
-<li class="chapter" data-level="15.2.4" data-path="oop.html"><a href="oop.html#string-representations"><i class="fa fa-check"></i><b>15.2.4</b> String Representations</a></li>
+<li class="chapter" data-level="15" data-path="classes.html"><a href="classes.html"><i class="fa fa-check"></i><b>15</b> Classes and Object-Oriented Programming</a><ul>
+<li class="chapter" data-level="15.1" data-path="classes.html"><a href="classes.html#why-objects"><i class="fa fa-check"></i><b>15.1</b> Why Objects?</a></li>
+<li class="chapter" data-level="15.2" data-path="classes.html"><a href="classes.html#defining-classes"><i class="fa fa-check"></i><b>15.2</b> Defining Classes</a><ul>
+<li class="chapter" data-level="15.2.1" data-path="classes.html"><a href="classes.html#attributes"><i class="fa fa-check"></i><b>15.2.1</b> Attributes</a></li>
+<li class="chapter" data-level="15.2.2" data-path="classes.html"><a href="classes.html#methods"><i class="fa fa-check"></i><b>15.2.2</b> Methods</a></li>
+<li class="chapter" data-level="15.2.3" data-path="classes.html"><a href="classes.html#constructors"><i class="fa fa-check"></i><b>15.2.3</b> Constructors</a></li>
+<li class="chapter" data-level="15.2.4" data-path="classes.html"><a href="classes.html#string-representations"><i class="fa fa-check"></i><b>15.2.4</b> String Representations</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="oop.html"><a href="oop.html#resources-14"><i class="fa fa-check"></i>Resources</a></li>
+<li class="chapter" data-level="" data-path="classes.html"><a href="classes.html#resources-14"><i class="fa fa-check"></i>Resources</a></li>
 </ul></li>
 <li class="chapter" data-level="16" data-path="pandas.html"><a href="pandas.html"><i class="fa fa-check"></i><b>16</b> The <code>pandas</code> Library</a><ul>
 <li class="chapter" data-level="16.1" data-path="pandas.html"><a href="pandas.html#setting-up-pandas"><i class="fa fa-check"></i><b>16.1</b> Setting up <code>pandas</code></a></li>
@@ -277,6 +277,8 @@
 <li class="chapter" data-level="16.3.1" data-path="pandas.html"><a href="pandas.html#dataframe-operations-and-methods"><i class="fa fa-check"></i><b>16.3.1</b> DataFrame Operations and Methods</a></li>
 <li class="chapter" data-level="16.3.2" data-path="pandas.html"><a href="pandas.html#accessing-dataframes"><i class="fa fa-check"></i><b>16.3.2</b> Accessing DataFrames</a></li>
 </ul></li>
+<li class="chapter" data-level="16.4" data-path="pandas.html"><a href="pandas.html#aggregation-and-grouping"><i class="fa fa-check"></i><b>16.4</b> Aggregation and Grouping</a></li>
+<li class="chapter" data-level="16.5" data-path="pandas.html"><a href="pandas.html#joining-dataframes-together"><i class="fa fa-check"></i><b>16.5</b> Joining DataFrames Together</a></li>
 <li class="chapter" data-level="" data-path="pandas.html"><a href="pandas.html#resources-15"><i class="fa fa-check"></i>Resources</a></li>
 </ul></li>
 <li class="chapter" data-level="17" data-path="javascript.html"><a href="javascript.html"><i class="fa fa-check"></i><b>17</b> JavaScript</a><ul>
@@ -362,7 +364,7 @@
 <!--(similar to how a `string` is a sequence of letters, and a `range` is a sequence of numbers) -->
 <div id="what-is-a-list" class="section level2">
 <h2><span class="header-section-number">7.1</span> What is a List?</h2>
-<p>A list is a <strong>mutable</strong>, <strong>ordered</strong> sequence of values that are all stored in a single variable. For example, you can make a list <code>names</code> that contains the strings “Sarah”, “Amit”, and “Zhang”, or a list <code>one_to_seventy</code> that stores the numbers from 1 to 70. Each value in a list is referred to as an <strong>element</strong> of that list; thus your <code>names</code> list would have 3 elements: <code>&quot;Sarah&quot;</code>, <code>&quot;Amit&quot;</code>, and <code>&quot;Zhang&quot;</code>.</p>
+<p>A list is a <strong>mutable</strong>, <strong>ordered</strong> sequence of values that are all stored in a single variable. For example, you can make a list <code>names</code> that contains the strings “Sarah”, “Amit”, and “Zhang”, or a list <code>one_to_seventy</code> that stores the numbers from 1 to 70. Each value in a list is referred to as an <strong>element</strong> of that list; thus your <code>names</code> list would have 3 elements: <code>"Sarah"</code>, <code>"Amit"</code>, and <code>"Zhang"</code>.</p>
 <p>Lists are written as literals inside of <em>square brackets</em> (<strong><code>[]</code></strong>), with each element in the list separated by a <em>comma</em> (<strong><code>,</code></strong>):</p>
 <pre class="language-python"><code><span class="token comment"># A list of names</span>
 names <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"Sarah"</span><span class="token punctuation">,</span> <span class="token string">"Amit"</span><span class="token punctuation">,</span> <span class="token string">"Zhang"</span><span class="token punctuation">]</span>
@@ -402,7 +404,7 @@ name_fourth <span class="token operator">=</span> names<span class="token punctu
 <span class="token comment"># Negative indices count backwards from the end</span>
 name_last <span class="token operator">=</span> names<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token comment"># Zhang</span>
 name_second_to_last <span class="token operator">=</span> names<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token comment"># Amit</span></code></pre>
-<p>The value inside the square brackets can any expression that resolves to an integer, including variables:</p>
+<p>The value inside the square brackets can be any expression that resolves to an integer, including variables:</p>
 <pre class="language-python"><code><span class="token comment"># Access the element at index `3-2` (1)</span>
 names<span class="token punctuation">[</span><span class="token number">3</span><span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">]</span>  <span class="token comment"># "Amit"</span>
 
@@ -429,7 +431,7 @@ school_supplies<span class="token punctuation">[</span><span class="token number
 <span class="token comment"># You can only assign values to elements that exist in the list!</span>
 school_supplies<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"Paper"</span>  <span class="token comment"># IndexError!</span></code></pre>
 <ul>
-<li>Following the hotel metaphor: <code>names[2] = &quot;Yash&quot;</code> would mean “the value ‘Yash’ is now living in room #2”.</li>
+<li>Following the hotel metaphor: <code>names[2] = "Yash"</code> would mean “the value ‘Yash’ is now living in room #2”.</li>
 </ul>
 <p>Just as with variables: if the list index (e.g., <code>my_list[index]</code>) is on the <em>left</em> side of an assignment, it means the <strong>variable</strong> (which “slot” in the list). If it is on the <em>right</em> side of an assignment, it means the <strong>value</strong> (which element is in that slot).</p>
 <pre class="language-python"><code>letters <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'b'</span><span class="token punctuation">,</span> <span class="token string">'c'</span><span class="token punctuation">]</span>
@@ -495,21 +497,21 @@ In general, if you call a list method, you won’t assign the result to a value.
 <p>When comparing lists using a <em>relational operator</em> (e.g., <code>==</code> or <code>&gt;</code>), the operation is applied to the lists <strong>member-wise</strong>: the first element in each list is compared, and in the case of a “tie” then the second element in each list are compared, and so on. In practice, this means that (a) you can use <code>==</code> to compare the contents of lists, and (b) a list is “smaller” than another if its first element(s) is smaller than the other’s first element(s).</p>
 <p>But be careful: just because two lists have the same contents (are <code>==</code>) does not mean that they are <em>the same list</em>! In particular, two lists can be <em>different objects</em> (values) but still have the same contents. In Python, you can test whether two values are actually <em>the same value</em> (as opposed to having the same contents) using the <strong><code>is</code></strong> operator.</p>
 <pre class="language-python"><code><span class="token comment"># With strings, literals are shared (because they cannot be mutated)</span>
-str_a <span class="token operator">=</span> <span class="token string">"banana"</span>  <span class="token comment"># `a` labels string literal "banana"</span>
-str_b <span class="token operator">=</span> <span class="token string">"banana"</span>  <span class="token comment"># `b` labels string literal "banana"</span>
+str_a <span class="token operator">=</span> <span class="token string">"banana"</span>  <span class="token comment"># `str_a` labels string literal "banana"</span>
+str_b <span class="token operator">=</span> <span class="token string">"banana"</span>  <span class="token comment"># `str_b` labels string literal "banana"</span>
 
 <span class="token comment"># Both variables label the same (literal) value</span>
 str_a <span class="token keyword">is</span> str_b  <span class="token comment"># True</span>
 
 <span class="token comment"># With lists, each list created is a different object!</span>
-list_a <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span>  <span class="token comment"># `a` labels a new list [1,2,3]</span>
-list_b <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span>  <span class="token comment"># `b` labels a new list [1,2,3]</span>
+list_a <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span>  <span class="token comment"># `list_a` labels a new list [1,2,3]</span>
+list_b <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span>  <span class="token comment"># `list_b` labels a new list [1,2,3]</span>
 
-a <span class="token operator">==</span> b  <span class="token comment"># True, have same values as contents</span>
-a <span class="token keyword">is</span> b  <span class="token comment"># False, are two different objects</span>
+list_a <span class="token operator">==</span> list_b  <span class="token comment"># True, have same values as contents</span>
+list_a <span class="token keyword">is</span> list_b  <span class="token comment"># False, are two different objects</span>
 
-list_c <span class="token operator">=</span> list_a  <span class="token comment"># `c` labels the value that `a` labels</span>
-a <span class="token keyword">is</span> c  <span class="token comment"># True, both labels are on the same object</span>
+list_c <span class="token operator">=</span> list_a  <span class="token comment"># `list_c` labels the value that `list_a` labels</span>
+list_a <span class="token keyword">is</span> list_c  <span class="token comment"># True, both labels are on the same object</span>
 
 <span class="token comment"># Modify the list!</span>
 list_a<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">10</span>

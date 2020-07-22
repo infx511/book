@@ -59,7 +59,7 @@ name_last = names[-1] # Zhang
 name_second_to_last = names[-2] # Amit
 ```
 
-The value inside the square brackets can any expression that resolves to an integer, including variables:
+The value inside the square brackets can be any expression that resolves to an integer, including variables:
 
 ```python
 # Access the element at index `3-2` (1)
@@ -171,21 +171,21 @@ But be careful: just because two lists have the same contents (are `==`) does no
 
 ```python
 # With strings, literals are shared (because they cannot be mutated)
-str_a = "banana"  # `a` labels string literal "banana"
-str_b = "banana"  # `b` labels string literal "banana"
+str_a = "banana"  # `str_a` labels string literal "banana"
+str_b = "banana"  # `str_b` labels string literal "banana"
 
 # Both variables label the same (literal) value
 str_a is str_b  # True
 
 # With lists, each list created is a different object!
-list_a = [1,2,3]  # `a` labels a new list [1,2,3]
-list_b = [1,2,3]  # `b` labels a new list [1,2,3]
+list_a = [1,2,3]  # `list_a` labels a new list [1,2,3]
+list_b = [1,2,3]  # `list_b` labels a new list [1,2,3]
 
-a == b  # True, have same values as contents
-a is b  # False, are two different objects
+list_a == list_b  # True, have same values as contents
+list_a is list_b  # False, are two different objects
 
-list_c = list_a  # `c` labels the value that `a` labels
-a is c  # True, both labels are on the same object
+list_c = list_a  # `list_c` labels the value that `list_a` labels
+list_a is list_c  # True, both labels are on the same object
 
 # Modify the list!
 list_a[0] = 10

@@ -1,12 +1,10 @@
-# Object-Oriented Programming {#oop}
-
-<p class="alert">This chapter is under development. More details coming soon…</p>
+# Classes and Object-Oriented Programming {#classes}
 
 So far, this book has discussed using a **procedural programming** style to write computer programs. Procedural programming focuses on defining functions (_procedures_) as sequences of instructions to execute. While you've used _control structures_ (e.g., conditionals and loops) to redirect the program flow, and _data structures_ (e.g., lists and dictionaries) to organize data, you have designed programs primarily based on which lines of code execute in what order.
 
-**Object-oriented programming** is a programming paradigm (style) in which you don't design programs around the sequence of statements executed, but around the specification of **objects** which are combinations of _data_ (variables) and _behaviors_ (functions). Objects are used to represent elements in the program's real-world problem domain, and provide a useful _abstraction_ when designing programs: instead of needing to think about code statements executing in order, you can think about telling "things" to perform "actions".
+**Object-oriented programming** is a programming paradigm (style) in which you don't design programs primarily around the sequence of statements executed, but around the specification of **objects** which are combinations of _data_ (variables) and _behaviors_ (functions). Objects are designed to represent elements in the program's real-world problem domain, and provide a useful _abstraction_ when designing programs: instead of needing to think about code statements executing in order, you can think about telling "things" to perform "actions".
 
-- Using the [turtle graphics](https://docs.python.org/3.3/library/turtle.html?highlight=turtle) module is an example of object-oriented programming.
+- Using the [turtle graphics](https://docs.python.org/3.3/library/turtle.html) module is an example of object-oriented programming&mdash;the "turtle" variable is a virtual version of a real-world robotic turtle, and you call methods on it to tell that virtual version to do things.
 
 This chapter will discuss the fundamentals of object-oriented programming and how to specify **classes** (custom data types) that are used to define and create **objects**.
 
@@ -39,13 +37,18 @@ _template/recipe/blueprint_ for individual objects. It defines what data (attrib
 
 In particular, classes _encapsulate_ two things:
 
-1. The _data_ (variables) that describe the thing. These are known as **attributes**, **fields** or **instance variables** (variables that below to a particular _instance_, or example, of the class). For example, we might talk about a `Person` object's `name` (a String), `age` (a Number), and Halloween haul (an array of candy).
+1. The _data_ (variables) that describe the thing. These are known as **attributes**, **fields** or **instance variables** (variables that below to a particular _instance_, or example, of the class). For example, we might talk about a `Person` object's `name` (a string), `age` (a number), and Halloween haul (a list of candy).
 
 2. The _behaviors_ (functions) that operate on, utilize, or change that data. These are known as _methods_ (technically _instance methods_, since they operate on a particular instance of the class). For example, a `Person` may be able to `sayHello()`, `trickOrTreat()`, or `eatCandy()`.
 
 
 ## Defining Classes
 <!-- `class` keyword -->
+
+
+
+
+
 
 ### Attributes
 

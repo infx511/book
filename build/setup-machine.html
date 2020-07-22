@@ -25,7 +25,7 @@
 <meta name="author" content="Joel Ross">
 
 
-<meta name="date" content="2019-10-29">
+<meta name="date" content="2020-07-22">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -257,15 +257,15 @@
 </ul></li>
 <li class="chapter" data-level="" data-path="git-collaboration.html"><a href="git-collaboration.html#resources-13"><i class="fa fa-check"></i>Resources</a></li>
 </ul></li>
-<li class="chapter" data-level="15" data-path="oop.html"><a href="oop.html"><i class="fa fa-check"></i><b>15</b> Object-Oriented Programming</a><ul>
-<li class="chapter" data-level="15.1" data-path="oop.html"><a href="oop.html#why-objects"><i class="fa fa-check"></i><b>15.1</b> Why Objects?</a></li>
-<li class="chapter" data-level="15.2" data-path="oop.html"><a href="oop.html#defining-classes"><i class="fa fa-check"></i><b>15.2</b> Defining Classes</a><ul>
-<li class="chapter" data-level="15.2.1" data-path="oop.html"><a href="oop.html#attributes"><i class="fa fa-check"></i><b>15.2.1</b> Attributes</a></li>
-<li class="chapter" data-level="15.2.2" data-path="oop.html"><a href="oop.html#methods"><i class="fa fa-check"></i><b>15.2.2</b> Methods</a></li>
-<li class="chapter" data-level="15.2.3" data-path="oop.html"><a href="oop.html#constructors"><i class="fa fa-check"></i><b>15.2.3</b> Constructors</a></li>
-<li class="chapter" data-level="15.2.4" data-path="oop.html"><a href="oop.html#string-representations"><i class="fa fa-check"></i><b>15.2.4</b> String Representations</a></li>
+<li class="chapter" data-level="15" data-path="classes.html"><a href="classes.html"><i class="fa fa-check"></i><b>15</b> Classes and Object-Oriented Programming</a><ul>
+<li class="chapter" data-level="15.1" data-path="classes.html"><a href="classes.html#why-objects"><i class="fa fa-check"></i><b>15.1</b> Why Objects?</a></li>
+<li class="chapter" data-level="15.2" data-path="classes.html"><a href="classes.html#defining-classes"><i class="fa fa-check"></i><b>15.2</b> Defining Classes</a><ul>
+<li class="chapter" data-level="15.2.1" data-path="classes.html"><a href="classes.html#attributes"><i class="fa fa-check"></i><b>15.2.1</b> Attributes</a></li>
+<li class="chapter" data-level="15.2.2" data-path="classes.html"><a href="classes.html#methods"><i class="fa fa-check"></i><b>15.2.2</b> Methods</a></li>
+<li class="chapter" data-level="15.2.3" data-path="classes.html"><a href="classes.html#constructors"><i class="fa fa-check"></i><b>15.2.3</b> Constructors</a></li>
+<li class="chapter" data-level="15.2.4" data-path="classes.html"><a href="classes.html#string-representations"><i class="fa fa-check"></i><b>15.2.4</b> String Representations</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="oop.html"><a href="oop.html#resources-14"><i class="fa fa-check"></i>Resources</a></li>
+<li class="chapter" data-level="" data-path="classes.html"><a href="classes.html#resources-14"><i class="fa fa-check"></i>Resources</a></li>
 </ul></li>
 <li class="chapter" data-level="16" data-path="pandas.html"><a href="pandas.html"><i class="fa fa-check"></i><b>16</b> The <code>pandas</code> Library</a><ul>
 <li class="chapter" data-level="16.1" data-path="pandas.html"><a href="pandas.html#setting-up-pandas"><i class="fa fa-check"></i><b>16.1</b> Setting up <code>pandas</code></a></li>
@@ -277,6 +277,8 @@
 <li class="chapter" data-level="16.3.1" data-path="pandas.html"><a href="pandas.html#dataframe-operations-and-methods"><i class="fa fa-check"></i><b>16.3.1</b> DataFrame Operations and Methods</a></li>
 <li class="chapter" data-level="16.3.2" data-path="pandas.html"><a href="pandas.html#accessing-dataframes"><i class="fa fa-check"></i><b>16.3.2</b> Accessing DataFrames</a></li>
 </ul></li>
+<li class="chapter" data-level="16.4" data-path="pandas.html"><a href="pandas.html#aggregation-and-grouping"><i class="fa fa-check"></i><b>16.4</b> Aggregation and Grouping</a></li>
+<li class="chapter" data-level="16.5" data-path="pandas.html"><a href="pandas.html#joining-dataframes-together"><i class="fa fa-check"></i><b>16.5</b> Joining DataFrames Together</a></li>
 <li class="chapter" data-level="" data-path="pandas.html"><a href="pandas.html#resources-15"><i class="fa fa-check"></i>Resources</a></li>
 </ul></li>
 <li class="chapter" data-level="17" data-path="javascript.html"><a href="javascript.html"><i class="fa fa-check"></i><b>17</b> JavaScript</a><ul>
@@ -434,7 +436,7 @@ Programming involves working with many different file types, each detailed by th
 <p>To install VS Code, follow the above link and Click the “Download” button to download the installer (e.g, <code>.exe</code>) file, then double-click on that to install the application.</p>
 <p>Once you’ve installed VS Code, the trick to using it effectively is to get comfortable with the <a href="https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette">Command Palette</a>. If you hit <code>Cmd+Shift+P</code>, VS Code will open a small window where you can search for whatever you want the editor to do. For example, if you type in <code>markdown</code> you can get list of commands related to Markdown files (including the ability to open up a preview).</p>
 <ul>
-<li>While VS Code can handle Python code just fine out of the box, to be most effective when writing code you’ll want to add an extension with <a href="https://marketplace.visualstudio.com/items?itemName=ms-python.python">additional Python support</a>. You should be prompted to install this the first time you open a <code>.py</code> Python script file. You can also install it by using the command-palette (open it up and type <code>&quot;extension&quot;</code> to find the “Install Extensions” option). Note that you can disable the pervasive “style warnings” by adding <code># pylint: skip-file</code> to the top of a script file.</li>
+<li>While VS Code can handle Python code just fine out of the box, to be most effective when writing code you’ll want to add an extension with <a href="https://marketplace.visualstudio.com/items?itemName=ms-python.python">additional Python support</a>. You should be prompted to install this the first time you open a <code>.py</code> Python script file. You can also install it by using the command-palette (open it up and type <code>"extension"</code> to find the “Install Extensions” option). Note that you can disable the pervasive “style warnings” by adding <code># pylint: skip-file</code> to the top of a script file.</li>
 </ul>
 <p>For more information about using VS Code, see <a href="https://code.visualstudio.com/docs">the documentation</a>, which includes <a href="https://code.visualstudio.com/docs/getstarted/introvideos">videos</a> if you find them useful. There is also documentation for programming in <a href="https://code.visualstudio.com/docs/languages/python">Python</a> specifically.</p>
 </div>
@@ -467,7 +469,7 @@ Programming involves working with many different file types, each detailed by th
 <ul>
 <li><p>Make sure that you select the option to “Add Anaconda to my PATH environment variable”. This will add a link to to Python that can be found by the command line (it will be on the “path” to applications), and will ensure that you can run Python code from within Git Bash.</p>
 <div class="figure">
-<img src="img/setup/anaconda-path.png" alt="Select to add Anaconda to the PATH variable." />
+<img src="img/setup/anaconda-path.png" alt="" />
 <p class="caption">Select to add Anaconda to the PATH variable.</p>
 </div></li>
 </ul>

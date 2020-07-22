@@ -25,7 +25,7 @@
 <meta name="author" content="Joel Ross">
 
 
-<meta name="date" content="2019-10-29">
+<meta name="date" content="2020-07-22">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -257,15 +257,15 @@
 </ul></li>
 <li class="chapter" data-level="" data-path="git-collaboration.html"><a href="git-collaboration.html#resources-13"><i class="fa fa-check"></i>Resources</a></li>
 </ul></li>
-<li class="chapter" data-level="15" data-path="oop.html"><a href="oop.html"><i class="fa fa-check"></i><b>15</b> Object-Oriented Programming</a><ul>
-<li class="chapter" data-level="15.1" data-path="oop.html"><a href="oop.html#why-objects"><i class="fa fa-check"></i><b>15.1</b> Why Objects?</a></li>
-<li class="chapter" data-level="15.2" data-path="oop.html"><a href="oop.html#defining-classes"><i class="fa fa-check"></i><b>15.2</b> Defining Classes</a><ul>
-<li class="chapter" data-level="15.2.1" data-path="oop.html"><a href="oop.html#attributes"><i class="fa fa-check"></i><b>15.2.1</b> Attributes</a></li>
-<li class="chapter" data-level="15.2.2" data-path="oop.html"><a href="oop.html#methods"><i class="fa fa-check"></i><b>15.2.2</b> Methods</a></li>
-<li class="chapter" data-level="15.2.3" data-path="oop.html"><a href="oop.html#constructors"><i class="fa fa-check"></i><b>15.2.3</b> Constructors</a></li>
-<li class="chapter" data-level="15.2.4" data-path="oop.html"><a href="oop.html#string-representations"><i class="fa fa-check"></i><b>15.2.4</b> String Representations</a></li>
+<li class="chapter" data-level="15" data-path="classes.html"><a href="classes.html"><i class="fa fa-check"></i><b>15</b> Classes and Object-Oriented Programming</a><ul>
+<li class="chapter" data-level="15.1" data-path="classes.html"><a href="classes.html#why-objects"><i class="fa fa-check"></i><b>15.1</b> Why Objects?</a></li>
+<li class="chapter" data-level="15.2" data-path="classes.html"><a href="classes.html#defining-classes"><i class="fa fa-check"></i><b>15.2</b> Defining Classes</a><ul>
+<li class="chapter" data-level="15.2.1" data-path="classes.html"><a href="classes.html#attributes"><i class="fa fa-check"></i><b>15.2.1</b> Attributes</a></li>
+<li class="chapter" data-level="15.2.2" data-path="classes.html"><a href="classes.html#methods"><i class="fa fa-check"></i><b>15.2.2</b> Methods</a></li>
+<li class="chapter" data-level="15.2.3" data-path="classes.html"><a href="classes.html#constructors"><i class="fa fa-check"></i><b>15.2.3</b> Constructors</a></li>
+<li class="chapter" data-level="15.2.4" data-path="classes.html"><a href="classes.html#string-representations"><i class="fa fa-check"></i><b>15.2.4</b> String Representations</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="oop.html"><a href="oop.html#resources-14"><i class="fa fa-check"></i>Resources</a></li>
+<li class="chapter" data-level="" data-path="classes.html"><a href="classes.html#resources-14"><i class="fa fa-check"></i>Resources</a></li>
 </ul></li>
 <li class="chapter" data-level="16" data-path="pandas.html"><a href="pandas.html"><i class="fa fa-check"></i><b>16</b> The <code>pandas</code> Library</a><ul>
 <li class="chapter" data-level="16.1" data-path="pandas.html"><a href="pandas.html#setting-up-pandas"><i class="fa fa-check"></i><b>16.1</b> Setting up <code>pandas</code></a></li>
@@ -277,6 +277,8 @@
 <li class="chapter" data-level="16.3.1" data-path="pandas.html"><a href="pandas.html#dataframe-operations-and-methods"><i class="fa fa-check"></i><b>16.3.1</b> DataFrame Operations and Methods</a></li>
 <li class="chapter" data-level="16.3.2" data-path="pandas.html"><a href="pandas.html#accessing-dataframes"><i class="fa fa-check"></i><b>16.3.2</b> Accessing DataFrames</a></li>
 </ul></li>
+<li class="chapter" data-level="16.4" data-path="pandas.html"><a href="pandas.html#aggregation-and-grouping"><i class="fa fa-check"></i><b>16.4</b> Aggregation and Grouping</a></li>
+<li class="chapter" data-level="16.5" data-path="pandas.html"><a href="pandas.html#joining-dataframes-together"><i class="fa fa-check"></i><b>16.5</b> Joining DataFrames Together</a></li>
 <li class="chapter" data-level="" data-path="pandas.html"><a href="pandas.html#resources-15"><i class="fa fa-check"></i>Resources</a></li>
 </ul></li>
 <li class="chapter" data-level="17" data-path="javascript.html"><a href="javascript.html"><i class="fa fa-check"></i><b>17</b> JavaScript</a><ul>
@@ -361,7 +363,7 @@
 <p>Programming involves writing instructions for a computer to execute. However, what allows computer programs to be most useful is when they are able to <em>decide which</em> instructions instructions to execute based on a particular situation. This is referred to as <a href="https://en.wikipedia.org/wiki/Branch_(computer_science)">code branching</a>, and is used to shape the <a href="https://en.wikipedia.org/wiki/Control_flow">flow of control</a> of the computer code. In this chapter, you will learn how to utilize <strong>conditional statements</strong> in order to include control flow in your Python scripts.</p>
 <div id="booleans" class="section level2">
 <h2><span class="header-section-number">6.1</span> Booleans</h2>
-<p>In addition to the basic data types <code>int</code>, <code>float</code>, and <code>str</code>, Python supports a <em>logical</em> data type called a <strong>Boolean</strong> (class <code>bool</code>). A boolean represents “yes-or-no” data, and can be exactly one of two values: <code>True</code> or <code>False</code> (note the capitalization). Importantly, these <strong>are not</strong> the Strings <code>&quot;True&quot;</code> and <code>&quot;False&quot;</code>; boolean values are a different type!</p>
+<p>In addition to the basic data types <code>int</code>, <code>float</code>, and <code>str</code>, Python supports a <em>logical</em> data type called a <strong>Boolean</strong> (class <code>bool</code>). A boolean represents “yes-or-no” data, and can be exactly one of two values: <code>True</code> or <code>False</code> (note the capitalization). Importantly, these <strong>are not</strong> the Strings <code>"True"</code> and <code>"False"</code>; boolean values are a different type!</p>
 <pre class="language-python"><code><span class="token builtin">type</span><span class="token punctuation">(</span><span class="token boolean">True</span><span class="token punctuation">)</span>    <span class="token comment"># &lt;class 'bool'></span>
 <span class="token builtin">type</span><span class="token punctuation">(</span><span class="token string">"True"</span><span class="token punctuation">)</span>  <span class="token comment"># &lt;class 'str'></span>
 <span class="token builtin">type</span><span class="token punctuation">(</span>true<span class="token punctuation">)</span>    <span class="token comment"># NameError: name 'true' is not defined</span>
@@ -431,11 +433,11 @@ pet <span class="token operator">=</span> <span class="token string">"dog"</span
 
 <span class="token comment"># pet is "cat" OR "dog"</span>
 pet <span class="token operator">==</span> <span class="token string">"cat"</span> <span class="token operator">or</span> pet <span class="token operator">==</span> <span class="token string">"dog"</span>  <span class="token comment"># True</span></code></pre>
-<p>In the last example, there is an implicit order of operations being followed: <em>relational operators</em> are evaluated before <em>boolean operators</em>. This means that the last line is being interpreted as <code>(pet == &quot;cat&quot;) or (pet == &quot;dog&quot;)</code>.</p>
+<p>In the last example, there is an implicit order of operations being followed: <em>relational operators</em> are evaluated before <em>boolean operators</em>. This means that the last line is being interpreted as <code>(pet == "cat") or (pet == "dog")</code>.</p>
 <p>This also means that you can’t use some “plain English” construction of expressions:</p>
 <pre class="language-python"><code><span class="token comment"># This does not work!</span>
 pet <span class="token operator">==</span> <span class="token string">"cat"</span> <span class="token operator">or</span> <span class="token string">"dog"</span>  <span class="token comment"># returns "dog"</span></code></pre>
-<p>In this case, the expression is evaluated as <code>(pet == &quot;cat&quot;) or &quot;dog&quot;</code>. And since <code>pet == &quot;cat&quot;</code> is <code>False</code>, then the statement is read as <code>False == &quot;dog&quot;</code>, which will return the second operand (see “short-circuiting” below). In short, if you want to check if a variable has one of a set of values, you need to compare each individually (<code>pet == &quot;cat&quot; or pet == &quot;dog&quot;</code>).</p>
+<p>In this case, the expression is evaluated as <code>(pet == "cat") or "dog"</code>. And since <code>pet == "cat"</code> is <code>False</code>, then the statement is read as <code>False == "dog"</code>, which will return the second operand (see “short-circuiting” below). In short, if you want to check if a variable has one of a set of values, you need to compare each individually (<code>pet == "cat" or pet == "dog"</code>).</p>
 <p>Because boolean expressions produce <em>more</em> booleans, it is possible to combine these into complex logical expressions:</p>
 <pre class="language-python"><code><span class="token comment"># given two booleans P and Q</span>
 is_raining <span class="token operator">=</span> <span class="token boolean">True</span>

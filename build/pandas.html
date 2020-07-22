@@ -25,14 +25,14 @@
 <meta name="author" content="Joel Ross">
 
 
-<meta name="date" content="2019-10-29">
+<meta name="date" content="2020-07-22">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   <link rel="shortcut icon" href="img/ischool-gold.png" type="image/x-icon">
-<link rel="prev" href="oop.html">
+<link rel="prev" href="classes.html">
 <link rel="next" href="javascript.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -257,15 +257,15 @@
 </ul></li>
 <li class="chapter" data-level="" data-path="git-collaboration.html"><a href="git-collaboration.html#resources-13"><i class="fa fa-check"></i>Resources</a></li>
 </ul></li>
-<li class="chapter" data-level="15" data-path="oop.html"><a href="oop.html"><i class="fa fa-check"></i><b>15</b> Object-Oriented Programming</a><ul>
-<li class="chapter" data-level="15.1" data-path="oop.html"><a href="oop.html#why-objects"><i class="fa fa-check"></i><b>15.1</b> Why Objects?</a></li>
-<li class="chapter" data-level="15.2" data-path="oop.html"><a href="oop.html#defining-classes"><i class="fa fa-check"></i><b>15.2</b> Defining Classes</a><ul>
-<li class="chapter" data-level="15.2.1" data-path="oop.html"><a href="oop.html#attributes"><i class="fa fa-check"></i><b>15.2.1</b> Attributes</a></li>
-<li class="chapter" data-level="15.2.2" data-path="oop.html"><a href="oop.html#methods"><i class="fa fa-check"></i><b>15.2.2</b> Methods</a></li>
-<li class="chapter" data-level="15.2.3" data-path="oop.html"><a href="oop.html#constructors"><i class="fa fa-check"></i><b>15.2.3</b> Constructors</a></li>
-<li class="chapter" data-level="15.2.4" data-path="oop.html"><a href="oop.html#string-representations"><i class="fa fa-check"></i><b>15.2.4</b> String Representations</a></li>
+<li class="chapter" data-level="15" data-path="classes.html"><a href="classes.html"><i class="fa fa-check"></i><b>15</b> Classes and Object-Oriented Programming</a><ul>
+<li class="chapter" data-level="15.1" data-path="classes.html"><a href="classes.html#why-objects"><i class="fa fa-check"></i><b>15.1</b> Why Objects?</a></li>
+<li class="chapter" data-level="15.2" data-path="classes.html"><a href="classes.html#defining-classes"><i class="fa fa-check"></i><b>15.2</b> Defining Classes</a><ul>
+<li class="chapter" data-level="15.2.1" data-path="classes.html"><a href="classes.html#attributes"><i class="fa fa-check"></i><b>15.2.1</b> Attributes</a></li>
+<li class="chapter" data-level="15.2.2" data-path="classes.html"><a href="classes.html#methods"><i class="fa fa-check"></i><b>15.2.2</b> Methods</a></li>
+<li class="chapter" data-level="15.2.3" data-path="classes.html"><a href="classes.html#constructors"><i class="fa fa-check"></i><b>15.2.3</b> Constructors</a></li>
+<li class="chapter" data-level="15.2.4" data-path="classes.html"><a href="classes.html#string-representations"><i class="fa fa-check"></i><b>15.2.4</b> String Representations</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="oop.html"><a href="oop.html#resources-14"><i class="fa fa-check"></i>Resources</a></li>
+<li class="chapter" data-level="" data-path="classes.html"><a href="classes.html#resources-14"><i class="fa fa-check"></i>Resources</a></li>
 </ul></li>
 <li class="chapter" data-level="16" data-path="pandas.html"><a href="pandas.html"><i class="fa fa-check"></i><b>16</b> The <code>pandas</code> Library</a><ul>
 <li class="chapter" data-level="16.1" data-path="pandas.html"><a href="pandas.html#setting-up-pandas"><i class="fa fa-check"></i><b>16.1</b> Setting up <code>pandas</code></a></li>
@@ -277,6 +277,8 @@
 <li class="chapter" data-level="16.3.1" data-path="pandas.html"><a href="pandas.html#dataframe-operations-and-methods"><i class="fa fa-check"></i><b>16.3.1</b> DataFrame Operations and Methods</a></li>
 <li class="chapter" data-level="16.3.2" data-path="pandas.html"><a href="pandas.html#accessing-dataframes"><i class="fa fa-check"></i><b>16.3.2</b> Accessing DataFrames</a></li>
 </ul></li>
+<li class="chapter" data-level="16.4" data-path="pandas.html"><a href="pandas.html#aggregation-and-grouping"><i class="fa fa-check"></i><b>16.4</b> Aggregation and Grouping</a></li>
+<li class="chapter" data-level="16.5" data-path="pandas.html"><a href="pandas.html#joining-dataframes-together"><i class="fa fa-check"></i><b>16.5</b> Joining DataFrames Together</a></li>
 <li class="chapter" data-level="" data-path="pandas.html"><a href="pandas.html#resources-15"><i class="fa fa-check"></i>Resources</a></li>
 </ul></li>
 <li class="chapter" data-level="17" data-path="javascript.html"><a href="javascript.html"><i class="fa fa-check"></i><b>17</b> JavaScript</a><ul>
@@ -505,17 +507,17 @@ cubed_series <span class="token operator">=</span> number_series<span class="tok
 <div id="accessing-series" class="section level3">
 <h3><span class="header-section-number">16.2.2</span> Accessing Series</h3>
 <p>Just like lists and dictionaries, elements in a Series can be accessed using <strong>bracket notation</strong>, putting the index label inside the brackets:</p>
-<pre class="language-python"><code>number_series <span class="token operator">=</span> pd<span class="token punctuation">.</span>Series<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<pre class="language-python"><code>letter_series <span class="token operator">=</span> pd<span class="token punctuation">.</span>Series<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'b'</span><span class="token punctuation">,</span> <span class="token string">'c'</span><span class="token punctuation">,</span> <span class="token string">'d'</span><span class="token punctuation">,</span> <span class="token string">'e'</span><span class="token punctuation">,</span> <span class="token string">'f'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
 age_series <span class="token operator">=</span> pd<span class="token punctuation">.</span>Series<span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token string">'sarah'</span><span class="token punctuation">:</span> <span class="token number">42</span><span class="token punctuation">,</span> <span class="token string">'amit'</span><span class="token punctuation">:</span> <span class="token number">35</span><span class="token punctuation">,</span> <span class="token string">'zhang'</span><span class="token punctuation">:</span> <span class="token number">13</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
 
-<span class="token comment"># Get the 1th element from the number_series</span>
-number_series<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>  <span class="token comment"># 2</span>
+<span class="token comment"># Get the 1th element from the letter_series</span>
+letter_series<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>  <span class="token comment"># 'b'</span>
 
 <span class="token comment"># Get the 'sarah' element from age_series</span>
 age_series<span class="token punctuation">[</span><span class="token string">'amit'</span><span class="token punctuation">]</span>  <span class="token comment"># 35</span>
 
 <span class="token comment"># Get the 0th element from age_series</span>
-<span class="token comment"># (Series are ordered, so can always be accessed positionally)</span>
+<span class="token comment"># (Series are ordered, so can always be accessed positionally!)</span>
 age_series<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>  <span class="token comment"># 42</span></code></pre>
 <p>Note that the returned values are not technically basic <code>int</code> or <code>float</code> or <code>string</code> types, but are rather specific <code>numpy</code> objects that work almost identically to their normal type (but with some additional optimization).</p>
 <p>You can also use list-style <em>slices</em> using the colon operator (e.g., elements <strong><code>1:3</code></strong>). Additionally, it is possible to specify <strong><em>a sequence of indicies</em></strong> (i.e., a <em>list</em> or <em>range</em> or even a <em>Series</em> of indices) to access using bracket notation. This will produce a new Series object that contains only the elements that have those labels:</p>
@@ -534,10 +536,10 @@ index_list <span class="token operator">=</span> <span class="token punctuation"
     <span class="token comment"># dtype: int64</span></code></pre>
 <p>This also means that you can use something like a <em>list comprehension</em> (or even a Series operation!) to determine which elements to select from a Series!</p>
 <pre class="language-python"><code>letter_series <span class="token operator">=</span> pd<span class="token punctuation">.</span>Series<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">,</span><span class="token string">'b'</span><span class="token punctuation">,</span><span class="token string">'c'</span><span class="token punctuation">,</span><span class="token string">'d'</span><span class="token punctuation">,</span><span class="token string">'e'</span><span class="token punctuation">,</span><span class="token string">'f'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-even_numbers <span class="token operator">=</span> <span class="token punctuation">[</span>num <span class="token keyword">for</span> num <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">)</span> <span class="token keyword">if</span> num<span class="token operator">%</span><span class="token number">2</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">]</span>  <span class="token comment"># list of even numbers</span>
+even_numbers <span class="token operator">=</span> <span class="token punctuation">[</span>num <span class="token keyword">for</span> num <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">)</span> <span class="token keyword">if</span> num<span class="token operator">%</span><span class="token number">2</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">]</span>  <span class="token comment"># [0, 2, 4]</span>
 
 <span class="token comment"># Get letters with even numbered indices</span>
-letter_series<span class="token punctuation">[</span>even_numbers<span class="token punctuation">]</span>  <span class="token comment"># []</span>
+letter_series<span class="token punctuation">[</span>even_numbers<span class="token punctuation">]</span>
     <span class="token comment"># 0    a</span>
     <span class="token comment"># 2    c</span>
     <span class="token comment"># 4    e</span>
@@ -561,7 +563,7 @@ big_shoes <span class="token operator">=</span> shoe_sizes<span class="token pun
 <span class="token comment"># In one line</span>
 big_shoes <span class="token operator">=</span> shoe_sizes<span class="token punctuation">[</span>shoe_sizes <span class="token operator">></span> <span class="token number">6.5</span><span class="token punctuation">]</span></code></pre>
 <p>You can think of the last statement as saying <em>shoe sizes <strong>where</strong> shoe size is greater than 6.5</em>.</p>
-<p>Note that you can include <em>logical operators</em> (“and” and “or”) by using the operators <code>&amp;</code> for “and” and <code>|</code> for “or”. Be sure to wrap each relational expression in <code>()</code> to enforce order of operations.</p>
+<p>Note that you can include <em>logical operators</em> (“and” and “or”) when defining series by using the operators <code>&amp;</code> for “and” and <code>|</code> for “or”. Be sure to wrap each relational expression in <code>()</code> to enforce order of operations.</p>
 <p>While it is perfectly possible to do similar filtering with a list comprehension, the boolean indexing expression can be very simple to read and runs quickly. (This is also the normal style of doing filtering in the <code>R</code> programming language).</p>
 </div>
 </div>
@@ -580,20 +582,20 @@ weights <span class="token operator">=</span> <span class="token punctuation">[<
 
 df <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token string">'name'</span><span class="token punctuation">:</span> name_series<span class="token punctuation">,</span> <span class="token string">'height'</span><span class="token punctuation">:</span> heights<span class="token punctuation">,</span> <span class="token string">'weight'</span><span class="token punctuation">:</span> weights<span class="token punctuation">}</span><span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>df<span class="token punctuation">)</span>
-    <span class="token comment">#    height   name  weight</span>
-    <span class="token comment"># 0      64    Ada     135</span>
-    <span class="token comment"># 1      74    Bob     156</span>
-    <span class="token comment"># 2      69  Chris     139</span>
-    <span class="token comment"># 3      69   Diya     144</span>
-    <span class="token comment"># 4      71   Emma     152</span></code></pre>
-<p>Although DataFrames variables are often named <code>df</code> in <code>pandas</code> examples, this is <strong><em>not</em></strong> a good variable name. You should use much more descriptive names for your DataFrames (e.g., <code>person_size_table</code>) when used in actual programs.</p>
+    <span class="token comment">#     name  height  weight</span>
+    <span class="token comment"># 0    Ada      64     135</span>
+    <span class="token comment"># 1    Bob      74     156</span>
+    <span class="token comment"># 2  Chris      69     139</span>
+    <span class="token comment"># 3   Diya      69     144</span>
+    <span class="token comment"># 4   Emma      71     152</span></code></pre>
+<p>Although DataFrames variables are often named <code>df</code> in <code>pandas</code> examples, this is <strong><em>not</em></strong> a good variable name. You can and should use much more descriptive names for your DataFrames (e.g., <code>person_size_table</code>) when doing actual analysis.</p>
 <p>Note that you can specify the order of columns in the table using the <code>columns</code> keyword argument, and the order of the rows using the <code>index</code> keyword argument.</p>
 <p>It is also possible to create a DataFrame directly from a spreadsheet—such as from <strong><code>.csv</code></strong> file (containing <strong>c</strong>omma <strong>s</strong>separated <strong>v</strong>alues) by using the <code>pandas.read_csv()</code> function:</p>
 <pre class="language-python"><code>my_dataframe <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">'path/to/my/file.csv'</span><span class="token punctuation">)</span></code></pre>
 <p>See <a href="http://pandas.pydata.org/pandas-docs/stable/io.html">the IO Tools documentation</a> for details and other file-reading functions.</p>
 <div id="dataframe-operations-and-methods" class="section level3">
 <h3><span class="header-section-number">16.3.1</span> DataFrame Operations and Methods</h3>
-<p>Much like Series, DataFrames support a <strong>vectorized</strong> form of mathematical and relational operators: when the other operand is a <em>scalar</em>, then the operation is applied member-wise to each value in the DataFrame:</p>
+<p>Much like Series, DataFrames support a <strong>vectorized</strong> form of mathematical and relational operators: when the other operand is a <em>scalar</em> (e.g., a single number or a string), then the operation is applied member-wise to each value in the DataFrame:</p>
 <pre class="language-python"><code><span class="token comment"># data frame of test scores</span>
 test_scores <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span><span class="token punctuation">{</span>
     <span class="token string">'math'</span><span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token number">91</span><span class="token punctuation">,</span> <span class="token number">82</span><span class="token punctuation">,</span> <span class="token number">93</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">,</span> <span class="token number">78</span><span class="token punctuation">,</span> <span class="token number">91</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
@@ -618,7 +620,7 @@ curved_scores <span class="token operator">=</span> test_scores <span class="tok
     <span class="token comment"># 3   True    True</span>
     <span class="token comment"># 4  False   False</span>
     <span class="token comment"># 5   True    True</span></code></pre>
-<p>It is possible to have both operands be DataFrames. In this case, the operation is applied <strong>member-wise</strong>, where values are matched if they have the same row <em>and</em> column label. Note that any value that doesn’t have a pair will instead produce the value <code>NaN</code> (Not a Number). This is not a normal way of working with DataFrames—it is much more common to access individual rows and columns and work with those (e.g., make a new column that is the sum of two others); see below for details.</p>
+<p>It is possible for both operands be DataFrames. In this case, the operation is applied <strong>member-wise</strong>, where values are matched if they have the same row <em>and</em> column label. Note that any value that doesn’t have a pair will instead produce the value <code>NaN</code> (Not a Number). This is not a normal way of working with DataFrames—it is much more common to access individual rows and columns and work with those (e.g., make a new column that is the sum of two others); see below for details.</p>
 <p>Also like Series, DataFrames objects support a large number of methods, including:</p>
 <table>
 <colgroup>
@@ -670,7 +672,7 @@ curved_scores <span class="token operator">=</span> test_scores <span class="tok
 </tr>
 </tbody>
 </table>
-<p>You may notice that many of these methods (e.g., <code>head()</code>, <code>mean()</code>, <code>describe()</code>, <code>any()</code>) also exist for Series. In fact, most every method that Series support are supported by DataFrames as well. These methods are all applied <strong>per column</strong> (not per row)—that is, calling <code>mean()</code> on a DataFrame will calculate the <em>mean</em> of <strong>each column</strong> in that DataFrame:</p>
+<p>You may notice that many of these methods (e.g., <code>head()</code>, <code>mean()</code>, <code>describe()</code>, <code>any()</code>) also exist for Series! In fact, most every method that Series support are supported by DataFrames as well. These methods are all applied <strong>per column</strong> (not per row)—that is, calling <code>mean()</code> on a DataFrame will calculate the <em>mean</em> of <strong>each column</strong> in that DataFrame:</p>
 <pre class="language-python"><code>df <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span><span class="token punctuation">{</span>
     <span class="token string">'name'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'Ada'</span><span class="token punctuation">,</span> <span class="token string">'Bob'</span><span class="token punctuation">,</span> <span class="token string">'Chris'</span><span class="token punctuation">,</span> <span class="token string">'Diya'</span><span class="token punctuation">,</span> <span class="token string">'Emma'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
     <span class="token string">'height'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token number">64</span><span class="token punctuation">,</span> <span class="token number">74</span><span class="token punctuation">,</span> <span class="token number">69</span><span class="token punctuation">,</span> <span class="token number">69</span><span class="token punctuation">,</span> <span class="token number">71</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
@@ -699,7 +701,7 @@ df<span class="token punctuation">.</span>describe<span class="token punctuation
 <p>Notice that the <code>height</code> column is the result of calling <code>describe()</code> on the DataFrame’s <code>height</code> column Series!</p>
 <p>As a general rule: if you’re expecting one value per column, you’ll get a Series of those values; if you’re expecting multiple values per column, you’ll get a DataFrame of those values.</p>
 <p class="alert alert-default">
-This also means that you can sometimes “double-call” methods to reduce them further. For example, <code>df.any()</code> returns a Series of whether each column contains a <code>True</code> value; <code>df.all().all()</code> would check if <em>that</em> Series contains all <code>True</code> values (thus checking <em>all</em> columns have all <code>True</code> value, i.e., the entire table is all <code>True</code> values).
+This also means that you can sometimes “double-call” methods to reduce them further. For example, <code>df.all()</code> returns a Series of whether each column contains only <code>True</code> values; <code>df.all().all()</code> would check if <em>that</em> Series contains all <code>True</code> values (thus checking <em>all</em> columns have all <code>True</code> value, i.e., the entire table is all <code>True</code> values).
 </p>
 </div>
 <div id="accessing-dataframes" class="section level3">
@@ -713,13 +715,13 @@ df <span class="token operator">=</span> pd<span class="token punctuation">.</sp
     <span class="token punctuation">}</span><span class="token punctuation">)</span>
 
 <span class="token keyword">print</span><span class="token punctuation">(</span>df<span class="token punctuation">)</span>
-    <span class="token comment">#     height   name   weight</span>
-    <span class="token comment"># 0      64    Ada      135</span>
-    <span class="token comment"># 1      74    Bob      156</span>
-    <span class="token comment"># 2      69  Chris      139</span>
-    <span class="token comment"># 3      69   Diya      144</span>
-    <span class="token comment"># 4      71   Emma      152</span></code></pre>
-<p>Since DataFrames are most commonly viewed as a <em>dictionary of columns</em>, it is possible to access them as such using <strong>bracket notation</strong> (using the index label of the column):</p>
+    <span class="token comment">#     name  height  weight</span>
+    <span class="token comment"># 0    Ada      64     135</span>
+    <span class="token comment"># 1    Bob      74     156</span>
+    <span class="token comment"># 2  Chris      69     139</span>
+    <span class="token comment"># 3   Diya      69     144</span>
+    <span class="token comment"># 4   Emma      71     152</span></code></pre>
+<p>Since DataFrames are most commonly viewed as a <em>dictionary of columns</em>, it is possible to access tho as such using <strong>bracket notation</strong> (using the index label of the column):</p>
 <pre class="language-python"><code><span class="token keyword">print</span><span class="token punctuation">(</span> df<span class="token punctuation">[</span><span class="token string">'height'</span><span class="token punctuation">]</span> <span class="token punctuation">)</span>  <span class="token comment"># get height column</span>
     <span class="token comment"># 0    64</span>
     <span class="token comment"># 1    74</span>
@@ -738,15 +740,16 @@ df <span class="token operator">=</span> pd<span class="token punctuation">.</sp
 <span class="token keyword">print</span><span class="token punctuation">(</span> df<span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token punctuation">)</span>  <span class="token comment"># get 1st (name) and 2nd (weight) columns</span></code></pre>
 <p><em>Watch out though</em>! Specifying a <strong>slice</strong> (using a colon <strong><code>:</code></strong>) will actually select by <em>row</em> position, not column position! I do not know wherefore this inconsistency, other than “convenience”.</p>
 <pre class="language-python"><code><span class="token keyword">print</span><span class="token punctuation">(</span> df<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">:</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token punctuation">)</span> <span class="token comment"># get ROWS 0 through 2 (not inclusive)</span>
-    <span class="token comment">#    height name   weight</span>
-    <span class="token comment"># 0      64  Ada      135</span>
-    <span class="token comment"># 1      74  Bob      156</span></code></pre>
+    <span class="token comment"># name  height  weight</span>
+    <span class="token comment"># 0  Ada      64     135</span>
+    <span class="token comment"># 1  Bob      74     156</span></code></pre>
 <p>Because DataFrames support multiple indexes, it is possible to use <strong>boolean indexing</strong> (as with Series), allowing you to <em>filter</em> for rows based the values in their columns:</p>
-<pre class="language-python"><code><span class="token keyword">print</span><span class="token punctuation">(</span> df<span class="token punctuation">[</span>df<span class="token punctuation">.</span>height <span class="token operator">></span> <span class="token number">70</span><span class="token punctuation">]</span> <span class="token punctuation">)</span>
-    <span class="token comment">#    height  name  weight</span>
-    <span class="token comment"># 1      74   Bob      156</span>
-    <span class="token comment"># 4      71  Emma      152</span></code></pre>
-<p>Note that <code>df.height</code>is a Series (a column), so <code>df.height &gt; 70</code> produces a Series of boolean values (<code>True</code> and <code>False</code>). This Series is used to determine <em>which</em> rows to return from the DataFrame—each row that corresponds with a <code>True</code> index.</p>
+<pre class="language-python"><code><span class="token comment"># Access rows where the `height` column has a value greater than 70</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span> df<span class="token punctuation">[</span>df<span class="token punctuation">.</span>height <span class="token operator">></span> <span class="token number">70</span><span class="token punctuation">]</span> <span class="token punctuation">)</span>
+    <span class="token comment"># name  height  weight</span>
+    <span class="token comment"># 1   Bob      74     156</span>
+    <span class="token comment"># 4  Emma      71     152</span></code></pre>
+<p>Note that <code>df.height</code> is a Series (a column), so <code>df.height &gt; 70</code> produces a Series of boolean values (<code>True</code> and <code>False</code>). This Series is used to determine <em>which</em> rows to return from the DataFrame—each row that corresponds with a <code>True</code> index.</p>
 <p>Finally, DataFrames also provide two <em>attributes</em> (properties) used to “quick access” values: <strong><code>loc</code></strong>, which provides an “index” (lookup table) based on index labels, and <strong><code>iloc</code></strong>, which provides an “index” (lookup table) based on row and column positions. Each of these “indexes” can be thought of as a <em>dictionary</em> whose values are the individual elements in the DataFrame, and whose keys can therefore be used to access those values using <strong>bracket notation</strong>. The dictionaries support multiple types of keys (using label-based <code>loc</code> as an example):</p>
 <table>
 <colgroup>
@@ -792,14 +795,33 @@ df <span class="token operator">=</span> pd<span class="token punctuation">.</sp
 <ul>
 <li><p>Note that the example <code>df</code> table doesn’t have row labels beyond <code>0</code> to <code>4</code></p></li>
 <li><p>Using a <em>tuple</em> makes it easy to access a particular value in the table, or a range of values (<em>selecting</em> rows and columns ).</p></li>
-<li><p>Note that we can also use the boundless slice <code>:</code> to refer to “all elements”. So for example:</p>
-<pre class="language-python"><code>df<span class="token punctuation">.</span>loc<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token string">'height'</span><span class="token punctuation">]</span>  <span class="token comment"># get all rows, 'height' column</span></code></pre></li>
+<li><p>You can also use the boundless slice <code>:</code> to refer to “all elements”. So for example:</p>
+<pre class="language-python"><code>df<span class="token punctuation">.</span>loc<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token string">'height'</span><span class="token punctuation">]</span>  <span class="token comment"># get all rows, but just the 'height' column</span></code></pre></li>
 </ul>
 <p>This is a basic summary of how to create and access DataFrames; for more <a href="http://pandas.pydata.org/pandas-docs/stable/basics.html#">detailed usage</a>, <a href="http://pandas.pydata.org/pandas-docs/stable/dsintro.html#dataframe">additional methods</a>, and specific <a href="http://pandas.pydata.org/pandas-docs/stable/cookbook.html">“recipes”</a>, see the <a href="http://pandas.pydata.org/pandas-docs/stable/tutorials.html">official <code>pandas</code> documentation</a>.</p>
 <!-- FOR FUTURE VERSIONS -->
 <!-- //piping -->
 <!-- //merge/join/GROUPING -->
 </div>
+</div>
+<div id="aggregation-and-grouping" class="section level2">
+<h2><span class="header-section-number">16.4</span> Aggregation and Grouping</h2>
+<p><a href="https://jakevdp.github.io/PythonDataScienceHandbook/index.html" class="uri">https://jakevdp.github.io/PythonDataScienceHandbook/index.html</a>
+<a href="https://jakevdp.github.io/PythonDataScienceHandbook/03.07-merge-and-join.html" class="uri">https://jakevdp.github.io/PythonDataScienceHandbook/03.07-merge-and-join.html</a>
+<a href="https://jakevdp.github.io/PythonDataScienceHandbook/03.06-concat-and-append.html" class="uri">https://jakevdp.github.io/PythonDataScienceHandbook/03.06-concat-and-append.html</a>
+<a href="https://www.shanelynn.ie/summarising-aggregation-and-grouping-data-in-python-pandas/" class="uri">https://www.shanelynn.ie/summarising-aggregation-and-grouping-data-in-python-pandas/</a>
+<a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/groupby.html" class="uri">https://pandas.pydata.org/pandas-docs/stable/user_guide/groupby.html</a></p>
+<p>//this is about taking lots of different things and <em>reducing</em> them to one thing.</p>
+<p>//aggregation functions exist (mean, std, min, max) – when called on a data frame, applies per row</p>
+<p>//groupby explanation</p>
+<p>– lab section example from slides</p>
+</div>
+<div id="joining-dataframes-together" class="section level2">
+<h2><span class="header-section-number">16.5</span> Joining DataFrames Together</h2>
+<p>//concat/append are things</p>
+<p>//merge(join) explanation
+- default is “inner”
+- compare to “left” &amp; “right” [<code>how</code>] key</p>
 </div>
 <div id="resources-15" class="section level2 unnumbered">
 <h2>Resources</h2>
@@ -810,6 +832,7 @@ df <span class="token operator">=</span> pd<span class="token punctuation">.</sp
 <li><a href="http://pandas.pydata.org/pandas-docs/stable/dsintro.html">Intro to Data Structure (pandas docs)</a></li>
 <li><a href="http://pandas.pydata.org/pandas-docs/stable/basics.html">Essential Basic Functionality (pandas docs)</a> not really basic, but a complete set of examples</li>
 <li><a href="http://dataanalysispython.readthedocs.io/en/latest/pandas.html">Pandas. Data Processing (Data Analysis in Python)</a></li>
+<li><a href="https://jakevdp.github.io/PythonDataScienceHandbook/">Python Data Science Handbook</a> a full textbook with extensive details about using Pandas (and related libraries).</li>
 </ul>
 </div>
 
@@ -820,7 +843,7 @@ df <span class="token operator">=</span> pd<span class="token punctuation">.</sp
           </div>
         </div>
       </div>
-<a href="oop.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="classes.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="javascript.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
