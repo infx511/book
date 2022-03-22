@@ -1,52 +1,58 @@
 <!DOCTYPE html>
-<html  lang="en">
-
+<html lang="en" xml:lang="en">
 <head>
 
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Chapter 17 JavaScript | Introduction to Programming</title>
-  <meta name="description" content="The course reader for INFX 511: Introduction to Programming for Data Science and Visualization.">
-  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 13 JavaScript | Introduction to Programming</title>
+  <meta name="description" content="The course reader for INFX 511: Introduction to Programming for Information and Data Science." />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 17 JavaScript | Introduction to Programming" />
+  <meta property="og:title" content="Chapter 13 JavaScript | Introduction to Programming" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="https://infx511.github.io/" />
   
-  <meta property="og:description" content="The course reader for INFX 511: Introduction to Programming for Data Science and Visualization." />
+  <meta property="og:description" content="The course reader for INFX 511: Introduction to Programming for Information and Data Science." />
   <meta name="github-repo" content="infx511/book" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 17 JavaScript | Introduction to Programming" />
+  <meta name="twitter:title" content="Chapter 13 JavaScript | Introduction to Programming" />
   
-  <meta name="twitter:description" content="The course reader for INFX 511: Introduction to Programming for Data Science and Visualization." />
+  <meta name="twitter:description" content="The course reader for INFX 511: Introduction to Programming for Information and Data Science." />
   
 
-<meta name="author" content="Joel Ross">
+<meta name="author" content="Joel Ross" />
 
 
-<meta name="date" content="2020-07-22">
+<meta name="date" content="2022-03-22" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
-  <link rel="shortcut icon" href="img/ischool-gold.png" type="image/x-icon">
-<link rel="prev" href="pandas.html">
-<link rel="next" href="web-programming.html">
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+  <link rel="shortcut icon" href="img/ischool-gold.png" type="image/x-icon" />
+<link rel="prev" href="beautiful-soup.html"/>
+<link rel="next" href="web-programming.html"/>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
 
 
 
 
 
 
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 
 
 
@@ -69,274 +75,283 @@
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About this Book</a></li>
-<li class="chapter" data-level="1" data-path="setup-machine.html"><a href="setup-machine.html"><i class="fa fa-check"></i><b>1</b> Setting Up Your Machine</a><ul>
-<li class="chapter" data-level="1.1" data-path="setup-machine.html"><a href="setup-machine.html#command-line-tools-bash"><i class="fa fa-check"></i><b>1.1</b> Command Line Tools (Bash)</a><ul>
-<li class="chapter" data-level="1.1.1" data-path="setup-machine.html"><a href="setup-machine.html#command-line-on-a-mac"><i class="fa fa-check"></i><b>1.1.1</b> Command Line on a Mac</a></li>
-<li class="chapter" data-level="1.1.2" data-path="setup-machine.html"><a href="setup-machine.html#command-line-on-windows"><i class="fa fa-check"></i><b>1.1.2</b> Command Line on Windows</a></li>
+<li class="part"><span><b>I Python Basics</b></span></li>
+<li class="chapter" data-level="1" data-path="python-intro.html"><a href="python-intro.html"><i class="fa fa-check"></i><b>1</b> Introduction to Python</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="python-intro.html"><a href="python-intro.html#programming-with-python"><i class="fa fa-check"></i><b>1.1</b> Programming with Python</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="python-intro.html"><a href="python-intro.html#versions"><i class="fa fa-check"></i><b>1.1.1</b> Versions</a></li>
 </ul></li>
-<li class="chapter" data-level="1.2" data-path="setup-machine.html"><a href="setup-machine.html#git"><i class="fa fa-check"></i><b>1.2</b> Git</a><ul>
-<li class="chapter" data-level="1.2.1" data-path="setup-machine.html"><a href="setup-machine.html#github"><i class="fa fa-check"></i><b>1.2.1</b> GitHub</a></li>
+<li class="chapter" data-level="1.2" data-path="python-intro.html"><a href="python-intro.html#running-python-code"><i class="fa fa-check"></i><b>1.2</b> Running Python Code</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="python-intro.html"><a href="python-intro.html#jupyter-notebooks"><i class="fa fa-check"></i><b>1.2.1</b> Jupyter Notebooks</a></li>
+<li class="chapter" data-level="1.2.2" data-path="python-intro.html"><a href="python-intro.html#on-the-command-line"><i class="fa fa-check"></i><b>1.2.2</b> On the Command Line</a></li>
 </ul></li>
-<li class="chapter" data-level="1.3" data-path="setup-machine.html"><a href="setup-machine.html#text-editors"><i class="fa fa-check"></i><b>1.3</b> Text Editors</a><ul>
-<li class="chapter" data-level="1.3.1" data-path="setup-machine.html"><a href="setup-machine.html#visual-studio-code"><i class="fa fa-check"></i><b>1.3.1</b> Visual Studio Code</a></li>
-<li class="chapter" data-level="1.3.2" data-path="setup-machine.html"><a href="setup-machine.html#atom"><i class="fa fa-check"></i><b>1.3.2</b> Atom</a></li>
-<li class="chapter" data-level="1.3.3" data-path="setup-machine.html"><a href="setup-machine.html#sublime-text"><i class="fa fa-check"></i><b>1.3.3</b> Sublime Text</a></li>
-<li class="chapter" data-level="1.3.4" data-path="setup-machine.html"><a href="setup-machine.html#pycharm"><i class="fa fa-check"></i><b>1.3.4</b> PyCharm</a></li>
+<li class="chapter" data-level="1.3" data-path="python-intro.html"><a href="python-intro.html#comments"><i class="fa fa-check"></i><b>1.3</b> Comments</a></li>
+<li class="chapter" data-level="1.4" data-path="python-intro.html"><a href="python-intro.html#variables"><i class="fa fa-check"></i><b>1.4</b> Variables</a>
+<ul>
+<li class="chapter" data-level="1.4.1" data-path="python-intro.html"><a href="python-intro.html#data-types"><i class="fa fa-check"></i><b>1.4.1</b> Data Types</a></li>
 </ul></li>
-<li class="chapter" data-level="1.4" data-path="setup-machine.html"><a href="setup-machine.html#python"><i class="fa fa-check"></i><b>1.4</b> Python</a><ul>
-<li class="chapter" data-level="1.4.1" data-path="setup-machine.html"><a href="setup-machine.html#anaconda"><i class="fa fa-check"></i><b>1.4.1</b> Anaconda</a></li>
+<li class="chapter" data-level="1.5" data-path="python-intro.html"><a href="python-intro.html#getting-help"><i class="fa fa-check"></i><b>1.5</b> Getting Help</a></li>
+<li class="chapter" data-level="" data-path="python-intro.html"><a href="python-intro.html#resources"><i class="fa fa-check"></i>Resources</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="setup-machine.html"><a href="setup-machine.html#resources"><i class="fa fa-check"></i>Resources</a></li>
+<li class="chapter" data-level="2" data-path="functions.html"><a href="functions.html"><i class="fa fa-check"></i><b>2</b> Functions</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="functions.html"><a href="functions.html#what-are-functions"><i class="fa fa-check"></i><b>2.1</b> What are Functions?</a></li>
+<li class="chapter" data-level="2.2" data-path="functions.html"><a href="functions.html#python-function-syntax"><i class="fa fa-check"></i><b>2.2</b> Python Function Syntax</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="functions.html"><a href="functions.html#object-methods"><i class="fa fa-check"></i><b>2.2.1</b> Object Methods</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="command-line.html"><a href="command-line.html"><i class="fa fa-check"></i><b>2</b> The Command Line</a><ul>
-<li class="chapter" data-level="2.1" data-path="command-line.html"><a href="command-line.html#accessing-the-command-line"><i class="fa fa-check"></i><b>2.1</b> Accessing the Command line</a></li>
-<li class="chapter" data-level="2.2" data-path="command-line.html"><a href="command-line.html#navigating-the-command-line"><i class="fa fa-check"></i><b>2.2</b> Navigating the Command Line</a><ul>
-<li class="chapter" data-level="2.2.1" data-path="command-line.html"><a href="command-line.html#changing-directories"><i class="fa fa-check"></i><b>2.2.1</b> Changing Directories</a></li>
-<li class="chapter" data-level="2.2.2" data-path="command-line.html"><a href="command-line.html#listing-files"><i class="fa fa-check"></i><b>2.2.2</b> Listing Files</a></li>
-<li class="chapter" data-level="2.2.3" data-path="command-line.html"><a href="command-line.html#paths"><i class="fa fa-check"></i><b>2.2.3</b> Paths</a></li>
+<li class="chapter" data-level="2.3" data-path="functions.html"><a href="functions.html#built-in-python-functions"><i class="fa fa-check"></i><b>2.3</b> Built-in Python Functions</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="functions.html"><a href="functions.html#modules-and-libraries"><i class="fa fa-check"></i><b>2.3.1</b> Modules and Libraries</a></li>
 </ul></li>
-<li class="chapter" data-level="2.3" data-path="command-line.html"><a href="command-line.html#file-commands"><i class="fa fa-check"></i><b>2.3</b> File Commands</a><ul>
-<li class="chapter" data-level="2.3.1" data-path="command-line.html"><a href="command-line.html#learning-new-commands"><i class="fa fa-check"></i><b>2.3.1</b> Learning New Commands</a></li>
-<li class="chapter" data-level="2.3.2" data-path="command-line.html"><a href="command-line.html#wildcards"><i class="fa fa-check"></i><b>2.3.2</b> Wildcards</a></li>
+<li class="chapter" data-level="2.4" data-path="functions.html"><a href="functions.html#writing-functions"><i class="fa fa-check"></i><b>2.4</b> Writing Functions</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="functions.html"><a href="functions.html#doc-strings"><i class="fa fa-check"></i><b>2.4.1</b> Doc Strings</a></li>
 </ul></li>
-<li class="chapter" data-level="2.4" data-path="command-line.html"><a href="command-line.html#dealing-with-errors"><i class="fa fa-check"></i><b>2.4</b> Dealing With Errors</a></li>
-<li class="chapter" data-level="2.5" data-path="command-line.html"><a href="command-line.html#directing-output"><i class="fa fa-check"></i><b>2.5</b> Directing Output</a></li>
-<li class="chapter" data-level="2.6" data-path="command-line.html"><a href="command-line.html#shell-scripts"><i class="fa fa-check"></i><b>2.6</b> Shell Scripts</a></li>
-<li class="chapter" data-level="" data-path="command-line.html"><a href="command-line.html#resources-1"><i class="fa fa-check"></i>Resources</a></li>
+<li class="chapter" data-level="" data-path="functions.html"><a href="functions.html#resources-1"><i class="fa fa-check"></i>Resources</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="git-basics.html"><a href="git-basics.html"><i class="fa fa-check"></i><b>3</b> Git and GitHub</a><ul>
-<li class="chapter" data-level="3.1" data-path="git-basics.html"><a href="git-basics.html#what-is-this-git-thing-anyway"><i class="fa fa-check"></i><b>3.1</b> What is this <em>git</em> thing anyway?</a><ul>
-<li class="chapter" data-level="3.1.1" data-path="git-basics.html"><a href="git-basics.html#git-core-concepts"><i class="fa fa-check"></i><b>3.1.1</b> Git Core Concepts</a></li>
-<li class="chapter" data-level="3.1.2" data-path="git-basics.html"><a href="git-basics.html#wait-but-what-is-github-then"><i class="fa fa-check"></i><b>3.1.2</b> Wait, but what is GitHub then?</a></li>
+<li class="chapter" data-level="3" data-path="logic.html"><a href="logic.html"><i class="fa fa-check"></i><b>3</b> Logic and Conditionals</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="logic.html"><a href="logic.html#booleans"><i class="fa fa-check"></i><b>3.1</b> Booleans</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="logic.html"><a href="logic.html#relational-operators"><i class="fa fa-check"></i><b>3.1.1</b> Relational Operators</a></li>
+<li class="chapter" data-level="3.1.2" data-path="logic.html"><a href="logic.html#boolean-operators"><i class="fa fa-check"></i><b>3.1.2</b> Boolean Operators</a></li>
 </ul></li>
-<li class="chapter" data-level="3.2" data-path="git-basics.html"><a href="git-basics.html#installation-setup"><i class="fa fa-check"></i><b>3.2</b> Installation &amp; Setup</a><ul>
-<li class="chapter" data-level="3.2.1" data-path="git-basics.html"><a href="git-basics.html#creating-a-repo"><i class="fa fa-check"></i><b>3.2.1</b> Creating a Repo</a></li>
-<li class="chapter" data-level="3.2.2" data-path="git-basics.html"><a href="git-basics.html#checking-status"><i class="fa fa-check"></i><b>3.2.2</b> Checking Status</a></li>
+<li class="chapter" data-level="3.2" data-path="logic.html"><a href="logic.html#conditional-statements"><i class="fa fa-check"></i><b>3.2</b> Conditional Statements</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="logic.html"><a href="logic.html#designing-conditions"><i class="fa fa-check"></i><b>3.2.1</b> Designing Conditions</a></li>
 </ul></li>
-<li class="chapter" data-level="3.3" data-path="git-basics.html"><a href="git-basics.html#making-changes"><i class="fa fa-check"></i><b>3.3</b> Making Changes</a><ul>
-<li class="chapter" data-level="3.3.1" data-path="git-basics.html"><a href="git-basics.html#adding-files"><i class="fa fa-check"></i><b>3.3.1</b> Adding Files</a></li>
-<li class="chapter" data-level="3.3.2" data-path="git-basics.html"><a href="git-basics.html#committing"><i class="fa fa-check"></i><b>3.3.2</b> Committing</a></li>
-<li class="chapter" data-level="3.3.3" data-path="git-basics.html"><a href="git-basics.html#commit-history"><i class="fa fa-check"></i><b>3.3.3</b> Commit History</a></li>
-<li class="chapter" data-level="3.3.4" data-path="git-basics.html"><a href="git-basics.html#reviewing-the-process"><i class="fa fa-check"></i><b>3.3.4</b> Reviewing the Process</a></li>
-<li class="chapter" data-level="3.3.5" data-path="git-basics.html"><a href="git-basics.html#the-.gitignore-file"><i class="fa fa-check"></i><b>3.3.5</b> The <code>.gitignore</code> File</a></li>
+<li class="chapter" data-level="3.3" data-path="logic.html"><a href="logic.html#determining-module-or-script"><i class="fa fa-check"></i><b>3.3</b> Determining Module or Script</a></li>
+<li class="chapter" data-level="" data-path="logic.html"><a href="logic.html#resources-2"><i class="fa fa-check"></i>Resources</a></li>
 </ul></li>
-<li class="chapter" data-level="3.4" data-path="git-basics.html"><a href="git-basics.html#github-and-remotes"><i class="fa fa-check"></i><b>3.4</b> GitHub and Remotes</a><ul>
-<li class="chapter" data-level="3.4.1" data-path="git-basics.html"><a href="git-basics.html#forking-and-cloning"><i class="fa fa-check"></i><b>3.4.1</b> Forking and Cloning</a></li>
-<li class="chapter" data-level="3.4.2" data-path="git-basics.html"><a href="git-basics.html#pushing-and-pulling"><i class="fa fa-check"></i><b>3.4.2</b> Pushing and Pulling</a></li>
-<li class="chapter" data-level="3.4.3" data-path="git-basics.html"><a href="git-basics.html#reviewing-the-process-1"><i class="fa fa-check"></i><b>3.4.3</b> Reviewing The Process</a></li>
-<li class="chapter" data-level="3.4.4" data-path="git-basics.html"><a href="git-basics.html#course-assignments-on-github"><i class="fa fa-check"></i><b>3.4.4</b> Course Assignments on GitHub</a></li>
+<li class="chapter" data-level="4" data-path="lists.html"><a href="lists.html"><i class="fa fa-check"></i><b>4</b> Lists and Sequences</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="lists.html"><a href="lists.html#what-is-a-list"><i class="fa fa-check"></i><b>4.1</b> What is a List?</a></li>
+<li class="chapter" data-level="4.2" data-path="lists.html"><a href="lists.html#list-indices"><i class="fa fa-check"></i><b>4.2</b> List Indices</a></li>
+<li class="chapter" data-level="4.3" data-path="lists.html"><a href="lists.html#list-operations-and-methods"><i class="fa fa-check"></i><b>4.3</b> List Operations and Methods</a></li>
+<li class="chapter" data-level="4.4" data-path="lists.html"><a href="lists.html#nested-lists"><i class="fa fa-check"></i><b>4.4</b> Nested Lists</a></li>
+<li class="chapter" data-level="4.5" data-path="lists.html"><a href="lists.html#other-sequences"><i class="fa fa-check"></i><b>4.5</b> Other Sequences</a>
+<ul>
+<li class="chapter" data-level="4.5.1" data-path="lists.html"><a href="lists.html#ranges"><i class="fa fa-check"></i><b>4.5.1</b> Ranges</a></li>
+<li class="chapter" data-level="4.5.2" data-path="lists.html"><a href="lists.html#tuples"><i class="fa fa-check"></i><b>4.5.2</b> Tuples</a></li>
 </ul></li>
-<li class="chapter" data-level="3.5" data-path="git-basics.html"><a href="git-basics.html#command-summary"><i class="fa fa-check"></i><b>3.5</b> Command Summary</a></li>
-<li class="chapter" data-level="" data-path="git-basics.html"><a href="git-basics.html#resources-2"><i class="fa fa-check"></i>Resources</a></li>
+<li class="chapter" data-level="" data-path="lists.html"><a href="lists.html#resources-3"><i class="fa fa-check"></i>Resources</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="python-intro.html"><a href="python-intro.html"><i class="fa fa-check"></i><b>4</b> Introduction to Python</a><ul>
-<li class="chapter" data-level="4.1" data-path="python-intro.html"><a href="python-intro.html#programming-with-python"><i class="fa fa-check"></i><b>4.1</b> Programming with Python</a><ul>
-<li class="chapter" data-level="4.1.1" data-path="python-intro.html"><a href="python-intro.html#versions"><i class="fa fa-check"></i><b>4.1.1</b> Versions</a></li>
+<li class="chapter" data-level="5" data-path="loops.html"><a href="loops.html"><i class="fa fa-check"></i><b>5</b> Iterating with Loops</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="loops.html"><a href="loops.html#for-loops"><i class="fa fa-check"></i><b>5.1</b> For Loops</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="loops.html"><a href="loops.html#variables-and-loops"><i class="fa fa-check"></i><b>5.1.1</b> Variables and Loops</a></li>
 </ul></li>
-<li class="chapter" data-level="4.2" data-path="python-intro.html"><a href="python-intro.html#running-python-scripts"><i class="fa fa-check"></i><b>4.2</b> Running Python Scripts</a><ul>
-<li class="chapter" data-level="4.2.1" data-path="python-intro.html"><a href="python-intro.html#on-the-command-line"><i class="fa fa-check"></i><b>4.2.1</b> On the Command Line</a></li>
-<li class="chapter" data-level="4.2.2" data-path="python-intro.html"><a href="python-intro.html#jupyter-notebooks"><i class="fa fa-check"></i><b>4.2.2</b> Jupyter Notebooks</a></li>
+<li class="chapter" data-level="5.2" data-path="loops.html"><a href="loops.html#lists-and-loops"><i class="fa fa-check"></i><b>5.2</b> Lists and Loops</a></li>
+<li class="chapter" data-level="5.3" data-path="loops.html"><a href="loops.html#nested-loops"><i class="fa fa-check"></i><b>5.3</b> Nested Loops</a></li>
+<li class="chapter" data-level="5.4" data-path="loops.html"><a href="loops.html#while-loops"><i class="fa fa-check"></i><b>5.4</b> While Loops</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="loops.html"><a href="loops.html#counting-with-while-loops"><i class="fa fa-check"></i><b>5.4.1</b> Counting with While Loops</a></li>
+<li class="chapter" data-level="5.4.2" data-path="loops.html"><a href="loops.html#sentinels"><i class="fa fa-check"></i><b>5.4.2</b> Sentinels</a></li>
+<li class="chapter" data-level="5.4.3" data-path="loops.html"><a href="loops.html#difference-between-for-and-while-loops"><i class="fa fa-check"></i><b>5.4.3</b> Difference Between For and While Loops</a></li>
 </ul></li>
-<li class="chapter" data-level="4.3" data-path="python-intro.html"><a href="python-intro.html#comments"><i class="fa fa-check"></i><b>4.3</b> Comments</a></li>
-<li class="chapter" data-level="4.4" data-path="python-intro.html"><a href="python-intro.html#variables"><i class="fa fa-check"></i><b>4.4</b> Variables</a><ul>
-<li class="chapter" data-level="4.4.1" data-path="python-intro.html"><a href="python-intro.html#data-types"><i class="fa fa-check"></i><b>4.4.1</b> Data Types</a></li>
+<li class="chapter" data-level="5.5" data-path="loops.html"><a href="loops.html#iterating-over-files"><i class="fa fa-check"></i><b>5.5</b> Iterating over Files</a>
+<ul>
+<li class="chapter" data-level="5.5.1" data-path="loops.html"><a href="loops.html#tryexcept"><i class="fa fa-check"></i><b>5.5.1</b> Try/Except</a></li>
 </ul></li>
-<li class="chapter" data-level="4.5" data-path="python-intro.html"><a href="python-intro.html#getting-help"><i class="fa fa-check"></i><b>4.5</b> Getting Help</a></li>
-<li class="chapter" data-level="" data-path="python-intro.html"><a href="python-intro.html#resources-3"><i class="fa fa-check"></i>Resources</a></li>
+<li class="chapter" data-level="" data-path="loops.html"><a href="loops.html#resources-4"><i class="fa fa-check"></i>Resources</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="functions.html"><a href="functions.html"><i class="fa fa-check"></i><b>5</b> Functions</a><ul>
-<li class="chapter" data-level="5.1" data-path="functions.html"><a href="functions.html#what-are-functions"><i class="fa fa-check"></i><b>5.1</b> What are Functions?</a></li>
-<li class="chapter" data-level="5.2" data-path="functions.html"><a href="functions.html#python-function-syntax"><i class="fa fa-check"></i><b>5.2</b> Python Function Syntax</a><ul>
-<li class="chapter" data-level="5.2.1" data-path="functions.html"><a href="functions.html#object-methods"><i class="fa fa-check"></i><b>5.2.1</b> Object Methods</a></li>
+<li class="chapter" data-level="6" data-path="dictionaries.html"><a href="dictionaries.html"><i class="fa fa-check"></i><b>6</b> Dictionaries</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="dictionaries.html"><a href="dictionaries.html#what-is-a-dictionary"><i class="fa fa-check"></i><b>6.1</b> What is a Dictionary?</a></li>
+<li class="chapter" data-level="6.2" data-path="dictionaries.html"><a href="dictionaries.html#accessing-a-dictionary"><i class="fa fa-check"></i><b>6.2</b> Accessing a Dictionary</a></li>
+<li class="chapter" data-level="6.3" data-path="dictionaries.html"><a href="dictionaries.html#dictionary-methods"><i class="fa fa-check"></i><b>6.3</b> Dictionary Methods</a></li>
+<li class="chapter" data-level="6.4" data-path="dictionaries.html"><a href="dictionaries.html#dictionaries-and-loops"><i class="fa fa-check"></i><b>6.4</b> Dictionaries and Loops</a></li>
+<li class="chapter" data-level="6.5" data-path="dictionaries.html"><a href="dictionaries.html#nesting-dictionaries"><i class="fa fa-check"></i><b>6.5</b> Nesting Dictionaries</a></li>
+<li class="chapter" data-level="6.6" data-path="dictionaries.html"><a href="dictionaries.html#which-data-structure-do-i-use"><i class="fa fa-check"></i><b>6.6</b> Which Data Structure Do I Use?</a></li>
+<li class="chapter" data-level="" data-path="dictionaries.html"><a href="dictionaries.html#resources-5"><i class="fa fa-check"></i>Resources</a></li>
 </ul></li>
-<li class="chapter" data-level="5.3" data-path="functions.html"><a href="functions.html#built-in-python-functions"><i class="fa fa-check"></i><b>5.3</b> Built-in Python Functions</a><ul>
-<li class="chapter" data-level="5.3.1" data-path="functions.html"><a href="functions.html#modules-and-libraries"><i class="fa fa-check"></i><b>5.3.1</b> Modules and Libraries</a></li>
+<li class="chapter" data-level="7" data-path="searching.html"><a href="searching.html"><i class="fa fa-check"></i><b>7</b> Searching and Efficiency</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="searching.html"><a href="searching.html#linear-search"><i class="fa fa-check"></i><b>7.1</b> Linear Search</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="searching.html"><a href="searching.html#maximal-search"><i class="fa fa-check"></i><b>7.1.1</b> Maximal Search</a></li>
+<li class="chapter" data-level="7.1.2" data-path="searching.html"><a href="searching.html#falsification-search"><i class="fa fa-check"></i><b>7.1.2</b> Falsification Search</a></li>
 </ul></li>
-<li class="chapter" data-level="5.4" data-path="functions.html"><a href="functions.html#writing-functions"><i class="fa fa-check"></i><b>5.4</b> Writing Functions</a><ul>
-<li class="chapter" data-level="5.4.1" data-path="functions.html"><a href="functions.html#doc-strings"><i class="fa fa-check"></i><b>5.4.1</b> Doc Strings</a></li>
+<li class="chapter" data-level="7.2" data-path="searching.html"><a href="searching.html#linear-search-speed"><i class="fa fa-check"></i><b>7.2</b> Linear Search Speed</a></li>
+<li class="chapter" data-level="7.3" data-path="searching.html"><a href="searching.html#binary-search"><i class="fa fa-check"></i><b>7.3</b> Binary Search</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="searching.html"><a href="searching.html#binary-search-speed"><i class="fa fa-check"></i><b>7.3.1</b> Binary Search Speed</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="functions.html"><a href="functions.html#resources-4"><i class="fa fa-check"></i>Resources</a></li>
+<li class="chapter" data-level="7.4" data-path="searching.html"><a href="searching.html#sorting"><i class="fa fa-check"></i><b>7.4</b> Sorting</a></li>
+<li class="chapter" data-level="" data-path="searching.html"><a href="searching.html#resources-6"><i class="fa fa-check"></i>Resources</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="logic.html"><a href="logic.html"><i class="fa fa-check"></i><b>6</b> Logic and Conditionals</a><ul>
-<li class="chapter" data-level="6.1" data-path="logic.html"><a href="logic.html#booleans"><i class="fa fa-check"></i><b>6.1</b> Booleans</a><ul>
-<li class="chapter" data-level="6.1.1" data-path="logic.html"><a href="logic.html#relational-operators"><i class="fa fa-check"></i><b>6.1.1</b> Relational Operators</a></li>
-<li class="chapter" data-level="6.1.2" data-path="logic.html"><a href="logic.html#boolean-operators"><i class="fa fa-check"></i><b>6.1.2</b> Boolean Operators</a></li>
+<li class="chapter" data-level="8" data-path="functional-programming.html"><a href="functional-programming.html"><i class="fa fa-check"></i><b>8</b> Functional Programming</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="functional-programming.html"><a href="functional-programming.html#functions-are-variables"><i class="fa fa-check"></i><b>8.1</b> Functions ARE Variables</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="functional-programming.html"><a href="functional-programming.html#lambdas-anonymous-functions"><i class="fa fa-check"></i><b>8.1.1</b> lambdas: Anonymous Functions</a></li>
 </ul></li>
-<li class="chapter" data-level="6.2" data-path="logic.html"><a href="logic.html#conditional-statements"><i class="fa fa-check"></i><b>6.2</b> Conditional Statements</a><ul>
-<li class="chapter" data-level="6.2.1" data-path="logic.html"><a href="logic.html#designing-conditions"><i class="fa fa-check"></i><b>6.2.1</b> Designing Conditions</a></li>
+<li class="chapter" data-level="8.2" data-path="functional-programming.html"><a href="functional-programming.html#functional-looping"><i class="fa fa-check"></i><b>8.2</b> Functional Looping</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="functional-programming.html"><a href="functional-programming.html#map"><i class="fa fa-check"></i><b>8.2.1</b> Map</a></li>
+<li class="chapter" data-level="8.2.2" data-path="functional-programming.html"><a href="functional-programming.html#filter"><i class="fa fa-check"></i><b>8.2.2</b> Filter</a></li>
+<li class="chapter" data-level="8.2.3" data-path="functional-programming.html"><a href="functional-programming.html#reduce"><i class="fa fa-check"></i><b>8.2.3</b> Reduce</a></li>
 </ul></li>
-<li class="chapter" data-level="6.3" data-path="logic.html"><a href="logic.html#determining-module-or-script"><i class="fa fa-check"></i><b>6.3</b> Determining Module or Script</a></li>
-<li class="chapter" data-level="" data-path="logic.html"><a href="logic.html#resources-5"><i class="fa fa-check"></i>Resources</a></li>
+<li class="chapter" data-level="8.3" data-path="functional-programming.html"><a href="functional-programming.html#list-comprehensions"><i class="fa fa-check"></i><b>8.3</b> List Comprehensions</a></li>
+<li class="chapter" data-level="" data-path="functional-programming.html"><a href="functional-programming.html#resources-7"><i class="fa fa-check"></i>Resources</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="lists.html"><a href="lists.html"><i class="fa fa-check"></i><b>7</b> Lists and Sequences</a><ul>
-<li class="chapter" data-level="7.1" data-path="lists.html"><a href="lists.html#what-is-a-list"><i class="fa fa-check"></i><b>7.1</b> What is a List?</a></li>
-<li class="chapter" data-level="7.2" data-path="lists.html"><a href="lists.html#list-indices"><i class="fa fa-check"></i><b>7.2</b> List Indices</a></li>
-<li class="chapter" data-level="7.3" data-path="lists.html"><a href="lists.html#list-operations-and-methods"><i class="fa fa-check"></i><b>7.3</b> List Operations and Methods</a></li>
-<li class="chapter" data-level="7.4" data-path="lists.html"><a href="lists.html#nested-lists"><i class="fa fa-check"></i><b>7.4</b> Nested Lists</a></li>
-<li class="chapter" data-level="7.5" data-path="lists.html"><a href="lists.html#other-sequences"><i class="fa fa-check"></i><b>7.5</b> Other Sequences</a><ul>
-<li class="chapter" data-level="7.5.1" data-path="lists.html"><a href="lists.html#ranges"><i class="fa fa-check"></i><b>7.5.1</b> Ranges</a></li>
-<li class="chapter" data-level="7.5.2" data-path="lists.html"><a href="lists.html#tuples"><i class="fa fa-check"></i><b>7.5.2</b> Tuples</a></li>
+<li class="chapter" data-level="9" data-path="classes.html"><a href="classes.html"><i class="fa fa-check"></i><b>9</b> Classes and Object-Oriented Programming</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="classes.html"><a href="classes.html#why-objects"><i class="fa fa-check"></i><b>9.1</b> Why Objects?</a></li>
+<li class="chapter" data-level="9.2" data-path="classes.html"><a href="classes.html#defining-classes"><i class="fa fa-check"></i><b>9.2</b> Defining Classes</a>
+<ul>
+<li class="chapter" data-level="9.2.1" data-path="classes.html"><a href="classes.html#attributes"><i class="fa fa-check"></i><b>9.2.1</b> Attributes</a></li>
+<li class="chapter" data-level="9.2.2" data-path="classes.html"><a href="classes.html#methods"><i class="fa fa-check"></i><b>9.2.2</b> Methods</a></li>
+<li class="chapter" data-level="9.2.3" data-path="classes.html"><a href="classes.html#constructors"><i class="fa fa-check"></i><b>9.2.3</b> Constructors</a></li>
+<li class="chapter" data-level="9.2.4" data-path="classes.html"><a href="classes.html#string-representations"><i class="fa fa-check"></i><b>9.2.4</b> String Representations</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="lists.html"><a href="lists.html#resources-6"><i class="fa fa-check"></i>Resources</a></li>
+<li class="chapter" data-level="" data-path="classes.html"><a href="classes.html#resources-8"><i class="fa fa-check"></i>Resources</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="loops.html"><a href="loops.html"><i class="fa fa-check"></i><b>8</b> Iterating with Loops</a><ul>
-<li class="chapter" data-level="8.1" data-path="loops.html"><a href="loops.html#for-loops"><i class="fa fa-check"></i><b>8.1</b> For Loops</a><ul>
-<li class="chapter" data-level="8.1.1" data-path="loops.html"><a href="loops.html#variables-and-loops"><i class="fa fa-check"></i><b>8.1.1</b> Variables and Loops</a></li>
+<li class="part"><span><b>II Specific Libraries</b></span></li>
+<li class="chapter" data-level="10" data-path="accessing-web-apis.html"><a href="accessing-web-apis.html"><i class="fa fa-check"></i><b>10</b> Accessing Web APIs</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="accessing-web-apis.html"><a href="accessing-web-apis.html#web-apis"><i class="fa fa-check"></i><b>10.1</b> Web APIs</a></li>
+<li class="chapter" data-level="10.2" data-path="accessing-web-apis.html"><a href="accessing-web-apis.html#restful-requests"><i class="fa fa-check"></i><b>10.2</b> RESTful Requests</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="accessing-web-apis.html"><a href="accessing-web-apis.html#uris"><i class="fa fa-check"></i><b>10.2.1</b> URIs</a></li>
+<li class="chapter" data-level="10.2.2" data-path="accessing-web-apis.html"><a href="accessing-web-apis.html#http-verbs"><i class="fa fa-check"></i><b>10.2.2</b> HTTP Verbs</a></li>
 </ul></li>
-<li class="chapter" data-level="8.2" data-path="loops.html"><a href="loops.html#lists-and-loops"><i class="fa fa-check"></i><b>8.2</b> Lists and Loops</a></li>
-<li class="chapter" data-level="8.3" data-path="loops.html"><a href="loops.html#nested-loops"><i class="fa fa-check"></i><b>8.3</b> Nested Loops</a></li>
-<li class="chapter" data-level="8.4" data-path="loops.html"><a href="loops.html#while-loops"><i class="fa fa-check"></i><b>8.4</b> While Loops</a><ul>
-<li class="chapter" data-level="8.4.1" data-path="loops.html"><a href="loops.html#counting-with-while-loops"><i class="fa fa-check"></i><b>8.4.1</b> Counting with While Loops</a></li>
-<li class="chapter" data-level="8.4.2" data-path="loops.html"><a href="loops.html#sentinels"><i class="fa fa-check"></i><b>8.4.2</b> Sentinels</a></li>
-<li class="chapter" data-level="8.4.3" data-path="loops.html"><a href="loops.html#difference-between-for-and-while-loops"><i class="fa fa-check"></i><b>8.4.3</b> Difference Between For and While Loops</a></li>
+<li class="chapter" data-level="10.3" data-path="accessing-web-apis.html"><a href="accessing-web-apis.html#accessing-web-apis-1"><i class="fa fa-check"></i><b>10.3</b> Accessing Web APIs</a></li>
+<li class="chapter" data-level="10.4" data-path="accessing-web-apis.html"><a href="accessing-web-apis.html#json-data"><i class="fa fa-check"></i><b>10.4</b> JSON Data</a></li>
+<li class="chapter" data-level="" data-path="accessing-web-apis.html"><a href="accessing-web-apis.html#resources-9"><i class="fa fa-check"></i>Resources</a></li>
 </ul></li>
-<li class="chapter" data-level="8.5" data-path="loops.html"><a href="loops.html#iterating-over-files"><i class="fa fa-check"></i><b>8.5</b> Iterating over Files</a><ul>
-<li class="chapter" data-level="8.5.1" data-path="loops.html"><a href="loops.html#tryexcept"><i class="fa fa-check"></i><b>8.5.1</b> Try/Except</a></li>
+<li class="chapter" data-level="11" data-path="pandas.html"><a href="pandas.html"><i class="fa fa-check"></i><b>11</b> The <code>pandas</code> Library</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="pandas.html"><a href="pandas.html#setting-up-pandas"><i class="fa fa-check"></i><b>11.1</b> Setting up <code>pandas</code></a></li>
+<li class="chapter" data-level="11.2" data-path="pandas.html"><a href="pandas.html#series"><i class="fa fa-check"></i><b>11.2</b> Series</a>
+<ul>
+<li class="chapter" data-level="11.2.1" data-path="pandas.html"><a href="pandas.html#series-operations-and-methods"><i class="fa fa-check"></i><b>11.2.1</b> Series Operations and Methods</a></li>
+<li class="chapter" data-level="11.2.2" data-path="pandas.html"><a href="pandas.html#accessing-series"><i class="fa fa-check"></i><b>11.2.2</b> Accessing Series</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="loops.html"><a href="loops.html#resources-7"><i class="fa fa-check"></i>Resources</a></li>
+<li class="chapter" data-level="11.3" data-path="pandas.html"><a href="pandas.html#dataframes"><i class="fa fa-check"></i><b>11.3</b> DataFrames</a>
+<ul>
+<li class="chapter" data-level="11.3.1" data-path="pandas.html"><a href="pandas.html#dataframe-operations-and-methods"><i class="fa fa-check"></i><b>11.3.1</b> DataFrame Operations and Methods</a></li>
+<li class="chapter" data-level="11.3.2" data-path="pandas.html"><a href="pandas.html#accessing-dataframes"><i class="fa fa-check"></i><b>11.3.2</b> Accessing DataFrames</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="dictionaries.html"><a href="dictionaries.html"><i class="fa fa-check"></i><b>9</b> Dictionaries</a><ul>
-<li class="chapter" data-level="9.1" data-path="dictionaries.html"><a href="dictionaries.html#what-is-a-dictionary"><i class="fa fa-check"></i><b>9.1</b> What is a Dictionary?</a></li>
-<li class="chapter" data-level="9.2" data-path="dictionaries.html"><a href="dictionaries.html#accessing-a-dictionary"><i class="fa fa-check"></i><b>9.2</b> Accessing a Dictionary</a></li>
-<li class="chapter" data-level="9.3" data-path="dictionaries.html"><a href="dictionaries.html#dictionary-methods"><i class="fa fa-check"></i><b>9.3</b> Dictionary Methods</a></li>
-<li class="chapter" data-level="9.4" data-path="dictionaries.html"><a href="dictionaries.html#dictionaries-and-loops"><i class="fa fa-check"></i><b>9.4</b> Dictionaries and Loops</a></li>
-<li class="chapter" data-level="9.5" data-path="dictionaries.html"><a href="dictionaries.html#nesting-dictionaries"><i class="fa fa-check"></i><b>9.5</b> Nesting Dictionaries</a></li>
-<li class="chapter" data-level="9.6" data-path="dictionaries.html"><a href="dictionaries.html#which-data-structure-do-i-use"><i class="fa fa-check"></i><b>9.6</b> Which Data Structure Do I Use?</a></li>
-<li class="chapter" data-level="" data-path="dictionaries.html"><a href="dictionaries.html#resources-8"><i class="fa fa-check"></i>Resources</a></li>
+<li class="chapter" data-level="11.4" data-path="pandas.html"><a href="pandas.html#aggregation-and-grouping"><i class="fa fa-check"></i><b>11.4</b> Aggregation and Grouping</a></li>
+<li class="chapter" data-level="11.5" data-path="pandas.html"><a href="pandas.html#joining-dataframes-together"><i class="fa fa-check"></i><b>11.5</b> Joining DataFrames Together</a></li>
+<li class="chapter" data-level="" data-path="pandas.html"><a href="pandas.html#resources-10"><i class="fa fa-check"></i>Resources</a></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="searching.html"><a href="searching.html"><i class="fa fa-check"></i><b>10</b> Searching and Efficiency</a><ul>
-<li class="chapter" data-level="10.1" data-path="searching.html"><a href="searching.html#linear-search"><i class="fa fa-check"></i><b>10.1</b> Linear Search</a><ul>
-<li class="chapter" data-level="10.1.1" data-path="searching.html"><a href="searching.html#maximal-search"><i class="fa fa-check"></i><b>10.1.1</b> Maximal Search</a></li>
-<li class="chapter" data-level="10.1.2" data-path="searching.html"><a href="searching.html#falsification-search"><i class="fa fa-check"></i><b>10.1.2</b> Falsification Search</a></li>
+<li class="chapter" data-level="12" data-path="beautiful-soup.html"><a href="beautiful-soup.html"><i class="fa fa-check"></i><b>12</b> Web Crawling with Beautiful Soup</a></li>
+<li class="part"><span><b>III Visualizations with D3</b></span></li>
+<li class="chapter" data-level="13" data-path="javascript.html"><a href="javascript.html"><i class="fa fa-check"></i><b>13</b> JavaScript</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="javascript.html"><a href="javascript.html#programming-with-javascript"><i class="fa fa-check"></i><b>13.1</b> Programming with JavaScript</a>
+<ul>
+<li class="chapter" data-level="13.1.1" data-path="javascript.html"><a href="javascript.html#history-and-versions"><i class="fa fa-check"></i><b>13.1.1</b> History and Versions</a></li>
+<li class="chapter" data-level="13.1.2" data-path="javascript.html"><a href="javascript.html#running-javascript"><i class="fa fa-check"></i><b>13.1.2</b> Running JavaScript</a></li>
 </ul></li>
-<li class="chapter" data-level="10.2" data-path="searching.html"><a href="searching.html#linear-search-speed"><i class="fa fa-check"></i><b>10.2</b> Linear Search Speed</a></li>
-<li class="chapter" data-level="10.3" data-path="searching.html"><a href="searching.html#binary-search"><i class="fa fa-check"></i><b>10.3</b> Binary Search</a><ul>
-<li class="chapter" data-level="10.3.1" data-path="searching.html"><a href="searching.html#binary-search-speed"><i class="fa fa-check"></i><b>10.3.1</b> Binary Search Speed</a></li>
+<li class="chapter" data-level="13.2" data-path="javascript.html"><a href="javascript.html#javascript-basics"><i class="fa fa-check"></i><b>13.2</b> JavaScript Basics</a>
+<ul>
+<li class="chapter" data-level="13.2.1" data-path="javascript.html"><a href="javascript.html#strict-mode"><i class="fa fa-check"></i><b>13.2.1</b> Strict Mode</a></li>
 </ul></li>
-<li class="chapter" data-level="10.4" data-path="searching.html"><a href="searching.html#sorting"><i class="fa fa-check"></i><b>10.4</b> Sorting</a></li>
-<li class="chapter" data-level="" data-path="searching.html"><a href="searching.html#resources-9"><i class="fa fa-check"></i>Resources</a></li>
+<li class="chapter" data-level="13.3" data-path="javascript.html"><a href="javascript.html#variables-1"><i class="fa fa-check"></i><b>13.3</b> Variables</a>
+<ul>
+<li class="chapter" data-level="13.3.1" data-path="javascript.html"><a href="javascript.html#basic-data-types"><i class="fa fa-check"></i><b>13.3.1</b> Basic Data Types</a></li>
+<li class="chapter" data-level="13.3.2" data-path="javascript.html"><a href="javascript.html#type-coercion"><i class="fa fa-check"></i><b>13.3.2</b> Type Coercion</a></li>
+<li class="chapter" data-level="13.3.3" data-path="javascript.html"><a href="javascript.html#arrays"><i class="fa fa-check"></i><b>13.3.3</b> Arrays</a></li>
+<li class="chapter" data-level="13.3.4" data-path="javascript.html"><a href="javascript.html#objects"><i class="fa fa-check"></i><b>13.3.4</b> Objects</a></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="functional-programming.html"><a href="functional-programming.html"><i class="fa fa-check"></i><b>11</b> Functional Programming</a><ul>
-<li class="chapter" data-level="11.1" data-path="functional-programming.html"><a href="functional-programming.html#functions-are-variables"><i class="fa fa-check"></i><b>11.1</b> Functions ARE Variables</a><ul>
-<li class="chapter" data-level="11.1.1" data-path="functional-programming.html"><a href="functional-programming.html#lambdas-anonymous-functions"><i class="fa fa-check"></i><b>11.1.1</b> lambdas: Anonymous Functions</a></li>
+<li class="chapter" data-level="13.4" data-path="javascript.html"><a href="javascript.html#control-structures"><i class="fa fa-check"></i><b>13.4</b> Control Structures</a>
+<ul>
+<li class="chapter" data-level="13.4.1" data-path="javascript.html"><a href="javascript.html#conditionals"><i class="fa fa-check"></i><b>13.4.1</b> Conditionals</a></li>
+<li class="chapter" data-level="13.4.2" data-path="javascript.html"><a href="javascript.html#loops-1"><i class="fa fa-check"></i><b>13.4.2</b> Loops</a></li>
 </ul></li>
-<li class="chapter" data-level="11.2" data-path="functional-programming.html"><a href="functional-programming.html#functional-looping"><i class="fa fa-check"></i><b>11.2</b> Functional Looping</a><ul>
-<li class="chapter" data-level="11.2.1" data-path="functional-programming.html"><a href="functional-programming.html#map"><i class="fa fa-check"></i><b>11.2.1</b> Map</a></li>
-<li class="chapter" data-level="11.2.2" data-path="functional-programming.html"><a href="functional-programming.html#filter"><i class="fa fa-check"></i><b>11.2.2</b> Filter</a></li>
-<li class="chapter" data-level="11.2.3" data-path="functional-programming.html"><a href="functional-programming.html#reduce"><i class="fa fa-check"></i><b>11.2.3</b> Reduce</a></li>
+<li class="chapter" data-level="13.5" data-path="javascript.html"><a href="javascript.html#functions-1"><i class="fa fa-check"></i><b>13.5</b> Functions</a>
+<ul>
+<li class="chapter" data-level="13.5.1" data-path="javascript.html"><a href="javascript.html#functional-programming-1"><i class="fa fa-check"></i><b>13.5.1</b> Functional Programming</a></li>
 </ul></li>
-<li class="chapter" data-level="11.3" data-path="functional-programming.html"><a href="functional-programming.html#list-comprehensions"><i class="fa fa-check"></i><b>11.3</b> List Comprehensions</a></li>
-<li class="chapter" data-level="" data-path="functional-programming.html"><a href="functional-programming.html#resources-10"><i class="fa fa-check"></i>Resources</a></li>
+<li class="chapter" data-level="" data-path="javascript.html"><a href="javascript.html#resources-11"><i class="fa fa-check"></i>Resources</a></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="accessing-web-apis.html"><a href="accessing-web-apis.html"><i class="fa fa-check"></i><b>12</b> Accessing Web APIs</a><ul>
-<li class="chapter" data-level="12.1" data-path="accessing-web-apis.html"><a href="accessing-web-apis.html#web-apis"><i class="fa fa-check"></i><b>12.1</b> Web APIs</a></li>
-<li class="chapter" data-level="12.2" data-path="accessing-web-apis.html"><a href="accessing-web-apis.html#restful-requests"><i class="fa fa-check"></i><b>12.2</b> RESTful Requests</a><ul>
-<li class="chapter" data-level="12.2.1" data-path="accessing-web-apis.html"><a href="accessing-web-apis.html#uris"><i class="fa fa-check"></i><b>12.2.1</b> URIs</a></li>
-<li class="chapter" data-level="12.2.2" data-path="accessing-web-apis.html"><a href="accessing-web-apis.html#http-verbs"><i class="fa fa-check"></i><b>12.2.2</b> HTTP Verbs</a></li>
+<li class="chapter" data-level="14" data-path="web-programming.html"><a href="web-programming.html"><i class="fa fa-check"></i><b>14</b> Web Programming</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="web-programming.html"><a href="web-programming.html#web-pages-and-html"><i class="fa fa-check"></i><b>14.1</b> Web Pages and HTML</a>
+<ul>
+<li class="chapter" data-level="14.1.1" data-path="web-programming.html"><a href="web-programming.html#elements-are-nested"><i class="fa fa-check"></i><b>14.1.1</b> Elements are Nested</a></li>
+<li class="chapter" data-level="14.1.2" data-path="web-programming.html"><a href="web-programming.html#scalable-vector-graphics-svg"><i class="fa fa-check"></i><b>14.1.2</b> Scalable Vector Graphics (SVG)</a></li>
 </ul></li>
-<li class="chapter" data-level="12.3" data-path="accessing-web-apis.html"><a href="accessing-web-apis.html#accessing-web-apis-1"><i class="fa fa-check"></i><b>12.3</b> Accessing Web APIs</a></li>
-<li class="chapter" data-level="12.4" data-path="accessing-web-apis.html"><a href="accessing-web-apis.html#json-data"><i class="fa fa-check"></i><b>12.4</b> JSON Data</a></li>
-<li class="chapter" data-level="" data-path="accessing-web-apis.html"><a href="accessing-web-apis.html#resources-11"><i class="fa fa-check"></i>Resources</a></li>
+<li class="chapter" data-level="14.2" data-path="web-programming.html"><a href="web-programming.html#dom-manipulation-with-d3"><i class="fa fa-check"></i><b>14.2</b> DOM Manipulation with D3</a>
+<ul>
+<li class="chapter" data-level="14.2.1" data-path="web-programming.html"><a href="web-programming.html#selecting-elements"><i class="fa fa-check"></i><b>14.2.1</b> Selecting Elements</a></li>
+<li class="chapter" data-level="14.2.2" data-path="web-programming.html"><a href="web-programming.html#changing-elements"><i class="fa fa-check"></i><b>14.2.2</b> Changing Elements</a></li>
+<li class="chapter" data-level="14.2.3" data-path="web-programming.html"><a href="web-programming.html#adding-elements"><i class="fa fa-check"></i><b>14.2.3</b> Adding Elements</a></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="git-branches.html"><a href="git-branches.html"><i class="fa fa-check"></i><b>13</b> Git Branches</a><ul>
-<li class="chapter" data-level="13.1" data-path="git-branches.html"><a href="git-branches.html#git-branches-1"><i class="fa fa-check"></i><b>13.1</b> Git Branches</a></li>
-<li class="chapter" data-level="13.2" data-path="git-branches.html"><a href="git-branches.html#merging"><i class="fa fa-check"></i><b>13.2</b> Merging</a><ul>
-<li class="chapter" data-level="13.2.1" data-path="git-branches.html"><a href="git-branches.html#merge-conflicts"><i class="fa fa-check"></i><b>13.2.1</b> Merge Conflicts</a></li>
+<li class="chapter" data-level="14.3" data-path="web-programming.html"><a href="web-programming.html#user-events"><i class="fa fa-check"></i><b>14.3</b> User Events</a></li>
+<li class="chapter" data-level="14.4" data-path="web-programming.html"><a href="web-programming.html#ajax"><i class="fa fa-check"></i><b>14.4</b> AJAX</a></li>
+<li class="chapter" data-level="" data-path="web-programming.html"><a href="web-programming.html#resources-12"><i class="fa fa-check"></i>Resources</a></li>
 </ul></li>
-<li class="chapter" data-level="13.3" data-path="git-branches.html"><a href="git-branches.html#undoing-changes"><i class="fa fa-check"></i><b>13.3</b> Undoing Changes</a></li>
-<li class="chapter" data-level="13.4" data-path="git-branches.html"><a href="git-branches.html#github-and-branches"><i class="fa fa-check"></i><b>13.4</b> GitHub and Branches</a><ul>
-<li class="chapter" data-level="13.4.1" data-path="git-branches.html"><a href="git-branches.html#github-pages"><i class="fa fa-check"></i><b>13.4.1</b> GitHub Pages</a></li>
+<li class="chapter" data-level="15" data-path="d3.html"><a href="d3.html"><i class="fa fa-check"></i><b>15</b> D3 Visualizations</a>
+<ul>
+<li class="chapter" data-level="15.1" data-path="d3.html"><a href="d3.html#the-data-join"><i class="fa fa-check"></i><b>15.1</b> The Data Join</a>
+<ul>
+<li class="chapter" data-level="15.1.1" data-path="d3.html"><a href="d3.html#entering-and-exiting-elements"><i class="fa fa-check"></i><b>15.1.1</b> Entering and Exiting Elements</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="git-branches.html"><a href="git-branches.html#resources-12"><i class="fa fa-check"></i>Resources</a></li>
+<li class="chapter" data-level="15.2" data-path="d3.html"><a href="d3.html#animation"><i class="fa fa-check"></i><b>15.2</b> Animation</a></li>
+<li class="chapter" data-level="15.3" data-path="d3.html"><a href="d3.html#margins-and-positioning"><i class="fa fa-check"></i><b>15.3</b> Margins and Positioning</a></li>
+<li class="chapter" data-level="15.4" data-path="d3.html"><a href="d3.html#scales"><i class="fa fa-check"></i><b>15.4</b> Scales</a>
+<ul>
+<li class="chapter" data-level="15.4.1" data-path="d3.html"><a href="d3.html#axes"><i class="fa fa-check"></i><b>15.4.1</b> Axes</a></li>
 </ul></li>
-<li class="chapter" data-level="14" data-path="git-collaboration.html"><a href="git-collaboration.html"><i class="fa fa-check"></i><b>14</b> Git Collaboration</a><ul>
-<li class="chapter" data-level="14.1" data-path="git-collaboration.html"><a href="git-collaboration.html#centralized-workflow"><i class="fa fa-check"></i><b>14.1</b> Centralized Workflow</a></li>
-<li class="chapter" data-level="14.2" data-path="git-collaboration.html"><a href="git-collaboration.html#feature-branch-workflow"><i class="fa fa-check"></i><b>14.2</b> Feature Branch Workflow</a></li>
-<li class="chapter" data-level="14.3" data-path="git-collaboration.html"><a href="git-collaboration.html#forking-workflow"><i class="fa fa-check"></i><b>14.3</b> Forking Workflow</a><ul>
-<li class="chapter" data-level="14.3.1" data-path="git-collaboration.html"><a href="git-collaboration.html#pull-requests"><i class="fa fa-check"></i><b>14.3.1</b> Pull Requests</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="git-collaboration.html"><a href="git-collaboration.html#resources-13"><i class="fa fa-check"></i>Resources</a></li>
-</ul></li>
-<li class="chapter" data-level="15" data-path="classes.html"><a href="classes.html"><i class="fa fa-check"></i><b>15</b> Classes and Object-Oriented Programming</a><ul>
-<li class="chapter" data-level="15.1" data-path="classes.html"><a href="classes.html#why-objects"><i class="fa fa-check"></i><b>15.1</b> Why Objects?</a></li>
-<li class="chapter" data-level="15.2" data-path="classes.html"><a href="classes.html#defining-classes"><i class="fa fa-check"></i><b>15.2</b> Defining Classes</a><ul>
-<li class="chapter" data-level="15.2.1" data-path="classes.html"><a href="classes.html#attributes"><i class="fa fa-check"></i><b>15.2.1</b> Attributes</a></li>
-<li class="chapter" data-level="15.2.2" data-path="classes.html"><a href="classes.html#methods"><i class="fa fa-check"></i><b>15.2.2</b> Methods</a></li>
-<li class="chapter" data-level="15.2.3" data-path="classes.html"><a href="classes.html#constructors"><i class="fa fa-check"></i><b>15.2.3</b> Constructors</a></li>
-<li class="chapter" data-level="15.2.4" data-path="classes.html"><a href="classes.html#string-representations"><i class="fa fa-check"></i><b>15.2.4</b> String Representations</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="classes.html"><a href="classes.html#resources-14"><i class="fa fa-check"></i>Resources</a></li>
-</ul></li>
-<li class="chapter" data-level="16" data-path="pandas.html"><a href="pandas.html"><i class="fa fa-check"></i><b>16</b> The <code>pandas</code> Library</a><ul>
-<li class="chapter" data-level="16.1" data-path="pandas.html"><a href="pandas.html#setting-up-pandas"><i class="fa fa-check"></i><b>16.1</b> Setting up <code>pandas</code></a></li>
-<li class="chapter" data-level="16.2" data-path="pandas.html"><a href="pandas.html#series"><i class="fa fa-check"></i><b>16.2</b> Series</a><ul>
-<li class="chapter" data-level="16.2.1" data-path="pandas.html"><a href="pandas.html#series-operations-and-methods"><i class="fa fa-check"></i><b>16.2.1</b> Series Operations and Methods</a></li>
-<li class="chapter" data-level="16.2.2" data-path="pandas.html"><a href="pandas.html#accessing-series"><i class="fa fa-check"></i><b>16.2.2</b> Accessing Series</a></li>
-</ul></li>
-<li class="chapter" data-level="16.3" data-path="pandas.html"><a href="pandas.html#dataframes"><i class="fa fa-check"></i><b>16.3</b> DataFrames</a><ul>
-<li class="chapter" data-level="16.3.1" data-path="pandas.html"><a href="pandas.html#dataframe-operations-and-methods"><i class="fa fa-check"></i><b>16.3.1</b> DataFrame Operations and Methods</a></li>
-<li class="chapter" data-level="16.3.2" data-path="pandas.html"><a href="pandas.html#accessing-dataframes"><i class="fa fa-check"></i><b>16.3.2</b> Accessing DataFrames</a></li>
-</ul></li>
-<li class="chapter" data-level="16.4" data-path="pandas.html"><a href="pandas.html#aggregation-and-grouping"><i class="fa fa-check"></i><b>16.4</b> Aggregation and Grouping</a></li>
-<li class="chapter" data-level="16.5" data-path="pandas.html"><a href="pandas.html#joining-dataframes-together"><i class="fa fa-check"></i><b>16.5</b> Joining DataFrames Together</a></li>
-<li class="chapter" data-level="" data-path="pandas.html"><a href="pandas.html#resources-15"><i class="fa fa-check"></i>Resources</a></li>
-</ul></li>
-<li class="chapter" data-level="17" data-path="javascript.html"><a href="javascript.html"><i class="fa fa-check"></i><b>17</b> JavaScript</a><ul>
-<li class="chapter" data-level="17.1" data-path="javascript.html"><a href="javascript.html#programming-with-javascript"><i class="fa fa-check"></i><b>17.1</b> Programming with JavaScript</a><ul>
-<li class="chapter" data-level="17.1.1" data-path="javascript.html"><a href="javascript.html#history-and-versions"><i class="fa fa-check"></i><b>17.1.1</b> History and Versions</a></li>
-<li class="chapter" data-level="17.1.2" data-path="javascript.html"><a href="javascript.html#running-javascript"><i class="fa fa-check"></i><b>17.1.2</b> Running JavaScript</a></li>
-</ul></li>
-<li class="chapter" data-level="17.2" data-path="javascript.html"><a href="javascript.html#javascript-basics"><i class="fa fa-check"></i><b>17.2</b> JavaScript Basics</a><ul>
-<li class="chapter" data-level="17.2.1" data-path="javascript.html"><a href="javascript.html#strict-mode"><i class="fa fa-check"></i><b>17.2.1</b> Strict Mode</a></li>
-</ul></li>
-<li class="chapter" data-level="17.3" data-path="javascript.html"><a href="javascript.html#variables-1"><i class="fa fa-check"></i><b>17.3</b> Variables</a><ul>
-<li class="chapter" data-level="17.3.1" data-path="javascript.html"><a href="javascript.html#basic-data-types"><i class="fa fa-check"></i><b>17.3.1</b> Basic Data Types</a></li>
-<li class="chapter" data-level="17.3.2" data-path="javascript.html"><a href="javascript.html#type-coercion"><i class="fa fa-check"></i><b>17.3.2</b> Type Coercion</a></li>
-<li class="chapter" data-level="17.3.3" data-path="javascript.html"><a href="javascript.html#arrays"><i class="fa fa-check"></i><b>17.3.3</b> Arrays</a></li>
-<li class="chapter" data-level="17.3.4" data-path="javascript.html"><a href="javascript.html#objects"><i class="fa fa-check"></i><b>17.3.4</b> Objects</a></li>
-</ul></li>
-<li class="chapter" data-level="17.4" data-path="javascript.html"><a href="javascript.html#control-structures"><i class="fa fa-check"></i><b>17.4</b> Control Structures</a><ul>
-<li class="chapter" data-level="17.4.1" data-path="javascript.html"><a href="javascript.html#conditionals"><i class="fa fa-check"></i><b>17.4.1</b> Conditionals</a></li>
-<li class="chapter" data-level="17.4.2" data-path="javascript.html"><a href="javascript.html#loops-1"><i class="fa fa-check"></i><b>17.4.2</b> Loops</a></li>
-</ul></li>
-<li class="chapter" data-level="17.5" data-path="javascript.html"><a href="javascript.html#functions-1"><i class="fa fa-check"></i><b>17.5</b> Functions</a><ul>
-<li class="chapter" data-level="17.5.1" data-path="javascript.html"><a href="javascript.html#functional-programming-1"><i class="fa fa-check"></i><b>17.5.1</b> Functional Programming</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="javascript.html"><a href="javascript.html#resources-16"><i class="fa fa-check"></i>Resources</a></li>
-</ul></li>
-<li class="chapter" data-level="18" data-path="web-programming.html"><a href="web-programming.html"><i class="fa fa-check"></i><b>18</b> Web Programming</a><ul>
-<li class="chapter" data-level="18.1" data-path="web-programming.html"><a href="web-programming.html#web-pages-and-html"><i class="fa fa-check"></i><b>18.1</b> Web Pages and HTML</a><ul>
-<li class="chapter" data-level="18.1.1" data-path="web-programming.html"><a href="web-programming.html#elements-are-nested"><i class="fa fa-check"></i><b>18.1.1</b> Elements are Nested</a></li>
-<li class="chapter" data-level="18.1.2" data-path="web-programming.html"><a href="web-programming.html#scalable-vector-graphics-svg"><i class="fa fa-check"></i><b>18.1.2</b> Scalable Vector Graphics (SVG)</a></li>
-</ul></li>
-<li class="chapter" data-level="18.2" data-path="web-programming.html"><a href="web-programming.html#dom-manipulation-with-d3"><i class="fa fa-check"></i><b>18.2</b> DOM Manipulation with D3</a><ul>
-<li class="chapter" data-level="18.2.1" data-path="web-programming.html"><a href="web-programming.html#selecting-elements"><i class="fa fa-check"></i><b>18.2.1</b> Selecting Elements</a></li>
-<li class="chapter" data-level="18.2.2" data-path="web-programming.html"><a href="web-programming.html#changing-elements"><i class="fa fa-check"></i><b>18.2.2</b> Changing Elements</a></li>
-<li class="chapter" data-level="18.2.3" data-path="web-programming.html"><a href="web-programming.html#adding-elements"><i class="fa fa-check"></i><b>18.2.3</b> Adding Elements</a></li>
-</ul></li>
-<li class="chapter" data-level="18.3" data-path="web-programming.html"><a href="web-programming.html#user-events"><i class="fa fa-check"></i><b>18.3</b> User Events</a></li>
-<li class="chapter" data-level="18.4" data-path="web-programming.html"><a href="web-programming.html#ajax"><i class="fa fa-check"></i><b>18.4</b> AJAX</a></li>
-<li class="chapter" data-level="" data-path="web-programming.html"><a href="web-programming.html#resources-17"><i class="fa fa-check"></i>Resources</a></li>
-</ul></li>
-<li class="chapter" data-level="19" data-path="d3.html"><a href="d3.html"><i class="fa fa-check"></i><b>19</b> D3 Visualizations</a><ul>
-<li class="chapter" data-level="19.1" data-path="d3.html"><a href="d3.html#the-data-join"><i class="fa fa-check"></i><b>19.1</b> The Data Join</a><ul>
-<li class="chapter" data-level="19.1.1" data-path="d3.html"><a href="d3.html#entering-and-exiting-elements"><i class="fa fa-check"></i><b>19.1.1</b> Entering and Exiting Elements</a></li>
-</ul></li>
-<li class="chapter" data-level="19.2" data-path="d3.html"><a href="d3.html#animation"><i class="fa fa-check"></i><b>19.2</b> Animation</a></li>
-<li class="chapter" data-level="19.3" data-path="d3.html"><a href="d3.html#margins-and-positioning"><i class="fa fa-check"></i><b>19.3</b> Margins and Positioning</a></li>
-<li class="chapter" data-level="19.4" data-path="d3.html"><a href="d3.html#scales"><i class="fa fa-check"></i><b>19.4</b> Scales</a><ul>
-<li class="chapter" data-level="19.4.1" data-path="d3.html"><a href="d3.html#axes"><i class="fa fa-check"></i><b>19.4.1</b> Axes</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="d3.html"><a href="d3.html#resources-18"><i class="fa fa-check"></i>Resources</a></li>
+<li class="chapter" data-level="" data-path="d3.html"><a href="d3.html#resources-13"><i class="fa fa-check"></i>Resources</a></li>
 </ul></li>
 <li class="appendix"><span><b>Appendix</b></span></li>
-<li class="chapter" data-level="A" data-path="markdown.html"><a href="markdown.html"><i class="fa fa-check"></i><b>A</b> Markdown</a><ul>
-<li class="chapter" data-level="A.1" data-path="markdown.html"><a href="markdown.html#writing-markdown"><i class="fa fa-check"></i><b>A.1</b> Writing Markdown</a><ul>
-<li class="chapter" data-level="A.1.1" data-path="markdown.html"><a href="markdown.html#text-formatting"><i class="fa fa-check"></i><b>A.1.1</b> Text Formatting</a></li>
-<li class="chapter" data-level="A.1.2" data-path="markdown.html"><a href="markdown.html#text-blocks"><i class="fa fa-check"></i><b>A.1.2</b> Text Blocks</a></li>
+<li class="chapter" data-level="A" data-path="installing.html"><a href="installing.html"><i class="fa fa-check"></i><b>A</b> Installing Python</a>
+<ul>
+<li class="chapter" data-level="A.1" data-path="installing.html"><a href="installing.html#python"><i class="fa fa-check"></i><b>A.1</b> Python</a>
+<ul>
+<li class="chapter" data-level="A.1.1" data-path="installing.html"><a href="installing.html#anaconda"><i class="fa fa-check"></i><b>A.1.1</b> Anaconda</a></li>
 </ul></li>
-<li class="chapter" data-level="A.2" data-path="markdown.html"><a href="markdown.html#rendering-markdown"><i class="fa fa-check"></i><b>A.2</b> Rendering Markdown</a></li>
-<li class="chapter" data-level="" data-path="markdown.html"><a href="markdown.html#resources-19"><i class="fa fa-check"></i>Resources</a></li>
+<li class="chapter" data-level="A.2" data-path="installing.html"><a href="installing.html#text-editors"><i class="fa fa-check"></i><b>A.2</b> Text Editors</a>
+<ul>
+<li class="chapter" data-level="A.2.1" data-path="installing.html"><a href="installing.html#visual-studio-code"><i class="fa fa-check"></i><b>A.2.1</b> Visual Studio Code</a></li>
+<li class="chapter" data-level="A.2.2" data-path="installing.html"><a href="installing.html#atom"><i class="fa fa-check"></i><b>A.2.2</b> Atom</a></li>
+<li class="chapter" data-level="A.2.3" data-path="installing.html"><a href="installing.html#sublime-text"><i class="fa fa-check"></i><b>A.2.3</b> Sublime Text</a></li>
+<li class="chapter" data-level="A.2.4" data-path="installing.html"><a href="installing.html#pycharm"><i class="fa fa-check"></i><b>A.2.4</b> PyCharm</a></li>
+</ul></li>
+<li class="chapter" data-level="A.3" data-path="installing.html"><a href="installing.html#command-line-tools-bash"><i class="fa fa-check"></i><b>A.3</b> Command Line Tools (Bash)</a>
+<ul>
+<li class="chapter" data-level="A.3.1" data-path="installing.html"><a href="installing.html#command-line-on-a-mac"><i class="fa fa-check"></i><b>A.3.1</b> Command Line on a Mac</a></li>
+<li class="chapter" data-level="A.3.2" data-path="installing.html"><a href="installing.html#command-line-on-windows"><i class="fa fa-check"></i><b>A.3.2</b> Command Line on Windows</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="installing.html"><a href="installing.html#resources-14"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="B" data-path="markdown.html"><a href="markdown.html"><i class="fa fa-check"></i><b>B</b> Markdown</a>
+<ul>
+<li class="chapter" data-level="B.1" data-path="markdown.html"><a href="markdown.html#writing-markdown"><i class="fa fa-check"></i><b>B.1</b> Writing Markdown</a>
+<ul>
+<li class="chapter" data-level="B.1.1" data-path="markdown.html"><a href="markdown.html#text-formatting"><i class="fa fa-check"></i><b>B.1.1</b> Text Formatting</a></li>
+<li class="chapter" data-level="B.1.2" data-path="markdown.html"><a href="markdown.html#text-blocks"><i class="fa fa-check"></i><b>B.1.2</b> Text Blocks</a></li>
+</ul></li>
+<li class="chapter" data-level="B.2" data-path="markdown.html"><a href="markdown.html#rendering-markdown"><i class="fa fa-check"></i><b>B.2</b> Rendering Markdown</a></li>
+<li class="chapter" data-level="" data-path="markdown.html"><a href="markdown.html#resources-15"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="C" data-path="command-line.html"><a href="command-line.html"><i class="fa fa-check"></i><b>C</b> The Command Line</a>
+<ul>
+<li class="chapter" data-level="C.1" data-path="command-line.html"><a href="command-line.html#accessing-the-command-line"><i class="fa fa-check"></i><b>C.1</b> Accessing the Command line</a></li>
+<li class="chapter" data-level="C.2" data-path="command-line.html"><a href="command-line.html#navigating-the-command-line"><i class="fa fa-check"></i><b>C.2</b> Navigating the Command Line</a>
+<ul>
+<li class="chapter" data-level="C.2.1" data-path="command-line.html"><a href="command-line.html#changing-directories"><i class="fa fa-check"></i><b>C.2.1</b> Changing Directories</a></li>
+<li class="chapter" data-level="C.2.2" data-path="command-line.html"><a href="command-line.html#listing-files"><i class="fa fa-check"></i><b>C.2.2</b> Listing Files</a></li>
+<li class="chapter" data-level="C.2.3" data-path="command-line.html"><a href="command-line.html#paths"><i class="fa fa-check"></i><b>C.2.3</b> Paths</a></li>
+</ul></li>
+<li class="chapter" data-level="C.3" data-path="command-line.html"><a href="command-line.html#file-commands"><i class="fa fa-check"></i><b>C.3</b> File Commands</a>
+<ul>
+<li class="chapter" data-level="C.3.1" data-path="command-line.html"><a href="command-line.html#learning-new-commands"><i class="fa fa-check"></i><b>C.3.1</b> Learning New Commands</a></li>
+<li class="chapter" data-level="C.3.2" data-path="command-line.html"><a href="command-line.html#wildcards"><i class="fa fa-check"></i><b>C.3.2</b> Wildcards</a></li>
+</ul></li>
+<li class="chapter" data-level="C.4" data-path="command-line.html"><a href="command-line.html#dealing-with-errors"><i class="fa fa-check"></i><b>C.4</b> Dealing With Errors</a></li>
+<li class="chapter" data-level="C.5" data-path="command-line.html"><a href="command-line.html#directing-output"><i class="fa fa-check"></i><b>C.5</b> Directing Output</a></li>
+<li class="chapter" data-level="C.6" data-path="command-line.html"><a href="command-line.html#shell-scripts"><i class="fa fa-check"></i><b>C.6</b> Shell Scripts</a></li>
+<li class="chapter" data-level="" data-path="command-line.html"><a href="command-line.html#resources-16"><i class="fa fa-check"></i>Resources</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -358,21 +373,21 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="javascript" class="section level1">
-<h1><span class="header-section-number">Chapter 17</span> JavaScript</h1>
+<div id="javascript" class="section level1" number="13">
+<h1><span class="header-section-number">Chapter 13</span> JavaScript</h1>
 <blockquote>
 <p>JavaScript for Snake People</p>
 </blockquote>
 <p><strong>JavaScript</strong> is a popular, high-level, general-purpose programming language primarily used for implementing interactive web applications and other information systems. JavaScript shares many structural (and even some syntactical) similarities with Python; the places where it differs often draws from other major major languages like Java and C (and thus are good styles to be familiar with). Overall, this makes JavaScript a useful second language to learn: programs will utilize similar structures, but demonstrate how code syntax can be abstracted in more general programming practices.</p>
 <p>This chapter introduces the basic syntax of the JavaScript language, including variables, control structures, and functions. <strong>Note</strong> that this introduction assumes familiarity with Python, and introduces concepts in contrast to that languages. For more general purpose introductions, see the below resources.</p>
-<div id="programming-with-javascript" class="section level2">
-<h2><span class="header-section-number">17.1</span> Programming with JavaScript</h2>
+<div id="programming-with-javascript" class="section level2" number="13.1">
+<h2><span class="header-section-number">13.1</span> Programming with JavaScript</h2>
 <p>Like Python, JavaScript is a <strong>high-level, general-purpose, interpreted programming language</strong>. The biggest difference is where it is most commonly used: while the Python interpreter is installed on a computer and is usually accessed through the command line (or through the Jupyter program), JavaScript interpreters are most commonly built into web browsers (such as Chrome or Firefox). Browsers are able to download scripts written in JavaScript, executing them line-by-line and use those instructions to manipulate what content is displayed.</p>
 <p class="alert alert-info">
 It is also possible to execute JavaScript code via the command line by using <a href="https://nodejs.org/en/">Node.js</a>, allowing JavaScript to be a fully general language. However, JavaScript is still most commonly used inside the browser, which is how it will be discussed in this book.
 </p>
-<div id="history-and-versions" class="section level3">
-<h3><span class="header-section-number">17.1.1</span> History and Versions</h3>
+<div id="history-and-versions" class="section level3" number="13.1.1">
+<h3><span class="header-section-number">13.1.1</span> History and Versions</h3>
 <p>The JavaScript language was developed by <a href="https://en.wikipedia.org/wiki/Brendan_Eich">Brendan Eich</a> (the co-founder of Mozilla) in 1995 while he was working for Netscape. The original prototype of the language was created in 10 days… a fact which may help explain some of the quirks in the language.</p>
 <p>Despite the names, <em>JavaScript</em> and the <em>Java</em> language have nothing to do with one another (and are in fact totally separate programming languages used in drastically different contexts). JavaScript was named after Java as a marketing ploy to cash in on the popularity of the latter.</p>
 <p>Like Python, JavaScript continues to be developed through multiple versions, though <em>unlike</em> Python these versions are all backwards compatible. Each new version of JavaScript includes additional syntax shortcuts, specialized keywords, and additional core functions. The main limitation on utilizing new JavaScript features is whether the <em>interpreters</em> found in web browsers are able to support them. This module will use syntax and styles based on <code>ES5</code> (JavaScript 5), which was introduced in 2011 and is supported by all modern browsers (i.e., IE 10 or later).</p>
@@ -381,10 +396,10 @@ It is also possible to execute JavaScript code via the command line by using <a 
 <li><p>Technically, JavaScript is an <em>implementation</em> of the the <a href="https://en.wikipedia.org/wiki/ECMAScript">ECMAScript</a> specification (which defines the structure and behaviors of multiple programming languages). Hence the <code>ES</code> in the version names.</p></li>
 </ul>
 </div>
-<div id="running-javascript" class="section level3">
-<h3><span class="header-section-number">17.1.2</span> Running JavaScript</h3>
+<div id="running-javascript" class="section level3" number="13.1.2">
+<h3><span class="header-section-number">13.1.2</span> Running JavaScript</h3>
 <p>JavaScript scripts are executed in a web browser as part of the browser rendering a web page. Since browsers render HTML content (in <code>.html</code> files), JavaScript scripts are specified within that HTML by using a <code>&lt;script&gt;</code> tag and specifying the <em>relative</em> path to the script file (usually a <strong><code>.js</code></strong> file) to execute. When the HTML being rendered (reading top to bottom) gets to that tag, the browser will download and execute the specified script file using the JavaScript interpreter:</p>
-<pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>path/to/my/script.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span></code></pre>
+<pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>path/to/my/script.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span></code></pre>
 <ul>
 <li><p>The <code>&lt;script&gt;</code> tag can be included anywhere in an HTML page. Most commonly it is either placed in the <code>&lt;head&gt;</code> in order for the script to be executed <em>before</em> the page content loads, or at the very end of the <code>&lt;body&gt;</code> in order for the script to be executed <em>after</em> the page content loads (and so can interact with that content).</p></li>
 <li><p><strong>IMPORTANT:</strong> note that if you edit the <code>.js</code> script file, you will need to <strong>reload</strong> the page so that the browser can execute the script again (starting from the beginning, as if the page were viewed for the first time).</p></li>
@@ -393,7 +408,7 @@ It is also possible to execute JavaScript code via the command line by using <a 
 <p>Thus additional JavaScript modules can be “imported” by including their script file as a <code>&lt;script&gt;</code> tag <em>before</em> the script that needs to use them (no explicit <code>import</code> statement is necessary). These scripts will then make additional <strong>global variables</strong> available for use by later scripts.</p>
 <ul>
 <li><p>Moreover, rather than downloading third-party modules as part of a package like Anaconda, the path to third-party JavaScript modules are specified as an internet URI so that the module is downloaded along with the rest of the web page. For example:</p>
-<pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>https://d3js.org/d3.v5.min.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span></code></pre>
+<pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://d3js.org/d3.v5.min.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span></code></pre>
 <p>will “import” (download and include) the <a href="https://d3js.org/">D3</a> library and provide a global <code>d3</code> variable for later scripts to use—similar to <code>import d3</code> in Python.</p></li>
 </ul>
 <p>While JavaScript most commonly is used to manipulate the web page content and is thus pretty obvious to the user, it <em>also</em> can produce “terminal-like” output—including printed text and <strong>error messages</strong>. This output can be viewed through the <strong>JavaScript Console</strong> included as a <em>developer tool</em> in the Chrome browser (other browsers include similar tools):</p>
@@ -406,7 +421,7 @@ It is also possible to execute JavaScript code via the command line by using <a 
 </p>
 <p>Finally, while a web browser is able to open any local <code>.html</code> file and run its included <code>.js</code> scripts, certain interactions (e.g., downloading data from the internet via an HTTP request) may require a web page to be provided from a <em>web server</em> via the <code>http://</code> protocol, rather than the <code>file://</code> protocol. Luckily Python 3 provides a simple web server through the <code>http.server</code> module which you can use to “serve” the files to yourself:</p>
 <pre class="language-bash"><code><span class="token comment"># on the command line:</span>
-<span class="token function">cd</span> path/to/project
+<span class="token builtin class-name">cd</span> path/to/project
 python -m http.server</code></pre>
 <p>The served webpage will be available at <a href="http://localhost:8000/" class="uri">http://localhost:8000/</a> (“localhost” means “this machine”).</p>
 <ul>
@@ -416,8 +431,8 @@ python -m http.server</code></pre>
 </ul>
 </div>
 </div>
-<div id="javascript-basics" class="section level2">
-<h2><span class="header-section-number">17.2</span> JavaScript Basics</h2>
+<div id="javascript-basics" class="section level2" number="13.2">
+<h2><span class="header-section-number">13.2</span> JavaScript Basics</h2>
 <p>JavaScript scripts (<code>.js</code> files) have a similar overall structure to Python scripts: these files contain lines of code, each of which is a <strong>statement</strong> (instruction). The JavaScript interpreter executes each statement one at a time, top to bottom (responding to control structures and function calls of course).</p>
 <p>Like Python, JavaScript code can include <strong>comments</strong>, which is text that is <em>ignored</em> by the interpreter. JavaScript includes two kinds of comments:</p>
 <ul>
@@ -435,8 +450,8 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <ul>
 <li>Note that JavaScript tries to helpful and will often assume that statements end at the end of a line if the next line “looks like” a new statement. However, it occasionally screws up—and so best practice as a developer is to <strong>always include the semicolons</strong>.</li>
 </ul>
-<div id="strict-mode" class="section level3">
-<h3><span class="header-section-number">17.2.1</span> Strict Mode</h3>
+<div id="strict-mode" class="section level3" number="13.2.1">
+<h3><span class="header-section-number">13.2.1</span> Strict Mode</h3>
 <p>ES5 includes the ability for JavaScript to be interpreted in <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode"><strong>strict mode</strong></a>. Strict mode is more “strict” about how the interpreter understands the syntax: it is less likely to assume that certain programmer mistakes were intentional (and so try to run the code anyway). For example, in <em>strict mode</em> the interpreter will produce an <em>Error</em> if you try and use a variable that has not yet been defined, while without strict mode the code will just use an <code>undefined</code> value. Thus working in strict mode can help catch a lot of silly mistakes.</p>
 <p>You declare that a script or function should be executed in strict mode by putting an interpreter declaration at the top of the file:</p>
 <pre class="language-js"><code><span class="token string">'use strict'</span><span class="token punctuation">;</span></code></pre>
@@ -446,8 +461,8 @@ console<span class="token punctuation">.</span><span class="token function">log<
 </p>
 </div>
 </div>
-<div id="variables-1" class="section level2">
-<h2><span class="header-section-number">17.3</span> Variables</h2>
+<div id="variables-1" class="section level2" number="13.3">
+<h2><span class="header-section-number">13.3</span> Variables</h2>
 <p>JavaScript variables are <strong>declared</strong> using the <code>var</code> keyword. This is like creating the “nametag”; once it has been declared, new values can be assigned to that variable without further declaration. Declared variables have a default value of <code>undefined</code>—a value representing that the variable has no value (similar to <code>None</code> in Python).</p>
 <pre class="language-js"><code><span class="token keyword">var</span> x <span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">;</span>  <span class="token comment">//declare and assign value</span>
 <span class="token keyword">var</span> y <span class="token operator">=</span> x<span class="token punctuation">;</span>  <span class="token comment">//declare and assign value</span>
@@ -463,8 +478,8 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <div class="alert alert-info">
 <p><code>ES6</code> introduces the keyword <strong><code>let</code></strong> for declaring variables (to use instead of <code>var</code>). This works in a similar fashion, except that variables declared using <code>let</code> are <strong>“block scoped”</strong>, meaning that they are only available within the block in which they are defined, not the entire function. This is different than how Python works, but similar to how Java and C work. The <code>let</code> keyword is available in all modern browsers, and is increasingly common in JavaScript examples and tutorials. For this purposes of this book, you can view it as an interchangeable option with <code>var</code>.</p>
 </div>
-<div id="basic-data-types" class="section level3">
-<h3><span class="header-section-number">17.3.1</span> Basic Data Types</h3>
+<div id="basic-data-types" class="section level3" number="13.3.1">
+<h3><span class="header-section-number">13.3.1</span> Basic Data Types</h3>
 <p>JavaScript supports the similar basic data types as Python:</p>
 <ul>
 <li><p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number"><strong>Numbers</strong></a> are used to represent numeric data (JavaScript does not distinguish between integers and floats). Numbers support most of the same <em>mathematical</em> and operators as Python (you can’t use <code>**</code> to raise to an exponent, and <code>//</code> is a comment not integer division). Common mathematical functions can be accessed through in the built-in <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math"><code>Math</code></a> global.</p>
@@ -496,16 +511,16 @@ boolOne <span class="token operator">||</span> boolTwo <span class="token commen
 <span class="token operator">!</span>boolOne <span class="token comment">//not (exclamation point)</span>
 
 <span class="token comment">//combining</span>
-P <span class="token operator">||</span> <span class="token operator">!</span>Q       <span class="token comment">//P or not Q</span>
-<span class="token operator">!</span>P <span class="token operator">&amp;&amp;</span> Q       <span class="token comment">//not P and also Q</span>
-<span class="token operator">!</span><span class="token punctuation">(</span>P <span class="token operator">&amp;&amp;</span> Q<span class="token punctuation">)</span>     <span class="token comment">//not (P and Q both)</span>
-<span class="token punctuation">(</span><span class="token operator">!</span>P<span class="token punctuation">)</span> <span class="token operator">||</span> <span class="token punctuation">(</span><span class="token operator">!</span>Q<span class="token punctuation">)</span>  <span class="token comment">//not P or not Q</span>
+<span class="token constant">P</span> <span class="token operator">||</span> <span class="token operator">!</span><span class="token constant">Q</span>       <span class="token comment">//P or not Q</span>
+<span class="token operator">!</span><span class="token constant">P</span> <span class="token operator">&amp;&amp;</span> <span class="token constant">Q</span>       <span class="token comment">//not P and also Q</span>
+<span class="token operator">!</span><span class="token punctuation">(</span><span class="token constant">P</span> <span class="token operator">&amp;&amp;</span> <span class="token constant">Q</span><span class="token punctuation">)</span>     <span class="token comment">//not (P and Q both)</span>
+<span class="token punctuation">(</span><span class="token operator">!</span><span class="token constant">P</span><span class="token punctuation">)</span> <span class="token operator">||</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token constant">Q</span><span class="token punctuation">)</span>  <span class="token comment">//not P or not Q</span>
 
 <span class="token number">3</span> <span class="token operator">&lt;</span> x <span class="token operator">&amp;&amp;</span> x <span class="token operator">&lt;</span> <span class="token number">5</span>  <span class="token comment">//not as cool as Python</span></code></pre></li>
 </ul>
 </div>
-<div id="type-coercion" class="section level3">
-<h3><span class="header-section-number">17.3.2</span> Type Coercion</h3>
+<div id="type-coercion" class="section level3" number="13.3.2">
+<h3><span class="header-section-number">13.3.2</span> Type Coercion</h3>
 <p>Unlike Python, JavaScript will not throw errors if you try to apply operators (such as <code>+</code> or <code>&lt;</code>) to different types. Instead, the interpreter will try to be “helpful” and <strong>coerce</strong> (convert) a value from one data type into another. While this means you don’t have to explicitly use <code>str()</code> in order to print numbers, JavaScript’s type coercion can produce a few quirks:</p>
 <pre class="language-js"><code><span class="token keyword">var</span> x <span class="token operator">=</span> <span class="token string">'40'</span> <span class="token operator">+</span> <span class="token number">2</span><span class="token punctuation">;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">//=> '402'; the 2 is coerced to a String</span>
@@ -527,8 +542,8 @@ console<span class="token punctuation">.</span><span class="token function">log<
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span> <span class="token string">''</span> <span class="token operator">==</span> <span class="token number">0</span> <span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//true; both can be coerced to a `false` value</span></code></pre>
 <p>This is because both the empty string <code>''</code> and <code>0</code> are considered <a href="https://developer.mozilla.org/en-US/docs/Glossary/Falsy"><strong>“falsey”</strong></a> values (values that can be coerced to <code>false</code>). Other falsy values include <code>undefined</code>, <code>null</code>, and <code>NaN</code> (not a number). All other values will be coerced to <code>true</code>.</p>
 </div>
-<div id="arrays" class="section level3">
-<h3><span class="header-section-number">17.3.3</span> Arrays</h3>
+<div id="arrays" class="section level3" number="13.3.3">
+<h3><span class="header-section-number">13.3.3</span> Arrays</h3>
 <p><strong>Arrays</strong> are <em>ordered, one-dimensional sequences of values</em>—very similar to Python lists. They are written as literals inside square brackets <strong><code>[]</code></strong>. Individual elements can be accessed by (0-based) <em>index</em> using <strong>bracket notation</strong>.</p>
 <pre class="language-js"><code><span class="token keyword">var</span> names <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'John'</span><span class="token punctuation">,</span> <span class="token string">'Paul'</span><span class="token punctuation">,</span> <span class="token string">'George'</span><span class="token punctuation">,</span> <span class="token string">'Ringo'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 <span class="token keyword">var</span> letters <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'b'</span><span class="token punctuation">,</span> <span class="token string">'c'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
@@ -550,25 +565,25 @@ console<span class="token punctuation">.</span><span class="token function">log<
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>letters<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// 6</span></code></pre>
 <p>Arrays also support a variety of <a href="https://www.w3schools.com/jsref/jsref_obj_array.asp">methods</a> that can be used to easily modify their elements. Common <em>functional programming</em>-style methods are described below.</p>
 </div>
-<div id="objects" class="section level3">
-<h3><span class="header-section-number">17.3.4</span> Objects</h3>
+<div id="objects" class="section level3" number="13.3.4">
+<h3><span class="header-section-number">13.3.4</span> Objects</h3>
 <p><strong>Objects</strong> are <em>unordered, one-dimensional sequences of <strong>key-value pairs</strong></em>—very similar to Python dictionaries. They are written as literals inside curly braces <strong><code>{}</code></strong>, with keys and values separated by colons <strong><code>:</code></strong>. Note that in JavaScript, string keys do <em>not</em> need to be written in quotes (the quotes are implied—the keys are in fact strings).</p>
 <pre class="language-js"><code><span class="token comment">//an object of ages (explicit Strings for keys)</span>
 <span class="token comment">//The `ages` object has a `sarah` property (with a value of 42)</span>
-<span class="token keyword">var</span> ages <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'sarah'</span><span class="token punctuation">:</span><span class="token number">42</span><span class="token punctuation">,</span> <span class="token string">'amit'</span><span class="token punctuation">:</span><span class="token number">35</span><span class="token punctuation">,</span> <span class="token string">'zhang'</span><span class="token punctuation">:</span><span class="token number">13</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> ages <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string-property property">'sarah'</span><span class="token operator">:</span><span class="token number">42</span><span class="token punctuation">,</span> <span class="token string-property property">'amit'</span><span class="token operator">:</span><span class="token number">35</span><span class="token punctuation">,</span> <span class="token string-property property">'zhang'</span><span class="token operator">:</span><span class="token number">13</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
 
 <span class="token comment">//different properties can have the same values</span>
 <span class="token comment">//property names with non-letter characters must be in quotes</span>
-<span class="token keyword">var</span> meals <span class="token operator">=</span> <span class="token punctuation">{</span>breakfast<span class="token punctuation">:</span><span class="token string">'coffee'</span><span class="token punctuation">,</span> lunch<span class="token punctuation">:</span> <span class="token string">'coffee'</span><span class="token punctuation">,</span> <span class="token string">'afternoon tea'</span><span class="token punctuation">:</span> <span class="token string">'coffee'</span><span class="token punctuation">}</span>
+<span class="token keyword">var</span> meals <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token literal-property property">breakfast</span><span class="token operator">:</span><span class="token string">'coffee'</span><span class="token punctuation">,</span> <span class="token literal-property property">lunch</span><span class="token operator">:</span> <span class="token string">'coffee'</span><span class="token punctuation">,</span> <span class="token string-property property">'afternoon tea'</span><span class="token operator">:</span> <span class="token string">'coffee'</span><span class="token punctuation">}</span>
 
 <span class="token comment">//values can be of different types (including arrays or other objects!)</span>
-<span class="token keyword">var</span> typeExamples <span class="token operator">=</span> <span class="token punctuation">{</span>number<span class="token punctuation">:</span><span class="token number">12</span><span class="token punctuation">,</span> string<span class="token punctuation">:</span><span class="token string">'dog'</span><span class="token punctuation">,</span> array<span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> typeExamples <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token literal-property property">number</span><span class="token operator">:</span><span class="token number">12</span><span class="token punctuation">,</span> <span class="token literal-property property">string</span><span class="token operator">:</span><span class="token string">'dog'</span><span class="token punctuation">,</span> <span class="token literal-property property">array</span><span class="token operator">:</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
 
 <span class="token comment">//objects can be empty (contains no properties)</span>
 <span class="token keyword">var</span> empty <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span></code></pre>
 <p>Object elements are also known as <strong>properties</strong>. For example, we say that the <code>ages</code> object has a <code>sarah</code> property (with a value of <code>42</code>).</p>
 <p>Object values can be access via <strong>bracket</strong> notation, specifying the <em>key</em> as the index. If a key does not have an explicit value associated with it, accessing that key produces <code>undefined</code> (the key’s value is <code>undefined</code>).</p>
-<pre class="language-js"><code><span class="token keyword">var</span> favorites <span class="token operator">=</span> <span class="token punctuation">{</span>music<span class="token punctuation">:</span> <span class="token string">'jazz'</span><span class="token punctuation">,</span> food<span class="token punctuation">:</span> <span class="token string">'pizza'</span><span class="token punctuation">,</span> numbers<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token number">12</span><span class="token punctuation">,</span> <span class="token number">42</span><span class="token punctuation">]</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<pre class="language-js"><code><span class="token keyword">var</span> favorites <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token literal-property property">music</span><span class="token operator">:</span> <span class="token string">'jazz'</span><span class="token punctuation">,</span> <span class="token literal-property property">food</span><span class="token operator">:</span> <span class="token string">'pizza'</span><span class="token punctuation">,</span> <span class="token literal-property property">numbers</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token number">12</span><span class="token punctuation">,</span> <span class="token number">42</span><span class="token punctuation">]</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
 
 <span class="token comment">//access variable</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span> favorites<span class="token punctuation">[</span><span class="token string">'music'</span><span class="token punctuation">]</span> <span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//'jazz'</span>
@@ -584,7 +599,7 @@ favorites<span class="token punctuation">[</span><span class="token string">'lan
 <span class="token comment">//access nested values</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span> favorites<span class="token punctuation">[</span><span class="token string">'numbers'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//12</span></code></pre>
 <p><em>Additionally</em>, object values can also be accessed via <strong>dot notation</strong>, as if the properties were <em>attributes</em> of a class. This is often simpler to write and to read: remember to read the <strong><code>.</code></strong> as an <code>'s</code>!</p>
-<pre class="language-js"><code><span class="token keyword">var</span> favorites <span class="token operator">=</span> <span class="token punctuation">{</span>music<span class="token punctuation">:</span> <span class="token string">'jazz'</span><span class="token punctuation">,</span> food<span class="token punctuation">:</span> <span class="token string">'pizza'</span><span class="token punctuation">,</span> numbers<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token number">12</span><span class="token punctuation">,</span> <span class="token number">42</span><span class="token punctuation">]</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<pre class="language-js"><code><span class="token keyword">var</span> favorites <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token literal-property property">music</span><span class="token operator">:</span> <span class="token string">'jazz'</span><span class="token punctuation">,</span> <span class="token literal-property property">food</span><span class="token operator">:</span> <span class="token string">'pizza'</span><span class="token punctuation">,</span> <span class="token literal-property property">numbers</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token number">12</span><span class="token punctuation">,</span> <span class="token number">42</span><span class="token punctuation">]</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
 
 <span class="token comment">//access variable</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span> favorites<span class="token punctuation">.</span>music <span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//'jazz'</span>
@@ -603,15 +618,15 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <li>The one advantage to using <em>bracket notation</em> is that you can specify property names as variables or the results of an expression. Thus the recommendation is to use <em>dot notation</em> unless the property you wish to access is dynamically determined.</li>
 </ul>
 <p>It is possible to get <em>arrays</em> of the object’s keys calling the <code>Object.keys()</code> method and passing in the object you wish to get the keys of. Note that an equivalent function for values is not supported by most browsers.</p>
-<pre class="language-js"><code><span class="token keyword">var</span> ages <span class="token operator">=</span> <span class="token punctuation">{</span>sarah<span class="token punctuation">:</span><span class="token number">42</span><span class="token punctuation">,</span> amit<span class="token punctuation">:</span><span class="token number">35</span><span class="token punctuation">,</span> zhang<span class="token punctuation">:</span><span class="token number">13</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<pre class="language-js"><code><span class="token keyword">var</span> ages <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token literal-property property">sarah</span><span class="token operator">:</span><span class="token number">42</span><span class="token punctuation">,</span> <span class="token literal-property property">amit</span><span class="token operator">:</span><span class="token number">35</span><span class="token punctuation">,</span> <span class="token literal-property property">zhang</span><span class="token operator">:</span><span class="token number">13</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
 <span class="token keyword">var</span> keys <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span>ages<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// [ 'sarah', 'amit', 'zhang' ]</span></code></pre>
 </div>
 </div>
-<div id="control-structures" class="section level2">
-<h2><span class="header-section-number">17.4</span> Control Structures</h2>
+<div id="control-structures" class="section level2" number="13.4">
+<h2><span class="header-section-number">13.4</span> Control Structures</h2>
 <p>JavaScript supports <strong>control structures</strong> (conditional <code>if</code> statements, <code>while</code> and <code>for</code> loops) in the same way that Python does, just with a slightly different syntax.</p>
-<div id="conditionals" class="section level3">
-<h3><span class="header-section-number">17.4.1</span> Conditionals</h3>
+<div id="conditionals" class="section level3" number="13.4.1">
+<h3><span class="header-section-number">13.4.1</span> Conditionals</h3>
 <p>A JavaScript <strong><code>if</code> statement</strong> is written using the following syntax:</p>
 <pre class="language-js"><code><span class="token keyword">if</span><span class="token punctuation">(</span>condition<span class="token punctuation">)</span><span class="token punctuation">{</span>
   <span class="token comment">//statements</span>
@@ -632,8 +647,8 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <p>In the above example, the condition will only coerce to <code>true</code> if <code>person.name</code> is defined (<em>not</em> <code>undefined</code>) and is not empty. If somehow the variable has not been assigned (e.g., the user didn’t fill out the form completely), then the condition will not be true.</p>
 <p>Overall, while the syntax may be different, the control flow impacts are the same as in Python: conditional statements can be nested, and subsequent <code>if</code> statements are not necessarily mutually exclusive!</p>
 </div>
-<div id="loops-1" class="section level3">
-<h3><span class="header-section-number">17.4.2</span> Loops</h3>
+<div id="loops-1" class="section level3" number="13.4.2">
+<h3><span class="header-section-number">13.4.2</span> Loops</h3>
 <p>JavaScript supports <strong><code>while</code> loops</strong> just like Python, with the syntactic change that conditions are listed in parentheses and blocks are written in curly braces:</p>
 <pre class="language-js"><code><span class="token keyword">var</span> count <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">;</span>
 <span class="token keyword">while</span><span class="token punctuation">(</span>count <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
@@ -667,12 +682,12 @@ console<span class="token punctuation">.</span><span class="token function">log<
 </div>
 </div>
 </div>
-<div id="functions-1" class="section level2">
-<h2><span class="header-section-number">17.5</span> Functions</h2>
+<div id="functions-1" class="section level2" number="13.5">
+<h2><span class="header-section-number">13.5</span> Functions</h2>
 <p>And of course, JavaScript includes <strong>functions</strong> (named sequences of statements used to <em>abstract</em> code) just like Python. JavaScript functions are written using the following syntax:</p>
 <pre class="language-js"><code><span class="token comment">//A function named `makeFullName` that takes two arguments</span>
 <span class="token comment">//and returns the "full name" made from them</span>
-<span class="token keyword">function</span> <span class="token function">makeFullName</span><span class="token punctuation">(</span>firstName<span class="token punctuation">,</span> lastName<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token keyword">function</span> <span class="token function">makeFullName</span><span class="token punctuation">(</span><span class="token parameter">firstName<span class="token punctuation">,</span> lastName</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token comment">//Function body: perform tasks in here</span>
   <span class="token keyword">var</span> fullName <span class="token operator">=</span> firsName <span class="token operator">+</span> <span class="token string">" "</span> <span class="token operator">+</span> lastName<span class="token punctuation">;</span>
 
@@ -689,7 +704,7 @@ myName <span class="token operator">=</span> <span class="token function">makeFu
 </ul>
 <p>Like Python, JavaScript variables are <em>scoped</em> to functions: any variables declared within a function will not be available outside of it. Functions are able to access, modify, and assign variables that are at a <em>higher</em> scope (e.g., global variables). This includes the arguments, which are implicitly declared <em>local</em> variables!</p>
 <p>JavaScript does not support named keyword arguments (before <code>ES6</code> anyway). However, in JavaScript <strong>all arguments are optional</strong>. Any argument that is <em>not</em> (positionally) passed a specific value will be <code>undefined</code>. Any passed in value that does not have a variable defined for its position will not be assigned to a variable.</p>
-<pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">sayHello</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">sayHello</span><span class="token punctuation">(</span><span class="token parameter">name</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">return</span> <span class="token string">"Hello, "</span><span class="token operator">+</span>name<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 
@@ -704,10 +719,10 @@ myName <span class="token operator">=</span> <span class="token function">makeFu
 <ul>
 <li>If a function has an argument, that doesn’t mean it got a value. If a function lacks an argument, that doesn’t mean it wasn’t given a value.</li>
 </ul>
-<div id="functional-programming-1" class="section level3">
-<h3><span class="header-section-number">17.5.1</span> Functional Programming</h3>
+<div id="functional-programming-1" class="section level3" number="13.5.1">
+<h3><span class="header-section-number">13.5.1</span> Functional Programming</h3>
 <p><strong>JavaScript functions ARE values</strong>. This means that, as in Python, each function you define is in fact an object that can be assigned to other variables or passed around to other functions.</p>
-<pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">sayHello</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">{</span>
+<pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">sayHello</span><span class="token punctuation">(</span><span class="token parameter">name</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"Hello, "</span><span class="token operator">+</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 
@@ -723,30 +738,30 @@ myName <span class="token operator">=</span> <span class="token function">makeFu
 <pre class="language-js"><code><span class="token comment">//Example: an anonymous function (no name!)</span>
 <span class="token comment">//(We can't reference this without a name, so writing an anonymous function is</span>
 <span class="token comment">//not a valid statement)</span>
-<span class="token keyword">function</span><span class="token punctuation">(</span>person<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">person</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"Hello, "</span><span class="token operator">+</span>person<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 
 <span class="token comment">//Anonymous function (value) assigned to variable</span>
 <span class="token comment">//equivalent to the version in the previous example</span>
-<span class="token keyword">var</span> <span class="token function-variable function">sayHello</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>person<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token keyword">var</span> <span class="token function-variable function">sayHello</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">person</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"Hello, "</span><span class="token operator">+</span>person<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span></code></pre>
 <p>You can think of this structure as equivalent to declaring and assigning an array <code>var myVar = [1,2,3]</code>… just in this case instead of taking the anonymous array (right-hand side) and giving it a name, you’re taking an <em>anonymous function</em> and giving it a name!</p>
 <p>Using <strong>anonymous callback functions</strong> are incredibly important in JavaScript programming. Many common built-in functions use callback functions to specify some type of behavior, and these callbacks are normally specified as anonymous functions (rather than clutter the namespace).</p>
-<div id="array-loops" class="section level4">
-<h4><span class="header-section-number">17.5.1.1</span> Array Loops</h4>
+<div id="array-loops" class="section level4" number="13.5.1.1">
+<h4><span class="header-section-number">13.5.1.1</span> Array Loops</h4>
 <p>As a common example, <strong>arrays</strong> support a variety of methods for performing <em>functional looping</em>—in fact, this is the recommended way to loop through an array!</p>
 <p>We loop through an array by calling the [<code>forEach(https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach)</code>] function on that array. This function takes in a <em>callback function</em> specifying what block of code to execute “for each” element:</p>
 <pre class="language-js"><code><span class="token keyword">var</span> array <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">,</span><span class="token string">'b'</span><span class="token punctuation">,</span><span class="token string">'c'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>  <span class="token comment">//an array</span>
-<span class="token keyword">var</span> <span class="token function-variable function">printItem</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span> <span class="token punctuation">{</span>  <span class="token comment">//something to do to an array item</span>
+<span class="token keyword">var</span> <span class="token function-variable function">printItem</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">item</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>  <span class="token comment">//something to do to an array item</span>
    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 
 array<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>printItem<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">//do the "printItem" thing to EACH array item</span>
 
 <span class="token comment">//it is much more common to use anonymous function</span>
-array<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+array<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">item</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 <ul>
@@ -759,18 +774,18 @@ array<span class="token punctuation">.</span><span class="token function">forEac
 <pre class="language-js"><code><span class="token keyword">var</span> array <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 
 <span class="token comment">//map: return a new array of transformed items</span>
-array<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+array<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">item</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
    <span class="token keyword">return</span> item<span class="token operator">*</span><span class="token number">2</span><span class="token punctuation">;</span>   <span class="token comment">//transform each item into its double</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// [6, 2, 8, 4, 10]</span>
 
 <span class="token comment">//filter: return a new array of items that meet the criteria</span>
-array<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span><span class="token punctuation">{</span>
+array<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">item</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
    <span class="token keyword">return</span> item <span class="token operator">>=</span> <span class="token number">3</span><span class="token punctuation">;</span>  <span class="token comment">//keep if large</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// [3, 4, 5]</span>
 
 <span class="token comment">//reduce: aggregate array elements into a single value</span>
 <span class="token comment">//reduce() also takes a second argument which is the starting value</span>
-array<span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>runningTotal<span class="token punctuation">,</span> item<span class="token punctuation">)</span><span class="token punctuation">{</span>
+array<span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">runningTotal<span class="token punctuation">,</span> item</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
   <span class="token keyword">var</span> newTotal <span class="token operator">=</span> runningTotal <span class="token operator">+</span> item<span class="token punctuation">;</span>
   <span class="token keyword">return</span> newTotal<span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
@@ -778,7 +793,7 @@ array<span class="token punctuation">.</span><span class="token function">reduce
 </div>
 </div>
 </div>
-<div id="resources-16" class="section level2 unnumbered">
+<div id="resources-11" class="section level2 unnumbered">
 <h2>Resources</h2>
 <p>As the language used for web programming, JavaScript may have more freely available online learning resources than any other programming language! Some of my favorites include:</p>
 <div class="list-condensed">
@@ -800,17 +815,18 @@ array<span class="token punctuation">.</span><span class="token function">reduce
           </div>
         </div>
       </div>
-<a href="pandas.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="beautiful-soup.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="web-programming.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
 <script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
@@ -818,12 +834,13 @@ gitbook.start({
 "github": true,
 "facebook": false,
 "twitter": false,
-"google": false,
 "linkedin": false,
 "weibo": false,
 "instapaper": false,
 "vk": false,
-"all": ["github", "facebook", "twitter", "google"]
+"whatsapp": false,
+"all": ["github", "facebook", "twitter", "google"],
+"google": false
 },
 "fontsettings": {
 "theme": "white",
@@ -838,7 +855,15 @@ gitbook.start({
 "link": null,
 "text": null
 },
+"view": {
+"link": null,
+"text": null
+},
 "download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "section",
 "scroll_highlight": true

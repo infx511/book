@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 2 Functions | Introduction to Programming</title>
+  <title>A Installing Python | Introduction to Programming</title>
   <meta name="description" content="The course reader for INFX 511: Introduction to Programming for Information and Data Science." />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 2 Functions | Introduction to Programming" />
+  <meta property="og:title" content="A Installing Python | Introduction to Programming" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="https://infx511.github.io/" />
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="infx511/book" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 2 Functions | Introduction to Programming" />
+  <meta name="twitter:title" content="A Installing Python | Introduction to Programming" />
   
   <meta name="twitter:description" content="The course reader for INFX 511: Introduction to Programming for Information and Data Science." />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   <link rel="shortcut icon" href="img/ischool-gold.png" type="image/x-icon" />
-<link rel="prev" href="python-intro.html"/>
-<link rel="next" href="logic.html"/>
+<link rel="prev" href="d3.html"/>
+<link rel="next" href="markdown.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -373,201 +373,103 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="functions" class="section level1" number="2">
-<h1><span class="header-section-number">Chapter 2</span> Functions</h1>
-<p>This chapter will explore how to use and create <strong>functions</strong> in Python. Functions are the primary form of <em>behavior abstraction</em> in computer programming, and are used to structure and generalize code instructions. After considering a function in an abstract sense, it will look at how to use built-in Python functions, how to access additional functions by importing Python modules, and finally how to write your own functions.</p>
-<div id="what-are-functions" class="section level2" number="2.1">
-<h2><span class="header-section-number">2.1</span> What are Functions?</h2>
-<p>In a broad sense, a <strong>function</strong> is a named sequence of instructions (lines of code) that you may want to perform one or more times throughout a program. They provide a way of <em>encapsulating</em> multiple instructions into a single “unit” that can be used in a variety of different contexts. So rather than needing to repeatedly write down all the individual instructions for “make a sandwich” every time you’re hungry, you can define a <code>make_sandwich()</code> function once and then just <strong>call</strong> (execute) that function when you want to perform those steps.</p>
-<p>In addition to grouping instructions, functions in programming languages like Python also follow the mathematical definition of functions, which is a set of operations (instructions!) that are performed on some <strong>inputs</strong> and lead to some <strong>outputs</strong>. Functions inputs are called <strong>arguments</strong> or <strong>parameters</strong>, and we say that these arguments are <strong>passed</strong> to a function (like a football). We say that a function then <strong>returns</strong> an ouput for us to use.</p>
-</div>
-<div id="python-function-syntax" class="section level2" number="2.2">
-<h2><span class="header-section-number">2.2</span> Python Function Syntax</h2>
-<p>Python functions are referred to by name (technically they are values like any other variable). As in many programming languages, we <strong>call</strong> a function by writing the name of the function followed immediately (no space) by parentheses <code>()</code>. Inside the parentheses, we put the <strong>arguments</strong> (inputs) to the function separated by commas. Thus computer functions look just like mathematical functions, but with names longer than <code>f()</code>.</p>
-<pre class="language-python"><code><span class="token comment"># call the print() function, pass it "Hello world" value as an argument</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Hello world"</span><span class="token punctuation">)</span>  <span class="token comment"># "Hello world"</span>
-
-<span class="token comment"># call the str() function, pass it 598 as an argument</span>
-<span class="token builtin">str</span><span class="token punctuation">(</span><span class="token number">598</span><span class="token punctuation">)</span>  <span class="token comment"># "598"</span>
-
-<span class="token comment"># call the len() function, pass it "python" as an argument</span>
-<span class="token builtin">len</span><span class="token punctuation">(</span><span class="token string">"python"</span><span class="token punctuation">)</span>  <span class="token comment"># 6 (the word is 6 letters long)</span>
-
-<span class="token comment"># call the round() function, pass it 3.1415 as the first arg and 2 as the second</span>
-<span class="token comment"># this is an example of a function that takes multiple (ordered) args</span>
-<span class="token builtin">round</span><span class="token punctuation">(</span><span class="token number">3.1415</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span>  <span class="token comment"># 3.14, (3.1415 rounded to 2 decimal places)</span>
-
-<span class="token comment"># call the min() function, pass it 1, 6/8, AND 4/3 as arguments</span>
-<span class="token comment"># this is another example of a function that takes multiple args</span>
-<span class="token builtin">min</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token operator">/</span><span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token operator">/</span><span class="token number">3</span><span class="token punctuation">)</span>  <span class="token comment"># 0.75, (6/8 is the smallest value)</span></code></pre>
+<div id="installing" class="section level1" number="16">
+<h1><span class="header-section-number">A</span> Installing Python</h1>
+<p>Programmers use a variety of different software programs to write, manage, and execute code. Unfortunately, one of the most frustrating and confusing barriers to working with code is simply getting your machine properly set up. This chapter aims to provide sufficient information for setting up your machine and troubleshooting the process.</p>
 <ul>
-<li><em>Note:</em> To keep functions and variables distinct, we try to always include empty parentheses <code>()</code> when referring to a function name. This does <em>not</em> mean that the function takes no arguments; it is just a useful shorthand for indicating that something is a function rather than a variable.</li>
-</ul>
-<p>Some functions (such as <code>min()</code> or <code>print()</code>) can be passed as many arguments as you wish: <code>min()</code> will find the minimum of <em>all</em> the arguments, and <code>print()</code> will print <em>all</em> the arguments (in order), separated by spaces:</p>
-<pre class="language-python"><code><span class="token comment"># print() with 3 arguments instead of 1</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"I"</span><span class="token punctuation">,</span> <span class="token string">"love"</span><span class="token punctuation">,</span> <span class="token string">"programming"</span><span class="token punctuation">)</span>  <span class="token comment"># "I love programming"</span></code></pre>
-<p>Besides ordered <strong>positional arguments</strong>, functions may also take <strong>keyword arguments</strong>, which are arguments for specific function inputs. These are written like variable assignments (using the <code>=</code>, though without spaces around it), but within the function parameter list:</p>
-<pre class="language-python"><code><span class="token comment"># Use the `sep` keyword argument to specify the separator is '+++'</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Hello"</span><span class="token punctuation">,</span> <span class="token string">"World"</span><span class="token punctuation">,</span> sep<span class="token operator">=</span><span class="token string">'+++'</span><span class="token punctuation">)</span>  <span class="token comment"># "Hello+++World"</span></code></pre>
-<p>Keyword arguments are always optional (they have “default” values, like how the separator for <code>print()</code> defaults to a single space <code>' '</code>). The default values are specified in the function documentation (e.g., for <a href="https://docs.python.org/3/library/functions.html#print"><code>print()</code></a>).</p>
-<p>If you call any of these functions interactively (e.g., in an interactive shell or a Jupyter notebook), Python will display the <strong>returned value</strong>. However, the computer is not able to “read” what is written to the console or an output cell—that’s for humans to view! If we want the computer to be able to <em>use</em> a returned value, we will need to give that value a name so that the computer can refer to it. That is, we need to store the returned value in a variable:</p>
-<pre class="language-python"><code><span class="token comment"># store min value in smallest_number variable</span>
-smallest_number <span class="token operator">=</span> <span class="token builtin">min</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token operator">/</span><span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token operator">/</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token operator">+</span><span class="token number">9</span><span class="token punctuation">)</span>
-
-<span class="token comment"># we can then use the variable as normal, such as mathematical operations</span>
-twice_min <span class="token operator">=</span> smallest_number <span class="token operator">*</span> <span class="token number">2</span>  <span class="token comment"># 1.5</span>
-
-<span class="token comment"># we can use functions directly in expressions (the returned value is anonymous)</span>
-number <span class="token operator">=</span> <span class="token number">.5</span> <span class="token operator">*</span> <span class="token builtin">round</span><span class="token punctuation">(</span><span class="token number">9.8</span><span class="token punctuation">)</span>  <span class="token comment"># 5.0</span>
-
-<span class="token comment"># we can even pass the result of a function as an argument to another!</span>
-<span class="token comment"># watch out for where the parentheses close!</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">min</span><span class="token punctuation">(</span><span class="token number">2.0</span><span class="token punctuation">,</span> <span class="token builtin">round</span><span class="token punctuation">(</span><span class="token number">1.4</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment"># prints 1</span></code></pre>
-<div id="object-methods" class="section level3" number="2.2.1">
-<h3><span class="header-section-number">2.2.1</span> Object Methods</h3>
-<p>In Python, all data values are <strong>objects</strong>, which are groups of data (called <em>attributes</em>) and behaviors—that is, information about the values and the <em>functions</em> that can be applied to that data. For example, a Person object may have a name (e.g., <code>"Ada"</code>) and some behavior it can do to that data (e.g., <code>say_name()</code>). Functions that are applied to an object’s data are also known as <strong>methods</strong>. We say that a method is <em>called on</em> that object.</p>
-<p>While we’ll discuss objects in more much detail later, for now you just need to understand that some functions are called <em>on</em> particular values. This is done using <strong>dot notation</strong>: you write the name of the variable you wish to call the method on (i.e., apply the function to), followed by a period (dot) <strong><code>.</code></strong>, followed by the method name and arguments:</p>
-<pre class="language-python"><code>message <span class="token operator">=</span> <span class="token string">"Hello World"</span>
-
-<span class="token comment"># call the lower() method on the message to make a lowercase version</span>
-<span class="token comment"># Note that the original string does not change (strings are immutable)</span>
-lower_message <span class="token operator">=</span> message<span class="token punctuation">.</span>lower<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment"># "hello world"</span>
-
-<span class="token comment"># call the replace() method on the message</span>
-western_message <span class="token operator">=</span> message<span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">"Hello"</span><span class="token punctuation">,</span> <span class="token string">"Howdy"</span><span class="token punctuation">)</span>  <span class="token comment"># "Howdy World"</span></code></pre>
-<p>This is a common way of utilizing built-in Python functions.</p>
+<li><p><strong>Python</strong>: a general purpose programming language, but one that is often used when working with data. This will be the primary programming language use in this book (though others will be discussed as well). “Installing Python” actually means installing tools that will let your computer understand and run Python code.</p>
 <ul>
-<li>Note that dot notation is also used to access the <strong>attributes</strong> or <strong>properties</strong> of an object. So if a <code>Person</code> object has a <code>name</code> attribute, you would refer to that as <code>the_person.name</code>. In this sense, you can think of the <em>dot operator</em> as being like the possessive <code>'s</code> in English: <code>the_person.name</code> refers so “<em><code>the_person</code><strong>’s</strong> name</em>”, and <code>the_person.say_name()</code> would refer to “<em><code>the_person</code><strong>’s</strong> <code>say_name()</code> action</em>”.</li>
+<li><strong>Anaconda</strong>: is a <em>distribution</em> of the Python language, which includes a large number of additional add-on packages that we will be using (and can be difficult to install on their own). This is the recommended way of installing Python; we will be assuming that you have installed all of tools provided with the standard distribution.</li>
+</ul></li>
 </ul>
-</div>
-</div>
-<div id="built-in-python-functions" class="section level2" number="2.3">
-<h2><span class="header-section-number">2.3</span> Built-in Python Functions</h2>
-<p>As you may have noticed, Python comes with a large number of functions that are built into the language. In the above examples, we used the <code>print()</code> function to print a value to the console, the <code>min()</code> function to find the smallest number among the arguments, and the <code>round()</code> function to round to whole numbers. Similarly, each data type in the language comes with their own set of methods: such as the <code>lower()</code> and <code>replace()</code> methods on strings.</p>
-<p>These functions are all described in the <a href="https://docs.python.org/3/index.html">official documentation</a>. For example, you can find a <a href="https://docs.python.org/3/library/functions.html">list of built-in functions</a> (though most of them will not be useful for us), as well as a <a href="https://docs.python.org/3/library/stdtypes.html#string-methods">list of string methods</a>. To learn more about any individual function as well as what functions are available, look it up in the documentation. You can also use the <code>help()</code> function to look up the details of other functions: <code>help(print)</code> will look up information on the <code>print()</code> function.</p>
+<p>The following sections have additional information about the purpose of each component, how to install it, and alternative configurations.</p>
+<div id="python" class="section level2" number="16.1">
+<h2><span class="header-section-number">A.1</span> Python</h2>
+<p>The primary programming language used in this book is called <strong>Python</strong>. It’s a very powerful, general-purpose programming language that is “friendly” enough that it is often used for information and data sciences.</p>
 <p class="alert alert-warning">
-<strong>Important</strong>: “Knowing” how to program in a language is to some extent simply “knowing” what provided functions are available in that language. Thus you should look around and become familiar with these functions… but <em>do not</em> feel that you need to memorize them! It’s enough to simply be aware “oh yeah, there was a function that rounded numbers”, and then be able to look up the name and arguments for that function.
+<strong>Important note:</strong> There are two different versions of Python that exist in the world: Python 2 (latest: 2.7) and Python 3 (latest: 3.10). While mostly similar, the newer Python 3 version added <a href="https://wiki.python.org/moin/Python2orPython3">a few basic differences</a> that make it incompatible with Python 2. But a lot of existing programs were slow to change over to Python 3, effectively causing two different versions to exist in active use (kind of like people not switching from Windows XP). Python 3 is considered the “current” version, with Python 2 being “legacy” and no longer being maintained.
 </p>
-<div id="modules-and-libraries" class="section level3" number="2.3.1">
-<h3><span class="header-section-number">2.3.1</span> Modules and Libraries</h3>
-<p>While Python has lots of built-in functions, many of them are not immediately available for use. Instead, these functions are organized into <strong>modules</strong>, which are collections of related functions and variables. You must specifically load a module into your program in order to access it’s functions; this helps to reduce the amount of memory that the Python interpreter needs to use in order to keep track of all of the functions available.</p>
-<p>You load a module (make it available to your program) by using the <strong><code>import</code></strong> keyword, followed by the name of the module. This only needs to be done once per script execution, and so is normally done at the “top” of the script (in a Jupyter notebook, you can include an “importing” code cell, or import the module at the top of the cell in which you first need it):</p>
-<pre class="language-python"><code><span class="token comment"># load the math module, which contains mathematical functions</span>
-<span class="token keyword">import</span> math
-
-<span class="token comment"># call the math module's sqrt() function to calculate square root</span>
-math<span class="token punctuation">.</span>sqrt<span class="token punctuation">(</span><span class="token number">25</span><span class="token punctuation">)</span>  <span class="token comment"># 5.0, (square root of 25)</span>
-
-<span class="token comment"># print out the math modules `pi` variable</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>math<span class="token punctuation">.</span>pi<span class="token punctuation">)</span>  <span class="token comment"># 3.141592653589793</span></code></pre>
-<p>Notice that we again use <strong>dot notation</strong> to call functions of a particular module. Again, think of the <code>.</code> as a possessive <code>'s</code> (“<em>the <code>math</code> module<strong>’s</strong> <code>sqrt</code> function</em>”).</p>
-<p>It is also possible to import only select functions or variables from a module by using the syntax <code>from MODULE import FUNCTION</code>. This will load the specific functions or variables into the <em>global scope</em>, allowing you to call them without specifying the module:</p>
-<pre class="language-python"><code><span class="token comment"># import the sqrt() function from the math module</span>
-<span class="token keyword">from</span> math <span class="token keyword">import</span> sqrt
-
-<span class="token comment"># call the imported sqrt() function</span>
-sqrt<span class="token punctuation">(</span><span class="token number">25</span><span class="token punctuation">)</span>  <span class="token comment"># 5.0</span>
-
-<span class="token comment"># import multiple values by separating them with commas</span>
-<span class="token keyword">from</span> math <span class="token keyword">import</span> sin<span class="token punctuation">,</span> cos<span class="token punctuation">,</span> pi
-
-sin<span class="token punctuation">(</span>pi<span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">)</span>  <span class="token comment"># 1.0</span>
-cos<span class="token punctuation">(</span>pi<span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">)</span>  <span class="token comment"># 6.123233995736766e-17; 0 but with precision errors</span>
-
-<span class="token comment"># import everything from math</span>
-<span class="token comment"># this is useful for module with long or confusing names</span>
-<span class="token keyword">from</span> math <span class="token keyword">import</span> <span class="token operator">*</span></code></pre>
-<p>The collection of built-in modules such as <code>math</code> make up what is called the <em>standard library</em> of Python functions. However, it’s also possible to download and import additional modules written and published by the Python community—what are known as <strong>libraries</strong> or <strong>packages</strong>. Because many Python users encounter the same challenges, programmers are able to benefit from the work of other and <em>reuse</em> solutions. This is the amazing thing about the open-source community: people solve problems and then make those solutions available to others.</p>
-<p>A large number of additional libraries are included with <a href="https://www.continuum.io/">Anaconda</a>. Anaconda also comes with a command line utility <a href="https://conda.io/docs/"><code>conda</code></a> that can be used to easily download and install new libraries. For example if you needed to install Jupyter, you could use the command <code>conda install jupyter</code> from the command line.</p>
+<p>In this book you will be working with <strong>Python 3</strong>. Thus you will want to make sure that you <em>install</em> Python 3, and that documentation and examples you reference are <em>for</em> Python 3 (rather than Python 2)!</p>
+<p>In order to program with Python, you will need to install the <strong><em>Python Interpreter</em></strong> on your machine. This is a piece of software that is able to “read” code written in Python and use that code to control your computer, thereby “programming” it.</p>
+<div id="anaconda" class="section level3" number="16.1.1">
+<h3><span class="header-section-number">A.1.1</span> Anaconda</h3>
+<p>There are a number of ways to get Python installed on your machine: in fact, you may have a version (possibly Python 2) installed on your computer already! However, the recommended approach for programming for information and data science is to install <a href="https://www.anaconda.com/distribution/"><strong>Anaconda</strong></a>. Anaconda is a pre-packaged bundle of common Python tools and packages that are commonly used in data science—many of which we will be utilizing (including <a href="http://jupyter.org/">Jupyter</a> for running interactive “notebooks”, and <a href="http://pandas.pydata.org/">pandas</a> for large-scale data work). And the best part: Anaconda makes it easy to get all the pieces installed and ready to use!</p>
+<p>To install Anaconda (and Python along with it), simply <a href="https://www.anaconda.com/products/individual#download-section">download</a> the <strong>Python 3.9</strong> installer, run the executable, and follow the instructions. This should install Python and all the required packages.</p>
+<ul>
+<li><p>If prompted, make sure that you select the option to “Add Anaconda to my PATH environment variable”. This will add a link to to Python that can be found by the command line (it will be on the “path” to applications), and will ensure that you can run Python code from within a command prompt.</p>
+<div class="figure">
+<img src="img/setup/anaconda-path.png" alt="" />
+<p class="caption">Select to add Anaconda to the PATH variable.</p>
+</div></li>
+</ul>
+</div>
+</div>
+<div id="text-editors" class="section level2" number="16.2">
+<h2><span class="header-section-number">A.2</span> Text Editors</h2>
+<p>In order to produce computer code, you need somewhere to write it (and we don’t want to write it in MS Word!) There are a variety of available programs that provide an interface for editing code. A major advantage of these programs is that they provide automatic formatting/coloring for easier interpretation of the code, along with cool features like auto-completion and integration with version control.</p>
+<p>While Jupyter Notebooks provide a place to write and run Python code, you may also need to do programming that will run outside of that—and for that you need a coding text editor.</p>
+<p>There are lots of different coding text editors out there, all of which have slightly different appearances and features. You only need to download and use one of the following programs (we recommend <strong>Visual Studio Code</strong> as a default), but feel free to try out different ones to find something you like (and then evangelize about it to your friends!)</p>
 <p class="alert alert-info">
-Python also comes with a command line utility called <a href="https://pip.pypa.io/en/stable/"><code>pip</code></a> for (“pip installs packages”) that can similarly be used to easily download and install packages. Note that you may need to set up a <a href="http://python-guide-pt-br.readthedocs.io/en/latest/dev/virtualenvs/">virtual environment</a> to effectively use <code>pip</code>; thus I recommend you rely on <code>conda</code> instead—though the Anaconda package has everything you will need for this course.
+Programming involves working with many different file types, each detailed by their extension. It is useful to specify that your computer should show these extensions in the File Explorer or Finder; see instructions <a href="https://support.microsoft.com/en-us/help/865219/how-to-show-or-hide-file-name-extensions-in-windows-explorer">for Windows</a> or <a href="https://support.apple.com/kb/PH25381?locale=en_US">for Mac</a> to enable this.
+</p>
+<div id="visual-studio-code" class="section level3" number="16.2.1">
+<h3><span class="header-section-number">A.2.1</span> Visual Studio Code</h3>
+<p><a href="https://code.visualstudio.com/">Visual Studio Code</a> (or VS Code; not to be confused with Visual Studio) is a free, open-source editor developed by Microsoft. While it focuses on web programming and JavaScript, it readily supports lots of languages including Python, and provides a number of <a href="https://code.visualstudio.com/docs/editor/extension-gallery">community-built extensions</a> for adding even more features. Although fairly new, it is updated regularly and has has become one of my main editors for programming.</p>
+<p>To install VS Code, follow the above link and Click the “Download” button to download the installer (e.g, <code>.exe</code>) file, then double-click on that to install the application.</p>
+<p>Once you’ve installed VS Code, the trick to using it effectively is to get comfortable with the <a href="https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette">Command Palette</a>. If you hit <code>Cmd+Shift+P</code>, VS Code will open a small window where you can search for whatever you want the editor to do. For example, if you type in <code>markdown</code> you can get list of commands related to Markdown files (including the ability to open up a preview).</p>
+<ul>
+<li>While VS Code can handle Python code just fine out of the box, to be most effective when writing code you’ll want to add an extension with <a href="https://marketplace.visualstudio.com/items?itemName=ms-python.python">additional Python support</a>. You should be prompted to install this the first time you open a <code>.py</code> Python script file. You can also install it by using the command-palette (open it up and type <code>"extension"</code> to find the “Install Extensions” option). Note that you can disable the pervasive “style warnings” by adding <code># pylint: skip-file</code> to the top of a script file.</li>
+</ul>
+<p>For more information about using VS Code, see <a href="https://code.visualstudio.com/docs">the documentation</a>, which includes <a href="https://code.visualstudio.com/docs/getstarted/introvideos">videos</a> if you find them useful. There is also documentation for programming in <a href="https://code.visualstudio.com/docs/languages/python">Python</a> specifically.</p>
+</div>
+<div id="atom" class="section level3" number="16.2.2">
+<h3><span class="header-section-number">A.2.2</span> Atom</h3>
+<p><a href="https://atom.io/"><strong>Atom</strong></a> is a text editor built by the folks at GitHub. It is very similar to VS Code in terms of features, but has a somewhat different interface and community. It has a similar command-palette to VS Code, and is arguably even nicer about editing Markdown specifically (its built-in spell-check is a great feature, especially for documents that require lots of written text). This book was authored primarily in Atom.</p>
+</div>
+<div id="sublime-text" class="section level3" number="16.2.3">
+<h3><span class="header-section-number">A.2.3</span> Sublime Text</h3>
+<p><a href="https://www.sublimetext.com/3"><strong>Sublime Text</strong></a> is a very popular text editor with excellent defaults and a variety of available extensions (though you’ll need to manage and install extensions to achieve the functionality offered by other editors out of the box). While the software can be used for free, every 20 or so saves it will prompt you to purchase the full version.</p>
+</div>
+<div id="pycharm" class="section level3" number="16.2.4">
+<h3><span class="header-section-number">A.2.4</span> PyCharm</h3>
+<p><a href="https://www.jetbrains.com/pycharm/"><strong>PyCharm</strong></a> is a full-featured Python IDE (integrated development environment) developed by JetBrains. It has more features than you can shake a stick at, including a large number of features that won’t be relevant for this book. It is more powerful, but also somewhat “heavier” (read: slower). You would be interested in the <em>Community Edition</em> of the software.</p>
+</div>
+</div>
+<div id="command-line-tools-bash" class="section level2" number="16.3">
+<h2><span class="header-section-number">A.3</span> Command Line Tools (Bash)</h2>
+<p>The command line provides a text-based interface for giving instructions to your computer (much more on this in <a href="command-line.html#command-line">the appendix</a>). With this book, you’ll use the command line for navigating your computer’s file structure and running programs.</p>
+<p>In order to use the command line, you will need to use a <strong>command shell</strong> (also called a <em>command prompt</em>). This is a program that provides the interface to type commands into. In particular, we’ll be working with the <a href="https://en.wikipedia.org/wiki/Bash_(Unix_shell)">Bash</a> shell, which provides a particular set of commands common to Mac and Linux machines.</p>
+<div id="command-line-on-a-mac" class="section level3" number="16.3.1">
+<h3><span class="header-section-number">A.3.1</span> Command Line on a Mac</h3>
+<p>On a Mac you’ll want to use the built-in app called <em>Terminal</em>. You can open Terminal by searching via Spotlight (hit Cmd (<code>⌘</code>) and Spacebar together, type in “terminal”, then select the app to open it), or by finding it in the <code>Applications &gt; Utilities</code> folder.</p>
+</div>
+<div id="command-line-on-windows" class="section level3" number="16.3.2">
+<h3><span class="header-section-number">A.3.2</span> Command Line on Windows</h3>
+<!-- Does Anaconda provide a shell? -->
+<p>On Windows, you’ll have to do some setup to install a Bash shell. You have two options: you can enable the <a href="https://docs.microsoft.com/en-us/windows/wsl/install-win10"><strong>Windows Subsystem for Linux (WSL)</strong></a>, or you can install <a href="https://git-scm.com/downloads"><strong>Git Bash</strong></a>. The WSL takes more work to install, but once it’s ready it tends to be easier to use and more effective for future programming. Git Bash is easier to install, but has a few usage quirks. Either approach will work for this class. <em>You should pick one option to keep things clear!</em></p>
+<p class="alert alert-info">
+Windows does come with its own command-prompt, called the <em>Command Prompt</em> (or <em>DOS Prompt</em>), but it has a different set of commands and features. <em>Powershell</em> is a more powerful version of the DOS prompt if you really want to get into the Windows Management Framework. But Bash is more common for the kinds of computer programming we’ll be doing, and so we will be focusing on that set of commands.
+</p>
+<p>To enable the WSL, you can follow <a href="https://medium.com/hugo-ferreiras-blog/using-windows-subsystem-for-linux-for-data-science-9a8e68d7610c">this guide</a> (which has pictures and everything), or the <a href="https://docs.microsoft.com/en-us/windows/wsl/install-win10">official instructions</a> (which doesn’t). You will need to download a Linux distribution (e.g., from the Windows store); just using the default Ubuntu version is fine. Once you’ve enabled the WSL, you can open the <em>Command Prompt</em> application and convert it into a Bash shell by running the <strong><code>bash</code></strong> command.</p>
+<ul>
+<li><p>I also recommend <a href="https://devblogs.microsoft.com/commandline/copy-and-paste-arrives-for-linuxwsl-consoles/">enabling copy and paste keyboard shortcuts</a> for your own sanity. Otherwise you can “copy” from the Command Prompt by selecting text, and then “paste” by right-clicking.</p></li>
+<li><p>Note that the Linux install you create for WSL will come with the <code>git</code> program, so you won’t need to do any extra work to install that!</p></li>
+</ul>
+<p>Alternatively, you can install the <a href="https://git-scm.com/downloads"><strong>Git Bash</strong></a> application. This will be installed alongside of <code>git</code> (below). This program <em>is</em> a Bash command shell, simple open it to have a Bash interface to your computer.</p>
+<p class="alert alert-warning">
+When doing work for this course, make sure you are using a Bash shell and not the Windows Command Prompt or Powershell!
 </p>
 </div>
 </div>
-<div id="writing-functions" class="section level2" number="2.4">
-<h2><span class="header-section-number">2.4</span> Writing Functions</h2>
-<p>Even more common than loading other peoples’ functions is writing your own. Functions are the primary way that we <em>abstract</em> program instructions, acting sort of like “mini programs” inside your larger script. As Downey says:</p>
-<blockquote>
-<p>Their primary purpose is to help us organize programs into chunks that match how we think about the problem.</p>
-</blockquote>
-<p>Any time you want to organize your thinking—or if you have a task that you want to repeat through the script—it’s good practice to write a function to perform that task. This will make your program easier to understand and build, as well as limit repetition and reduce the likelihood of error.</p>
-<p>The best way to understand the syntax for defining a function is to look at an example:</p>
-<pre class="language-python"><code><span class="token comment"># A function named `MakeFullName` that takes two arguments</span>
-<span class="token comment"># and returns the "full name" made from them</span>
-<span class="token keyword">def</span> <span class="token function">make_full_name</span><span class="token punctuation">(</span>first_name<span class="token punctuation">,</span> last_name<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token comment"># Function body: perform tasks in here</span>
-    full_name <span class="token operator">=</span> first_name <span class="token operator">+</span> <span class="token string">" "</span> <span class="token operator">+</span> last_name
-
-    <span class="token comment"># Return: what you want the function to output</span>
-    <span class="token keyword">return</span> full_name
-
-<span class="token comment"># Call the make_ful_name function with the values "Alice" and "Kim"</span>
-my_name <span class="token operator">=</span> make_full_name<span class="token punctuation">(</span><span class="token string">"Alice"</span><span class="token punctuation">,</span> <span class="token string">"Kim"</span><span class="token punctuation">)</span>  <span class="token comment"># "Alice Kim"</span></code></pre>
-<p>Functions have a couple of pieces to them:</p>
-<ul>
-<li><p><strong><code>def</code></strong>: Functions are defined by using the <code>def</code> keyword, which indicates that you are defining a function rather than a regular variable. This is followed by the <strong>name</strong> of the function, then a set of parentheses containing the arguments (Note that the <code>function_name(arguments)</code> syntax mirrors how functions are called).</p>
-<p>The line ends with a colon <strong><code>:</code></strong> which starts the function body (see below).</p></li>
-<li><p><strong>Arguments</strong>: The values put between the parentheses in the function definition line are variables that <em>will contain</em> the values passed in as <strong>arguments</strong>. For example, when we call <code>make_full_name("Alice","Kim")</code>, the value of the first argument (<code>"Alice"</code>) will be assigned to the first variable (<code>first_name</code>), and the value of the second argument (<code>"Kim"</code>) will be assigned to the second variable (<code>last_name</code>).</p>
-<p>Importantly, we could have made the argument names anything we wanted (<code>name_first</code>, <code>given_name</code>, etc.), just as long as we then use <em>that variable name</em> to refer to the argument while inside the function. Moreover, these argument variable names <em>only apply</em> while inside the function (they are <strong>scoped</strong> to the function). You can think of them like function-specific “nicknames” for the values. The variables <code>first_name</code>, <code>last_name</code>, and <code>full_name</code> only exist within this particular function.</p>
-<p>Note that a function may have no arguments, causing the parentheses to be empty:</p>
-<pre class="language-python"><code><span class="token keyword">def</span> <span class="token function">say_hello</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-  <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Hello world!"</span><span class="token punctuation">)</span></code></pre>
-<p>You can give a function <em>keyword arguments</em> by assigning a default value to the argument in the function definition:</p>
-<pre class="language-python"><code><span class="token comment"># includes a single keyword argument</span>
-<span class="token keyword">def</span> <span class="token function">greet</span><span class="token punctuation">(</span>greeting <span class="token operator">=</span> <span class="token string">"Hello"</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-  <span class="token keyword">print</span><span class="token punctuation">(</span>greeting <span class="token operator">+</span> <span class="token string">" world"</span><span class="token punctuation">)</span>
-
-<span class="token comment"># call by assigning to the arg</span>
-greet<span class="token punctuation">(</span>greeting<span class="token operator">=</span><span class="token string">"Hi"</span><span class="token punctuation">)</span>  <span class="token comment"># "Hi world"</span>
-
-<span class="token comment"># call without assigning an argument, using the default value</span>
-greet<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment"># "Hello world"</span></code></pre></li>
-<li><p><strong>Body</strong>: The body of the function is a <strong>block</strong> of code. The function definition ends with a colon <strong><code>:</code></strong> to indicate that it is followed by a <em>block</em>, which is a list of Python statements (lines of code). Which statements are part of the block are indicated by <em>indentation</em>: statements are indented by 4 spaces to make them part of that particular block. A block can contain as many lines of code as you want—you’ll usually want more than 1 to make a function worthwhile, but if you have more than 20 you might want to break your code up into separate functions. You can use the argument variables in here, create new variables, call other functions… basically any code that you would write outside of a function can be written inside of one as well!</p></li>
-<li><p><strong>Return value</strong>: You can specify what output a function produces by using the <strong><code>return</code></strong> keyword, followed by the value that you wish <em>your function</em> to return (output). A <code>return</code> statement will end the current function and <em>return</em> the flow of code execution to where ever this function was called from. Note that even though we returned a variable called <code>full_name</code>, that variable was <em>local</em> to the function and so doesn’t exist outside of it; thus we have to take the returned value and assign it to a new variable (as with <code>my_name = make_full_name("Alice", "Kim")</code>).</p>
-<p>Because the <code>return</code> statement exits the function, it is almost always the last line of code in the function; any statements after a <code>return</code> statement will not be run!</p>
-<ul>
-<li>A function does not need to return a value (as in the <code>say_hello()</code> example above). In this case, omit the <code>return</code> statement.</li>
-</ul></li>
-</ul>
-<p>We can call (execute) a function we defined the same way we called built-in functions. When we do so, Python will take the <strong>arguments</strong> we passed in (e.g., <code>"Alice"</code> and <code>"Kim"</code>) and assign them to the <em>argument variables</em>. Then the interpreter executes each line of code in the <strong>function body</strong> one at a time. When it gets to the <code>return</code> statement, it will end the function and return the given value, which can then be assigned to a different variable (outside of the function).</p>
-<div id="doc-strings" class="section level3" number="2.4.1">
-<h3><span class="header-section-number">2.4.1</span> Doc Strings</h3>
-<p>We create new functions as ways of <em>abstracting</em> behavior, in order to make programs easier to read and understand. Thus it is important to be clear about the purpose and use of any functions you create. This can partially done through effective function and argument names: <code>def calc_rectangle_area(width, height)</code> is pretty self-explanatory, whereas <code>def my_func(a, b, c)</code> isn’t).</p>
-<p class="alert alert-success">
-<em>Style requirement:</em> Name functions as phrases starting with <em>verbs</em> (because function do things), and variables as nouns.
-</p>
-<p>Nevertheless, in order to make sure that functions are as clear as possible, you should include <strong>documentation</strong> in the form of a <em>comment</em> that describes in plain English what a function does: its inputs (arguments) once, output (return value), and overall behavior. In Python we document functions by providing a <strong>doc string</strong>. This is a string literal (written in multi-line triple quotes <code>"""</code>) placed immediately below the function declaration:</p>
-<pre class="language-python"><code><span class="token keyword">def</span> <span class="token function">to_celsius</span><span class="token punctuation">(</span>degrees_fahrenheit<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token triple-quoted-string string">"""Converts the given degrees (in Fahrenheit) to degrees in Celsius, and
-       returns the result.
-    """</span>
-    celsius <span class="token operator">=</span> <span class="token punctuation">(</span>degrees_fahrenheit <span class="token operator">-</span> <span class="token number">32</span><span class="token punctuation">)</span><span class="token operator">*</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token operator">/</span><span class="token number">9</span><span class="token punctuation">)</span>
-    <span class="token keyword">return</span> celsius</code></pre>
-<ul>
-<li><p>Note that this string isn’t assigned to a variable; it is treated as a valid statement because it is immediately below the function declaration.</p></li>
-<li><p>You can view the doc string by calling the <code>help()</code> function with your function’s name as the parameter! In fact, when you call <code>help()</code> on any built-in function, what you are viewing is that function’s doc string.</p></li>
-</ul>
-<p>Doc strings should include the following information:</p>
-<ol style="list-style-type: decimal">
-<li><p>What the function does <em>from the perspective of someone who would call the function</em>. This should be a short (1-2 sentence) summary; don’t describe the individual instructions that are executed, but an <em>abstraction</em> of the code’s purpose.</p>
-<ul>
-<li>If you mention variables, operations, functions, or control structures, your comment isn’t at a high enough level of abstraction!</li>
-</ul></li>
-<li><p>Descriptions of the expected arguments. Clarify any ambiguities in type (e.g., a number or a string) and units.</p></li>
-<li><p>Description of the returned value (if any). Explain the meaning, type (e.g., number or string), etc.</p></li>
-</ol>
-<p>It’s good to think of doc strings as defining a “contract”: you are specifying that “if you give the function this set of inputs, it will perform this behavior and give you this output.”.</p>
-<p>For simple methods you can build this information into a single sentence as in the above example. But for more complex functions, you may need to use a more complex format for your doc string. See the <a href="http://google.github.io/styleguide/pyguide.html?showone=Comments#Comments">Google Style Guide</a> for an example.</p>
-</div>
-</div>
-<div id="resources-1" class="section level2 unnumbered">
+<div id="resources-14" class="section level2 unnumbered">
 <h2>Resources</h2>
+<p>Links to the recommended software are collected here for easy access:</p>
 <div class="list-condensed">
 <ul>
-<li><a href="https://automatetheboringstuff.com/chapter3/">Functions (Sweigart)</a></li>
-<li><a href="https://books.trinket.io/pfe/04-functions.html">Functions (Severance)</a></li>
-<li><a href="http://openbookproject.net/thinkcs/python/english3e/fruitful_functions.html">Fruitful Functions (Downey)</a>
-<!-- - [Python Built-in Functions](https://docs.python.org/3/library/functions.html) --></li>
+<li><a href="https://www.anaconda.com/distribution/">Python (Anaconda)</a></li>
+<li><a href="https://code.visualstudio.com/">Visual Studio Code</a></li>
+<li><a href="https://git-scm.com/downloads">git (and Git Bash)</a></li>
+<li><a href="https://docs.microsoft.com/en-us/windows/wsl/install-win10">Windows Subsystem for Linux</a></li>
 </ul>
 </div>
 
@@ -578,8 +480,8 @@ greet<span class="token punctuation">(</span><span class="token punctuation">)</
           </div>
         </div>
       </div>
-<a href="python-intro.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="logic.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="d3.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="markdown.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -611,7 +513,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/infx511/book/edit/master/functions.Rmd",
+"link": "https://github.com/infx511/book/edit/master/installing.Rmd",
 "text": "Edit"
 },
 "history": {

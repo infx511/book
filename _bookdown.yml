@@ -7,33 +7,32 @@ edit: https://github.com/infx511/book/edit/master/%s
 rmd_files:
   - index.Rmd
 
-  # environment setup
-  - setup.Rmd
-  - command-line.Rmd
-  - git-basics.Rmd
-
   # python basics
+  - part_basics.Rmd
   - python-intro.Rmd
   - functions.Rmd
   - logic.Rmd
   - lists.Rmd
   - loops.Rmd
   - dictionaries.Rmd
-
-  # refined programming
   - searching.Rmd
   - functional-programming.Rmd
-  - apis.Rmd
-  - git-branches.Rmd
-  - git-collaboration.Rmd
   - oop.Rmd
+
+  # applications refined programming
+  - part_libraries.Rmd
+  - apis.Rmd
   - pandas.Rmd
-  
+  - beautiful-soup.Rmd
+
   # javascript & d3
+  - part_visualization.Rmd
   - javascript.Rmd
   - web-programming.Rmd
   - d3.Rmd
-  
+
   # appendix
   - appendix.Rmd
+  - installing.Rmd
   - markdown.Rmd
+  - command-line.Rmd

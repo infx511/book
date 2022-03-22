@@ -3,7 +3,7 @@ lang: en
 title: 'Introduction to Programming'
 author: "[Joel Ross](http://faculty.washington.edu/joelross/)"
 date: "`r format(Sys.Date(), '%B %d, %Y')`"
-description: 'The course reader for INFX 511: Introduction to Programming for Data Science and Visualization.'
+description: 'The course reader for INFX 511: Introduction to Programming for Information and Data Science.'
 github-repo: infx511/book
 url: 'https\://infx511.github.io/'
 site: bookdown::bookdown_site
@@ -21,7 +21,7 @@ favicon: img/ischool-gold.png
 
 <!-- ![](img/cover-img.png) -->
 
-This book covers the fundamentals of computer programming as used for data science. 
+This book covers the fundamentals of computer programming as used for data science.
 It will introduce programming concepts such as syntax, data referencing, control structures, functions, data structures, abstraction, and debugging, as well as development tools and technologies (such as the command line and version control). The goal is to develop skills in algorithmic thinking, abstraction, and debugging. It assumes no previous programming background. These materials were developed for the **INFX 511: Introduction to Programming for Data Science and Visualization** course taught at the [University of Washington Information School](https://ischool.uw.edu/); however they have been structured to be an online resource for anyone who wishes to learn programming.
 
 Some chapters of this book have been developed in conjunction with [Technical Foundations of Informatics](https://info201.github.io/), by Freeman and Ross.
@@ -29,7 +29,7 @@ Some chapters of this book have been developed in conjunction with [Technical Fo
 <!-- TODO: Include previous course offerings? -->
 
 <!-- TODO: Include author contact info? -->
-<p class="alert alert-warning">This book is currently in **alpha** status. Visit us on [GitHub](https://github.com/infx511/book) to contribute improvements.</p>
+<p class="alert alert-warning">This book is a living document. Visit us on [GitHub](https://github.com/infx511/book) to contribute improvements.</p>
 
 ![Creative Commons License](img/index/by-nc-sa.png)
 This book is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-nc-sa/4.0/).

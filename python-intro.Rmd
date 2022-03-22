@@ -24,15 +24,52 @@ Version 2.0 of Python was released in 2000, and version 3.0 was released in 2008
 
 Python 3 involved a major restructuring which included a number of "breaking" changes to core parts of the language. The most noticeable of these are that all text strings support [Unicode](https://en.wikipedia.org/wiki/Unicode) (non-English characters), `print` is a function not a statement, and integers don't use floor devision (these concepts are discussed in more detail below).
 
-In short, Python 3 is considered the "current" version, and Python 2 is considered the "legacy" version (and will not be supported beyond). However some external libraries refused or failed to update to Python 3. Thus in practice there are two incompatible versions of Python that are used in the world. See [Python2orPython3](https://wiki.python.org/moin/Python2orPython3) for more details.
+In short, Python 3 is considered the "current" version, and Python 2 is considered the "legacy" version (and is not longer supported). However some few external libraries that failed to update to Python 3. Thus in practice there are two incompatible versions of Python that are used in the world. See [Python2orPython3](https://wiki.python.org/moin/Python2orPython3) for more details.
 
 - In this book, we will be using **Python 3**, particularly as it fixes some issues that often trip up beginners, is supported by all major libraries in a more effective way, and will still be supported in the near future!
 
-## Running Python Scripts
+## Running Python Code
 Python scripts (programs) are just a sequence of instructions, and there are a couple of different ways in which we can tell the computer to execute these instructions.
 
+### Jupyter Notebooks
+One of the most popular and effective way of writing and running Python code is to utilize a [Jupyter Notebook](http://jupyter.org/). A Jupyter Notebook is a **web appplications** (that runs in your web browser) and provides an interactive platform for running Python code: you are able to write and execute Python code write in the browser.
+
+- Jupter is a portmanteau of "Julia", "Python" and "R", which are the programming languages the application was designed to support. Each notebook runs on an individual **kernel** or language interpreter; you'll want to be sure you're running a Python 3 kernel for this course.
+
+Code is authored in individual "notebooks", which are collections of _cells_ (blocks of code or text). Cells can also include Markdown (text) content, allowing notebooks to act as interactive documents with embedded, runnable code.
+
+The Jupyter program is part of the Anaconda package, and so should be installed along with Python. You can launch it from the *Anaconda Navigator* by selecting it from the menu and clicking the "Launch" button (it will then open up a command shell prompt and start it from ther).
+
+This will open up your web browser with an interface to create or open a notebook relative to the folder you started Jupyter from:
+
+```{r results='asis', echo=FALSE, include=identical(knitr:::pandoc_to(), 'html')}
+#to include only in html
+cat('![Opening notebook animation, from the official documentation](http://jupyter-notebook.readthedocs.io/en/latest/_images/new-notebook.gif)')
+```
+
+Note that you can also start Jupyter directly from the command line with:
+
+```bash
+jupyter notebook
+```
+
+You can open a particular notebook (which are saved as files with the `.ipynb` extension) by passing the notebook name as an argument:
+
+```bash
+jupyter notebook my-notebook.ipynb
+```
+
+- To stop running the Jupyter notebook server, hit `ctrl-c` in the terminal and follow the prompts.
+
+Jupyter notebooks are made up of a series of _cells_, each representing a set of code or text. Cells by default are used for Python code, but can also be set to use Markdown by selecting from the dropdown menu.
+
+You can type code directly into the cells, just as if you were typing into a text editor. In order to execute the code in a cell, press **`shift-enter`** or select `Cell > Run Cell` from the menu. Any output from the cell will appear immediately below it. You can add new cells by hitting the "plus" button on the toolbar.
+
+- **Pro-tip**: There are lots of keyboard shortcuts available for working with cells. Click the keyboard icon on the toolbar to see a list of shortcuts.
+
+
 ### On the Command Line
-It is possible to issue Python instructions (run lines of code; called **statements**) one-by-one at the command line by starting an **interactive Python session** within your terminal. This will allow you to type Python code directly into the terminal, and your computer will interpret and execute each line of code (if you just typed Python syntax directly into the terminal, your computer wouldn't understand it).
+It is also possible to issue Python instructions (run lines of code; called **statements**) one-by-one at the command line by starting an **interactive Python session** within your terminal. This will allow you to type Python code directly into the terminal, and your computer will interpret and execute each line of code (if you just typed Python syntax directly into the terminal, your computer wouldn't understand it).
 
 With Python installed, you can start an interactive Python session on a by running the **`python`** program (simply type the `python` command if you've installed it on the `PATH` via Anaconda).
 
@@ -62,40 +99,6 @@ It is more common though to run entire scripts (`.py` files) from the command li
 This will cause each line in the script to be run one at a time. This is the "normal" way of running Python programs: you write Python scripts using an editor such as VS Code, and then execute those scripts on the command line to see them in action.
 
 
-### Jupyter Notebooks
-Another popular and effective way of writing and running Python code is to utilize a [Jupyter Notebook](http://jupyter.org/). A Jupyter Notebook is a **web appplications** (that runs in your web browser) and provides an interactive platform for running Python code: you are able to write and execute Python code write in the browser, similar to an interactive session (but with the ability to write multiple lines of code).
-
-- Jupter is a portmanteau of "Julia", "Python" and "R", which are the programming languages the application was designed to support. Each notebook runs on an individual **kernel** or language interpreter; you'll want to be sure you're running a Python 3 kernel for this course.
-
-Code is authored in individual "notebooks", which are collections of _cells_ (blocks of code or text). Cells can also include Markdown content, allowing notebooks to act as interactive documents with embedded, runnable code.
-
-The Jupyter program is part of the Anaconda package, and so should be installed along with Python. You can start Jupyter from the command line with:
-
-```bash
-jupyter notebook
-```
-
-This will open up your web browser with an interface to create or open a notebook relative to the folder you started Jupyter from:
-
-```{r results='asis', echo=FALSE, include=identical(knitr:::pandoc_to(), 'html')}
-#to include only in html
-cat('![Opening notebook animation, from the official documentation](http://jupyter-notebook.readthedocs.io/en/latest/_images/new-notebook.gif)')
-```
-
-You can also open a particular notebook (which are saved as files with the `.ipynb` extension) by passing the notebook name as an argument:
-
-```bash
-jupyter notebook my-notebook.ipynb
-```
-
-- To stop running the Jupyter notebook server, hit `ctrl-c` in the terminal and follow the prompts.
-
-Jupyter notebooks are made up of a series of _cells_, each representing a set of code or text. Cells by default are used for Python code, but can also be set to use Markdown by selecting from the dropdown menu.
-
-You can type code directly into the cells, just as if you were typing into a text editor. In order to execute the code in a cell, press **`shift-enter`** or select `Cell > Run Cell` from the menu. Any output from the cell will appear immediately below it. You can add new cells by hitting the "plus" button on the toolbar.
-
-- **Pro-tip**: There are lots of keyboard shortcuts available for working with cells. Click the keyboard icon on the toolbar to see a list of shortcuts.
-
 ## Comments
 Before discussing how to program with Python, we need to talk about a piece of syntax that lets you comment your code. In programming, **comments** are bits of text that are _not interpreted as computer instructions_&mdash;they aren't code, they're just notes about the code! Since computer code can be opaque and difficult to understand, we use comments to help write down the meaning and _purpose_ of our code. While a computer is able to understand the code, comments are there to help _people_ understand. This is particularly imporant when someone else will be looking at your work&mdash;whether that person is a collaborator, or is simply a future version of you (e.g., when you need to come back and fix something and so need to remember what you were even thinking). Comments should be clear, concise, and helpful&mdash;they should provide information that is not "obvious" from the code itself.
 
@@ -106,17 +109,15 @@ In Python, we mark text as a comment by putting it after the pound/hashtag symbo
 bottles = 99 - 1  # 98
 ```
 
-(You may recognize this `#` syntax and commenting behavior from the command line and git modules. That's because the same syntax is used in a Bash shell!)
-
 ## Variables
 Since computer programs involve working with lots of _information_, we need a way to store and refer to this information. We do this with **variables**. Variables are labels for information; in Python, you can think of them as "nametags" for data. After giving data a variable nametag, you can then refer to that data by its name.
 
-Variable names can contain any combination of letters, numbers, or underscores (`_`). Variables names must begin with a letter. Note that like everything in programming, variable names are case sensitive. It is best practice to make variable names descriptive and information about what data they contain. `a` is not a good variable name. `cups_of_coffee` is a good variable name. To comply with [Google's Style Guidelines](https://google.github.io/styleguide/pyguide.html#Naming) variables should be in "snake_case": **all lower-case letters, separated by underscores (`_`)**.
+Variable names can contain any combination of letters, numbers, or underscores (`_`). Variables names must begin with a letter. Note that like everything in programming, variable names are case sensitive. It is best practice to make variable names descriptive and informative about what data they contain. `a` is not a good variable name. `num_cups_of_coffee` is a good variable name. To comply with [Google's Style Guidelines](https://google.github.io/styleguide/pyguide.html#Naming) variables should be in "snake_case": **all lower-case letters, separated by underscores (`_`)**.
 
 We call putting information in a variable **assigning** that value to the variable. We do this using the _assignment operator_ **`=`**. For example:
 
 ```python
-# Stores the number 7 into a variable called shoe.size
+# Stores the number 7 into a variable called shoe_size
 shoe_size = 7
 ```
 
@@ -165,7 +166,7 @@ Changing the value named `y` does not change the value named `y`, even if the va
 - _Tip_: when reading or writing code, try to think “x is assigned 3” or “x gets the value 3”, rather than "x equals 3".
 
 ### Data Types
-In the example above, we stored **numeric** values in variables. Python is a **dynamically typed language**, which means that we _do not_ need to explicitly state what type of information will be stored in each variable we create. The Python interpreter is intelligent enough to understand that if we have code `x = 7`, then `x` will contain a numeric value (and so we can do math upon it!)
+In the examples above, we stored **numeric** values in variables. Python is a **dynamically typed language**, which means that we _do not_ need to explicitly state what type of information will be stored in each variable we create. The Python interpreter is intelligent enough to understand that if we have code `x = 7`, then `x` will contain a numeric value (and so we can do math upon it!)
 
 You can "look up" the type of a particular value by using the `type()` function:
 
@@ -177,11 +178,11 @@ type("Hello")  # string
 ## <class 'str'>
 ```
 
-- Type is also referred to as `class` (i.e., "classification"). **Classes** are ways of structuring information and behavior in computer programs; we will discuss them in more detail later.
+- Type is also referred to as `class` (i.e., "classification"). **Classes** are ways of structuring information and behavior in computer programs. Classes are discussed in more detail later.
 
 There are a number of "basic types" for data in Python. The two most common are:
 
-- [**Numeric Types**](https://docs.python.org/3/library/stdtypes.html#typesnumeric): Python has two data types used to represent numbers: `int` (integer) for _whole numbers_ like `7` and `float` for decimals like `3.14` (because the decimal is "floating" in the middle).
+- [**Numeric Types**](https://docs.python.org/3/library/stdtypes.html#typesnumeric): Python has two data types used to represent numbers: `int` (integer) for _whole numbers_ like `7` and `float` for decimals like `3.14` (because the decimal point is "floating" in the middle).
 
     We can use **mathematical operators** on numeric data (such as `+`, `-`, `*`, `/`, etc.). There are also numerous functions that work on numeric data (such as for calculating sums or averages). You can mix and match ints and floats in mathematical expressions; the result will be a float if either of the operands are floats. Division (`/`) always produces a float; use the "integer division operator" `//` to force the result to be a whole number (rounded down).
 
@@ -213,7 +214,7 @@ There are a number of "basic types" for data in Python. The two most common are:
 
     The operands must both be strings. Also notice that concatenating strings doesn't add any additional characters such as spaces between words; you need to handle such punctuation yourself!
 
-    There are many built-in functions for working with strings, and in fact strings support a [variety of functions](https://docs.python.org/3/library/stdtypes.html#string-methods) you can call _on_ them. See [Chapter 6](#functions) for details.
+    There are many built-in functions for working with strings, and in fact strings support a [variety of functions](https://docs.python.org/3/library/stdtypes.html#string-methods) you can call _on_ them. See [_Functions_](#functions) for details.
 
 There are many other data types as well; more will be introduced throughout the remaining modules.
 
@@ -227,12 +228,12 @@ password_str = "12345"  # variable name indicates a string, so can print it
 It is possible to convert from one type to another by using a **type converter function**, which is usually named after the type you wish to convert _to_:
 
 ```python
-int(3.14)   # 3
-int(5.98)   # 5 (takes the floor value)
-float(6)    # 6.0
-str(2)      # "2"
-int("2")    # 2
-int("two")  # ValueError!
+int(3.14)   # 3 (converted from a float to an int)
+int(5.98)   # 5 (takes the floor value instead of rounding)
+float(6)    # 6.0 (converted from an int to a float)
+str(2)      # "2" (converted from an int to a str)
+int("2")    # 2 (converted from a str to an int)
+int("two")  # ValueError! (cannot convert)
 ```
 
 This is particularly useful when you wish to include a number in a string:
@@ -248,13 +249,15 @@ As with any programming language, when working in Python you will inevitably run
 
 1. **Read the error messages**: If there is an issue with the way you have written or executed your code, Python will often print out an error message. Do you best to decipher the message (read it carefully, and think about what is meant by each word in the message), or you can put it directly into Google to get more information. You'll soon get the hang of interpreting these messages (and how to resolve common ones) if you don't panic when one appears. _Remember: making mistakes is normal!_
 
-2. **Google**: When you're trying to figure out how to do something, it should be no surprise that Google is often the best resource. Try searching for queries like `"how to <DO THING> in Python"`. More frequently than not, your question will lead you to a Q/A forum called StackOverflow (see below), which is a great place to find potential answers.
+2. **Documentation**: Python's [documentation](https://docs.python.org/3/) is pretty good: very thorough and usually contains helpful examples. The only problem is that it can occasionally be too detailed for beginners, and can sometimes be hard to navigate (where to find information is not immediately obvious in some situations). _Searching_ the documentation (potentially through Google) is a good way to narrow down what you're looking for.
 
-3. **StackOverflow**: StackOverflow is an amazing Q/A forum for asking/answering programming questions. Most basic questions have already been asked/answered here. However, don't hesitate to post your own questions to StackOverflow. Be sure to hone in on the specific question you're trying to answer, and provide error messages and sample code as appropriate. I often find that, by the time I can articulate the question enough to post it, I've figured out my problem anyway.
+3. **Searching the Internet**: When you're trying to figure out how to do something, it should be no surprise that Google is often the best resource. Try searching for queries like `"how to <DO THING> in Python"`. More frequently than not, your question will lead you to a Q/A forum called StackOverflow, which is a place to find potential answers.
+
+    <div class="alert alert-warning"><p>While sites such as StackOverflow is a great place to find answers, those answers often assume a prior understanding of programming, or make use of advanced/trickier syntax and methods because it's "cooler". In general, I discourage beginning students from looking at StackOverflow. The answers you find will often confuse you more; and while sample code may "work", it may not do it in a way that you understand (or in a way that's appropriate for the class). StackOverflow is good for finding answers, but it's not good for learning. Checking in with your instructor is better for that!</p></div>
+
+    Many basic questions have already been asked/answered on Q&A sites like StackOverflow. However, don't hesitate to post your own questions to StackOverflow. Be sure to hone in on the specific question you're trying to answer, and provide error messages and sample code as appropriate. I often find that, by the time I can articulate the question enough to post it, I've figured out my problem anyway.
 
     - There is a classical method of debugging called [rubber duck debugging](https://en.wikipedia.org/wiki/Rubber_duck_debugging), which involves simply trying to explain your code/problem to an inanimate object (talking to pets works too). You'll usually be able to fix the problem if you just step back and think about how you would explain it to someone else!
-
-4. **Documentation**: Python's [documentation](https://docs.python.org/3/) is pretty good: very thorough and usually contains helpful examples. The only problem is that it can occasionally be too detailed for beginners, and can sometimes be hard to navigate (where to find information is not immediately obvious in some situations). _Searching_ the documentation (potentially through Google) is a good way to narrow down what you're looking for.
 
 
 ## Resources {-}
