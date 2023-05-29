@@ -17,13 +17,13 @@ rmd_files:
   - dictionaries.Rmd
   - searching.Rmd
   - functional-programming.Rmd
-  - oop.Rmd
+  # - oop.Rmd
 
   # applications refined programming
   - part_libraries.Rmd
-  - apis.Rmd
   - pandas.Rmd
-  - beautiful-soup.Rmd
+  - apis.Rmd
+  # - beautiful-soup.Rmd
 
   # javascript & d3
   - part_visualization.Rmd

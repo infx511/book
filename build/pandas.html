@@ -4,35 +4,35 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 11 The pandas Library | Introduction to Programming</title>
-  <meta name="description" content="The course reader for INFX 511: Introduction to Programming for Information and Data Science." />
+  <title>Chapter 9 The pandas Library | Introduction to Programming</title>
+  <meta name="description" content="Course reader for IMT/LIS 511: Introduction to Programming for Information and Data Science." />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 11 The pandas Library | Introduction to Programming" />
+  <meta property="og:title" content="Chapter 9 The pandas Library | Introduction to Programming" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="https://infx511.github.io/" />
   
-  <meta property="og:description" content="The course reader for INFX 511: Introduction to Programming for Information and Data Science." />
+  <meta property="og:description" content="Course reader for IMT/LIS 511: Introduction to Programming for Information and Data Science." />
   <meta name="github-repo" content="infx511/book" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 11 The pandas Library | Introduction to Programming" />
+  <meta name="twitter:title" content="Chapter 9 The pandas Library | Introduction to Programming" />
   
-  <meta name="twitter:description" content="The course reader for INFX 511: Introduction to Programming for Information and Data Science." />
+  <meta name="twitter:description" content="Course reader for IMT/LIS 511: Introduction to Programming for Information and Data Science." />
   
 
 <meta name="author" content="Joel Ross" />
 
 
-<meta name="date" content="2022-03-22" />
+<meta name="date" content="2023-05-29" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   <link rel="shortcut icon" href="img/ischool-gold.png" type="image/x-icon" />
-<link rel="prev" href="accessing-web-apis.html"/>
-<link rel="next" href="beautiful-soup.html"/>
+<link rel="prev" href="functional-programming.html"/>
+<link rel="next" href="accessing-web-apis.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -147,15 +147,16 @@
 </ul></li>
 <li class="chapter" data-level="5.2" data-path="loops.html"><a href="loops.html#lists-and-loops"><i class="fa fa-check"></i><b>5.2</b> Lists and Loops</a></li>
 <li class="chapter" data-level="5.3" data-path="loops.html"><a href="loops.html#nested-loops"><i class="fa fa-check"></i><b>5.3</b> Nested Loops</a></li>
-<li class="chapter" data-level="5.4" data-path="loops.html"><a href="loops.html#while-loops"><i class="fa fa-check"></i><b>5.4</b> While Loops</a>
+<li class="chapter" data-level="5.4" data-path="loops.html"><a href="loops.html#list-comprehensions"><i class="fa fa-check"></i><b>5.4</b> List Comprehensions</a></li>
+<li class="chapter" data-level="5.5" data-path="loops.html"><a href="loops.html#while-loops"><i class="fa fa-check"></i><b>5.5</b> While Loops</a>
 <ul>
-<li class="chapter" data-level="5.4.1" data-path="loops.html"><a href="loops.html#counting-with-while-loops"><i class="fa fa-check"></i><b>5.4.1</b> Counting with While Loops</a></li>
-<li class="chapter" data-level="5.4.2" data-path="loops.html"><a href="loops.html#sentinels"><i class="fa fa-check"></i><b>5.4.2</b> Sentinels</a></li>
-<li class="chapter" data-level="5.4.3" data-path="loops.html"><a href="loops.html#difference-between-for-and-while-loops"><i class="fa fa-check"></i><b>5.4.3</b> Difference Between For and While Loops</a></li>
+<li class="chapter" data-level="5.5.1" data-path="loops.html"><a href="loops.html#counting-with-while-loops"><i class="fa fa-check"></i><b>5.5.1</b> Counting with While Loops</a></li>
+<li class="chapter" data-level="5.5.2" data-path="loops.html"><a href="loops.html#sentinels"><i class="fa fa-check"></i><b>5.5.2</b> Sentinels</a></li>
+<li class="chapter" data-level="5.5.3" data-path="loops.html"><a href="loops.html#difference-between-for-and-while-loops"><i class="fa fa-check"></i><b>5.5.3</b> Difference Between For and While Loops</a></li>
 </ul></li>
-<li class="chapter" data-level="5.5" data-path="loops.html"><a href="loops.html#iterating-over-files"><i class="fa fa-check"></i><b>5.5</b> Iterating over Files</a>
+<li class="chapter" data-level="5.6" data-path="loops.html"><a href="loops.html#iterating-over-files"><i class="fa fa-check"></i><b>5.6</b> Iterating over Files</a>
 <ul>
-<li class="chapter" data-level="5.5.1" data-path="loops.html"><a href="loops.html#tryexcept"><i class="fa fa-check"></i><b>5.5.1</b> Try/Except</a></li>
+<li class="chapter" data-level="5.6.1" data-path="loops.html"><a href="loops.html#tryexcept"><i class="fa fa-check"></i><b>5.6.1</b> Try/Except</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="loops.html"><a href="loops.html#resources-4"><i class="fa fa-check"></i>Resources</a></li>
 </ul></li>
@@ -196,22 +197,27 @@
 <li class="chapter" data-level="8.2.2" data-path="functional-programming.html"><a href="functional-programming.html#filter"><i class="fa fa-check"></i><b>8.2.2</b> Filter</a></li>
 <li class="chapter" data-level="8.2.3" data-path="functional-programming.html"><a href="functional-programming.html#reduce"><i class="fa fa-check"></i><b>8.2.3</b> Reduce</a></li>
 </ul></li>
-<li class="chapter" data-level="8.3" data-path="functional-programming.html"><a href="functional-programming.html#list-comprehensions"><i class="fa fa-check"></i><b>8.3</b> List Comprehensions</a></li>
+<li class="chapter" data-level="8.3" data-path="functional-programming.html"><a href="functional-programming.html#list-comprehensions-1"><i class="fa fa-check"></i><b>8.3</b> List Comprehensions</a></li>
 <li class="chapter" data-level="" data-path="functional-programming.html"><a href="functional-programming.html#resources-7"><i class="fa fa-check"></i>Resources</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="classes.html"><a href="classes.html"><i class="fa fa-check"></i><b>9</b> Classes and Object-Oriented Programming</a>
-<ul>
-<li class="chapter" data-level="9.1" data-path="classes.html"><a href="classes.html#why-objects"><i class="fa fa-check"></i><b>9.1</b> Why Objects?</a></li>
-<li class="chapter" data-level="9.2" data-path="classes.html"><a href="classes.html#defining-classes"><i class="fa fa-check"></i><b>9.2</b> Defining Classes</a>
-<ul>
-<li class="chapter" data-level="9.2.1" data-path="classes.html"><a href="classes.html#attributes"><i class="fa fa-check"></i><b>9.2.1</b> Attributes</a></li>
-<li class="chapter" data-level="9.2.2" data-path="classes.html"><a href="classes.html#methods"><i class="fa fa-check"></i><b>9.2.2</b> Methods</a></li>
-<li class="chapter" data-level="9.2.3" data-path="classes.html"><a href="classes.html#constructors"><i class="fa fa-check"></i><b>9.2.3</b> Constructors</a></li>
-<li class="chapter" data-level="9.2.4" data-path="classes.html"><a href="classes.html#string-representations"><i class="fa fa-check"></i><b>9.2.4</b> String Representations</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="classes.html"><a href="classes.html#resources-8"><i class="fa fa-check"></i>Resources</a></li>
-</ul></li>
 <li class="part"><span><b>II Specific Libraries</b></span></li>
+<li class="chapter" data-level="9" data-path="pandas.html"><a href="pandas.html"><i class="fa fa-check"></i><b>9</b> The <code>pandas</code> Library</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="pandas.html"><a href="pandas.html#setting-up-pandas"><i class="fa fa-check"></i><b>9.1</b> Setting up <code>pandas</code></a></li>
+<li class="chapter" data-level="9.2" data-path="pandas.html"><a href="pandas.html#series"><i class="fa fa-check"></i><b>9.2</b> Series</a>
+<ul>
+<li class="chapter" data-level="9.2.1" data-path="pandas.html"><a href="pandas.html#series-operations-and-methods"><i class="fa fa-check"></i><b>9.2.1</b> Series Operations and Methods</a></li>
+<li class="chapter" data-level="9.2.2" data-path="pandas.html"><a href="pandas.html#accessing-series"><i class="fa fa-check"></i><b>9.2.2</b> Accessing Series</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="pandas.html"><a href="pandas.html#dataframes"><i class="fa fa-check"></i><b>9.3</b> DataFrames</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="pandas.html"><a href="pandas.html#dataframe-operations-and-methods"><i class="fa fa-check"></i><b>9.3.1</b> DataFrame Operations and Methods</a></li>
+<li class="chapter" data-level="9.3.2" data-path="pandas.html"><a href="pandas.html#accessing-dataframes"><i class="fa fa-check"></i><b>9.3.2</b> Accessing DataFrames</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="pandas.html"><a href="pandas.html#aggregation-and-grouping"><i class="fa fa-check"></i><b>9.4</b> Aggregation and Grouping</a></li>
+<li class="chapter" data-level="9.5" data-path="pandas.html"><a href="pandas.html#joining-dataframes-together"><i class="fa fa-check"></i><b>9.5</b> Joining DataFrames Together</a></li>
+<li class="chapter" data-level="" data-path="pandas.html"><a href="pandas.html#resources-8"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
 <li class="chapter" data-level="10" data-path="accessing-web-apis.html"><a href="accessing-web-apis.html"><i class="fa fa-check"></i><b>10</b> Accessing Web APIs</a>
 <ul>
 <li class="chapter" data-level="10.1" data-path="accessing-web-apis.html"><a href="accessing-web-apis.html#web-apis"><i class="fa fa-check"></i><b>10.1</b> Web APIs</a></li>
@@ -224,84 +230,66 @@
 <li class="chapter" data-level="10.4" data-path="accessing-web-apis.html"><a href="accessing-web-apis.html#json-data"><i class="fa fa-check"></i><b>10.4</b> JSON Data</a></li>
 <li class="chapter" data-level="" data-path="accessing-web-apis.html"><a href="accessing-web-apis.html#resources-9"><i class="fa fa-check"></i>Resources</a></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="pandas.html"><a href="pandas.html"><i class="fa fa-check"></i><b>11</b> The <code>pandas</code> Library</a>
+<li class="part"><span><b>III Visualizations with D3 (old)</b></span></li>
+<li class="chapter" data-level="11" data-path="javascript.html"><a href="javascript.html"><i class="fa fa-check"></i><b>11</b> JavaScript</a>
 <ul>
-<li class="chapter" data-level="11.1" data-path="pandas.html"><a href="pandas.html#setting-up-pandas"><i class="fa fa-check"></i><b>11.1</b> Setting up <code>pandas</code></a></li>
-<li class="chapter" data-level="11.2" data-path="pandas.html"><a href="pandas.html#series"><i class="fa fa-check"></i><b>11.2</b> Series</a>
+<li class="chapter" data-level="11.1" data-path="javascript.html"><a href="javascript.html#programming-with-javascript"><i class="fa fa-check"></i><b>11.1</b> Programming with JavaScript</a>
 <ul>
-<li class="chapter" data-level="11.2.1" data-path="pandas.html"><a href="pandas.html#series-operations-and-methods"><i class="fa fa-check"></i><b>11.2.1</b> Series Operations and Methods</a></li>
-<li class="chapter" data-level="11.2.2" data-path="pandas.html"><a href="pandas.html#accessing-series"><i class="fa fa-check"></i><b>11.2.2</b> Accessing Series</a></li>
+<li class="chapter" data-level="11.1.1" data-path="javascript.html"><a href="javascript.html#history-and-versions"><i class="fa fa-check"></i><b>11.1.1</b> History and Versions</a></li>
+<li class="chapter" data-level="11.1.2" data-path="javascript.html"><a href="javascript.html#running-javascript"><i class="fa fa-check"></i><b>11.1.2</b> Running JavaScript</a></li>
 </ul></li>
-<li class="chapter" data-level="11.3" data-path="pandas.html"><a href="pandas.html#dataframes"><i class="fa fa-check"></i><b>11.3</b> DataFrames</a>
+<li class="chapter" data-level="11.2" data-path="javascript.html"><a href="javascript.html#javascript-basics"><i class="fa fa-check"></i><b>11.2</b> JavaScript Basics</a>
 <ul>
-<li class="chapter" data-level="11.3.1" data-path="pandas.html"><a href="pandas.html#dataframe-operations-and-methods"><i class="fa fa-check"></i><b>11.3.1</b> DataFrame Operations and Methods</a></li>
-<li class="chapter" data-level="11.3.2" data-path="pandas.html"><a href="pandas.html#accessing-dataframes"><i class="fa fa-check"></i><b>11.3.2</b> Accessing DataFrames</a></li>
+<li class="chapter" data-level="11.2.1" data-path="javascript.html"><a href="javascript.html#strict-mode"><i class="fa fa-check"></i><b>11.2.1</b> Strict Mode</a></li>
 </ul></li>
-<li class="chapter" data-level="11.4" data-path="pandas.html"><a href="pandas.html#aggregation-and-grouping"><i class="fa fa-check"></i><b>11.4</b> Aggregation and Grouping</a></li>
-<li class="chapter" data-level="11.5" data-path="pandas.html"><a href="pandas.html#joining-dataframes-together"><i class="fa fa-check"></i><b>11.5</b> Joining DataFrames Together</a></li>
-<li class="chapter" data-level="" data-path="pandas.html"><a href="pandas.html#resources-10"><i class="fa fa-check"></i>Resources</a></li>
-</ul></li>
-<li class="chapter" data-level="12" data-path="beautiful-soup.html"><a href="beautiful-soup.html"><i class="fa fa-check"></i><b>12</b> Web Crawling with Beautiful Soup</a></li>
-<li class="part"><span><b>III Visualizations with D3</b></span></li>
-<li class="chapter" data-level="13" data-path="javascript.html"><a href="javascript.html"><i class="fa fa-check"></i><b>13</b> JavaScript</a>
+<li class="chapter" data-level="11.3" data-path="javascript.html"><a href="javascript.html#variables-1"><i class="fa fa-check"></i><b>11.3</b> Variables</a>
 <ul>
-<li class="chapter" data-level="13.1" data-path="javascript.html"><a href="javascript.html#programming-with-javascript"><i class="fa fa-check"></i><b>13.1</b> Programming with JavaScript</a>
-<ul>
-<li class="chapter" data-level="13.1.1" data-path="javascript.html"><a href="javascript.html#history-and-versions"><i class="fa fa-check"></i><b>13.1.1</b> History and Versions</a></li>
-<li class="chapter" data-level="13.1.2" data-path="javascript.html"><a href="javascript.html#running-javascript"><i class="fa fa-check"></i><b>13.1.2</b> Running JavaScript</a></li>
+<li class="chapter" data-level="11.3.1" data-path="javascript.html"><a href="javascript.html#basic-data-types"><i class="fa fa-check"></i><b>11.3.1</b> Basic Data Types</a></li>
+<li class="chapter" data-level="11.3.2" data-path="javascript.html"><a href="javascript.html#type-coercion"><i class="fa fa-check"></i><b>11.3.2</b> Type Coercion</a></li>
+<li class="chapter" data-level="11.3.3" data-path="javascript.html"><a href="javascript.html#arrays"><i class="fa fa-check"></i><b>11.3.3</b> Arrays</a></li>
+<li class="chapter" data-level="11.3.4" data-path="javascript.html"><a href="javascript.html#objects"><i class="fa fa-check"></i><b>11.3.4</b> Objects</a></li>
 </ul></li>
-<li class="chapter" data-level="13.2" data-path="javascript.html"><a href="javascript.html#javascript-basics"><i class="fa fa-check"></i><b>13.2</b> JavaScript Basics</a>
+<li class="chapter" data-level="11.4" data-path="javascript.html"><a href="javascript.html#control-structures"><i class="fa fa-check"></i><b>11.4</b> Control Structures</a>
 <ul>
-<li class="chapter" data-level="13.2.1" data-path="javascript.html"><a href="javascript.html#strict-mode"><i class="fa fa-check"></i><b>13.2.1</b> Strict Mode</a></li>
+<li class="chapter" data-level="11.4.1" data-path="javascript.html"><a href="javascript.html#conditionals"><i class="fa fa-check"></i><b>11.4.1</b> Conditionals</a></li>
+<li class="chapter" data-level="11.4.2" data-path="javascript.html"><a href="javascript.html#loops-1"><i class="fa fa-check"></i><b>11.4.2</b> Loops</a></li>
 </ul></li>
-<li class="chapter" data-level="13.3" data-path="javascript.html"><a href="javascript.html#variables-1"><i class="fa fa-check"></i><b>13.3</b> Variables</a>
+<li class="chapter" data-level="11.5" data-path="javascript.html"><a href="javascript.html#functions-1"><i class="fa fa-check"></i><b>11.5</b> Functions</a>
 <ul>
-<li class="chapter" data-level="13.3.1" data-path="javascript.html"><a href="javascript.html#basic-data-types"><i class="fa fa-check"></i><b>13.3.1</b> Basic Data Types</a></li>
-<li class="chapter" data-level="13.3.2" data-path="javascript.html"><a href="javascript.html#type-coercion"><i class="fa fa-check"></i><b>13.3.2</b> Type Coercion</a></li>
-<li class="chapter" data-level="13.3.3" data-path="javascript.html"><a href="javascript.html#arrays"><i class="fa fa-check"></i><b>13.3.3</b> Arrays</a></li>
-<li class="chapter" data-level="13.3.4" data-path="javascript.html"><a href="javascript.html#objects"><i class="fa fa-check"></i><b>13.3.4</b> Objects</a></li>
+<li class="chapter" data-level="11.5.1" data-path="javascript.html"><a href="javascript.html#functional-programming-1"><i class="fa fa-check"></i><b>11.5.1</b> Functional Programming</a></li>
 </ul></li>
-<li class="chapter" data-level="13.4" data-path="javascript.html"><a href="javascript.html#control-structures"><i class="fa fa-check"></i><b>13.4</b> Control Structures</a>
+<li class="chapter" data-level="" data-path="javascript.html"><a href="javascript.html#resources-10"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="web-programming.html"><a href="web-programming.html"><i class="fa fa-check"></i><b>12</b> Web Programming</a>
 <ul>
-<li class="chapter" data-level="13.4.1" data-path="javascript.html"><a href="javascript.html#conditionals"><i class="fa fa-check"></i><b>13.4.1</b> Conditionals</a></li>
-<li class="chapter" data-level="13.4.2" data-path="javascript.html"><a href="javascript.html#loops-1"><i class="fa fa-check"></i><b>13.4.2</b> Loops</a></li>
-</ul></li>
-<li class="chapter" data-level="13.5" data-path="javascript.html"><a href="javascript.html#functions-1"><i class="fa fa-check"></i><b>13.5</b> Functions</a>
+<li class="chapter" data-level="12.1" data-path="web-programming.html"><a href="web-programming.html#web-pages-and-html"><i class="fa fa-check"></i><b>12.1</b> Web Pages and HTML</a>
 <ul>
-<li class="chapter" data-level="13.5.1" data-path="javascript.html"><a href="javascript.html#functional-programming-1"><i class="fa fa-check"></i><b>13.5.1</b> Functional Programming</a></li>
+<li class="chapter" data-level="12.1.1" data-path="web-programming.html"><a href="web-programming.html#elements-are-nested"><i class="fa fa-check"></i><b>12.1.1</b> Elements are Nested</a></li>
+<li class="chapter" data-level="12.1.2" data-path="web-programming.html"><a href="web-programming.html#scalable-vector-graphics-svg"><i class="fa fa-check"></i><b>12.1.2</b> Scalable Vector Graphics (SVG)</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="javascript.html"><a href="javascript.html#resources-11"><i class="fa fa-check"></i>Resources</a></li>
-</ul></li>
-<li class="chapter" data-level="14" data-path="web-programming.html"><a href="web-programming.html"><i class="fa fa-check"></i><b>14</b> Web Programming</a>
+<li class="chapter" data-level="12.2" data-path="web-programming.html"><a href="web-programming.html#dom-manipulation-with-d3"><i class="fa fa-check"></i><b>12.2</b> DOM Manipulation with D3</a>
 <ul>
-<li class="chapter" data-level="14.1" data-path="web-programming.html"><a href="web-programming.html#web-pages-and-html"><i class="fa fa-check"></i><b>14.1</b> Web Pages and HTML</a>
-<ul>
-<li class="chapter" data-level="14.1.1" data-path="web-programming.html"><a href="web-programming.html#elements-are-nested"><i class="fa fa-check"></i><b>14.1.1</b> Elements are Nested</a></li>
-<li class="chapter" data-level="14.1.2" data-path="web-programming.html"><a href="web-programming.html#scalable-vector-graphics-svg"><i class="fa fa-check"></i><b>14.1.2</b> Scalable Vector Graphics (SVG)</a></li>
+<li class="chapter" data-level="12.2.1" data-path="web-programming.html"><a href="web-programming.html#selecting-elements"><i class="fa fa-check"></i><b>12.2.1</b> Selecting Elements</a></li>
+<li class="chapter" data-level="12.2.2" data-path="web-programming.html"><a href="web-programming.html#changing-elements"><i class="fa fa-check"></i><b>12.2.2</b> Changing Elements</a></li>
+<li class="chapter" data-level="12.2.3" data-path="web-programming.html"><a href="web-programming.html#adding-elements"><i class="fa fa-check"></i><b>12.2.3</b> Adding Elements</a></li>
 </ul></li>
-<li class="chapter" data-level="14.2" data-path="web-programming.html"><a href="web-programming.html#dom-manipulation-with-d3"><i class="fa fa-check"></i><b>14.2</b> DOM Manipulation with D3</a>
-<ul>
-<li class="chapter" data-level="14.2.1" data-path="web-programming.html"><a href="web-programming.html#selecting-elements"><i class="fa fa-check"></i><b>14.2.1</b> Selecting Elements</a></li>
-<li class="chapter" data-level="14.2.2" data-path="web-programming.html"><a href="web-programming.html#changing-elements"><i class="fa fa-check"></i><b>14.2.2</b> Changing Elements</a></li>
-<li class="chapter" data-level="14.2.3" data-path="web-programming.html"><a href="web-programming.html#adding-elements"><i class="fa fa-check"></i><b>14.2.3</b> Adding Elements</a></li>
+<li class="chapter" data-level="12.3" data-path="web-programming.html"><a href="web-programming.html#user-events"><i class="fa fa-check"></i><b>12.3</b> User Events</a></li>
+<li class="chapter" data-level="12.4" data-path="web-programming.html"><a href="web-programming.html#ajax"><i class="fa fa-check"></i><b>12.4</b> AJAX</a></li>
+<li class="chapter" data-level="" data-path="web-programming.html"><a href="web-programming.html#resources-11"><i class="fa fa-check"></i>Resources</a></li>
 </ul></li>
-<li class="chapter" data-level="14.3" data-path="web-programming.html"><a href="web-programming.html#user-events"><i class="fa fa-check"></i><b>14.3</b> User Events</a></li>
-<li class="chapter" data-level="14.4" data-path="web-programming.html"><a href="web-programming.html#ajax"><i class="fa fa-check"></i><b>14.4</b> AJAX</a></li>
-<li class="chapter" data-level="" data-path="web-programming.html"><a href="web-programming.html#resources-12"><i class="fa fa-check"></i>Resources</a></li>
-</ul></li>
-<li class="chapter" data-level="15" data-path="d3.html"><a href="d3.html"><i class="fa fa-check"></i><b>15</b> D3 Visualizations</a>
+<li class="chapter" data-level="13" data-path="d3.html"><a href="d3.html"><i class="fa fa-check"></i><b>13</b> D3 Visualizations</a>
 <ul>
-<li class="chapter" data-level="15.1" data-path="d3.html"><a href="d3.html#the-data-join"><i class="fa fa-check"></i><b>15.1</b> The Data Join</a>
+<li class="chapter" data-level="13.1" data-path="d3.html"><a href="d3.html#the-data-join"><i class="fa fa-check"></i><b>13.1</b> The Data Join</a>
 <ul>
-<li class="chapter" data-level="15.1.1" data-path="d3.html"><a href="d3.html#entering-and-exiting-elements"><i class="fa fa-check"></i><b>15.1.1</b> Entering and Exiting Elements</a></li>
+<li class="chapter" data-level="13.1.1" data-path="d3.html"><a href="d3.html#entering-and-exiting-elements"><i class="fa fa-check"></i><b>13.1.1</b> Entering and Exiting Elements</a></li>
 </ul></li>
-<li class="chapter" data-level="15.2" data-path="d3.html"><a href="d3.html#animation"><i class="fa fa-check"></i><b>15.2</b> Animation</a></li>
-<li class="chapter" data-level="15.3" data-path="d3.html"><a href="d3.html#margins-and-positioning"><i class="fa fa-check"></i><b>15.3</b> Margins and Positioning</a></li>
-<li class="chapter" data-level="15.4" data-path="d3.html"><a href="d3.html#scales"><i class="fa fa-check"></i><b>15.4</b> Scales</a>
+<li class="chapter" data-level="13.2" data-path="d3.html"><a href="d3.html#animation"><i class="fa fa-check"></i><b>13.2</b> Animation</a></li>
+<li class="chapter" data-level="13.3" data-path="d3.html"><a href="d3.html#margins-and-positioning"><i class="fa fa-check"></i><b>13.3</b> Margins and Positioning</a></li>
+<li class="chapter" data-level="13.4" data-path="d3.html"><a href="d3.html#scales"><i class="fa fa-check"></i><b>13.4</b> Scales</a>
 <ul>
-<li class="chapter" data-level="15.4.1" data-path="d3.html"><a href="d3.html#axes"><i class="fa fa-check"></i><b>15.4.1</b> Axes</a></li>
+<li class="chapter" data-level="13.4.1" data-path="d3.html"><a href="d3.html#axes"><i class="fa fa-check"></i><b>13.4.1</b> Axes</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="d3.html"><a href="d3.html#resources-13"><i class="fa fa-check"></i>Resources</a></li>
+<li class="chapter" data-level="" data-path="d3.html"><a href="d3.html#resources-12"><i class="fa fa-check"></i>Resources</a></li>
 </ul></li>
 <li class="appendix"><span><b>Appendix</b></span></li>
 <li class="chapter" data-level="A" data-path="installing.html"><a href="installing.html"><i class="fa fa-check"></i><b>A</b> Installing Python</a>
@@ -322,7 +310,7 @@
 <li class="chapter" data-level="A.3.1" data-path="installing.html"><a href="installing.html#command-line-on-a-mac"><i class="fa fa-check"></i><b>A.3.1</b> Command Line on a Mac</a></li>
 <li class="chapter" data-level="A.3.2" data-path="installing.html"><a href="installing.html#command-line-on-windows"><i class="fa fa-check"></i><b>A.3.2</b> Command Line on Windows</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="installing.html"><a href="installing.html#resources-14"><i class="fa fa-check"></i>Resources</a></li>
+<li class="chapter" data-level="" data-path="installing.html"><a href="installing.html#resources-13"><i class="fa fa-check"></i>Resources</a></li>
 </ul></li>
 <li class="chapter" data-level="B" data-path="markdown.html"><a href="markdown.html"><i class="fa fa-check"></i><b>B</b> Markdown</a>
 <ul>
@@ -332,7 +320,7 @@
 <li class="chapter" data-level="B.1.2" data-path="markdown.html"><a href="markdown.html#text-blocks"><i class="fa fa-check"></i><b>B.1.2</b> Text Blocks</a></li>
 </ul></li>
 <li class="chapter" data-level="B.2" data-path="markdown.html"><a href="markdown.html#rendering-markdown"><i class="fa fa-check"></i><b>B.2</b> Rendering Markdown</a></li>
-<li class="chapter" data-level="" data-path="markdown.html"><a href="markdown.html#resources-15"><i class="fa fa-check"></i>Resources</a></li>
+<li class="chapter" data-level="" data-path="markdown.html"><a href="markdown.html#resources-14"><i class="fa fa-check"></i>Resources</a></li>
 </ul></li>
 <li class="chapter" data-level="C" data-path="command-line.html"><a href="command-line.html"><i class="fa fa-check"></i><b>C</b> The Command Line</a>
 <ul>
@@ -351,7 +339,7 @@
 <li class="chapter" data-level="C.4" data-path="command-line.html"><a href="command-line.html#dealing-with-errors"><i class="fa fa-check"></i><b>C.4</b> Dealing With Errors</a></li>
 <li class="chapter" data-level="C.5" data-path="command-line.html"><a href="command-line.html#directing-output"><i class="fa fa-check"></i><b>C.5</b> Directing Output</a></li>
 <li class="chapter" data-level="C.6" data-path="command-line.html"><a href="command-line.html#shell-scripts"><i class="fa fa-check"></i><b>C.6</b> Shell Scripts</a></li>
-<li class="chapter" data-level="" data-path="command-line.html"><a href="command-line.html#resources-16"><i class="fa fa-check"></i>Resources</a></li>
+<li class="chapter" data-level="" data-path="command-line.html"><a href="command-line.html#resources-15"><i class="fa fa-check"></i>Resources</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -373,20 +361,20 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="pandas" class="section level1" number="11">
-<h1><span class="header-section-number">Chapter 11</span> The <code>pandas</code> Library</h1>
+<div id="pandas" class="section level1" number="9">
+<h1><span class="header-section-number">Chapter 9</span> The <code>pandas</code> Library</h1>
 <p>This chapter introduces the <em>Python Data Analysis</em> library <a href="http://pandas.pydata.org/"><strong><code>pandas</code></strong></a>—a set of modules, functions, and classes used to for easily and efficiently performing data analysis—<code>panda</code>’s speciality is its highly optimized performance when working with large data sets. <code>pandas</code> is the most common library used with Python for Data Science (and mirrors the <code>R</code> language in many ways, allowing programmers to easily move between the two).
 This chapter will discuss the two main data structures used by <code>pandas</code> (<em>Series</em> and <em>DataFrames</em>) and how to use them to organize and work with data.</p>
-<div id="setting-up-pandas" class="section level2" number="11.1">
-<h2><span class="header-section-number">11.1</span> Setting up <code>pandas</code></h2>
+<div id="setting-up-pandas" class="section level2" number="9.1">
+<h2><span class="header-section-number">9.1</span> Setting up <code>pandas</code></h2>
 <p><code>pandas</code> is a <strong>third-party</strong> library (not built into Python!), but is included by default with Anaconda and so can be imported directly. Additionally, Pandas is built on top of the <a href="http://www.numpy.org/"><code>numpy</code></a> scientific computing library which supports highly optimized mathematical operations. Thus many <code>pandas</code> operations involve working with <code>numpy</code> data structures, and the <code>pandas</code> library requires <code>numpy</code> (also included in Anaconda) to also be imported:</p>
 <pre class="language-python"><code><span class="token comment"># import libraries</span>
 <span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd  <span class="token comment"># standard shortcut names</span>
 <span class="token keyword">import</span> numpy <span class="token keyword">as</span> np</code></pre>
 <p>Normal practice is to <code>import</code> the module and reference types and methods using dot notation, rather than importing them into the global namespace. Also note that this module will focus primarily on <code>pandas</code>, leaving <code>numpy</code>-specific data structures and functions for the reader to explore.</p>
 </div>
-<div id="series" class="section level2" number="11.2">
-<h2><span class="header-section-number">11.2</span> Series</h2>
+<div id="series" class="section level2" number="9.2">
+<h2><span class="header-section-number">9.2</span> Series</h2>
 <p>The first basic <code>pandas</code> data structure is a <a href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.html"><strong>Series</strong></a>. A Series represents a <em>one-dimensional ordered collection of values</em>, making them somewhat similar to a regular Python <em>list</em>. However, elements can also be given <em>labels</em> (called the <strong>index</strong>), which can be non-numeric values, similar to a <em>key</em> in a Python <em>dictionary</em>. This makes a Series somewhat like an ordered dictionary—one that supports additional methods and efficient data-processing behaviors.</p>
 <p>Series can be created using the <code>Series()</code> function (a <em>constructor</em> for instances of the class):</p>
 <pre class="language-python"><code><span class="token comment"># create a Series from a list</span>
@@ -410,8 +398,8 @@ sarah    42
 zhang    13
 dtype: int64</code></pre>
 <p>Notice that the Series is automatically <strong>sorted</strong> by the keys of the dictionary! This means that the order of the elements in the Series will always be the same for a given dictionary (which cannot be said for the dictionary items themselves).</p>
-<div id="series-operations-and-methods" class="section level3" number="11.2.1">
-<h3><span class="header-section-number">11.2.1</span> Series Operations and Methods</h3>
+<div id="series-operations-and-methods" class="section level3" number="9.2.1">
+<h3><span class="header-section-number">9.2.1</span> Series Operations and Methods</h3>
 <p>The main benefit of Series (as opposed to normal lists or dictionaries) is that they provide a number of operations and methods that make it easy to consider and modify the entire Series, rather than needing to work with each element individually. These functions include built-in <em>mapping</em>, <em>reducing</em>, and <em>filtering</em> style operations.</p>
 <p>In particular, basic operators (whether math operators such as <code>+</code> and <code>-</code>, or relational operators such as <code>&gt;</code> or <code>==</code>) function as <strong>vectorized operations</strong>, meaning that they are applied to the entire Series <strong>member-wise</strong>: the operation is applied to the first element in the Series, then the second, then the third, and so forth:</p>
 <pre class="language-python"><code>sample <span class="token operator">=</span> pd<span class="token punctuation">.</span>Series<span class="token punctuation">(</span><span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment"># Series of numbers from 1 to 5 (6 is excluded)</span>
@@ -519,8 +507,8 @@ sqrt_series <span class="token operator">=</span> number_series<span class="toke
 cubed_series <span class="token operator">=</span> number_series<span class="token punctuation">.</span><span class="token builtin">apply</span><span class="token punctuation">(</span>math<span class="token punctuation">.</span><span class="token builtin">pow</span><span class="token punctuation">,</span> args<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment"># call math.pow(n, 3) on each</span>
 <span class="token builtin">list</span><span class="token punctuation">(</span>cubed_series<span class="token punctuation">)</span>  <span class="token comment"># [1.0, 8.0, 27.0, 64.0, 125.0]</span></code></pre>
 </div>
-<div id="accessing-series" class="section level3" number="11.2.2">
-<h3><span class="header-section-number">11.2.2</span> Accessing Series</h3>
+<div id="accessing-series" class="section level3" number="9.2.2">
+<h3><span class="header-section-number">9.2.2</span> Accessing Series</h3>
 <p>Just like lists and dictionaries, elements in a Series can be accessed using <strong>bracket notation</strong>, putting the index label inside the brackets:</p>
 <pre class="language-python"><code>letter_series <span class="token operator">=</span> pd<span class="token punctuation">.</span>Series<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'b'</span><span class="token punctuation">,</span> <span class="token string">'c'</span><span class="token punctuation">,</span> <span class="token string">'d'</span><span class="token punctuation">,</span> <span class="token string">'e'</span><span class="token punctuation">,</span> <span class="token string">'f'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
 age_series <span class="token operator">=</span> pd<span class="token punctuation">.</span>Series<span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token string">'sarah'</span><span class="token punctuation">:</span> <span class="token number">42</span><span class="token punctuation">,</span> <span class="token string">'amit'</span><span class="token punctuation">:</span> <span class="token number">35</span><span class="token punctuation">,</span> <span class="token string">'zhang'</span><span class="token punctuation">:</span> <span class="token number">13</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
@@ -582,8 +570,8 @@ big_shoes <span class="token operator">=</span> shoe_sizes<span class="token pun
 <p>While it is perfectly possible to do similar filtering with a list comprehension, the boolean indexing expression can be very simple to read and runs quickly. (This is also the normal style of doing filtering in the <code>R</code> programming language).</p>
 </div>
 </div>
-<div id="dataframes" class="section level2" number="11.3">
-<h2><span class="header-section-number">11.3</span> DataFrames</h2>
+<div id="dataframes" class="section level2" number="9.3">
+<h2><span class="header-section-number">9.3</span> DataFrames</h2>
 <p>The most common data structure used in <code>pandas</code> (more common than Series) is a <a href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html"><strong>DataFrame</strong></a>. A DataFrame represents a <strong>table</strong>, where data is organized into rows and columns. You can think of a DataFrame as being like a Excel spreadsheet or a SQL table.
 This book has previously represented tabular data using a <em>list of dictionaries</em>. However, this required you to be careful to make sure that all of the dictionaries shared keys, and did not offer easy ways to interact with the table in terms of its rows or columns. DataFrames give you that functionality!</p>
 <p>A DataFrame can also be understood as a <em>dictionary of Series</em>, where each Series represents a <strong>column</strong> of the table. The keys of this dictionary are the <em>index labels</em> of the columns, while the the index labels of the Series serve as the labels for the row.</p>
@@ -608,8 +596,8 @@ df <span class="token operator">=</span> pd<span class="token punctuation">.</sp
 <p>It is also possible to create a DataFrame directly from a spreadsheet—such as from <strong><code>.csv</code></strong> file (containing <strong>c</strong>omma <strong>s</strong>separated <strong>v</strong>alues) by using the <code>pandas.read_csv()</code> function:</p>
 <pre class="language-python"><code>my_dataframe <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">'path/to/my/file.csv'</span><span class="token punctuation">)</span></code></pre>
 <p>See <a href="http://pandas.pydata.org/pandas-docs/stable/io.html">the IO Tools documentation</a> for details and other file-reading functions.</p>
-<div id="dataframe-operations-and-methods" class="section level3" number="11.3.1">
-<h3><span class="header-section-number">11.3.1</span> DataFrame Operations and Methods</h3>
+<div id="dataframe-operations-and-methods" class="section level3" number="9.3.1">
+<h3><span class="header-section-number">9.3.1</span> DataFrame Operations and Methods</h3>
 <p>Much like Series, DataFrames support a <strong>vectorized</strong> form of mathematical and relational operators: when the other operand is a <em>scalar</em> (e.g., a single number or a string), then the operation is applied member-wise to each value in the DataFrame:</p>
 <pre class="language-python"><code><span class="token comment"># data frame of test scores</span>
 test_scores <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span><span class="token punctuation">{</span>
@@ -719,8 +707,8 @@ df<span class="token punctuation">.</span>describe<span class="token punctuation
 This also means that you can sometimes “double-call” methods to reduce them further. For example, <code>df.all()</code> returns a Series of whether each column contains only <code>True</code> values; <code>df.all().all()</code> would check if <em>that</em> Series contains all <code>True</code> values (thus checking <em>all</em> columns have all <code>True</code> value, i.e., the entire table is all <code>True</code> values).
 </p>
 </div>
-<div id="accessing-dataframes" class="section level3" number="11.3.2">
-<h3><span class="header-section-number">11.3.2</span> Accessing DataFrames</h3>
+<div id="accessing-dataframes" class="section level3" number="9.3.2">
+<h3><span class="header-section-number">9.3.2</span> Accessing DataFrames</h3>
 <p>DataFrames make it possible to quickly access individual or a subset of values, though these methods use a variety of syntax structures. For this explanation, refer to the following sample DataFrame initially described above:</p>
 <pre class="language-python"><code><span class="token comment"># all examples in this section</span>
 df <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span><span class="token punctuation">{</span>
@@ -819,8 +807,8 @@ df <span class="token operator">=</span> pd<span class="token punctuation">.</sp
 <!-- //merge/join/GROUPING -->
 </div>
 </div>
-<div id="aggregation-and-grouping" class="section level2" number="11.4">
-<h2><span class="header-section-number">11.4</span> Aggregation and Grouping</h2>
+<div id="aggregation-and-grouping" class="section level2" number="9.4">
+<h2><span class="header-section-number">9.4</span> Aggregation and Grouping</h2>
 <p><a href="https://jakevdp.github.io/PythonDataScienceHandbook/index.html" class="uri">https://jakevdp.github.io/PythonDataScienceHandbook/index.html</a>
 <a href="https://jakevdp.github.io/PythonDataScienceHandbook/03.07-merge-and-join.html" class="uri">https://jakevdp.github.io/PythonDataScienceHandbook/03.07-merge-and-join.html</a>
 <a href="https://jakevdp.github.io/PythonDataScienceHandbook/03.06-concat-and-append.html" class="uri">https://jakevdp.github.io/PythonDataScienceHandbook/03.06-concat-and-append.html</a>
@@ -831,14 +819,14 @@ df <span class="token operator">=</span> pd<span class="token punctuation">.</sp
 <p>//groupby explanation</p>
 <p>– lab section example from slides</p>
 </div>
-<div id="joining-dataframes-together" class="section level2" number="11.5">
-<h2><span class="header-section-number">11.5</span> Joining DataFrames Together</h2>
+<div id="joining-dataframes-together" class="section level2" number="9.5">
+<h2><span class="header-section-number">9.5</span> Joining DataFrames Together</h2>
 <p>//concat/append are things</p>
 <p>//merge(join) explanation
 - default is “inner”
 - compare to “left” &amp; “right” [<code>how</code>] key</p>
 </div>
-<div id="resources-10" class="section level2 unnumbered">
+<div id="resources-8" class="section level2 unnumbered">
 <h2>Resources</h2>
 <div class="list-condensed">
 <ul>
@@ -858,8 +846,8 @@ df <span class="token operator">=</span> pd<span class="token punctuation">.</sp
           </div>
         </div>
       </div>
-<a href="accessing-web-apis.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="beautiful-soup.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="functional-programming.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="accessing-web-apis.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

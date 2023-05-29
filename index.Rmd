@@ -3,7 +3,7 @@ lang: en
 title: 'Introduction to Programming'
 author: "[Joel Ross](http://faculty.washington.edu/joelross/)"
 date: "`r format(Sys.Date(), '%B %d, %Y')`"
-description: 'The course reader for INFX 511: Introduction to Programming for Information and Data Science.'
+description: 'Course reader for IMT/LIS 511: Introduction to Programming for Information and Data Science.'
 github-repo: infx511/book
 url: 'https\://infx511.github.io/'
 site: bookdown::bookdown_site
@@ -21,10 +21,9 @@ favicon: img/ischool-gold.png
 
 <!-- ![](img/cover-img.png) -->
 
-This book covers the fundamentals of computer programming as used for data science.
-It will introduce programming concepts such as syntax, data referencing, control structures, functions, data structures, abstraction, and debugging, as well as development tools and technologies (such as the command line and version control). The goal is to develop skills in algorithmic thinking, abstraction, and debugging. It assumes no previous programming background. These materials were developed for the **INFX 511: Introduction to Programming for Data Science and Visualization** course taught at the [University of Washington Information School](https://ischool.uw.edu/); however they have been structured to be an online resource for anyone who wishes to learn programming.
+This book provides an introduction to the skill of computer programming ("programming 101") in the Python language, with an emphasis on skills useful for information and data sciences.  It will introduce programming concepts such as syntax (how to "speak" Python), data organization (how computers represent information), control flow (how to have the computer do lots of things in a row), and debugging (how to fix broken programs). The goal is to develop skills in formal language semantics, algorithmic thinking, abstraction, and debugging—being able to "think like the computer" to understand how it works. In short: the goal is to get you familiar with programming concepts and abstract thinking skills used in automatically managing and analyzing information. It assumes no previous programming background.
 
-Some chapters of this book have been developed in conjunction with [Technical Foundations of Informatics](https://info201.github.io/), by Freeman and Ross.
+These materials were developed for the **IMT/LIS 511: Introduction to Programming for Data Science and Visualization** courses taught at the [University of Washington Information School](https://ischool.uw.edu/); (The "INFX" in the URL title was the original prefix for these courses). However, this book has been structured to be an online resource for anyone who wishes to learn programming. Some chapters of this book have been developed in conjunction with [Technical Foundations of Informatics](https://info201.github.io/), by Freeman and Ross.
 
 <!-- TODO: Include previous course offerings? -->
 

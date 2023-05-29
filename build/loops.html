@@ -5,26 +5,26 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 5 Iterating with Loops | Introduction to Programming</title>
-  <meta name="description" content="The course reader for INFX 511: Introduction to Programming for Information and Data Science." />
+  <meta name="description" content="Course reader for IMT/LIS 511: Introduction to Programming for Information and Data Science." />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 5 Iterating with Loops | Introduction to Programming" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="https://infx511.github.io/" />
   
-  <meta property="og:description" content="The course reader for INFX 511: Introduction to Programming for Information and Data Science." />
+  <meta property="og:description" content="Course reader for IMT/LIS 511: Introduction to Programming for Information and Data Science." />
   <meta name="github-repo" content="infx511/book" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Chapter 5 Iterating with Loops | Introduction to Programming" />
   
-  <meta name="twitter:description" content="The course reader for INFX 511: Introduction to Programming for Information and Data Science." />
+  <meta name="twitter:description" content="Course reader for IMT/LIS 511: Introduction to Programming for Information and Data Science." />
   
 
 <meta name="author" content="Joel Ross" />
 
 
-<meta name="date" content="2022-03-22" />
+<meta name="date" content="2023-05-29" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -147,15 +147,16 @@
 </ul></li>
 <li class="chapter" data-level="5.2" data-path="loops.html"><a href="loops.html#lists-and-loops"><i class="fa fa-check"></i><b>5.2</b> Lists and Loops</a></li>
 <li class="chapter" data-level="5.3" data-path="loops.html"><a href="loops.html#nested-loops"><i class="fa fa-check"></i><b>5.3</b> Nested Loops</a></li>
-<li class="chapter" data-level="5.4" data-path="loops.html"><a href="loops.html#while-loops"><i class="fa fa-check"></i><b>5.4</b> While Loops</a>
+<li class="chapter" data-level="5.4" data-path="loops.html"><a href="loops.html#list-comprehensions"><i class="fa fa-check"></i><b>5.4</b> List Comprehensions</a></li>
+<li class="chapter" data-level="5.5" data-path="loops.html"><a href="loops.html#while-loops"><i class="fa fa-check"></i><b>5.5</b> While Loops</a>
 <ul>
-<li class="chapter" data-level="5.4.1" data-path="loops.html"><a href="loops.html#counting-with-while-loops"><i class="fa fa-check"></i><b>5.4.1</b> Counting with While Loops</a></li>
-<li class="chapter" data-level="5.4.2" data-path="loops.html"><a href="loops.html#sentinels"><i class="fa fa-check"></i><b>5.4.2</b> Sentinels</a></li>
-<li class="chapter" data-level="5.4.3" data-path="loops.html"><a href="loops.html#difference-between-for-and-while-loops"><i class="fa fa-check"></i><b>5.4.3</b> Difference Between For and While Loops</a></li>
+<li class="chapter" data-level="5.5.1" data-path="loops.html"><a href="loops.html#counting-with-while-loops"><i class="fa fa-check"></i><b>5.5.1</b> Counting with While Loops</a></li>
+<li class="chapter" data-level="5.5.2" data-path="loops.html"><a href="loops.html#sentinels"><i class="fa fa-check"></i><b>5.5.2</b> Sentinels</a></li>
+<li class="chapter" data-level="5.5.3" data-path="loops.html"><a href="loops.html#difference-between-for-and-while-loops"><i class="fa fa-check"></i><b>5.5.3</b> Difference Between For and While Loops</a></li>
 </ul></li>
-<li class="chapter" data-level="5.5" data-path="loops.html"><a href="loops.html#iterating-over-files"><i class="fa fa-check"></i><b>5.5</b> Iterating over Files</a>
+<li class="chapter" data-level="5.6" data-path="loops.html"><a href="loops.html#iterating-over-files"><i class="fa fa-check"></i><b>5.6</b> Iterating over Files</a>
 <ul>
-<li class="chapter" data-level="5.5.1" data-path="loops.html"><a href="loops.html#tryexcept"><i class="fa fa-check"></i><b>5.5.1</b> Try/Except</a></li>
+<li class="chapter" data-level="5.6.1" data-path="loops.html"><a href="loops.html#tryexcept"><i class="fa fa-check"></i><b>5.6.1</b> Try/Except</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="loops.html"><a href="loops.html#resources-4"><i class="fa fa-check"></i>Resources</a></li>
 </ul></li>
@@ -196,22 +197,27 @@
 <li class="chapter" data-level="8.2.2" data-path="functional-programming.html"><a href="functional-programming.html#filter"><i class="fa fa-check"></i><b>8.2.2</b> Filter</a></li>
 <li class="chapter" data-level="8.2.3" data-path="functional-programming.html"><a href="functional-programming.html#reduce"><i class="fa fa-check"></i><b>8.2.3</b> Reduce</a></li>
 </ul></li>
-<li class="chapter" data-level="8.3" data-path="functional-programming.html"><a href="functional-programming.html#list-comprehensions"><i class="fa fa-check"></i><b>8.3</b> List Comprehensions</a></li>
+<li class="chapter" data-level="8.3" data-path="functional-programming.html"><a href="functional-programming.html#list-comprehensions-1"><i class="fa fa-check"></i><b>8.3</b> List Comprehensions</a></li>
 <li class="chapter" data-level="" data-path="functional-programming.html"><a href="functional-programming.html#resources-7"><i class="fa fa-check"></i>Resources</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="classes.html"><a href="classes.html"><i class="fa fa-check"></i><b>9</b> Classes and Object-Oriented Programming</a>
-<ul>
-<li class="chapter" data-level="9.1" data-path="classes.html"><a href="classes.html#why-objects"><i class="fa fa-check"></i><b>9.1</b> Why Objects?</a></li>
-<li class="chapter" data-level="9.2" data-path="classes.html"><a href="classes.html#defining-classes"><i class="fa fa-check"></i><b>9.2</b> Defining Classes</a>
-<ul>
-<li class="chapter" data-level="9.2.1" data-path="classes.html"><a href="classes.html#attributes"><i class="fa fa-check"></i><b>9.2.1</b> Attributes</a></li>
-<li class="chapter" data-level="9.2.2" data-path="classes.html"><a href="classes.html#methods"><i class="fa fa-check"></i><b>9.2.2</b> Methods</a></li>
-<li class="chapter" data-level="9.2.3" data-path="classes.html"><a href="classes.html#constructors"><i class="fa fa-check"></i><b>9.2.3</b> Constructors</a></li>
-<li class="chapter" data-level="9.2.4" data-path="classes.html"><a href="classes.html#string-representations"><i class="fa fa-check"></i><b>9.2.4</b> String Representations</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="classes.html"><a href="classes.html#resources-8"><i class="fa fa-check"></i>Resources</a></li>
-</ul></li>
 <li class="part"><span><b>II Specific Libraries</b></span></li>
+<li class="chapter" data-level="9" data-path="pandas.html"><a href="pandas.html"><i class="fa fa-check"></i><b>9</b> The <code>pandas</code> Library</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="pandas.html"><a href="pandas.html#setting-up-pandas"><i class="fa fa-check"></i><b>9.1</b> Setting up <code>pandas</code></a></li>
+<li class="chapter" data-level="9.2" data-path="pandas.html"><a href="pandas.html#series"><i class="fa fa-check"></i><b>9.2</b> Series</a>
+<ul>
+<li class="chapter" data-level="9.2.1" data-path="pandas.html"><a href="pandas.html#series-operations-and-methods"><i class="fa fa-check"></i><b>9.2.1</b> Series Operations and Methods</a></li>
+<li class="chapter" data-level="9.2.2" data-path="pandas.html"><a href="pandas.html#accessing-series"><i class="fa fa-check"></i><b>9.2.2</b> Accessing Series</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="pandas.html"><a href="pandas.html#dataframes"><i class="fa fa-check"></i><b>9.3</b> DataFrames</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="pandas.html"><a href="pandas.html#dataframe-operations-and-methods"><i class="fa fa-check"></i><b>9.3.1</b> DataFrame Operations and Methods</a></li>
+<li class="chapter" data-level="9.3.2" data-path="pandas.html"><a href="pandas.html#accessing-dataframes"><i class="fa fa-check"></i><b>9.3.2</b> Accessing DataFrames</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="pandas.html"><a href="pandas.html#aggregation-and-grouping"><i class="fa fa-check"></i><b>9.4</b> Aggregation and Grouping</a></li>
+<li class="chapter" data-level="9.5" data-path="pandas.html"><a href="pandas.html#joining-dataframes-together"><i class="fa fa-check"></i><b>9.5</b> Joining DataFrames Together</a></li>
+<li class="chapter" data-level="" data-path="pandas.html"><a href="pandas.html#resources-8"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
 <li class="chapter" data-level="10" data-path="accessing-web-apis.html"><a href="accessing-web-apis.html"><i class="fa fa-check"></i><b>10</b> Accessing Web APIs</a>
 <ul>
 <li class="chapter" data-level="10.1" data-path="accessing-web-apis.html"><a href="accessing-web-apis.html#web-apis"><i class="fa fa-check"></i><b>10.1</b> Web APIs</a></li>
@@ -224,84 +230,66 @@
 <li class="chapter" data-level="10.4" data-path="accessing-web-apis.html"><a href="accessing-web-apis.html#json-data"><i class="fa fa-check"></i><b>10.4</b> JSON Data</a></li>
 <li class="chapter" data-level="" data-path="accessing-web-apis.html"><a href="accessing-web-apis.html#resources-9"><i class="fa fa-check"></i>Resources</a></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="pandas.html"><a href="pandas.html"><i class="fa fa-check"></i><b>11</b> The <code>pandas</code> Library</a>
+<li class="part"><span><b>III Visualizations with D3 (old)</b></span></li>
+<li class="chapter" data-level="11" data-path="javascript.html"><a href="javascript.html"><i class="fa fa-check"></i><b>11</b> JavaScript</a>
 <ul>
-<li class="chapter" data-level="11.1" data-path="pandas.html"><a href="pandas.html#setting-up-pandas"><i class="fa fa-check"></i><b>11.1</b> Setting up <code>pandas</code></a></li>
-<li class="chapter" data-level="11.2" data-path="pandas.html"><a href="pandas.html#series"><i class="fa fa-check"></i><b>11.2</b> Series</a>
+<li class="chapter" data-level="11.1" data-path="javascript.html"><a href="javascript.html#programming-with-javascript"><i class="fa fa-check"></i><b>11.1</b> Programming with JavaScript</a>
 <ul>
-<li class="chapter" data-level="11.2.1" data-path="pandas.html"><a href="pandas.html#series-operations-and-methods"><i class="fa fa-check"></i><b>11.2.1</b> Series Operations and Methods</a></li>
-<li class="chapter" data-level="11.2.2" data-path="pandas.html"><a href="pandas.html#accessing-series"><i class="fa fa-check"></i><b>11.2.2</b> Accessing Series</a></li>
+<li class="chapter" data-level="11.1.1" data-path="javascript.html"><a href="javascript.html#history-and-versions"><i class="fa fa-check"></i><b>11.1.1</b> History and Versions</a></li>
+<li class="chapter" data-level="11.1.2" data-path="javascript.html"><a href="javascript.html#running-javascript"><i class="fa fa-check"></i><b>11.1.2</b> Running JavaScript</a></li>
 </ul></li>
-<li class="chapter" data-level="11.3" data-path="pandas.html"><a href="pandas.html#dataframes"><i class="fa fa-check"></i><b>11.3</b> DataFrames</a>
+<li class="chapter" data-level="11.2" data-path="javascript.html"><a href="javascript.html#javascript-basics"><i class="fa fa-check"></i><b>11.2</b> JavaScript Basics</a>
 <ul>
-<li class="chapter" data-level="11.3.1" data-path="pandas.html"><a href="pandas.html#dataframe-operations-and-methods"><i class="fa fa-check"></i><b>11.3.1</b> DataFrame Operations and Methods</a></li>
-<li class="chapter" data-level="11.3.2" data-path="pandas.html"><a href="pandas.html#accessing-dataframes"><i class="fa fa-check"></i><b>11.3.2</b> Accessing DataFrames</a></li>
+<li class="chapter" data-level="11.2.1" data-path="javascript.html"><a href="javascript.html#strict-mode"><i class="fa fa-check"></i><b>11.2.1</b> Strict Mode</a></li>
 </ul></li>
-<li class="chapter" data-level="11.4" data-path="pandas.html"><a href="pandas.html#aggregation-and-grouping"><i class="fa fa-check"></i><b>11.4</b> Aggregation and Grouping</a></li>
-<li class="chapter" data-level="11.5" data-path="pandas.html"><a href="pandas.html#joining-dataframes-together"><i class="fa fa-check"></i><b>11.5</b> Joining DataFrames Together</a></li>
-<li class="chapter" data-level="" data-path="pandas.html"><a href="pandas.html#resources-10"><i class="fa fa-check"></i>Resources</a></li>
-</ul></li>
-<li class="chapter" data-level="12" data-path="beautiful-soup.html"><a href="beautiful-soup.html"><i class="fa fa-check"></i><b>12</b> Web Crawling with Beautiful Soup</a></li>
-<li class="part"><span><b>III Visualizations with D3</b></span></li>
-<li class="chapter" data-level="13" data-path="javascript.html"><a href="javascript.html"><i class="fa fa-check"></i><b>13</b> JavaScript</a>
+<li class="chapter" data-level="11.3" data-path="javascript.html"><a href="javascript.html#variables-1"><i class="fa fa-check"></i><b>11.3</b> Variables</a>
 <ul>
-<li class="chapter" data-level="13.1" data-path="javascript.html"><a href="javascript.html#programming-with-javascript"><i class="fa fa-check"></i><b>13.1</b> Programming with JavaScript</a>
-<ul>
-<li class="chapter" data-level="13.1.1" data-path="javascript.html"><a href="javascript.html#history-and-versions"><i class="fa fa-check"></i><b>13.1.1</b> History and Versions</a></li>
-<li class="chapter" data-level="13.1.2" data-path="javascript.html"><a href="javascript.html#running-javascript"><i class="fa fa-check"></i><b>13.1.2</b> Running JavaScript</a></li>
+<li class="chapter" data-level="11.3.1" data-path="javascript.html"><a href="javascript.html#basic-data-types"><i class="fa fa-check"></i><b>11.3.1</b> Basic Data Types</a></li>
+<li class="chapter" data-level="11.3.2" data-path="javascript.html"><a href="javascript.html#type-coercion"><i class="fa fa-check"></i><b>11.3.2</b> Type Coercion</a></li>
+<li class="chapter" data-level="11.3.3" data-path="javascript.html"><a href="javascript.html#arrays"><i class="fa fa-check"></i><b>11.3.3</b> Arrays</a></li>
+<li class="chapter" data-level="11.3.4" data-path="javascript.html"><a href="javascript.html#objects"><i class="fa fa-check"></i><b>11.3.4</b> Objects</a></li>
 </ul></li>
-<li class="chapter" data-level="13.2" data-path="javascript.html"><a href="javascript.html#javascript-basics"><i class="fa fa-check"></i><b>13.2</b> JavaScript Basics</a>
+<li class="chapter" data-level="11.4" data-path="javascript.html"><a href="javascript.html#control-structures"><i class="fa fa-check"></i><b>11.4</b> Control Structures</a>
 <ul>
-<li class="chapter" data-level="13.2.1" data-path="javascript.html"><a href="javascript.html#strict-mode"><i class="fa fa-check"></i><b>13.2.1</b> Strict Mode</a></li>
+<li class="chapter" data-level="11.4.1" data-path="javascript.html"><a href="javascript.html#conditionals"><i class="fa fa-check"></i><b>11.4.1</b> Conditionals</a></li>
+<li class="chapter" data-level="11.4.2" data-path="javascript.html"><a href="javascript.html#loops-1"><i class="fa fa-check"></i><b>11.4.2</b> Loops</a></li>
 </ul></li>
-<li class="chapter" data-level="13.3" data-path="javascript.html"><a href="javascript.html#variables-1"><i class="fa fa-check"></i><b>13.3</b> Variables</a>
+<li class="chapter" data-level="11.5" data-path="javascript.html"><a href="javascript.html#functions-1"><i class="fa fa-check"></i><b>11.5</b> Functions</a>
 <ul>
-<li class="chapter" data-level="13.3.1" data-path="javascript.html"><a href="javascript.html#basic-data-types"><i class="fa fa-check"></i><b>13.3.1</b> Basic Data Types</a></li>
-<li class="chapter" data-level="13.3.2" data-path="javascript.html"><a href="javascript.html#type-coercion"><i class="fa fa-check"></i><b>13.3.2</b> Type Coercion</a></li>
-<li class="chapter" data-level="13.3.3" data-path="javascript.html"><a href="javascript.html#arrays"><i class="fa fa-check"></i><b>13.3.3</b> Arrays</a></li>
-<li class="chapter" data-level="13.3.4" data-path="javascript.html"><a href="javascript.html#objects"><i class="fa fa-check"></i><b>13.3.4</b> Objects</a></li>
+<li class="chapter" data-level="11.5.1" data-path="javascript.html"><a href="javascript.html#functional-programming-1"><i class="fa fa-check"></i><b>11.5.1</b> Functional Programming</a></li>
 </ul></li>
-<li class="chapter" data-level="13.4" data-path="javascript.html"><a href="javascript.html#control-structures"><i class="fa fa-check"></i><b>13.4</b> Control Structures</a>
+<li class="chapter" data-level="" data-path="javascript.html"><a href="javascript.html#resources-10"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="web-programming.html"><a href="web-programming.html"><i class="fa fa-check"></i><b>12</b> Web Programming</a>
 <ul>
-<li class="chapter" data-level="13.4.1" data-path="javascript.html"><a href="javascript.html#conditionals"><i class="fa fa-check"></i><b>13.4.1</b> Conditionals</a></li>
-<li class="chapter" data-level="13.4.2" data-path="javascript.html"><a href="javascript.html#loops-1"><i class="fa fa-check"></i><b>13.4.2</b> Loops</a></li>
-</ul></li>
-<li class="chapter" data-level="13.5" data-path="javascript.html"><a href="javascript.html#functions-1"><i class="fa fa-check"></i><b>13.5</b> Functions</a>
+<li class="chapter" data-level="12.1" data-path="web-programming.html"><a href="web-programming.html#web-pages-and-html"><i class="fa fa-check"></i><b>12.1</b> Web Pages and HTML</a>
 <ul>
-<li class="chapter" data-level="13.5.1" data-path="javascript.html"><a href="javascript.html#functional-programming-1"><i class="fa fa-check"></i><b>13.5.1</b> Functional Programming</a></li>
+<li class="chapter" data-level="12.1.1" data-path="web-programming.html"><a href="web-programming.html#elements-are-nested"><i class="fa fa-check"></i><b>12.1.1</b> Elements are Nested</a></li>
+<li class="chapter" data-level="12.1.2" data-path="web-programming.html"><a href="web-programming.html#scalable-vector-graphics-svg"><i class="fa fa-check"></i><b>12.1.2</b> Scalable Vector Graphics (SVG)</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="javascript.html"><a href="javascript.html#resources-11"><i class="fa fa-check"></i>Resources</a></li>
-</ul></li>
-<li class="chapter" data-level="14" data-path="web-programming.html"><a href="web-programming.html"><i class="fa fa-check"></i><b>14</b> Web Programming</a>
+<li class="chapter" data-level="12.2" data-path="web-programming.html"><a href="web-programming.html#dom-manipulation-with-d3"><i class="fa fa-check"></i><b>12.2</b> DOM Manipulation with D3</a>
 <ul>
-<li class="chapter" data-level="14.1" data-path="web-programming.html"><a href="web-programming.html#web-pages-and-html"><i class="fa fa-check"></i><b>14.1</b> Web Pages and HTML</a>
-<ul>
-<li class="chapter" data-level="14.1.1" data-path="web-programming.html"><a href="web-programming.html#elements-are-nested"><i class="fa fa-check"></i><b>14.1.1</b> Elements are Nested</a></li>
-<li class="chapter" data-level="14.1.2" data-path="web-programming.html"><a href="web-programming.html#scalable-vector-graphics-svg"><i class="fa fa-check"></i><b>14.1.2</b> Scalable Vector Graphics (SVG)</a></li>
+<li class="chapter" data-level="12.2.1" data-path="web-programming.html"><a href="web-programming.html#selecting-elements"><i class="fa fa-check"></i><b>12.2.1</b> Selecting Elements</a></li>
+<li class="chapter" data-level="12.2.2" data-path="web-programming.html"><a href="web-programming.html#changing-elements"><i class="fa fa-check"></i><b>12.2.2</b> Changing Elements</a></li>
+<li class="chapter" data-level="12.2.3" data-path="web-programming.html"><a href="web-programming.html#adding-elements"><i class="fa fa-check"></i><b>12.2.3</b> Adding Elements</a></li>
 </ul></li>
-<li class="chapter" data-level="14.2" data-path="web-programming.html"><a href="web-programming.html#dom-manipulation-with-d3"><i class="fa fa-check"></i><b>14.2</b> DOM Manipulation with D3</a>
-<ul>
-<li class="chapter" data-level="14.2.1" data-path="web-programming.html"><a href="web-programming.html#selecting-elements"><i class="fa fa-check"></i><b>14.2.1</b> Selecting Elements</a></li>
-<li class="chapter" data-level="14.2.2" data-path="web-programming.html"><a href="web-programming.html#changing-elements"><i class="fa fa-check"></i><b>14.2.2</b> Changing Elements</a></li>
-<li class="chapter" data-level="14.2.3" data-path="web-programming.html"><a href="web-programming.html#adding-elements"><i class="fa fa-check"></i><b>14.2.3</b> Adding Elements</a></li>
+<li class="chapter" data-level="12.3" data-path="web-programming.html"><a href="web-programming.html#user-events"><i class="fa fa-check"></i><b>12.3</b> User Events</a></li>
+<li class="chapter" data-level="12.4" data-path="web-programming.html"><a href="web-programming.html#ajax"><i class="fa fa-check"></i><b>12.4</b> AJAX</a></li>
+<li class="chapter" data-level="" data-path="web-programming.html"><a href="web-programming.html#resources-11"><i class="fa fa-check"></i>Resources</a></li>
 </ul></li>
-<li class="chapter" data-level="14.3" data-path="web-programming.html"><a href="web-programming.html#user-events"><i class="fa fa-check"></i><b>14.3</b> User Events</a></li>
-<li class="chapter" data-level="14.4" data-path="web-programming.html"><a href="web-programming.html#ajax"><i class="fa fa-check"></i><b>14.4</b> AJAX</a></li>
-<li class="chapter" data-level="" data-path="web-programming.html"><a href="web-programming.html#resources-12"><i class="fa fa-check"></i>Resources</a></li>
-</ul></li>
-<li class="chapter" data-level="15" data-path="d3.html"><a href="d3.html"><i class="fa fa-check"></i><b>15</b> D3 Visualizations</a>
+<li class="chapter" data-level="13" data-path="d3.html"><a href="d3.html"><i class="fa fa-check"></i><b>13</b> D3 Visualizations</a>
 <ul>
-<li class="chapter" data-level="15.1" data-path="d3.html"><a href="d3.html#the-data-join"><i class="fa fa-check"></i><b>15.1</b> The Data Join</a>
+<li class="chapter" data-level="13.1" data-path="d3.html"><a href="d3.html#the-data-join"><i class="fa fa-check"></i><b>13.1</b> The Data Join</a>
 <ul>
-<li class="chapter" data-level="15.1.1" data-path="d3.html"><a href="d3.html#entering-and-exiting-elements"><i class="fa fa-check"></i><b>15.1.1</b> Entering and Exiting Elements</a></li>
+<li class="chapter" data-level="13.1.1" data-path="d3.html"><a href="d3.html#entering-and-exiting-elements"><i class="fa fa-check"></i><b>13.1.1</b> Entering and Exiting Elements</a></li>
 </ul></li>
-<li class="chapter" data-level="15.2" data-path="d3.html"><a href="d3.html#animation"><i class="fa fa-check"></i><b>15.2</b> Animation</a></li>
-<li class="chapter" data-level="15.3" data-path="d3.html"><a href="d3.html#margins-and-positioning"><i class="fa fa-check"></i><b>15.3</b> Margins and Positioning</a></li>
-<li class="chapter" data-level="15.4" data-path="d3.html"><a href="d3.html#scales"><i class="fa fa-check"></i><b>15.4</b> Scales</a>
+<li class="chapter" data-level="13.2" data-path="d3.html"><a href="d3.html#animation"><i class="fa fa-check"></i><b>13.2</b> Animation</a></li>
+<li class="chapter" data-level="13.3" data-path="d3.html"><a href="d3.html#margins-and-positioning"><i class="fa fa-check"></i><b>13.3</b> Margins and Positioning</a></li>
+<li class="chapter" data-level="13.4" data-path="d3.html"><a href="d3.html#scales"><i class="fa fa-check"></i><b>13.4</b> Scales</a>
 <ul>
-<li class="chapter" data-level="15.4.1" data-path="d3.html"><a href="d3.html#axes"><i class="fa fa-check"></i><b>15.4.1</b> Axes</a></li>
+<li class="chapter" data-level="13.4.1" data-path="d3.html"><a href="d3.html#axes"><i class="fa fa-check"></i><b>13.4.1</b> Axes</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="d3.html"><a href="d3.html#resources-13"><i class="fa fa-check"></i>Resources</a></li>
+<li class="chapter" data-level="" data-path="d3.html"><a href="d3.html#resources-12"><i class="fa fa-check"></i>Resources</a></li>
 </ul></li>
 <li class="appendix"><span><b>Appendix</b></span></li>
 <li class="chapter" data-level="A" data-path="installing.html"><a href="installing.html"><i class="fa fa-check"></i><b>A</b> Installing Python</a>
@@ -322,7 +310,7 @@
 <li class="chapter" data-level="A.3.1" data-path="installing.html"><a href="installing.html#command-line-on-a-mac"><i class="fa fa-check"></i><b>A.3.1</b> Command Line on a Mac</a></li>
 <li class="chapter" data-level="A.3.2" data-path="installing.html"><a href="installing.html#command-line-on-windows"><i class="fa fa-check"></i><b>A.3.2</b> Command Line on Windows</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="installing.html"><a href="installing.html#resources-14"><i class="fa fa-check"></i>Resources</a></li>
+<li class="chapter" data-level="" data-path="installing.html"><a href="installing.html#resources-13"><i class="fa fa-check"></i>Resources</a></li>
 </ul></li>
 <li class="chapter" data-level="B" data-path="markdown.html"><a href="markdown.html"><i class="fa fa-check"></i><b>B</b> Markdown</a>
 <ul>
@@ -332,7 +320,7 @@
 <li class="chapter" data-level="B.1.2" data-path="markdown.html"><a href="markdown.html#text-blocks"><i class="fa fa-check"></i><b>B.1.2</b> Text Blocks</a></li>
 </ul></li>
 <li class="chapter" data-level="B.2" data-path="markdown.html"><a href="markdown.html#rendering-markdown"><i class="fa fa-check"></i><b>B.2</b> Rendering Markdown</a></li>
-<li class="chapter" data-level="" data-path="markdown.html"><a href="markdown.html#resources-15"><i class="fa fa-check"></i>Resources</a></li>
+<li class="chapter" data-level="" data-path="markdown.html"><a href="markdown.html#resources-14"><i class="fa fa-check"></i>Resources</a></li>
 </ul></li>
 <li class="chapter" data-level="C" data-path="command-line.html"><a href="command-line.html"><i class="fa fa-check"></i><b>C</b> The Command Line</a>
 <ul>
@@ -351,7 +339,7 @@
 <li class="chapter" data-level="C.4" data-path="command-line.html"><a href="command-line.html#dealing-with-errors"><i class="fa fa-check"></i><b>C.4</b> Dealing With Errors</a></li>
 <li class="chapter" data-level="C.5" data-path="command-line.html"><a href="command-line.html#directing-output"><i class="fa fa-check"></i><b>C.5</b> Directing Output</a></li>
 <li class="chapter" data-level="C.6" data-path="command-line.html"><a href="command-line.html#shell-scripts"><i class="fa fa-check"></i><b>C.6</b> Shell Scripts</a></li>
-<li class="chapter" data-level="" data-path="command-line.html"><a href="command-line.html#resources-16"><i class="fa fa-check"></i>Resources</a></li>
+<li class="chapter" data-level="" data-path="command-line.html"><a href="command-line.html#resources-15"><i class="fa fa-check"></i>Resources</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -406,7 +394,7 @@ Be careful with variable names when using loops! Name your list or sequences usi
 numbers <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">3.98</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">10.8</span><span class="token punctuation">,</span> <span class="token number">3.27</span><span class="token punctuation">,</span> <span class="token number">5.21</span><span class="token punctuation">]</span>
 
 <span class="token comment"># A for loop that includes multiple lines of code, including an if statement</span>
-<span class="token keyword">for</span> number <span class="token keyword">in</span> numbers<span class="token punctuation">:</span>    
+<span class="token keyword">for</span> number <span class="token keyword">in</span> numbers<span class="token punctuation">:</span>
     <span class="token keyword">if</span> number <span class="token operator">></span> <span class="token number">5</span><span class="token punctuation">:</span>
         <span class="token keyword">print</span> <span class="token builtin">str</span><span class="token punctuation">(</span>number<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">" is big"</span>
     <span class="token keyword">else</span><span class="token punctuation">:</span>
@@ -420,10 +408,10 @@ numbers <span class="token operator">=</span> <span class="token punctuation">[<
 
 <span class="token comment"># A loop that tries to "tally" how many big numbers are in the list</span>
 <span class="token comment"># THIS WILL NOT WORK!</span>
-<span class="token keyword">for</span> number <span class="token keyword">in</span> numbers<span class="token punctuation">:</span>    
+<span class="token keyword">for</span> number <span class="token keyword">in</span> numbers<span class="token punctuation">:</span>
     big_number_tally <span class="token operator">=</span> <span class="token number">0</span>
     <span class="token keyword">if</span> number <span class="token operator">></span> <span class="token number">5</span><span class="token punctuation">:</span>
-        big_number_tally <span class="token operator">=</span> big_number_tally <span class="token operator">+</span><span class="token number">1</span>
+        big_number_tally <span class="token operator">=</span> big_number_tally <span class="token operator">+</span> <span class="token number">1</span>
     <span class="token keyword">print</span><span class="token punctuation">(</span>big_number_tally<span class="token punctuation">)</span></code></pre>
 <p>The first statement of the loop body is to assign a <code>0</code> to the <code>big_number_tally</code> variable. So the first time through the loop (when the value <code>5.21</code> is assigned to <code>number</code>), the <code>number &gt; 5</code> condition will be true, causing the <code>big_nubmer_tally</code> to increase by 1 (from <code>0</code> to <code>1</code>). However, the second time through the loop (when <code>8</code> is assigned to <code>number</code>), the <code>big_number_tally</code> is <em>reset</em> to <code>0</code>—in effect, the algorithm “forgets” that it had already counted one big number and tries to start over! Moreover, because the <code>print()</code> statement is inside the loop, it means that the tally will be printed out <em>for each</em> element in the list: so it will print out the “tally” 5 times!</p>
 <p>Instead, if you want a variable to “save” its value across loop executions, you’ll need to declare it <em>outside</em> of the loop (before the iteration starts).</p>
@@ -434,9 +422,9 @@ numbers <span class="token operator">=</span> <span class="token punctuation">[<
 big_number_tally <span class="token operator">=</span> <span class="token number">0</span>
 
 <span class="token comment"># A loop that will tally how many big numbers are in the list. This will work!</span>
-<span class="token keyword">for</span> number <span class="token keyword">in</span> numbers<span class="token punctuation">:</span>    
+<span class="token keyword">for</span> number <span class="token keyword">in</span> numbers<span class="token punctuation">:</span>
     <span class="token keyword">if</span> number <span class="token operator">></span> <span class="token number">5</span><span class="token punctuation">:</span>
-        big_number_tally <span class="token operator">=</span> big_number_tally <span class="token operator">+</span><span class="token number">1</span>
+        big_number_tally <span class="token operator">=</span> big_number_tally <span class="token operator">+</span> <span class="token number">1</span>
 
 <span class="token comment"># Use result AFTER (outside) the loop!</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>big_number_tally<span class="token punctuation">)</span></code></pre>
@@ -484,7 +472,7 @@ numbers <span class="token operator">=</span> <span class="token punctuation">[<
 Note that this process of applying some change to each element in a list is known as a <strong>mapping</strong> (each value “maps” or goes to some transformed version of itself). We will discuss mapping more in a later chapter.
 </p>
 <p class="alert alert-info">
-There is another, shortcut syntax for looping through lists (to create other lists) called <em>list comprehensions</em>. These are discussed in more detail in a <a href="functional-programming.html#list-comprehensions">later chapter</a>.
+There is another, shortcut syntax for looping through lists (to create other lists) called <em>list comprehensions</em>. These are discussed in more detail in a <a href="loops.html#list-comprehensions">below</a>.
 </p>
 </div>
 <div id="nested-loops" class="section level2" number="5.3">
@@ -520,15 +508,76 @@ table <span class="token operator">=</span> <span class="token punctuation">[</s
           <span class="token punctuation">[</span><span class="token string">'c1'</span><span class="token punctuation">,</span><span class="token string">'c2'</span><span class="token punctuation">,</span><span class="token string">'c3'</span><span class="token punctuation">,</span><span class="token string">'c4'</span><span class="token punctuation">]</span> <span class="token punctuation">]</span>
 
 <span class="token keyword">for</span> row_index <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>table<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment"># go through each row (with index)</span>
-  <span class="token keyword">for</span> col_index <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>table<span class="token punctuation">[</span>row_index<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment"># go through each col of that row (with index)</span>
-      <span class="token keyword">print</span><span class="token punctuation">(</span>table<span class="token punctuation">[</span>row_index<span class="token punctuation">]</span><span class="token punctuation">[</span>col_index<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment"># access element at specified row and column</span></code></pre>
+    <span class="token keyword">for</span> col_index <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>table<span class="token punctuation">[</span>row_index<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment"># go through each col of that row (with index)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>table<span class="token punctuation">[</span>row_index<span class="token punctuation">]</span><span class="token punctuation">[</span>col_index<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment"># access element at specified row and column</span></code></pre>
 <p>Because <code>table</code> is a list of rows, you can iterate through that list (the outer loop, using <code>row_index</code>). And then <em>for each</em> row, because that row is itself a list, you can iterate through its entries (the inner loop, using <code>col_index</code>). And in the end, you can access individual elements of the table using bracket notation.</p>
 <p class="alert alert-success">
 The best way to work about nested loops (or loops in general) is to walk through them step by step, in order to trace what is happening at each iteration. Drawing out a diagram or writing down sample output is a great way of helping you track what is going on!
 </p>
 </div>
-<div id="while-loops" class="section level2" number="5.4">
-<h2><span class="header-section-number">5.4</span> While Loops</h2>
+<div id="list-comprehensions" class="section level2" number="5.4">
+<h2><span class="header-section-number">5.4</span> List Comprehensions</h2>
+<p>The previous “block” syntax for writing for loops is the most basic and flexible approach, and similar syntax is used across a wide variety of programming languages. But Python also includes a <em>shortcut syntax</em> for writing these same loops, called <strong>List Comprehensions</strong>. A <em>list comprehension</em> is a special syntax for looping through lists (to create other lists). It is considered a more idiomatic and “Pythonic” approach (preferred by language developer Guido van Rossum), so are more used and abused in Python code.</p>
+<p>A basic list comprehension has the following syntax:</p>
+<pre class="language-python"><code>new_list <span class="token operator">=</span> <span class="token punctuation">[</span>output_expression <span class="token keyword">for</span> value <span class="token keyword">in</span> sequence<span class="token punctuation">]</span></code></pre>
+<p>This is a shortcut for the following basic loop:</p>
+<pre class="language-python"><code>new_list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>  <span class="token comment"># a new list (to be filled)</span>
+<span class="token keyword">for</span> value <span class="token keyword">in</span> sequence<span class="token punctuation">:</span>
+    new_list<span class="token punctuation">.</span>append<span class="token punctuation">(</span>output_expression<span class="token punctuation">)</span> <span class="token comment"># add expression to the new list</span></code></pre>
+<p>List comprehensions are written inside square brackets <strong><code>[]</code></strong> and use the same <code>for ... in ...</code> syntax used in basic loops. However, the <em>expression</em> that you would normally <code>append()</code> to the new list is written <em>before</em> the <code>for</code>. This causes the comprehension to be read as <em>“a list consisting of <code>output_expression</code> for each <code>value</code> in <code>sequence</code>”</em>—it’s almost English!</p>
+<p>For example, the following loop can create a list of rounded numbers can be written either using a basic block loop or by using a list comprehension:</p>
+<pre class="language-python"><code><span class="token comment">## As a basic loop</span>
+numbers <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1.3</span><span class="token punctuation">,</span> <span class="token number">2.7</span><span class="token punctuation">,</span> <span class="token number">3.14</span><span class="token punctuation">,</span> <span class="token number">4.8</span><span class="token punctuation">,</span> <span class="token number">5.99</span><span class="token punctuation">]</span>  <span class="token comment"># original list</span>
+rounded_numbers <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>  <span class="token comment"># a new list (to be filled)</span>
+<span class="token keyword">for</span> n <span class="token keyword">in</span> numbers<span class="token punctuation">:</span> <span class="token comment"># loop through the original list</span>
+    rounded_numbers<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token builtin">round</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment"># add expression to the new list</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>rounded_numbers<span class="token punctuation">)</span>  <span class="token comment"># [1, 3, 3, 5, 6]</span>
+
+<span class="token comment">## As a list comprehension</span>
+rounded_numbers <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token builtin">round</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span> <span class="token keyword">for</span> n <span class="token keyword">in</span> numbers<span class="token punctuation">]</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>rounded_numbers<span class="token punctuation">)</span>  <span class="token comment"># [1, 3, 3, 5, 6]</span></code></pre>
+<p>The two versions of the code do exactly the same thing! But the list comprehension is takes less space to write and doesn’t require the creation of the initial empty list. In a way it is more readable, and hence preferred in Python.</p>
+<p>List comprehensions are used when you want to create a <em>new</em> list out of a previous one: as in the above example which created a new list of rounded numbers out of an initial list. (This is called a <em>mapping</em> operation, and will be discussed in more detail in a later chapter). It is not appropriate to use a list comprehension if you’re not creating a new list; a loop to print out every element of a list would be better written using the basic loop syntax. It is possible to “modify” a list using a comprehension by having the new list replace the old one:</p>
+<pre class="language-python"><code>numbers <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1.3</span><span class="token punctuation">,</span> <span class="token number">2.7</span><span class="token punctuation">,</span> <span class="token number">3.14</span><span class="token punctuation">,</span> <span class="token number">4.8</span><span class="token punctuation">,</span> <span class="token number">5.99</span><span class="token punctuation">]</span>
+numbers <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token builtin">round</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span> <span class="token keyword">for</span> n <span class="token keyword">in</span> numbers<span class="token punctuation">]</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>numbers<span class="token punctuation">)</span> <span class="token comment"># [1, 3, 3, 5, 6] -- they are rounded!</span></code></pre>
+<p>(This isn’t actually modifying the list; rather it is creating a brand new list and then assigning that value to the original variable. It is a <em>different</em> list).</p>
+<p class="alert alert-success">
+Use list comprehensions only when creating a new list based on the elements of an old one!
+</p>
+<p>Note that the expression that is being added to the new list can be as complex as you want—but if it gets too complex you may be better using a basic loop for readability:</p>
+<p>List comprehensions can also include <code>if</code> conditions to determine whether or not an expression should be included in the new list. This is done by an <code>if</code> condition <em>after</em> the sequence:</p>
+<pre class="language-python"><code>new_list <span class="token operator">=</span> <span class="token punctuation">[</span>output_expression <span class="token keyword">for</span> loop_variable <span class="token keyword">in</span> sequence <span class="token keyword">if</span> condition<span class="token punctuation">]</span></code></pre>
+<p>Or as a specific example (remember: we filter for elements to <em>keep</em>!):</p>
+<pre class="language-python"><code>numbers <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span>
+evens <span class="token operator">=</span> <span class="token punctuation">[</span>n <span class="token keyword">for</span> n <span class="token keyword">in</span> numbers <span class="token keyword">if</span> n<span class="token operator">%</span><span class="token number">2</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">]</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>evens<span class="token punctuation">)</span>  <span class="token comment"># [2, 8]</span></code></pre>
+<p>This can be read as <em>“a list consisting of <code>n</code> for each <code>n</code> in <code>numbers</code>, but only <code>if</code> <code>n%2 == 0</code>”</em>. It is equivalent to using the <code>for</code> loop:</p>
+<pre class="language-python"><code>evens <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token keyword">for</span> n <span class="token keyword">in</span> numbers
+    <span class="token keyword">if</span> n<span class="token operator">%</span><span class="token number">2</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>  <span class="token comment"># check the inclusion criteria</span>
+        evens<span class="token punctuation">.</span>append<span class="token punctuation">(</span>n<span class="token punctuation">)</span>  <span class="token comment"># append the expression</span></code></pre>
+<p>This use of an <code>if</code> statement is called a <em>filtering</em> criteria (and will be discussed in more detail in a later chapter). Note that even though it’s called a filter, the <code>if</code> statement is used to determine whether the element <em>should</em> be included in the new list (“who passes the filter”, not who is kept out).</p>
+<p>Finally, it is possible to include <em>multiple, nested</em> <code>for</code> and <code>if</code> statements in a list comprehension. Each successive <code>for ... in ...</code> or <code>if</code> expression is included inside the square brackets after the output expression. This allows you to effectively convert nested control structures into a comprehension:</p>
+<pre class="language-python"><code>entrees <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"chicken"</span><span class="token punctuation">,</span><span class="token string">"fish"</span><span class="token punctuation">,</span><span class="token string">"veggies"</span><span class="token punctuation">]</span>
+sides <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"potatoes"</span><span class="token punctuation">,</span> <span class="token string">"veggies"</span><span class="token punctuation">]</span>
+
+<span class="token comment"># Get all "meals" if the entree and side are not the same</span>
+meals <span class="token operator">=</span> <span class="token punctuation">[</span> entree<span class="token operator">+</span><span class="token string">" &amp; "</span><span class="token operator">+</span>side <span class="token keyword">for</span> entree <span class="token keyword">in</span> entrees <span class="token keyword">for</span> side <span class="token keyword">in</span> sides <span class="token keyword">if</span> entree <span class="token operator">!=</span> side<span class="token punctuation">]</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>meals<span class="token punctuation">)</span>  <span class="token comment"># ['chicken &amp; potatoes', 'chicken &amp; veggies', 'fish &amp; potatoes',</span>
+              <span class="token comment">#  'fish &amp; veggies', 'veggies &amp; potatoes']</span>
+              <span class="token comment"># Note: no "veggies and veggies" !</span></code></pre>
+<p>This is equivalent to the nested loops.</p>
+<pre class="language-python"><code>meals <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token keyword">for</span> entree <span class="token keyword">in</span> entrees<span class="token punctuation">:</span>
+    <span class="token keyword">for</span> side <span class="token keyword">in</span> sides<span class="token punctuation">:</span>
+        <span class="token keyword">if</span> entree <span class="token operator">!=</span> side<span class="token punctuation">:</span>
+            meals<span class="token punctuation">.</span>append<span class="token punctuation">(</span>entree<span class="token operator">+</span><span class="token string">" &amp; "</span><span class="token operator">+</span>side<span class="token punctuation">)</span></code></pre>
+<p>Again, the list comprehension almost can read like English (<em>“a list consisting of each entree &amp; side, for each entree in entrees and for each side in sides, but only if the entree and the side are different”</em>), but it can get harder to parse as more nested levels are added.</p>
+<p>Overall, list comprehensions are considered a <em>better, more Pythonic</em> approach to creating new lists out of old ones (which happens to be one of the most common uses of loops). However, block-style for loops have analogs in multiple different languages and contexts, including other data-processing languages such as R, Julia, and JavaScript. Thus it is good to be comfortable with both approaches!</p>
+</div>
+<div id="while-loops" class="section level2" number="5.5">
+<h2><span class="header-section-number">5.5</span> While Loops</h2>
 <p>For loops are the most common kind of loop in Python. However, for loops are used for when you have a distinct sequence of values to loop through (or a specific number of times you want to perform the loop that you can define with a range). On the other hand, sometimes you want to loop until a certain set of conditions are met—the interpreter don’t know how many times the loop will repeat until it’s already cycling.</p>
 <p>You can perform this kind of “indefinite iteration” using a <strong>while loop</strong>. A Python while loop has the following structure:</p>
 <pre class="language-python"><code><span class="token keyword">while</span> CONDITION<span class="token punctuation">:</span>
@@ -550,8 +599,8 @@ count <span class="token operator">=</span> <span class="token number">5</span>
 <p class="alert alert-warning">
 <strong>Importantly</strong>, the condition is only checked when the block is <em>about</em> to execute: both at the “start” of the loop, and then at the beginning of each subsequent iteration. Having the condition become <code>True</code> in the middle of the block (possibly temporarily) will have no impact on the control flow. It is also possible for the interpreter to “never enter” the loop if the condition is not initially <code>True</code>.
 </p>
-<div id="counting-with-while-loops" class="section level3" number="5.4.1">
-<h3><span class="header-section-number">5.4.1</span> Counting with While Loops</h3>
+<div id="counting-with-while-loops" class="section level3" number="5.5.1">
+<h3><span class="header-section-number">5.5.1</span> Counting with While Loops</h3>
 <p>The above example also demonstrates how to use a “counter” to determine whether or not the loop has run a sufficient number of times: this is known as a <strong>loop control variable (LCV)</strong>. The “standard” counting loop looks like:</p>
 <pre class="language-python"><code>count <span class="token operator">=</span> <span class="token number">0</span>              <span class="token comment"># 1. initialize the counter</span>
 <span class="token keyword">while</span> count <span class="token operator">&lt;</span> <span class="token number">100</span><span class="token punctuation">:</span>     <span class="token comment"># 2. check if the counter has reached its target</span>
@@ -594,8 +643,8 @@ If you hit an infinite loop in Jupyter Notebook, use <code>Kernel &gt; Interrupt
 </ol>
 <p>The best way to catch these errors is to “play computer”: pretend that you are the compiler, and go through each statement one by one, keeping track of the loop control variable (writing its value down on a sheet of paper does wonders). This will help you be able to “trace” what your program is doing and catch any bugs there may be.</p>
 </div>
-<div id="sentinels" class="section level3" number="5.4.2">
-<h3><span class="header-section-number">5.4.2</span> Sentinels</h3>
+<div id="sentinels" class="section level3" number="5.5.2">
+<h3><span class="header-section-number">5.5.2</span> Sentinels</h3>
 <p>Consider the following example (which includes a nested <code>if</code> statement inside of the while loop):</p>
 <pre class="language-python"><code><span class="token comment"># flip a coin until it shows up heads</span>
 still_flipping <span class="token operator">=</span> <span class="token boolean">True</span>
@@ -611,8 +660,8 @@ still_flipping <span class="token operator">=</span> <span class="token boolean"
 <p>In this example, the <code>still_flipping</code> boolean variable acts as the <em>loop control variable</em>, as it determines whether or not the loop is repeated. Using a boolean as a LCV is known as using a <strong>sentinel variable</strong>. A sentinel (guard) variable is used to control whether or not the program flow gets out of the loop: as long as the sentinel is <code>True</code>, the loop continues to run. Thus the loop can be “exited” by assigning the sentinel to be <code>False</code>. This is particularly useful when there may be a complex set of conditions that need to be met before the program can carry on.</p>
 <p>(It is of course possible to design a sentinel such as <code>done_flipping</code>, and then have the <code>while</code> condition check that the sentinel is <strong><code>not</code></strong> <code>True</code>. While this may be useful depending on how you’ve structured the algorithm, I suggest you always use a “positive” boolean for readability).</p>
 </div>
-<div id="difference-between-for-and-while-loops" class="section level3" number="5.4.3">
-<h3><span class="header-section-number">5.4.3</span> Difference Between For and While Loops</h3>
+<div id="difference-between-for-and-while-loops" class="section level3" number="5.5.3">
+<h3><span class="header-section-number">5.5.3</span> Difference Between For and While Loops</h3>
 <p>The main difference between for loops and while loops is:</p>
 <blockquote>
 <p>for loops are used for <strong>definite</strong> iteration; while loops are used for <strong>indefinite</strong> iteration.</p>
@@ -621,8 +670,8 @@ still_flipping <span class="token operator">=</span> <span class="token boolean"
 <p>All iteration can be written with a while loop; but when performing definite iteration, it is easier, faster, and more idiomatic to use a for loop!</p>
 </div>
 </div>
-<div id="iterating-over-files" class="section level2" number="5.5">
-<h2><span class="header-section-number">5.5</span> Iterating over Files</h2>
+<div id="iterating-over-files" class="section level2" number="5.6">
+<h2><span class="header-section-number">5.6</span> Iterating over Files</h2>
 <p>For loops can be used to iterate through any sequence (technically any “iterable” type). One of the more useful sequences when working with data are external <strong>files</strong> (e.g., text files). Files can be treated as a sequence of <em>lines</em> (each divided by a <code>\n</code> newline character), and thus Python can “read” a text file using a for loop to iterate over the lines of text in the file.</p>
 <p>In order to read or write text file data, you use the built-in <a href="https://docs.python.org/3/library/functions.html#open"><code>open()</code></a> function, passing it the <em>path</em> to the file you wish to access. This function will then return an object representing that particular file (e.g., it’s location on the disk), with methods that you can use to read from and write to it.</p>
 <pre class="language-python"><code>my_file <span class="token operator">=</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'myfile.txt'</span><span class="token punctuation">)</span>  <span class="token comment"># open the file</span>
@@ -647,8 +696,8 @@ Remember to <strong>always</strong> use <em>relative</em> paths. Note that when 
 <p class="alert alert-info">
 For some specialized text files, such as <code>.csv</code> files (comma-separated lists—spreadsheets), there are other specialized modules that can simplify reading the file content. For <code>csv</code> files, check out the <a href="https://docs.python.org/3/library/csv.html"><code>csv</code> module</a>.
 </p>
-<div id="tryexcept" class="section level3" number="5.5.1">
-<h3><span class="header-section-number">5.5.1</span> Try/Except</h3>
+<div id="tryexcept" class="section level3" number="5.6.1">
+<h3><span class="header-section-number">5.6.1</span> Try/Except</h3>
 <p>File operations rely on a context that is external to the program itself: namely, that the file you wish to open actually exists at the location you specify! But that may not be the case—particularly if which file to open is specified by the user:</p>
 <pre class="language-python"><code>filename <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">"File to open: "</span><span class="token punctuation">)</span>  <span class="token comment"># ask user which file to open</span>
 

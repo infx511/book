@@ -25,7 +25,7 @@ When the Python interpreter encounters a for loop, it begins the following proce
 
 1. It takes the first element of the _sequence_ (e.g., of `numbers_list`&dash;so a `1`) and assigns that to the local variable (e.g., `number`). Thus implicitly the interpreter is executing the code `number = numbers_list[0]`
 2. It then executes the _block_ (the indented code after the colon). In this case, it prints out the `number` variable&mdash;which is currently `1`.
-3. At the end of the block, the interpreter _loops_ back around to the top of the loop. 
+3. At the end of the block, the interpreter _loops_ back around to the top of the loop.
 4. It will take the _next_ element of the sequence and assign that to the local variable. So implicitly, the interpreter executes `number = numbers_list[1]`.
 5. It then again executes the block of code, in this case printing out the `number` variable&mdash;which now has a value of `2`!
 6. At the end of the block, the interpreter loops back to the top of the loop.
@@ -44,7 +44,7 @@ The block in the for loop (also called the _body_ of the loop) is a block of cod
 numbers = [3.98, 8, 10.8, 3.27, 5.21]
 
 # A for loop that includes multiple lines of code, including an if statement
-for number in numbers:    
+for number in numbers:
     if number > 5:
         print str(number) + " is big"
     else:
@@ -62,16 +62,16 @@ numbers = [5.21, 8, 10.8, 3.27, 3.98]
 
 # A loop that tries to "tally" how many big numbers are in the list
 # THIS WILL NOT WORK!
-for number in numbers:    
+for number in numbers:
     big_number_tally = 0
     if number > 5:
-        big_number_tally = big_number_tally +1
+        big_number_tally = big_number_tally + 1
     print(big_number_tally)
 ```
 
 The first statement of the loop body is to assign a `0` to the `big_number_tally` variable. So the first time through the loop (when the value `5.21` is assigned to `number`), the `number > 5` condition will be true, causing the `big_nubmer_tally` to increase by 1 (from `0` to `1`). However, the second time through the loop (when `8` is assigned to `number`), the `big_number_tally` is _reset_ to `0`&mdash;in effect, the algorithm "forgets" that it had already counted one big number and tries to start over! Moreover, because the `print()` statement is inside the loop, it means that the tally will be printed out _for each_ element in the list: so it will print out the "tally" 5 times!
 
-Instead, if you want a variable to "save" its value across loop executions, you'll need to declare it _outside_ of the loop (before the iteration starts). 
+Instead, if you want a variable to "save" its value across loop executions, you'll need to declare it _outside_ of the loop (before the iteration starts).
 
 ```python
 # A list of numbers
@@ -81,9 +81,9 @@ numbers = [5.21, 8, 10.8, 3.27, 3.98]
 big_number_tally = 0
 
 # A loop that will tally how many big numbers are in the list. This will work!
-for number in numbers:    
+for number in numbers:
     if number > 5:
-        big_number_tally = big_number_tally +1
+        big_number_tally = big_number_tally + 1
 
 # Use result AFTER (outside) the loop!
 print(big_number_tally)
@@ -148,7 +148,7 @@ print(numbers)  # [5, 8, 11, 3, 4]
 
 <p class="alert alert-info">Note that this process of applying some change to each element in a list is known as a **mapping** (each value "maps" or goes to some transformed version of itself). We will discuss mapping more in a later chapter.</p>
 
-<p class="alert alert-info">There is another, shortcut syntax for looping through lists (to create other lists) called _list comprehensions_. These are discussed in more detail in a [later chapter](#list-comprehensions).</p>
+<p class="alert alert-info">There is another, shortcut syntax for looping through lists (to create other lists) called _list comprehensions_. These are discussed in more detail in a [below](#list-comprehensions).</p>
 
 ## Nested Loops
 Remember that loops can contain other control structures&mdash;including other loops! These are referred to as "nested loops":
@@ -193,13 +193,119 @@ table = [ ['a1','a2','a3','a4'],
           ['c1','c2','c3','c4'] ]
 
 for row_index in range(len(table)): # go through each row (with index)
-  for col_index in range(len(table[row_index])) # go through each col of that row (with index)
-      print(table[row_index][col_index]) # access element at specified row and column
+    for col_index in range(len(table[row_index])) # go through each col of that row (with index)
+        print(table[row_index][col_index]) # access element at specified row and column
 ```
 
 Because `table` is a list of rows, you can iterate through that list (the outer loop, using `row_index`). And then _for each_ row, because that row is itself a list, you can iterate through its entries (the inner loop, using `col_index`). And in the end, you can access individual elements of the table using bracket notation.
 
 <p class="alert alert-success">The best way to work about nested loops (or loops in general) is to walk through them step by step, in order to trace what is happening at each iteration. Drawing out a diagram or writing down sample output is a great way of helping you track what is going on!</p>
+
+
+
+## List Comprehensions
+The previous "block" syntax for writing for loops is the most basic and flexible approach, and similar syntax is used across a wide variety of programming languages. But Python also includes a _shortcut syntax_ for writing these same loops, called **List Comprehensions**. A _list comprehension_ is a special syntax for looping through lists (to create other lists). It is considered a more idiomatic and "Pythonic" approach (preferred by language developer Guido van Rossum), so are more used and abused in Python code.
+
+A basic list comprehension has the following syntax:
+
+```python
+new_list = [output_expression for value in sequence]
+```
+
+This is a shortcut for the following basic loop:
+
+```python
+new_list = []  # a new list (to be filled)
+for value in sequence:
+    new_list.append(output_expression) # add expression to the new list
+```
+
+List comprehensions are written inside square brackets **`[]`** and use the same `for ... in ...` syntax used in basic loops. However, the _expression_ that you would normally `append()` to the new list is written _before_ the `for`. This causes the comprehension to be read as _"a list consisting of `output_expression` for each `value` in `sequence`"_&mdash;it's almost English!
+
+For example, the following loop can create a list of rounded numbers can be written either using a basic block loop or by using a list comprehension:
+
+```python
+## As a basic loop
+numbers = [1.3, 2.7, 3.14, 4.8, 5.99]  # original list
+rounded_numbers = []  # a new list (to be filled)
+for n in numbers: # loop through the original list
+    rounded_numbers.append(round(n)) # add expression to the new list
+print(rounded_numbers)  # [1, 3, 3, 5, 6]
+
+## As a list comprehension
+rounded_numbers = [round(n) for n in numbers]
+print(rounded_numbers)  # [1, 3, 3, 5, 6]
+```
+
+The two versions of the code do exactly the same thing! But the list comprehension is takes less space to write and doesn't require the creation of the initial empty list. In a way it is more readable, and hence preferred in Python.
+
+List comprehensions are used when you want to create a _new_ list out of a previous one: as in the above example which created a new list of rounded numbers out of an initial list. (This is called a _mapping_ operation, and will be discussed in more detail in a later chapter). It is not appropriate to use a list comprehension if you're not creating a new list; a loop to print out every element of a list would be better written using the basic loop syntax. It is possible to "modify" a list using a comprehension by having the new list replace the old one:
+
+```python
+numbers = [1.3, 2.7, 3.14, 4.8, 5.99]
+numbers = [round(n) for n in numbers]
+print(numbers) # [1, 3, 3, 5, 6] -- they are rounded!
+```
+
+(This isn't actually modifying the list; rather it is creating a brand new list and then assigning that value to the original variable. It is a _different_ list).
+
+<p class="alert alert-success">Use list comprehensions only when creating a new list based on the elements of an old one!</p>
+
+
+Note that the expression that is being added to the new list can be as complex as you want&mdash;but if it gets too complex you may be better using a basic loop for readability:
+
+
+List comprehensions can also include `if` conditions to determine whether or not an expression should be included in the new list. This is done by an `if` condition _after_ the sequence:
+
+```python
+new_list = [output_expression for loop_variable in sequence if condition]
+```
+
+Or as a specific example (remember: we filter for elements to _keep_!):
+
+```python
+numbers = [2, 7, 1, 8, 3]
+evens = [n for n in numbers if n%2 == 0]
+print(evens)  # [2, 8]
+```
+
+This can be read as _"a list consisting of `n` for each `n` in `numbers`, but only `if` `n%2 == 0`"_. It is equivalent to using the `for` loop:
+
+```python
+evens = []
+for n in numbers
+    if n%2 == 0:  # check the inclusion criteria
+        evens.append(n)  # append the expression
+```
+
+This use of an `if` statement is called a _filtering_ criteria (and will be discussed in more detail in a later chapter). Note that even though it's called a filter, the `if` statement is used to determine whether the element _should_ be included in the new list ("who passes the filter", not who is kept out).
+
+Finally, it is possible to include _multiple, nested_ `for` and `if` statements in a list comprehension. Each successive `for ... in ...` or `if` expression is included inside the square brackets after the output expression. This allows you to effectively convert nested control structures into a comprehension:
+
+```python
+entrees = ["chicken","fish","veggies"]
+sides = ["potatoes", "veggies"]
+
+# Get all "meals" if the entree and side are not the same
+meals = [ entree+" & "+side for entree in entrees for side in sides if entree != side]
+print(meals)  # ['chicken & potatoes', 'chicken & veggies', 'fish & potatoes',
+              #  'fish & veggies', 'veggies & potatoes']
+              # Note: no "veggies and veggies" !
+```
+
+This is equivalent to the nested loops.
+
+```python
+meals = []
+for entree in entrees:
+    for side in sides:
+        if entree != side:
+            meals.append(entree+" & "+side)
+```
+
+Again, the list comprehension almost can read like English (_"a list consisting of each entree & side, for each entree in entrees and for each side in sides, but only if the entree and the side are different"_), but it can get harder to parse as more nested levels are added.
+
+Overall, list comprehensions are considered a _better, more Pythonic_ approach to creating new lists out of old ones (which happens to be one of the most common uses of loops). However, block-style for loops have analogs in multiple different languages and contexts, including other data-processing languages such as R, Julia, and JavaScript. Thus it is good to be comfortable with both approaches!
 
 
 ## While Loops
@@ -332,7 +438,7 @@ The main difference between for loops and while loops is:
 
 > for loops are used for **definite** iteration; while loops are used for **indefinite** iteration.
 
-A for loop is appropriate when the interpreter does know _in advance_ (before the loop starts) how many times the block will be executed&mdash;a definite number of iterations. Note that the number of iterations may be a variable so not determined until runtime; however, the value of that variable will still be known when the `for` statement is executed. On the other hand, while loops are appropriate when the interpreter doesn't know _in advance_ (before the loop starts) how many times the loop block will be executed: the loop does not have a definite number of iterations. 
+A for loop is appropriate when the interpreter does know _in advance_ (before the loop starts) how many times the block will be executed&mdash;a definite number of iterations. Note that the number of iterations may be a variable so not determined until runtime; however, the value of that variable will still be known when the `for` statement is executed. On the other hand, while loops are appropriate when the interpreter doesn't know _in advance_ (before the loop starts) how many times the loop block will be executed: the loop does not have a definite number of iterations.
 
 All iteration can be written with a while loop; but when performing definite iteration, it is easier, faster, and more idiomatic to use a for loop!
 
