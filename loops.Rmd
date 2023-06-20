@@ -148,7 +148,7 @@ print(numbers)  # [5, 8, 11, 3, 4]
 
 <p class="alert alert-info">Note that this process of applying some change to each element in a list is known as a **mapping** (each value "maps" or goes to some transformed version of itself). We will discuss mapping more in a later chapter.</p>
 
-<p class="alert alert-info">There is another, shortcut syntax for looping through lists (to create other lists) called _list comprehensions_. These are discussed in more detail in a [below](#list-comprehensions).</p>
+<p class="alert alert-info">There is another, shortcut syntax for looping through lists (to create other lists) called _list comprehensions_. These are discussed in more detail in [below](#list-comprehensions).</p>
 
 ## Nested Loops
 Remember that loops can contain other control structures&mdash;including other loops! These are referred to as "nested loops":
@@ -532,6 +532,8 @@ A `try` statement acts somewhat similar to an `if` statement; however, the `try`
 - [Iterations (Downey)](https://books.trinket.io/pfe/05-iterations.html)
 - [Flow Control (Sweigart)](https://automatetheboringstuff.com/chapter2/) (second half)
 - [Iteration (Severance)](http://openbookproject.net/thinkcs/python/english3e/iteration.html)
+- [List Comprehensions (Python Docs)](https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions)
+- [List Comprehensions Explained Visually](http://treyhunner.com/2015/12/python-list-comprehensions-now-in-color/)
 - [Files (Downey)](https://books.trinket.io/pfe/07-files.html)
 - [Files and File Paths (Sweigart)](https://automatetheboringstuff.com/chapter8/)
 </div>

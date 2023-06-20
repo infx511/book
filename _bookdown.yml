@@ -26,13 +26,13 @@ rmd_files:
   # - beautiful-soup.Rmd
 
   # javascript & d3
-  - part_visualization.Rmd
-  - javascript.Rmd
-  - web-programming.Rmd
-  - d3.Rmd
+  # - part_visualization.Rmd
+  # - web-programming.Rmd
+  # - d3.Rmd
 
   # appendix
   - appendix.Rmd
   - installing.Rmd
   - markdown.Rmd
   - command-line.Rmd
+  - javascript.Rmd

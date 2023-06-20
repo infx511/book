@@ -119,7 +119,7 @@ print(person['job'])  # Sr Programmer
 # Assign value to itself
 person['salary'] = person['salary'] * 1.15  # a 15% raise!
 
-# Add a new key-value pair by assigning a value to a key that is not yet 
+# Add a new key-value pair by assigning a value to a key that is not yet
 # in the dictionary
 person['age'] = 37
 print(person)  # {'name': 'Ada', 'job': 'Sr Programmer', 'salary': 89700.0, 'age': 37}
@@ -214,7 +214,7 @@ for letter, number in sample_dict.items():
     print(letter, "maps to", number)  # e.g., "'a' maps to 1
 ```
 
-Finally, remember that dictionaries are _unordered_. This means that there is no consistency as to which element will be processed in what order: you might get `a` then `b` then `c`, but you might get `c` then `a` then `b`! If the order is important for looping, a common strategy is to iterate through a _sorted list of the keys_ (produced with the built-in [`sorted()`](https://docs.python.org/3/library/functions.html#sorted) function):
+Remember that dictionaries are _unordered_. This means that there is no consistency as to which element will be processed in what order: you might get `a` then `b` then `c`, but you might get `c` then `a` then `b`! If the order is important for looping, a common strategy is to iterate through a _sorted list of the keys_ (produced with the built-in [`sorted()`](https://docs.python.org/3/library/functions.html#sorted) function):
 
 ```python
 # Sort the keys
@@ -228,6 +228,58 @@ for key in sorted_keys:
 for key in sorted(sample_dict.keys()):
     print(key, "maps to", sample_dict[key])
 ```
+
+### Dictionary Comprehensions
+Python also supports **dictionary comprehensions**, similar to [_list comprehensions](##list-comprehensions). This is a Python shortcut syntax for creating a _new_ dictionary while looping through an iterable data structure (either a list or a dictionary). A dictionary comprehension uses the basic syntax:
+
+```python
+new_dict = {new_key: new_value for value in sequence}
+```
+
+This is a shortcut for the following basic loop:
+
+```python
+new_dict = {}  # a new dict (to be filled)
+for value in sequence:
+    new_key = ... # define new key based on value
+    new_value = ... # define new value based on value
+    new_dict[new_key] = new_value
+```
+
+Notice that a dictionary comprehension looks a lot like a list comprehension; except that you surround the comprehension in `{}` instead of `[]`, and you specify the new key and value with a colon `:` between them.
+
+
+For example, you could create a new dictionary whose keys are words and whose values are booleans indicating if that word is long:
+
+```python
+word_list = ["dog", "cat", "information", "husky"]
+
+# create a new dictionary using a regular loop
+word_is_long_dict = {} # empty dictionary
+for word in word_list:
+    # add a new entry to the dictionary
+    word_is_long_dict[word] = len(word) > 5
+
+print(word_is_long_dict)
+  # {'dog': False, 'cat': False, 'information': True, 'husky': False}
+
+# create a new dictionary using a comprehension
+word_is_long_dict = {word: len(word) > 5 for word in word_list}
+print(word_is_long_dict)
+  # {'dog': False, 'cat': False, 'information': True, 'husky': False}
+```
+
+You can of course also loop through a dictionary in order to create another dictionary:
+
+```python
+sample_dict = {'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 5}
+
+# swap the keys and values. Assumes values are unique.
+swapped_dict = { value: key for key, value in sample_dict.items() }
+
+print(swapped_dict) # {1: 'a', 2: 'b', 3: 'c', 4: 'd', 5: 'e'}
+```
+
 
 ## Nesting Dictionaries
 Although dictionary _keys_ are limited to hashable types (e.g., strings, numbers, tuples), dictionary _values_ can be of any type&mdash;and this includes lists and other dictionaries!
