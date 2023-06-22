@@ -24,7 +24,7 @@
 <meta name="author" content="Joel Ross" />
 
 
-<meta name="date" content="2023-06-20" />
+<meta name="date" content="2023-06-22" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -646,25 +646,61 @@ still_flipping <span class="token operator">=</span> <span class="token boolean"
 <h2><span class="header-section-number">5.6</span> Iterating over Files</h2>
 <p>For loops can be used to iterate through any sequence (technically any “iterable” type). One of the more useful sequences when working with data are external <strong>files</strong> (e.g., text files). Files can be treated as a sequence of <em>lines</em> (each divided by a <code>\n</code> newline character), and thus Python can “read” a text file using a for loop to iterate over the lines of text in the file.</p>
 <p>In order to read or write text file data, you use the built-in <a href="https://docs.python.org/3/library/functions.html#open"><code>open()</code></a> function, passing it the <em>path</em> to the file you wish to access. This function will then return an object representing that particular file (e.g., it’s location on the disk), with methods that you can use to read from and write to it.</p>
-<pre class="language-python"><code>my_file <span class="token operator">=</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'myfile.txt'</span><span class="token punctuation">)</span>  <span class="token comment"># open the file</span>
-
-<span class="token keyword">for</span> line <span class="token keyword">in</span> my_file<span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span>line<span class="token punctuation">)</span>  <span class="token comment"># print each line in the file</span></code></pre>
+<p>After a file has been opened, it will remain “open” until it is explicitly closed. This can cause problems when trying to access the file through other programs, or otherwise lead to memory issues. The recommended way to handle this problem and “close” the file is to only open a file using a <strong><code>with</code></strong> block. This will make sure that the file is closed either when it is done being read (at the end of the block) or if some kind of error occurs:</p>
+<pre class="language-python"><code><span class="token comment"># Always use this structure when opening files!</span>
+<span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'path/to/myfile.txt'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> my_file<span class="token punctuation">:</span>
+    <span class="token comment"># read my_file here</span></code></pre>
+<p>Once you have opened a file, you can use a for loop to iterate through its line (as in the example above). You can almost think of the file as a “list of lines”:</p>
+<pre class="language-python"><code><span class="token comment"># open a file and loop through its lines</span>
+<span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'path/to/myfile.txt'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> my_file<span class="token punctuation">:</span>
+    <span class="token keyword">for</span> line <span class="token keyword">in</span> my_file<span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>line<span class="token punctuation">)</span></code></pre>
 <p class="alert alert-warning">
 Remember to <strong>always</strong> use <em>relative</em> paths. Note that when using a Jupyter Notebook, the “current working directory” is the directory in which you ran the <code>jupyter notebook</code> command to start the server.
 </p>
-<p>Once you have opened a file, you can use a for loop to iterate through its line (as in the example above). You can also use a while loop, calling the <a href="https://docs.python.org/3.3/tutorial/inputoutput.html#methods-of-file-objects"><code>readline()</code></a> method <em>on</em> the file in order to read a single line at a time. Note that once you’ve looped through a file, that file has been “read” and will not be able to be looped through again unless you “re-open” it. In general, you should only read through a file once in any program you write!</p>
-<p>After a file has been opened, it will remain “open” until it is explicitly closed. The recommended way to do this is by using the <code>with</code> keyword, which will make sure that the file is closed either when it is done being read or if some kind of error occurs:</p>
-<pre class="language-python"><code><span class="token comment"># Always use this structure when opening files!</span>
-<span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'myfile.txt'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> my_file<span class="token punctuation">:</span>
+<p>After you have finished reading through a file, that file is considered “read”–there’s nothing else to loop through! So if you wanted to go through the file a second time, you would need to re-open it anew:</p>
+<pre class="language-python"><code><span class="token comment"># You can't lopo through a file twice in a single opening</span>
+<span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'path/to/myfile.txt'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> my_file<span class="token punctuation">:</span>
+    <span class="token keyword">for</span> line <span class="token keyword">in</span> my_file<span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>line<span class="token punctuation">)</span>
+
+    <span class="token comment"># this loop will never activate, because the file is already read</span>
+    <span class="token keyword">for</span> line <span class="token keyword">in</span> my_file<span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>line<span class="token punctuation">)</span>
+
+<span class="token comment"># Instead, you need to open the file multiple times to read it multiple times</span>
+<span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'path/to/myfile.txt'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> my_file<span class="token punctuation">:</span>
+    <span class="token keyword">for</span> line <span class="token keyword">in</span> my_file<span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>line<span class="token punctuation">)</span>
+<span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'path/to/myfile.txt'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> my_file<span class="token punctuation">:</span>
     <span class="token keyword">for</span> line <span class="token keyword">in</span> my_file<span class="token punctuation">:</span>
         <span class="token keyword">print</span><span class="token punctuation">(</span>line<span class="token punctuation">)</span></code></pre>
+<p>In general, you should only read through a file once in any program you write! You also can’t go “back” through a file that has been read—to plan your file processing carefully so you get all of the data you need in one pass.</p>
+<p>Printing the lines of the file isn’t very common; more likely you would take each line and do something with it… such as append it to a list in order to create an actual list of lines (a list of strings). However, an easier way to create a list of lines in the file is to call the built-in <a href="https://docs.python.org/3.3/tutorial/inputoutput.html#methods-of-file-objects"><strong><code>readlines()</code></strong></a> method on the file object:</p>
+<pre class="language-python"><code><span class="token comment"># open a file and read all its lines into a list</span>
+<span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'path/to/myfile.txt'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> my_file<span class="token punctuation">:</span>
+    list_of_lines <span class="token operator">=</span> my_file<span class="token punctuation">.</span>readlines<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment"># ... do something with the list_of_lines here</span></code></pre>
+<p>Note that after you have read the file, you’ll want to do any processing <em>outside</em> of the <code>with</code> block: let the file be closed so it isn’t using up memory while you do further analysis.</p>
+<p>Calling <code>readlines()</code> on a file will read the entire file into memory. This can be a concern if the file is really big (if you’re working with “big data”). It also may be the case that you don’t actually care about all of the lines in the file, just certain ones (for example: maybe only lines that are relevant to your data). In these situations, you can alternatively use the <code>readline()</code> (singular! No <code>s</code> at the end!) method to read only a single line at a time. This is useful for only reading a certain number of lines, or reading lines in “batches” (e.g, 2 at a time):</p>
+<pre class="language-python"><code><span class="token comment"># open and read the first 10 lines of a file</span>
+<span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'path/to/myfile.txt'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> my_file<span class="token punctuation">:</span>
+    <span class="token keyword">for</span> line_number <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        line <span class="token operator">=</span> my_file<span class="token punctuation">.</span>readline<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>line<span class="token punctuation">)</span>
+
+<span class="token comment"># open and read a file 2 lines at a time</span>
+<span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'path/to/myfile.txt'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> my_file<span class="token punctuation">:</span>
+    <span class="token keyword">for</span> odd_line <span class="token keyword">in</span> my_file<span class="token punctuation">:</span> <span class="token comment"># will read the first line in each pair</span>
+        even_line <span class="token operator">=</span> my_file<span class="token punctuation">.</span>readline<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment"># will read the next line in each pair</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>even_line<span class="token punctuation">)</span> <span class="token comment"># print only even lines</span></code></pre>
 <p>It is also possible to write out content to a file. To do this, you need to open the file with “write” access (allowing the program to write to and modify it) by passing <code>w</code> as the second argument to the <code>open()</code> function. You can then use the <code>write()</code> method to “print” text to the file:</p>
 <pre class="language-python"><code><span class="token comment"># "open" the file with "write" access</span>
 <span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'myfile.txt'</span><span class="token punctuation">,</span> <span class="token string">'w'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> my_file<span class="token punctuation">:</span>
     my_file<span class="token punctuation">.</span>write<span class="token punctuation">(</span><span class="token string">"Hello world!\n"</span><span class="token punctuation">)</span>
     my_file<span class="token punctuation">.</span>write<span class="token punctuation">(</span><span class="token string">"It's a mighty fine morning\n"</span><span class="token punctuation">)</span></code></pre>
-<p>Note that unlike the <code>print()</code> function, <code>write()</code> does not include a line break at the end of each method call; you need to add those yourself!</p>
+<p>Unlike the <code>print()</code> function, <code>write()</code> does not automatically include a line break at the end of each method call; you need to add those yourself!</p>
 <p class="alert alert-info">
 For some specialized text files, such as <code>.csv</code> files (comma-separated lists—spreadsheets), there are other specialized modules that can simplify reading the file content. For <code>csv</code> files, check out the <a href="https://docs.python.org/3/library/csv.html"><code>csv</code> module</a>.
 </p>
@@ -683,21 +719,17 @@ Traceback (most recent call last):
   File &quot;script.py&quot;, line 4, in &lt;module&gt;
     my_file = open(filename)
 FileNotFoundError: [Errno 2] No such file or directory: &#39;neener neener&#39;</code></pre>
-<p>Since it’s possible for the user to make a mistake, we could like the program not to simply fail with an error, but to instead be able to “recover” and keep running (e.g., by asking the user for a different file name). We can perform this kind of <a href="https://docs.python.org/3/tutorial/errors.html"><strong>error handling</strong></a> by utilizing a <strong><code>try</code></strong> statement with an <strong><code>except</code></strong> clause:</p>
+<p>Since it’s possible for the user to make a mistake, we could like the program not to simply fail with an error, but to instead be able to “recover” and keep running (e.g., by asking the user for a different file name). We can perform this kind of <a href="https://docs.python.org/3/tutorial/errors.html"><strong>error handling</strong></a> by using a <strong><code>try</code></strong> statement with an <strong><code>except</code></strong> clause:</p>
 <pre class="language-python"><code>filename <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">"File to open: "</span><span class="token punctuation">)</span>
 
 <span class="token keyword">try</span><span class="token punctuation">:</span> <span class="token comment"># this might break (not our fault)</span>
-    my_file <span class="token operator">=</span> <span class="token builtin">open</span><span class="token punctuation">(</span>filename<span class="token punctuation">)</span>
-    <span class="token keyword">for</span> line <span class="token keyword">in</span> my_file<span class="token punctuation">:</span>
-        <span class="token keyword">print</span><span class="token punctuation">(</span>line<span class="token punctuation">)</span>
+    <span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span>filename<span class="token punctuation">)</span> <span class="token keyword">as</span> my_file<span class="token punctuation">:</span>
+        <span class="token keyword">for</span> line <span class="token keyword">in</span> my_file<span class="token punctuation">:</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span>line<span class="token punctuation">)</span>
 <span class="token keyword">except</span><span class="token punctuation">:</span>  <span class="token comment"># catching FileNotFoundError</span>
     <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"No such file"</span><span class="token punctuation">)</span></code></pre>
-<p>A <code>try</code> statement acts somewhat similar to an <code>if</code> statement; however, the <code>try</code> statement checks to see if any errors occur <em>within its block</em>. If such an error occurs, rather than the program crashing, the interpreter will <em>immediately</em> jump to the <code>except</code> class and execute that block, before continuing on with the rest of the program.</p>
-<ul>
-<li><p>Note that this is an exception to the general rule that conditions are only checked at the start of a block; a <code>try</code> block effectively tells the computer to keep an eye out for any errors (“try this, but it might break”), with the <code>except</code> clause specifying what to do if such an error occurs.</p></li>
-<li><p>The <code>with</code> keyword also acts as a <code>try/except</code> that will make sure the file is closed if there is an error.</p></li>
-</ul>
-<p><code>try</code> statements are used when a program may hit an error that is <em>not caused by programmer’s code, but by an external input</em> (e.g., from a user or a file). You should not use a <code>try</code> statement to fix broken program logic or invalid syntax: instead, you should fix those problems directly!</p>
+<p>A <code>try</code> statement acts somewhat similar to an <code>if</code> statement; however, the <code>try</code> statement checks to see if any errors occur <em>within its block</em>. If such an error occurs, rather than the program crashing, the interpreter will <em>immediately</em> jump to the <code>except</code> class and execute that block, before continuing on with the rest of the program. This is an exception to the general rule that conditions are only checked at the start of a block; a <code>try</code> block effectively tells the computer to keep an eye out for any errors (“try this, but it might break”), with the <code>except</code> clause specifying what to do if such an error occurs.</p>
+<p><code>try</code> statements are used when a program may hit an error that is <em>not caused by programmer’s code, but by an external input</em> (e.g., from a user or a file). Do not use a <code>try</code> statement to fix broken program logic or invalid syntax: instead, you should fix those problems directly!</p>
 </div>
 </div>
 <div id="resources-4" class="section level2 unnumbered">
