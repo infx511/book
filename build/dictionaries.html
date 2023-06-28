@@ -24,7 +24,7 @@
 <meta name="author" content="Joel Ross" />
 
 
-<meta name="date" content="2023-06-22" />
+<meta name="date" content="2023-06-28" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -165,11 +165,11 @@
 <li class="chapter" data-level="6.1" data-path="dictionaries.html"><a href="dictionaries.html#what-is-a-dictionary"><i class="fa fa-check"></i><b>6.1</b> What is a Dictionary?</a></li>
 <li class="chapter" data-level="6.2" data-path="dictionaries.html"><a href="dictionaries.html#accessing-a-dictionary"><i class="fa fa-check"></i><b>6.2</b> Accessing a Dictionary</a></li>
 <li class="chapter" data-level="6.3" data-path="dictionaries.html"><a href="dictionaries.html#dictionary-methods"><i class="fa fa-check"></i><b>6.3</b> Dictionary Methods</a></li>
-<li class="chapter" data-level="6.4" data-path="dictionaries.html"><a href="dictionaries.html#dictionaries-and-loops"><i class="fa fa-check"></i><b>6.4</b> Dictionaries and Loops</a>
+<li class="chapter" data-level="6.4" data-path="dictionaries.html"><a href="dictionaries.html#nesting-dictionaries"><i class="fa fa-check"></i><b>6.4</b> Nesting Dictionaries</a></li>
+<li class="chapter" data-level="6.5" data-path="dictionaries.html"><a href="dictionaries.html#dictionaries-and-loops"><i class="fa fa-check"></i><b>6.5</b> Dictionaries and Loops</a>
 <ul>
-<li class="chapter" data-level="6.4.1" data-path="dictionaries.html"><a href="dictionaries.html#dictionary-comprehensions"><i class="fa fa-check"></i><b>6.4.1</b> Dictionary Comprehensions</a></li>
+<li class="chapter" data-level="6.5.1" data-path="dictionaries.html"><a href="dictionaries.html#dictionary-comprehensions"><i class="fa fa-check"></i><b>6.5.1</b> Dictionary Comprehensions</a></li>
 </ul></li>
-<li class="chapter" data-level="6.5" data-path="dictionaries.html"><a href="dictionaries.html#nesting-dictionaries"><i class="fa fa-check"></i><b>6.5</b> Nesting Dictionaries</a></li>
 <li class="chapter" data-level="6.6" data-path="dictionaries.html"><a href="dictionaries.html#which-data-structure-do-i-use"><i class="fa fa-check"></i><b>6.6</b> Which Data Structure Do I Use?</a></li>
 <li class="chapter" data-level="" data-path="dictionaries.html"><a href="dictionaries.html#resources-5"><i class="fa fa-check"></i>Resources</a></li>
 </ul></li>
@@ -471,83 +471,8 @@ sample_items <span class="token operator">=</span> sample_dict<span class="token
 <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">list</span><span class="token punctuation">(</span>sample_items<span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment"># [('a', 1), ('b', 2), ('c', 3), ('d', 4), ('e', 5)]</span></code></pre>
 <p>The <code>keys()</code>, <code>values()</code>, and <code>items()</code> sequences are not quite lists (they don’t have all of the list operations and methods), but they do support the <code>in</code> operator and iteration with <code>for</code> loops (see below). And as demonstrated above, they can easily be converted <em>into</em> lists if needed. Note that the <code>items()</code> method produces a sequence of <em>tuples</em>—each key-value pair is represented as a tuple whose first element is the key and second is the value!</p>
 </div>
-<div id="dictionaries-and-loops" class="section level2" number="6.4">
-<h2><span class="header-section-number">6.4</span> Dictionaries and Loops</h2>
-<p>Dictionaries are iterable collections (like lists, ranges, strings, files, etc), and so you can loop through them with a <strong>for loop</strong>. Note that the basic <code>for ... in ...</code> syntax iterates through the dictionary’s <em>keys</em> (not its values)! Thus it is much more common to iterate through one of the <code>keys()</code>, <code>values()</code>, or <code>items()</code> sequences.</p>
-<pre class="language-python"><code>sample_dict <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'a'</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'b'</span><span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">'c'</span><span class="token punctuation">:</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token string">'d'</span><span class="token punctuation">:</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token string">'e'</span><span class="token punctuation">:</span> <span class="token number">5</span><span class="token punctuation">}</span>
-
-<span class="token comment"># Loop through the keys (implicitly)</span>
-<span class="token keyword">for</span> key <span class="token keyword">in</span> sample_dict<span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span> <span class="token string">"maps to"</span><span class="token punctuation">,</span> sample_dict<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">)</span>  <span class="token comment"># e.g., "'a' maps to 1"</span>
-
-<span class="token comment"># Loop through the keys (explicitly)</span>
-<span class="token keyword">for</span> key <span class="token keyword">in</span> sample_dict<span class="token punctuation">.</span>keys<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span> <span class="token string">"maps to"</span><span class="token punctuation">,</span> sample_dict<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">)</span>  <span class="token comment"># e.g., "'a' maps to 1"</span>
-
-<span class="token comment"># Loop through the values. Cannot directly get the key from this</span>
-<span class="token keyword">for</span> value <span class="token keyword">in</span> sample_dict<span class="token punctuation">.</span>values<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"someone maps to"</span><span class="token punctuation">,</span> value<span class="token punctuation">)</span>  <span class="token comment"># e.g., "someone maps to 1"</span>
-
-<span class="token comment"># Loop through the items (each is a tuple)</span>
-<span class="token keyword">for</span> item <span class="token keyword">in</span> sample_dict<span class="token punctuation">.</span>items<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span>item<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">"maps to"</span><span class="token punctuation">,</span> item<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>  <span class="token comment"># e.g., "'a' maps to 1"</span></code></pre>
-<p>It is <em>much</em> more common to use <strong>multiple assignment</strong> to give the <code>items()</code> tuple elements local variable names, allowing you to refer to those elements by name rather than by index:</p>
-<pre class="language-python"><code><span class="token comment"># Use this format instead!</span>
-<span class="token keyword">for</span> key<span class="token punctuation">,</span> value <span class="token keyword">in</span> sample_dict<span class="token punctuation">.</span>items<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>  <span class="token comment"># implicit  `key, value = item`</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span> <span class="token string">"maps to"</span><span class="token punctuation">,</span> value<span class="token punctuation">)</span>  <span class="token comment"># e.g., "'a' maps to 1</span>
-
-<span class="token comment"># Better yet, name the local variables after their semantic meaning!</span>
-<span class="token keyword">for</span> letter<span class="token punctuation">,</span> number <span class="token keyword">in</span> sample_dict<span class="token punctuation">.</span>items<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span>letter<span class="token punctuation">,</span> <span class="token string">"maps to"</span><span class="token punctuation">,</span> number<span class="token punctuation">)</span>  <span class="token comment"># e.g., "'a' maps to 1</span></code></pre>
-<p>Remember that dictionaries are <em>unordered</em>. This means that there is no consistency as to which element will be processed in what order: you might get <code>a</code> then <code>b</code> then <code>c</code>, but you might get <code>c</code> then <code>a</code> then <code>b</code>! If the order is important for looping, a common strategy is to iterate through a <em>sorted list of the keys</em> (produced with the built-in <a href="https://docs.python.org/3/library/functions.html#sorted"><code>sorted()</code></a> function):</p>
-<pre class="language-python"><code><span class="token comment"># Sort the keys</span>
-sorted_keys <span class="token operator">=</span> <span class="token builtin">sorted</span><span class="token punctuation">(</span>sample_dict<span class="token punctuation">.</span>keys<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-
-<span class="token comment"># Iterate through the sorted keys</span>
-<span class="token keyword">for</span> key <span class="token keyword">in</span> sorted_keys<span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span> <span class="token string">"maps to"</span><span class="token punctuation">,</span> sample_dict<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">)</span>
-
-<span class="token comment"># Or all in one line!</span>
-<span class="token keyword">for</span> key <span class="token keyword">in</span> <span class="token builtin">sorted</span><span class="token punctuation">(</span>sample_dict<span class="token punctuation">.</span>keys<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span> <span class="token string">"maps to"</span><span class="token punctuation">,</span> sample_dict<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">)</span></code></pre>
-<div id="dictionary-comprehensions" class="section level3" number="6.4.1">
-<h3><span class="header-section-number">6.4.1</span> Dictionary Comprehensions</h3>
-<p>Python also supports <strong>dictionary comprehensions</strong>, similar to <a href="##list-comprehensions">_list comprehensions</a>. This is a Python shortcut syntax for creating a <em>new</em> dictionary while looping through an iterable data structure (either a list or a dictionary). A dictionary comprehension uses the basic syntax:</p>
-<pre class="language-python"><code>new_dict <span class="token operator">=</span> <span class="token punctuation">{</span>new_key<span class="token punctuation">:</span> new_value <span class="token keyword">for</span> value <span class="token keyword">in</span> sequence<span class="token punctuation">}</span></code></pre>
-<p>This is a shortcut for the following basic loop:</p>
-<pre class="language-python"><code>new_dict <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>  <span class="token comment"># a new dict (to be filled)</span>
-<span class="token keyword">for</span> value <span class="token keyword">in</span> sequence<span class="token punctuation">:</span>
-    new_key <span class="token operator">=</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token comment"># define new key based on value</span>
-    new_value <span class="token operator">=</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token comment"># define new value based on value</span>
-    new_dict<span class="token punctuation">[</span>new_key<span class="token punctuation">]</span> <span class="token operator">=</span> new_value</code></pre>
-<p>Notice that a dictionary comprehension looks a lot like a list comprehension; except that you surround the comprehension in <code>{}</code> instead of <code>[]</code>, and you specify the new key and value with a colon <code>:</code> between them.</p>
-<p>For example, you could create a new dictionary whose keys are words and whose values are booleans indicating if that word is long:</p>
-<pre class="language-python"><code>word_list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"dog"</span><span class="token punctuation">,</span> <span class="token string">"cat"</span><span class="token punctuation">,</span> <span class="token string">"information"</span><span class="token punctuation">,</span> <span class="token string">"husky"</span><span class="token punctuation">]</span>
-
-<span class="token comment"># create a new dictionary using a regular loop</span>
-word_is_long_dict <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token comment"># empty dictionary</span>
-<span class="token keyword">for</span> word <span class="token keyword">in</span> word_list<span class="token punctuation">:</span>
-    <span class="token comment"># add a new entry to the dictionary</span>
-    word_is_long_dict<span class="token punctuation">[</span>word<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token builtin">len</span><span class="token punctuation">(</span>word<span class="token punctuation">)</span> <span class="token operator">></span> <span class="token number">5</span>
-
-<span class="token keyword">print</span><span class="token punctuation">(</span>word_is_long_dict<span class="token punctuation">)</span>
-  <span class="token comment"># {'dog': False, 'cat': False, 'information': True, 'husky': False}</span>
-
-<span class="token comment"># create a new dictionary using a comprehension</span>
-word_is_long_dict <span class="token operator">=</span> <span class="token punctuation">{</span>word<span class="token punctuation">:</span> <span class="token builtin">len</span><span class="token punctuation">(</span>word<span class="token punctuation">)</span> <span class="token operator">></span> <span class="token number">5</span> <span class="token keyword">for</span> word <span class="token keyword">in</span> word_list<span class="token punctuation">}</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>word_is_long_dict<span class="token punctuation">)</span>
-  <span class="token comment"># {'dog': False, 'cat': False, 'information': True, 'husky': False}</span></code></pre>
-<p>You can of course also loop through a dictionary in order to create another dictionary:</p>
-<pre class="language-python"><code>sample_dict <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'a'</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'b'</span><span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">'c'</span><span class="token punctuation">:</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token string">'d'</span><span class="token punctuation">:</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token string">'e'</span><span class="token punctuation">:</span> <span class="token number">5</span><span class="token punctuation">}</span>
-
-<span class="token comment"># swap the keys and values. Assumes values are unique.</span>
-swapped_dict <span class="token operator">=</span> <span class="token punctuation">{</span> value<span class="token punctuation">:</span> key <span class="token keyword">for</span> key<span class="token punctuation">,</span> value <span class="token keyword">in</span> sample_dict<span class="token punctuation">.</span>items<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">}</span>
-
-<span class="token keyword">print</span><span class="token punctuation">(</span>swapped_dict<span class="token punctuation">)</span> <span class="token comment"># {1: 'a', 2: 'b', 3: 'c', 4: 'd', 5: 'e'}</span></code></pre>
-</div>
-</div>
-<div id="nesting-dictionaries" class="section level2" number="6.5">
-<h2><span class="header-section-number">6.5</span> Nesting Dictionaries</h2>
+<div id="nesting-dictionaries" class="section level2" number="6.4">
+<h2><span class="header-section-number">6.4</span> Nesting Dictionaries</h2>
 <p>Although dictionary <em>keys</em> are limited to hashable types (e.g., strings, numbers, tuples), dictionary <em>values</em> can be of any type—and this includes lists and other dictionaries!</p>
 <p>Nested dictionaries are conceptually similar to nested lists, and are used in a similar manner:</p>
 <pre class="language-python"><code><span class="token comment"># a dictionary representing a person (spacing is for readability)</span>
@@ -636,6 +561,81 @@ taller_than_70 <span class="token operator">=</span> <span class="token number">
 
 <span class="token keyword">print</span><span class="token punctuation">(</span>taller_than_70<span class="token punctuation">)</span>  <span class="token comment"># 2</span></code></pre>
 <p>This is effective, but not particularly efficient (or simple). We will discuss more robust and powerful ways of working with this style of data table more in a later chapter.</p>
+</div>
+<div id="dictionaries-and-loops" class="section level2" number="6.5">
+<h2><span class="header-section-number">6.5</span> Dictionaries and Loops</h2>
+<p>Dictionaries are iterable collections (like lists, ranges, strings, files, etc), and so you can loop through them with a <strong>for loop</strong>. Note that the basic <code>for ... in ...</code> syntax iterates through the dictionary’s <em>keys</em> (not its values)! Thus it is much more common to iterate through one of the <code>keys()</code>, <code>values()</code>, or <code>items()</code> sequences.</p>
+<pre class="language-python"><code>sample_dict <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'a'</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'b'</span><span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">'c'</span><span class="token punctuation">:</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token string">'d'</span><span class="token punctuation">:</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token string">'e'</span><span class="token punctuation">:</span> <span class="token number">5</span><span class="token punctuation">}</span>
+
+<span class="token comment"># Loop through the keys (implicitly)</span>
+<span class="token keyword">for</span> key <span class="token keyword">in</span> sample_dict<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span> <span class="token string">"maps to"</span><span class="token punctuation">,</span> sample_dict<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">)</span>  <span class="token comment"># e.g., "'a' maps to 1"</span>
+
+<span class="token comment"># Loop through the keys (explicitly)</span>
+<span class="token keyword">for</span> key <span class="token keyword">in</span> sample_dict<span class="token punctuation">.</span>keys<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span> <span class="token string">"maps to"</span><span class="token punctuation">,</span> sample_dict<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">)</span>  <span class="token comment"># e.g., "'a' maps to 1"</span>
+
+<span class="token comment"># Loop through the values. Cannot directly get the key from this</span>
+<span class="token keyword">for</span> value <span class="token keyword">in</span> sample_dict<span class="token punctuation">.</span>values<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"someone maps to"</span><span class="token punctuation">,</span> value<span class="token punctuation">)</span>  <span class="token comment"># e.g., "someone maps to 1"</span>
+
+<span class="token comment"># Loop through the items (each is a tuple)</span>
+<span class="token keyword">for</span> item <span class="token keyword">in</span> sample_dict<span class="token punctuation">.</span>items<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>item<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">"maps to"</span><span class="token punctuation">,</span> item<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>  <span class="token comment"># e.g., "'a' maps to 1"</span></code></pre>
+<p>It is <em>much</em> more common to use <strong>multiple assignment</strong> to give the <code>items()</code> tuple elements local variable names, allowing you to refer to those elements by name rather than by index:</p>
+<pre class="language-python"><code><span class="token comment"># Use this format instead!</span>
+<span class="token keyword">for</span> key<span class="token punctuation">,</span> value <span class="token keyword">in</span> sample_dict<span class="token punctuation">.</span>items<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>  <span class="token comment"># implicit  `key, value = item`</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span> <span class="token string">"maps to"</span><span class="token punctuation">,</span> value<span class="token punctuation">)</span>  <span class="token comment"># e.g., "'a' maps to 1</span>
+
+<span class="token comment"># Better yet, name the local variables after their semantic meaning!</span>
+<span class="token keyword">for</span> letter<span class="token punctuation">,</span> number <span class="token keyword">in</span> sample_dict<span class="token punctuation">.</span>items<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>letter<span class="token punctuation">,</span> <span class="token string">"maps to"</span><span class="token punctuation">,</span> number<span class="token punctuation">)</span>  <span class="token comment"># e.g., "'a' maps to 1</span></code></pre>
+<p>Remember that dictionaries are <em>unordered</em>. This means that there is no consistency as to which element will be processed in what order: you might get <code>a</code> then <code>b</code> then <code>c</code>, but you might get <code>c</code> then <code>a</code> then <code>b</code>! If the order is important for looping, a common strategy is to iterate through a <em>sorted list of the keys</em> (produced with the built-in <a href="https://docs.python.org/3/library/functions.html#sorted"><code>sorted()</code></a> function):</p>
+<pre class="language-python"><code><span class="token comment"># Sort the keys</span>
+sorted_keys <span class="token operator">=</span> <span class="token builtin">sorted</span><span class="token punctuation">(</span>sample_dict<span class="token punctuation">.</span>keys<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Iterate through the sorted keys</span>
+<span class="token keyword">for</span> key <span class="token keyword">in</span> sorted_keys<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span> <span class="token string">"maps to"</span><span class="token punctuation">,</span> sample_dict<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Or all in one line!</span>
+<span class="token keyword">for</span> key <span class="token keyword">in</span> <span class="token builtin">sorted</span><span class="token punctuation">(</span>sample_dict<span class="token punctuation">.</span>keys<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span> <span class="token string">"maps to"</span><span class="token punctuation">,</span> sample_dict<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">)</span></code></pre>
+<div id="dictionary-comprehensions" class="section level3" number="6.5.1">
+<h3><span class="header-section-number">6.5.1</span> Dictionary Comprehensions</h3>
+<p>Python also supports <strong>dictionary comprehensions</strong>, similar to <a href="##list-comprehensions">_list comprehensions</a>. This is a Python shortcut syntax for creating a <em>new</em> dictionary while looping through an iterable data structure (either a list or a dictionary). A dictionary comprehension uses the basic syntax:</p>
+<pre class="language-python"><code>new_dict <span class="token operator">=</span> <span class="token punctuation">{</span>new_key<span class="token punctuation">:</span> new_value <span class="token keyword">for</span> value <span class="token keyword">in</span> sequence<span class="token punctuation">}</span></code></pre>
+<p>This is a shortcut for the following basic loop:</p>
+<pre class="language-python"><code>new_dict <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>  <span class="token comment"># a new dict (to be filled)</span>
+<span class="token keyword">for</span> value <span class="token keyword">in</span> sequence<span class="token punctuation">:</span>
+    new_key <span class="token operator">=</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token comment"># define new key based on value</span>
+    new_value <span class="token operator">=</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token comment"># define new value based on value</span>
+    new_dict<span class="token punctuation">[</span>new_key<span class="token punctuation">]</span> <span class="token operator">=</span> new_value</code></pre>
+<p>Notice that a dictionary comprehension looks a lot like a list comprehension; except that you surround the comprehension in <code>{}</code> instead of <code>[]</code>, and you specify the new key and value with a colon <code>:</code> between them.</p>
+<p>For example, you could create a new dictionary whose keys are words and whose values are booleans indicating if that word is long:</p>
+<pre class="language-python"><code>word_list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"dog"</span><span class="token punctuation">,</span> <span class="token string">"cat"</span><span class="token punctuation">,</span> <span class="token string">"information"</span><span class="token punctuation">,</span> <span class="token string">"husky"</span><span class="token punctuation">]</span>
+
+<span class="token comment"># create a new dictionary using a regular loop</span>
+word_is_long_dict <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token comment"># empty dictionary</span>
+<span class="token keyword">for</span> word <span class="token keyword">in</span> word_list<span class="token punctuation">:</span>
+    <span class="token comment"># add a new entry to the dictionary</span>
+    word_is_long_dict<span class="token punctuation">[</span>word<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token builtin">len</span><span class="token punctuation">(</span>word<span class="token punctuation">)</span> <span class="token operator">></span> <span class="token number">5</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>word_is_long_dict<span class="token punctuation">)</span>
+  <span class="token comment"># {'dog': False, 'cat': False, 'information': True, 'husky': False}</span>
+
+<span class="token comment"># create a new dictionary using a comprehension</span>
+word_is_long_dict <span class="token operator">=</span> <span class="token punctuation">{</span>word<span class="token punctuation">:</span> <span class="token builtin">len</span><span class="token punctuation">(</span>word<span class="token punctuation">)</span> <span class="token operator">></span> <span class="token number">5</span> <span class="token keyword">for</span> word <span class="token keyword">in</span> word_list<span class="token punctuation">}</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>word_is_long_dict<span class="token punctuation">)</span>
+  <span class="token comment"># {'dog': False, 'cat': False, 'information': True, 'husky': False}</span></code></pre>
+<p>You can of course also loop through a dictionary in order to create another dictionary:</p>
+<pre class="language-python"><code>sample_dict <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'a'</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'b'</span><span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">'c'</span><span class="token punctuation">:</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token string">'d'</span><span class="token punctuation">:</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token string">'e'</span><span class="token punctuation">:</span> <span class="token number">5</span><span class="token punctuation">}</span>
+
+<span class="token comment"># swap the keys and values. Assumes values are unique.</span>
+swapped_dict <span class="token operator">=</span> <span class="token punctuation">{</span> value<span class="token punctuation">:</span> key <span class="token keyword">for</span> key<span class="token punctuation">,</span> value <span class="token keyword">in</span> sample_dict<span class="token punctuation">.</span>items<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">}</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>swapped_dict<span class="token punctuation">)</span> <span class="token comment"># {1: 'a', 2: 'b', 3: 'c', 4: 'd', 5: 'e'}</span></code></pre>
+</div>
 </div>
 <div id="which-data-structure-do-i-use" class="section level2" number="6.6">
 <h2><span class="header-section-number">6.6</span> Which Data Structure Do I Use?</h2>

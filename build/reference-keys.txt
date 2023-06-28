@@ -47,9 +47,9 @@ dictionaries
 what-is-a-dictionary
 accessing-a-dictionary
 dictionary-methods
+nesting-dictionaries
 dictionaries-and-loops
 dictionary-comprehensions
-nesting-dictionaries
 which-data-structure-do-i-use
 searching
 linear-search

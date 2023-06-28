@@ -179,6 +179,86 @@ print(list(sample_items))  # [('a', 1), ('b', 2), ('c', 3), ('d', 4), ('e', 5)]
 
 The `keys()`, `values()`, and `items()` sequences are not quite lists (they don't have all of the list operations and methods), but they do support the `in` operator and iteration with `for` loops (see below). And as demonstrated above, they can easily be converted _into_ lists if needed. Note that the `items()` method produces a sequence of _tuples_&mdash;each key-value pair is represented as a tuple whose first element is the key and second is the value!
 
+## Nesting Dictionaries
+Although dictionary _keys_ are limited to hashable types (e.g., strings, numbers, tuples), dictionary _values_ can be of any type&mdash;and this includes lists and other dictionaries!
+
+Nested dictionaries are conceptually similar to nested lists, and are used in a similar manner:
+
+```python
+# a dictionary representing a person (spacing is for readability)
+person = {
+  'first_name': 'Alice',
+  'last_name': 'Smith',
+  'age': 40,
+  'pets': ['rover', 'fluffy', 'mittens'],  # value is an array
+  'favorites': {  # value is another dictionary
+    'music': 'jazz',
+    'food': 'pizza',
+    'numbers': [12, 42]  # value is an array
+  }
+}
+
+# Can assign lists or dicts to a new key
+person['luggage_combo'] = [1,2,3,4,5]
+
+# person['favorite'] is an (anonymous) dictionary, so can get that dict's 'food'
+favorite_food = person['favorites']['food'];
+
+# Get to the (anonymous) 'favorites' dictionary in person, and from that get
+# the (anonymous) 'numbers' list, and from that get the 0th element
+first_fav_number = person['favorite']['numbers'][0];  # 12
+
+# Since person['favorite']['numbers'] is a list, we can add to it
+person['favorite']['numbers'].append(7);  # add 7 to end of the list
+```
+
+The ability to nest dictionaries inside of dictionaries is incredibly powerful, and allows you to define arbitrarily complex information structurings (schemas). Indeed, most data in computer programs&mdash;as well as public information available on the web&mdash;is structured as a set of nested maps like this (though possibly with some level of abstraction).
+
+The other common format used with nested lists and dictionaries is to define a **list of dictionaries** where each dictionary has _the same keys_ (but different values). For example:
+
+```python
+# Arbitrary list of people's names, heights, and weights
+people = [
+    {'name': 'Ada', 'height': 64, 'weight': 135},
+    {'name': 'Bob', 'height': 74, 'weight': 156},
+    {'name': 'Chris', 'height': 69, 'weight': 139},
+    {'name': 'Diya', 'height': 69, 'weight': 144},
+    {'name': 'Emma', 'height': 71, 'weight': 152}
+]
+```
+
+This structure can be seen as a list of **records** (the dictionaries), each of which have a number of different **features** (the key-value pairs). This list of feature records is in fact a common way of understanding a **data table** like you would create as an Excel spreadsheet:
+
+| name | height | weight |
+|:-----|:-------|:-------|
+| Ada | 64 | 135 |
+| Bob | 74 | 156 |
+| Chris | 69 | 139 |
+| Diya | 69 | 144 |
+| Emma | 71 | 152 |
+
+Each dictionary (record) acts as a "row" in the table, and each key (feature) acts as a "column". As long as all of the dictionaries share the same keys, this list of dictionaries _is_ a table!
+
+<p class="alert alert-success">
+When working with large amounts of tabular data, like you might read from a `.csv` file, this is a good structure to use.
+</p>
+
+In order to analyze this kind of data table, you most often will loop through the elements in the list (the rows in the table), doing some calculations based on _each_ dictionary:
+
+```python
+# How many people are taller than 70 inches?
+taller_than_70 = 0
+for person in people:  # iterate through the list
+    # person is a dictionary
+    if person['height'] >= 70:  # each dictionary has a 'height' key
+        taller_than_70 += 1  # increment the count
+
+print(taller_than_70)  # 2
+```
+
+This is effective, but not particularly efficient (or simple). We will discuss more robust and powerful ways of working with this style of data table more in a later chapter.
+
+
 ## Dictionaries and Loops
 Dictionaries are iterable collections (like lists, ranges, strings, files, etc), and so you can loop through them with a **for loop**. Note that the basic `for ... in ...` syntax iterates through the dictionary's _keys_ (not its values)! Thus it is much more common to iterate through one of the `keys()`, `values()`, or `items()` sequences.
 
@@ -279,86 +359,6 @@ swapped_dict = { value: key for key, value in sample_dict.items() }
 
 print(swapped_dict) # {1: 'a', 2: 'b', 3: 'c', 4: 'd', 5: 'e'}
 ```
-
-
-## Nesting Dictionaries
-Although dictionary _keys_ are limited to hashable types (e.g., strings, numbers, tuples), dictionary _values_ can be of any type&mdash;and this includes lists and other dictionaries!
-
-Nested dictionaries are conceptually similar to nested lists, and are used in a similar manner:
-
-```python
-# a dictionary representing a person (spacing is for readability)
-person = {
-  'first_name': 'Alice',
-  'last_name': 'Smith',
-  'age': 40,
-  'pets': ['rover', 'fluffy', 'mittens'],  # value is an array
-  'favorites': {  # value is another dictionary
-    'music': 'jazz',
-    'food': 'pizza',
-    'numbers': [12, 42]  # value is an array
-  }
-}
-
-# Can assign lists or dicts to a new key
-person['luggage_combo'] = [1,2,3,4,5]
-
-# person['favorite'] is an (anonymous) dictionary, so can get that dict's 'food'
-favorite_food = person['favorites']['food'];
-
-# Get to the (anonymous) 'favorites' dictionary in person, and from that get
-# the (anonymous) 'numbers' list, and from that get the 0th element
-first_fav_number = person['favorite']['numbers'][0];  # 12
-
-# Since person['favorite']['numbers'] is a list, we can add to it
-person['favorite']['numbers'].append(7);  # add 7 to end of the list
-```
-
-The ability to nest dictionaries inside of dictionaries is incredibly powerful, and allows you to define arbitrarily complex information structurings (schemas). Indeed, most data in computer programs&mdash;as well as public information available on the web&mdash;is structured as a set of nested maps like this (though possibly with some level of abstraction).
-
-The other common format used with nested lists and dictionaries is to define a **list of dictionaries** where each dictionary has _the same keys_ (but different values). For example:
-
-```python
-# Arbitrary list of people's names, heights, and weights
-people = [
-    {'name': 'Ada', 'height': 64, 'weight': 135},
-    {'name': 'Bob', 'height': 74, 'weight': 156},
-    {'name': 'Chris', 'height': 69, 'weight': 139},
-    {'name': 'Diya', 'height': 69, 'weight': 144},
-    {'name': 'Emma', 'height': 71, 'weight': 152}
-]
-```
-
-This structure can be seen as a list of **records** (the dictionaries), each of which have a number of different **features** (the key-value pairs). This list of feature records is in fact a common way of understanding a **data table** like you would create as an Excel spreadsheet:
-
-| name | height | weight |
-|:-----|:-------|:-------|
-| Ada | 64 | 135 |
-| Bob | 74 | 156 |
-| Chris | 69 | 139 |
-| Diya | 69 | 144 |
-| Emma | 71 | 152 |
-
-Each dictionary (record) acts as a "row" in the table, and each key (feature) acts as a "column". As long as all of the dictionaries share the same keys, this list of dictionaries _is_ a table!
-
-<p class="alert alert-success">
-When working with large amounts of tabular data, like you might read from a `.csv` file, this is a good structure to use.
-</p>
-
-In order to analyze this kind of data table, you most often will loop through the elements in the list (the rows in the table), doing some calculations based on _each_ dictionary:
-
-```python
-# How many people are taller than 70 inches?
-taller_than_70 = 0
-for person in people:  # iterate through the list
-    # person is a dictionary
-    if person['height'] >= 70:  # each dictionary has a 'height' key
-        taller_than_70 += 1  # increment the count
-
-print(taller_than_70)  # 2
-```
-
-This is effective, but not particularly efficient (or simple). We will discuss more robust and powerful ways of working with this style of data table more in a later chapter.
 
 ## Which Data Structure Do I Use?
 The last two chapters have introduced multiple different **data structures** built into Python: _lists_, _tuples_, and _dictionaries_. They all represent collections of elements, though in somewhat different ways. So when do you each each type?
