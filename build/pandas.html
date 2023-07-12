@@ -785,6 +785,20 @@ subtable <span class="token operator">=</span> people_df<span class="token punct
     <span class="token comment"># 1    Bob      74     156</span>
     <span class="token comment"># 2  Chris      69     139</span>
     <span class="token comment"># 3   Diya      69     144</span></code></pre>
+<p>It is also possible to use bracket notation when <em>assiging</em> values to a DataFrame. This is a useful way to add additional columns to the DataFrame if you don’t want to use the <code>assign()</code> method—in particular, this will modify the DataFrame “in place” (without making a copy)… though potentially lead to errors with changing referenced values.</p>
+<pre class="language-python"><code>people_df<span class="token punctuation">[</span><span class="token string">'wearing_hat'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token boolean">False</span><span class="token punctuation">,</span> <span class="token boolean">True</span><span class="token punctuation">,</span> <span class="token boolean">False</span><span class="token punctuation">,</span> <span class="token boolean">True</span><span class="token punctuation">,</span> <span class="token boolean">True</span><span class="token punctuation">]</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>people_df<span class="token punctuation">)</span>
+    <span class="token comment">#      name  height  weight  wearing_hat</span>
+    <span class="token comment"># 0    Ada      64     135        False</span>
+    <span class="token comment"># 1    Bob      74     156         True</span>
+    <span class="token comment"># 2  Chris      69     139        False</span>
+    <span class="token comment"># 3   Diya      69     144         True</span>
+    <span class="token comment"># 4   Emma      71     152         True</span></code></pre>
+<p>Note that if you try to use an assignment operator to modify a <em>subset</em> (called a “slice”) of a DataFrame—such as one you selected with bracket notation—you will get a <code>SettingWithCopyWarning</code>.</p>
+<pre class="language-python"><code><span class="token comment"># Change the element in the `wearing_hat` column and row 3 to be False</span>
+<span class="token comment"># Diya is no longer wearing a hat</span>
+people_df<span class="token punctuation">[</span><span class="token string">'wearing_hat'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">False</span> <span class="token comment"># &lt;SettingWithCopyWarning></span></code></pre>
+<p>This is a warning, not an error; your operation will succeed but it will look like something went front. This warning is shown because such operations have a chance of creating unpredictable results, so <code>pandas</code> gives you a warning not to do that. See <a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy">the user guide</a> for a more detailed discussion. If you get this warning, you should adjust your indexing so you’re not getting a subset… or just use a different method of assigning new values to a variable.</p>
 <p>Because DataFrames support multiple indexes, it is possible to use <strong>boolean indexing</strong> (as with Series), allowing you to <em>filter</em> for rows based the values in their columns. Note carefully that boolean indexing selects by <em>row</em> (not by column)—a list of column names selects columns, but a list of booleans selects rows!</p>
 <pre class="language-python"><code><span class="token comment"># Access the `height` column (a Series) and compare to 70</span>
 are_tall_series <span class="token operator">=</span> people_df<span class="token punctuation">.</span>height <span class="token operator">></span> <span class="token number">70</span>
