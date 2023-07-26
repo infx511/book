@@ -795,7 +795,54 @@ This syntax is particularly useful for creating "clean" DataFrames that can be u
 
 There are many other options for using the `agg()` method as well. See [the `pandas` user guide](https://pandas.pydata.org/pandas-docs/stable/user_guide/groupby.html#the-aggregate-method) for more details and examples.
 
-Overall, this form of grouping can allow you to quickly compare different subsets of your data. In doing so, you’re redefining your **unit of analysis**. Grouping lets you frame your analysis question in terms of comparing groups of observations, rather than individual observations. This form of abstraction makes it easier to ask and answer complex questions about your data.
+When doing an aggregation when grouping by multiple columns, you can end up with a DataFrame whose indices are _tuples_:
+
+```python
+final_by_year_section_df = scores_df.groupby(['section', 'year']).agg(
+  max_final=('final', 'max')
+)
+print(final_by_year_section_df.index)
+# MultiIndex([('A', 1),
+#             ('A', 3),
+#             ('A', 4),
+#             ('B', 1),
+#             ('B', 2),
+#             ('B', 4)],
+#            names=['section', 'year'])
+```
+
+A [MultiIndex](https://pandas.pydata.org/docs/user_guide/advanced.html) is an advanced concept from `pandas`; while there are lots of ways of working with such indices, at a basic level you can think of them has just being a situation where each index is a `tuple`.
+
+This can work fine if you're considering data grouped by multiple columns. However, sometimes you will want to "go back" and only have data indexed by a single value. You can achieve this by using the [**reset_index()**](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.reset_index.html) method,. This method can be used to pull a column out of the index and make it into a regular column of the data. It takes as an argument which column you want to remove from the index:
+
+```python
+print(final_by_year_section_df)
+#               max_final
+# section year
+# A       1            80
+#         3            95
+#         4            88
+# B       1            94
+#         2            85
+#         4            92
+
+final_by_section_df = final_by_year_section_df.reset_index('year')
+#         year  max_final
+# section
+# A           1         80
+# A           3         95
+# A           4         88
+# B           1         94
+# B           2         85
+# B           4         92
+
+print(final_by_section_df.index)
+# Index(['A', 'A', 'A', 'B', 'B', 'B'], dtype='object', name='section')
+```
+
+The differences between these DataFrames is subtle. In the second one, `year` has been moved to a column (where the `section` is the index label&mdash;note that each element has a section listed on its row). This would allow you to do further analysis on the data (which is now organized only by section, with year as a feature rather than an index).
+
+Overall, grouping can allow you to quickly compare different subsets of your data. In doing so, you’re redefining your **unit of analysis**. Grouping lets you frame your analysis question in terms of comparing groups of observations, rather than individual observations. This form of abstraction makes it easier to ask and answer complex questions about your data.
 
 
 ## Resources {-}

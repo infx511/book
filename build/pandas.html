@@ -24,7 +24,7 @@
 <meta name="author" content="Joel Ross" />
 
 
-<meta name="date" content="2023-07-25" />
+<meta name="date" content="2023-07-26" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -989,7 +989,44 @@ custom_stats_df <span class="token operator">=</span> by_section_groups<span cla
     <span class="token comment"># B        88.666667  90.333333         94</span></code></pre>
 <p>This syntax is particularly useful for creating “clean” DataFrames that can be used for further processing.</p>
 <p>There are many other options for using the <code>agg()</code> method as well. See <a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/groupby.html#the-aggregate-method">the <code>pandas</code> user guide</a> for more details and examples.</p>
-<p>Overall, this form of grouping can allow you to quickly compare different subsets of your data. In doing so, you’re redefining your <strong>unit of analysis</strong>. Grouping lets you frame your analysis question in terms of comparing groups of observations, rather than individual observations. This form of abstraction makes it easier to ask and answer complex questions about your data.</p>
+<p>When doing an aggregation when grouping by multiple columns, you can end up with a DataFrame whose indices are <em>tuples</em>:</p>
+<pre class="language-python"><code>final_by_year_section_df <span class="token operator">=</span> scores_df<span class="token punctuation">.</span>groupby<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'section'</span><span class="token punctuation">,</span> <span class="token string">'year'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span>agg<span class="token punctuation">(</span>
+  max_final<span class="token operator">=</span><span class="token punctuation">(</span><span class="token string">'final'</span><span class="token punctuation">,</span> <span class="token string">'max'</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>final_by_year_section_df<span class="token punctuation">.</span>index<span class="token punctuation">)</span>
+<span class="token comment"># MultiIndex([('A', 1),</span>
+<span class="token comment">#             ('A', 3),</span>
+<span class="token comment">#             ('A', 4),</span>
+<span class="token comment">#             ('B', 1),</span>
+<span class="token comment">#             ('B', 2),</span>
+<span class="token comment">#             ('B', 4)],</span>
+<span class="token comment">#            names=['section', 'year'])</span></code></pre>
+<p>A <a href="https://pandas.pydata.org/docs/user_guide/advanced.html">MultiIndex</a> is an advanced concept from <code>pandas</code>; while there are lots of ways of working with such indices, at a basic level you can think of them has just being a situation where each index is a <code>tuple</code>.</p>
+<p>This can work fine if you’re considering data grouped by multiple columns. However, sometimes you will want to “go back” and only have data indexed by a single value. You can achieve this by using the <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.reset_index.html"><strong>reset_index()</strong></a> method,. This method can be used to pull a column out of the index and make it into a regular column of the data. It takes as an argument which column you want to remove from the index:</p>
+<pre class="language-python"><code><span class="token keyword">print</span><span class="token punctuation">(</span>final_by_year_section_df<span class="token punctuation">)</span>
+<span class="token comment">#               max_final</span>
+<span class="token comment"># section year</span>
+<span class="token comment"># A       1            80</span>
+<span class="token comment">#         3            95</span>
+<span class="token comment">#         4            88</span>
+<span class="token comment"># B       1            94</span>
+<span class="token comment">#         2            85</span>
+<span class="token comment">#         4            92</span>
+
+final_by_section_df <span class="token operator">=</span> final_by_year_section_df<span class="token punctuation">.</span>reset_index<span class="token punctuation">(</span><span class="token string">'year'</span><span class="token punctuation">)</span>
+<span class="token comment">#         year  max_final</span>
+<span class="token comment"># section</span>
+<span class="token comment"># A           1         80</span>
+<span class="token comment"># A           3         95</span>
+<span class="token comment"># A           4         88</span>
+<span class="token comment"># B           1         94</span>
+<span class="token comment"># B           2         85</span>
+<span class="token comment"># B           4         92</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>final_by_section_df<span class="token punctuation">.</span>index<span class="token punctuation">)</span>
+<span class="token comment"># Index(['A', 'A', 'A', 'B', 'B', 'B'], dtype='object', name='section')</span></code></pre>
+<p>The differences between these DataFrames is subtle. In the second one, <code>year</code> has been moved to a column (where the <code>section</code> is the index label—note that each element has a section listed on its row). This would allow you to do further analysis on the data (which is now organized only by section, with year as a feature rather than an index).</p>
+<p>Overall, grouping can allow you to quickly compare different subsets of your data. In doing so, you’re redefining your <strong>unit of analysis</strong>. Grouping lets you frame your analysis question in terms of comparing groups of observations, rather than individual observations. This form of abstraction makes it easier to ask and answer complex questions about your data.</p>
 </div>
 </div>
 <div id="resources-8" class="section level2 unnumbered">
