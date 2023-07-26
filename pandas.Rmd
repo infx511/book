@@ -111,7 +111,7 @@ print(result)
     # dtype: float64
 ```
 
-In this example, only the `'m'` label was shared between the series, so only that one matched: the other values weren't defined so produces `NaN` (Not A Number) values as a result. Also note that you can perform mathemtical operation on Series of different sizes; its just that some indices won't match). If you try to compare (using `<` or `==`) Series with different indices, you will get an error.
+In this example, only the `'m'` label was shared between the series, so only that one matched: the other values weren't defined so produces `NaN` (Not A Number) values as a result. Thus you can perform mathemtical operation on Series of different sizes; its just that some indices won't match. But if you try to compare (using `<` or `==`) Series with different indices, you will get an error.
 
 It is also possible to use a _scalar_ (a single value) as an operand with a Series. This is referred to as [**broadcasting**](https://docs.scipy.org/doc/numpy/user/basics.broadcasting.html). The idea is that the smaller "set" of elements (e.g., a single value) is _broadcast_ &mdash; expanded &mdash; so that it has a comparable size, thereby allowing different "sized" data structures to interact. Technically, operating on a Series with a scalar is actually a specific case of operating on it with another Series!
 
@@ -168,6 +168,13 @@ print(first_3)
     # 2    7
     # dtype: int64
 
+# You can use simple aggregation methods, such as:
+maximum_value = sample_numbers.max() # gets the maximum value of the series
+maximum_value_index = sample_numbers.idxmax() # get the label (index) where the maximum value is
+mean_of_values = sample_numbers.mean() # gets the average (statistical mean) of the values
+std_dev_of_values = sample.numbers.std() # gets the standard deviation of the values
+
+# There are also aggregation methods for Series of booleans
 # The `any()` method returns whether ANY of the elements are `True`
 # The `all()` method returns whether ALL of the elements are `True`
 larger_than_3_series = sample_numbers > 3 # make a new series of Booleans
@@ -175,12 +182,6 @@ any_bigger = larger_than_3_series.any()
 all_bigger = larger_than_3_series.all()
 print(any_bigger) # True
 print(all_bigger) # False
-
-# You can use simple aggregation methods, such as:
-maximum_value = sample_numbers.max() # gets the maximum value of the series
-maximum_value_index = sample_numbers.idxmax() # get the label (index) where the maximum value is
-mean_of_values = sample_numbers.mean() # gets the average (statistical mean) of the values
-std_dev_of_values = sample.numbers.std() # gets the standard deviation of the values
 
 # get a Series of descriptive statistics
 # you would need to access the individual values to use them
@@ -203,7 +204,7 @@ Series support many more methods as well: see the [full documentation](https://p
 
 
 ### Series Indexing
-Like dictionaries, each element in a Series has an **index** (a key or label). If that Series was produced from a list the indices will just be numeric positions; if it was produced from a dictionary then the indices will be the keys of that dictionary (but they are still called indices in `pandas`!) You can access the sequence of indices by using the `index` _attribute (it's not a method!); you will need to convert that sequence into a list to make use of it.
+Like dictionaries, each element in a Series has an **index** (a key or label). If that Series was produced from a list the indices will just be numeric positions; if it was produced from a dictionary then the indices will be the keys of that dictionary (but they are still called indices in `pandas`!) You can access the sequence of indices by using the `index` _attribute_ (it's not a method!); you will need to convert that sequence into a list to make use of it.
 
 ```python
 letter_series = pd.Series(['a', 'b', 'c', 'd', 'e', 'f'])
@@ -727,7 +728,7 @@ The `pandas` library calls this the [**split-apply-combine**](https://pandas.pyd
 
 You split data into groups by using the `groupby()` method. You apply **aggregation functions** (such as `mean()`, `max()`, etc) to each group. And then because you're working on a GroupBy value, those results are automatically combined back into a DataFrame. In a way, an **aggregation** combines steps 2 and 3.
 
-You can apply an aggregation operation to each of the groups by calling that method on the GroupBy value. The method will automatically be applied _each_ group (as if they were separate DataFrames). THe method will then return a new DataFrame, whose rows are the results _per group_.
+You can apply an aggregation operation to each of the groups by calling that method on the GroupBy value. The method will automatically be applied _each_ group (as if they were separate DataFrames). The method will then return a new DataFrame, whose rows are the results _per group_.
 
 ```python
  # A DataFrame with only the section and numeric columns

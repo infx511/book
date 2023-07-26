@@ -24,7 +24,7 @@
 <meta name="author" content="Joel Ross" />
 
 
-<meta name="date" content="2023-07-12" />
+<meta name="date" content="2023-07-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -418,7 +418,7 @@ result <span class="token operator">=</span> alpha_series <span class="token ope
     <span class="token comment"># m    26.0</span>
     <span class="token comment"># z     NaN</span>
     <span class="token comment"># dtype: float64</span></code></pre>
-<p>In this example, only the <code>'m'</code> label was shared between the series, so only that one matched: the other values weren’t defined so produces <code>NaN</code> (Not A Number) values as a result. Also note that you can perform mathemtical operation on Series of different sizes; its just that some indices won’t match). If you try to compare (using <code>&lt;</code> or <code>==</code>) Series with different indices, you will get an error.</p>
+<p>In this example, only the <code>'m'</code> label was shared between the series, so only that one matched: the other values weren’t defined so produces <code>NaN</code> (Not A Number) values as a result. Thus you can perform mathemtical operation on Series of different sizes; its just that some indices won’t match. But if you try to compare (using <code>&lt;</code> or <code>==</code>) Series with different indices, you will get an error.</p>
 <p>It is also possible to use a <em>scalar</em> (a single value) as an operand with a Series. This is referred to as <a href="https://docs.scipy.org/doc/numpy/user/basics.broadcasting.html"><strong>broadcasting</strong></a>. The idea is that the smaller “set” of elements (e.g., a single value) is <em>broadcast</em> — expanded — so that it has a comparable size, thereby allowing different “sized” data structures to interact. Technically, operating on a Series with a scalar is actually a specific case of operating on it with another Series!</p>
 <pre class="language-python"><code>sample <span class="token operator">=</span> pd<span class="token punctuation">.</span>Series<span class="token punctuation">(</span><span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment"># Series of numbers from 1 to 5 (6 is excluded)</span>
 result <span class="token operator">=</span> sample <span class="token operator">+</span> <span class="token number">4</span>  <span class="token comment"># add 4 to each element (produces new Series)</span>
@@ -465,6 +465,13 @@ first_3 <span class="token operator">=</span> sample_numbers<span class="token p
     <span class="token comment"># 2    7</span>
     <span class="token comment"># dtype: int64</span>
 
+<span class="token comment"># You can use simple aggregation methods, such as:</span>
+maximum_value <span class="token operator">=</span> sample_numbers<span class="token punctuation">.</span><span class="token builtin">max</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment"># gets the maximum value of the series</span>
+maximum_value_index <span class="token operator">=</span> sample_numbers<span class="token punctuation">.</span>idxmax<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment"># get the label (index) where the maximum value is</span>
+mean_of_values <span class="token operator">=</span> sample_numbers<span class="token punctuation">.</span>mean<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment"># gets the average (statistical mean) of the values</span>
+std_dev_of_values <span class="token operator">=</span> sample<span class="token punctuation">.</span>numbers<span class="token punctuation">.</span>std<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment"># gets the standard deviation of the values</span>
+
+<span class="token comment"># There are also aggregation methods for Series of booleans</span>
 <span class="token comment"># The `any()` method returns whether ANY of the elements are `True`</span>
 <span class="token comment"># The `all()` method returns whether ALL of the elements are `True`</span>
 larger_than_3_series <span class="token operator">=</span> sample_numbers <span class="token operator">></span> <span class="token number">3</span> <span class="token comment"># make a new series of Booleans</span>
@@ -472,12 +479,6 @@ any_bigger <span class="token operator">=</span> larger_than_3_series<span class
 all_bigger <span class="token operator">=</span> larger_than_3_series<span class="token punctuation">.</span><span class="token builtin">all</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>any_bigger<span class="token punctuation">)</span> <span class="token comment"># True</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>all_bigger<span class="token punctuation">)</span> <span class="token comment"># False</span>
-
-<span class="token comment"># You can use simple aggregation methods, such as:</span>
-maximum_value <span class="token operator">=</span> sample_numbers<span class="token punctuation">.</span><span class="token builtin">max</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment"># gets the maximum value of the series</span>
-maximum_value_index <span class="token operator">=</span> sample_numbers<span class="token punctuation">.</span>idxmax<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment"># get the label (index) where the maximum value is</span>
-mean_of_values <span class="token operator">=</span> sample_numbers<span class="token punctuation">.</span>mean<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment"># gets the average (statistical mean) of the values</span>
-std_dev_of_values <span class="token operator">=</span> sample<span class="token punctuation">.</span>numbers<span class="token punctuation">.</span>std<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment"># gets the standard deviation of the values</span>
 
 <span class="token comment"># get a Series of descriptive statistics</span>
 <span class="token comment"># you would need to access the individual values to use them</span>
@@ -497,7 +498,7 @@ description_series <span class="token operator">=</span> sample_numbers<span cla
 </div>
 <div id="series-indexing" class="section level3" number="9.2.3">
 <h3><span class="header-section-number">9.2.3</span> Series Indexing</h3>
-<p>Like dictionaries, each element in a Series has an <strong>index</strong> (a key or label). If that Series was produced from a list the indices will just be numeric positions; if it was produced from a dictionary then the indices will be the keys of that dictionary (but they are still called indices in <code>pandas</code>!) You can access the sequence of indices by using the <code>index</code> _attribute (it’s not a method!); you will need to convert that sequence into a list to make use of it.</p>
+<p>Like dictionaries, each element in a Series has an <strong>index</strong> (a key or label). If that Series was produced from a list the indices will just be numeric positions; if it was produced from a dictionary then the indices will be the keys of that dictionary (but they are still called indices in <code>pandas</code>!) You can access the sequence of indices by using the <code>index</code> <em>attribute</em> (it’s not a method!); you will need to convert that sequence into a list to make use of it.</p>
 <pre class="language-python"><code>letter_series <span class="token operator">=</span> pd<span class="token punctuation">.</span>Series<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'b'</span><span class="token punctuation">,</span> <span class="token string">'c'</span><span class="token punctuation">,</span> <span class="token string">'d'</span><span class="token punctuation">,</span> <span class="token string">'e'</span><span class="token punctuation">,</span> <span class="token string">'f'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
 age_series <span class="token operator">=</span> pd<span class="token punctuation">.</span>Series<span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token string">'sarah'</span><span class="token punctuation">:</span> <span class="token number">42</span><span class="token punctuation">,</span> <span class="token string">'amit'</span><span class="token punctuation">:</span> <span class="token number">35</span><span class="token punctuation">,</span> <span class="token string">'zhang'</span><span class="token punctuation">:</span> <span class="token number">13</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
 
@@ -938,7 +939,7 @@ section_and_year_groups <span class="token operator">=</span> scores_df<span cla
 <li><strong>Combine</strong> the results back into a single data structure</li>
 </ol>
 <p>You split data into groups by using the <code>groupby()</code> method. You apply <strong>aggregation functions</strong> (such as <code>mean()</code>, <code>max()</code>, etc) to each group. And then because you’re working on a GroupBy value, those results are automatically combined back into a DataFrame. In a way, an <strong>aggregation</strong> combines steps 2 and 3.</p>
-<p>You can apply an aggregation operation to each of the groups by calling that method on the GroupBy value. The method will automatically be applied <em>each</em> group (as if they were separate DataFrames). THe method will then return a new DataFrame, whose rows are the results <em>per group</em>.</p>
+<p>You can apply an aggregation operation to each of the groups by calling that method on the GroupBy value. The method will automatically be applied <em>each</em> group (as if they were separate DataFrames). The method will then return a new DataFrame, whose rows are the results <em>per group</em>.</p>
 <pre class="language-python"><code> <span class="token comment"># A DataFrame with only the section and numeric columns</span>
 scores_only_df <span class="token operator">=</span> scores_df<span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">'section'</span><span class="token punctuation">,</span> <span class="token string">'midterm'</span><span class="token punctuation">,</span> <span class="token string">'final'</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
 

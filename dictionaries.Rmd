@@ -42,7 +42,7 @@ Be careful not to name a dictionary `dict`, which is a reserved keyword (it's a 
 
 Dictionary _keys_ can be of any [hashable](https://en.wikipedia.org/wiki/Hash_function) type (meaning the computer can consistently convert it into a number). In practice, this means that that keys are most commonly _strings_, _numbers_, or _tuples_. Dictionary _values_, on the other hand, can be of any type that you want!
 
-Dictionary _keys_ must be unique: because they are used to "look up" values, there has to be a single value associated with each key (this is called a [one-to-one mapping](https://en.wikipedia.org/wiki/Injective_function) in mathematics). But dictionary _values_ can be duplicated: just like how two words may have the same definition in a real-world dictionary!
+Dictionary _keys_ must be unique: because they are used to "look up" values, there has to be a single value associated with each key. But dictionary _values_ can be duplicated: just like how two words may have the same definition in a real-world dictionary!
 
 ```python
 double_key = {'a': 1, 'b': 2, 'b': 3}
